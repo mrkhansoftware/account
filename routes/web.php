@@ -16,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('participantinformationaccount', 'ParticipantInformationAccountController');
 
 Route::get('/user', 'UserController@index');
 
-Route::get('/login_account', 'LoginController@index');
+Route::get('/login', 'LoginController@index');
+Route::get('/participant_information_account', 'ParticipantInformationAccountController@index');
+
+
+
