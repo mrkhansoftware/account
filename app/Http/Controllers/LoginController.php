@@ -19,7 +19,7 @@ class LoginController extends Controller
 
       print_r($value['Appli']);
         die;   
-      
+       
         return view('login');
     }
 }
