@@ -44,5 +44,29 @@ class Helper {
             return $json_response;
             }
 
+            public static function postRequest($postContent){
+            $content=json_encode($postContent);;
+            $response = json_decode('App\Services\Helper'::auth(), true);
+                $access_token = $response['access_token'];
+            $instance_url = $response['instance_url'];
+                $url = $instance_url."/services/apexrest/APIParticipantInformationAccountClass";
+                $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_HEADER, false);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_HTTPHEADER,array("Authorization: OAuth $access_token","Content-type: application/json"));
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
+            echo $json_response = curl_exec($curl);
+            echo $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+              // echo $responseSobject = json_decode($json_response, true);
+                 //$responseSobject = json_decode($responseSobject , true);
+                //return $responseSobject;
+            
+            
+            
+            
+                
+            }
+
 }
 ?>
