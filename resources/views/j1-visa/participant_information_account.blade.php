@@ -290,7 +290,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-egd">
             (Expected) Graduation Date <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            {!! Form::text('graduationDate',isset($datas['graduationDate'])?$datas['graduationDate']:'',array('class'=>'gaccca-input')); !!}
+            {!! Form::text('graduationDate',isset($datas['graduationDate'])?$datas['graduationDate']:'',array('class'=>'gaccca-input-date')); !!}
 
           </div>
         </div>
@@ -377,7 +377,8 @@
     {!! Form::close() !!}
 
   </div>
-</body>
+  @include('common.footer')
+<!-- </body>
 <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script>
 <script>
   function openNav() {
@@ -419,4 +420,4 @@
 </script>
 
 
-</html>
+</html> -->
