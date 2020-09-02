@@ -130,7 +130,9 @@
             <span class="gaccca-radio">
              
                 
-    {!! Form::radio('applicant[citizenship_status]', 'radio-citizenship-no',array('id'=>'radio-citizenship-no')); !!}
+   
+
+    {!! Form::radio('applicant[citizenship_status]', 'no', true, array('id'=>'radio-citizenship-no')) !!}
                 
 
               <label class="gaccca-radio__label" for="radio-citizenship-no">
@@ -138,7 +140,8 @@
                 <span class="gaccca-padding-right-25">No</span>
               </label>
              
-    {!! Form::radio('applicant[citizenship_status]', 'radio-citizenship-yes',array('id'=>'radio-citizenship-yes')); !!}
+    
+    {!! Form::radio('applicant[citizenship_status]', 'yes', false, array('id'=>'radio-citizenship-yes')) !!}
 
               <label class="gaccca-radio__label" for="radio-citizenship-yes">
                 <span class="gaccca-radio_faux"></span>
