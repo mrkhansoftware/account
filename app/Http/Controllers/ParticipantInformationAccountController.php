@@ -12,9 +12,13 @@ class ParticipantInformationAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $datas='App\Services\Helper'::getRequest();
+        session()->put('applicantId', $datas['Appli']['Id']);
+        session()->put('Contact__c', $datas['Appli']['Contact__c']);
+        session()->put('Google_Drive_Folder__c', isset($datas['Appli']['Google_Drive_Folder__c'])?$datas['Appli']['Google_Drive_Folder__c']:'');
         return view('j1-visa/participant_information_account')->with(compact('datas'));
     }
 
@@ -36,16 +40,61 @@ class ParticipantInformationAccountController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $finalReq = $request->all();
         echo "<pre>";
-        unset($data['_token']);
+        unset($finalReq['_token']);
        
         // $validatedData = $request->validate([
         //     'name_of_university' => 'required',
         // ]);
 
-        print_r($data);
-        die;
+        print_r($finalReq);
+        $passport='NoFile';
+        $resume='NoFile';
+        $statusVerification='NoFile';
+        $passportMimeType='NoFile';
+        $resumeMimeType='NoFile';
+        $statusVerificationMimeType='NoFile';
+
+      if(isset($finalReq['passport'])){
+        $passport = base64_encode(file_get_contents($request->file('passport')));
+        $passportMimeType=$request->file('passport')->getMimeType();
+       echo  strlen($passport);echo '--';
+       echo  strlen($passportMimeType);
+      }
+      if(isset($finalReq['resume'])){
+         $resume = base64_encode(file_get_contents($request->file('resume')));
+         $resumeMimeType=$request->file('resume')->getMimeType();
+       }
+       if(isset($finalReq['status_verification'])){
+         $statusVerification = base64_encode(file_get_contents($request->file('status_verification')));
+         $statusVerificationMimeType=$request->file('status_verification')->getMimeType();
+       }
+       $finalReq['applicant']['id']=session()->get('applicantId');
+       if(session()->get('Google_Drive_Folder__c')!=''){
+       $finalReq['applicant']['Google_Drive_Folder__c']=session()->get('Google_Drive_Folder__c');
+       }
+       $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+    
+       
+
+
+       $body['applicantData']=json_encode($finalReq['applicant']);
+       $body['graduationDate']=json_encode($finalReq['graduationDate']);
+       $body['filePassport']=$passport;
+       $body['fileTypePassport']=$passportMimeType;
+       $body['fileResume']=$resume;
+       $body['fileTypeResume']=$resumeMimeType;
+       $body['fileVerification']=$statusVerification;
+       $body['fileTypeVerification']=$statusVerificationMimeType;
+    
+
+
+       'App\Services\Helper'::postRequest($body);
+
+       return view('j1-visa/participant_information_account');
+
+       
     }
 
     /**
