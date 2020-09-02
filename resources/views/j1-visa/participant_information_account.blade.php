@@ -130,7 +130,7 @@
             <span class="gaccca-radio">
              
                 
-    {!! Form::radio('citizenship', 'radio-citizenship-no',array('id'=>'radio-citizenship-no')); !!}
+    {!! Form::radio('applicant[citizenship_status]', 'radio-citizenship-no',array('id'=>'radio-citizenship-no')); !!}
                 
 
               <label class="gaccca-radio__label" for="radio-citizenship-no">
@@ -138,7 +138,7 @@
                 <span class="gaccca-padding-right-25">No</span>
               </label>
              
-    {!! Form::radio('citizenship', 'radio-citizenship-yes',array('id'=>'radio-citizenship-yes')); !!}
+    {!! Form::radio('applicant[citizenship_status]', 'radio-citizenship-yes',array('id'=>'radio-citizenship-yes')); !!}
 
               <label class="gaccca-radio__label" for="radio-citizenship-yes">
                 <span class="gaccca-radio_faux"></span>
@@ -160,7 +160,7 @@
             Citizenship <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
             
-            {!! Form::text('citizenship',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+            {!! Form::text('applicant[citizenship]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
             
             <span class="gaccca-input-help-text">Please also list your dual citizenship here.</span>
           </div>
@@ -172,7 +172,7 @@
           <div class="gaccca-form-element__control">
            
 
-            {!! Form::text('residency',$datas['Appli']['Country_of_Legal_Permanent_Residency__c'],array('class'=>'gaccca-input')); !!}
+            {!! Form::text('applicant[permanent_residency]',$datas['Appli']['Country_of_Legal_Permanent_Residency__c'],array('class'=>'gaccca-input')); !!}
 
 
           </div>
@@ -185,7 +185,7 @@
             Have you ever applied for a US visa? <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
            
-              {!! Form::text('applied_for_us_visa',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+              {!! Form::text('applicant[applied_for_us_visa]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
             <span class="gaccca-input-help-text">Please provide type of visa and expiration date as well as
               information about any previous visa denials</span>
           </div>
@@ -203,7 +203,7 @@
           <div class="gaccca-form-element__control">
             <div class="gaccca-select_container">
 
-            {!! Form::select('size', ['L' => 'Large', 'S' => 'Small'], $datas['Appli']['Citizenship__c'], [  'class' => 'gaccca-select']) !!}
+            {!! Form::select('applicant[country_of_birth]', ['L' => 'Large', 'S' => 'Small'], $datas['Appli']['Citizenship__c'], [  'class' => 'gaccca-select']) !!}
              
             </div>
           </div>
@@ -215,7 +215,7 @@
             City of Birth <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
           
-            {!! Form::text('city_of_birth',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+            {!! Form::text('applicant[city_of_birth]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
 
           </div>
 
@@ -230,7 +230,7 @@
             <div class="gaccca-select_container">
             
 
-              {!! Form::select('size', ['L' => 'Large', 'S' => 'Small'], $datas['Appli']['Citizenship__c'], [  'class' => 'gaccca-select']) !!}
+              {!! Form::select('applicant[marital_status]', ['L' => 'Large', 'S' => 'Small'], $datas['Appli']['Citizenship__c'], [  'class' => 'gaccca-select']) !!}
              
 
             </div>
@@ -248,7 +248,7 @@
           </label>
           <div class="gaccca-form-element__control">
            
-            {!! Form::text('emergency_contact',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+            {!! Form::text('applicant[emergency_contact]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
 
             <span class="gaccca-input-help-text">Please list a person to contact in case of emergency.</span>
           </div>
@@ -260,7 +260,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-ecp">
             Relationship to Applicant <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            {!! Form::text('relationship_of_applicant',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+            {!! Form::text('applicant[relationship_of_applicant]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
             <span class="gaccca-input-help-text">Please define the relationship between you and your emergency contact
               person, e.g. mother, father, sister, boyfriend, etc.</span>
           </div>
@@ -275,7 +275,7 @@
           <div class="gaccca-form-element__control">
             
 
-              {!! Form::text('emergency_person_email',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+              {!! Form::text('applicant[emergency_person_email]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
 
 
             <span class="gaccca-input-help-text">Please list a person to contact in case of emergency.</span>
@@ -288,7 +288,7 @@
             Emergency Contact Person Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
            
-              {!! Form::text('emergency_person_phone',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+              {!! Form::text('applicant[emergency_person_phone]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
 
             <span class="gaccca-input-help-text">Please always provide the country code..</span>
           </div>
@@ -300,7 +300,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-e-address">
             Emergency Contact Person Address <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            {!! Form::textarea('address',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-textarea')); !!}
+            {!! Form::textarea('applicant[address]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-textarea')); !!}
 
             <span class="gaccca-input-help-text">Street, App #, Zip Code, City, Country</span>
           </div>
@@ -309,17 +309,12 @@
         <br/>
 
 
-
-
-
-
-
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-nou">
             Name of University <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
             
-              {!! Form::text('name_of_university',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+              {!! Form::text('applicant[name_of_university]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
 
           </div>
         </div>
@@ -329,7 +324,7 @@
             Field of Study <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
            
-            {!! Form::text('field_of_study',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+            {!! Form::text('applicant[field_of_study]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
 
           </div>
         </div>
@@ -346,7 +341,7 @@
             <div class="gaccca-select_container">
               
               
-              {!! Form::select('size', ['L' => 'Large', 'S' => 'Small'], $datas['Appli']['Citizenship__c'], [  'class' => 'gaccca-select']) !!}
+              {!! Form::select('applicant[type_of_degree]', ['L' => 'Large', 'S' => 'Small'], $datas['Appli']['Citizenship__c'], [  'class' => 'gaccca-select']) !!}
 
 
             </div>
@@ -360,7 +355,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-egd">
             (Expected) Graduation Date <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            {!! Form::text('graduation_date',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
+            {!! Form::text('applicant[graduation_date]',$datas['Appli']['Citizenship__c'],array('class'=>'gaccca-input')); !!}
 
           </div>
         </div>
@@ -373,7 +368,7 @@
           </label>
           <div class="gaccca-form-element__control">
             <div class="gaccca-select_container">
-            {!! Form::select('size', ['L' => 'Large', 'S' => 'Small'], $datas['Appli']['Citizenship__c'], [  'class' => 'gaccca-select']) !!}
+            {!! Form::select('applicant[work_experience]', ['L' => 'Large', 'S' => 'Small'], $datas['Appli']['Citizenship__c'], [  'class' => 'gaccca-select']) !!}
             </div>
           </div>
         </div>
@@ -384,7 +379,7 @@
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
 
-              {!!Form::file('filename');!!}
+              {!!Form::file('applicant_files[passport]');!!}
 
               <span class="gaccca-file-custom">Choose file...</span>
 
@@ -400,7 +395,7 @@
             English CV / Resume </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              {!!Form::file('filename1');!!}
+              {!!Form::file('applicant_files[resume]');!!}
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -414,7 +409,7 @@
             Student Status Verification </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              {!!Form::file('filename2');!!}
+              {!!Form::file('applicant_files[status_verification]');!!}
 
               <span class="gaccca-file-custom">Choose file...</span>
 
