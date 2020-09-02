@@ -23,5 +23,8 @@ Route::get('/user', 'UserController@index');
 Route::get('/login', 'LoginController@index');
 Route::get('/participant_information_account', 'ParticipantInformationAccountController@index');
 
+Route::get('/profile', 'ProfileController@index');
+Route::resource('profile_information', 'ProfileController');
+
 
 

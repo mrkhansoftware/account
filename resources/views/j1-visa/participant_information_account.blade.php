@@ -130,13 +130,7 @@
             <span class="gaccca-radio">
              
                 
-<<<<<<< HEAD
-   
-
-    {!! Form::radio('applicant[citizenship_status]', 'no', true, array('id'=>'radio-citizenship-no')) !!}
-=======
     {!! Form::radio('applicant[Do_you_have_dual_citizenship__c]', 'No',isset($datas['Appli']['Do_you_have_dual_citizenship__c'])?($datas['Appli']['Do_you_have_dual_citizenship__c']=='No'?true:false):false,array('id'=>'radio-citizenship-no')); !!}
->>>>>>> c9fc1ca83d61732d0fd21f74d4c8a557db3bb354
                 
 
               <label class="gaccca-radio__label" for="radio-citizenship-no">
@@ -144,12 +138,7 @@
                 <span class="gaccca-padding-right-25">No</span>
               </label>
              
-<<<<<<< HEAD
-    
-    {!! Form::radio('applicant[citizenship_status]', 'yes', false, array('id'=>'radio-citizenship-yes')) !!}
-=======
     {!! Form::radio('applicant[Do_you_have_dual_citizenship__c]', 'Yes',isset($datas['Appli']['Do_you_have_dual_citizenship__c'])?($datas['Appli']['Do_you_have_dual_citizenship__c']=='yes'?true:false):false,array('id'=>'radio-citizenship-yes')); !!}
->>>>>>> c9fc1ca83d61732d0fd21f74d4c8a557db3bb354
 
               <label class="gaccca-radio__label" for="radio-citizenship-yes">
                 <span class="gaccca-radio_faux"></span>
