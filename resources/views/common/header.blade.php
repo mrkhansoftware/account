@@ -38,7 +38,7 @@
           </div>
           <ul class="gaccca-display-menu">
 
-            <li class="gaccca-dropdown"><a href="#home">Placement Program</a>
+            <li class="gaccca-dropdown"><a href="#home">Placement Program </a>
 
               <div class="gaccca-dropdown-content">
                 <a href="/profile_new">Video Tutorials</a>

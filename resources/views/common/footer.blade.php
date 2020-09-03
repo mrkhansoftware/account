@@ -6,7 +6,7 @@
 $(document).ready(function(){
 
 $('.gaccca-input-date').datepicker({
-
+  dateFormat: "dd/mm/yy",
   changeMonth:true,
   changeYear:true,
   onClose: function () {
