@@ -105,4 +105,5 @@ $('.gaccca-input-date').datepicker({
   });
 
 </script>
+<script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
 </html>
