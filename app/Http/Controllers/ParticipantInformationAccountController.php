@@ -15,7 +15,10 @@ class ParticipantInformationAccountController extends Controller
     
     public function index()
     {
-        $datas='App\Services\Helper'::getRequest();
+        $datas='App\Services\Helper'::getRequest('APIParticipantInformationAccountClass');
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        session()->put('lastNameFirstName', $datas['lastNameFirstName']);
         session()->put('applicantId', $datas['Appli']['Id']);
         session()->put('Contact__c', $datas['Appli']['Contact__c']);
         session()->put('Google_Drive_Folder__c', isset($datas['Appli']['Google_Drive_Folder__c'])?$datas['Appli']['Google_Drive_Folder__c']:'');
@@ -48,7 +51,7 @@ class ParticipantInformationAccountController extends Controller
         //     'name_of_university' => 'required',
         // ]);
 
-        print_r($finalReq);
+      //  print_r($finalReq);
         $passport='NoFile';
         $resume='NoFile';
         $statusVerification='NoFile';
@@ -59,8 +62,7 @@ class ParticipantInformationAccountController extends Controller
       if(isset($finalReq['passport'])){
         $passport = base64_encode(file_get_contents($request->file('passport')));
         $passportMimeType=$request->file('passport')->getMimeType();
-       echo  strlen($passport);echo '--';
-       echo  strlen($passportMimeType);
+     
       }
       if(isset($finalReq['resume'])){
          $resume = base64_encode(file_get_contents($request->file('resume')));
@@ -77,22 +79,36 @@ class ParticipantInformationAccountController extends Controller
        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
     
        
-
-
-       $body['applicantData']=json_encode($finalReq['applicant']);
-       $body['graduationDate']=json_encode($finalReq['graduationDate']);
-       $body['filePassport']=$passport;
-       $body['fileTypePassport']=$passportMimeType;
-       $body['fileResume']=$resume;
-       $body['fileTypeResume']=$resumeMimeType;
-       $body['fileVerification']=$statusVerification;
-       $body['fileTypeVerification']=$statusVerificationMimeType;
+      
+       $unique_Folder_Id;
+       if(session()->get('Google_Drive_Folder__c')==''){
+      $Google_Drive_Folder_Id='App\Services\Helper'::returnFolderId('registration');
+        $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, 'Registration '.session()->get('lastNameFirstName'));
+        $finalReq['applicant']['Google_Drive_Folder__c']=$unique_Folder_Id;
+    }else{
+        $unique_Folder_Id= session()->get('Google_Drive_Folder__c');
+    }
     
+    if($passportMimeType!='NoFile'){ 
+        'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_Passport', $passportMimeType, $passport);
+    }
+  if($resumeMimeType!='NoFile'){
+        
+    'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_Resume', $resumeMimeType, $resume );
+    }
+    if($statusVerificationMimeType!='NoFile'){
+        
+        'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_SSV', $statusVerificationMimeType, $statusVerification);
+    }
+     
+    $body['applicantData']=json_encode($finalReq['applicant']);
+    $body['graduationDate']=json_encode($finalReq['graduationDate']);
+   
 
 
-       'App\Services\Helper'::postRequest($body);
-
-       return view('j1-visa/participant_information_account');
+       'App\Services\Helper'::postRequest($body,'APIParticipantInformationAccountClass');
+die;
+     // return view('j1-visa/participant_information_account');
 
        
     }
