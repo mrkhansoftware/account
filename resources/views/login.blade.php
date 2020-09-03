@@ -6,16 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/gaccca_main_style_new.css') }}" >
-    
+    <link href="{{ asset('css/jquery-ui.css') }}"  rel='stylesheet' >
+    <link href="{{ asset('css/all.css') }}"  rel='stylesheet' >
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script> -->
     <script src="{{ asset('js/jquery-1.8.2.js') }}"></script>
+    <script src="{{ asset('js/parsley.min.js') }}"></script>   
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
    
-    <!-- <link rel="stylesheet" href="assets/css/jquery-ui.css"> -->
-    
-    <!-- <script src="assets/js/jquery-ui.js"></script> -->
+   
 
 </head>
 <body style="background: #FFF;">
@@ -70,6 +71,7 @@
               
     
               <form id='login-form-data'>
+                      
                         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
@@ -125,9 +127,7 @@
                 </div>
                 
                 
-                
-                
-                
+                             
                 <div class="gaccca-signup-containt" id="signup-containt">
                     <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Sign Up</span>
                     
@@ -253,14 +253,6 @@
                     
                 </div>
                 
-                
-                
-                
-                
-
-
-
-
 
         </div>
 
@@ -319,6 +311,10 @@
   $("#login-containt").hide();
   $("#signup-containt").show();
   });
+
+ 
+
+  
   
   
   });
@@ -330,8 +326,35 @@
         email=userInfo.email;
         uid=userInfo.uid;//alert(firstName);
         providerId=userInfo.providerId;
-        window.location.href='/profile_account';
+        afterCreateOrMergeAccount(providerId);
+       // window.location.href='/profile_account';
 
+  }
+
+  function afterCreateOrMergeAccount (providerId){
+
+    var formData = {
+            title: 'hello',
+            description: 'World',
+        };
+        $.ajaxSetup({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    $.ajax({
+            type: 'POST',
+            url: 'ajax_after_login',
+            data: formData,
+            dataType: 'json',
+            success: function (data) {
+              console.log(data);
+              
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
   }
   
   

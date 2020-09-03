@@ -1895,6 +1895,9 @@ input[type="file"].gaccca-parsley-error + ul  {
 
 }
 
+.gaccca-parsley-errors-list li{
+ text-align: left;
+}
 .gaccca-parsley-errors-list.filled {
   opacity: 1;
 }
