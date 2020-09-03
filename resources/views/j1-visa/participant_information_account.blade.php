@@ -1,4 +1,4 @@
-@include('common.header')
+@include('common.header',['some' => 'data'])
 
   <div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Step 2/5 - Participant Information</h1>
