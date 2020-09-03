@@ -13,13 +13,27 @@ class LoginController extends Controller
     public function index()
     {
         
-       $value='App\Services\Helper'::getRequest();
+      //  $value='App\Services\Helper'::getRequest();
       //  $new_value  = json_decode() ;
-       echo "<pre>"; 
+      //  echo "<pre>"; 
 
-      print_r($value['Appli']);
-        die;   
+      // print_r($value['Appli']);
+       // die;   
        
         return view('login');
     }
+
+    public function ajaxAfterLogin(Request $request)
+    {
+        
+      //  $value='App\Services\Helper'::getRequest();
+      //  $new_value  = json_decode() ;
+      //  echo "<pre>"; 
+
+      // print_r($value['Appli']);
+       // die;   
+       
+        return $request->all();
+    }
+
 }
