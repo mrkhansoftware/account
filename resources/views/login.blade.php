@@ -326,8 +326,8 @@
         email=userInfo.email;
         uid=userInfo.uid;//alert(firstName);
         providerId=userInfo.providerId;
-        afterCreateOrMergeAccount(providerId);
-       // window.location.href='/profile_account';
+        //afterCreateOrMergeAccount(providerId);
+        window.location.href='/profile_account';
 
   }
 
