@@ -1,4 +1,4 @@
-@include('common.header')
+@include('common.header',['some' => 'data'])
 
   {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'my-profile']) !!}
 
@@ -19,11 +19,15 @@
               First Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               <!-- <input type="text" id="text-input-id-1" placeholder="First Name" required="" class="gaccca-input" /> -->
-              {!! Form::text('first_name', null, [
+              {!! Form::text('con[FirstName]',isset($datas['con']['FirstName'])?$datas['con']['FirstName']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
+                'disabled'                      =>  $datas['con']['Profile_Updated__c']
 	              ]) !!}
-              <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+              <span class="gaccca-input-help-text">
+              {{$datas['con']['Profile_Updated__c']?'If you like to change your name, please email us':'Please use English letters only i.e. ue instead of ü / e instead of é / ss instead of ß'}}</span>
+              
+             </span>
             </div>
           </div>
         </div>
@@ -35,11 +39,13 @@
               Last Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               <!-- <input type="text" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" /> -->
-              {!! Form::text('last_name', null, [
+              {!! Form::text('con[LastName]',isset($datas['con']['LastName'])?$datas['con']['LastName']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
+                'disabled'                      =>  $datas['con']['Profile_Updated__c']
 	              ]) !!}
-              <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+              <span class="gaccca-input-help-text">
+              {{$datas['con']['Profile_Updated__c']?'If you like to change your name, please email us':'Please use English letters only i.e. ue instead of ü / e instead of é / ss instead of ß'}}</span>
               
             </div>
           </div>
@@ -54,11 +60,11 @@
               Date of birth <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element gaccca-form-element-margin-date">
               <!-- <input type="text" id="datepicker" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" /> -->
-              {!! Form::text('last_name', null, [
+              {!! Form::text('dob',isset($datas['dob'])?$datas['dob']:'', [
 	              'class'                         => 'gaccca-input-date',
 	              'required'                      => 'required',
 	              ]) !!}
-              <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+              <span class="gaccca-input-help-text"></span>
             </div>
           </div>
   
@@ -74,11 +80,11 @@
                 City of birth <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                 <!-- <input type="text" id="text-input-id-4" placeholder="City of birth" required="" class="gaccca-input" /> -->
-                {!! Form::text('city_of_birth', null, [
+                {!! Form::text('con[City_Of_Birth__c]',isset($datas['con']['City_Of_Birth__c'])?$datas['con']['City_Of_Birth__c']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
 	              ]) !!}
-                <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+                <span class="gaccca-input-help-text"></span>
               </div>
           </div>
   
@@ -92,11 +98,11 @@
                 Country of birth <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                 <!-- <input type="text" id="text-input-id-5" placeholder="Country of birth" required="" class="gaccca-input" /> -->
-                {!! Form::text('country_of_birth', null, [
+                {!! Form::text('con[Country_Of_Birth__c]',isset($datas['con']['Country_Of_Birth__c'])?$datas['con']['Country_Of_Birth__c']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
 	              ]) !!}
-                <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+                <span class="gaccca-input-help-text"></span>
               </div>
           </div>
   
@@ -110,12 +116,12 @@
             <label class="gaccca-form-element__label" for="text-input-id-6">
               Email <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-6" placeholder="Email" required="" class="gaccca-input" />
-              {!! Form::email('email', null, [
+              {!! Form::email('Email',isset($datas['con']['Email'])?$datas['con']['Email']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
+                'disabled'                      =>  true
 	              ]) !!}
-              <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+              <span class="gaccca-input-help-text"></span>
             </div>
           </div>
         </div>
@@ -126,11 +132,11 @@
               Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               <!-- <input type="text" id="text-input-id-7" placeholder="+1" required="" class="gaccca-input" /> -->
-              {!! Form::text('phone', null, [
+              {!! Form::text('con[Phone]',isset($datas['con']['Phone'])?$datas['con']['Phone']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
 	              ]) !!}
-              <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+              <span class="gaccca-input-help-text"></span>
             </div>
           </div>
         </div>
@@ -143,12 +149,12 @@
             <div class="gaccca-form-element__control">
              
                 <!-- <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea> -->
-                {!! Form::textarea('address', null, [
-	              'class'                         => 'gaccca-input',
+                {!! Form::textarea('con[MailingStreet]',isset($datas['con']['MailingStreet'])?$datas['con']['MailingStreet']:'', [
+	              'class'                         => 'gaccca-textarea',
 	              'required'                      => 'required',
 	              ]) !!}
              
-                <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+                <span class="gaccca-input-help-text"></span>
             </div>
           </div>
         </div>
@@ -161,11 +167,11 @@
               City <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               <!-- <input type="text" id="text-input-id-9" placeholder="City" required="" class="gaccca-input" /> -->
-              {!! Form::text('city', null, [
+              {!! Form::text('con[MailingCity]',isset($datas['con']['MailingCity'])?$datas['con']['MailingCity']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
 	              ]) !!}
-              <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+              <span class="gaccca-input-help-text"></span>
             </div>
           </div>
         </div>
@@ -176,11 +182,11 @@
               Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               <!-- <input type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" /> -->
-              {!! Form::text('zip_code', null, [
+              {!! Form::text('con[MailingPostalCode]',isset($datas['con']['MailingPostalCode'])?$datas['con']['MailingPostalCode']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
 	              ]) !!}
-              <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+              <span class="gaccca-input-help-text"></span>
             </div>
           </div>
         </div>
@@ -191,11 +197,10 @@
               Country <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               <!-- <input type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" /> -->
-              {!! Form::text('country', null, [
-	              'class'                         => 'gaccca-input',
-	              'required'                      => 'required',
-	              ]) !!}
-              <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
+             
+            {!! Form::select('con[MailingCountryCode]', array_reverse($datas['countryOfBirth']), isset($datas['con']['MailingCountryCode'])?$datas['con']['MailingCountryCode']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
+           
+              <span class="gaccca-input-help-text"></span>
             </div>
           </div>
         </div>
