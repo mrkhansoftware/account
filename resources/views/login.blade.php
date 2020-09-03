@@ -10,7 +10,9 @@
     <!-- <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script> -->
     <script src="{{ asset('js/jquery-1.8.2.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+   
     <!-- <link rel="stylesheet" href="assets/css/jquery-ui.css"> -->
     
     <!-- <script src="assets/js/jquery-ui.js"></script> -->
@@ -45,7 +47,7 @@
              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
   
                 <div class="gaccca-social-element">
-                 <button class="gaccca-google-sign-btn" type="button"><div class="gaccca-google-image">
+                 <button class="gaccca-google-sign-btn" type="button" id='googleLogin'><div class="gaccca-google-image">
                    
                      <img src="{{ asset('images/social-button/google-logo.png') }}" height="22" width="22"/>
 
@@ -57,7 +59,7 @@
               <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
   
                 <div class="gaccca-social-element">
-                 <button class="gaccca-facebook-sign-btn" type="button"><div class="gaccca-facebbok-image">
+                 <button class="gaccca-facebook-sign-btn" type="button" id='fbLogin'><div class="gaccca-facebbok-image">
                      <img src="{{ asset('images/social-button/f.png') }}" />
 
                  </div> <span class="gaccca-google-text"> Login with Facebook </span></button>
@@ -66,190 +68,195 @@
              
               <div class="gaccca-login-or"><span>Or</span></div>
               
-             
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-                <div class="gaccca-social-element">
-                  <div class="gaccca-form-element__control">
-                    <input type="email" id="text-input-id-2" placeholder="Email" required="" class="gaccca-input" />  
-                  </div>
-                </div>
-              </div>
-             
-              
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-  
-                <div class="gaccca-social-element">
-                  <div class="gaccca-form-element__control">
-                    <input type="text" id="text-input-id-2" placeholder="Password" required="" class="gaccca-input" />  
-                  </div>
-                </div>
-              </div>
     
-              
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-  
-                <div class="gaccca-social-element">
-                  <div class="gaccca-form-element__control">
-                    <button class="gaccca-login-button">LOGIN</button> 
-                  </div>
-                </div>
-              </div>
-
-
-             
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-  
-                <div class="gaccca-form-element">
-                  <div class="gaccca-form-element__control">
-                   <a href="javascript:void(0)" id="forget-password-btn">Forget your password ? </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-  
-                <div class="gaccca-social-element">
-                  <div class="gaccca-form-element__control">
-                    <button class="gaccca-new-user-btn" id="new-user">
-                    <span class="gaccca-new-user-btn-text"> NEW USER? </span>
-                    <span class="gaccca-new-user-btn-sub-text"> Create an acoount with your Email </span>
+              <form id='login-form-data'>
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="email" id="login-email" placeholder="Email" required="" class="gaccca-input" />  
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="Password" id="login-password" placeholder="Password" required="" class="gaccca-input" />  
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <button class="gaccca-login-button" id='login-form'>LOGIN</button> 
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     
-                </button> 
-                  </div>
+                    
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                        
+                        <div class="gaccca-form-element">
+                            <div class="gaccca-form-element__control">
+                                <a href="javascript:void(0)" id="forget-password-btn">Forgot your password? </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                        
+                        <div class="gaccca-social-element">
+                            <div class="gaccca-form-element__control">
+                                <button class="gaccca-new-user-btn" id="new-user">
+                                    <span class="gaccca-new-user-btn-text"> NEW USER? </span>
+                                    <span class="gaccca-new-user-btn-sub-text"> Create an acoount with your Email </span>
+                                    
+                                </button> 
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-              </div>
-
-        </div>
-  
-
-
-
-
-        <div class="gaccca-signup-containt" id="signup-containt">
-            <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Sign Up</span>
-           
-            
-
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-               <div class="gaccca-social-element">
-                 <div class="gaccca-form-element__control">
-                   <input type="text" id="text-input-id-fn" placeholder="First Name" required="" class="gaccca-input" />  
-                 </div>
-               </div>
-             </div>
-
-
-             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-               <div class="gaccca-social-element">
-                 <div class="gaccca-form-element__control">
-                   <input type="text" id="text-input-id-ln" placeholder="Last Name" required="" class="gaccca-input" />  
-                 </div>
-               </div>
-             </div>
-
-
-
-
-             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-               <div class="gaccca-social-element">
-                 <div class="gaccca-form-element__control">
-                   <input type="email" id="text-input-id-2" placeholder="Email" required="" class="gaccca-input" />  
-                 </div>
-               </div>
-             </div>
-            
-             
-             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
- 
-               <div class="gaccca-social-element">
-                 <div class="gaccca-form-element__control">
-                   <input type="text" id="text-input-id-2" placeholder="Password" required="" class="gaccca-input" />  
-                 </div>
-               </div>
-             </div>
-   
-             
-             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element ">
- 
-               <div class="gaccca-social-element">
-                 <div class="gaccca-form-element__control">
-
-                   <button class="gaccca-button-save-green gaccca-margin-top-20">Create My Account</button>
-              
-                 </div>
-               </div>
-             </div>
-
-             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
- 
-               <div class="gaccca-form-element gaccca-margin-top-20">
-                 <div class="gaccca-form-element__control">
-                  <a href="javascript:void(0)" id="go-login-from-signup"> Go back to login </a>
-                 </div>
-               </div>
-             </div>
-
-            
-
-       </div>
- 
-
-
-
-
-       <div class="gaccca-forgot-password-containt" id="forgot-password-containt">
-        <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Forgot Password? </span>
-       
-        
-
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-           <div class="gaccca-social-element">
-             <div class="gaccca-form-element__control">
-               <p>Enter the email address associated with your account.</p> 
-             </div>
-           </div>
-         </div>
-
-
-        
-
-
-
-         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-           <div class="gaccca-social-element">
-             <div class="gaccca-form-element__control">
-               <input type="email" id="text-input-id-2" placeholder="Email" required="" class="gaccca-input" />  
-             </div>
-           </div>
-         </div>
-        
-         
-       
-         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element ">
-
-           <div class="gaccca-social-element">
-             <div class="gaccca-form-element__control">
-
-               <button class="gaccca-button-save-green gaccca-margin-top-20">Reset my password</button>
-          
-             </div>
-           </div>
-         </div>
-
-         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
-           <div class="gaccca-form-element gaccca-margin-top-20">
-             <div class="gaccca-form-element__control">
-              <a href="javascript:void(0)" id="go-login-from-forget-password"> Go back to login </a>
-             </div>
-           </div>
-         </div>
-
-        
-
-   </div>
-
-
+                
+                
+                
+                
+                
+                <div class="gaccca-signup-containt" id="signup-containt">
+                    <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Sign Up</span>
+                    
+                    
+                    <form id='signup-form'>
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="text" id="signup-firstname" placeholder="First Name" required="" class="gaccca-input" />  
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="text"  id="signup-lastname" placeholder="Last Name" required="" class="gaccca-input" />  
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="email"  id="signup-email" placeholder="Email" required="" class="gaccca-input" />  
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="Password"  id="signup-password" placeholder="Password" required="" class="gaccca-input" />  
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element ">
+                            
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    
+                                    <button class="gaccca-button-save-green gaccca-margin-top-20">Create My Account</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                        
+                        <div class="gaccca-form-element gaccca-margin-top-20">
+                            <div class="gaccca-form-element__control">
+                                <a href="javascript:void(0)" id="go-login-from-signup"> Go back to login </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+                
+                
+                
+                
+                <div class="gaccca-forgot-password-containt" id="forgot-password-containt">
+                    <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Forgot Password? </span>
+                    
+                    
+                    
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                        <div class="gaccca-social-element">
+                            <div class="gaccca-form-element__control">
+                                <p>Enter the email address associated with your account.</p> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    <form id='forget-form-data'>
+                        
+                        
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="email" id="forget-pass-email" placeholder="Email" required="" class="gaccca-input" />  
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </form>     
+                    
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element ">
+                        
+                        <div class="gaccca-social-element">
+                            <div class="gaccca-form-element__control">
+                                
+                                <button class="gaccca-button-save-green gaccca-margin-top-20" id='resetPassBtn'>Reset my password</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                        
+                        <div class="gaccca-form-element gaccca-margin-top-20">
+                            <div class="gaccca-form-element__control">
+                                <a href="javascript:void(0)" id="go-login-from-forget-password"> Go back to login </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+                
+                
+                
+                
 
 
 
@@ -266,6 +273,9 @@
              
         </div>
     </div>
+    <div class="gaccca-loader-div" id='loader' style='display:none'>
+            <div class="gaccca-loader"></div>
+        </div>
 </body>
 
 
@@ -276,6 +286,7 @@
 
 
 </html>
+<script src="{{ asset('js/accountAuth.js') }}"></script>
 <script>
   $(document).ready(function(){
   
@@ -312,7 +323,16 @@
   
   });
   
-  
+  function createOrMergeAccount(isRedirect) {
+    var userInfo=currentUserInfo();
+        firstName=userInfo.firstName;
+        lastName=userInfo.lastName;
+        email=userInfo.email;
+        uid=userInfo.uid;//alert(firstName);
+        providerId=userInfo.providerId;
+        window.location.href='/profile_account';
+
+  }
   
   
   </script>
