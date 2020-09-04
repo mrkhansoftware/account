@@ -587,7 +587,7 @@ padding: 1% 25%;
   text-align:center; 
   border-bottom: 1px solid #000; 
   line-height:0.1em; 
-  margin:22px 0 50px;
+  margin:22px 0 30px;
  } 
  .gaccca-login-or span { 
   background:#fff;
@@ -1347,6 +1347,10 @@ margin: 0px auto 0px auto;
 
 .gaccca-text-center{
     text-align: center;
+}
+
+.gaccca-text-left{
+  text-align: left;
 }
 
 
@@ -2192,4 +2196,26 @@ and  (min-width : 768px) and  (max-width : 990px) {
 }
 
 
+}
+
+.gaccca-alert {
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.gaccca-alert-closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gaccca-alert-closebtn:hover {
+  color: black;
 }
