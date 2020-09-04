@@ -1,4 +1,4 @@
-@include('common.header',['some' => 'data'])
+@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
   {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'my-profile']) !!}
 
