@@ -23,12 +23,17 @@ const signupForm=document.querySelector('#signup-form');
 if(signupForm!=null){
 signupForm.addEventListener('submit', (e)=>{
     e.preventDefault();
-    document.getElementById('loader').style.display='block';
     const email=signupForm['signup-email'].value;
     const password=signupForm['signup-password'].value;
     const firstName=signupForm['signup-firstname'].value;
     const lastName=signupForm['signup-lastname'].value;
-     signUpForm(email, password, firstName, lastName, false);
+    if(email != '' && password !='' && firstName != '' && lastName !=''){
+        document.getElementById('loader').style.display='block';
+    }else{
+        return false
+    }
+    
+    signUpForm(email, password, firstName, lastName, false);
 });
 }
     
@@ -56,10 +61,51 @@ signupForm.addEventListener('submit', (e)=>{
     if(loginForm!=null){
     loginForm.addEventListener('click', (e)=>{ 
     e.preventDefault();
-    document.getElementById('loader').style.display='block';
     const email=loginFormData['login-email'].value;
     const password=loginFormData['login-password'].value;
-   // alert(email+'-'+password);
+
+
+    if(email == '' && password == ''){
+        
+        $("#login-email").addClass("gaccca-input-error");
+        $("#login-password").addClass("gaccca-input-error");
+        $("#login-email-error-msg").text('Email is required.');
+        $("#login-password-error-msg").text('Password is required.');
+        return false;
+    }else if(email != '' && password == ''){
+        var isTrue = ValidateEmail(email);
+        if(isTrue){
+            $("#login-email-error-msg").text('');
+            $("#login-email").removeClass("gaccca-input-error");
+        }else{
+            $("#login-email-error-msg").text('Invalid email address');
+            $("#login-email").addClass("gaccca-input-error");
+        }
+        $("#login-password-error-msg").text('Password is required.');
+        $("#login-password").addClass("gaccca-input-error");
+        return false;
+    }else if(email == '' && password != ''){
+        $("#login-email-error-msg").text('Email is required.');
+        $("#login-email").addClass("gaccca-input-error");
+        $("#login-password-error-msg").text('');
+        $("#login-password").removeClass("gaccca-input-error");
+
+        return false;
+    }else{
+        $("#login-email-error-msg").text('');
+        $("#login-password-error-msg").text('');
+        $("#login-email").removeClass("gaccca-input-error");
+        $("#login-password").removeClass("gaccca-input-error");
+        document.getElementById('loader').style.display='block';
+
+    }
+
+    // if(password == ''){
+    //     alert('The value is required.')
+    // }
+  
+  
+    // alert(email+'-'+password);
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(result) {
     createOrMergeAccount(true);
     
@@ -232,3 +278,12 @@ function makeid(length) {
    return result;
 }
 
+function ValidateEmail(mail) 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+  {
+    return (true)
+  }
+   // alert("You have entered an invalid email address!")
+    return (false)
+}
