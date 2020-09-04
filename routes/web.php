@@ -32,6 +32,52 @@ Route::resource('FinalizeApplicationAccount', 'FinalizeApplicationAccountControl
 Route::get('/finalize_application_account', 'FinalizeApplicationAccountController@index');
 
 
+Route::resource('J1ReviewApplicationAccount', 'J1ReviewApplicationAccountController');
+Route::get('/j1_review_your_application_account', 'J1ReviewApplicationAccountController@index');
+
+Route::resource('ParticipantHandbookAccount', 'ParticipantHandbookAccountController');
+Route::get('/participant_handbook_account', 'ParticipantHandbookAccountController@index');
+
+
+
+Route::resource('ScheduleCallJvisa', 'ScheduleCallJvisaController');
+Route::get('/ScheduleCallJvisa', 'ScheduleCallJvisaController@index');
+
+
+
+Route::resource('AdditionalDocumentJ1', 'AdditionalDocumentJ1Controller');
+Route::get('/AdditionalDocumentJ1', 'AdditionalDocumentJ1Controller@index');
+
+
+
+Route::resource('ExtensionRequestAccount', 'ExtensionRequestAccountController');
+Route::get('/extension_request_account', 'ExtensionRequestAccountController@index');
+
+
+Route::resource('TravelValidationAccount', 'TravelValidationAccountController');
+Route::get('/travel_validation_account', 'TravelValidationAccountController@index');
+
+
+Route::resource('ValidationCheckinAccount', 'ValidationCheckinAccountController');
+Route::get('/validation_checkin_account', 'ValidationCheckinAccountController@index');
+
+
+Route::resource('MonthlyCheckin', 'MonthlyCheckinController');
+Route::get('/monthly_Checkin', 'MonthlyCheckinController@index');
+
+
+Route::resource('MidpointEvaluationAccount', 'MidpointEvaluationAccountController');
+Route::get('/midpoint_evaluation_account', 'MidpointEvaluationAccountController@index');
+
+
+Route::resource('FinalEvaluationAccount', 'FinalEvaluationAccountController');
+Route::get('/final_evaluation_account', 'FinalEvaluationAccountController@index');
+
+
+
+
+
+
 
 
 
