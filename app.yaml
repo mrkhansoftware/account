@@ -7,7 +7,7 @@ env_variables:
   VIEW_COMPILED_PATH: /tmp
   SESSION_DRIVER: cookie
 
-  handlers:
+handlers:
 - url: /(.*\.(gif|png|jpg|css|js|woff2))$
   static_files: public/\1
   upload: public/.*\.(gif|png|jpg|css|js|woff2)$
