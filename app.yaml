@@ -6,3 +6,13 @@ env_variables:
   APP_STORAGE: /tmp
   VIEW_COMPILED_PATH: /tmp
   SESSION_DRIVER: cookie
+
+  handlers:
+- url: /(.*\.(gif|png|jpg|css|js|woff2))$
+  static_files: public/\1
+  upload: public/.*\.(gif|png|jpg|css|js|woff2)$
+
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
