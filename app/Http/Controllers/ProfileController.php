@@ -14,10 +14,9 @@ class ProfileController extends Controller
     public function index()
     {
 
-         $datas='App\Services\Helper'::getRequest('ApiProfileAccountController');
+         $datas='App\Services\Helper'::getRequest('ApiProfileAccountController/'.session()->get('conId'));
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        session()->put('ConId', $datas['con']['Id']);
          return view('profile/profile')->with(compact('datas'));
         
     }
@@ -43,11 +42,10 @@ class ProfileController extends Controller
         $finalReq = $request->all();
         echo "<pre>";
         unset($finalReq['_token']);
-        $finalReq['con']['id']=session()->get('ConId');
+        $finalReq['con']['id']=session()->get('conId');
         $body['conData']=json_encode($finalReq['con']);
         $body['dob']=json_encode($finalReq['dob']);
 
-        print_r($finalReq);
         'App\Services\Helper'::postRequest($body,'ApiProfileAccountController');
 
        

@@ -15,11 +15,14 @@ class ParticipantInformationAccountController extends Controller
     
     public function index()
     {
-        $datas='App\Services\Helper'::getRequest('APIParticipantInformationAccountClass');
+
+        $datas='App\Services\Helper'::getRequest('APIParticipantInformationAccountClass/'.session()->get('conId'));
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
         session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+        if(isset($datas['Appli']['Id'])){
         session()->put('applicantId', $datas['Appli']['Id']);
+        }
         session()->put('Contact__c', $datas['Appli']['Contact__c']);
         session()->put('Google_Drive_Folder__c', isset($datas['Appli']['Google_Drive_Folder__c'])?$datas['Appli']['Google_Drive_Folder__c']:'');
         return view('j1-visa/participant_information_account')->with(compact('datas'));

@@ -20,20 +20,19 @@ class LoginController extends Controller
       // print_r($value['Appli']);
        // die;   
        
+       
         return view('login');
     }
 
     public function ajaxAfterLogin(Request $request)
     {
-        
-      //  $value='App\Services\Helper'::getRequest();
-      //  $new_value  = json_decode() ;
-      //  echo "<pre>"; 
-
-      // print_r($value['Appli']);
-       // die;   
+    $response='App\Services\Helper'::postRequest($request->all(),'ApiLoginAccountController');
+       $response=json_decode($response,1);
+     
+       $response=json_decode($response,1);
+       session()->put('conId', $response['conId']);
+     return json_encode($response['exStatus']);
        
-        return $request->all();
-    }
+  }
 
 }
