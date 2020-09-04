@@ -68,14 +68,18 @@
               </div>
              
               <div class="gaccca-login-or"><span>Or</span></div>
+              <div class="gaccca-alert">
+  <span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Danger!</strong> Indicates a dangerous or negative action.
+</div>
               
-    
-              <form id='login-form-data'>
-                      
+              <form id='login-form-data' >
+              
                         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
                                     <input type="email" id="login-email" placeholder="Email" required="" class="gaccca-input" />  
+                                    <span class=" gaccca-text-left gaccca-error-message" id="login-email-error-msg"></span>
                                 </div>
                             </div>
                         </div>
@@ -86,6 +90,8 @@
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
                                     <input type="Password" id="login-password" placeholder="Password" required="" class="gaccca-input" />  
+                                    <span class=" gaccca-text-left gaccca-error-message" id="login-password-error-msg"></span>
+
                                 </div>
                             </div>
                         </div>
@@ -132,7 +138,7 @@
                     <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Sign Up</span>
                     
                     
-                    <form id='signup-form'>
+                    <form id='signup-form' data-parsley-validate=''>
                         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
@@ -197,9 +203,6 @@
                 </div>
                 
                 
-                
-                
-                
                 <div class="gaccca-forgot-password-containt" id="forgot-password-containt">
                     <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Forgot Password? </span>
                     
@@ -217,7 +220,7 @@
                     
                     
                     
-                    <form id='forget-form-data'>
+                    <form id='forget-form-data' data-parsley-validate=''>
                         
                         
                         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
@@ -228,18 +231,18 @@
                             </div>
                         </div>
                         
-                    </form>     
+                    
                     
                     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element ">
                         
                         <div class="gaccca-social-element">
                             <div class="gaccca-form-element__control">
                                 
-                                <button class="gaccca-button-save-green gaccca-margin-top-20" id='resetPassBtn'>Reset my password</button>
+                                <button class="gaccca-button-save-green gaccca-margin-top-20"  >Reset my password</button>
                             </div>
                         </div>
                     </div>
-                    
+                    </form>     
                     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                         
                         <div class="gaccca-form-element gaccca-margin-top-20">
