@@ -38,7 +38,7 @@ signupForm.addEventListener('submit', (e)=>{
 }
     
     function signUpForm(email, password, firstName, lastName, isRedirect){// alert(isRedirect);
-        firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result) {
     console.log(result);
     updateProfile(firstName,lastName, isRedirect);
     signupForm.reset();
@@ -49,6 +49,18 @@ signupForm.addEventListener('submit', (e)=>{
     var errorMessage = error.message;
     console.log('errorCode:'+errorCode);
     alert('errorMessage:'+errorMessage);
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  
+    if(errorCode=='auth/email-already-in-use'){
+        document.getElementById('signUpMsg').style.display='block';
+        document.getElementById('errorMessageSignUp').innerHTML='User with this email already exist.';
+    }else if(errorCode=='auth/weak-password'){
+        document.getElementById('signUpMsg').style.display='block';
+        document.getElementById('errorMessageSignUp').innerHTML='Password should be at least 6 characters.';
+    }
+
+
     // ...
 });
 } 
@@ -114,8 +126,15 @@ signupForm.addEventListener('submit', (e)=>{
     document.getElementById('loader').style.display='none';
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log('errorCode:'+errorCode);
-    alert('errorMessage:'+errorMessage);
+  
+    if(errorCode=='auth/user-not-found'){
+        document.getElementById('loginMsg').style.display='block';
+        document.getElementById('errorMessagelogin').innerHTML='user not found';
+    }
+    else if(errorCode=='auth/wrong-password'){
+        document.getElementById('loginMsg').style.display='block';
+        document.getElementById('errorMessagelogin').innerHTML='Password is incorrect';
+    }
     // ...
 });
     
@@ -193,11 +212,15 @@ signupForm.addEventListener('submit', (e)=>{
     function updateProfile(firstName,lastName, isRedirect){
     firebase.auth().currentUser.updateProfile({
     displayName:firstName+' '+lastName
-}).then(function() {
+}).then(function() { 
     createOrMergeAccount(isRedirect);
     if(!isRedirect){
     firebase.auth().signOut();
-    alert('account created')
+    document.getElementById('loader').style.display='none';
+    document.getElementById('signUpMsgSuccess').style.display='block';
+    document.getElementById('loginMsg').style.display='none';
+    document.getElementById('successMessageSignup').innerHTML='Verification link sent on registred email.';
+   // alert('account created')
     }
     
 }).catch(function(error) {
@@ -223,14 +246,22 @@ resetPassBtn.addEventListener('click', (e)=>{
   firebase.auth().sendPasswordResetEmail(email, actionCodeSettings)
 .then(function() {
     // Password reset email sent.
-   alert('Password reset email sent');
+  
     document.getElementById('loader').style.display='none';
+    document.getElementById('resetMsgSuccess').style.display='block';
+    document.getElementById('successMessageReset').innerHTML='Reset password email sent';
    forgetFormData.rest();
 })
 .catch(function(error) {
     // Error occurred. Inspect error.code.
     document.getElementById('loader').style.display='none';
-    console.log(error);
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  
+    if(errorCode=='auth/user-not-found'){
+        document.getElementById('resetMsg').style.display='block';
+        document.getElementById('errorMessageReset').innerHTML='user not found';
+    }
 });
 
 });
