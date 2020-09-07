@@ -22,6 +22,12 @@ class LoginController extends Controller
         return view('login')->with(compact('response'));
     }
 
+    public function resetPassword()
+    { 
+       $oobCode=$_GET['oobCode'];
+        return view('profile/resetPassword')->with(compact('oobCode'));;
+    }
+
     public function ajaxAfterLogin(Request $request)
     {
       $finalReq = $request->all();

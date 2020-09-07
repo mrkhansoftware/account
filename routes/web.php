@@ -89,6 +89,7 @@ Route::get('/user', 'UserController@index');
 Route::get('/login_account', 'LoginController@index');
 Route::post('/ajax_after_login', 'LoginController@ajaxAfterLogin');
 
+Route::get('/resetPassword', 'LoginController@resetPassword');
 
 
 Route::get('/profile_account', 'ProfileController@index');

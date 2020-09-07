@@ -271,11 +271,11 @@ const resetPassBtnSet=document.querySelector('#resetPassBtnSet');
 if(resetPassBtnSet!=null){
 resetPassBtnSet.addEventListener('click', (e)=>{ 
     e.preventDefault();
-    document.getElementById('loader').style.display='block';
-    var code=codeGlobal;
+   var code=codeGlobal;
     var newPassword=document.getElementById('password').value.trim();
     var confirmPassword=document.getElementById('confirmPassword').value.trim();
     if(newPassword.length<6){
+        
     alert('Password should be minimum 6 character long');
     return;
     }    
@@ -283,6 +283,8 @@ resetPassBtnSet.addEventListener('click', (e)=>{
     alert('Confirm Password is not same');
     return;
     }    
+    document.getElementById('loader').style.display='block';
+  
    firebase.auth().confirmPasswordReset(code, newPassword)
     .then(function() {
       alert('Password reset successfully');
