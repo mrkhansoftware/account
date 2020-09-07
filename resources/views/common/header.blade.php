@@ -23,7 +23,22 @@
 </head>
 
 <body>
-
+ <!--Start---Success notification-------->
+ <div class="gaccca-notify_alert gaccca-theme_success" id="success-alert" style='display:none'>
+        <span class="gaccca-notify__close" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Success!</strong> <span id='message-success'></span>
+    </div>
+    <!--End-----Success notification-------->
+    
+    <!--Start---Error notification-------->
+    <div class="gaccca-notify_alert gaccca-theme_error" id="error-alert" style='display:none'>
+        <span class="gaccca-notify__close" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Alert!</strong> <span id='message-error'></span>
+    </div>
+    <!--End-----Success notification-------->
+    <div class="gaccca-loader-div" id='loader' style='display:none'>
+<div class="gaccca-loader"></div>
+</div>
 <div class="gaccca-header">
         <div class="gaccca-content-header">
             <div class="gaccca-grid gaccca-wrap">

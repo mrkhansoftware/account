@@ -68,16 +68,21 @@
 </div>
 
 <div class="gaccca-login-or"><span>Or</span></div>
-<div class="gaccca-alert">
+<div class="gaccca-alert"  id='loginMsg'>
 <span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-<strong>Danger!</strong> Indicates a dangerous or negative action.
+<strong>Error!</strong> <span id='errorMessagelogin'></span>
 </div>
-
+@if ($response==='Verified')
+<div class="gaccca-alert-success" style='display:block'>
+<span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+<strong>Success! </strong> <spaN>Your Account is verified. Please login now.</span>
+</div>
+@endif
 <form id='login-form-data' >
 
 <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
 <div class="gaccca-social-element">
-<div class="gaccca-form-element__control">
+<div class="gaccca-form-element__control"> 
     <input type="email" id="login-email" placeholder="Email" required="" class="gaccca-input" />  
     <span class=" gaccca-text-left gaccca-error-message" id="login-email-error-msg"></span>
 </div>
@@ -135,6 +140,14 @@
 
 
 <div class="gaccca-signup-containt" id="signup-containt">
+<div class="gaccca-alert" id='signUpMsg'>
+<span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+<strong>Error!</strong> <span id='errorMessageSignUp'></span>
+</div>
+<div class="gaccca-alert-success" id='signUpMsgSuccess'>
+<span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+<strong>Success! </strong> <span id='successMessageSignup'></span>
+</div>
 <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Sign Up</span>
 
 
@@ -204,6 +217,16 @@
 
 
 <div class="gaccca-forgot-password-containt" id="forgot-password-containt">
+<div class="gaccca-alert" id='resetMsg'>
+<span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+<strong>Error! </strong> <span id='errorMessageReset'></span>
+</div>
+
+<div class="gaccca-alert-success" id='resetMsgSuccess'>
+<span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+<strong>Success! </strong> <span id='successMessageReset'></span>
+</div>
+
 <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element" >Forgot Password? </span>
 
 
@@ -238,7 +261,7 @@
 <div class="gaccca-social-element">
 <div class="gaccca-form-element__control">
 
-<button class="gaccca-button-save-green gaccca-margin-top-20"  >Reset my password</button>
+<button class="gaccca-button-save-green gaccca-margin-top-20" id='resetPassBtn' >Reset my password</button>
 </div>
 </div>
 </div>
@@ -345,8 +368,16 @@ url: 'ajax_after_login',
 data: formData,
 dataType: 'json',
 success: function (data) {
-
-if(data=='No'){ 
+  
+    if(data.canAccessAccount=='No'){
+        document.getElementById('loginMsg').style.display='block';
+        document.getElementById('errorMessagelogin').innerHTML='Your account is not verified contact administrator';
+        document.getElementById('loader').style.display='none';
+        firebase.auth().signOut();
+        return;
+    }
+if(data.exStatus=='No'){ 
+    
 var firstName= userInfo.firstName!=undefined?userInfo.firstName:userInfo.email;
 var lastName= userInfo.lastName!=undefined?userInfo.lastName:userInfo.email;
 var email=userInfo.email;

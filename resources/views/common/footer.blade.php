@@ -103,7 +103,26 @@ $('.gaccca-input-date').datepicker({
       }, 1000);
     };
   });
-
+  function onUpdate(msg){  
+        jQuery('#message-success').html(msg);
+        jQuery('#success-alert').fadeIn();
+        setTimeout(function(){
+            
+            jQuery('#success-alert').fadeOut("slow");
+            
+        }, 5000);
+    }
+    
+    function onError(msg){  
+        jQuery('#message-error').html(msg);
+        jQuery('#error-alert').fadeIn();
+        setTimeout(function(){
+            
+            jQuery('#error-alert').fadeOut("slow");
+            
+        }, 5000);
+    }
+    
 </script>
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
 </html>
