@@ -11,27 +11,28 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
-      //  $value='App\Services\Helper'::getRequest();
-      //  $new_value  = json_decode() ;
-      //  echo "<pre>"; 
-
-      // print_r($value['Appli']);
-       // die;   
+    { $response='-';
+      if(isset($_GET['v'])){
+      $val['email']=$_GET['email'];;
+      $val['verifyAccountKey']=$_GET['v'];
+      $response='App\Services\Helper'::postRequest($val,'ApiLoginAccountController');
+      $response=json_decode($response,1);
+      }
        
-       
-        return view('login');
+        return view('login')->with(compact('response'));
     }
 
     public function ajaxAfterLogin(Request $request)
     {
-    $response='App\Services\Helper'::postRequest($request->all(),'ApiLoginAccountController');
+      $finalReq = $request->all();
+      $finalReq['verifyAccountKey']='No';
+      $response='App\Services\Helper'::postRequest($finalReq,'ApiLoginAccountController');
        $response=json_decode($response,1);
      
        $response=json_decode($response,1);
        session()->put('conId', $response['conId']);
-     return json_encode($response['exStatus']);
+       unset($response['conId']);
+     return json_encode($response);
        
   }
 
