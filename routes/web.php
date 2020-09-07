@@ -102,5 +102,8 @@ Route::resource('changePassword', 'ChangePasswordController');
 Route::get('/close_account', 'CloseAccountController@index');
 Route::resource('closeAccount', 'CloseAccountController');
 
+Route::get('/logout_account', 'LogoutController@index');
+Route::resource('LogoutAccount', 'LogoutController');
+
 
 
