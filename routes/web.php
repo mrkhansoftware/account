@@ -74,6 +74,20 @@ Route::resource('FinalEvaluationAccount', 'FinalEvaluationAccountController');
 Route::get('/final_evaluation_account', 'FinalEvaluationAccountController@index');
 
 
+Route::resource('HostCompanyAgrmentAccController', 'HostCompanyAgrmentAccController');
+Route::get('/host_company_agreement_account', 'HostCompanyAgrmentAccController@index');
+
+Route::resource('DS7002TrainigsplanController', 'DS7002TrainigsplanController');
+Route::get('/DS_7002_Trainigsplan', 'DS7002TrainigsplanController@index');
+
+
+Route::resource('HCMidPointEvaluationController', 'HCMidPointEvaluationController');
+Route::get('/HostCompany_Mid_Point_Evaluation_Account', 'HCMidPointEvaluationController@index');
+
+Route::resource('FinalEvaluationHostComController', 'FinalEvaluationHostComController');
+Route::get('/final_evaluation_hc_account', 'FinalEvaluationHostComController@index');
+
+
 
 
 

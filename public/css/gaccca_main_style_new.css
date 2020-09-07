@@ -1246,7 +1246,7 @@ margin: 0px auto 0px auto;
     float: right;
     width: 16px;
     height: 16px;
-    background: url("/resource/1589968544000/fontawesomeZip/assets/images/star/star.png") 0 -16px;
+    background: url("http://localhost:8000/images/star.png") 0 -16px;
     margin-left: 5px;
 }
   
