@@ -36,7 +36,9 @@ class LoginController extends Controller
        $response=json_decode($response,1);
      
        $response=json_decode($response,1);
+       if( $response['canAccessAccount']=='Yes'){
        session()->put('conId', $response['conId']);
+       }
        unset($response['conId']);
      return json_encode($response);
        

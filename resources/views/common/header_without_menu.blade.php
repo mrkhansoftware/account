@@ -15,8 +15,58 @@
   <script src="{{ asset('js/jquery-ui.js') }}"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script>
+ function onUpdate(msg){  
+        jQuery('#message-success').html(msg);
+        jQuery('#success-alert').fadeIn();
+        setTimeout(function(){
+            
+            jQuery('#success-alert').fadeOut("slow");
+            
+        }, 5000);
+    }
+    
+    function onError(msg){  
+        jQuery('#message-error').html(msg);
+        jQuery('#error-alert').fadeIn();
+        setTimeout(function(){
+            
+            jQuery('#error-alert').fadeOut("slow");
+            
+        }, 5000);
+    }
+
+    </script>
 </head>
     <body>
+    @if (isset($_GET['isSave']) && $_GET['isSave']==='1')
+<div class="gaccca-notify_alert gaccca-theme_success" id="success-alert" >
+        <span class="gaccca-notify__close" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Success!</strong> <span id='message-success'>Information has been saved</span>
+    </div>
+    @endif
+    @if (isset($_GET['isSent']) &&  $_GET['isSent']==='1')
+<div class="gaccca-notify_alert gaccca-theme_success" id="success-alert" >
+        <span class="gaccca-notify__close" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Success!</strong> <span id='message-success'>Information has been sent</span>
+    </div>
+    @endif
+       <!--Start---Success notification-------->
+ <div class="gaccca-notify_alert gaccca-theme_success" id="success-alert" style='display:none'>
+        <span class="gaccca-notify__close" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Success!</strong> <span id='message-success'></span>
+    </div>
+    <!--End-----Success notification-------->
+    
+    <!--Start---Error notification-------->
+    <div class="gaccca-notify_alert gaccca-theme_error" id="error-alert" style='display:none'>
+        <span class="gaccca-notify__close" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Alert!</strong> <span id='message-error'></span>
+    </div>
+    <!--End-----Success notification-------->
+    <div class="gaccca-loader-div" id='loader' style='display:none'>
+<div class="gaccca-loader"></div>
+</div>
     <div class="gaccca-header">
       <div class="gaccca-content-header">
         <div class="gaccca-grid gaccca-wrap">

@@ -276,18 +276,18 @@ resetPassBtnSet.addEventListener('click', (e)=>{
     var confirmPassword=document.getElementById('confirmPassword').value.trim();
     if(newPassword.length<6){
         
-    alert('Password should be minimum 6 character long');
+        onError('Password should be minimum 6 character long');
     return;
     }    
     if(newPassword!=confirmPassword){
-    alert('Confirm Password is not same');
+        onError('Confirm Password is not same');
     return;
     }    
     document.getElementById('loader').style.display='block';
   
    firebase.auth().confirmPasswordReset(code, newPassword)
     .then(function() {
-      alert('Password reset successfully');
+        onUpdate('Password reset successfully');
     window.location.href='/login_account';
     })
     .catch(function(error) {
@@ -295,7 +295,9 @@ resetPassBtnSet.addEventListener('click', (e)=>{
      var errorCode = error.code;
     var errorMessage = error.message;
     console.log('errorCode:'+errorCode);
-    alert('errorMessage:'+errorMessage);
+    if(errorCode=='auth/invalid-action-code'){
+    onError('Link has been expired.');
+    }
     })
 
 });

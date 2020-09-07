@@ -197,6 +197,14 @@ $folderId='0BxitLWnQbm-5flVnbWNCa1NIZzdERFo0YzV2VmVnREJfd1Y0RzRkOG0xNlFXUm5oeUE5
 return $folderId;
 }
 
+public static function sessionConId(){
+   return session()->get('conId');
+   }
+
+   public static function returnUrl(){
+      return redirect()->action('LoginController@index');
+      }
+
 
 
 

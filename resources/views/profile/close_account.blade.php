@@ -1,4 +1,5 @@
-@include('common.header')
+@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
@@ -36,7 +37,7 @@
               Close my account <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                 <div class="gaccca-checkbox">
-                  <input type="checkbox" name="term_condition" id="yes" value="yes"  />
+                  <input type="checkbox" name="term_condition" id="yes" value="yes" required='true' />
                   <label class="gaccca-checkbox__label" for="yes">
                     <span class="gaccca-checkbox_faux"></span>
                     <span class="gaccca-form-element__label">Yes</span>

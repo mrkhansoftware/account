@@ -15,8 +15,12 @@ class ParticipantInformationAccountController extends Controller
     
     public function index()
     {
+      $idCon= 'App\Services\Helper'::sessionConId();
+      if($idCon==''){
+         return 'App\Services\Helper'::returnUrl();
+      }
 
-        $datas='App\Services\Helper'::getRequest('APIParticipantInformationAccountClass/'.session()->get('conId'));
+        $datas='App\Services\Helper'::getRequest('APIParticipantInformationAccountClass/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
         session()->put('lastNameFirstName', $datas['lastNameFirstName']);
@@ -110,10 +114,7 @@ class ParticipantInformationAccountController extends Controller
 
 
        'App\Services\Helper'::postRequest($body,'APIParticipantInformationAccountClass');
-die;
-     // return view('j1-visa/participant_information_account');
-
-       
+       return redirect()->action('HostCompanyInformationAccountController@index', ['isSave' => 1]);
     }
 
     /**

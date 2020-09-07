@@ -13,10 +13,13 @@ class ProfileController extends Controller
      */
     public function index()
     {
-
-         $datas='App\Services\Helper'::getRequest('ApiProfileAccountController/'.session()->get('conId'));
-        $datas = json_decode($datas, true);
-        $datas = json_decode($datas, true);
+         $idCon= 'App\Services\Helper'::sessionConId();
+         if($idCon==''){
+            return 'App\Services\Helper'::returnUrl();
+         }
+         $datas='App\Services\Helper'::getRequest('ApiProfileAccountController/'.$idCon);
+         $datas = json_decode($datas, true);
+         $datas = json_decode($datas, true);
          return view('profile/profile')->with(compact('datas'));
         
     }
@@ -40,14 +43,13 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         $finalReq = $request->all();
-        echo "<pre>";
         unset($finalReq['_token']);
         $finalReq['con']['id']=session()->get('conId');
         $body['conData']=json_encode($finalReq['con']);
         $body['dob']=json_encode($finalReq['dob']);
 
         'App\Services\Helper'::postRequest($body,'ApiProfileAccountController');
-
+        return redirect()->action('ProfileController@index', ['isSave' => 1]);
        
         //
     }

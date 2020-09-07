@@ -13,7 +13,7 @@ class CloseAccountController extends Controller
      */
     public function index()
     {
-        //
+        return view('profile/close_account');
     }
 
     /**
