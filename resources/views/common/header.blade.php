@@ -163,7 +163,7 @@
                                     <a href="/travel_validation_account">Travel Validation</a>
                                     <a href="/validation_checkin_account">Validation &amp; Check-In</a>
                                     
-                                    <a href="/monthly_checkin">Monthly Check-In</a>
+                                    <a href="/monthly_Checkin">Monthly Check-In</a>
                                     <a href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
                                     <a href="/final_evaluation_account">Final Evaluation</a>
                                     

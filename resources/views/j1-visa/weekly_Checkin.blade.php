@@ -51,7 +51,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please provide the new address <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+        <textarea name="onfrm[Current_U_S_Address__c]"  placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Current_U_S_Address__c'])?$datas['onfrm']['Current_U_S_Address__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -93,7 +93,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-4">
       If no, please provide the new phone number <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onfrm[Phone_Number__c]"  value="{{isset($datas['onfrm']['Phone_Number__c'])?$datas['onfrm']['Phone_Number__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
       
         <span class="gaccca-input-help-text"></span>
       </div>
@@ -138,7 +138,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please specify <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+        <textarea name="onfrm[Training_Plan__c]"  placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Training_Plan__c'])?$datas['onfrm']['Training_Plan__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -184,7 +184,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please provide Name, Email Address and phone number <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+        <textarea name="onfrm[Supervisor_Details__c]" placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Supervisor_Details__c'])?$datas['onfrm']['Supervisor_Details__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -227,7 +227,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please specify <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+        <textarea name="onfrm[working_between_32_40_h_w_Explain__c]"   placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['onfrm']['working_between_32_40_h_w_Explain__c'])?$datas['onfrm']['working_between_32_40_h_w_Explain__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -271,7 +271,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If Yes, “where are you currently interning” and “when do you anticipate returning to your host company location?” <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+        <textarea name="onfrm[Program_location_changed_detail__c]"  placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Program_location_changed_detail__c'])?$datas['onfrm']['Program_location_changed_detail__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -348,7 +348,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If yes, please specify: i.e. issues with your host company, issues with cultural adjustment <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+        <textarea name="onfrm[Yes_Discuss__c]"  value=""  placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Yes_Discuss__c'])?$datas['onfrm']['Yes_Discuss__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -357,12 +357,6 @@
 
 
       
-
-    
-     
-
-       
-
       <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
 
 
