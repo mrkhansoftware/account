@@ -55,8 +55,8 @@ class HostCompanyInformationAccountController extends Controller
         $finalReq['applicantData']=json_encode($finalReq['applicant']);
         unset($finalReq['_token']);
         unset($finalReq['applicant']);
-        
-       echo 'App\Services\Helper'::postRequest($finalReq,'ApiHostCompanyInformationController');
+       // echo '<pre>';print_r($finalReq);
+        'App\Services\Helper'::postRequest($finalReq,'ApiHostCompanyInformationController');
        return redirect()->action('ParticipantAgreementAccountController@index', ['isSave' => 1]);
 }
 

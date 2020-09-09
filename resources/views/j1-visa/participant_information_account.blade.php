@@ -74,11 +74,11 @@
                 <span class="gaccca-padding-right-25">No</span>
               </label>
              
-    {!! Form::radio('applicant[Do_you_have_dual_citizenship__c]', 'Yes',isset($datas['Appli']['Do_you_have_dual_citizenship__c'])?($datas['Appli']['Do_you_have_dual_citizenship__c']=='yes'?true:false):false,array('id'=>'radio-citizenship-yes' ,'required' => 'required')); !!}
+    {!! Form::radio('applicant[Do_you_have_dual_citizenship__c]', 'Yes',isset($datas['Appli']['Do_you_have_dual_citizenship__c'])?($datas['Appli']['Do_you_have_dual_citizenship__c']=='Yes'?true:false):false,array('id'=>'radio-citizenship-yes' ,'required' => 'required')); !!}
 
               <label class="gaccca-radio__label" for="radio-citizenship-yes">
                 <span class="gaccca-radio_faux"></span>
-                <span class="gaccca-padding-right-25">Yes </span>
+                <span class="gaccca-padding-right-25">Yes  </span>
               </label>
             </span>
 

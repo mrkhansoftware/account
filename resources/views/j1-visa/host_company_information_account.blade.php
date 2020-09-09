@@ -82,7 +82,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-e-address">
                     Host Company Address <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <textarea name="applicant['Address__c]"   placeholder="Host Company Address" required="" class="gaccca-textarea">{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
+                  <textarea name="applicant[Address__c]"   placeholder="Host Company Address" required="" class="gaccca-textarea">{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
                   
                 </div>
               </div>
@@ -143,7 +143,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-ccea">
                     Company Contact email address   <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="email" name="applicant[Do_you_have_dual_citizenship__c]"  value="{{isset($datas['Appli']['Email_Address__c'])?$datas['Appli']['Email_Address__c']:''}}" id="text-input-id-ccea" placeholder="Company Contact email address " required="" class="gaccca-input" />
+                  <input type="email" name="applicant[Email_Address__c]"  value="{{isset($datas['Appli']['Email_Address__c'])?$datas['Appli']['Email_Address__c']:''}}" id="text-input-id-ccea" placeholder="Company Contact email address " required="" class="gaccca-input" />
                   
                 </div>
   
