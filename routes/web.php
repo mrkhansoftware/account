@@ -65,6 +65,9 @@ Route::get('/validation_checkin_account', 'ValidationCheckinAccountController@in
 Route::resource('MonthlyCheckin', 'MonthlyCheckinController');
 Route::get('/monthly_Checkin', 'MonthlyCheckinController@index');
 
+Route::resource('WeeklyCheckin', 'WeeklyCheckinController');
+Route::get('/weekly_Checkin', 'WeeklyCheckinController@index');
+
 
 Route::resource('MidpointEvaluationAccount', 'MidpointEvaluationAccountController');
 Route::get('/midpoint_evaluation_account', 'MidpointEvaluationAccountController@index');

@@ -5,14 +5,12 @@
 
 
 <div class="gaccca-main-containt">
-    <h1 class="gaccca-h1-padding">Monthly Check-In</h1>
+    <h1 class="gaccca-h1-padding">Weekly Check-In</h1>
 
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
-      <p>Thank you for your mandatory monthly Check-in. The next monthly Check-in will be on 01/05/2020. We will send
-        you a reminder.</p>
-      <p>Monthly check-ins with your sponsor, GACC California, are required by the U.S. Department of State, thus being
-        a mandatory component of the J-1 program.</p>
-      <p>Missing mandatory monthly check-ins can lead to termination of your J-1 program.</p>
+      <p>Due to the current circumstances and constantly changing situation regarding COVID-19, we ask that you complete a check-in once per week so we can stay up to date with all program information.</p>
+      <p>Missing mandatory weekly check-ins can lead to termination of your J-1 program.</p>
+      <p>This form will provide you with an easy way to update us on any changes to your internship/training.</p>
     </div>
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
@@ -237,6 +235,50 @@
 
 
 
+<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+
+<div class="gaccca-form-element gaccca-form-element-margin">
+
+  <div class="gaccca-form-element__control">
+    <label class="gaccca-form-element__label" for="text-input-id-fn">
+    Has your program location changed? I.e. home office  <span
+        class="gaccca-text-required" title="required">*</span> </label>
+    <span class="gaccca-radio">
+      <input type="radio" id="radio-51" value="radio-51" name="participating" checked="" />
+      <label class="gaccca-radio__label" for="radio-51">
+        <span class="gaccca-radio_faux"></span>
+        <span class="gaccca-padding-right-25">Yes</span>
+      </label>
+
+      <input type="radio" id="radio-52" value="radio-52" name="participating" />
+      <label class="gaccca-radio__label" for="radio-52">
+        <span class="gaccca-radio_faux"></span>
+        <span class="gaccca-padding-right-25">No</span>
+      </label>
+    </span>
+
+  </div>
+
+</div>
+
+</div>
+
+
+
+<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  
+  <div class="gaccca-form-element gaccca-form-element-margin">
+    <label class="gaccca-form-element__label" for="text-input-id-8">
+    If Yes, “where are you currently interning” and “when do you anticipate returning to your host company location?” <span class="gaccca-text-required" title="required">*</span> </label>
+    <div class="gaccca-form-element__control">
+        <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+        <span class="gaccca-input-help-text"></span>
+    </div>
+  </div>
+</div>
+
+
+
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
@@ -314,87 +356,12 @@
 
 
 
-      <h2 class="gaccca-h2-padding">Share your cultural experience!</h2>
+      
 
-      <div class="gaccca-form-element gaccca-form-element-margin">
-        <p>Please share a photo of a cultural activity you have participated in during this past month.</p>
-        <p>Please note: Having cultural experience is a main part of any J-1 program!</p>
-        <p>A cultural activity could be anything that you’ve experienced in the US that allowed you to learn more and
-          understand American culture.This can include different sports activities or games, different places you have
-          seen, or events you have attended such as work gatherings, festivals, movie nights, surprising small things
-          etc. Additional photos are welcome.</p>
-      </div>
+    
+     
 
-
-
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
-        <div class="gaccca-form-element gaccca-form-element-margin">
-          <label class="gaccca-form-element__label" for="text-input-id-poi">
-            Photo <span class="gaccca-text-required" title="required">*</span> </label><br />
-          <div class="gaccca-form-element__control">
-            <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
-              <span class="gaccca-file-custom">Choose file...</span>
-
-            </label>
-          </div>
-          <span class="gaccca-input-help-text">Only JPG and PNG supported, max. picture size 5 MB</span>
-        </div>
-
-      </div>
-
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
-        <div class="gaccca-form-element gaccca-form-element-margin">
-          <label class="gaccca-form-element__label" for="text-input-id-poi">
-            Photo</label><br />
-          <div class="gaccca-form-element__control">
-            <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
-              <span class="gaccca-file-custom">Choose file...</span>
-
-            </label>
-          </div>
-          <span class="gaccca-input-help-text">Only JPG and PNG supported, max. picture size 5 MB</span>
-        </div>
-
-      </div>
-
-
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
-        <div class="gaccca-form-element gaccca-form-element-margin">
-          <label class="gaccca-form-element__label" for="text-input-id-poi">
-            Photo </label><br />
-          <div class="gaccca-form-element__control">
-            <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
-              <span class="gaccca-file-custom">Choose file...</span>
-
-            </label>
-          </div>
-          <span class="gaccca-input-help-text">Only JPG and PNG supported, max. picture size 5 MB</span>
-        </div>
-
-      </div>
-
-
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
-        <div class="gaccca-form-element gaccca-form-element-margin">
-          <label class="gaccca-form-element__label" for="text-input-id-2">
-            Description of your cultural experience and photo: <span class="gaccca-text-required"
-              title="required">*</span> </label>
-          <div class="gaccca-form-element__control">
-            <textarea required="" class="gaccca-textarea"></textarea>
-            <span class="gaccca-input-help-text">Please write at least 50 words </span>
-
-
-          </div>
-        </div>
-      </div>
-
+       
 
       <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
 
