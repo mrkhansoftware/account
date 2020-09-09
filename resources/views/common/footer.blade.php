@@ -3,31 +3,31 @@
 
 <script type="text/javascript">
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
 
-$('.gaccca-input-date').datepicker({
+jQuery('.gaccca-input-date').datepicker({
   dateFormat: "dd/mm/yy",
   changeMonth:true,
   changeYear:true,
   onClose: function () {
-        $(this).parsley().validate();
+        jQuery(this).parsley().validate();
     }
 });
 
 });
 
-  $("#openNav").bind('click', function () {
-    $("#mySidepanel").css('display', 'block');
+  jQuery("#openNav").bind('click', function () {
+    jQuery("#mySidepanel").css('display', 'block');
   });
 
-  $("#closeNav").bind('click', function () {
-    $("#mySidepanel").css('display', 'none');
+  jQuery("#closeNav").bind('click', function () {
+    jQuery("#mySidepanel").css('display', 'none');
   })
 
-  $(document).ready(function () {
-    $(window).resize(function () {
-      if ($(window).width() >= 1093) {
-        $("#mySidepanel").css('display', 'none');
+  jQuery(document).ready(function () {
+    jQuery(window).resize(function () {
+      if (jQuery(window).width() >= 1093) {
+        jQuery("#mySidepanel").css('display', 'none');
       }
     });
   });
@@ -44,12 +44,12 @@ $('.gaccca-input-date').datepicker({
 
 <script type="text/javascript">
  
-  $(document).ready(function() {
+  jQuery(document).ready(function() {
       
-      $("#save-btn").on('click', function() {
-          $('#my-profile').parsley().validate();
-          alert($('#my-profile').parsley().validate());
-          if ($('#my-profile').parsley().isValid()) {
+      jQuery("#save-btn").on('click', function() {
+          jQuery('#my-profile').parsley().validate();
+          alert(jQuery('#my-profile').parsley().validate());
+          if (jQuery('#my-profile').parsley().isValid()) {
               alert('valid');
           } else {
               alert('not valid');
@@ -63,7 +63,7 @@ $('.gaccca-input-date').datepicker({
 <script>
   //Get the button
 
-  var mybutton = $("#gaccca-scroll-to-top-button")[0];
+  var mybutton = jQuery("#gaccca-scroll-to-top-button")[0];
   window.onscroll = function () { scrollFunction() };
   function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -73,24 +73,24 @@ $('.gaccca-input-date').datepicker({
     }
   }
 
-  $('#gaccca-scroll-to-top-button').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
+  jQuery('#gaccca-scroll-to-top-button').click(function () {
+    jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
   });
 
 </script>
 <script>
-  $('input[type=file]').on("change", function (ev) {
-    $in = $(this);
-    var label_lab = $(this).closest("label");
+  jQuery('input[type=file]').on("change", function (ev) {
+    jQueryin = jQuery(this);
+    var label_lab = jQuery(this).closest("label");
     console.log(label_lab);
-    var file_span = $(label_lab).children("span");
+    var file_span = jQuery(label_lab).children("span");
     console.log(file_span);
     if (ev.originalEvent != null) {
        if(this.files.length > 0){
         if(this.files[0].name.length > 35){
-          $(file_span).text(this.files[0].name.slice(0, 25)+'...');
+          jQuery(file_span).text(this.files[0].name.slice(0, 25)+'...');
         }else{
-          $(file_span).text(this.files[0].name);
+          jQuery(file_span).text(this.files[0].name);
         }
 
         label_lab[0].title = this.files[0].name;
@@ -99,7 +99,7 @@ $('.gaccca-input-date').datepicker({
     document.body.onfocus = function () {
       document.body.onfocus = null;
       setTimeout(function () {
-        if ($in.val().length === 0) $(file_span).text('Choose file...');
+        if (jQueryin.val().length === 0) jQuery(file_span).text('Choose file...');
       }, 1000);
     };
   });

@@ -48,10 +48,10 @@ class InformationInstructionAccountController extends Controller
      */
     public function store(Request $request)
     {
-        echo 'hello';
+      //  echo 'hello';
         $body['applicantId']=session()->get('applicantId');
         $body['contactId']=session()->get('Contact__c');
-        print_r($body);
+        //print_r($body);
         'App\Services\Helper'::postRequest($body,'ApiInformationInstructionAccountClass');
        return redirect()->action('ParticipantInformationAccountController@index', ['isSave' => 1]);
         //

@@ -26,9 +26,9 @@
           <label class="gaccca-form-element__label" for="text-input-id-fn">
             <p><strong>Templates:  </strong></p>
 
-            <p><img src="{{ asset('images/PDFImage.png') }}" width="18" height="18" /><a href="#">Proof of Student Status</a>
+            <p><img src="{{ asset('images/PDFImage.png') }}" width="18" height="18" /><a href="https://gaccca.my.salesforce.com/sfc/p/1I000001fgme/a/1I000000bzF0/_A2oZQC_PdDfF5cuOVal7J42G2RNQp9lp9AkKuRxnSY" target='_blank'>Proof of Student Status</a>
             </p>
-            <p><img src="{{ asset('images/PDFImage.png') }}" width="18" height="18" /><a href="#">Proof of Student
+            <p><img src="{{ asset('images/PDFImage.png') }}" width="18" height="18" /><a href="https://gaccca.my.salesforce.com/sfc/p/1I000001fgme/a/1I000000bzF5/qNsOnh07_xhbVG2_5A1w05dgIUEw9c2xGK3DehW0r0E"  target='_blank'>Proof of Student
                 Graduation</a></p>
           </label>
 
@@ -367,9 +367,9 @@
             <strong> Note</strong>: All upload fields are empty again after the upload for the next upload.</label>
 
         </div>
-
+        @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
         {!! Form::submit('Save &amp; Continue',array('id'=>'saveBtn','class'=>'gaccca-button-save gaccca-button-save-margin save-Class')); !!}
-
+@endif
       </div>
 
     </div>

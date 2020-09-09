@@ -1,6 +1,7 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@if (isset($datas['Appli']['Hide_Host_Company_Information_in_Account__c']) && !$datas['Appli']['Hide_Host_Company_Information_in_Account__c'])
+                   
 
 {!! Form::open(['action' => 'HostCompanyInformationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
@@ -271,10 +272,11 @@
 
 
 
+              @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
 
             <button class="gaccca-button-save gaccca-button-save-margin" id='saveBtn'>Submit & Continue</button>
 
-
+            @endif
 
 
           </div>
@@ -287,6 +289,7 @@
 
 
 {!! Form::close() !!}
+@endif
 @include('common.footer')
   @else
   Permission denied. Please contact administrator.

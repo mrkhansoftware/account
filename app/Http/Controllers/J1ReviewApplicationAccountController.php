@@ -48,7 +48,22 @@ class J1ReviewApplicationAccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $finalReq = $request->all();
+       
+        unset($finalReq['_token']);
+        $finalReq['applicant']['id']=session()->get('applicantId');
+        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+        $finalReq['applicantDataStr']=json_encode($finalReq['applicant']);
+        unset($finalReq['_token']);
+        unset($finalReq['applicant']);
+      
+      //  echo "<pre>"; print_r($finalReq);die;
+    
+
+      'App\Services\Helper'::postRequest($finalReq,'ApiJ1ReviewYourApplicationController');
+    
+    return redirect()->action('J1ReviewApplicationAccountController@index', ['isSave' => 1]);
+   
     }
 
     /**

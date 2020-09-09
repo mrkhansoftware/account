@@ -2229,3 +2229,9 @@ and  (min-width : 768px) and  (max-width : 990px) {
 .gaccca-alert-closebtn:hover {
   color: black;
 }
+#signHiddenData{
+  display: none;
+}
+.gaccca-hide{
+  display: none;
+}

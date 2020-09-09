@@ -1,8 +1,8 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.signScript');
 
-
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'J1ReviewApplicationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -264,11 +264,16 @@
         </div>
                   <div class="gaccca-form-element gaccca-form-element-margin">
                     <div class="gaccca-form-element__label">
-                      <a href="#">To update information, open the form.</a>
+                      <a href="/participant_information_account">To update information, open the form.</a>
+                      @if (isset($datas['Appli']['Participant__c']) && !$datas['Appli']['Participant__c'])
+                      <br/> <span class="gaccca-text-required" title="required">Please complete participant information form.
+                      <input type='text' class='gaccca-hide' required='required'/>
+                      </span>
+                          @endif
                     </div>
                     </div>
-
-
+              
+                    @if (isset($datas['Appli']['Hide_Host_Company_Information_in_Account__c']) && !$datas['Appli']['Hide_Host_Company_Information_in_Account__c'])
                     <h2 class="gaccca-h2-padding">Host Company Information</h2>
 
 
@@ -528,17 +533,26 @@
 
                       <div class="gaccca-form-element gaccca-form-element-margin">
                         <div class="gaccca-form-element__label">
-                          <a href="#"> To update information, open the form. </a>
+                          <a href="/host_company_information_account"> To update information, open the form. </a>
+                          @if (isset($datas['Appli']['hostCompany__c']) && !$datas['Appli']['hostCompany__c'])
+                          <br/>  <span class="gaccca-text-required" title="required">Please complete the host company information form. <input type='text' class='gaccca-hide' required='required'/></span>
+                          @endif
                         </div>
                       </div>
                       
-
+                      @endif
 
                      <h2 class="gaccca-h2-padding">Finalize your application</h2>
 
 
   <div class="gaccca-form-element gaccca-form-element-margin">
-            <p>Please download our current price list. <img src="{{ asset('images/PDFImage.png') }}" width="18" height="18"> <a href="#">GACC California price list</a></p>  
+            <p>Please download our current price list. @if (isset($datas['agencyPriceBookUrl']) && $datas['agencyPriceBookUrl']!=='')
+            <img src="{{ asset('images/PDFImage.png') }}" width="18" height="18"> <a href="{{$datas['agencyPriceBookUrl']}}" target='_blank'>{{$datas['agencyName']}}</a>
+         
+             @else
+             <img src="{{ asset('images/PDFImage.png') }}" width="18" height="18"> <a href="https://gaccca.my.salesforce.com/sfc/p/1I000001fgme/a/1I000000bzEv/W7fnG9Ll8sv.KD1o.l6v5kxqu16eMU6LQQwYgO6oNhY" target='_blank'>GACC California price list</a>
+         
+             @endif</p>  
                    
        
             <br/>
@@ -547,7 +561,7 @@
                     I have received and read the program price list <span class="gaccca-text-required" title="required">*</span> </label>
                
                 <span class="gaccca-radio">
-                  <input type="radio" required='' id="radio-yes" value="yes" name="readPriceList" {{isset($datas['Appli']['Read_pricelist__c']) &&  $datas['Appli']['Read_pricelist__c']?'checked':''}} />
+                  <input type="radio" required='' id="radio-yes" value="yes" name="readPriceList" disabled='disabled' {{isset($datas['Appli']['Read_pricelist__c']) &&  $datas['Appli']['Read_pricelist__c']?'checked':''}} />
                   <label class="gaccca-radio__label" for="radio-yes">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-form-element__label">Yes </span>
@@ -583,7 +597,7 @@
               <br/>
               <h4>Health Insurance Information</h4>
               <p>German American Chamber of Commerce California, Inc., in accordance with the Bureau of Educational and Cultural Affairs' (ECA) regulations for exchange visitors (22 CFR Part 514 [Rulemaking No. 101]), requires that all participants have health insurance in effect for the duration of their stay in the United States. GACC California will not issue the DS-2019 form without having received this completed form and funds to purchase insurance (if applicable).</p>
-              <p>As a participant in our program, please be aware that you must purchase the Health Insurance policy supplied by German American Chamber of Commerce California, Inc., which meets the requirements of ECA regulations. More information on the health insurance rates can be found <a href="#"> online.</a> You will be able to choose your insurance rate and exact coverage period during your visa application process.</p>       
+              <p>As a participant in our program, please be aware that you must purchase the Health Insurance policy supplied by German American Chamber of Commerce California, Inc., which meets the requirements of ECA regulations. More information on the health insurance rates can be found <a href="https://www.j1-visa.com/j-1-insurance.html" target='_blank'> online.</a> You will be able to choose your insurance rate and exact coverage period during your visa application process.</p>       
         <p>Please note that government regulations for the J-1 Intern and Trainee programs permit you to arrive in the U.S. up to 30 days before the beginning of your internship and to stay up to 30 days after your internship ends. GACC California recommends that you maintain health insurance coverage for your entire stay in the U.S. If you wish, you may purchase additional health insurance from GACC California to cover the period before and/or after your internship.</p>
            
     
@@ -594,7 +608,7 @@
                 I understand that the purchase of this health insurance package is a requirement of the GACC California program. <span class="gaccca-text-required" title="required">*</span> </label>
            
             <span class="gaccca-radio">
-              <input type="radio" id="radio-2yes" value="yes" name="healthInsurance" {{isset($datas['Appli']['Understand_Insurance_Requirement__c']) &&  $datas['Appli']['Understand_Insurance_Requirement__c']?'checked':''}}/>
+              <input type="radio" id="radio-2yes" value="yes" name="healthInsurance" disabled='disabled' {{isset($datas['Appli']['Understand_Insurance_Requirement__c']) &&  $datas['Appli']['Understand_Insurance_Requirement__c']?'checked':''}}/>
               <label class="gaccca-radio__label" for="radio-2yes">
                 <span class="gaccca-radio_faux"></span>
                 <span class="gaccca-form-element__label">Yes</span>
@@ -674,7 +688,10 @@
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <div class="gaccca-form-element__label">
-        <a href="#">To update information, open the form.</a>    
+        <a href="/finalize_application_account">To update information, open the form.</a>    
+        @if (isset($datas['Appli']['finnalize__c']) && !$datas['Appli']['finnalize__c'])
+                         <br/> <span class="gaccca-text-required" title="required">Please complete finalize your application form. <input type='text' class='gaccca-hide' required='required'/></span>
+                          @endif
       </div>
     </div>
 
@@ -683,7 +700,8 @@
         <div class="gaccca-form-element__control">
           <span class="gaccca-form-element__label">I confirm the correctness of these information <span class="gaccca-text-required" title="required">*</span></span>
           <div class="gaccca-checkbox">
-            <input type="checkbox" name="options" id="checkbox-unique-id-73" value="Yes" required='required'/>
+            <input type="checkbox" name="confirm" id="checkbox-unique-id-73" value="Yes" required='required' 
+            {{(isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])?'checked disabled':''}}/>
             <label class="gaccca-checkbox__label" for="checkbox-unique-id-73">
               <span class="gaccca-checkbox_faux"></span>
               <span class="gaccca-form-element__label">Yes</span>
@@ -691,15 +709,18 @@
           </div>
         </div>
       </div>
+      @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
+
+      @include('common.signHTML');
 
     <div class="gaccca-form-element gaccca-form-element-margin">
-        Please sign here:
-    </div>
-    <div class="gaccca-form-element gaccca-form-element-margin">
-
-    <button class="gaccca-button-save ">Send Application to GACC California</button>
+    @if ((isset($datas['Appli']['finnalize__c']) && !$datas['Appli']['finnalize__c']) || (isset($datas['Appli']['hostCompany__c']) && !$datas['Appli']['hostCompany__c']) || (isset($datas['Appli']['Participant__c']) && !$datas['Appli']['Participant__c']))
+                       <span class="gaccca-text-required" title="required">Please complete all given required forms above.<br/> @endif
+    <button class="gaccca-button-save "
+   {{((isset($datas['Appli']['finnalize__c']) && !$datas['Appli']['finnalize__c']) || (isset($datas['Appli']['hostCompany__c']) && !$datas['Appli']['hostCompany__c']) || (isset($datas['Appli']['Participant__c']) && !$datas['Appli']['Participant__c']))?'disabled':''}}
+    >Send Application to GACC California</button>
 </div>
-
+@endif
         </div>
       
       </div>
@@ -707,7 +728,9 @@
     </div>
 
 {!! Form::close() !!}
+
 @include('common.footer')
+
 @else
   Permission denied. Please contact administrator.
   @endif
