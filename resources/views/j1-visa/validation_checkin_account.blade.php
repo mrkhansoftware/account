@@ -32,7 +32,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-1">
             Name (as stated on passport) <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-1" placeholder="Name of your Host-Company" required=""
+            <input type="text"  name="onfrm[Name__c]"  value="{{isset($datas['onfrm']['Name__c'])?$datas['onfrm']['Name__c']:''}}"   placeholder="Name of your Host-Company" required=""
               class="gaccca-input" />
 
             <span class="gaccca-input-help-text">first, middle, last name</span>
@@ -47,7 +47,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-2">
             Email <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-2" placeholder="Name of your Supervisor" required=""
+            <input type="email" name="onfrm[EMail__c]"  value="{{isset($datas['onfrm']['EMail__c'])?$datas['onfrm']['EMail__c']:''}}"   id="text-input-id-2" placeholder="Name of your Supervisor" required=""
               class="gaccca-input" />
 
           </div>
@@ -62,7 +62,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-4">
             U.S. Phone <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-4" required="" class="gaccca-input" />
+            <input type="text" name="onfrm[U_S_Phone__c]"  value="{{isset($datas['onfrm']['U_S_Phone__c'])?$datas['onfrm']['U_S_Phone__c']:''}}"    required="" class="gaccca-input" />
 
             <span class="gaccca-input-help-text">If you don't have a private U.S. phone number, please state your office
               phone number.</span>
@@ -79,7 +79,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-4">
             U.S. Home Address <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-4" required="" class="gaccca-input" />
+            <input type="text" name="onfrm[US_Home_Address__c]"  value="{{isset($datas['onfrm']['US_Home_Address__c'])?$datas['onfrm']['US_Home_Address__c']:''}}"    required="" class="gaccca-input" />
 
             <span class="gaccca-input-help-text">Please include Apartment / Suite and Floor Number</span>
           </div>
@@ -94,7 +94,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-4">
             Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-4" required="" class="gaccca-input" />
+            <input type="text" name="onfrm[Zip_Code__c]"  value="{{isset($datas['onfrm']['Zip_Code__c'])?$datas['onfrm']['Zip_Code__c']:''}}"   required="" class="gaccca-input" />
 
           </div>
         </div>
@@ -108,7 +108,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-4">
             City <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-4" required="" class="gaccca-input" />
+            <input type="text" name="onfrm[City__c]"  value="{{isset($datas['onfrm']['City__c'])?$datas['onfrm']['City__c']:''}}"    required="" class="gaccca-input" />
 
           </div>
         </div>
@@ -122,7 +122,7 @@
           <label class="gaccca-form-element__label" for="select-01">State</label>
           <div class="gaccca-form-element__control">
             <div class="gaccca-select_container">
-              <select class="gaccca-select" id="select-01" >
+              <select class="gaccca-select" >
                 <option>select</option>
               </select>
             </div>
@@ -147,7 +147,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-1">
             Name of Host Company <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-1" placeholder="Name of your Host-Company" required=""
+            <input type="text" name="onfrm[Name_of_Host_Company__c]"  value="{{isset($datas['onfrm']['Name_of_Host_Company__c'])?$datas['onfrm']['Name_of_Host_Company__c']:''}}"    placeholder="Name of your Host-Company" required=""
               class="gaccca-input" />
 
             <span class="gaccca-input-help-text">first, middle, last name</span>
@@ -162,7 +162,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-2">
             Name of Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-2" placeholder="Name of your Supervisor" required=""
+            <input type="text" name="onfrm[Name_of_Supervisor__c]"  value="{{isset($datas['onfrm']['Name_of_Supervisor__c'])?$datas['onfrm']['Name_of_Supervisor__c']:''}}"   id="text-input-id-2" placeholder="Name of your Supervisor" required=""
               class="gaccca-input" />
 
           </div>
@@ -177,7 +177,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-3">
             First Day of Internship/Training <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element gaccca-form-element-margin-date">
-            <input type="text"  id="text-input-id-3" placeholder="eMail-Adresse Supervisor" required=""
+            <input type="text" name="Internship"  value="{{isset($datas['Internship'])?$datas['Internship']:''}}"   id="text-input-id-3" placeholder="eMail-Adresse Supervisor" required=""
               class="gaccca-input" />
 
           </div>
@@ -195,7 +195,9 @@
               title="required">*</span> </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required=""  class="gaccca-textarea"></textarea>
+            <textarea required="" name="onfrm[Kind_of_your_tasks__c]"  class="gaccca-textarea">
+            {{isset($datas['onfrm']['Kind_of_your_tasks__c'])?$datas['onfrm']['Kind_of_your_tasks__c']:''}}
+            </textarea>
 
           </div>
         </div>
@@ -215,7 +217,7 @@
             At which American Consulate did you receive your J-1 visa? <span class="gaccca-text-required"
               title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-1" required="" class="gaccca-input" />
+            <input type="text" name="onfrm[American_Consulate__c]"  value="{{isset($datas['onfrm']['American_Consulate__c'])?$datas['onfrm']['American_Consulate__c']:''}}"    required="" class="gaccca-input" />
 
             <span class="gaccca-input-help-text">first, middle, last name</span>
 
@@ -230,7 +232,7 @@
             How many days did it take to receive your J-1 visa after your
             interview at the Consulate? <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-2" placeholder="Name of your Supervisor" required=""
+            <input type="text" name="onfrm[How_many_days_until_receive__c]"  value="{{isset($datas['onfrm']['How_many_days_until_receive__c'])?$datas['onfrm']['How_many_days_until_receive__c']:''}}"  id="text-input-id-2" placeholder="Name of your Supervisor" required=""
               class="gaccca-input" />
 
           </div>
@@ -249,13 +251,13 @@
                 class="gaccca-text-required" title="required">*</span> </label>
 
             <span class="gaccca-radio">
-              <input type="radio" id="radio-problem_receiving-no" value="radio-problem_receiving-no"
+              <input type="radio" name="onfrm[Name__c]"  value="{{isset($datas['onfrm']['Name__c'])?$datas['onfrm']['Name__c']:''}}"  id="radio-problem_receiving-no" value="radio-problem_receiving-no"
                 name="problem_receiving" checked="" />
               <label class="gaccca-radio__label" for="radio-problem_receiving-no">
                 <span class="gaccca-radio_faux"></span>
                 <span class="gaccca-padding-right-25">No</span>
               </label>
-              <input type="radio" id="radio-problem_receiving-yes" value="radio-problem_receiving-yes"
+              <input type="radio" name="onfrm[Name__c]"  value="{{isset($datas['onfrm']['Name__c'])?$datas['onfrm']['Name__c']:''}}"  id="radio-problem_receiving-yes" value="radio-problem_receiving-yes"
                 name="problem_receiving" />
               <label class="gaccca-radio__label" for="radio-problem_receiving-yes">
                 <span class="gaccca-radio_faux"></span>
@@ -278,7 +280,7 @@
             If yes, please specify <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required=""  class="gaccca-textarea"></textarea>
+            <textarea required="" name="onfrm[If_no_specify__c]"   class="gaccca-textarea">{{isset($datas['onfrm']['If_no_specify__c'])?$datas['onfrm']['If_no_specify__c']:''}}</textarea>
 
           </div>
         </div>
@@ -291,7 +293,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-2">
             Port/City of Entry <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-2" required="" class="gaccca-input" />
+            <input type="text" name="onfrm[City_of_Entry__c]"  value="{{isset($datas['onfrm']['City_of_Entry__c'])?$datas['onfrm']['City_of_Entry__c']:''}}"   id="text-input-id-2" required="" class="gaccca-input" />
 
             <span class="gaccca-input-help-text">Immigration Check Point / Airport</span>
           </div>
@@ -306,7 +308,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-2">
             Date of Entry <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  id="text-input-id-2" required="" class="gaccca-input" />
+            <input type="text" name="Entry"  value="{{isset($datas['Entry'])?$datas['Entry']:''}}"   id="text-input-id-2" required="" class="gaccca-input" />
 
           </div>
         </div>
