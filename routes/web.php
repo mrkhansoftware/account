@@ -74,19 +74,114 @@ Route::resource('FinalEvaluationAccount', 'FinalEvaluationAccountController');
 Route::get('/final_evaluation_account', 'FinalEvaluationAccountController@index');
 
 
-Route::resource('HostCompanyAgrmentAccController', 'HostCompanyAgrmentAccController');
+Route::resource('HostCompanyAgrmentAcc', 'HostCompanyAgrmentAccController');
 Route::get('/host_company_agreement_account', 'HostCompanyAgrmentAccController@index');
 
-Route::resource('DS7002TrainigsplanController', 'DS7002TrainigsplanController');
+Route::resource('DS7002Trainigsplan', 'DS7002TrainigsplanController');
 Route::get('/DS_7002_Trainigsplan', 'DS7002TrainigsplanController@index');
 
 
-Route::resource('HCMidPointEvaluationController', 'HCMidPointEvaluationController');
+Route::resource('HCMidPointEvaluation', 'HCMidPointEvaluationController');
 Route::get('/HostCompany_Mid_Point_Evaluation_Account', 'HCMidPointEvaluationController@index');
 
-Route::resource('FinalEvaluationHostComController', 'FinalEvaluationHostComController');
+Route::resource('FinalEvaluationHostCom', 'FinalEvaluationHostComController');
 Route::get('/final_evaluation_hc_account', 'FinalEvaluationHostComController@index');
 
+
+Route::resource('PreDepartur', 'PreDepartureController');
+Route::get('/preDepartureOrientationConfirmationPage', 'PreDepartureController@index');
+
+
+
+
+Route::resource('VideoTutorials', 'VideoTutorialsController');
+Route::get('/VideoTutorials', 'VideoTutorialsController@index');
+
+
+Route::resource('UploadYourDocuments', 'UploadYourDocumentsController');
+Route::get('/uploadyourdocuments', 'UploadYourDocumentsController@index');
+
+
+
+Route::resource('dosAndDonts', 'DoAndDontsController');
+Route::get('/dosAndDonts', 'DoAndDontsController@index');
+
+
+
+Route::resource('ScheduleCall', 'ScheduleCallController');
+Route::get('/ScheduleCall', 'ScheduleCallController@index');
+
+
+Route::resource('ApplicantResume', 'ApplicantResumeController');
+Route::get('/ApplicantResume', 'ApplicantResumeController@index');
+
+
+Route::resource('WriteYourScript', 'WriteYourScriptController');
+Route::get('/WriteYourScript', 'WriteYourScriptController@index');
+
+
+
+Route::resource('VideoInstructions', 'VideoInstructionsController');
+Route::get('/VideoInstructions', 'VideoInstructionsController@index');
+
+
+
+Route::resource('VideoResume', 'VideoResumeController');
+Route::get('/Video_Resume', 'VideoResumeController@index');
+
+
+
+Route::resource('InterviewPreparation', 'InterviewPreparationController');
+Route::get('/InterviewPreparation', 'InterviewPreparationController@index');
+
+
+
+Route::resource('BVisaCaseInformation', 'BVisaCaseInformationController');
+Route::get('/B_Visa_Case_Information', 'BVisaCaseInformationController@index');
+
+
+
+Route::resource('b1Video', 'B1VideoController');
+Route::get('/b1Video', 'B1VideoController@index');
+
+
+
+Route::resource('B1Embassy', 'B1EmbassyController');
+Route::get('/b1_Embassy', 'B1EmbassyController@index');
+
+
+
+Route::resource('ScheduleCallBVisa', 'ScheduleCallBVisaController');
+Route::get('/ScheduleCallBVisa', 'ScheduleCallBVisaController@index');
+
+
+Route::resource('simCard', 'simCardController');
+Route::get('/simCard', 'simCardController@index');
+
+
+
+Route::resource('WebcamInterview', 'WebcamInterviewController');
+Route::get('/WebcamInterviewQuestionnaire', 'WebcamInterviewController@index');
+
+
+Route::resource('SupervisorInterview', 'SupervisorInterviewController');
+Route::get('/SupervisorPhoneInterview', 'SupervisorInterviewController@index');
+
+
+Route::resource('VisitorProgramQuiz', 'VisitorProgramQuizController');
+Route::get('/TheExchangeVisitorProgramQuiz', 'VisitorProgramQuizController@index');
+
+
+
+Route::resource('HCSiteVisitForm', 'HCSiteVisitFormController');
+Route::get('/HostCompanySiteVisitForm', 'HCSiteVisitFormController@index');
+
+
+Route::resource('QuestionerBVisa', 'QuestionerBVisaController');
+Route::get('/QuestionerBVisaService', 'QuestionerBVisaController@index');
+
+Route::resource('QuestionerPlacement', 'QuestionerPlacementController');
+Route::get('/QuestionerPlacementService', 'QuestionerPlacementController@index');
 
 
 
