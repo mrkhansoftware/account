@@ -13,6 +13,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
+
+        
          $idCon= 'App\Services\Helper'::sessionConId();
          if($idCon==''){
             return 'App\Services\Helper'::returnUrl();
@@ -41,7 +43,8 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
+
         $finalReq = $request->all();
         unset($finalReq['_token']);
         $finalReq['con']['id']=session()->get('conId');

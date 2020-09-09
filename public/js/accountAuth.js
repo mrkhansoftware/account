@@ -48,7 +48,7 @@ signupForm.addEventListener('submit', (e)=>{
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log('errorCode:'+errorCode);
-    alert('errorMessage:'+errorMessage);
+  //  alert('errorMessage:'+errorMessage);
     var errorCode = error.code;
     var errorMessage = error.message;
   

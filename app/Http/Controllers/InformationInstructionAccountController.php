@@ -13,7 +13,21 @@ class InformationInstructionAccountController extends Controller
      */
     public function index()
     {
-        return view('j1-visa/information_instruction_account');
+
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+  
+          $datas='App\Services\Helper'::getRequest('ApiInformationInstructionAccountClass/'.$idCon);
+          $datas = json_decode($datas, true);
+          $datas = json_decode($datas, true);
+          session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+          if(isset($datas['Appli']['Id'])){
+          session()->put('applicantId', $datas['Appli']['Id']);
+          }
+          session()->put('Contact__c', $datas['Appli']['Contact__c']);
+      return view('j1-visa/information_instruction_account')->with(compact('datas'));
     }
 
     /**
@@ -34,6 +48,12 @@ class InformationInstructionAccountController extends Controller
      */
     public function store(Request $request)
     {
+        echo 'hello';
+        $body['applicantId']=session()->get('applicantId');
+        $body['contactId']=session()->get('Contact__c');
+        print_r($body);
+        'App\Services\Helper'::postRequest($body,'ApiInformationInstructionAccountClass');
+       return redirect()->action('ParticipantInformationAccountController@index', ['isSave' => 1]);
         //
     }
 

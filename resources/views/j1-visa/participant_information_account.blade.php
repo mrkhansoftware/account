@@ -1,3 +1,4 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
   <div class="gaccca-main-containt">
@@ -367,7 +368,7 @@
 
         </div>
 
-        {!! Form::submit('Save &amp; Continue',array('class'=>'gaccca-button-save gaccca-button-save-margin')); !!}
+        {!! Form::submit('Save &amp; Continue',array('id'=>'saveBtn','class'=>'gaccca-button-save gaccca-button-save-margin save-Class')); !!}
 
       </div>
 
@@ -378,46 +379,6 @@
 
   </div>
   @include('common.footer')
-<!-- </body>
-<script src="https://code.jquery.com/jquery-3.x-git.min.js"></script>
-<script>
-  function openNav() {
-    document.getElementById("mySidepanel").style.display = "block";
-
-  }
-
-  function closeNav() {
-    document.getElementById("mySidepanel").style.display = "none";
-  }
-
-  $(document).ready(function () {
-    $(window).resize(function () {
-      if ($(window).width() >= 1093) {
-        document.getElementById("mySidepanel").style.display = "none";
-      }
-    });
-  });
-
-</script>
-
-
-<script>
-  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-  var dropdown = document.getElementsByClassName("gaccca-dropdown-btn");
-  var i;
-
-  for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var dropdownContent = this.nextElementSibling;
-      if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-      } else {
-        dropdownContent.style.display = "block";
-      }
-    });
-  }
-</script>
-
-
-</html> -->
+  @else
+  Permission denied. Please contact administrator.
+  @endif

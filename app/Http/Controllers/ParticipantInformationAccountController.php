@@ -109,7 +109,7 @@ class ParticipantInformationAccountController extends Controller
     }
      
     $body['applicantData']=json_encode($finalReq['applicant']);
-    $body['graduationDate']=json_encode($finalReq['graduationDate']);
+    $body['graduationDate']=$finalReq['graduationDate'];
    
 
 

@@ -12,9 +12,22 @@ class ParticipantAgreementAccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+        $datas='App\Services\Helper'::getRequest('ApiParticipantAgreementAccountClass/'.$idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        //print_r($datas);
+        session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+        if(isset($datas['Appli']['Id'])){
+        session()->put('applicantId', $datas['Appli']['Id']);
+        }
+        session()->put('Contact__c', $datas['Appli']['Contact__c']);
+        return view('j1-visa/participant_agreement_account')->with(compact('datas'));
         
-        return view('j1-visa/participant_agreement_account');
 
     }
 
@@ -36,7 +49,18 @@ class ParticipantAgreementAccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $finalReq = $request->all();
+        echo "<pre>";
+        unset($finalReq['_token']);
+        $finalReq['applicant']['id']=session()->get('applicantId');
+        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+        $finalReq['applicantData']=json_encode($finalReq['applicant']);
+        unset($finalReq['applicant']);
+       
+       
+        'App\Services\Helper'::postRequest($finalReq,'ApiParticipantAgreementAccountClass');
+        return redirect()->action('FinalizeApplicationAccountController@index', ['isSave' => 1]);
     }
 
     /**

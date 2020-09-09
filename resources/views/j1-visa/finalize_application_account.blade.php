@@ -1,6 +1,7 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'FinalizeApplicationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Step 5/5 - Finalize your Application</h1>
@@ -20,10 +21,10 @@
                     I have received and read the program price list <span class="gaccca-text-required" title="required">*</span> </label>
                
                 <span class="gaccca-radio">
-                  <input type="radio" required='' id="radio-yes" value="radio-yes" name="price_list" />
+                  <input type="radio" required='' id="radio-yes" value="yes" name="readPriceList" {{isset($datas['Appli']['Read_pricelist__c']) &&  $datas['Appli']['Read_pricelist__c']?'checked':''}} />
                   <label class="gaccca-radio__label" for="radio-yes">
                     <span class="gaccca-radio_faux"></span>
-                    <span class="gaccca-form-element__label">Yes</span>
+                    <span class="gaccca-form-element__label">Yes </span>
                   </label>
                 </span>
            
@@ -37,12 +38,12 @@
                     I would like to purchase the expedited service for an additional fee <span class="gaccca-text-required" title="required">*</span> </label>
                
                     <span class="gaccca-radio">
-                      <input type="radio" id="radio-purchase-no" value="radio-purchase-no" name="purchase" checked="" />
+                      <input type="radio" id="radio-purchase-no" value="no" name="expedited"  {{isset($datas['Appli']['Expedited__c']) &&  $datas['Appli']['Expedited__c']?'':'checked'}}/>
                       <label class="gaccca-radio__label" for="radio-purchase-no">
                         <span class="gaccca-radio_faux"></span>
                         <span class="gaccca-padding-right-25">No</span>
                       </label>
-                      <input type="radio" id="radio-purchase-yes" value="radio-purchase-yes" name="purchase" />
+                      <input type="radio" id="radio-purchase-yes" value="yes" name="expedited" {{isset($datas['Appli']['Expedited__c']) &&  $datas['Appli']['Expedited__c']?'checked':''}}/>
                       <label class="gaccca-radio__label" for="radio-purchase-yes">
                         <span class="gaccca-radio_faux"></span>
                         <span class="gaccca-padding-right-25">Yes</span>
@@ -67,7 +68,7 @@
                 I understand that the purchase of this health insurance package is a requirement of the GACC California program. <span class="gaccca-text-required" title="required">*</span> </label>
            
             <span class="gaccca-radio">
-              <input type="radio" id="radio-2yes" value="radio-2yes" name="health_insurance" />
+              <input type="radio" id="radio-2yes" value="yes" name="healthInsurance" {{isset($datas['Appli']['Understand_Insurance_Requirement__c']) &&  $datas['Appli']['Understand_Insurance_Requirement__c']?'checked':''}}/>
               <label class="gaccca-radio__label" for="radio-2yes">
                 <span class="gaccca-radio_faux"></span>
                 <span class="gaccca-form-element__label">Yes</span>
@@ -85,12 +86,12 @@
            
            
                 <span class="gaccca-radio">
-                  <input type="radio" id="radio-spouse-no" value="radio-spouse-no" name="spouse" checked="" />
+                  <input type="radio" id="radio-spouse-no" value="no" name="j2VisaSpouse"  {{isset($datas['Appli']['J_2_Visa_Required__c']) &&  $datas['Appli']['J_2_Visa_Required__c']?'':'checked'}}/>
                   <label class="gaccca-radio__label" for="radio-spouse-no">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-padding-right-25">No</span>
                   </label>
-                  <input type="radio" id="radio-spouse-yes" value="radio-spouse-yes" name="spouse" />
+                  <input type="radio" id="radio-spouse-yes" value="yes" name="j2VisaSpouse" {{isset($datas['Appli']['J_2_Visa_Required__c']) &&  $datas['Appli']['J_2_Visa_Required__c']?'checked':''}}/>
                   <label class="gaccca-radio__label" for="radio-spouse-yes">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-padding-right-25">Yes</span>
@@ -107,7 +108,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-people">
                 How many people need a J-2 visa?<span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-people" placeholder="" required="" class="gaccca-input" />
+              <input type="text" name='applicant[Number_of_j_2_visa__c]' value="{{isset($datas['Appli']['Number_of_j_2_visa__c'])?$datas['Appli']['Number_of_j_2_visa__c']:''}}" id="text-input-id-people" placeholder="" required="" class="gaccca-input" />
             </div>
           </div>
           <br/>
@@ -115,19 +116,8 @@
             <label class="gaccca-form-element__label" for="select-01">How did you hear about the program?<span class="gaccca-text-required">*</span></label>
             <div class="gaccca-form-element__control">
               <div class="gaccca-select_container">
-                <select class="gaccca-select" id="select-01">
-                    <option>select</option>                      
-                    <option value="Event, Info Session, or Webinar">Event, Info Session, or Webinar</option>
-                    <option value="Online Search">Online Search</option>
-                    <option value="University, Professor etc">University, Professor etc</option>
-                    <option value="Social Media, Facebook etc.">Social Media, Facebook etc.</option>
-                    <option value="Attorney">Attorney</option>
-                    <option value="Employer, Colleague">Employer, Colleague</option>
-                    <option value="Job Boards">Job Boards</option>
-                    <option value="Family, friend">Family, friend</option>
-                    <option value="Agency">Agency</option>
-                    <option value="Other">Other</option>
-                </select>
+              {!! Form::select('applicant[How_did_you_hear_about_the_program__c]', array_reverse($datas['howDidYouHearAboutTheProgram']), isset($datas['Appli']['How_did_you_hear_about_the_program__c'])?$datas['Appli']['How_did_you_hear_about_the_program__c']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
+           
               </div>
             </div>
           </div>
@@ -140,12 +130,12 @@
                 Have you previously applied to the J-1 program with another sponsor? <span class="gaccca-text-required" title="required">*</span> </label>
            
                 <span class="gaccca-radio">
-                  <input type="radio" id="radio-j1applied-no" value="radio-j1applied-no" name="j1applied" checked="" />
+                  <input type="radio" id="radio-j1applied-no" value="no" name="j1Sponsor"  {{isset($datas['j1Sponsor']) &&  $datas['j1Sponsor']?'':'checked'}} />
                   <label class="gaccca-radio__label" for="radio-j1applied-no">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-padding-right-25">No</span>
                   </label>
-                  <input type="radio" id="radio-j1applied-yes" value="radio-j1applied-yes" name="j1applied" />
+                  <input type="radio" id="radio-j1applied-yes" value="yes" name="j1Sponsor"  {{isset($datas['j1Sponsor']) &&  $datas['j1Sponsor']?'checked':''}} />
                   <label class="gaccca-radio__label" for="radio-j1applied-yes">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-padding-right-25">Yes</span>
@@ -165,4 +155,8 @@
   
     </div>
 {!! Form::close() !!}
+
 @include('common.footer')
+  @else
+  Permission denied. Please contact administrator.
+  @endif

@@ -1,3 +1,4 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
@@ -116,16 +117,30 @@
           <br/>
           <div class="gaccca-form-element gaccca-form-element-margin">
             <div class="gaccca-form-element__label">
-              See also our current price list. <br/><img src="{{ asset('images/PDFImage.png') }}" width="18" height="18"> <a href="#">GACC California price list</a>
+            @if (isset($datas['agencyPriceBookUrl']) && $datas['agencyPriceBookUrl']!=='')
+            See also our current price list. <br/><img src="{{ asset('images/PDFImage.png') }}" width="18" height="18"> <a href="{{$datas['agencyPriceBookUrl']}}" target='_blank'>{{$datas['agencyName']}}</a>
+         
+             @else
+             See also our current price list. <br/><img src="{{ asset('images/PDFImage.png') }}" width="18" height="18"> <a href="https://gaccca.my.salesforce.com/sfc/p/1I000001fgme/a/1I000000bzEv/W7fnG9Ll8sv.KD1o.l6v5kxqu16eMU6LQQwYgO6oNhY" target='_blank'>GACC California price list</a>
+         
+             @endif
             </div>
            
 
           </div>
-          <button class="gaccca-button-save gaccca-button-save-margin">Next Step</button>
-   
+          
+    {!! Form::open(['action' => 'InformationInstructionAccountController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'participant-information-account' ]) !!}
+    
+
+          {!! Form::submit('Next Step',array('id'=>'saveBtn','class'=>'gaccca-button-save gaccca-button-save-margin save-Class')); !!}
+
+          {!! Form::close() !!}
       </div>
   
     </div>
 
 
  @include('common.footer')
+ @else
+  Permission denied. Please contact administrator.
+  @endif

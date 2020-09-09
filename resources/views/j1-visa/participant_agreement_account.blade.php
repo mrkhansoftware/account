@@ -1,3 +1,4 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
@@ -118,8 +119,8 @@
         
 
                     <span class="gaccca-radio">
-                      <input required='' type="radio" id="radio-no" value="radio-no" name="default"  />
-                      <label class="gaccca-radio__label" for="radio-no">
+                      <input required='' type="radio" id="radio-Yes" value="Yes" name="isAccepted" checked="{{$datas['Appli']['Accept_Terms_Conditions__c']}}"  />
+                      <label class="gaccca-radio__label" for="radio-Yes">
                         <span class="gaccca-radio_faux"></span>
                         <span class="gaccca-form-element__label">I agree</span>
                       </label>
@@ -127,9 +128,9 @@
                   <br/>
                   <br/>
                   
-    
+                  @if (!(isset($datas['Appli']['Accept_Terms_Conditions__c']) && $datas['Appli']['Accept_Terms_Conditions__c']))
                     <button class="gaccca-button-save ">Save & Continue</button>
-        
+                    @endif
         </div>
 
 
@@ -147,3 +148,8 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+
+@include('common.footer')
+  @else
+  Permission denied. Please contact administrator.
+  @endif
