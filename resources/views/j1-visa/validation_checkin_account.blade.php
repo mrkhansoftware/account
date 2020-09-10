@@ -1,10 +1,10 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'ValidationCheckinAccountController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 <div class="gaccca-main-containt">
-    <h1 class="gaccca-h1-padding">Validation and Check-In</h1>
+    <h1 class="gaccca-h1-padding">Validation and Check-In </h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
       <p>Within the first week of beginning your training at your U.S. Host Company you must complete our online
         check-in in order to validate your visa, confirm your arrival, and provide us with your U.S. residential
@@ -16,7 +16,7 @@
         the U.S Therefore it is extremely important that you complete our online check-in during the first week of your
         internship/training.
       </p>
-
+ 
       <p>
         <strong>NOTE:</strong> As your visa sponsor, we are your contact for the duration of your stay. Therefore,
         should you have any questions regarding this form or other concerns, don’t hesitate to contact us.
@@ -47,7 +47,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-2">
             Email <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="email" name="onfrm[EMail__c]"  value="{{isset($datas['onfrm']['EMail__c'])?$datas['onfrm']['EMail__c']:''}}"   id="text-input-id-2" placeholder="Name of your Supervisor" required=""
+            <input type="email" name="onfrm[EMail__c]"  value="{{isset($datas['onfrm']['EMail__c'])?$datas['onfrm']['EMail__c']:''}}"    placeholder="Name of your Supervisor" required=""
               class="gaccca-input" />
 
           </div>
@@ -122,9 +122,11 @@
           <label class="gaccca-form-element__label" for="select-01">State</label>
           <div class="gaccca-form-element__control">
             <div class="gaccca-select_container">
-              <select class="gaccca-select" >
-                <option>select</option>
-              </select>
+              
+              {!! Form::select('onfrm[State1__c]', array_reverse($datas['statePick']), isset($datas['onfrm']['State1__c'])?$datas['onfrm']['State1__c']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
+           
+
+
             </div>
           </div>
         </div>
@@ -162,7 +164,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-2">
             Name of Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text" name="onfrm[Name_of_Supervisor__c]"  value="{{isset($datas['onfrm']['Name_of_Supervisor__c'])?$datas['onfrm']['Name_of_Supervisor__c']:''}}"   id="text-input-id-2" placeholder="Name of your Supervisor" required=""
+            <input type="text" name="onfrm[Name_of_Supervisor__c]"  value="{{isset($datas['onfrm']['Name_of_Supervisor__c'])?$datas['onfrm']['Name_of_Supervisor__c']:''}}"    placeholder="Name of your Supervisor" required=""
               class="gaccca-input" />
 
           </div>
@@ -178,7 +180,7 @@
             First Day of Internship/Training <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element gaccca-form-element-margin-date">
             <input type="text" name="Internship"  value="{{isset($datas['Internship'])?$datas['Internship']:''}}"   id="text-input-id-3" placeholder="eMail-Adresse Supervisor" required=""
-              class="gaccca-input" />
+              class="gaccca-input-date" />
 
           </div>
         </div>
@@ -195,9 +197,7 @@
               title="required">*</span> </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" name="onfrm[Kind_of_your_tasks__c]"  class="gaccca-textarea">
-            {{isset($datas['onfrm']['Kind_of_your_tasks__c'])?$datas['onfrm']['Kind_of_your_tasks__c']:''}}
-            </textarea>
+            <textarea required="" name="onfrm[Kind_of_your_tasks__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Kind_of_your_tasks__c'])?$datas['onfrm']['Kind_of_your_tasks__c']:''}}</textarea>
 
           </div>
         </div>
@@ -232,7 +232,7 @@
             How many days did it take to receive your J-1 visa after your
             interview at the Consulate? <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text" name="onfrm[How_many_days_until_receive__c]"  value="{{isset($datas['onfrm']['How_many_days_until_receive__c'])?$datas['onfrm']['How_many_days_until_receive__c']:''}}"  id="text-input-id-2" placeholder="Name of your Supervisor" required=""
+            <input type="text" name="onfrm[How_many_days_until_receive__c]"  value="{{isset($datas['onfrm']['How_many_days_until_receive__c'])?$datas['onfrm']['How_many_days_until_receive__c']:''}}"   placeholder="Name of your Supervisor" required=""
               class="gaccca-input" />
 
           </div>
@@ -250,20 +250,25 @@
               Did you encounter any problems receiving the J-1 visa at the U.S. Consulate? <span
                 class="gaccca-text-required" title="required">*</span> </label>
 
-            <span class="gaccca-radio">
-              <input type="radio" name="onfrm[Name__c]"  value="{{isset($datas['onfrm']['Name__c'])?$datas['onfrm']['Name__c']:''}}"  id="radio-problem_receiving-no" value="radio-problem_receiving-no"
-                name="problem_receiving" checked="" />
-              <label class="gaccca-radio__label" for="radio-problem_receiving-no">
-                <span class="gaccca-radio_faux"></span>
-                <span class="gaccca-padding-right-25">No</span>
-              </label>
-              <input type="radio" name="onfrm[Name__c]"  value="{{isset($datas['onfrm']['Name__c'])?$datas['onfrm']['Name__c']:''}}"  id="radio-problem_receiving-yes" value="radio-problem_receiving-yes"
-                name="problem_receiving" />
-              <label class="gaccca-radio__label" for="radio-problem_receiving-yes">
-                <span class="gaccca-radio_faux"></span>
-                <span class="gaccca-padding-right-25">Yes</span>
-              </label>
-            </span>
+            
+                <span class="gaccca-radio">
+             
+                
+             {!! Form::radio('Consulates', 'No',isset($datas['onfrm']['Problems_on_Consulate_checkbox__c'])?($datas['onfrm']['Problems_on_Consulate_checkbox__c']==false?true:false):false,array('id'=>'radio-citizenship-no','required' => 'required')); !!}
+                         
+         
+                       <label class="gaccca-radio__label" for="radio-citizenship-no">
+                         <span class="gaccca-radio_faux"></span>
+                         <span class="gaccca-padding-right-25">No</span>
+                       </label>
+                      
+             {!! Form::radio('Consulates', 'Yes',isset($datas['onfrm']['Problems_on_Consulate_checkbox__c'])?($datas['onfrm']['Problems_on_Consulate_checkbox__c']==true?true:false):false,array('id'=>'radio-citizenship-yes' ,'required' => 'required')); !!}
+         
+                       <label class="gaccca-radio__label" for="radio-citizenship-yes">
+                         <span class="gaccca-radio_faux"></span>
+                         <span class="gaccca-padding-right-25">Yes  </span>
+                       </label>
+                     </span>
 
           </div>
 
@@ -293,7 +298,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-2">
             Port/City of Entry <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text" name="onfrm[City_of_Entry__c]"  value="{{isset($datas['onfrm']['City_of_Entry__c'])?$datas['onfrm']['City_of_Entry__c']:''}}"   id="text-input-id-2" required="" class="gaccca-input" />
+            <input type="text" name="onfrm[City_of_Entry__c]"  value="{{isset($datas['onfrm']['City_of_Entry__c'])?$datas['onfrm']['City_of_Entry__c']:''}}"    required="" class="gaccca-input" />
 
             <span class="gaccca-input-help-text">Immigration Check Point / Airport</span>
           </div>
@@ -302,18 +307,23 @@
 
 
 
+
+
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
+
         <div class="gaccca-form-element gaccca-form-element-margin">
-          <label class="gaccca-form-element__label" for="text-input-id-2">
-            Date of Entry <span class="gaccca-text-required" title="required">*</span> </label>
-          <div class="gaccca-form-element__control">
-            <input type="text" name="Entry"  value="{{isset($datas['Entry'])?$datas['Entry']:''}}"   id="text-input-id-2" required="" class="gaccca-input" />
+          <label class="gaccca-form-element__label" for="text-input-id-3">
+          Date of Entry <span class="gaccca-text-required" title="required">*</span> </label>
+          <div class="gaccca-form-element gaccca-form-element-margin-date">
+            <input type="text" name="Entry"  value="{{isset($datas['Entry'])?$datas['Entry']:''}}"   required=""
+              class="gaccca-input-date" />
 
           </div>
         </div>
-      </div>
 
+
+      </div>
 
     </div>
 
@@ -341,10 +351,10 @@
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-fss">
-            Upload a picture of your J-1 Visa in your passport </label>
+            Upload a picture of your J-1 Visa in your passport  <span class="gaccca-text-required" title="required">*</span></label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file"  id="myFile" name="filename" />
+              <input type="file"  name="filePassport"  required/>
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -357,10 +367,10 @@
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-fss">
-            Upload a picture of your admission stamp here </label>
+            Upload a picture of your admission stamp here  <span class="gaccca-text-required" title="required">*</span></label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input  type="file" id="myFile" name="filename" />
+              <input  type="file" name="fileAdmission" required/>
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -373,10 +383,10 @@
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-fss">
-            Upload a picture of your DS-2019 (front page) here </label>
+            Upload a picture of your DS-2019 (front page) here  <span class="gaccca-text-required" title="required">*</span></label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input  type="file" id="myFile" name="filename" />
+              <input  type="file"  name="fileDS" required/>
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -389,10 +399,10 @@
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-fss">
-            Upload a picture of your I-94 confirmation page here </label>
+            Upload a picture of your I-94 confirmation page here  <span class="gaccca-text-required" title="required">*</span></label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input  type="file" id="myFile" name="filename" />
+              <input  type="file" id="myFile" name="fileConfirmation" required/>
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>

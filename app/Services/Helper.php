@@ -184,8 +184,8 @@ echo 'Error:' . curl_error($ch);
 }
 curl_close ($ch);
 
-//echo $response = json_decode($result, true);
-//return  $response['id'];
+ $response = json_decode($result, true);
+return  $response['alternateLink'];
 }
 public static function returnFolderId($typeFolder){
 $folderId='';
@@ -202,7 +202,7 @@ public static function sessionConId(){
    }
 
    public static function returnUrl(){
-      return redirect()->action('LoginController@index');
+      return redirect()->action('LoginController@index', ['redirectUrl' =>basename($_SERVER['PHP_SELF'])]);
       }
 
 

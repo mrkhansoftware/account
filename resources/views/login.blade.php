@@ -387,7 +387,7 @@ return;
 }
 if(isRedirect){
 console.log(currentUserInfo());
-window.location.href='/profile_account';
+window.location.href='/'+'{{isset($_GET["redirectUrl"])?$_GET["redirectUrl"]:"profile_account"}}';
 }
 
 
