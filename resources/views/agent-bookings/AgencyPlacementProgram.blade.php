@@ -58,7 +58,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-1">
               First Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-1" placeholder="First Name" required="" class="gaccca-input" />
+              <input name="leadRecord[FirstName]"  value="{{isset($datas['leadRecord']['FirstName'])?$datas['leadRecord']['FirstName']:''}}" type="text" id="text-input-id-1" placeholder="First Name" required="" class="gaccca-input" />
             
               
             </div>
@@ -71,7 +71,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-2">
               Last Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" />
+              <input name="leadRecord[LastName]"  value="{{isset($datas['leadRecord']['LastName'])?$datas['leadRecord']['LastName']:''}}" type="text" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -84,7 +84,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-2">
                 Nationality/Citizenship <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" />
+                <input name="leadRecord[Nationality__c]"  value="{{isset($datas['leadRecord']['Nationality__c'])?$datas['leadRecord']['Nationality__c']:''}}" type="text" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -98,7 +98,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-3">
               Date of birth <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element gaccca-form-element-margin-date">
-              <input type="text" id="text-input-id-3" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+              <input name="dobField"  value="{{isset($datas['dobField'])?$datas['dobField']:''}}" type="text" id="text-input-id-3" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
               
             </div>
           </div>
@@ -114,7 +114,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-4">
                 City of birth <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-4" placeholder="City of birth" required="" class="gaccca-input" />
+                <input name="leadRecord[City_of_Birth__c]"  value="{{isset($datas['leadRecord']['City_of_Birth__c'])?$datas['leadRecord']['City_of_Birth__c']:''}}" type="text" id="text-input-id-4" placeholder="City of birth" required="" class="gaccca-input" />
                 
               </div>
           </div>
@@ -130,7 +130,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-4">
                   Your Email <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" id="text-input-id-4" placeholder="City of birth" required="" class="gaccca-input" />
+                  <input name="leadRecord[Email]"  value="{{isset($datas['leadRecord']['Email'])?$datas['leadRecord']['Email']:''}}" type="text" id="text-input-id-4" placeholder="City of birth" required="" class="gaccca-input" />
                   
                 </div>
             </div>
@@ -146,7 +146,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-4">
                   Phone <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" id="text-input-id-4" placeholder="City of birth" required="" class="gaccca-input" />
+                  <input name="leadRecord[Phone]"  value="{{isset($datas['leadRecord']['Phone'])?$datas['leadRecord']['Phone']:''}}" type="text" id="text-input-id-4" placeholder="City of birth" required="" class="gaccca-input" />
                   
                 </div>
             </div>
@@ -165,7 +165,7 @@
               Street <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
              
-                <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+                <textarea name="leadRecord[Street__c]"  placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['leadRecord']['Street__c'])?$datas['leadRecord']['Street__c']:''}}</textarea>
 
             </div>
           </div>
@@ -178,7 +178,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-9">
               City <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-9" placeholder="City" required="" class="gaccca-input" />
+              <input name="leadRecord[City__c]"  value="{{isset($datas['leadRecord']['City__c'])?$datas['leadRecord']['City__c']:''}}" type="text" id="text-input-id-9" placeholder="City" required="" class="gaccca-input" />
             
             </div>
           </div>
@@ -189,7 +189,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-10">
               Zip  <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
+              <input name="leadRecord[Zip_Postal_Code__c]"  value="{{isset($datas['leadRecord']['Zip_Postal_Code__c'])?$datas['leadRecord']['Zip_Postal_Code__c']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -200,7 +200,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-11">
               Country <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" />
+              <input name="leadRecord[Country__c]"  value="{{isset($datas['leadRecord']['Country__c'])?$datas['leadRecord']['Country__c']:''}}" type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -223,7 +223,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-su">
                 School or University <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-su" placeholder="School or University" required="" class="gaccca-input" />
+              <input name="leadRecord[University__c]"  value="{{isset($datas['leadRecord']['University__c'])?$datas['leadRecord']['University__c']:''}}" type="text" id="text-input-id-su" placeholder="School or University" required="" class="gaccca-input" />
             
             </div>
           </div>
@@ -234,7 +234,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-fs">
                 Field of Study  <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-fs" placeholder="Field of Study" required="" class="gaccca-input" />
+              <input name="leadRecord[Field_of_Study__c]"  value="{{isset($datas['leadRecord']['Field_of_Study__c'])?$datas['leadRecord']['Field_of_Study__c']:''}}" type="text" id="text-input-id-fs" placeholder="Field of Study" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -248,7 +248,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-degree">
               Degree Level <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-degree" placeholder="Degree Level" required="" class="gaccca-input" />
+              <input name="leadRecord[Degree_Level__c]"  value="{{isset($datas['leadRecord']['Degree_Level__c'])?$datas['leadRecord']['Degree_Level__c']:''}}" type="text" id="text-input-id-degree" placeholder="Degree Level" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -261,7 +261,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-semesters">
                 Number of semesters completed <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-semesters" placeholder="Number of semesters completed" required="" class="gaccca-input" />
+                <input name="leadRecord[Number_of_semesters_completed__c]"  value="{{isset($datas['leadRecord']['Number_of_semesters_completed__c'])?$datas['leadRecord']['Number_of_semesters_completed__c']:''}}" type="text" id="text-input-id-semesters" placeholder="Number of semesters completed" required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -275,7 +275,7 @@
                 Specific Skills <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                
-                  <textarea  placeholder="Specific Skills" required="" class="gaccca-textarea"></textarea>
+                  <textarea name="leadRecord[Specific_Skills__c]"   placeholder="Specific Skills" required="" class="gaccca-textarea">{{isset($datas['leadRecord']['Specific_Skills__c'])?$datas['leadRecord']['Specific_Skills__c']:''}}</textarea>
                   <span class="gaccca-input-help-text">Please name important skills you have which are relevant for the internship in the USA.</span>
   
               </div>
@@ -290,7 +290,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-semesters">
                 Native Language <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-semesters" placeholder="Native Language" required="" class="gaccca-input" />
+                <input name="leadRecord[Language__c]"  value="{{isset($datas['leadRecord']['Language__c'])?$datas['leadRecord']['Language__c']:''}}" type="text" id="text-input-id-semesters" placeholder="Native Language" required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -433,7 +433,7 @@
                 Upload your most current resume/CV <br/> in PDF-format <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
                       <label class="gaccca-file">
-                          <input type="file"  id="myFile" name="filename"/>
+                          <input type="file"  id="myFile" name="fileCV"/>
                           <span class="gaccca-file-custom">Choose file...</span>
   
                       </label>
@@ -469,7 +469,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-industry">
                 Industry / Field <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-industry" placeholder="School or University" required="" class="gaccca-input" />
+              <input name="leadRecord[Industry_Field__c]"  value="{{isset($datas['leadRecord']['Industry_Field__c'])?$datas['leadRecord']['Industry_Field__c']:''}}" type="text" id="text-input-id-industry" placeholder="School or University" required="" class="gaccca-input" />
             
             </div>
           </div>
@@ -480,7 +480,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-region">
                 Region / City  <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-region" placeholder="Field of Study" required="" class="gaccca-input" />
+              <input name="leadRecord[Region_City__c]"  value="{{isset($datas['leadRecord']['Region_City__c'])?$datas['leadRecord']['Region_City__c']:''}}" type="text" id="text-input-id-region" placeholder="Field of Study" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -494,7 +494,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-start-date">
                 Start Date (month / year) <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-start-date" placeholder="Start Date (month / year)" required="" class="gaccca-input" />
+              <input name="leadRecord[Start_Date_month_year__c]"  value="{{isset($datas['leadRecord']['Start_Date_month_year__c'])?$datas['leadRecord']['Start_Date_month_year__c']:''}}" type="text" id="text-input-id-start-date" placeholder="Start Date (month / year)" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -507,7 +507,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-semesters">
                 Duration in Months <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-semesters" placeholder="Duration in Months" required="" class="gaccca-input" />
+                <input name="leadRecord[Duration_in_Months__c]"  value="{{isset($datas['leadRecord']['Duration_in_Months__c'])?$datas['leadRecord']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-semesters" placeholder="Duration in Months" required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -520,7 +520,7 @@
                 Additional notes on your preferences <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                
-                  <textarea  placeholder="Additional notes on your preferences" required="" class="gaccca-textarea"></textarea>
+                  <textarea name="leadRecord[Additional_notes_on_your_preferences__c]" placeholder="Additional notes on your preferences" required="" class="gaccca-textarea">{{isset($datas['leadRecord']['Additional_notes_on_your_preferences__c'])?$datas['leadRecord']['Additional_notes_on_your_preferences__c']:''}}</textarea>
                   
               </div>
             </div>
@@ -540,7 +540,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-pa-industry">
                 Industry / Field <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-pa-industry" placeholder="School or University" required="" class="gaccca-input" />
+              <input name="leadRecord[Industry_Field_Alternative__c]"  value="{{isset($datas['leadRecord']['Industry_Field_Alternative__c'])?$datas['leadRecord']['Industry_Field_Alternative__c']:''}}" type="text" id="text-input-id-pa-industry" placeholder="School or University" required="" class="gaccca-input" />
             
             </div>
           </div>
@@ -551,7 +551,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-pa-region">
                 Region / City  <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-pa-region" placeholder="Field of Study" required="" class="gaccca-input" />
+              <input name="leadRecord[Region_City_Alternative__c]"  value="{{isset($datas['leadRecord']['Region_City_Alternative__c'])?$datas['leadRecord']['Region_City_Alternative__c']:''}}" type="text" id="text-input-id-pa-region" placeholder="Field of Study" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -565,7 +565,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-pa-start-date">
                 Start Date (month / year) <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-pa-start-date" placeholder="Start Date (month / year)" required="" class="gaccca-input" />
+              <input name="leadRecord[Start_Date_month_year_Alternative__c]"  value="{{isset($datas['leadRecord']['Start_Date_month_year_Alternative__c'])?$datas['leadRecord']['Start_Date_month_year_Alternative__c']:''}}" type="text" id="text-input-id-pa-start-date" placeholder="Start Date (month / year)" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -578,7 +578,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-pa-duration">
                 Duration in Months <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-pa-duration" placeholder="Duration in Months" required="" class="gaccca-input" />
+                <input name="leadRecord[Duration_in_Months_Alternative__c]"  value="{{isset($datas['leadRecord']['Duration_in_Months_Alternative__c'])?$datas['leadRecord']['Duration_in_Months_Alternative__c']:''}}" type="text" id="text-input-id-pa-duration" placeholder="Duration in Months" required="" class="gaccca-input" />
                 
               </div>
             </div>

@@ -187,7 +187,26 @@ Route::resource('QuestionerPlacement', 'QuestionerPlacementController');
 Route::get('/QuestionerPlacementService', 'QuestionerPlacementController@index');
 
 
+Route::resource('AgencyInformation', 'AgencyInformationController');
+Route::get('/AgencyInformation', 'AgencyInformationController@index');
 
+
+Route::resource('AgencyBvisaBooking', 'AgencyBvisaBookingController');
+Route::get('/AgencyBvisaBooking', 'AgencyBvisaBookingController@index');
+
+Route::resource('AgencyPlacementProgram', 'AgencyPlacementProgramController');
+Route::get('/AgencyPlacementProgramRegistrationForm', 'AgencyPlacementProgramController@index');
+
+
+Route::resource('HostCompanyAgreementAgent', 'HostCompanyAgreementAgentController');
+Route::get('/host_company_agreement_agent', 'HostCompanyAgreementAgentController@index');
+
+
+Route::resource('DS7002TrainigsplanAgent', 'DS7002TrainigsplanAgentController');
+Route::get('/DS_7002_Trainigsplan_agent', 'DS7002TrainigsplanAgentController@index');
+
+Route::resource('JVisaParticipantInfo', 'JVisaParticipantInfoController');
+Route::get('/JVisaParticipantInfo', 'JVisaParticipantInfoController@index');
 
 
 

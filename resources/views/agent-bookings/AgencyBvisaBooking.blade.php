@@ -162,7 +162,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-fn">
                 First name of visa applicant <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-fn" placeholder="First name of visa applicant" required="" class="gaccca-input" />
+                <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}"  required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -175,7 +175,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-2">
                 Last name of visa applicant <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-2" placeholder="Last name of visa applicant" required="" class="gaccca-input" />
+              <input type="text" name="LastName" value="{{isset($datas['LastName'])?$datas['LastName']:''}}"   required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -187,7 +187,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-3">
                 Email address of visa applicant <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-3" placeholder="Email address of visa applicant" required="" class="gaccca-input" />
+                <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}" placeholder="Email address of visa applicant" required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -200,7 +200,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-4">
                 Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-4" placeholder="Phone Number" required="" class="gaccca-input" />
+                <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}" id="text-input-id-4" placeholder="Phone Number" required="" class="gaccca-input" />
                 <span class="gaccca-input-help-text">Please always provide your country code</span>
               </div>
             </div>
@@ -214,7 +214,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-5">
                 Date of Departure to the USA <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element-date">
-              <input type="text" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+              <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
             </div>
           </div>
   
@@ -226,6 +226,34 @@
         <h2 class="gaccca-h2-padding">Invoice Address</h2>
         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
+
+
+
+                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          
+          <div class="gaccca-form-element gaccca-form-element-margin">
+            <label class="gaccca-form-element__label" for="text-input-id-fn">
+              Company Name <span class="gaccca-text-required" title="required">*</span> </label>
+            <div class="gaccca-form-element__control">
+              <input type="text"  name="companyName"  value="{{isset($datas['companyName'])?$datas['companyName']:''}}" id="text-input-id-fn" placeholder="First Name" required="" class="gaccca-input" />
+              
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          
+          <div class="gaccca-form-element gaccca-form-element-margin">
+            <label class="gaccca-form-element__label" for="text-input-id-fn">
+              Website <span class="gaccca-text-required" title="required">*</span> </label>
+            <div class="gaccca-form-element__control">
+              <input type="text"  name="website"  value="{{isset($datas['website'])?$datas['website']:''}}" id="text-input-id-fn" placeholder="First Name" required="" class="gaccca-input" />
+              
+            </div>
+          </div>
+        </div>
 
 
 
@@ -253,9 +281,6 @@
       
                 </div>
                  
-            
-      
-      
               </div>
 
 
@@ -265,7 +290,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-fn">
                     First Name <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <input type="text" id="text-input-id-fn" placeholder="First Name" required="" class="gaccca-input" />
+                    <input type="text"  name="conPersonInfo[FirstName]"  value="{{isset($datas['conPersonInfo']['FirstName'])?$datas['conPersonInfo']['FirstName']:''}}" id="text-input-id-fn" placeholder="First Name" required="" class="gaccca-input" />
                     
                   </div>
                 </div>
@@ -278,7 +303,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-2">
                     Last Name<span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" />
+                  <input type="text" name="lastNameConPerson"  value="{{isset($datas['lastNameConPerson'])?$datas['lastNameConPerson']:''}}" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" />
                   
                 </div>
               </div>
@@ -291,7 +316,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-8">
                     Street <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+                    <textarea name="conPersonInfo[MailingStreet]"   placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['conPersonInfo']['MailingStreet'])?$datas['conPersonInfo']['MailingStreet']:''}}</textarea>
                     
                   </div>
                 </div>
@@ -304,7 +329,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-9">
                     City <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <input type="text" id="text-input-id-9" placeholder="City" required="" class="gaccca-input" />
+                    <input type="text" name="conPersonInfo[MailingCity]"  value="{{isset($datas['conPersonInfo']['MailingCity'])?$datas['conPersonInfo']['MailingCity']:''}}" id="text-input-id-9" placeholder="City" required="" class="gaccca-input" />
                   </div>
                 </div>
               </div>
@@ -315,7 +340,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-10">
                     Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <input type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
+                    <input name="conPersonInfo[MailingPostalCode]"  value="{{isset($datas['conPersonInfo']['MailingPostalCode'])?$datas['conPersonInfo']['MailingPostalCode']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
                   </div>
                 </div>
               </div>
@@ -325,7 +350,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-11">
                     Country <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <input type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" />
+                    <input name="conPersonInfo[MailingCountryCode]"  value="{{isset($datas['conPersonInfo']['MailingCountryCode'])?$datas['conPersonInfo']['MailingCountryCode']:''}}" type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" />
                     
                   </div>
                 </div>
@@ -337,7 +362,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-7">
                 Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-7" placeholder="+1" required="" class="gaccca-input" />
+                <input name="conPersonInfo[Phone]"  value="{{isset($datas['conPersonInfo']['Phone'])?$datas['conPersonInfo']['Phone']:''}}" type="text" id="text-input-id-7" placeholder="+1" required="" class="gaccca-input" />
                 <span class="gaccca-input-help-text">Please always provide your country code.</span>
               </div>
             </div>
@@ -349,7 +374,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-8">
                 Notes and remarks for this order <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                  <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+                  <textarea name="note" placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['note'])?$datas['note']:''}}</textarea>
               </div>
             </div>
           </div>
