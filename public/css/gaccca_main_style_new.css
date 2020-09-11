@@ -1268,7 +1268,7 @@ margin: 0px auto 0px auto;
   }
   
   /* Style the buttons inside the gaccca-tab */
-  .gaccca-tab button {
+  .gaccca-tab span {
     background-color: inherit;
     float: left;
     border: none;
@@ -1281,12 +1281,12 @@ margin: 0px auto 0px auto;
   }
   
   /* Change background color of buttons on hover */
-  .gaccca-tab button:hover {
+  .gaccca-tab span:hover {
     background-color: inherit;
   }
   
   /* Create an active/current gaccca-tablink class */
-  .gaccca-tab button.gaccca-tab-active {
+  .gaccca-tab span.gaccca-tab-active {
     background-color: #1A73E8;
     color: #FFF;
   }
@@ -1691,7 +1691,7 @@ button.gaccca-accordion-minius::before {
     position: fixed;
     width: 71%;
     left: 13%;
-    z-index: 1;
+    z-index: 6;
 
   }
   

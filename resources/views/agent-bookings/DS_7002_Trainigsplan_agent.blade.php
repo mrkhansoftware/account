@@ -715,10 +715,10 @@
            
                 <div class="gaccca-tab">
                 <span id="your_script_btn" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script'); return false;">Phase 1</span>
-                    <span id="your_script_btn_two" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'phase_two'); return false;">Phase 2</span>
-                    <span id="your_script_btn_three" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'phase_three'); return false;">Phase 3</span>
-                    <span id="your_script_btn_four" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'phase_four'); return false;">Phase 4</span>
-                    <span id="your_script_btn_five" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'phase_five'); return false;">Phase 5</span>
+                    <span id="your_script_btn_two" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn_two', 'phase_two'); return false;">Phase 2</span>
+                    <span id="your_script_btn_three" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn_three', 'phase_three'); return false;">Phase 3</span>
+                    <span id="your_script_btn_four" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn_four', 'phase_four'); return false;">Phase 4</span>
+                    <span id="your_script_btn_five" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn_four', 'phase_five'); return false;">Phase 5</span>
                    
                    
                    
