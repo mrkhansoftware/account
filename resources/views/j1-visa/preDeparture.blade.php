@@ -1,4 +1,8 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.signScript');
+{!! Form::open(['action' => 'PreDepartureController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Pre-Departure Orientation Confirmation</h1>
@@ -66,10 +70,14 @@
                 </ol>
 
     </div>
-     
+    @include('common.signHTML');
     <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
     </div>
 
     
 {!! Form::close() !!}
 @include('common.footer')
+
+@else
+  Permission denied. Please contact administrator.
+  @endif

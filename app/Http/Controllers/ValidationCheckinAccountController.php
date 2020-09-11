@@ -68,7 +68,7 @@ class ValidationCheckinAccountController extends Controller
         /*-----FILE UPLOAD-------------*/
      
         $unique_Folder_Id;
-        if(session()->get('NewGdriveID__c')=='' && 'App\Services\Helper'::isFolderExist(session()->get('NewGdriveID__c'))!='200'){
+        if(session()->get('NewGdriveID__c')=='' || 'App\Services\Helper'::isFolderExist(session()->get('NewGdriveID__c'))!='200'){
          $Google_Drive_Folder_Id='App\Services\Helper'::returnFolderId('applicant');
          $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, session()->get('lastNameFirstName'));
          $finalReq['applicant']['NewGdriveID__c']=$unique_Folder_Id;
@@ -76,7 +76,7 @@ class ValidationCheckinAccountController extends Controller
          $unique_Folder_Id= session()->get('NewGdriveID__c');
      }
 
-     if(session()->get('Google_Drive_Evaluation_Form__c')==''  && 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Evaluation_Form__c'))!='200'){
+     if(session()->get('Google_Drive_Evaluation_Form__c')==''  || 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Evaluation_Form__c'))!='200'){
         $Google_Drive_Folder_Id=$unique_Folder_Id;
         $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id,'Evaluation');
         $finalReq['applicant']['Google_Drive_Evaluation_Form__c']=$unique_Folder_Id;

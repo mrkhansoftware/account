@@ -13,7 +13,19 @@ class PreDepartureController extends Controller
      */
     public function index()
     {
-        return view('j1-visa/preDeparture');
+
+$idCon= 'App\Services\Helper'::sessionConId();
+if($idCon==''){
+return 'App\Services\Helper'::returnUrl();
+}
+
+$datas='App\Services\Helper'::getRequest('ApiPreDepartureClass/'.$idCon);
+$datas = json_decode($datas, true);
+$datas = json_decode($datas, true);
+session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+
+return view('j1-visa/preDeparture')->with(compact('datas'));
+    
         
     }
 
@@ -35,7 +47,23 @@ class PreDepartureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $finalReq = $request->all();
+     
+    $finalReq['applicant']['id']=session()->get('applicantId');
+    $finalReq['applicantData']=json_encode($finalReq['applicant']);
+    unset($finalReq['_token']);
+    unset($finalReq['applicant']);
+   
+  
+  
+  
+  
+
+//echo "<pre>"; print_r($finalReq);die;
+
+   'App\Services\Helper'::postRequest($finalReq,'ApiPreDepartureClass');
+ 
+return redirect()->action('PreDepartureController@index', ['isSave' => 1]);
     }
 
     /**

@@ -13,7 +13,37 @@ class WeeklyCheckinController extends Controller
      */
     public function index()
     {
-        return view('j1-visa/weekly_Checkin');
+
+        
+$idCon= 'App\Services\Helper'::sessionConId();
+if($idCon==''){
+return 'App\Services\Helper'::returnUrl();
+}
+
+ $datas='App\Services\Helper'::getRequest('ApiWeeklyCheckInClass/'.$idCon);
+$datas = json_decode($datas, true);
+$datas = json_decode($datas, true);
+//echo '<pre>'; print_r($datas); die;
+session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+if(isset($datas['ap']['Id'])){
+session()->put('applicantId', $datas['ap']['Id']);
+}
+if(isset($datas['ap']['NewGdriveID__c'])){
+session()->put('NewGdriveID__c', $datas['ap']['NewGdriveID__c']);
+}
+
+if(isset($datas['ap']['Google_Drive_Evaluation_Form__c'])){
+session()->put('Google_Drive_Evaluation_Form__c', $datas['ap']['Google_Drive_Evaluation_Form__c']);
+}
+
+
+if(isset($datas['onfrm']['Id'])){
+session()->put('onfrmId', $datas['onfrm']['Id']);
+}
+session()->put('Contact__c', $datas['ap']['Contact__c']);
+
+return view('j1-visa/weekly_Checkin')->with(compact('datas'));
+
     }
 
     /**
@@ -34,7 +64,34 @@ class WeeklyCheckinController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+$finalReq = $request->all();
+
+
+
+
+/*-----FILE UPLOAD----END---------*/
+
+
+$finalReq['applicant']['id']=session()->get('applicantId');
+$finalReq['onfrm']['id']=session()->get('onfrmId');
+$finalReq['applicantData']=json_encode($finalReq['applicant']);
+$finalReq['onlineFormData']=json_encode($finalReq['onfrm']);
+unset($finalReq['_token']);
+unset($finalReq['applicant']);
+
+unset($finalReq['onfrm']);
+
+
+
+
+
+
+echo "<pre>"; print_r($finalReq);
+
+'App\Services\Helper'::postRequest($finalReq,'ApiWeeklyCheckInClass');
+
+return redirect()->action('WeeklyCheckinController@index', ['isSave' => 1]);
     }
 
     /**

@@ -122,7 +122,10 @@ jQuery('.gaccca-input-date').datepicker({
             
         }, 5000);
     }
-    
+    function showInput(value,conVal,section){
+     document.getElementById(section).style.display=value==conVal?'block':'none';
+     document.getElementById(section+'Field').required=value==conVal;
+    }
 </script>
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
 </html>

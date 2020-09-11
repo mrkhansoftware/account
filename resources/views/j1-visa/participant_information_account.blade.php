@@ -311,11 +311,11 @@
         <br />
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-lom">
-            Copy of Your Passport <span class="gaccca-text-required" title="required">*</span></label>
+            Copy of Your Passport <span class="gaccca-text-required" title="required">{{isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'*'}}</span></label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
 
-              {!!Form::file('passport',['required' => 'required']);!!}
+              {!!Form::file('passport',[isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'required' => isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'required']);!!}
 
               <span class="gaccca-file-custom">Choose file...</span>
 
@@ -328,10 +328,10 @@
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-lom">
-            English CV / Resume <span class="gaccca-text-required" title="required">*</span></label>
+            English CV / Resume <span class="gaccca-text-required" title="required">{{isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'*'}}</span></label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              {!!Form::file('resume',['required' => 'required']);!!}
+              {!!Form::file('resume',[isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'required' => isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'required']);!!}
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -342,10 +342,10 @@
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-lom">
-            Student Status Verification <span class="gaccca-text-required" title="required">*</span> </label>
+            Student Status Verification <span class="gaccca-text-required" title="required">{{isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'*'}}</span> </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              {!!Form::file('status_verification',['required' => 'required']);!!}
+              {!!Form::file('status_verification',[isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'required' => isset($datas['Appli']['Agent_Confirmed__c']) && $datas['Appli']['Agent_Confirmed__c']?'':'required']);!!}
 
               <span class="gaccca-file-custom">Choose file...</span>
 

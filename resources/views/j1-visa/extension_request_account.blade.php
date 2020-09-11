@@ -1,6 +1,8 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
+
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'ExtensionRequestAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -23,7 +25,9 @@
             <label class="gaccca-form-element__label" for="text-input-id-1">
                 Name of your Host-Company <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-1" placeholder="Name of your Host-Company" required="" class="gaccca-input" />
+              <input type="text" 
+              value="{{isset($datas['ap']['Host_Company__c'])?$datas['ap']['Host_Company__c']:''}}" 
+               placeholder="Name of your Host-Company" required="" class="gaccca-input" disabled/>
               
               
             </div>
@@ -36,7 +40,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-2">
                 Name of your Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" id="text-input-id-2" placeholder="Name of your Supervisor" required="" class="gaccca-input" />
+              <input type="text" name='supervisorName' id="text-input-id-2" placeholder="Name of your Supervisor" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -50,7 +54,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-3">
                 eMail-Adresse Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element gaccca-form-element-margin-date">
-              <input type="text" id="text-input-id-3" placeholder="eMail-Adresse Supervisor" required="" class="gaccca-input" />
+              <input type="email" name='supervisorEmail' id="text-input-id-3" placeholder="eMail-Adresse Supervisor" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -66,7 +70,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-4">
                 End Date on your current DS-2019 <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
+                <input type="text" name='DS_2019' id="text-input-id-4"  required="" class="gaccca-input-date" />
                 
               </div>
           </div>
@@ -80,8 +84,10 @@
                 <label class="gaccca-form-element__label" for="select-01">Insurance Provider</label>
                 <div class="gaccca-form-element__control">
                   <div class="gaccca-select_container">
-                    <select class="gaccca-select" id="select-01">                      
-                      <option>select</option>
+                    <select class="gaccca-select" id="select-01" name='Insurance_Provider'>                      
+                      <option value=''>---</option>
+                      <option value='GACC California'>GACC California</option>
+                      <option value='Other'>Other</option>
                     </select>
                   </div>
                 </div>
@@ -96,7 +102,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-5">
                     Date of Extension begin  <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" id="text-input-id-5"  required="" class="gaccca-input-date" />
+                  <input type="text" name='Date_of_Extension'  required="" class="gaccca-input-date" />
                   
                 </div>
             </div>
@@ -111,7 +117,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-5">
                     New End date of your program  <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" id="text-input-id-5"  required="" class="gaccca-input-date" />
+                  <input type="text" name='New_End_date'   required="" class="gaccca-input-date" />
                   
                 </div>
             </div>
@@ -126,7 +132,7 @@
                 Please take your time and explain in detail the  <br/>reasons for an extension  <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                
-                  <textarea  required="" class="gaccca-textarea"></textarea>
+                  <textarea  required="" class="gaccca-textarea" name='comment'></textarea>
                 
               </div>
             </div>
@@ -139,3 +145,7 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+
+@else
+  Permission denied. Please contact administrator.
+  @endif

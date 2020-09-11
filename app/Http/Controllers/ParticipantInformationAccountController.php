@@ -51,7 +51,6 @@ class ParticipantInformationAccountController extends Controller
     public function store(Request $request)
     {
         $finalReq = $request->all();
-        echo "<pre>";
         unset($finalReq['_token']);
        
         // $validatedData = $request->validate([
@@ -88,7 +87,7 @@ class ParticipantInformationAccountController extends Controller
        
       
        $unique_Folder_Id;
-       if(session()->get('Google_Drive_Folder__c')==''  && 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Folder__c'))!='200'){
+       if(session()->get('Google_Drive_Folder__c')==''  || 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Folder__c'))!='200'){
       $Google_Drive_Folder_Id='App\Services\Helper'::returnFolderId('registration');
         $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, 'Registration '.session()->get('lastNameFirstName'));
         $finalReq['applicant']['Google_Drive_Folder__c']=$unique_Folder_Id;

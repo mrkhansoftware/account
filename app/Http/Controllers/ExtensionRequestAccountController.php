@@ -13,7 +13,19 @@ class ExtensionRequestAccountController extends Controller
      */
     public function index()
     {
-        return view('j1-visa/extension_request_account');
+
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+  
+           $datas='App\Services\Helper'::getRequest('ApiExtensionRequestController/'.$idCon);
+          $datas = json_decode($datas, true);
+          $datas = json_decode($datas, true);
+          if(isset($datas['ap']['Id'])){
+            session()->put('applicantId', $datas['ap']['Id']);
+            }
+         return view('j1-visa/extension_request_account')->with(compact('datas'));
     }
 
     /**
@@ -34,7 +46,23 @@ class ExtensionRequestAccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $finalReq = $request->all();
+     
+        $finalReq['applicant']['id']=session()->get('applicantId');
+        $finalReq['applicantData']=json_encode($finalReq['applicant']);
+        
+        unset($finalReq['_token']);
+        unset($finalReq['applicant']);
+        
+      
+      
+      
+    
+    //echo "<pre>"; print_r($finalReq);die;
+    
+       'App\Services\Helper'::postRequest($finalReq,'ApiExtensionRequestController');
+       //die;
+    return redirect()->action('ExtensionRequestAccountController@index', ['isSave' => 1]);
     }
 
     /**
