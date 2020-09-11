@@ -24,7 +24,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-1">
                 Name of Supervisor's Intern/Trainee   <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text"  id="text-input-id-1"  required="" class="gaccca-input" />
+              <input type="text" name="onfrm[Name_of_Supervisor_s_Intern_Trainee__c]"  value="{{isset($datas['onfrm']['Name_of_Supervisor_s_Intern_Trainee__c'])?$datas['onfrm']['Name_of_Supervisor_s_Intern_Trainee__c']:''}}"  id="text-input-id-1"  required="" class="gaccca-input" />
               <br/>
               
               
@@ -38,7 +38,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-1">
                 Name of Supervisor   <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text"  id="text-input-id-1"  required="" class="gaccca-input" />
+                <input type="text" name="onfrm[Name_of_Supervisor__c]"  value="{{isset($datas['onfrm']['Name_of_Supervisor__c'])?$datas['onfrm']['Name_of_Supervisor__c']:''}}"  id="text-input-id-1"  required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -50,7 +50,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-1">
                 Name of Host Company   <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text"  id="text-input-id-1"  required="" class="gaccca-input" />
+                <input type="text" name="onfrm[Name_of_Host_Company__c]"  value="{{isset($datas['onfrm']['Name_of_Host_Company__c'])?$datas['onfrm']['Name_of_Host_Company__c']:''}}"  id="text-input-id-1"  required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -62,7 +62,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-1">
                 Supervisor's Current Business Address   <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text"  id="text-input-id-1"  required="" class="gaccca-input" />
+                <input type="text" name="onfrm[Supervisor_s_Current_Business_Address__c]"  value="{{isset($datas['onfrm']['Supervisor_s_Current_Business_Address__c'])?$datas['onfrm']['Supervisor_s_Current_Business_Address__c']:''}}" id="text-input-id-1"  required="" class="gaccca-input" />
                 <br/>
                 
                 
@@ -76,7 +76,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-1">
                 Zip Code, City, State    <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text"  id="text-input-id-1"  required="" class="gaccca-input" />
+                <input type="text" name="onfrm[Zip_Code__c]"  value="{{isset($datas['onfrm']['Zip_Code__c'])?$datas['onfrm']['Zip_Code__c']:''}}" id="text-input-id-1"  required="" class="gaccca-input" />
                 <br/>
                 
                 
@@ -90,7 +90,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-1">
                 Supervisor's Business Phone Number   <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text"  id="text-input-id-1"  required="" class="gaccca-input" />
+                <input type="text" name="onfrm[Phone__c]"  value="{{isset($datas['onfrm']['Phone__c'])?$datas['onfrm']['Phone__c']:''}}"  id="text-input-id-1"  required="" class="gaccca-input" />
                 <br/>
                 
                 
@@ -104,7 +104,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-1">
                 Supervisor's Business Email Address   <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text"  id="text-input-id-1"  required="" class="gaccca-input" />
+                <input type="text" name="onfrm[EMail__c]"  value="{{isset($datas['onfrm']['EMail__c'])?$datas['onfrm']['EMail__c']:''}}" id="text-input-id-1"  required="" class="gaccca-input" />
                 <br/>
                 
                 
@@ -175,23 +175,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-2">
                     How well has the intern/trainee adapted to the business environment of your company? <span class="gaccca-text-required" title="required">*</span> </label><br/>
                     <span class="gaccca-file-help-text-color">1=poor / 5=excellent</span>
-                    <span class="gaccca-rating">
-                        <input type="radio" class="gaccca-rating-input"
-                            id="gaccca-rating-input-1-5" name="gaccca-rating-input-1"/>
-                        <label for="gaccca-rating-input-1-5" class="gaccca-rating-star"></label>
-                        <input type="radio" class="gaccca-rating-input"
-                            id="gaccca-rating-input-1-4" name="gaccca-rating-input-1"/>
-                        <label for="gaccca-rating-input-1-4" class="gaccca-rating-star"></label>
-                        <input type="radio" class="gaccca-rating-input"
-                            id="gaccca-rating-input-1-3" name="gaccca-rating-input-1"/>
-                        <label for="gaccca-rating-input-1-3" class="gaccca-rating-star"></label>
-                        <input type="radio" class="gaccca-rating-input"
-                            id="gaccca-rating-input-1-2" name="gaccca-rating-input-1"/>
-                        <label for="gaccca-rating-input-1-2" class="gaccca-rating-star"></label>
-                        <input type="radio" class="gaccca-rating-input"
-                            id="gaccca-rating-input-1-1" name="gaccca-rating-input-1"/>
-                        <label for="gaccca-rating-input-1-1" class="gaccca-rating-star"></label>
-                    </span>
+                    @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                 
                     <!-- <div class="gaccca-form-element__control">
                   
@@ -209,23 +193,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee is interested in his/her work. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-2-5" name="gaccca-rating-input-2"/>
-                          <label for="gaccca-rating-input-2-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-2-4" name="gaccca-rating-input-2"/>
-                          <label for="gaccca-rating-input-2-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-2-3" name="gaccca-rating-input-2"/>
-                          <label for="gaccca-rating-input-2-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-2-2" name="gaccca-rating-input-2"/>
-                          <label for="gaccca-rating-input-2-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-2-1" name="gaccca-rating-input-2"/>
-                          <label for="gaccca-rating-input-2-1" class="gaccca-rating-star"></label>
-                      </span>
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -249,23 +217,10 @@
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     How well has the intern/trainee performed all tasks/projects assigned so far? <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1=poor / 5=excellent</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-3-5" name="gaccca-rating-input-3"/>
-                          <label for="gaccca-rating-input-3-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-3-4" name="gaccca-rating-input-3"/>
-                          <label for="gaccca-rating-input-3-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-3-3" name="gaccca-rating-input-3"/>
-                          <label for="gaccca-rating-input-3-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-3-2" name="gaccca-rating-input-3"/>
-                          <label for="gaccca-rating-input-3-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-3-1" name="gaccca-rating-input-3"/>
-                          <label for="gaccca-rating-input-3-1" class="gaccca-rating-star"></label>
-                      </span>
+                     
+                     
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -286,7 +241,7 @@
                     Please provide three examples of internship/training tasks/projects the intern/trainee has been involved in:  <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
                    
-                      <textarea  required=""  class="gaccca-textarea"></textarea>
+                      <textarea name="onfrm[trainee_involvement_in_internship__c]"   required=""  class="gaccca-textarea">{{isset($datas['onfrm']['trainee_involvement_in_internship__c'])?$datas['onfrm']['trainee_involvement_in_internship__c']:''}}</textarea>
                     
                   </div>
                 </div>
@@ -334,7 +289,7 @@
 If no, please expand on this: <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
                    
-                      <textarea  required=""  class="gaccca-textarea"></textarea>
+                      <textarea name="onfrm[Qualification_of_intern_for_position_NO__c]"  required=""  class="gaccca-textarea">{{isset($datas['onfrm']['Qualification_of_intern_for_position_NO__c'])?$datas['onfrm']['Qualification_of_intern_for_position_NO__c']:''}}</textarea>
                     
                   </div>
                 </div>
@@ -373,7 +328,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-1">
                     If yes, please specify   <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <input type="text"  id="text-input-id-1"  required="" class="gaccca-input" />
+                    <input type="text" name="onfrm[If_yes_please_specify__c]"  value="{{isset($datas['onfrm']['If_yes_please_specify__c'])?$datas['onfrm']['If_yes_please_specify__c']:''}}"  id="text-input-id-1"  required="" class="gaccca-input" />
                     <br/>
                     
                     
@@ -461,23 +416,10 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee's command of English has improved since the beginning of the internship/training. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-4-5" name="gaccca-rating-input-4"/>
-                          <label for="gaccca-rating-input-4-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-4-4" name="gaccca-rating-input-4"/>
-                          <label for="gaccca-rating-input-4-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-4-3" name="gaccca-rating-input-4"/>
-                          <label for="gaccca-rating-input-4-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-4-2" name="gaccca-rating-input-4"/>
-                          <label for="gaccca-rating-input-4-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-4-1" name="gaccca-rating-input-4"/>
-                          <label for="gaccca-rating-input-4-1" class="gaccca-rating-star"></label>
-                      </span>
+                     
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+
+                    
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -494,23 +436,8 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee is making progress. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-5-5" name="gaccca-rating-input-5"/>
-                          <label for="gaccca-rating-input-5-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-5-4" name="gaccca-rating-input-5"/>
-                          <label for="gaccca-rating-input-5-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-5-3" name="gaccca-rating-input-5"/>
-                          <label for="gaccca-rating-input-5-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-5-2" name="gaccca-rating-input-5"/>
-                          <label for="gaccca-rating-input-5-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-5-1" name="gaccca-rating-input-5"/>
-                          <label for="gaccca-rating-input-5-1" class="gaccca-rating-star"></label>
-                      </span>
+                      
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -526,23 +453,8 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee makes positive contributions to the company. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-6-5" name="gaccca-rating-input-6"/>
-                          <label for="gaccca-rating-input-6-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-6-4" name="gaccca-rating-input-6"/>
-                          <label for="gaccca-rating-input-6-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-6-3" name="gaccca-rating-input-6"/>
-                          <label for="gaccca-rating-input-6-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-6-2" name="gaccca-rating-input-6"/>
-                          <label for="gaccca-rating-input-6-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-6-1" name="gaccca-rating-input-6"/>
-                          <label for="gaccca-rating-input-6-1" class="gaccca-rating-star"></label>
-                      </span>
+                      
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -559,23 +471,8 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee is friendly. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-7-5" name="gaccca-rating-input-7"/>
-                          <label for="gaccca-rating-input-7-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-7-4" name="gaccca-rating-input-7"/>
-                          <label for="gaccca-rating-input-7-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-7-3" name="gaccca-rating-input-7"/>
-                          <label for="gaccca-rating-input-7-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-7-2" name="gaccca-rating-input-7"/>
-                          <label for="gaccca-rating-input-7-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-7-1" name="gaccca-rating-input-7"/>
-                          <label for="gaccca-rating-input-7-1" class="gaccca-rating-star"></label>
-                      </span>
+                      
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -600,23 +497,8 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee is reliable. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-8-5" name="gaccca-rating-input-8"/>
-                          <label for="gaccca-rating-input-8-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-8-4" name="gaccca-rating-input-8"/>
-                          <label for="gaccca-rating-input-8-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-8-3" name="gaccca-rating-input-8"/>
-                          <label for="gaccca-rating-input-8-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-8-2" name="gaccca-rating-input-8"/>
-                          <label for="gaccca-rating-input-8-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-8-1" name="gaccca-rating-input-8"/>
-                          <label for="gaccca-rating-input-8-1" class="gaccca-rating-star"></label>
-                      </span>
+                      
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -636,23 +518,8 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee is motivated. <span class="gaccca-text-required" title="required">*</span>   </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-9-5" name="gaccca-rating-input-9"/>
-                          <label for="gaccca-rating-input-9-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-9-4" name="gaccca-rating-input-9"/>
-                          <label for="gaccca-rating-input-9-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-9-3" name="gaccca-rating-input-9"/>
-                          <label for="gaccca-rating-input-9-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-9-2" name="gaccca-rating-input-9"/>
-                          <label for="gaccca-rating-input-9-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-9-1" name="gaccca-rating-input-9"/>
-                          <label for="gaccca-rating-input-9-1" class="gaccca-rating-star"></label>
-                      </span>
+                      
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -720,23 +587,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee is flexible and able to accept changes to the work environment. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-10-5" name="gaccca-rating-input-10"/>
-                          <label for="gaccca-rating-input-10-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-10-4" name="gaccca-rating-input-10"/>
-                          <label for="gaccca-rating-input-10-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-10-3" name="gaccca-rating-input-10"/>
-                          <label for="gaccca-rating-input-10-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-10-2" name="gaccca-rating-input-10"/>
-                          <label for="gaccca-rating-input-10-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-10-1" name="gaccca-rating-input-10"/>
-                          <label for="gaccca-rating-input-10-1" class="gaccca-rating-star"></label>
-                      </span>
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -755,23 +606,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     How well does the intern/trainee accept constructive criticism? <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1=not well / 5=perfectly fine</span>
-                      <span class="gaccca-rating">
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-11-5" name="gaccca-rating-input-11"/>
-                          <label for="gaccca-rating-input-11-5" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-11-4" name="gaccca-rating-input-11"/>
-                          <label for="gaccca-rating-input-11-4" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-11-3" name="gaccca-rating-input-11"/>
-                          <label for="gaccca-rating-input-11-3" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-11-2" name="gaccca-rating-input-11"/>
-                          <label for="gaccca-rating-input-11-2" class="gaccca-rating-star"></label>
-                          <input type="radio" class="gaccca-rating-input"
-                              id="gaccca-rating-input-11-1" name="gaccca-rating-input-11"/>
-                          <label for="gaccca-rating-input-11-1" class="gaccca-rating-star"></label>
-                      </span>
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -822,7 +657,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     Has your company offered the intern/trainee the opportunity to participate in cultural activities? Please specify:  <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
                    
-                      <textarea  required=""  class="gaccca-textarea"></textarea>
+                      <textarea name="onfrm[Please_state_a_few_cultural_activities__c]" required=""  class="gaccca-textarea">{{isset($datas['onfrm']['Please_state_a_few_cultural_activities__c'])?$datas['onfrm']['Please_state_a_few_cultural_activities__c']:''}}</textarea>
                     
                   </div>
                 </div>
@@ -862,7 +697,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     Please add any additional comments or concerns you may have: </label>
                   <div class="gaccca-form-element__control">
                    
-                    <input type="text"  id="text-input-id-3"  required="" class="gaccca-input" />
+                    <input name="onfrm[Name_of_Supervisor_s_Intern_Trainee__c]"  value="{{isset($datas['onfrm']['Name_of_Supervisor_s_Intern_Trainee__c'])?$datas['onfrm']['Name_of_Supervisor_s_Intern_Trainee__c']:''}}" type="text"  id="text-input-id-3"  required="" class="gaccca-input" />
 
                     
                   </div>

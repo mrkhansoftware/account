@@ -17,7 +17,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-8">
             First and Last Name: <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input required="" class="gaccca-input" />
+            <input name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" required="" class="gaccca-input" />
 
           </div>
         </div>
@@ -28,7 +28,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-8">
             Mailing Address: <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <textarea required="" class="gaccca-textarea"></textarea>
+            <textarea name="onfrm[Interviewer_Mailing_Address__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Interviewer_Mailing_Address__c'])?$datas['onfrm']['Interviewer_Mailing_Address__c']:''}}</textarea>
 
           </div>
         </div>
@@ -39,7 +39,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-8">
             Phone Number: <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input required="" class="gaccca-input" />
+            <input name="onfrm[Site_Visitor_Phone_Number__c]"  value="{{isset($datas['onfrm']['Site_Visitor_Phone_Number__c'])?$datas['onfrm']['Site_Visitor_Phone_Number__c']:''}}" required="" class="gaccca-input" />
 
           </div>
         </div>
@@ -50,7 +50,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-8">
             Email Address: <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input required="" class="gaccca-input" />
+            <input name="onfrm[Interviewer_Email_Address__c]"  value="{{isset($datas['onfrm']['Interviewer_Email_Address__c'])?$datas['onfrm']['Interviewer_Email_Address__c']:''}}" required="" class="gaccca-input" />
 
           </div>
         </div>
@@ -70,7 +70,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Name of Host Company: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input required="" class="gaccca-input" />
+          <input name="onfrm[Name_of_Host_Company__c]"  value="{{isset($datas['onfrm']['Name_of_Host_Company__c'])?$datas['onfrm']['Name_of_Host_Company__c']:''}}" required="" class="gaccca-input" />
 
         </div>
       </div>
@@ -82,7 +82,7 @@
           Complete Address (include, City, State, Zip Code): <span class="gaccca-text-required"
             title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[Host_Company_Complete_Address__c]"  required="" class="gaccca-textarea">{{isset($datas['onfrm']['Host_Company_Complete_Address__c'])?$datas['onfrm']['Host_Company_Complete_Address__c']:''}}</textarea>
         </div>
       </div>
     </div>
@@ -93,7 +93,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Name of Supervisor: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input required="" class="gaccca-input" />
+          <input name="onfrm[Name_of_Supervisor__c]"  value="{{isset($datas['onfrm']['Name_of_Supervisor__c'])?$datas['onfrm']['Name_of_Supervisor__c']:''}}" required="" class="gaccca-input" />
 
         </div>
       </div>
@@ -105,7 +105,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Title/Position at Company: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input required="" class="gaccca-input" />
+          <input name="onfrm[Supervisor_Position__c]"  value="{{isset($datas['onfrm']['Supervisor_Position__c'])?$datas['onfrm']['Supervisor_Position__c']:''}}" required="" class="gaccca-input" />
 
         </div>
       </div>
@@ -117,7 +117,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Phone Number: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input required="" class="gaccca-input" />
+          <input name="onfrm[Supervisor_Phone__c]"  value="{{isset($datas['onfrm']['Supervisor_Phone__c'])?$datas['onfrm']['Supervisor_Phone__c']:''}}" required="" class="gaccca-input" />
 
         </div>
       </div>
@@ -128,7 +128,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Email Address: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input required="" class="gaccca-input" />
+          <input name="onfrm[Supervisor_Email__c]"  value="{{isset($datas['onfrm']['Supervisor_Email__c'])?$datas['onfrm']['Supervisor_Email__c']:''}}" required="" class="gaccca-input" />
 
         </div>
       </div>
@@ -140,7 +140,7 @@
           Name of Host Company Representative conducting Site Visit (if not supervisor): <span
             class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input required="" class="gaccca-input" />
+          <input name="onfrm[Name_of_Host_Company_Representative__c]"  value="{{isset($datas['onfrm']['Name_of_Host_Company_Representative__c'])?$datas['onfrm']['Name_of_Host_Company_Representative__c']:''}}" required="" class="gaccca-input" />
 
         </div>
       </div>
@@ -152,7 +152,7 @@
           Number of employees at training/intern site: <span class="gaccca-text-required" title="required">*</span>
         </label>
         <div class="gaccca-form-element__control">
-          <input required="" class="gaccca-input" />
+          <input name="onfrm[no_of_full_time_employees_at_site__c]"  value="{{isset($datas['onfrm']['no_of_full_time_employees_at_site__c'])?$datas['onfrm']['no_of_full_time_employees_at_site__c']:''}}" required="" class="gaccca-input" />
 
         </div>
       </div>
@@ -209,7 +209,7 @@
           Nature of business/ endeavor (ie: Retail, Clothing, Restaurant, Manufacturing, Law Firm, Resort etc…): <span
             class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[Nature_of_business_endeavor__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Nature_of_business_endeavor__c'])?$datas['onfrm']['Nature_of_business_endeavor__c']:''}}</textarea>
 
         </div>
       </div>
@@ -275,7 +275,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Length of time in business: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[Length_of_time_in_business__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Length_of_time_in_business__c'])?$datas['onfrm']['Length_of_time_in_business__c']:''}}</textarea>
 
         </div>
       </div>
@@ -286,7 +286,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Length of time at this location: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[Length_of_time_at_this_location__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Length_of_time_at_this_location__c'])?$datas['onfrm']['Length_of_time_at_this_location__c']:''}}</textarea>
 
         </div>
       </div>
@@ -394,7 +394,7 @@
           If yes, is the work space separate from the living area? Please describe: <span class="gaccca-text-required"
             title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[Is_the_office_a_home_office__c]"  required="" class="gaccca-textarea">{{isset($datas['onfrm']['Is_the_office_a_home_office__c'])?$datas['onfrm']['Is_the_office_a_home_office__c']:''}}</textarea>
 
         </div>
       </div>
@@ -469,7 +469,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           If yes, describe the experience: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[If_yes_desc_the_hosted_T_I_experience__c]"  value="" required="" class="gaccca-textarea">{{isset($datas['onfrm']['If_yes_desc_the_hosted_T_I_experience__c'])?$datas['onfrm']['If_yes_desc_the_hosted_T_I_experience__c']:''}}</textarea>
 
         </div>
       </div>
@@ -512,9 +512,9 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-8">
-          If yes, describe the experience: <span class="gaccca-text-required" title="required">*</span> </label>
+        Please describe the setup and the distance to the supervisor’s desk/work space (include a picture of the intern/trainee’s desk and the supervisor’s desk): <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[Describe_the_setup_and_the_distance__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Describe_the_setup_and_the_distance__c'])?$datas['onfrm']['Describe_the_setup_and_the_distance__c']:''}}</textarea>
 
         </div>
       </div>
@@ -526,7 +526,7 @@
           Please describe the equipment and materials provided for the intern/trainee: <span
             class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[Provide_any_of_their_own_equipment__c]"  required="" class="gaccca-textarea">{{isset($datas['onfrm']['Provide_any_of_their_own_equipment__c'])?$datas['onfrm']['Provide_any_of_their_own_equipment__c']:''}}</textarea>
 
         </div>
       </div>
@@ -569,7 +569,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           If yes, please describe <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[If_yes_Describe_equipment_Training__c]"  required="" class="gaccca-textarea">{{isset($datas['onfrm']['If_yes_Describe_equipment_Training__c'])?$datas['onfrm']['If_yes_Describe_equipment_Training__c']:''}}</textarea>
 
         </div>
       </div>
@@ -1066,9 +1066,9 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-8">
-          Mailing Address: <span class="gaccca-text-required" title="required">*</span> </label>
+        Please explain and/or include additional comments: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea name="onfrm[Additional_comments__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Additional_comments__c'])?$datas['onfrm']['Additional_comments__c']:''}}</textarea>
 
         </div>
       </div>
@@ -1081,7 +1081,7 @@
           Interns work space, Communal spaces, Bathrooms. </label><br />
         <div class="gaccca-form-element__control">
           <label class="gaccca-file">
-            <input type="file" id="myFile" name="filename" />
+            <input name="file1"   type="file" id="myFile" name="filename" />
             <span class="gaccca-file-custom">Choose file...</span>
 
           </label>

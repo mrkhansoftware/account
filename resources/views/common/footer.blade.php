@@ -126,6 +126,35 @@ jQuery('.gaccca-input-date').datepicker({
      document.getElementById(section).style.display=value==conVal?'block':'none';
      document.getElementById(section+'Field').required=value==conVal;
     }
+    
+
+function gacccaScriptContentTab(evt, btnId, tabName) {
+
+  console.log(evt, btnId, tabName);
+
+var i, gaccca_tabcontent, gaccc_tablinks;
+ gaccca_tabcontent = $(".gaccca-tabcontent");
+
+for (i = 0; i < gaccca_tabcontent.length; i++) {
+gaccca_tabcontent[i].style.display = "none";
+}
+
+gaccc_tablinks = $(".gaccca-tablinks");
+
+for (i = 0; i < gaccc_tablinks.length; i++) {
+gaccc_tablinks[i].className = gaccc_tablinks[i].className.replace(" gaccca-tab-active", "");
+}
+
+$("#"+tabName).css('display','block');
+
+// evt.currentTarget.className += " gaccca-tab-active";
+$("#"+btnId).addClass("gaccca-tab-active"); 
+}
+
+gacccaScriptContentTab('','your_script_btn', 'your_script');
+
+
+
 </script>
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
 </html>
