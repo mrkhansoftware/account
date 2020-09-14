@@ -81,4 +81,18 @@ class AgencyBvisaBookingController extends Controller
     {
         //
     }
+
+    public function existingCustomerList(){
+
+        return ['sunny123','rahul1234','sssss123'];
+
+
+    } 
+
+    public function existingCustomerInfo(){
+
+        return [1234,'sunnyvb','sharmamh'];
+
+
+    } 
 }

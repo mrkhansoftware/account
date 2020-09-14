@@ -81,4 +81,22 @@ class AddNewParticipantController extends Controller
     {
         //
     }
+
+    public function existingCustomerList(){
+
+        return ['sunny','rahul'];
+
+
+    } 
+
+    public function existingCustomerInfo(){
+
+        return [1234,'sunny','sharma'];
+
+
+    } 
+
+
+    
+
 }

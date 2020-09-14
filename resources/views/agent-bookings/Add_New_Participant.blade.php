@@ -22,13 +22,13 @@
                 <label class="gaccca-form-element__label" for="text-input-id-fn">
                     Register for <span class="gaccca-text-required" title="required">*</span> </label> 
                 <span class="gaccca-radio">
-                  <input type="radio" id="radio-43" value="radio-43" name="default" checked="" />
+                  <input type="radio" id="radio-43" value="new_customer" name="customer" checked="" />
                   <label class="gaccca-radio__label" for="radio-43">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-padding-right-25">New Customer</span>
                   </label>
 
-                  <input type="radio" id="radio-44" value="radio-44" name="default" />
+                  <input type="radio" id="radio-44" value="existing_customer" name="customer" />
                   <label class="gaccca-radio__label" for="radio-44">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-padding-right-25">Existing Customer</span>
@@ -40,6 +40,20 @@
           </div>
            
         </div>
+
+
+        <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_1-of-1" >
+            <div class="gaccca-form-element gaccca-form-element-margin" id="existing-customer-div">
+                <label class="gaccca-form-element__label" for="select-01">Existing Customer List</label>
+                <div class="gaccca-form-element__control">
+                  <div class="gaccca-select_container">
+                    <select class="gaccca-select"  id="existing-customer-list">                      
+                      <option value="j1"></option>
+                      
+                    </select>
+                  </div>
+                </div>
+              </div>
 
 
         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
@@ -174,3 +188,81 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+<script>
+
+
+$( document ).ready(function() {
+  $('#existing-customer-div').hide();
+  $('input[type=radio][name=customer]').change(function() {
+   
+   if (this.value == 'new_customer') {
+    $('#existing-customer-div').hide();
+   }
+   else if (this.value == 'existing_customer') {
+     var formData = {
+       customer: 'existing_customer'
+     }
+      $.ajaxSetup({
+      headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+      });
+      $.ajax({
+      type: 'get',
+      url: 'existing_customer_list',
+      data: formData,
+      dataType: 'json',
+      success: function (data) {
+        console.log(data);
+
+
+
+        var $existing_customerlist = $('#existing-customer-list');
+            $existing_customerlist.empty();
+            
+            for (var i = 0; i < data.length; i++) {
+                $existing_customerlist.append('<option id=' + data[i] + ' value=' + data[i] + '>' + data[i] + '</option>');
+            }
+
+        $('#existing-customer-div').show();
+      },
+      error: function (data) {
+      console.log(data);
+      }
+      });
+      
+   }
+});
+
+$('#existing-customer-list').change(function() {
+
+  var formData = {
+       customer_id: 1234
+     }
+      $.ajaxSetup({
+      headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+      });
+      $.ajax({
+      type: 'get',
+      url: 'customer_information',
+      data: formData,
+      dataType: 'json',
+      success: function (data) {
+        console.log(data);
+
+      },
+      error: function (data) {
+      console.log(data);
+      }
+      });
+})
+
+
+
+});
+
+
+
+</script>

@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'AgencyInformationController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'agency-information','enctype' => 'multipart/form-data']) !!}
 
 
 <div class="gaccca-main-containt">

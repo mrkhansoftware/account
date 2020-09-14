@@ -34,7 +34,9 @@ class AgencyInformationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       echo $request->filename->getClientOriginalExtension();
+      //  print_r($request->filename);
+        die;
     }
 
     /**
