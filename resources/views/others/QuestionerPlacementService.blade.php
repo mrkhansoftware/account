@@ -11,25 +11,15 @@
         </div>
 
 
-
-        
-       
-       
           <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
-
-
-
-          
-
 
             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Why did you choose our placement service over other services you found on the internet? Tell us about what and why was important for you to sign up with us instead with others?</label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="QuestionEx1" required="" class="gaccca-textarea">{{isset($datas['QuestionEx1'])?$datas['QuestionEx1']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -407,7 +397,7 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Was there anything you wish you knew from the beginning of the placement process, which we missed? <span class="gaccca-text-required" title="required">*</span> </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                    <textarea name="QuestionEx10" required="" class="gaccca-textarea">{{isset($datas['QuestionEx10'])?$datas['QuestionEx10']:''}}</textarea>
 
                     </div>
                 </div>
@@ -610,7 +600,7 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         What could we have done better? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                    <textarea name="QuestionEx13" required="" class="gaccca-textarea">{{isset($datas['QuestionEx13'])?$datas['QuestionEx13']:''}}</textarea>
 
                     </div>
                 </div>
@@ -622,16 +612,6 @@
 
 
         </div>
-
-
-
-
-
-       
-
-
- 
-
 
     </div>
 {!! Form::close() !!}
