@@ -1,7 +1,8 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'BVisaCaseInformationController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -35,7 +36,7 @@
             Please describe in detail what you will do in the U.S. </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+            <textarea  name='descriptionOfWork' class="gaccca-textarea">{{isset($datas['descriptionOfWork'])?$datas['descriptionOfWork']:''}}</textarea>
             <span class="gaccca-input-help-text">Including: Planned business activities or Volunteer service
               descriptions</span>
           </div>
@@ -49,7 +50,7 @@
             leisure </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+            <textarea class="gaccca-textarea" name='detailOfTravelPlan'>{{isset($datas['detailOfTravelPlan'])?$datas['detailOfTravelPlan']:''}}</textarea>
             <span class="gaccca-input-help-text">Including: Destinations, names of companies to visit, names of
               organizations, Port of entry and departure; Planned date of entry into the U.S. as well as departure;
               Planned dates of travel for leisure</span>
@@ -63,7 +64,7 @@
             Please provide information of your current status: </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea class="gaccca-textarea" name='currentStatusInfo'>{{isset($datas['currentStatusInfo'])?$datas['currentStatusInfo']:''}}</textarea>
             <span class="gaccca-input-help-text">For business travelers/ dual students: Exact address/ name /website
               link of employer company in home country *For volunteers/ students: name of university, current semester,
               intended plan for before and after stay in the US</span>
@@ -78,7 +79,7 @@
             been with your employer company: </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea class="gaccca-textarea" name='jobPositionInfo'>{{isset($datas['jobPositionInfo'])?$datas['jobPositionInfo']:''}}</textarea>
             <span class="gaccca-input-help-text">The employer company should be in your home country</span>
           </div>
         </div>
@@ -90,7 +91,7 @@
             Please provide all information about the company you will visit in the U.S.: </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea class="gaccca-textarea" name='infoAboutVisitingCompany'>{{isset($datas['infoAboutVisitingCompany'])?$datas['infoAboutVisitingCompany']:''}}</textarea>
             <span class="gaccca-input-help-text"> Including: Name, exact address, website link, phone number &amp; email
               address of your contact partner, planned activities at U.S. company</span>
           </div>
@@ -103,7 +104,7 @@
           </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea class="gaccca-textarea" name='informationOfpreVisas'>{{isset($datas['informationOfpreVisas'])?$datas['informationOfpreVisas']:''}}</textarea>
 
           </div>
         </div>
@@ -114,7 +115,7 @@
             Do you have a criminal history or record? If yes, please provide information: </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea class="gaccca-textarea" name='criminalHistoryInfo'>{{isset($datas['criminalHistoryInfo'])?$datas['criminalHistoryInfo']:''}}</textarea>
 
           </div>
         </div>
@@ -126,7 +127,7 @@
           </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea class="gaccca-textarea" name='question8'>{{isset($datas['question8'])?$datas['question8']:''}}</textarea>
             <span class="gaccca-input-help-text">What was the last department where you working in your rotation as a
               dual student?
               <br />What is the name of the department you will visit in the US?
@@ -148,7 +149,7 @@
             Please see Welcome email): </label><br />
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="EstaApp" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -165,7 +166,7 @@
             Access information for your DS-160 (Only if requested for your case! Please see Welcome email): </label>
           <div class="gaccca-form-element__control">
 
-            <textarea required="" class="gaccca-textarea"></textarea>
+          <textarea class="gaccca-textarea" name='accessInformation'>{{isset($datas['accessInformation'])?$datas['accessInformation']:''}}</textarea>
             <span class="gaccca-input-help-text">Keep the DS-160 in REVIEW Mode on last page after <br /> filling out!
               DO NOT sign or send!</span>
           </div>
@@ -175,17 +176,7 @@
 
         <h2 class="gaccca-h2-padding">Upload your Documents</h2>
 
-        <!-- <div class="gaccca-form-element gaccca-form-element-margin">
-                    <label class="gaccca-form-element__label" for="text-input-id-fss">
-                        Student Status Verification  </label>
-                        <div class="gaccca-form-element__control">
-                            <label class="gaccca-file">
-                                <input type="file"  id="myFile" name="filename"/>
-                                <span class="gaccca-file-custom">Choose file...</span>
-    
-                            </label>
-                        </div>
-                  </div> -->
+       
 
 
         <div class="gaccca-form-element gaccca-form-element-margin">
@@ -193,7 +184,7 @@
             Copy of your Passport </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="copyPassport" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -208,7 +199,7 @@
             Your Resume/CV </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file" name="Resume" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -222,7 +213,7 @@
             If applicable: U.S. purchase order, material related to the contract or products </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="IfApp" />
               <span class="gaccca-file-custom">Choose file...</span>
             </label>
           </div>
@@ -234,7 +225,7 @@
             entry </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="rejection" />
               <span class="gaccca-file-custom">Choose file...</span>
             </label>
           </div>
@@ -247,7 +238,7 @@
             pdf documents for your case </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file" name="preVisas" />
               <span class="gaccca-file-custom">Choose file...</span>
             </label>
           </div>
@@ -290,3 +281,8 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+
+
+@else
+  Permission denied. Please contact administrator.
+  @endif

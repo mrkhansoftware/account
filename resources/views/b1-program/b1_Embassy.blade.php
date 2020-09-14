@@ -1,7 +1,8 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'B1EmbassyController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -29,7 +30,7 @@
             DS-160 confirmation page </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="fileDS_160" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -45,7 +46,7 @@
             Appointment confirmation page </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="fileAppointment" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -61,7 +62,7 @@
             Date of Consulate / Embassy visa appointment <span class="gaccca-text-required" title="required">*</span>
           </label>
           <div class="gaccca-form-element__control">
-            <input type="text" id="text-input-id-city" required="" class="gaccca-input-date" />
+            <input type="text"  required="" class="gaccca-input-date" />
             <!-- <img src="assets/images/calendar.png" width=25 /> -->
 
             <span class="gaccca-input-help-text">Please provide the date from the appointment system. Please also
@@ -86,7 +87,7 @@
             Picture of the issued visa </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="filePictureVisa" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -100,12 +101,8 @@
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-fss">
             Final date of departure to the U.S. </label>
-          <div class="gaccca-form-element__control">
-            <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
-              <span class="gaccca-file-custom">Choose file...</span>
-
-            </label>
+            <div class="gaccca-form-element__control">
+            <input type="text"  required="" class="gaccca-input-date" />
           </div>
           <span class="gaccca-input-help-text">Please provide the final date of departure to the U.S. once your flight
             ticket has been purchased.</span>
@@ -137,3 +134,8 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+
+
+@else
+  Permission denied. Please contact administrator.
+  @endif
