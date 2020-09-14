@@ -1,3 +1,4 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:'','title'=>'Profile','page'=>'profile_account'])
 
   {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'my-profile']) !!}
@@ -220,3 +221,7 @@
 
 
     @include('common.footer')
+
+    @else
+  Permission denied. Please contact administrator.
+  @endif

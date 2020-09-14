@@ -13,8 +13,15 @@ class VideoTutorialsController extends Controller
      */
     public function index()
     {
-        return view('placement-program/VideoTutorials');
-
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+        $datas='App\Services\Helper'::getRequest('ApiVideoTutorialsClass/'.$idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        return view('placement-program/VideoTutorials')->with(compact('datas'));
+    
         
     }
 

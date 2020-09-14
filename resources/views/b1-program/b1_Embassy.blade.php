@@ -2,7 +2,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'B1EmbassyController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'B1EmbassyController@store','files'=>true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -62,7 +62,7 @@
             Date of Consulate / Embassy visa appointment <span class="gaccca-text-required" title="required">*</span>
           </label>
           <div class="gaccca-form-element__control">
-            <input type="text"  required="" class="gaccca-input-date" />
+            <input type="text" name='dateOfConsulate'  value="{{isset($datas['dateOfConsulate'])?$datas['dateOfConsulate']:''}}" class="gaccca-input-date" />
             <!-- <img src="assets/images/calendar.png" width=25 /> -->
 
             <span class="gaccca-input-help-text">Please provide the date from the appointment system. Please also
@@ -102,7 +102,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-fss">
             Final date of departure to the U.S. </label>
             <div class="gaccca-form-element__control">
-            <input type="text"  required="" class="gaccca-input-date" />
+            <input type="text"   name='finaldateOfDeparture'  value="{{isset($datas['finaldateOfDeparture'])?$datas['finaldateOfDeparture']:''}}"  class="gaccca-input-date" />
           </div>
           <span class="gaccca-input-help-text">Please provide the final date of departure to the U.S. once your flight
             ticket has been purchased.</span>

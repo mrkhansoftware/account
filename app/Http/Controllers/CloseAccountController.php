@@ -13,7 +13,16 @@ class CloseAccountController extends Controller
      */
     public function index()
     {
-        return view('profile/close_account');
+
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+        $datas='App\Services\Helper'::getRequest('ApiProfileAccountController/'.$idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        return view('profile/close_account')->with(compact('datas'));
+      //  return view('profile/close_account');
     }
 
     /**

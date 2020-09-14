@@ -13,9 +13,37 @@ class VideoResumeController extends Controller
      */
     public function index()
     {
-        return view('placement-program/Video_Resume');
-
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+        $datas='App\Services\Helper'::getRequest('ApiVideoTutorialsClass/'.$idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        return view('placement-program/Video_Resume')->with(compact('datas'));  
+    
     }
+
+    public function scriptreadySubmit(Request $request)
+    {
+        $finalReq = $request->all();
+    
+        $finalReq['applicant']['id']=session()->get('applicantId');
+        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+        $finalReq['applicantData']=json_encode($finalReq['applicant']);
+        unset($finalReq['_token']);
+        unset($finalReq['applicant']);
+      
+      
+        return  $finalReq;
+      
+    
+    //echo "<pre>"; print_r($finalReq);die;
+    
+    return  'App\Services\Helper'::postRequest($finalReq,'ApiBvisaController');
+    
+    }
+    
 
     /**
      * Show the form for creating a new resource.

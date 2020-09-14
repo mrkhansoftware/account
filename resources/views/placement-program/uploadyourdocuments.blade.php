@@ -1,3 +1,4 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
@@ -99,3 +100,8 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+
+
+@else
+  Permission denied. Please contact administrator.
+  @endif

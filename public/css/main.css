@@ -18,8 +18,13 @@ body {
     flex-wrap: wrap;
     align-items: flex-start;
 }
-
-
+.gaccca-center {
+  
+  text-align: center;
+}
+.gaccca-full-width {
+  max-width: 100% !important;
+}
 .gaccca-gutters  {
     padding-right: .75rem;
     padding-left: .75rem;
