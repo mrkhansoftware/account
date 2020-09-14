@@ -11,14 +11,8 @@
         </div>
 
 
-
-        
-       
        
           <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
-
-
 
             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
          
@@ -104,13 +98,6 @@
                           
                           </table>
                         
-
-
-
-
-
-
-
                       </div>
                     
       
@@ -124,7 +111,7 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         2. What was the main reason why you booked our service? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                        <textarea name="onfrm[Why_you_booked_our_service__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Why_you_booked_our_service__c'])?$datas['onfrm']['Why_you_booked_our_service__c']:''}}</textarea>
 
                     </div>
                 </div>
@@ -229,8 +216,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         4. Which part of our service did you find most useful? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                       
+                        <textarea name="onfrm[Which_part_of_our_service_is_more_useful__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Which_part_of_our_service_is_more_useful__c'])?$datas['onfrm']['Which_part_of_our_service_is_more_useful__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -524,7 +511,7 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         9. What could we have done better? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                    <textarea name="onfrm[What_could_we_have_done_better__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['What_could_we_have_done_better__c'])?$datas['onfrm']['What_could_we_have_done_better__c']:''}}</textarea>
 
                     </div>
                 </div>

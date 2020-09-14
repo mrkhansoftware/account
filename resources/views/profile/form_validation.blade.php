@@ -6,7 +6,7 @@
 
   <meta name="viewport" content="IE=edge;" />
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' />
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/gaccca_main_style_new.css') }}" >
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" >
   <!-- <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script> -->
   
   <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">

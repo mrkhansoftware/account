@@ -28,8 +28,7 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         What do/did you study? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        <textarea name="onfrm[What_do_did_you_study__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['What_do_did_you_study__c'])?$datas['onfrm']['What_do_did_you_study__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -39,7 +38,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         When did you receive your degree/When do you expect to finish? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                        
+                        <textarea name="onfrm[When_do_you_did_you_receive_your_degree__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['When_do_you_did_you_receive_your_degree__c'])?$datas['onfrm']['When_do_you_did_you_receive_your_degree__c']:''}}</textarea>
 
                     </div>
                 </div>
@@ -51,7 +51,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         What level is your degree? (Bachelor’s, Master’s, Doctorate, etc) </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                        
+                        <textarea name="onfrm[What_level_is_your_degree__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['What_level_is_your_degree__c'])?$datas['onfrm']['What_level_is_your_degree__c']:''}}</textarea>
 
                     </div>
                 </div>
@@ -63,7 +64,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         If graduated, what have you been doing since you graduated? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                        
+                        <textarea name="onfrm[If_graduated_what_have_you_been_doing_s__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['If_graduated_what_have_you_been_doing_s__c'])?$datas['onfrm']['If_graduated_what_have_you_been_doing_s__c']:''}}</textarea>
 
                     </div>
                 </div>
@@ -75,7 +77,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Do you have any previous internship experience in your field? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                        
+                        <textarea name="onfrm[Do_you_have_any_previous_internship_exp__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Do_you_have_any_previous_internship_exp__c'])?$datas['onfrm']['Do_you_have_any_previous_internship_exp__c']:''}}</textarea>
 
                     </div>
                 </div>
@@ -98,8 +101,8 @@
                         Why do you want to do an internship/training in the U.S. specifically? Why not in another
                         english speaking country?</label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[Why_do_you_want_to_do_an_internship_US__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Why_do_you_want_to_do_an_internship_US__c'])?$datas['onfrm']['Why_do_you_want_to_do_an_internship_US__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -109,8 +112,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         How did you find the internship/training at (Ashif Dev Test)? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[How_did_you_find_I_T_in_this_HC__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['How_did_you_find_I_T_in_this_HC__c'])?$datas['onfrm']['How_did_you_find_I_T_in_this_HC__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -122,7 +125,7 @@
                         Have you had an interview with (pts akhan) or anyone else at the company by phone or webcam?
                     </label>
                     <div class="gaccca-form-element__control">
-                        <input type="text" class="gaccca-input" />
+                        <input name="onfrm[Have_you_had_an_interview_with_SV__c]" value="{{isset($datas['onfrm']['Have_you_had_an_interview_with_SV__c'])?$datas['onfrm']['Have_you_had_an_interview_with_SV__c']:''}}"  type="text" class="gaccca-input" />
 
                     </div>
                 </div>
@@ -134,8 +137,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         What skills and knowledge do you hope to gain from this internship/training? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                       
+                        <textarea name="onfrm[What_skills_do_you_hope_to_gain__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['What_skills_do_you_hope_to_gain__c'])?$datas['onfrm']['What_skills_do_you_hope_to_gain__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -147,8 +150,8 @@
                         An important aspect of the J-1 visa is learning about american culture. What plans do you have
                         to engage in activities in your free time? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[What_plans_are_in_place_for_you_to_part__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['What_plans_are_in_place_for_you_to_part__c'])?$datas['onfrm']['What_plans_are_in_place_for_you_to_part__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -158,8 +161,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         How do you expect this experience to benefit your future career? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[How_do_you_expect_this_experience_to_be__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['How_do_you_expect_this_experience_to_be__c'])?$datas['onfrm']['How_do_you_expect_this_experience_to_be__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -169,8 +172,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         What will you do after your training/internship is finished? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[What_will_you_do_after_your_I_T__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['What_will_you_do_after_your_I_T__c'])?$datas['onfrm']['What_will_you_do_after_your_I_T__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -216,8 +219,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Have you ever been denied a visa or refused entry to the U.S. in the past? </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[Have_you_ever_been_denied_a_visa__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Have_you_ever_been_denied_a_visa__c'])?$datas['onfrm']['Have_you_ever_been_denied_a_visa__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -228,8 +231,8 @@
                         Do you have any previous visas to the U.S.? (if yes, GACC California/IIEEX needs a copy)
                     </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[Do_you_have_any_previous_visas_to_the_U__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Do_you_have_any_previous_visas_to_the_U__c'])?$datas['onfrm']['Do_you_have_any_previous_visas_to_the_U__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -260,8 +263,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         If Yes </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[Dual_citizenship__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Dual_citizenship__c'])?$datas['onfrm']['Dual_citizenship__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -298,8 +301,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         If Yes </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[Criminal_background__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Criminal_background__c'])?$datas['onfrm']['Criminal_background__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -437,7 +440,9 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Additional information/explanation of the ratings: </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
+                       
+
+                        <textarea name="onfrm[Additional_explanation_of_the_ratings__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Additional_explanation_of_the_ratings__c'])?$datas['onfrm']['Additional_explanation_of_the_ratings__c']:''}}</textarea>
 
                     </div>
                 </div>
@@ -448,8 +453,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Additional notes: </label>
                     <div class="gaccca-form-element__control">
-                        <textarea required="" class="gaccca-textarea"></textarea>
-
+                        
+                        <textarea name="onfrm[Additional_notes__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Additional_notes__c'])?$datas['onfrm']['Additional_notes__c']:''}}</textarea>
                     </div>
                 </div>
             </div>
@@ -488,7 +493,8 @@
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Name of Interviewer: </label>
                     <div class="gaccca-form-element__control">
-                        <input type="text" class="gaccca-input" />
+                        <input name="onfrm[Name_of_Interviewer__c]" value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" type="text" class="gaccca-input" />
+                        
 
                     </div>
                 </div>
@@ -510,10 +516,6 @@
                     <p>You can sign digitally online with your mouse or on your phone with your finger.</p>
                 </div>
             </div>
-
-
-
-
 
 
 

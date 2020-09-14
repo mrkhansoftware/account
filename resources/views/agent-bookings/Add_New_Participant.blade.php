@@ -139,7 +139,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-10">
                 Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input name="con[MailingPostalCode]" value="{{isset($datas['con']['MailingPostalCode])?$datas['con']['MailingPostalCode]:''}}"  type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
+                <input name="con[MailingPostalCode]" value="{{isset($datas['con']['MailingPostalCode'])?$datas['con']['MailingPostalCode']:''}}"  type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
                 <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
               </div>
             </div>

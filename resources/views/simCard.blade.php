@@ -78,7 +78,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
         Date of arrival in the U.S.   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="date-of-arrival" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+          <input name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" type="text" id="date-of-arrival" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
           
         </div>
       </div>
@@ -87,7 +87,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
         Cancel my plan on   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="date-of-arrival" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="date-of-arrival" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
           
         </div>
       </div>
@@ -124,7 +124,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Date of activation / arrival in the U.S.  <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
           
           <span class="gaccca-input-help-text">Fill in your arrival date in the U.S. You have to submit your activation at least 7 days before your arrival to the U.S.</span>
         </div>
@@ -138,7 +138,7 @@
         Date of plan change 
   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
           
           <span class="gaccca-input-help-text">Submit a date when your current plan should change to another plan. Plans have a 30 days lengths.</span>
         </div>
@@ -169,7 +169,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             SIM Card Number  <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="text-input-id-5"  required="" class="gaccca-input" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5"  required="" class="gaccca-input" />
           
           <span class="gaccca-input-help-text">On the back side of your SIM Card, you will find this 14-20 digit number under the big barcode below.</span>
         </div>
@@ -180,7 +180,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Would you like a designated area code for your phone number? Type in a city or area code!  <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="text-input-id-5"  required="" class="gaccca-input" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5"  required="" class="gaccca-input" />
          </div>
       </div>
 
@@ -191,7 +191,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Cardholder name on credit card   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="text-input-id-5"  required="" class="gaccca-input" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5"  required="" class="gaccca-input" />
          </div>
       </div>
 
@@ -202,7 +202,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Credit card number <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="text-input-id-5" placeholder="xxxx xxxx xxxx xxxx" required="" class="gaccca-input" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5" placeholder="xxxx xxxx xxxx xxxx" required="" class="gaccca-input" />
           
           <span class="gaccca-input-help-text">On the front side, you will find a 13-16 digit number. Type in the number without spaces. Important: We only accept
           
@@ -219,7 +219,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Credit card valid thru   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="text-input-id-5" placeholder="mm/yy" required="" class="gaccca-input" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5" placeholder="mm/yy" required="" class="gaccca-input" />
           
           <span class="gaccca-input-help-text"> Example: 05/21</span>
         </div>
@@ -233,7 +233,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             CVC  <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" id="text-input-id-5"  required="" class="gaccca-input" />
+          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5"  required="" class="gaccca-input" />
           <span class="gaccca-input-help-text">You will find the Card Verification Code on the back side of your card. 3 or 4 digits</span>
         </div>
       </div>

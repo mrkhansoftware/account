@@ -5,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'/>
-<link rel="stylesheet" type="text/css" href="{{ asset('css/gaccca_main_style_new.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" >
 <link href="{{ asset('css/jquery-ui.css') }}"  rel='stylesheet' >
 <link href="{{ asset('css/all.css') }}"  rel='stylesheet' >
 <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -209,6 +209,13 @@ Route::resource('JVisaParticipantInfo', 'JVisaParticipantInfoController');
 Route::get('/JVisaParticipantInfo', 'JVisaParticipantInfoController@index');
 
 
+Route::resource('AddNewParticipant', 'AddNewParticipantController');
+Route::get('/Add_New_Participant', 'AddNewParticipantController@index');
+
+ Route::resource('AgentParticipants', 'AgentParticipantsController');
+ Route::get('/AgentParticipants', 'AgentParticipantsController@index');
+
+
 
 
 
