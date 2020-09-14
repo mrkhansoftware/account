@@ -18,10 +18,10 @@
                 <label class="gaccca-form-element__label" for="select-01">Program</label>
                 <div class="gaccca-form-element__control">
                   <div class="gaccca-select_container">
-                    <select class="gaccca-select" id="select-01">                      
-                      <option>J1 Visa</option>
-                      <option>B1 Visa</option>
-                      <option>Placement</option>
+                    <select class="gaccca-select" id="select-program" >                      
+                      <option value="j1">J1 Visa</option>
+                      <option value="b1">B1 Visa</option>
+                      <option value="placement">Placement</option>
                     </select>
                   </div>
                 </div>
@@ -34,7 +34,7 @@
             <div class="gaccca-form-element-checkbox-switch">
                 <label class="gaccca-checkbox_toggle gaccca-grid">
                   
-                  <input type="checkbox" name="checkbox-toggle-16" value="checkbox-toggle-16"  checked="" />
+                  <input type="checkbox" name="checkbox-toggle-16" id="show-checkbox"   />
                    <span id="checkbox-toggle-16" class="gaccca-checkbox_faux_container" >
                     <span class="gaccca-checkbox_faux"></span>
                     <span class="gaccca-checkbox_on">Enabled</span>
@@ -154,3 +154,60 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+<script>
+
+$( "#select-program" ).change(function() {
+ 
+ var select_program = this.value;
+ var show = $('#show-checkbox').is(":checked")
+ commonFunction(select_program,show);
+
+});
+
+
+$( "#show-checkbox" ).change(function() {
+ 
+ var select_program = $('#select-program').val();
+ var show = $('#show-checkbox').is(":checked");
+ commonFunction(select_program,show);
+
+});
+
+
+function commonFunction(select_program,show){
+
+  console.log(select_program,show);
+  
+
+var formData = {
+  select_program: select_program,
+  show : show
+};
+
+
+$.ajaxSetup({
+headers: {
+'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+}
+});
+$.ajax({
+type: 'POST',
+url: 'ajax_select_prog',
+data: formData,
+dataType: 'json',
+success: function (data) {
+  
+  
+
+
+
+},
+error: function (data) {
+console.log(data);
+}
+});
+
+}
+
+
+</script>

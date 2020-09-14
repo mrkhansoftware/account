@@ -24,6 +24,7 @@
         <meta property="og:url" content="https://account.iieex.org/@if (isset($page)){{$page}} @endif" />
         <meta property="og:site_name" content="https://account.iieex.org" />
         <meta name="google-site-verification" content="-6V8H3sxoJ6qUsdyr6IkfGBlVoHhB5C3QQFTFTmR4mI" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
   
   
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' />

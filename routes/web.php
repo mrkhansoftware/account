@@ -194,6 +194,11 @@ Route::get('/AgencyInformation', 'AgencyInformationController@index');
 Route::resource('AgencyBvisaBooking', 'AgencyBvisaBookingController');
 Route::get('/AgencyBvisaBooking', 'AgencyBvisaBookingController@index');
 
+
+Route::get('/existing_customer_list_b_visa', 'AgencyBvisaBookingController@existingCustomerList');
+Route::get('/customer_information_b_visa', 'AgencyBvisaBookingController@existingCustomerInfo');
+
+
 Route::resource('AgencyPlacementProgram', 'AgencyPlacementProgramController');
 Route::get('/AgencyPlacementProgramRegistrationForm', 'AgencyPlacementProgramController@index');
 
@@ -212,12 +217,23 @@ Route::get('/JVisaParticipantInfo', 'JVisaParticipantInfoController@index');
 Route::resource('AddNewParticipant', 'AddNewParticipantController');
 Route::get('/Add_New_Participant', 'AddNewParticipantController@index');
 
+Route::get('/existing_customer_list', 'AddNewParticipantController@existingCustomerList');
+
+Route::get('/customer_information', 'AddNewParticipantController@existingCustomerInfo');
+
+
+
+
+
  Route::resource('AgentParticipants', 'AgentParticipantsController');
  Route::get('/AgentParticipants', 'AgentParticipantsController@index');
 
 
+ Route::post('/ajax_select_program', 'AgentParticipantsController@store');
 
 
+ 
+ 
 
 
 
