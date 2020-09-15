@@ -52,7 +52,7 @@
                 
                 <button class="gaccca-accordion">Which documents may I have to submit upon request?</button>
                 <div class="gaccca-panel">
-                  <p>The following documents . <strong>will be required</strong>
+                  <p>The following documents <strong>will be required:</strong>
                   </p>
                     <ul>
                         <li>
@@ -144,3 +144,43 @@
  @else
   Permission denied. Please contact administrator.
   @endif
+
+  <script>
+
+// var dropdown = document.getElementsByClassName("gaccca-dropdown-btn");
+//       var i;
+      
+//       for (i = 0; i < dropdown.length; i++) {
+//         dropdown[i].addEventListener("click", function() {
+//         this.classList.toggle("active");
+//         var dropdownContent = this.nextElementSibling;
+//         if (dropdownContent.style.display === "block") {
+//         dropdownContent.style.display = "none";
+//         } else {
+//         dropdownContent.style.display = "block";
+//         }
+//         });
+//       }
+
+
+
+var acc = document.getElementsByClassName("gaccca-accordion");
+var j;
+
+for (j = 0; j < acc.length; j++) {
+
+  
+    acc[j].addEventListener("click", function() {
+    var gaccca_panel = this.nextElementSibling;
+    var current_button = this;
+    
+    if (gaccca_panel.style.display === "block") {  
+      gaccca_panel.style.display = "none";
+      this.classList.remove("gaccca-accordion-minius"); 
+    } else {
+      gaccca_panel.style.display = "block";
+      this.classList.add("gaccca-accordion-minius");       
+    }
+  });
+}
+</script>

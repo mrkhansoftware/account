@@ -41,13 +41,13 @@
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-1">
-            Please submit the requested documents in PDF or JPEG format only. You can use a PDF scanner app on your
-            smartphone.
-
-            We do not accept any documents submitted via email.
-
+           <p> Please submit the requested documents in PDF or JPEG format only. You can use a PDF scanner app on your smartphone.</p>
+          <p>
+          We do not accept any documents submitted via email.
+          </p>
+<p>
             The information you provide here will be used in your visa application. Make sure all information is correct
-            and up-to-date. </label>
+            and up-to-date. </p> </label>
 
         </div>
       </div>
@@ -123,7 +123,7 @@
            
               {!! Form::text('applicant[haveYouEverAppliedForUSVisa__c]',isset($datas['Appli']['haveYouEverAppliedForUSVisa__c'])?$datas['Appli']['haveYouEverAppliedForUSVisa__c']:'',array('class'=>'gaccca-input','required' => 'required')); !!}
             <span class="gaccca-input-help-text">Please provide type of visa and expiration date as well as
-              information about any previous visa denials</span>
+              information about any previous visa denials.</span>
           </div>
         </div>
 
@@ -212,9 +212,6 @@
             
 
               {!! Form::text('applicant[Emergency_Contact_Person_Email_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Email_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Email_Address__c']:'',array('class'=>'gaccca-input','required' => 'required')); !!}
-
-
-            <span class="gaccca-input-help-text">Please list a person to contact in case of emergency.</span>
           </div>
         </div>
 

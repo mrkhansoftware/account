@@ -31,7 +31,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-1">
                 Name of Intern/Trainee   <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" name="onfrm[Name_of_Intern__c]" value="{{isset($datas['onfrm']['Name_of_Intern__c'])?$datas['onfrm']['Name_of_Intern__c']:''}}" id="text-input-id-1" placeholder="Name of your Host-Company" required="" class="gaccca-input" />
+              <input type="text" name="onfrm[Name_of_Intern__c]" value="{{isset($datas['onfrm']['Name_of_Intern__c'])?$datas['onfrm']['Name_of_Intern__c']:''}}" id="text-input-id-1"  required="" class="gaccca-input" />
               <br/>
               
               
@@ -51,8 +51,7 @@
                 
               </div>
             </div>
-          </div>
-  
+          </div>  
   
         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
   
@@ -61,7 +60,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-3">
                 Phone Number  <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element gaccca-form-element-margin-date">
-              <input type="text" name="onfrm[Phone_Number__c]" value="{{isset($datas['onfrm']['Phone_Number__c'])?$datas['onfrm']['Phone_Number__c']:''}}"  id="text-input-id-3" placeholder="eMail-Adresse Supervisor" required="" class="gaccca-input" />
+              <input type="text" name="onfrm[Phone_Number__c]" value="{{isset($datas['onfrm']['Phone_Number__c'])?$datas['onfrm']['Phone_Number__c']:''}}"  id="text-input-id-3"  required="" class="gaccca-input" />
              
             </div>
           </div>
@@ -823,7 +822,7 @@
                               <label class="gaccca-form-element__label" for="text-input-id-1">
                                   Please list skills you learned:    <span class="gaccca-text-required" title="required">*</span> </label>
                               <div class="gaccca-form-element__control">
-                                <input type="text" name="onfrm[skills_you_learned__c]" value="{{isset($datas['onfrm']['skills_you_learned__c'])?$datas['onfrm']['skills_you_learned__c']:''}}"  id="text-input-id-1" placeholder="Name of your Host-Company" required="" class="gaccca-input" />
+                                <input type="text" name="onfrm[skills_you_learned__c]" value="{{isset($datas['onfrm']['skills_you_learned__c'])?$datas['onfrm']['skills_you_learned__c']:''}}"  id="text-input-id-1" required="" class="gaccca-input" />
                                 
                                 
                                 
@@ -838,7 +837,7 @@
                               <label class="gaccca-form-element__label" for="text-input-id-1">
                                   Please list some of the main tasks you completed / things you did during your internship/training?    <span class="gaccca-text-required" title="required">*</span> </label>
                               <div class="gaccca-form-element__control">
-                                <input type="text" name="onfrm[main_tasks_you_completed__c]" value="{{isset($datas['onfrm']['main_tasks_you_completed__c'])?$datas['onfrm']['main_tasks_you_completed__c']:''}}" id="text-input-id-1" placeholder="Name of your Host-Company" required="" class="gaccca-input" />
+                                <input type="text" name="onfrm[main_tasks_you_completed__c]" value="{{isset($datas['onfrm']['main_tasks_you_completed__c'])?$datas['onfrm']['main_tasks_you_completed__c']:''}}" id="text-input-id-1"  required="" class="gaccca-input" />
                                 
                                 
                                 
@@ -854,7 +853,7 @@
                               <label class="gaccca-form-element__label" for="text-input-id-1">
                                   What has been the best part of your internship/training?:    <span class="gaccca-text-required" title="required">*</span> </label>
                               <div class="gaccca-form-element__control">
-                                <input type="text" name="onfrm[the_best_part_of_your_internship__c]" value="{{isset($datas['onfrm']['the_best_part_of_your_internship__c'])?$datas['onfrm']['the_best_part_of_your_internship__c']:''}}" id="text-input-id-1" placeholder="Name of your Host-Company" required="" class="gaccca-input" />
+                                <input type="text" name="onfrm[the_best_part_of_your_internship__c]" value="{{isset($datas['onfrm']['the_best_part_of_your_internship__c'])?$datas['onfrm']['the_best_part_of_your_internship__c']:''}}" id="text-input-id-1"  required="" class="gaccca-input" />
                                 
                                 
                                 
@@ -868,7 +867,7 @@
               
                             <div class="gaccca-form-element gaccca-form-element-margin">
                               <label class="gaccca-form-element__label" for="text-input-id-3">
-                                  My internship/training has improved my understanding of U.S. business practices.   </label><br/>
+                                  My internship/training has improved my understanding of U.S. business practices.  <span class="gaccca-text-required" title="required">*</span> </label><br/>
                                   <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                                   @include('common.starRating',['required'=>'required', 'fieldName' =>'internship_improved_unterstand_U_S__c']) 
                                   <!-- <div class="gaccca-form-element__control">
@@ -885,7 +884,7 @@
       
                             <div class="gaccca-form-element gaccca-form-element-margin">
                               <label class="gaccca-form-element__label" for="text-input-id-3">
-                                  My English has improved  </label><br/>
+                                  My English has improved <span class="gaccca-text-required" title="required">*</span>  </label><br/>
                                   <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                                   @include('common.starRating',['required'=>'required', 'fieldName' =>'english_improved__c']) 
                                   <!-- <div class="gaccca-form-element__control">
@@ -905,7 +904,7 @@
       
                             <div class="gaccca-form-element gaccca-form-element-margin">
                               <label class="gaccca-form-element__label" for="text-input-id-3">
-                                  Overall I learned a lot during my internship/training.  </label><br/>
+                                  Overall I learned a lot during my internship/training. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                                   <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                                   @include('common.starRating',['required'=>'required', 'fieldName' =>'learned_a_lot_during_intern__c']) 
                                   <!-- <div class="gaccca-form-element__control">
@@ -922,7 +921,7 @@
       
                             <div class="gaccca-form-element gaccca-form-element-margin">
                               <label class="gaccca-form-element__label" for="text-input-id-3">
-                                  I am greatly satisfied with my internship/training experience.  </label><br/>
+                                  I am greatly satisfied with my internship/training experience. <span class="gaccca-text-required" title="required">*</span>  </label><br/>
                                   <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                                   @include('common.starRating',['required'=>'required', 'fieldName' =>'satisfied_with_internship_experience__c']) 
                                   <!-- <div class="gaccca-form-element__control">
@@ -940,9 +939,9 @@
                           <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                             <div class="gaccca-form-element gaccca-form-element-margin">
                               <label class="gaccca-form-element__label" for="text-input-id-1">
-                                 Please leave any additional comments concerning your internship/training   <span class="gaccca-text-required" title="required">*</span> </label>
+                                 Please leave any additional comments concerning your internship/training    </label>
                               <div class="gaccca-form-element__control">
-                                <input type="text" name="onfrm[Please_add_any_additional_comments_conce__c]" value="{{isset($datas['onfrm']['Please_add_any_additional_comments_conce__c'])?$datas['onfrm']['Please_add_any_additional_comments_conce__c']:''}}" id="text-input-id-1" placeholder="Name of your Host-Company" required="" class="gaccca-input" />
+                                <input type="text" name="onfrm[Please_add_any_additional_comments_conce__c]" value="{{isset($datas['onfrm']['Please_add_any_additional_comments_conce__c'])?$datas['onfrm']['Please_add_any_additional_comments_conce__c']:''}}" id="text-input-id-1"  required="" class="gaccca-input" />
                                 <br/>
                                 
                                 
