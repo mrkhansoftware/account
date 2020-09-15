@@ -52,7 +52,7 @@
         600 B Street, Suite 300 <br/>
         San Diego, CA 92101
     </p><br/><br/>
-    <p>Please download our Travel Validation form here: <a href="https://gaccca.my.salesforce.com/sfc/p/1I000001fgme/a/1I000000bzEq/NQle6EvT9tUjWLPwCczNSM7T1_A5OKqpJH7vV.flzbA" target='_blank'>Travel Validation</a></p>
+    <p>Please download our Travel Validation form here: <img src="{{ asset('images/PDFImage.png') }}" width="18" height="18" /> <a href="https://gaccca.my.salesforce.com/sfc/p/1I000001fgme/a/1I000000bzEq/NQle6EvT9tUjWLPwCczNSM7T1_A5OKqpJH7vV.flzbA" target='_blank'>Travel Validation</a></p>
                       
 </div>
      

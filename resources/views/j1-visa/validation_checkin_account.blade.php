@@ -153,7 +153,7 @@
             <input type="text" name="onfrm[Name_of_Host_Company__c]"  value="{{isset($datas['onfrm']['Name_of_Host_Company__c'])?$datas['onfrm']['Name_of_Host_Company__c']:''}}"    placeholder="Name of your Host-Company" required=""
               class="gaccca-input" />
 
-            <span class="gaccca-input-help-text">first, middle, last name</span>
+            
 
           </div>
         </div>
@@ -220,7 +220,7 @@
           <div class="gaccca-form-element__control">
             <input type="text" name="onfrm[American_Consulate__c]"  value="{{isset($datas['onfrm']['American_Consulate__c'])?$datas['onfrm']['American_Consulate__c']:''}}"    required="" class="gaccca-input" />
 
-            <span class="gaccca-input-help-text">first, middle, last name</span>
+           
 
           </div>
         </div>
