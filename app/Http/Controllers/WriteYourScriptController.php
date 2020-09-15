@@ -13,17 +13,43 @@ class WriteYourScriptController extends Controller
      */
     public function index()
     {
+        if(!isset($_GET['orgidInternal'])){
         $idCon= 'App\Services\Helper'::sessionConId();
         if($idCon==''){
            return 'App\Services\Helper'::returnUrl();
         }
-        $datas='App\Services\Helper'::getRequest('ApiVideoTutorialsClass/'.$idCon);
+        }else{
+            $idCon='isInternalOrganization'.$_GET['orgidInternal'];
+        }
+        $datas='App\Services\Helper'::getRequest('ApiWriteYourScriptController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
+        //echo '<pre>'; print_r($datas); die;
+
+        if(isset($datas['ap']['Id'])){
+            session()->put('applicantId', $datas['ap']['Id']);
+            }
+            if(isset($datas['ap']['Contact__c'])){
+            session()->put('Contact__c', $datas['ap']['Contact__c']);
+            }
         return view('placement-program/WriteYourScript')->with(compact('datas'));
     
        // return view('placement-program/WriteYourScript');
         
+    }  
+    
+    public function writeScriptPlacementMethod(Request $request)
+    {
+        $finalReq= $request->all();
+
+        $finalReq['applicant']['id']=session()->get('applicantId');
+        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+        $finalReq['applicantData'] = json_encode($finalReq['applicant']);
+        unset($finalReq['_token']);
+        unset($finalReq['applicant']);
+        
+        return  'App\Services\Helper'::postRequest($finalReq, 'ApiWriteYourScriptController');
+      
     }
 
     /**

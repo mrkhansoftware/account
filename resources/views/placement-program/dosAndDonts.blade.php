@@ -2,7 +2,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'DoAndDontsController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Dos and Don’ts</h1>
@@ -63,12 +63,12 @@
     <p>6. <strong>Handle problems alone </strong> - Contact us immediately. We are on hand and can offer an objective opinion on how to proceed. Please don’t make big decisions without discussing with us first.</p>    
     </div>
 
-
+    @if (isset($datas['doDontConfirm']) && $datas['doDontConfirm']=='')
     <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
             <span class="gaccca-form-element__label gaccca-m-bottom_none"><strong>I confirm the Dos and Don’ts</strong><span class="gaccca-text-required" title="required">*</span></span>
             <div class="gaccca-checkbox">
-            <input type="checkbox" name="options" id="checkbox-unique-id-73" value="checkbox-unique-id-73" checked="" />
+            <input type="checkbox" name="confirm" id="checkbox-unique-id-73" value='Yes' required  value="checkbox-unique-id-73"  />
             <label class="gaccca-checkbox__label" for="checkbox-unique-id-73">
               <span class="gaccca-checkbox_faux"></span>
               <span class="gaccca-form-element__label">Yes</span>
@@ -81,7 +81,11 @@
 
    
       </div>
-     
+     @else
+     <div class="gaccca-form-element gaccca-form-element-margin">
+     Dos and Don’ts confirmed on  {{$datas['doDontConfirm']}}
+     </div>
+      @endif
      
     </div>
 

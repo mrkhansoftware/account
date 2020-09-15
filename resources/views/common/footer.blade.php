@@ -130,7 +130,7 @@ jQuery('.gaccca-input-date').datepicker({
 
 function gacccaScriptContentTab(evt, btnId, tabName) {
 
-  console.log(evt, btnId, tabName);
+  
 
 var i, gaccca_tabcontent, gaccc_tablinks;
  gaccca_tabcontent = $(".gaccca-tabcontent");

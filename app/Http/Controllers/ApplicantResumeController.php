@@ -4,22 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ApplicantResumeController extends Controller
-{
+class ApplicantResumeController extends Controller{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $idCon= 'App\Services\Helper'::sessionConId();
         if($idCon==''){
            return 'App\Services\Helper'::returnUrl();
         }
-        $datas='App\Services\Helper'::getRequest('ApiVideoTutorialsClass/'.$idCon);
+        $datas='App\Services\Helper'::getRequest('ApiApplicantResumeController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
+        echo '<pre>'; print_r($datas); die;
         return view('placement-program/ApplicantResume')->with(compact('datas'));
     
       //  return view('placement-program/ApplicantResume');

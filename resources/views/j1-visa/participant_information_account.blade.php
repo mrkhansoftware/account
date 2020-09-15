@@ -249,7 +249,6 @@
           <label class="gaccca-form-element__label" for="text-input-id-nou">
             Name of University <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            
               {!! Form::text('applicant[Name_of_University__c]',isset($datas['Appli']['Name_of_University__c'])?$datas['Appli']['Name_of_University__c']:'',array('class'=>'gaccca-input','required' => 'required')); !!}
 
           </div>

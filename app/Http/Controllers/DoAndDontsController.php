@@ -14,17 +14,26 @@ class DoAndDontsController extends Controller
     public function index()
     {
 
-        
-        $idCon= 'App\Services\Helper'::sessionConId();
-        if($idCon==''){
-           return 'App\Services\Helper'::returnUrl();
+
+        $idCon = 'App\Services\Helper'::sessionConId();
+        if ($idCon == '') {
+            return 'App\Services\Helper'::returnUrl();
         }
-        $datas='App\Services\Helper'::getRequest('ApiVideoTutorialsClass/'.$idCon);
+        $datas = 'App\Services\Helper'::getRequest('ApiVideoTutorialsClass/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
+        //echo '<pre>'; print_r($datas); die;
+        if (isset($datas['ap']['Id'])) {
+            session()->put('applicantId', $datas['ap']['Id']);
+        }
+
+        if (isset($datas['ap']['Contact__c'])) {
+
+            session()->put('Contact__c', $datas['ap']['Contact__c']);
+        }
         return view('placement-program/dosAndDonts')->with(compact('datas'));
-    
-       // return view('placement-program/dosAndDonts');
+
+        // return view('placement-program/dosAndDonts');
 
 
     }
@@ -47,7 +56,19 @@ class DoAndDontsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $finalReq = $request->all();
+        $finalReq['typeStr'] = 'confirmDosDonts';
+        $finalReq['applicant']['id'] = session()->get('applicantId');
+        $finalReq['applicant']['Contact__c'] = session()->get('Contact__c');
+        $finalReq['applicantData'] = json_encode($finalReq['applicant']);
+
+        unset($finalReq['_token']);
+        unset($finalReq['confirm']);
+        unset($finalReq['applicant']);
+
+        'App\Services\Helper'::postRequest($finalReq, 'ApiVideoTutorialsClass');
+       
+        return redirect()->action('DoAndDontsController@index', ['isSave' => 1]);
     }
 
     /**

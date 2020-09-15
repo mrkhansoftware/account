@@ -20,27 +20,39 @@ class VideoResumeController extends Controller
         $datas='App\Services\Helper'::getRequest('ApiVideoTutorialsClass/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
+        if (isset($datas['ap']['Id'])) {
+            session()->put('applicantId', $datas['ap']['Id']);
+        }
+
+        if (isset($datas['ap']['Contact__c'])) {
+
+            session()->put('Contact__c', $datas['ap']['Contact__c']);
+        }
         return view('placement-program/Video_Resume')->with(compact('datas'));  
     
     }
 
     public function scriptreadySubmit(Request $request)
     {
+        
         $finalReq = $request->all();
-    
-        $finalReq['applicant']['id']=session()->get('applicantId');
-        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
-        $finalReq['applicantData']=json_encode($finalReq['applicant']);
+
+        
+        $finalReq['applicant']['id'] = session()->get('applicantId');
+        $finalReq['applicant']['Contact__c'] = session()->get('Contact__c');
+        $finalReq['applicantData'] = json_encode($finalReq['applicant']);
+        if($finalReq['methodType']=='readyToSendMethod'){
+            $finalReq['typeStr'] = 'sendEmailVideoReady';
+        }else{
+            $finalReq['typeStr'] = 'saveVideoInfo';
+        }
+
         unset($finalReq['_token']);
+        unset($finalReq['methodType']);
         unset($finalReq['applicant']);
-      
-      
-        return  $finalReq;
-      
-    
-    //echo "<pre>"; print_r($finalReq);die;
-    
-    return  'App\Services\Helper'::postRequest($finalReq,'ApiBvisaController');
+
+      return  'App\Services\Helper'::postRequest($finalReq, 'ApiVideoTutorialsClass');
+       
     
     }
     
