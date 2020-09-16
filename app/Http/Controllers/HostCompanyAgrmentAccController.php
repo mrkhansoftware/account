@@ -13,7 +13,16 @@ class HostCompanyAgrmentAccController extends Controller
      */
     public function index()
     {
-        return view('host-company/host_company_agreement_account');
+
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+        $datas='App\Services\Helper'::getRequest('ApiHostCompanyAgreementController/'.$idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        echo '<pre>'; print_r($datas); die;
+        return view('host-company/host_company_agreement_account')->with(compact('datas'));
     }
 
     /**
