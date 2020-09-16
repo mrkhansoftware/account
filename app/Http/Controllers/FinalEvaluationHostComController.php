@@ -13,7 +13,22 @@ class FinalEvaluationHostComController extends Controller
      */
     public function index()
     {
-        return view('host-company/final_evaluation_hc_account');
+
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+        $datas='App\Services\Helper'::getRequest('ApiFinalEvaluationHCController/'.$idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        echo '<pre>'; print_r($datas); die;
+
+       if(isset($datas['ap']['Id'])){
+        session()->put('applicantId', $datas['ap']['Id']);
+        }
+        session()->put('Contact__c', $datas['ap']['Contact__c']);
+        return view('host-company/final_evaluation_hc_account')->with(compact('datas'));
+    
 
     }
 

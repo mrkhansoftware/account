@@ -13,6 +13,21 @@ class HCMidPointEvaluationController extends Controller
      */
     public function index()
     {
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+        $datas='App\Services\Helper'::getRequest('ApiMidPointHCController/'.$idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+       // echo '<pre>'; print_r($datas); die;
+
+       if(isset($datas['ap']['Id'])){
+        session()->put('applicantId', $datas['ap']['Id']);
+        }
+        session()->put('Contact__c', $datas['ap']['Contact__c']);
+        return view('host-company/HostCompany_Mid_Point_Evaluation_Account')->with(compact('datas'));
+    
         return view('host-company/HostCompany_Mid_Point_Evaluation_Account');
 
     }

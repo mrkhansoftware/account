@@ -18,12 +18,40 @@ class ApplicantResumeController extends Controller{
         $datas='App\Services\Helper'::getRequest('ApiApplicantResumeController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        echo '<pre>'; print_r($datas); die;
+       // echo '<pre>'; print_r($datas); die;
+
+       if(isset($datas['app']['Id'])){
+        session()->put('applicantId', $datas['app']['Id']);
+        }
+        session()->put('Contact__c', $datas['app']['Contact__c']);
         return view('placement-program/ApplicantResume')->with(compact('datas'));
     
       //  return view('placement-program/ApplicantResume');
 
     }
+ 
+
+
+    public function ajaxApplicantResume(Request $request){
+
+        $finalReq = $request->all();
+    
+    $finalReq['applicant']['id']=session()->get('applicantId');
+    $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+    $finalReq['applicantData']=json_encode($finalReq['applicant']);
+    unset($finalReq['_token']);
+    unset($finalReq['applicant']);
+  
+  
+  
+  
+
+//echo "<pre>"; print_r($finalReq);die;
+
+return  'App\Services\Helper'::postRequest($finalReq,'ApiApplicantResumeController');
+
+    }
+    
 
     /**
      * Show the form for creating a new resource.

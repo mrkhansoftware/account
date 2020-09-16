@@ -245,6 +245,7 @@ Route::post('/ajax_after_login', 'LoginController@ajaxAfterLogin');
 Route::post('/b1videoUpdate', 'B1VideoController@ajaxQuestionSubmit');
 Route::post('/b1VideScriptReady', 'VideoResumeController@scriptreadySubmit');  
 Route::post('/writeScriptPlacement', 'WriteYourScriptController@writeScriptPlacementMethod'); 
+Route::post('/applicantResumePlacement', 'ApplicantResumeController@ajaxApplicantResume'); 
 Route::get('/resetPassword', 'LoginController@resetPassword');
 
 
