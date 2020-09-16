@@ -102,10 +102,10 @@
                         @if (stripos($portal_program,"Hostcompany")!==false)
                             <li class="gaccca-dropdown"><a href="#home123">Host Company</a>
                                 <div class="gaccca-dropdown-content">
-                                    <a href="/host_company_agreement_account_new"  target="_blank">Host Company Agreement</a>
-                                    <a href="/DS_7002_Trainigsplan_new"  target="_blank">DS-7002 Training Plan</a>
-                                    <a href="/HostCompanyMidPointEvaluationAccountnew"  target="_blank">Midpoint Evaluation</a>
-                                    <a href="/final_evaluation_hc_account_new"  target="_blank">Final Evaluation</a>
+                                    <a href="/host_company_agreement_account"  target="_blank">Host Company Agreement</a>
+                                    <a href="/DS_7002_Trainigsplan"  target="_blank">DS-7002 Training Plan</a>
+                                    <a href="/HostCompany_Mid_Point_Evaluation_Account"  target="_blank">Midpoint Evaluation</a>
+                                    <a href="/final_evaluation_hc_account"  target="_blank">Final Evaluation</a>
                                     
                                 </div>
                                 
