@@ -1,5 +1,7 @@
 @include('common.header_without_menu')
 
+@include('common.signScript');
+
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 <div class="gaccca-main-containt">
@@ -140,21 +142,21 @@
                       <label class="gaccca-form-element__label" for="text-input-id-fn">
                         On average, how many hours has the intern/trainee been in attendance per week?  <span class="gaccca-text-required" title="required">*</span> </label>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-attendance-32" value="radio-attendance-32" name="attendance" checked="" />
+                        <input type="radio"  id="radio-attendance-32" value="radio-attendance-32" name="attendance" {{ ($datas['onfrm']['attendance_per_week__c']=="Fewer than 32 Hrs/Week")? "checked" : "" }}  />
                         <label class="gaccca-radio__label" for="radio-attendance-32">
                           <span class="gaccca-radio_faux"></span>
                           <span>Fewer than 32 Hrs/Week</span>
                         </label>
                       </span>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-attendance-45" value="radio-attendance-45" name="attendance" />
+                        <input type="radio" id="radio-attendance-45" value="radio-attendance-45" name="attendance" {{ ($datas['onfrm']['attendance_per_week__c']=="32-45 Hrs/Week")? "checked" : "" }}  />
                         <label class="gaccca-radio__label" for="radio-attendance-45">
                           <span class="gaccca-radio_faux"></span>
                           <span>32-45 Hrs/Week</span>
                         </label>
                       </span>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-attendance-more" value="radio-attendance-more" name="attendance" />
+                        <input type="radio" id="radio-attendance-more" value="radio-attendance-more" name="attendance" {{ ($datas['onfrm']['attendance_per_week__c']=="More than 45 Hrs/Week")? "checked" : "" }}  />
                         <label class="gaccca-radio__label" for="radio-attendance-more">
                           <span class="gaccca-radio_faux"></span>
                           <span> More than 45 Hrs/Week</span>
@@ -175,7 +177,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-2">
                     How well has the intern/trainee adapted to the business environment of your company? <span class="gaccca-text-required" title="required">*</span> </label><br/>
                     <span class="gaccca-file-help-text-color">1=poor / 5=excellent</span>
-                    @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                    @include('common.starRating',['required'=>'required', 'fieldName' =>'business_environment_adaption_by_intern__c'])
                 
                     <!-- <div class="gaccca-form-element__control">
                   
@@ -193,7 +195,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee is interested in his/her work. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_internship_training_is_interesting__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -219,7 +221,7 @@
                       <span class="gaccca-file-help-text-color">1=poor / 5=excellent</span>
                      
                      
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'intern_performance_by_assigned_tasks__c'])
                       
                   
                       <!-- <div class="gaccca-form-element__control">
@@ -257,7 +259,7 @@
                         Does the intern/trainee have the necessary qualifications for his/her position?  <span class="gaccca-text-required" title="required">*</span> </label>
                    
                   
-                        <span class="gaccca-radio">
+                        <!-- <span class="gaccca-radio">
                           <input type="radio" id="radio-qualifications-no" value="radio-qualifications-no" name="qualifications" checked="" />
                           <label class="gaccca-radio__label" for="radio-qualifications-no">
                             <span class="gaccca-radio_faux"></span>
@@ -268,8 +270,8 @@
                             <span class="gaccca-radio_faux"></span>
                             <span class="gaccca-padding-right-25">Yes</span>
                           </label>
-                        </span>
-                      
+                        </span> -->
+                        @include('common.radioGrp',['fieldName' =>'qualification_of_intern_for_position','obj'=>'onfrm','fieldApi'=>'qualification_of_intern_for_position__c','required'=>'required'])
                     
                   </div>  
                   </div>
@@ -304,7 +306,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     <label class="gaccca-form-element__label" for="text-input-id-fn">
                         Have you encountered problems with the intern/trainee so far?<span class="gaccca-text-required" title="required">*</span> </label>
                    
-                        <span class="gaccca-radio">
+                        <!-- <span class="gaccca-radio">
                           <input type="radio" id="radio-problems-no" value="radio-problems-no" name="problems" checked="" />
                           <label class="gaccca-radio__label" for="radio-problems-no">
                             <span class="gaccca-radio_faux"></span>
@@ -315,8 +317,9 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                             <span class="gaccca-radio_faux"></span>
                             <span class="gaccca-padding-right-25">Yes</span>
                           </label>
-                        </span>
+                        </span> -->
                       
+                        @include('common.radioGrp',['fieldName' =>'Encountered_problems_with_behaviors','obj'=>'onfrm','fieldApi'=>'Encountered_problems_with_behaviors__c','required'=>'required'])
                     
                   </div>  
                   </div>
@@ -351,7 +354,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     <label class="gaccca-form-element__label" for="text-input-id-fn">
                         Could these problems be resolved ? </label>
                    
-                        <span class="gaccca-radio">
+                        <!-- <span class="gaccca-radio">
                           <input type="radio" id="radio-resolved-no" value="radio-resolved-no" name="resolved" checked="" />
                           <label class="gaccca-radio__label" for="radio-resolved-no">
                             <span class="gaccca-radio_faux"></span>
@@ -362,7 +365,9 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                             <span class="gaccca-radio_faux"></span>
                             <span class="gaccca-padding-right-25">Yes</span>
                           </label>
-                        </span>
+                        </span> -->
+
+                        @include('common.radioGrp',['fieldName' =>'Could_these_problems_be_resolved','obj'=>'onfrm','fieldApi'=>'Could_these_problems_be_resolved__c','required'=>'required'])
                       
                         <!-- Only required if there were any problems. -->
                   </div>  
@@ -378,7 +383,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                         Has the intern/trainee's command of English been adequate for the internship/training?<span class="gaccca-text-required" title="required">*</span> </label>
                    
                   
-                        <span class="gaccca-radio">
+                        <!-- <span class="gaccca-radio">
                           <input type="radio" id="radio-english-no" value="radio-english-no" name="english" checked="" />
                           <label class="gaccca-radio__label" for="radio-english-no">
                             <span class="gaccca-radio_faux"></span>
@@ -389,9 +394,11 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                             <span class="gaccca-radio_faux"></span>
                             <span class="gaccca-padding-right-25">Yes</span>
                           </label>
-                        </span>
+                        </span> -->
+
+                        @include('common.radioGrp',['fieldName' =>'english_improved__c','obj'=>'onfrm','fieldApi'=>'English_adequate_for_internship__c','required'=>'required'])
                       
-                    
+                        
                   </div>  
                   </div>
             </div>
@@ -417,7 +424,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     The intern/trainee's command of English has improved since the beginning of the internship/training. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                      
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'english_improved__c'])
 
                     
                   
@@ -437,7 +444,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     The intern/trainee is making progress. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                       
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'The_intern_trainee_is_making_progress__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -454,7 +461,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     The intern/trainee makes positive contributions to the company. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                       
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'Positive_contribution_of_trainee_intern__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -472,7 +479,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     The intern/trainee is friendly. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                       
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'intern_trainee_is_friendly__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -498,7 +505,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     The intern/trainee is reliable. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                       
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'Intern_trainee_is_reliable__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -519,7 +526,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     The intern/trainee is motivated. <span class="gaccca-text-required" title="required">*</span>   </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
                       
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'Intern_trainee_is_motivated__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -541,7 +548,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                         Is the intern/trainee punctual? <span class="gaccca-text-required" title="required">*</span> </label>
                    
                    
-                      <span class="gaccca-radio">
+                      <!-- <span class="gaccca-radio">
                         <input type="radio" id="radio-punctual-no" value="radio-punctual-no" name="punctual" checked="" />
                         <label class="gaccca-radio__label" for="radio-punctual-no">
                           <span class="gaccca-radio_faux"></span>
@@ -552,9 +559,9 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                           <span class="gaccca-radio_faux"></span>
                           <span class="gaccca-padding-right-25">Yes</span>
                         </label>
-                      </span>
+                      </span> -->
   
-
+                      @include('common.radioGrp',['fieldName' =>'Is_the_intern_trainee_punctual','obj'=>'onfrm','fieldApi'=>'Is_the_intern_trainee_punctual__c','required'=>'required'])
  
                   </div>  
                   </div>
@@ -587,7 +594,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     The intern/trainee is flexible and able to accept changes to the work environment. <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'Flexible_trainee_accept_changes__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -606,7 +613,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                   <label class="gaccca-form-element__label" for="text-input-id-3">
                     How well does the intern/trainee accept constructive criticism? <span class="gaccca-text-required" title="required">*</span> </label><br/>
                       <span class="gaccca-file-help-text-color">1=not well / 5=perfectly fine</span>
-                      @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
+                      @include('common.starRating',['required'=>'required', 'fieldName' =>'Acceptance_of_criticism_by_trainee__c'])
                   
                       <!-- <div class="gaccca-form-element__control">
                     
@@ -627,7 +634,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     <label class="gaccca-form-element__label" for="text-input-id-fn">
                         The intern/trainee is actively participating in American cultural activities. <span class="gaccca-text-required" title="required">*</span> </label>
                    
-                        <span class="gaccca-radio">
+                        <!-- <span class="gaccca-radio">
                           <input type="radio" id="radio-cultural-no" value="radio-cultural-no" name="cultural" checked="" />
                           <label class="gaccca-radio__label" for="radio-cultural-no">
                             <span class="gaccca-radio_faux"></span>
@@ -638,8 +645,10 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                             <span class="gaccca-radio_faux"></span>
                             <span class="gaccca-padding-right-25">Yes</span>
                           </label>
-                        </span>
+                        </span> -->
                     
+                        @include('common.radioGrp',['fieldName' =>'Host_company_american_culture','obj'=>'onfrm','fieldApi'=>'Host_company_american_culture__c','required'=>'required'])
+
                   </div>  
                   </div>
             </div>
@@ -671,7 +680,7 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                     <label class="gaccca-form-element__label" for="text-input-id-fn">
                         Overall, I am absolutely satisfied with the intern/trainee's performance so far. <span class="gaccca-text-required" title="required">*</span> </label>
                    
-                        <span class="gaccca-radio">
+                        <!-- <span class="gaccca-radio">
                           <input type="radio" id="radio-satisfied-no" value="radio-satisfied-no" name="satisfied" checked="" />
                           <label class="gaccca-radio__label" for="radio-satisfied-no">
                             <span class="gaccca-radio_faux"></span>
@@ -683,7 +692,9 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                             <span class="gaccca-padding-right-25">Yes</span>
                           </label>
                         </span>
-                    
+                     -->
+                        @include('common.radioGrp',['fieldName' =>'Satisfied_intern_trainee_performance','obj'=>'onfrm','fieldApi'=>'Host_company_american_culture__c','required'=>'required'])
+
                   </div>  
                   </div>
             </div>
@@ -744,19 +755,14 @@ If no, please expand on this: <span class="gaccca-text-required" title="required
                 <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       
                     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                      <div class="gaccca-form-element gaccca-form-element-margin">
-                       <p>Please Sign Here : </p>
+                     
                        
-                        </div>
+                       @include('common.signHTML');
+                        
                       </div>
                     </div>
 
-
-
-
-
-
-           
+         
 
         <button class="gaccca-button-save gaccca-button-save-margin">Sign &amp; Submit</button>
                      

@@ -20,7 +20,7 @@ class HCMidPointEvaluationController extends Controller
         $datas='App\Services\Helper'::getRequest('ApiMidPointHCController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-       // echo '<pre>'; print_r($datas); die;
+      //  echo '<pre>'; print_r($datas); die;
 
        if(isset($datas['ap']['Id'])){
         session()->put('applicantId', $datas['ap']['Id']);
@@ -28,7 +28,7 @@ class HCMidPointEvaluationController extends Controller
         session()->put('Contact__c', $datas['ap']['Contact__c']);
         return view('host-company/HostCompany_Mid_Point_Evaluation_Account')->with(compact('datas'));
     
-        return view('host-company/HostCompany_Mid_Point_Evaluation_Account');
+       // return view('host-company/HostCompany_Mid_Point_Evaluation_Account');
 
     }
 

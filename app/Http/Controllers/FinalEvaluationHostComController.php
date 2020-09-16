@@ -21,7 +21,7 @@ class FinalEvaluationHostComController extends Controller
         $datas='App\Services\Helper'::getRequest('ApiFinalEvaluationHCController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        echo '<pre>'; print_r($datas); die;
+     //   echo '<pre>'; print_r($datas); die;
 
        if(isset($datas['ap']['Id'])){
         session()->put('applicantId', $datas['ap']['Id']);
