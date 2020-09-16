@@ -21,7 +21,7 @@ class HostCompanyAgrmentAccController extends Controller
         $datas='App\Services\Helper'::getRequest('ApiHostCompanyAgreementController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        echo '<pre>'; print_r($datas); die;
+        //echo '<pre>'; print_r($datas); die;
         return view('host-company/host_company_agreement_account')->with(compact('datas'));
     }
 

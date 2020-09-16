@@ -13,17 +13,15 @@ class DS7002TrainigsplanController extends Controller
      */
     public function index()
     {
-        $idCon= 'App\Services\Helper'::sessionConId();
-        if($idCon==''){
-           return 'App\Services\Helper'::returnUrl();
+        $idCon = 'App\Services\Helper'::sessionConId();
+        if ($idCon == '') {
+            return 'App\Services\Helper'::returnUrl();
         }
-        $datas='App\Services\Helper'::getRequest('ApiDS7002Controller/'.$idCon);
+        $datas = 'App\Services\Helper'::getRequest('ApiDS7002Controller/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        //echo '<pre>'; print_r($datas); die; 
+        //  echo '<pre>'; print_r($datas); die; 
         return view('host-company/DS_7002_Trainigsplan')->with(compact('datas'));
-    
-        
     }
 
     /**

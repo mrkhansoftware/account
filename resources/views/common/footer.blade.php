@@ -77,8 +77,7 @@ jQuery('.gaccca-input-date').datepicker({
     jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
   });
 
-</script>
-<script>
+
   jQuery('input[type=file]').on("change", function (ev) {
     jQueryin = jQuery(this);
     var label_lab = jQuery(this).closest("label");
@@ -130,6 +129,7 @@ jQuery('.gaccca-input-date').datepicker({
 
 function gacccaScriptContentTab(evt, btnId, tabName) {
 
+  console.log(evt, btnId, tabName);
   
 
 var i, gaccca_tabcontent, gaccc_tablinks;
@@ -151,7 +151,9 @@ $("#"+tabName).css('display','block');
 $("#"+btnId).addClass("gaccca-tab-active"); 
 }
 
-gacccaScriptContentTab('','your_script_btn', 'your_script');
+gacccaScriptContentTab('','phase_btn_1', 'phase__1');
+
+
 
 
 

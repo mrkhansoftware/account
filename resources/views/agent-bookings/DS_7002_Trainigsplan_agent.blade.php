@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'ds-7002-plan']) !!}
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 
 
@@ -121,14 +121,16 @@
             
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="select-tod">Program Category
-               
+                <span class="gaccca-text-required" title="required">*</span>
               </label>
               <div class="gaccca-form-element__control">
                 <div class="gaccca-select_container">
-                  <select class="gaccca-select" id="select-tod">                      
+                  <!-- <select class="gaccca-select" id="select-tod">                      
                     <option>select</option>
                    
-                  </select>
+                  </select> -->
+
+                  <input name="onForm[Program_Category__c]"  value="{{isset($datas['onForm']['Program_Category__c'])?$datas['onForm']['Program_Category__c']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input" />
                 </div>
               </div>
             </div>
@@ -176,7 +178,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-3">
                 Training/Internship Dates from  </label>
               <div class="gaccca-form-element__control">
-                <input name="onForm[trainingDates_From]"  value="{{isset($datas['onForm']['trainingDates_From'])?$datas['onForm']['trainingDates_From']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input-date" />
+                <input name="trainingDates_From"  value="{{isset($datas['trainingDates_From'])?$datas['trainingDates_From']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input-date" />
                 
                 
               </div>
@@ -191,7 +193,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-3">
                 Training/Internship Dates to  </label>
               <div class="gaccca-form-element__control">
-                <input name="onForm[trainingDates_to]"  value="{{isset($datas['onForm']['trainingDates_to'])?$datas['onForm']['trainingDates_to']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input-date" />
+                <input name="trainingDates_to"  value="{{isset($datas['trainingDates_to'])?$datas['trainingDates_to']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input-date" />
                 
                 
               </div>
@@ -212,7 +214,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-fn">
                 Organization Name <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input name="onForm[Organization_Name__c]"  value="{{isset($datas['onForm']['Organization_Name__c'])?$datas['onForm']['Organization_Name__c']:''}}" type="text" id="text-input-id-fn"  required="" class="gaccca-input" />
+                <input name="onForm[Organization_Name__c]"  value="{{isset($datas['onForm']['Organization_Name__c'])?$datas['onForm']['Organization_Name__c']:''}}"  type="text" id="text-input-id-fn"  required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -271,10 +273,13 @@
               </label>
               <div class="gaccca-form-element__control">
                 <div class="gaccca-select_container">
-                  <select class="gaccca-select" id="select-tod">                      
+
+                <input name="onForm[State1__c]"  value="{{isset($datas['onForm']['State1__c'])?$datas['onForm']['State1__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
+
+                  <!-- <select class="gaccca-select" id="select-tod">                      
                     <option>select</option>
                    
-                  </select>
+                  </select> -->
                 </div>
               </div>
             </div>
@@ -350,7 +355,7 @@
                       <label class="gaccca-form-element__label" for="text-input-id-fn">
                         Stipend  <span class="gaccca-text-required" title="required">*</span> </label>
                      
-                        <span class="gaccca-radio">
+                        <!-- <span class="gaccca-radio">
                           <input type="radio" id="radio-gross-no" value="radio-gross-no" name="gross" checked="" />
                           <label class="gaccca-radio__label" for="radio-gross-no">
                             <span class="gaccca-radio_faux"></span>
@@ -361,7 +366,12 @@
                             <span class="gaccca-radio_faux"></span>
                             <span class="gaccca-padding-right-25">Yes</span>
                           </label>
-                        </span>
+                        </span> -->
+
+
+
+                        @include('common.radioGrp',['fieldName' =>'stipend','obj'=>'onForm','fieldApi'=>'Stipend__c','required'=>'required'])
+
                       
                     </div>
       
@@ -410,18 +420,7 @@
                       <label class="gaccca-form-element__label" for="text-input-id-fn">
                         Workers' Compensation Policy  <span class="gaccca-text-required" title="required">*</span> </label>
                      
-                        <span class="gaccca-radio">
-                          <input type="radio" id="radio-Policy-no" value="radio-Policy-no" name="Policy" checked="" />
-                          <label class="gaccca-radio__label" for="radio-Policy-no">
-                            <span class="gaccca-radio_faux"></span>
-                            <span class="gaccca-padding-right-25">No</span>
-                          </label>
-                          <input type="radio" id="radio-Policy-yes" value="radio-Policy-yes" name="Policy" />
-                          <label class="gaccca-radio__label" for="radio-Policy-yes">
-                            <span class="gaccca-radio_faux"></span>
-                            <span class="gaccca-padding-right-25">Yes</span>
-                          </label>
-                        </span>
+                        @include('common.radioGrp',['fieldName' =>'policy','obj'=>'onForm','fieldApi'=>'Workers_Compensation_Policy__c','required'=>'required'])
                       
                     </div>
       
@@ -455,28 +454,34 @@
       
                   <div class="gaccca-form-element__control">
                       <label class="gaccca-form-element__label" for="text-input-id-fn">
-                        Does your Workers' Compensation policy cover exchange Visitors?  <span class="gaccca-text-required" title="required">*</span> </label>
+                        Does your Workers' Compensation policy cover exchange Visitors? <span class="gaccca-text-required" title="required">*</span> </label>
+                      
+                      
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-policy-yes" value="radio-policy-yes" name="policy" checked="" />
+                        <input type="radio" id="radio-policy-yes" value="yes" name="policy" {{ ($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="Yes")? "checked" : "" }} />
                         <label class="gaccca-radio__label" for="radio-policy-yes">
                           <span class="gaccca-radio_faux"></span>
                           <span>Yes</span>
                         </label>
                       </span>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-policy-exempt" value="radio-policy-exempt" name="policy" />
+                        <input type="radio" id="radio-policy-exempt" value="no" name="policy" {{ ($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="No, exempt")? "checked" : "" }} />
                         <label class="gaccca-radio__label" for="radio-policy-exempt">
                           <span class="gaccca-radio_faux"></span>
                           <span>No, exempt</span>
                         </label>
                       </span>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-policy-equivalent" value="radio-policy-equivalent" name="policy" />
+                        <input type="radio" id="radio-policy-equivalent" value="radio-policy-equivalent" name="policy" {{ ($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="No, but equivalent coverage")? "checked" : "" }} />
                         <label class="gaccca-radio__label" for="radio-policy-equivalent">
                           <span class="gaccca-radio_faux"></span>
                           <span>No, but equivalent coverage</span>
                         </label>
                       </span>
+
+
+
+
                     </div>
       
                 </div>
@@ -510,21 +515,21 @@
                       <label class="gaccca-form-element__label" for="text-input-id-fn">
                         Annual Revenue  <span class="gaccca-text-required" title="required">*</span> </label>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-policy-three-million" value="radio-policy-three-million" name="million" checked="" />
+                        <input type="radio" id="radio-policy-three-million" value="radio-policy-three-million" name="million" {{ ($datas['onForm']['Annual_Revenue__c']=="$0 to $3 Million")? "checked" : "" }} />
                         <label class="gaccca-radio__label" for="radio-policy-three-million">
                           <span class="gaccca-radio_faux"></span>
                           <span>$0 to $3 Million</span>
                         </label>
                       </span>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-policy-ten-million" value="radio-policy-ten-million" name="million" />
+                        <input type="radio" id="radio-policy-ten-million" value="radio-policy-ten-million" name="million" {{ ($datas['onForm']['Annual_Revenue__c']=="3 Million to $10 Million")? "checked" : "" }} />
                         <label class="gaccca-radio__label" for="radio-policy-ten-million">
                           <span class="gaccca-radio_faux"></span>
                           <span>3 Million to $10 Million</span>
                         </label>
                       </span>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-policy-twentyfive-million" value="radio-policy-twentyfive-million" name="million" />
+                        <input type="radio" id="radio-policy-twentyfive-million" value="radio-policy-twentyfive-million" name="million" {{ ($datas['onForm']['Annual_Revenue__c']=="$10 Million to $25 Million")? "checked" : "" }} />
                         <label class="gaccca-radio__label" for="radio-policy-twentyfive-million">
                           <span class="gaccca-radio_faux"></span>
                           <span>$10 Million to $25 Million</span>
@@ -532,7 +537,7 @@
                       </span>
 
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-policy-more-million" value="radio-policy-more-million" name="million" />
+                        <input type="radio" id="radio-policy-more-million" value="radio-policy-more-million" name="million" {{ ($datas['onForm']['Annual_Revenue__c']=="$25 Million or More")? "checked" : "" }}/>
                         <label class="gaccca-radio__label" for="radio-policy-more-million">
                           <span class="gaccca-radio_faux"></span>
                           <span>
@@ -628,7 +633,7 @@
   
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="text-input-id-4">
-                Main Program Supervisor/POC at Host Organization <span class="gaccca-text-required" title="required">*</span> </label>
+                Main Program Supervisor/POC at Host Organization  </label>
               <div class="gaccca-form-element__control">
                 <input name="onForm[Main_Program_Supervisor__c]"  value="{{isset($datas['onForm']['Main_Program_Supervisor__c'])?$datas['onForm']['Main_Program_Supervisor__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
                 <span class="gaccca-input-help-text">
@@ -644,7 +649,7 @@
   
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="text-input-id-4">
-                Title <span class="gaccca-text-required" title="required">*</span> </label>
+                Title  </label>
               <div class="gaccca-form-element__control">
                 <input name="onForm[TITLE__c]"  value="{{isset($datas['onForm']['TITLE__c'])?$datas['onForm']['TITLE__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
                 
@@ -657,7 +662,7 @@
   
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="text-input-id-4">
-                Supervisor Phone <span class="gaccca-text-required" title="required">*</span>  </label>
+                Supervisor Phone  </label>
               <div class="gaccca-form-element__control">
                 <input name="onForm[Supervisor_Phone__c]"  value="{{isset($datas['onForm']['Supervisor_Phone__c'])?$datas['onForm']['Supervisor_Phone__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
                 
@@ -670,7 +675,7 @@
   
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="text-input-id-4">
-                Supervisor Contact FAX <span class="gaccca-text-required" title="required">*</span> <span class="gaccca-text-required" title="required">*</span> </label>
+                Supervisor Contact FAX <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                 <input name="onForm[Supervisor_Contact_FAX__c]"  value="{{isset($datas['onForm']['Supervisor_Contact_FAX__c'])?$datas['onForm']['Supervisor_Contact_FAX__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
                 
@@ -683,17 +688,22 @@
   
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="text-input-id-4">
-                Supervisor Contact Email <span class="gaccca-text-required" title="required">*</span> <span class="gaccca-text-required" title="required">*</span> </label>
+                Supervisor Contact Email <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                 <input name="onForm[Supervisor_Email__c]"  value="{{isset($datas['onForm']['Supervisor_Email__c'])?$datas['onForm']['Supervisor_Email__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
                 
               </div>
             </div>
           </div>
-       
-         
-               
+    
+  
+     
+  
+        
       </div>
+
+
+
 
       <h2 class="gaccca-h2-padding"> PHASE INFORMATION</h2>
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
@@ -702,7 +712,9 @@
         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
   
             <div class="gaccca-form-element gaccca-form-element-margin">
-            <p>The phase information outlines the goals and objectives of the intended program. The number of phases is dependent on the type and length of program: up to 6 months= 1-2 phases; up to 9 months= 2-3 phases; up to 12 months= 3-4 phases; up to 18 months= 4-5 phases.</p>
+            <p>The phase information outlines the goals and objectives of the intended program. The number of phases is dependent on the type and length of program: up to 6 months= 1-2 phases; up to 9 months= 2-3 phases; up to 12 months= 3-4 phases; up to 18 months= 4-5 phases.
+              {{ count($datas['DSPhaseListwrap'])}}
+            </p>
             </div>
           </div>
 
@@ -714,24 +726,53 @@
             <div class="gaccca-form-element  gaccca-form-element-margin">
            
                 <div class="gaccca-tab">
-                <span id="your_script_btn" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script'); return false;">Phase 1</span>
-                    <span id="your_script_btn_two" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn_two', 'phase_two'); return false;">Phase 2</span>
-                    <span id="your_script_btn_three" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn_three', 'phase_three'); return false;">Phase 3</span>
-                    <span id="your_script_btn_four" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn_four', 'phase_four'); return false;">Phase 4</span>
-                    <span id="your_script_btn_five" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn_four', 'phase_five'); return false;">Phase 5</span>
+                  
+                @for ($i = 1; $i <= count($datas['DSPhaseListwrap']); $i++)
+                <span id="phase_btn_{{$i}}" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'phase_btn_{{$i}}', 'phase__{{$i}}'); return false;">Phase {{$i}}</span>
+                @endfor
+                
+                
+                    <!-- <span id="your_script_btn" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'your_script_btn', 'your_script'); return false;">Phase 1</span>
+                    <span id="phase_btn_two" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event, 'phase_btn_two', 'your_script_two'); return false;">Phase 2</span> -->
                    
-                   
-                   
+
+
+
                   </div>
                   
-                  <div id="your_script" class="gaccca-tabcontent">
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+
+
+
+
+
+                  @for($i = 0; $i <= (count($datas['DSPhaseListwrap'])-1); $i++)
+                  
+                  <div id="phase__{{$i+1}}" class="gaccca-tabcontent">
+                 
+                 
+                  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase  </label>
+                            Phase </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
+                            <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase__c]"   value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase{{$i}}"  required="" class="gaccca-input" />
+                            
+                          </div>
+                        </div>
+                      </div>
+                
+                      
+                
+                
+                
+                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                
+                        <div class="gaccca-form-element ">
+                          <label class="gaccca-form-element__label" for="text-input-id-4">
+                            Phase Name <span class="gaccca-text-required" title="required">*</span> </label>
+                          <div class="gaccca-form-element__control">
+                          <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase_Name__c]"  value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Name__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Name__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_name{{$i}}"  required="" class="gaccca-input" />
                             
                           </div>
                         </div>
@@ -740,30 +781,13 @@
                 
                 
                 
-                
                       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Name </label>
+                            Phase Location <span class="gaccca-text-required" title="required">*</span>  </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Location </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
+                            <input name="DSPhaseListwrap[{{$i}}][DSPhase][Name]"   value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_location{{$i}}"  required="" class="gaccca-input" />
                           </div>
                         </div>
                       </div>
@@ -776,7 +800,7 @@
                           <label class="gaccca-form-element__label" for="text-input-id-4">
                             Phase Site Address  </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
+                          <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase_Site_Address__c]"  value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_adress{{$i}}"  required="" class="gaccca-input" />
                             
                           </div>
                         </div>
@@ -788,9 +812,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Start Date of Phase  </label>
+                            Start Date of Phase <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
+                          <input name="DSPhaseListwrap[{{$i}}][startDate]"  value="{{isset($datas['DSPhaseListwrap'][$i]['startDate'])?$datas['DSPhaseListwrap'][$i]['startDate']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},startdate{{$i}}"  required="" class="gaccca-input-date" />
                             
                           </div>
                         </div>
@@ -802,9 +826,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            End Date of Phase  </label>
+                            End Date of Phase <span class="gaccca-text-required" title="required">*</span>  </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
+                          <input name="DSPhaseListwrap[{{$i}}][endDate]"   value="{{isset($datas['DSPhaseListwrap'][$i]['endDate'])?$datas['DSPhaseListwrap'][$i]['endDate']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},enddate{{$i}}"  required="" class="gaccca-input-date" />
                             
                           </div>
                         </div>
@@ -816,9 +840,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Training/Internship Field  </label>
+                            Training/Internship Field <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
+                          <input name="DSPhaseListwrap[{{$i}}][DSPhase][Training_Internship_Field__c]"   value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Training_Internship_Field__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Training_Internship_Field__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},training{{$i}}" required="" class="gaccca-input" />
                             
                           </div>
                         </div>
@@ -830,9 +854,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Primary Phase Supervisor    </label>
+                            Primary Phase Supervisor <span class="gaccca-text-required" title="required">*</span>   </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
+                          <input name="DSPhaseListwrap[{{$i}}][DSPhase][Primary_Phase_Supervisor__c]"  value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},supervisior{{$i}}"  required="" class="gaccca-input" />
                             
                           </div>
                         </div>
@@ -844,9 +868,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Supervisor Title </label>
+                            Supervisor Title <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
+                          <input name="DSPhaseListwrap[{{$i}}][DSPhase][Supervisor_Title__c]"   value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},sup_title{{$i}}"  required="" class="gaccca-input" />
                             
                           </div>
                         </div>
@@ -858,9 +882,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            E-mail   </label>
+                            E-mail <span class="gaccca-text-required" title="required">*</span>   </label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
+                          <input name="DSPhaseListwrap[{{$i}}][DSPhase][E_mail__c]"  value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},email{{$i}}"  required="" class="gaccca-input" />
                             
                           </div>
                         </div>
@@ -872,9 +896,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phone Number  </label>
+                            Phone Number  <span class="gaccca-text-required" title="required">*</span></label>
                           <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
+                          <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phone_Number__c]"  value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phone{{$i}}"  required="" class="gaccca-input" />
                             
                           </div>
                         </div>
@@ -885,9 +909,11 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Description of Trainee/Intern's role for this program or phase   </label>
+                            Description of Trainee/Intern's role for this program or phase  <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
+                             <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Intern_s_role_for_this_program__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},des_of_trainee{{$i}}"  required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Intern_s_role_for_this_program__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Intern_s_role_for_this_program__c']:''}}</textarea> 
+
+                            
                           </div>
                         </div>
                       </div>
@@ -898,40 +924,11 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Specific goals and objectives for this program or phase  </label>
+                            Specific goals and objectives for this program or phase <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <textarea  name="onForm[Duration_in_Months__c]"   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                         
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Please list the names and titles of those who will provide continuous (for example, daily) supervision of the Trainee/Intern, including the primary supervisor. What are these persons' qualifications to teach the planned learning? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea  name="onForm[Duration_in_Months__c]"   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What plans are in place for the Trainee/Intern to participate in cultural activities while in the United States? <span class="gaccca-text-required" title="required">*</span>  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
                            
+                            <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][goals_for_this_program__c]"  required="" id="phase_btn_{{$i+1}},phase__{{$i+1}},goals{{$i}}" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['goals_for_this_program__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['goals_for_this_program__c']:''}}</textarea> 
+
                           </div>
                         </div>
                       </div>
@@ -943,9 +940,38 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What specific knowledge, skills, or techniques will be learned? </label>
+                            Please list the names and titles of those who will provide continuous (for example, daily) supervision of the Trainee/Intern, including the primary supervisor. What are these persons' qualifications to teach the planned learning? <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
+                          <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Name_and_qualification_of_Supervisor__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},name_and_title{{$i}}"  required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name_and_qualification_of_Supervisor__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name_and_qualification_of_Supervisor__c']:''}}</textarea> 
+                          </div>
+                        </div>
+                      </div>
+                
+                
+                
+                
+                
+                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                
+                        <div class="gaccca-form-element ">
+                          <label class="gaccca-form-element__label" for="text-input-id-8">
+                            What plans are in place for the Trainee/Intern to participate in cultural activities while in the United States? <span class="gaccca-text-required" title="required">*</span> </label>
+                          <div class="gaccca-form-element__control">
+                          <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Cultural_participation_of_trainee__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},cultural_activities{{$i}}"  required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Cultural_participation_of_trainee__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Cultural_participation_of_trainee__c']:''}}</textarea> 
+                          </div>
+                        </div>
+                      </div>
+                
+                
+                
+                
+                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                
+                        <div class="gaccca-form-element ">
+                          <label class="gaccca-form-element__label" for="text-input-id-8">
+                            What specific knowledge, skills, or techniques will be learned? <span class="gaccca-text-required" title="required">*</span> </label>
+                          <div class="gaccca-form-element__control">
+                          <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Techniques_will_be_learned__c]"  required="" id="phase_btn_{{$i+1}},phase__{{$i+1}},skill_tech{{$i}}" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Techniques_will_be_learned__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Techniques_will_be_learned__c']:''}}</textarea> 
                           </div>
                         </div>
                       </div>
@@ -956,9 +982,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How specifically will these knowledge, skills, or techniques be taught? Include specific tasks and activities (Interns) and/ or methodology of training and chronology/syllabus (Trainees) </label>
+                            How specifically will these knowledge, skills, or techniques be taught? Include specific tasks and activities (Interns) and/ or methodology of training and chronology/syllabus (Trainees) <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
+                          <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Methodology_of_training_and_chronology__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},task_activity{{$i}}"  required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Methodology_of_training_and_chronology__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Methodology_of_training_and_chronology__c']:''}}</textarea> 
                           </div>
                         </div>
                       </div>
@@ -969,9 +995,9 @@
                 
                         <div class="gaccca-form-element ">
                           <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How will the Trainee/Intern's acquisition of new skills and competencies be measured? </label>
+                            How will the Trainee/Intern's acquisition of new skills and competencies be measured? <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
+                          <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Acquisition_of_new_skills_by_trainee__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},acquisition{{$i}}" required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Acquisition_of_new_skills_by_trainee__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Acquisition_of_new_skills_by_trainee__c']:''}}</textarea> 
                           </div>
                         </div>
                       </div>
@@ -980,12 +1006,13 @@
                 
                       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                 
-                        <div class="gaccca-form-element ">
+                        <div class="gaccca-form-element">
                           <label class="gaccca-form-element__label" for="text-input-id-8">
                             
-                Additional Phase Remarks (optional)  </label>
+                            Additional Phase Remarks (optional) 
+                            <span class="gaccca-text-required" title="required">*</span> </label>
                           <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
+                          <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Additional_Phase_Remarks__c]"  required="" id="phase_btn_{{$i+1}},phase__{{$i+1}},additional{{$i}}"  class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Additional_Phase_Remarks__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Additional_Phase_Remarks__c']:''}}</textarea> 
                           </div>
                         </div>
                       </div>
@@ -994,1116 +1021,16 @@
                     
                 
                 
-                
-                
-                
                   </div>
 
-
-                  <div id="phase_two" class="gaccca-tabcontent">
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Name </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Location </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Site Address  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Start Date of Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            End Date of Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Training/Internship Field  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Primary Phase Supervisor    </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Supervisor Title </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            E-mail   </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phone Number  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Description of Trainee/Intern's role for this program or phase   </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Specific goals and objectives for this program or phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}"  required="" class="gaccca-textarea"></textarea>
-                         
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Please list the names and titles of those who will provide continuous (for example, daily) supervision of the Trainee/Intern, including the primary supervisor. What are these persons' qualifications to teach the planned learning? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What plans are in place for the Trainee/Intern to participate in cultural activities while in the United States? <span class="gaccca-text-required" title="required">*</span>  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                           
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What specific knowledge, skills, or techniques will be learned? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How specifically will these knowledge, skills, or techniques be taught? Include specific tasks and activities (Interns) and/ or methodology of training and chronology/syllabus (Trainees) </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]" required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How will the Trainee/Intern's acquisition of new skills and competencies be measured? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            
-                Additional Phase Remarks (optional)  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                    
-                
-                
-                
-                
-                
-                  </div>
-
-
-                  <div id="phase_three" class="gaccca-tabcontent">
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Name </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Location </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Site Address  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Start Date of Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            End Date of Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Training/Internship Field  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Primary Phase Supervisor    </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Supervisor Title </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            E-mail   </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phone Number  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Description of Trainee/Intern's role for this program or phase   </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"    required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Specific goals and objectives for this program or phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                         
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Please list the names and titles of those who will provide continuous (for example, daily) supervision of the Trainee/Intern, including the primary supervisor. What are these persons' qualifications to teach the planned learning? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea  name="onForm[Duration_in_Months__c]" required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What plans are in place for the Trainee/Intern to participate in cultural activities while in the United States? <span class="gaccca-text-required" title="required">*</span>  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                           
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What specific knowledge, skills, or techniques will be learned? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How specifically will these knowledge, skills, or techniques be taught? Include specific tasks and activities (Interns) and/ or methodology of training and chronology/syllabus (Trainees) </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea  name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How will the Trainee/Intern's acquisition of new skills and competencies be measured? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]" required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            
-                Additional Phase Remarks (optional)  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                    
-                
-                
-                
-                
-                
-                  </div>
-
-                  <div id="phase_four" class="gaccca-tabcontent">
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Name </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Location </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Site Address  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Start Date of Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            End Date of Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Training/Internship Field  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Primary Phase Supervisor    </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Supervisor Title </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            E-mail   </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phone Number  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Description of Trainee/Intern's role for this program or phase   </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Specific goals and objectives for this program or phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea  name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                         
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Please list the names and titles of those who will provide continuous (for example, daily) supervision of the Trainee/Intern, including the primary supervisor. What are these persons' qualifications to teach the planned learning? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]" required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What plans are in place for the Trainee/Intern to participate in cultural activities while in the United States? <span class="gaccca-text-required" title="required">*</span>  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                           
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What specific knowledge, skills, or techniques will be learned? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"    required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How specifically will these knowledge, skills, or techniques be taught? Include specific tasks and activities (Interns) and/ or methodology of training and chronology/syllabus (Trainees) </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]" required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How will the Trainee/Intern's acquisition of new skills and competencies be measured? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"   required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            
-                Additional Phase Remarks (optional)  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                    
-                
-                
-                
-                
-                
-                  </div>
-
-
-                  <div id="phase_five" class="gaccca-tabcontent">
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Name </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Location </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phase Site Address  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Start Date of Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            End Date of Phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input-date" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Training/Internship Field  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Primary Phase Supervisor    </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Supervisor Title </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            E-mail   </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-4">
-                            Phone Number  </label>
-                          <div class="gaccca-form-element__control">
-                            <input name="onForm[Duration_in_Months__c]"  value="{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}" type="text" id="text-input-id-4"  required="" class="gaccca-input" />
-                            
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Description of Trainee/Intern's role for this program or phase   </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Specific goals and objectives for this program or phase  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                         
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            Please list the names and titles of those who will provide continuous (for example, daily) supervision of the Trainee/Intern, including the primary supervisor. What are these persons' qualifications to teach the planned learning? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"    required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What plans are in place for the Trainee/Intern to participate in cultural activities while in the United States? <span class="gaccca-text-required" title="required">*</span>  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                           
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            What specific knowledge, skills, or techniques will be learned? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]" required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How specifically will these knowledge, skills, or techniques be taught? Include specific tasks and activities (Interns) and/ or methodology of training and chronology/syllabus (Trainees) </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea  name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            How will the Trainee/Intern's acquisition of new skills and competencies be measured? </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]"  required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                
-                      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-                
-                        <div class="gaccca-form-element ">
-                          <label class="gaccca-form-element__label" for="text-input-id-8">
-                            
-                Additional Phase Remarks (optional)  </label>
-                          <div class="gaccca-form-element__control">
-                            <textarea name="onForm[Duration_in_Months__c]" required="" class="gaccca-textarea">{{isset($datas['onForm']['Duration_in_Months__c'])?$datas['onForm']['Duration_in_Months__c']:''}}</textarea>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                    
-                
-                
-                
-                
-                
-                  </div>
-
+                  @endfor
                   
                   
+
+
+
+
+
                  
                   
         
@@ -2194,34 +1121,70 @@
 
  
 
-    
-  
-     
-  
-
-    
-       
-
             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
             
                 <div class="gaccca-form-element gaccca-form-element-margin">
         
-                    <button class="gaccca-button-save gaccca-button-save-margin">Save DS-7002</button>
-          <button class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
+                    <button id="save-ds-7002" class="gaccca-button-save gaccca-button-save-margin">Save DS-7002</button>
+          <button id="send-to-gaccca-btn" class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
                
                   </div>
                 </div>
          
        
       
-    
+          
+
         
       </div>
       
      
     </div>
-   
 
 
 {!! Form::close() !!}
 @include('common.footer')
+
+<script>
+
+$(document).ready(function() {
+    var errors = [];
+      $("#send-to-gaccca-btn").on('click', function() {
+
+        alert('send-to-gaccca-btn');
+        errors = [];
+          $('#ds-7002-plan').parsley().validate();
+          alert($('#ds-7002-plan').parsley().validate());
+          if ($('#ds-7002-plan').parsley().isValid()) {
+              alert('valid');
+          } else {
+              alert();
+           
+    
+          }
+      });
+
+
+
+
+      window.Parsley.on('field:error', function() {
+  // This global callback will be called for any field that fails validation.
+  console.log('Validation failed for: ', this.$element[0].id);
+
+  var is_check = errors.includes(this.$element[0].id);
+  if(!is_check){
+    errors.push(this.$element[0].id);
+  }
+  console.log(errors);
+
+  var both_ids = errors[0].split(",");
+
+  $("#"+this.$element[0].id).css('display','block');
+  gacccaScriptContentTab('',both_ids[0], both_ids[1]);
+});
+
+
+
+
+    });
+</script>
