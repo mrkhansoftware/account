@@ -1,6 +1,6 @@
 @include('common.header_without_menu')
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'host-company-agreement-form']) !!}
 
 
 
@@ -916,8 +916,8 @@
 
       <div class="gaccca-form-element gaccca-form-element-margin">
 
-        <button class="gaccca-button-save gaccca-button-save-margin">Save Host Company Agreement</button>
-        <button class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
+        <span id="abc" class="gaccca-button-save gaccca-button-save-margin">Save Host Company Agreement</span>
+        <button id="send-to-gaccca-btn" class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
 
       </div>
     </div>
@@ -935,3 +935,25 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+
+<script>
+$(document).ready(function() {
+    var errors = [];
+      $("#send-to-gaccca-btn").on('click', function() {
+
+       /// alert('send-to-gaccca-btn');
+        errors = [];
+          $('#host-company-agreement-form').parsley().validate();
+         // alert($('#host-company-agreement-form').parsley().validate());
+          if ($('#host-company-agreement-form').parsley().isValid()) {
+             // alert('valid');
+          } else {
+             // alert();
+           
+    
+          }
+      });
+    });
+
+
+</script>
