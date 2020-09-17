@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Routing\Route as IlluminateRoute;
+use App\Http\Controllers\CaseInsensitiveUriValidator;
+use Illuminate\Routing\Matching\UriValidator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+$validators = IlluminateRoute::getValidators();
+$validators[] = new CaseInsensitiveUriValidator;
+IlluminateRoute::$validators = array_filter($validators, function($validator) { 
+  return get_class($validator) != UriValidator::class;
+});
 
 Route::get('/', function () {
     return view('welcome');

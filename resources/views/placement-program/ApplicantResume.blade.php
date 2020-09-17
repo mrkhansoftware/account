@@ -1633,9 +1633,7 @@
 <script>
  
     function saveInformation(formData) {
-        console.log(formData);
-
-
+    
         if (formData.typeStr == 'fileNameChange' || formData.typeStr == 'fileDelete') { //loadFileIcn_
             document.getElementById('loadFileIcn_' + formData.fileId).style.display = 'block';
         } else {
@@ -1651,7 +1649,7 @@
             url: 'applicantResumePlacement',
             data: formData,
             dataType: 'json',
-            success: function(data) {
+            success: function(data) { console.log(data);
                 if (formData.typeStr == 'fileNameChange' || formData.typeStr == 'fileDelete') { //loadFileIcn_
                     document.getElementById('loadFileIcn_' + formData.fileId).style.display = 'none';
                 } else {

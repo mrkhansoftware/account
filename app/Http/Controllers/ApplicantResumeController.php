@@ -11,9 +11,15 @@ class ApplicantResumeController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(){
+        if(!isset($_GET['orgidInternal'])){
+            session()->put('isInternal', 'No');
         $idCon= 'App\Services\Helper'::sessionConId();
         if($idCon==''){
            return 'App\Services\Helper'::returnUrl();
+        }
+        }else{
+            session()->put('isInternal', 'Yes');
+            $idCon='isInternalOrganization'.$_GET['orgidInternal'];
         }
         $datas='App\Services\Helper'::getRequest('ApiApplicantResumeController/'.$idCon);
         $datas = json_decode($datas, true);
@@ -39,6 +45,8 @@ class ApplicantResumeController extends Controller{
     $finalReq['applicant']['id']=session()->get('applicantId');
     $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
     $finalReq['applicantData']=json_encode($finalReq['applicant']);
+    $finalReq['isInternal']=session()->get('isInternal');
+    
     unset($finalReq['_token']);
     unset($finalReq['applicant']);
   
