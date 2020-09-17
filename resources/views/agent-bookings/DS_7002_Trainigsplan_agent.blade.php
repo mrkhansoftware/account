@@ -1151,7 +1151,7 @@ $(document).ready(function() {
     var errors = [];
       $("#send-to-gaccca-btn").on('click', function() {
 
-        alert('send-to-gaccca-btn');
+       /// alert('send-to-gaccca-btn');
         errors = [];
           $('#ds-7002-plan').parsley().validate();
           alert($('#ds-7002-plan').parsley().validate());

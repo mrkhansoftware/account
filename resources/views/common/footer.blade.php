@@ -14,9 +14,8 @@ jQuery('.gaccca-input-date').datepicker({
     }
 });
 
-});
 
-  jQuery("#openNav").bind('click', function () {
+jQuery("#openNav").bind('click', function () {
     jQuery("#mySidepanel").css('display', 'block');
   });
 
@@ -31,6 +30,24 @@ jQuery('.gaccca-input-date').datepicker({
       }
     });
   });
+
+
+});
+var dropdown =  $('.gaccca-dropdown-btn');
+var i;
+for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      } else {
+      dropdownContent.style.display = "block";
+      }
+      });
+ }
+
+  
 
 </script>
 
@@ -154,7 +171,21 @@ $("#"+btnId).addClass("gaccca-tab-active");
 gacccaScriptContentTab('','phase_btn_1', 'phase__1');
 
 
+$("#openNav").bind('click',function(){
+  $("#mySidepanel").css('display','block');
+});
 
+$("#closeNav").bind('click',function(){
+  $("#mySidepanel").css('display','none');
+})
+
+$(document).ready(function(){
+  $(window).resize(function(){
+   if ($(window).width() >= 1093) {
+    $("#mySidepanel").css('display','none');
+}
+  });
+});
 
 
 </script>

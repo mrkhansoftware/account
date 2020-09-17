@@ -2240,3 +2240,20 @@ and  (min-width : 768px) and  (max-width : 990px) {
 .gaccca-hide{
   display: none;
 }
+
+
+@media only screen and (max-width: 700px) {
+
+  .gaccca-display-menu{
+     display: none !important;
+ }
+  
+ .gaccca-header-menu-button{
+     display: block !important;
+ }
+ 
+ .gaccca-behind-the-logo-position{
+     float: right !important;
+ }
+ 
+ }
