@@ -3,11 +3,12 @@
 @include('common.signScript');
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'FinalEvaluationHostComController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Final Evaluation</h1>
+      @if (isset($datas['onfrmSubmitted']) && !$datas['onfrmSubmitted'])
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>The purpose of this form is for GACC California to understand your general impressions of your intern/trainee. </p>
             <p>
@@ -718,7 +719,7 @@
                   <div class="gaccca-form-element__control">
                    
                     <input type="text" name="onfrm[Please_add_any_additional_comments_conce__c]"  value="{{isset($datas['onfrm']['Please_add_any_additional_comments_conce__c'])?$datas['onfrm']['Please_add_any_additional_comments_conce__c']:''}}"    id="text-input-id-3"  required="" class="gaccca-input" />
-
+                    <input type="hidden" name='EncId'  value="{{$datas['encryptId']}}"/>
                     
                   </div>
                 </div>
@@ -758,7 +759,21 @@
 
 
         <button class="gaccca-button-save gaccca-button-save-margin">Sign &amp; Submit</button>
-                     
+        @else
+                          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                          <div class="gaccca-form-element gaccca-form-element-margin">
+<p>     Thank you for submitting your evaluation.
+    </p>
+    <p>
+                                              Form submitted on &nbsp; {{$datas['formSubmittedDate']}}
+                                          </p>
+    <p>
+        Enjoy the remainder of your time at your host company
+    </p>
+    </div></div></div>
+@endif  
 
 
     

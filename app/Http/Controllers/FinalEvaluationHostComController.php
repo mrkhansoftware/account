@@ -13,20 +13,38 @@ class FinalEvaluationHostComController extends Controller
      */
     public function index()
     {
-
-        $idCon= 'App\Services\Helper'::sessionConId();
-        if($idCon==''){
-           return 'App\Services\Helper'::returnUrl();
-        }
+        
+if(!isset($_GET['orgid'])){
+    $idCon= 'App\Services\Helper'::sessionConId();
+    if($idCon==''){
+       return 'App\Services\Helper'::returnUrl();
+    }
+    }else{
+        $idCon='isOrganizationLink'.$_GET['orgid'];
+    }
         $datas='App\Services\Helper'::getRequest('ApiFinalEvaluationHCController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
      //   echo '<pre>'; print_r($datas); die;
 
-       if(isset($datas['ap']['Id'])){
-        session()->put('applicantId', $datas['ap']['Id']);
-        }
-        session()->put('Contact__c', $datas['ap']['Contact__c']);
+     session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+     if(isset($datas['ap']['Id'])){
+     session()->put('applicantId', $datas['ap']['Id']);
+     }
+     if(isset($datas['ap']['NewGdriveID__c'])){
+       session()->put('NewGdriveID__c', $datas['ap']['NewGdriveID__c']);
+       }
+
+       if(isset($datas['ap']['Google_Drive_Evaluation_Form__c'])){
+           session()->put('Google_Drive_Evaluation_Form__c', $datas['ap']['Google_Drive_Evaluation_Form__c']);
+           }
+       
+     
+     if(isset($datas['onfrm']['Id'])){
+       session()->put('onfrmId', $datas['onfrm']['Id']);
+       }
+     session()->put('Contact__c', $datas['ap']['Contact__c']);
+
         return view('host-company/final_evaluation_hc_account')->with(compact('datas'));
     
 
@@ -50,7 +68,28 @@ class FinalEvaluationHostComController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $finalReq = $request->all();
+        $EncId=$finalReq['EncId'];
+        $finalReq['applicant']['id']=session()->get('applicantId');
+        $finalReq['onfrm']['id']=session()->get('onfrmId');
+        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+        $finalReq['applicantData']=json_encode($finalReq['applicant']);
+        $finalReq['onlineFormData']=json_encode($finalReq['onfrm']);
+      
+        unset($finalReq['_token']);
+        unset($finalReq['applicant']);
+        unset($finalReq['onfrm']);
+        unset($finalReq['EncId']);
+      
+      
+     // echo '<pre>'; print_r($finalReq);die;
+      
+    
+      'App\Services\Helper'::postRequest($finalReq,'ApiFinalEvaluationHCController');
+   
+    return redirect()->action('FinalEvaluationHostComController@index', ['isSave' => 1, 'orgid' => $EncId]);
+        
+        
     }
 
     /**

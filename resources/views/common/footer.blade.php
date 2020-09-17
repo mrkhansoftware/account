@@ -158,5 +158,7 @@ gacccaScriptContentTab('','phase_btn_1', 'phase__1');
 
 
 </script>
+@if(!isset($_GET['orgid']) && !isset($_GET['orgidInternal']))
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
+@endif
 </html>
