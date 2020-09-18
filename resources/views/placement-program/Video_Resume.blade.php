@@ -126,9 +126,14 @@
 	}
 </script>
 <div class="gaccca-main-containt">
-	<h1 class="gaccca-h1-padding">Create Your Video Resume</h1>
-	
-	@if (isset($datas['profileLocked']) && !$datas['profileLocked'])
+	<h1 class="gaccca-h1-padding">Create Your Video Resume </h1>
+	@if (isset($datas['profileLocked']) && $datas['profileLocked'])
+	<div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
+		<p>Profile locked</p>
+	</div>
+	@else
+
+
 	<div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
 		<p>You have the option to use a teleprompter which automatically appears when you start recording. Input the video script you want to see in Teleprompter.</p>
 	</div>
@@ -368,11 +373,7 @@
 			</div>
 		</div>
 	</div>
-	@else
-	<div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
-	<p>Profile locked</p>
-</div>
-	
+
 	@endif
 </div>
 <script>
@@ -382,17 +383,17 @@
 			if (!confirm('Are you sure?')) {
 				return;
 			}
-			readyToSendMethod('readyToSendMethod','-');
+			readyToSendMethod('readyToSendMethod', '-');
 		});
 	}
 
 
-	function readyToSendMethod(methodType,vdId) {
+	function readyToSendMethod(methodType, vdId) {
 
-		document.getElementById('loader').style.display = 'block';//alert(vdId);
+		document.getElementById('loader').style.display = 'block'; //alert(vdId);
 		var formData = {
 			methodType: methodType,
-			videoString:vdId
+			videoString: vdId
 		};
 		$.ajaxSetup({
 			headers: {
@@ -409,11 +410,10 @@
 				document.getElementById('loader').style.display = 'none';
 				if (data == 'OK') {
 
-					if(methodType=='readyToSendMethod'){
-					onUpdate('Thank you, we received your video resume .');
-					}
-					else if(methodType=='vdoUpload'){
-					//onUpdate('Thank you, we received your video resume .');
+					if (methodType == 'readyToSendMethod') {
+						onUpdate('Thank you, we received your video resume .');
+					} else if (methodType == 'vdoUpload') {
+						//onUpdate('Thank you, we received your video resume .');
 					}
 
 					document.getElementById('readyToSend').disabled = true;
@@ -442,8 +442,8 @@
 		// we can also create a global event to fire each time video was uploaded
 		recorder.on("verified", function() {
 			//alert("The video has been submitted!");
-			readyToSendMethod('vdoUpload',recorder.get('video')); 
-		//savef();
+			readyToSendMethod('vdoUpload', recorder.get('video'));
+			//savef();
 		});
 	});
 </script>@include('common.footer') @else Permission denied. Please contact administrator. @endif
