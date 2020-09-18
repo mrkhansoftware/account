@@ -171,14 +171,6 @@ $(document).ready(function(){
   });
 });
 
-<<<<<<< HEAD
-const saveBtn=document.querySelector('#saveBtn');
-    if(saveBtn!=null){
-        saveBtn.addEventListener('click', (e)=>{
-            document.getElementById('loader').style.display='block';
-        })
-    }
-=======
 
 
 
@@ -200,7 +192,6 @@ const saveBtn=document.querySelector('#saveBtn');
 
 
 
->>>>>>> c3d87a5a1b856d6a60bbdf97279764c996159d7e
 </script>
 @if(!isset($_GET['orgid']) && !isset($_GET['orgidInternal']))
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
