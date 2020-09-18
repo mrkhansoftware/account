@@ -2,7 +2,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'ValidationCheckinAccountController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'ValidationCheckinAccountController@store','files' => true, 'method' => 'POST', 'id' => 'gacccaForm_vca']) !!}
 
 <div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Validation and Check-In </h1>
@@ -415,7 +415,7 @@
       </div>
 
 
-      <button class="gaccca-button-save gaccca-button-save-margin">Save</button>
+      <button id="gaccca_saveBtn_vca" class="gaccca-button-save gaccca-button-save-margin">Save</button>
 
     </div>
 

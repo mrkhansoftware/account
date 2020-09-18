@@ -1,7 +1,10 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+<link href="{{ asset('css/dataTables.jqueryui.min.css') }}"  rel='stylesheet' >
+<link href="{{ asset('css/jquery.dataTables.min.css') }}"  rel='stylesheet' >
+
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -153,9 +156,17 @@
 
 
 {!! Form::close() !!}
+<!-- <script src="{{ asset('js/jquery-3.3.1.js') }}"></script> -->
+<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/dataTables.jqueryui.min.js') }}"></script>
 @include('common.footer')
-<script>
 
+<script>
+$(document).ready(function() {
+$('#example_3').DataTable( {
+        "pagingType": "full_numbers"
+    });
+  });
 $( "#select-program" ).change(function() {
  
  var select_program = this.value;

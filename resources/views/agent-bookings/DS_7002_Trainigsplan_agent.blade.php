@@ -1,6 +1,6 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'ds-7002-plan']) !!}
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_ds7002']) !!}
 
 
 
@@ -1126,7 +1126,7 @@
                 <div class="gaccca-form-element gaccca-form-element-margin">
         
                     <button id="save-ds-7002" class="gaccca-button-save gaccca-button-save-margin">Save DS-7002</button>
-          <button id="send-to-gaccca-btn" class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
+          <button id="gaccca_saveBtn_ds7002" class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
                
                   </div>
                 </div>

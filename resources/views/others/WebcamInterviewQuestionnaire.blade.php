@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_webcam']) !!}
 <div class="gaccca-main-containt">
         <h1 class="gaccca-h1-padding">Applicant Webcam Interview Questions and Report Test User</h1>
         <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
@@ -522,7 +522,7 @@
 
 
 
-            <button class="gaccca-button-save gaccca-button-save-margin">Sign &amp; Submit</button>
+            <button id="gaccca_saveBtn_webcam" class="gaccca-button-save gaccca-button-save-margin">Sign &amp; Submit</button>
 
         </div>
 

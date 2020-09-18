@@ -2,7 +2,7 @@
 
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
-{!! Form::open(['action' => 'ExtensionRequestAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'ExtensionRequestAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_extension']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -137,7 +137,7 @@
               </div>
             </div>
           </div>
-          <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
+          <button id="gaccca_saveBtn_extension" class="gaccca-button-save gaccca-button-save-margin">Submit</button>
       </div>
 
     </div>

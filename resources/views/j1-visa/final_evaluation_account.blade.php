@@ -4,7 +4,7 @@
 
 @include('common.signScript');
 
-{!! Form::open(['action' => 'FinalEvaluationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'FinalEvaluationAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_final']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -997,7 +997,7 @@
                                 </div>
                                 @include('common.signHTML');
                               </div>
-                              <button class="gaccca-button-save gaccca-button-save-margin">Sign &amp; Submit</button>
+                              <button id="gaccca_saveBtn__final" class="gaccca-button-save gaccca-button-save-margin">Sign &amp; Submit</button>
                               @else
                           <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
               

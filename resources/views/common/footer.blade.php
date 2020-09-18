@@ -61,23 +61,7 @@ for (i = 0; i < dropdown.length; i++) {
 
 <script type="text/javascript">
  
-  jQuery(document).ready(function() {
-      
-      jQuery("#save-btn").on('click', function() {
-          jQuery('#my-profile').parsley().validate();
-          alert(jQuery('#my-profile').parsley().validate());
-          if (jQuery('#my-profile').parsley().isValid()) {
-              alert('valid');
-          } else {
-              alert('not valid');
-          }
-      });
-  });
-
-
-
-</script>
-<script>
+  
   //Get the button
 
   var mybutton = jQuery("#gaccca-scroll-to-top-button")[0];
@@ -186,6 +170,26 @@ $(document).ready(function(){
 }
   });
 });
+
+
+
+
+    jQuery(document).ready(function() {
+    $('[id^="gaccca_saveBtn_"]').click(function() {
+      alert()
+      jQuery('[id^="gacccaForm_"]').parsley().validate();
+      if (jQuery('[id^="gacccaForm_"]').parsley().isValid()) {
+              document.getElementById('loader').style.display='block';
+          } else {
+            document.getElementById('loader').style.display='none';
+          }
+
+    });
+
+  });
+
+
+
 
 
 </script>
