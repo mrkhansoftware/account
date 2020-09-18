@@ -25,7 +25,7 @@ class DS7002TrainigsplanController extends Controller
         $datas = 'App\Services\Helper'::getRequest('ApiDS7002Controller/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        //  echo '<pre>'; print_r($datas); die; 
+    // echo '<pre>'; print_r($datas); die; 
         
      session()->put('lastNameFirstName', $datas['lastNameFirstName']);
      if(isset($datas['appli']['Id'])){

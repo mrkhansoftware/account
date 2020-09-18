@@ -463,21 +463,21 @@
 
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-yes" value="Yes" name="compensation_Policy" {{ ($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="Yes")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-yes" value="Yes" name="compensation_Policy" {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy__c']=="Yes")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-yes">
             <span class="gaccca-radio_faux"></span>
             <span>Yes</span>
           </label>
         </span>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-exempt" value="No, exempt" name="compensation_Policy" {{ ($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="No, exempt")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-exempt" value="No, exempt" name="compensation_Policy" {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy__c']=="No, exempt")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-exempt">
             <span class="gaccca-radio_faux"></span>
             <span>No, exempt</span>
           </label>
         </span>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-equivalent" value="No, but equivalent coverage" name="compensation_Policy" {{ ($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="No, but equivalent coverage")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-equivalent" value="No, but equivalent coverage" name="compensation_Policy" {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="No, but equivalent coverage")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-equivalent">
             <span class="gaccca-radio_faux"></span>
             <span>No, but equivalent coverage</span>
@@ -520,21 +520,21 @@
         <label class="gaccca-form-element__label" for="text-input-id-fn">
           Annual Revenue <span class="gaccca-text-required" title="required">*</span> </label>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-three-million" value="$0 to $3 Million" name="Annual_Revenue" {{ ($datas['onForm']['Annual_Revenue__c']=="$0 to $3 Million")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-three-million" value="$0 to $3 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) && $datas['onForm']['Annual_Revenue__c']=="$0 to $3 Million")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-three-million">
             <span class="gaccca-radio_faux"></span>
             <span>$0 to $3 Million</span>
           </label>
         </span>
         <span class="gaccca-radio"> 
-          <input type="radio" id="radio-policy-ten-million" value="$3 Million to $10 Million" name="Annual_Revenue" {{ ($datas['onForm']['Annual_Revenue__c']=="3 Million to $10 Million")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-ten-million" value="$3 Million to $10 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) &&  $datas['onForm']['Annual_Revenue__c']=="3 Million to $10 Million")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-ten-million">
             <span class="gaccca-radio_faux"></span>
             <span>3 Million to $10 Million</span>
           </label>
         </span>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-twentyfive-million" value="$10 Million to $25 Million" name="Annual_Revenue" {{ ($datas['onForm']['Annual_Revenue__c']=="$10 Million to $25 Million")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-twentyfive-million" value="$10 Million to $25 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) &&  $datas['onForm']['Annual_Revenue__c']=="$10 Million to $25 Million")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-twentyfive-million">
             <span class="gaccca-radio_faux"></span>
             <span>$10 Million to $25 Million</span>
@@ -542,7 +542,7 @@
         </span> 
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-more-million" value="$25 Million or More" name="Annual_Revenue" {{ ($datas['onForm']['Annual_Revenue__c']=="$25 Million or More")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-more-million" value="$25 Million or More" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) && $datas['onForm']['Annual_Revenue__c']=="$25 Million or More")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-more-million">
             <span class="gaccca-radio_faux"></span>
             <span>
