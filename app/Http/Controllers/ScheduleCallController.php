@@ -47,12 +47,25 @@ class ScheduleCallController extends Controller
         $datas = 'App\Services\Helper'::getRequest('ApiSelfScheduleCallController/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
+        session()->put('callInformation', $datas);
         //echo '<pre>';print_r($datas);die;
         return view($viewName)->with(compact('datas'));
     }
     public function ajaxscheduleCall(Request $request){
 
-        return $request->all();
+        $req=$request->all();
+        $data= session()->get('callInformation');
+        if($req['methodTye']=='showSlots'){
+
+            $data['timeZoneDetected']=$req['timeZoneDetected'];
+            $data['scheduleCallType']=$req['scheduleCallType'];
+            $finalReq['wpcContent']=json_encode( $data);
+            $finalReq['processType']='showSlots';
+        }
+
+
+        return 'App\Services\Helper'::postRequest($finalReq,'ApiSelfScheduleCallController');
+        
     }
     /**
      * Show the form for creating a new resource.

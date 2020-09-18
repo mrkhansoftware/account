@@ -266,7 +266,8 @@
         }
         var formData = {
             timeZoneDetected: timezoneName,
-            scheduleCallType: '{{$scheduleCallTypeName}}'
+            scheduleCallType: '{{$scheduleCallTypeName}}',
+            methodTye:'showSlots'
         }
         ajaxRequest(formData);
     }

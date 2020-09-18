@@ -155,7 +155,7 @@
 			</div>
 		</div>
 	</div>
-	<div>
+	<div>  
 		<div id="Teleprompter" style="display:none;position;">
 			<div class="Countdown" data-readytext="Ready to record">2</div>
 			<div style="max-height:360px;overflow:hidden;height:245px;top:0;position:absolute;width:100%;">
