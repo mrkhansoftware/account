@@ -3,7 +3,7 @@
 @if (isset($datas['Appli']['Hide_Host_Company_Information_in_Account__c']) && !$datas['Appli']['Hide_Host_Company_Information_in_Account__c'])
                    
 
-{!! Form::open(['action' => 'HostCompanyInformationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'HostCompanyInformationAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_hci']) !!}
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Step 3/5 - Host Company Information</h1>
@@ -274,7 +274,7 @@
 
               @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
 
-            <button class="gaccca-button-save gaccca-button-save-margin" id='saveBtn'>Submit & Continue</button>
+            <button id="gaccca_saveBtn_hci" class="gaccca-button-save gaccca-button-save-margin">Submit & Continue</button>
 
             @endif
 

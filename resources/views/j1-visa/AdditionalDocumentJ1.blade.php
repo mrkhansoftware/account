@@ -2,7 +2,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'AdditionalDocumentJ1Controller@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'AdditionalDocumentJ1Controller@store','files' => true, 'method' => 'POST',  'id' => 'gacccaForm_additional']) !!}
 
 
       
@@ -185,7 +185,7 @@
                     <span class="gaccca-form-element__label"> <strong> Note:</strong> All upload fields are empty again after the upload for the next upload. </span>
                   </div>
 
-                  <button class="gaccca-button-save gaccca-button-save-margin">Send Additional Documents</button>
+                  <button id="gaccca_saveBtn_additional" class="gaccca-button-save gaccca-button-save-margin">Send Additional Documents</button>
 
             
           </div>

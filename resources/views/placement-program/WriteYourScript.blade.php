@@ -132,12 +132,12 @@
     width: 200px;
   }
 
-  }
+  
 
   .Countdown {
     display: none !important;
   }
-  }
+  
 </style>
 
 

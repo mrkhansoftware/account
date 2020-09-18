@@ -1,7 +1,7 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
-{!! Form::open(['action' => 'FinalizeApplicationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'FinalizeApplicationAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_finalize']) !!}
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Step 5/5 - Finalize your Application</h1>
@@ -153,7 +153,7 @@
           </div>
           @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
           <br/>
-          <button class="gaccca-button-save">Review your j-1 Visa Application</button>
+          <button id="gaccca_saveBtn_finalize" class="gaccca-button-save">Review your j-1 Visa Application</button>
         @endif
     </div>
 

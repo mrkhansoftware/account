@@ -12,7 +12,7 @@
     </div>
 
 
-    {!! Form::open(['action' => 'ParticipantInformationAccountController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'participant-information-account' ]) !!}
+    {!! Form::open(['action' => 'ParticipantInformationAccountController@store','files' => true, 'method' => 'POST', 'id' => 'gacccaForm_pia' ]) !!}
     
 
 
@@ -364,7 +364,7 @@
 
         </div>
         @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
-        {!! Form::submit('Save &amp; Continue',array('id'=>'saveBtn','class'=>'gaccca-button-save gaccca-button-save-margin save-Class')); !!}
+        {!! Form::submit('Save &amp; Continue',array('id'=>'saveBtn','class'=>'gaccca-button-save gaccca-button-save-margin save-Class','id'=>'gaccca_saveBtn_pia')); !!}
 @endif
       </div>
 

@@ -2,7 +2,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'B1EmbassyController@store','files'=>true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'B1EmbassyController@store','files'=>true, 'method' => 'POST',   'id' => 'gacccaForm_b1emb']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -117,7 +117,7 @@
           <p> <strong> Note: </strong> All upload fields are empty again after the upload for the next upload.</p>
 
         </div>
-        <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
+        <button id="gaccca_saveBtn_b1emb" class="gaccca-button-save gaccca-button-save-margin">Submit</button>
 
 
 

@@ -1,6 +1,6 @@
 @include('common.header_without_menu')
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'host-company-agreement-form']) !!}
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_hca']) !!}
 
 
 
@@ -917,7 +917,7 @@
       <div class="gaccca-form-element gaccca-form-element-margin">
 
         <span id="abc" class="gaccca-button-save gaccca-button-save-margin">Save Host Company Agreement</span>
-        <button id="send-to-gaccca-btn" class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
+        <button id="gaccca_saveBtn_hca" class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
 
       </div>
     </div>

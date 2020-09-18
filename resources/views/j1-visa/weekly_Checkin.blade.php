@@ -3,7 +3,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'WeeklyCheckinController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'WeeklyCheckinController@store', 'method' => 'POST', 'id' => 'gacccaForm_weekly']) !!}
 
 
 
@@ -280,7 +280,7 @@
 
 
 
-      <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
+      <button id="gaccca_saveBtn_weekly" class="gaccca-button-save gaccca-button-save-margin">Submit</button>
 
 
     </div>

@@ -1,7 +1,7 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:'','title'=>'Profile','page'=>'profile_account'])
 
-  {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'my-profile']) !!}
+  {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST', 'id' => 'gacccaForm_profile']) !!}
 
 
   <div class="gaccca-main-containt">
@@ -209,7 +209,7 @@
         <!-- <button class="gaccca-button-save gaccca-button-save-margin">Save</button> -->
         <!-- <button id="gaccca_myBtn">Open Modal</button> -->
 
-        {!! Form::submit('Save',array('class'=>'gaccca-button-save gaccca-button-save-margin')); !!}
+        {!! Form::submit('Save',array('class'=>'gaccca-button-save gaccca-button-save-margin', 'id'=>'gaccca_saveBtn_profile')); !!}
   
       </div>
     </div>
@@ -225,3 +225,7 @@
     @else
   Permission denied. Please contact administrator.
   @endif
+
+  <script>
+   
+  </script>

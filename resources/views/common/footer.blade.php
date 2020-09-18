@@ -61,23 +61,7 @@ for (i = 0; i < dropdown.length; i++) {
 
 <script type="text/javascript">
  
-  jQuery(document).ready(function() {
-      
-      jQuery("#save-btn").on('click', function() {
-          jQuery('#my-profile').parsley().validate();
-          alert(jQuery('#my-profile').parsley().validate());
-          if (jQuery('#my-profile').parsley().isValid()) {
-              alert('valid');
-          } else {
-              alert('not valid');
-          }
-      });
-  });
-
-
-
-</script>
-<script>
+  
   //Get the button
 
   var mybutton = jQuery("#gaccca-scroll-to-top-button")[0];
@@ -187,12 +171,36 @@ $(document).ready(function(){
   });
 });
 
+<<<<<<< HEAD
 const saveBtn=document.querySelector('#saveBtn');
     if(saveBtn!=null){
         saveBtn.addEventListener('click', (e)=>{
             document.getElementById('loader').style.display='block';
         })
     }
+=======
+
+
+
+    jQuery(document).ready(function() {
+    $('[id^="gaccca_saveBtn_"]').click(function() {
+      alert()
+      jQuery('[id^="gacccaForm_"]').parsley().validate();
+      if (jQuery('[id^="gacccaForm_"]').parsley().isValid()) {
+              document.getElementById('loader').style.display='block';
+          } else {
+            document.getElementById('loader').style.display='none';
+          }
+
+    });
+
+  });
+
+
+
+
+
+>>>>>>> c3d87a5a1b856d6a60bbdf97279764c996159d7e
 </script>
 @if(!isset($_GET['orgid']) && !isset($_GET['orgidInternal']))
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
