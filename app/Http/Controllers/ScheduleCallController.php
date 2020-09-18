@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class ScheduleCallController extends Controller
 {
@@ -13,18 +14,46 @@ class ScheduleCallController extends Controller
      */
     public function index()
     {
-        $idCon= 'App\Services\Helper'::sessionConId();
-        if($idCon==''){
-           return 'App\Services\Helper'::returnUrl();
-        }
-        $datas='App\Services\Helper'::getRequest('ApiVideoTutorialsClass/'.$idCon);
-        $datas = json_decode($datas, true);
-        $datas = json_decode($datas, true);
-        return view('placement-program/ScheduleCall')->with(compact('datas'));
-    
-        
-    }
+        $page = URL::current();
+        $viewName='';
 
+        if (!isset($_GET['orgid'])) {
+            $idCon = 'App\Services\Helper'::sessionConId();
+            if ($idCon == '') {
+                return 'App\Services\Helper'::returnUrl();
+            }
+            if (stripos(strtoupper($page), strtoupper('ScheduleCallBVisa'))) {
+                $idCon = 'isB1VisaLink' .  $idCon;
+                $viewName='b1-program/ScheduleCallBVisa';
+            } else if (stripos(strtoupper($page), strtoupper('ScheduleCallJvisa'))) {
+                $idCon = 'isJ1VisaLink' .  $idCon;
+                $viewName='j1-visa/ScheduleCallJvisa';
+            } else if (stripos(strtoupper($page), strtoupper('ScheduleCall'))) {
+                $idCon = 'isPlacementLink' .  $idCon;
+                $viewName='placement-program/ScheduleCall';
+            } else {
+                return 'App\Services\Helper'::returnUrl();
+            }
+        } else {
+            $idCon = 'isOrganizationLink' . $_GET['orgid'];
+            $viewName='';
+        }
+
+
+
+
+
+
+        $datas = 'App\Services\Helper'::getRequest('ApiSelfScheduleCallController/' . $idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        //echo '<pre>';print_r($datas);die;
+        return view($viewName)->with(compact('datas'));
+    }
+    public function ajaxscheduleCall(Request $request){
+
+        return $request->all();
+    }
     /**
      * Show the form for creating a new resource.
      *

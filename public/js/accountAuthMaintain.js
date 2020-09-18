@@ -94,9 +94,4 @@ if(resetForm!=null){
 
     
         
-    const saveBtn=document.querySelector('#saveBtn');
-    if(saveBtn!=null){
-        saveBtn.addEventListener('click', (e)=>{
-           // document.getElementById('loader').style.display='block';
-        })
-    }
+ 

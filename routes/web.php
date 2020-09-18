@@ -50,8 +50,8 @@ Route::get('/participant_handbook_account', 'ParticipantHandbookAccountControlle
 
 
 
-Route::resource('ScheduleCallJvisa', 'ScheduleCallJvisaController');
-Route::get('/ScheduleCallJvisa', 'ScheduleCallJvisaController@index');
+Route::resource('ScheduleCallJvisa', 'ScheduleCallController');
+Route::get('/ScheduleCallJvisa', 'ScheduleCallController@index');
 
 
 
@@ -164,8 +164,8 @@ Route::get('/b1_Embassy', 'B1EmbassyController@index');
 
 
 
-Route::resource('ScheduleCallBVisa', 'ScheduleCallBVisaController');
-Route::get('/ScheduleCallBVisa', 'ScheduleCallBVisaController@index');
+Route::resource('ScheduleCallBVisa', 'ScheduleCallController');
+Route::get('/ScheduleCallBVisa', 'ScheduleCallController@index');
 
 
 Route::resource('simCard', 'simCardController');
@@ -256,6 +256,7 @@ Route::post('/b1videoUpdate', 'B1VideoController@ajaxQuestionSubmit');
 Route::post('/b1VideScriptReady', 'VideoResumeController@scriptreadySubmit');  
 Route::post('/writeScriptPlacement', 'WriteYourScriptController@writeScriptPlacementMethod'); 
 Route::post('/applicantResumePlacement', 'ApplicantResumeController@ajaxApplicantResume'); 
+Route::post('/scheduleCallBooking', 'ScheduleCallController@ajaxscheduleCall'); 
 Route::get('/resetPassword', 'LoginController@resetPassword');
 
 

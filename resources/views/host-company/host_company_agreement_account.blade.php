@@ -1,6 +1,6 @@
 @include('common.header_without_menu')
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'HostCompanyAgrmentAccController@store','files'=>true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'HCA-plan']) !!}
 
 
 
@@ -164,7 +164,8 @@
 
 
   <h2 class="gaccca-h2-padding">SECTION 1: APPLICANT INFORMATION</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <input type='hidden' value="{{$datas['EncId']}}" name='EncId'/>
+    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
 
 
@@ -188,7 +189,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-3">
           Training/Internship Dates from <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="startDate" value="{{isset($datas['startDate'])?$datas['startDate']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input-date" />
+          <input name="startDate" value="{{isset($datas['startDate'])?$datas['startDate']:''}}" type="text" required="" class="gaccca-input-date" />
           <span class="gaccca-input-help-text">From</span>
 
         </div>
@@ -202,7 +203,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-3">
           Training/Internship Dates to <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="endDate" value="{{isset($datas['endDate'])?$datas['endDate']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input-date" />
+          <input name="endDate" value="{{isset($datas['endDate'])?$datas['endDate']:''}}" type="text"  required="" class="gaccca-input-date" />
           <span class="gaccca-input-help-text">to</span>
 
         </div>
@@ -302,9 +303,9 @@
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-9">
-          Suite <span class="gaccca-text-required" title="required">*</span> </label>
+          Suite <span class="gaccca-text-required" title="required"></span> </label>
         <div class="gaccca-form-element__control">
-          <input name="onfrm[Suite__c]" value="{{isset($datas['onfrm']['Suite__c'])?$datas['onfrm']['Suite__c']:''}}" type="text" id="text-input-id-9" required="" class="gaccca-input" />
+          <input name="onfrm[Suite__c]" value="{{isset($datas['onfrm']['Suite__c'])?$datas['onfrm']['Suite__c']:''}}" type="text" id="text-input-id-9" class="gaccca-input" />
         </div>
       </div>
     </div>
@@ -327,7 +328,7 @@
 
               </select> -->
 
-            <input name="onfrm[State1__c]" value="{{isset($datas['onfrm']['State1__c'])?$datas['onfrm']['State1__c']:''}}" type="text" id="text-input-id-9" required="" class="gaccca-input" />
+            {!! Form::select('onfrm[State1__c]', array_reverse($datas['statePick']), isset($datas['onfrm']['State1__c'])?$datas['onfrm']['State1__c']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
 
           </div>
         </div>
@@ -367,7 +368,8 @@
                 <option>select</option>
 
               </select> -->
-            <input name="onfrm[branches__c]" value="{{isset($datas['onfrm']['branches__c'])?$datas['onfrm']['branches__c']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
+           {!! Form::select('onfrm[branches__c]', array_reverse($datas['branchesPick']), isset($datas['onfrm']['branches__c'])?$datas['onfrm']['branches__c']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
+
           </div>
         </div>
       </div>
@@ -419,7 +421,7 @@
               </label>
             </span> -->
 
-          @include('common.radioGrp',['fieldName' =>'cmpnyRevenue','obj'=>'onForm','fieldApi'=>'is_gross_annual_revenue_gt_3m__c','required'=>'required'])
+          @include('common.radioGrp',['fieldName' =>'cmpnyRevenue','obj'=>'onfrm','fieldApi'=>'is_gross_annual_revenue_gt_3m__c','required'=>'required'])
 
         </div>
 
@@ -524,7 +526,7 @@
           Workers Compensation Policy expiration date <span class="gaccca-text-required" title="required">*</span>
         </label>
         <div class="gaccca-form-element__control">
-          <input name="policyExpDate" value="{{isset($datas['policyExpDate'])?$datas['policyExpDate']:''}}" type="text" id="text-input-id-10" required="" class="gaccca-input-date" />
+          <input name="policyExpDate" value="{{isset($datas['policyExpDate'])?$datas['policyExpDate']:''}}" type="text"  required="" class="gaccca-input-date" />
         </div>
       </div>
     </div>
@@ -537,7 +539,7 @@
           Please upload a scan of your Workers Compensation Certificate (jpg or pnp) </label>
         <div class="gaccca-form-element__control">
           <label class="gaccca-file">
-            <input name="fileCertificate" value="{{isset($datas['fileCertificate'])?$datas['fileCertificate']:''}}" type="file" id="myFile" name="filename" />
+            <input name="fileCertificate" type="file"  />
             <span class="gaccca-file-custom">Choose file...</span>
 
           </label>
@@ -730,14 +732,14 @@
 
         <div class="gaccca-form-element__control">
           <label class="gaccca-form-element__label" for="text-input-id-fn">
-            The Host Company is offering a <span class="gaccca-text-required" title="required">*</span> </label>
+            The Host Company is offering a<span class="gaccca-text-required" title="required">*</span> </label>
           <span class="gaccca-radio">
-            <input type="radio" id="radio-position-no" value="radio-position-no" name="position" checked="" />
+            <input type="radio" id="radio-position-no" value="paid position" name="cmpnyPosition"  {{isset($datas['onfrm']['Host_Company_Offering__c']) && $datas['onfrm']['Host_Company_Offering__c']=='paid position'?'checked':''}} />
             <label class="gaccca-radio__label" for="radio-position-no">
               <span class="gaccca-radio_faux"></span>
               <span class="gaccca-padding-right-25">Paid Position</span>
             </label>
-            <input type="radio" id="radio-position-yes" value="radio-position-yes" name="position" />
+            <input type="radio" id="radio-position-yes" value="unpaid position" name="cmpnyPosition" {{isset($datas['onfrm']['Host_Company_Offering__c']) && $datas['onfrm']['Host_Company_Offering__c']=='unpaid position'?'checked':''}} />
             <label class="gaccca-radio__label" for="radio-position-yes">
               <span class="gaccca-radio_faux"></span>
               <span class="gaccca-padding-right-25">Unpaid Position</span>
@@ -877,22 +879,22 @@
 
         <div class="gaccca-form-element__control">
           <div class="gaccca-checkbox">
-            <input type="checkbox" name="options" id="checkbox-unique-id-73" value="checkbox-unique-id-73" checked="" />
-            <label class="gaccca-checkbox__label" for="checkbox-unique-id-73">
+            <input type="checkbox" name="options[]" id="checkbox-unique-id-731" value="home office" {{isset($datas['onfrm']['perform_task__c']) && stripos($datas['onfrm']['perform_task__c'],'ome office')?'checked':''}} />
+            <label class="gaccca-checkbox__label" for="checkbox-unique-id-731">
               <span class="gaccca-checkbox_faux"></span>
               <span class="gaccca-form-element__label">home office</span>
             </label>
           </div>
           <div class="gaccca-checkbox">
-            <input type="checkbox" name="options" id="checkbox-unique-id-73" value="checkbox-unique-id-73" checked="" />
-            <label class="gaccca-checkbox__label" for="checkbox-unique-id-73">
+            <input type="checkbox" name="options[]" id="checkbox-unique-id-732" value="at a retail location"  {{isset($datas['onfrm']['perform_task__c']) && stripos($datas['onfrm']['perform_task__c'],'at a retail location')?'checked':''}}/>
+            <label class="gaccca-checkbox__label" for="checkbox-unique-id-732">
               <span class="gaccca-checkbox_faux"></span>
               <span class="gaccca-form-element__label">at a retail location</span>
             </label>
           </div>
           <div class="gaccca-checkbox">
-            <input type="checkbox" name="options" id="checkbox-unique-id-73" value="checkbox-unique-id-73" checked="" />
-            <label class="gaccca-checkbox__label" for="checkbox-unique-id-73">
+            <input type="checkbox" name="options[]" id="checkbox-unique-id-733" value="at an office building / corporate office"  {{isset($datas['onfrm']['perform_task__c']) && stripos($datas['onfrm']['perform_task__c'],'at an office building / corporate office')?'checked':''}}/>
+            <label class="gaccca-checkbox__label" for="checkbox-unique-id-733">
               <span class="gaccca-checkbox_faux"></span>
               <span class="gaccca-form-element__label">at an office building / corporate office
               </span>
@@ -915,10 +917,17 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
+      @if (isset($datas['isHostCompanyReadonly']) && $datas['isHostCompanyReadonly'])
+<p>
+Form submitted on &nbsp; {{$datas['formSubmittedDate']}}.
+    
 
-        <button class="gaccca-button-save gaccca-button-save-margin">Save Host Company Agreement</button>
-        <button class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
-
+</p>
+  @else
+        <input type='hidden' name='formSubmitType' id='formSubmitType'/>
+        <button id='save-ds-7002' class="gaccca-button-save gaccca-button-save-margin">Save Host Company Agreement</button>
+        <button id='send-to-gaccca-btn' class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
+@endif
       </div>
     </div>
 
@@ -934,4 +943,27 @@
 
 
 {!! Form::close() !!}
+
+<script>
+$(document).ready(function() {
+  var errors = [];
+  $("#send-to-gaccca-btn").on('click', function() {
+    document.getElementById('formSubmitType').value='Sent';
+    errors = [];
+    $('#HCA-plan').parsley().validate();
+    if ($('#HCA-plan').parsley().isValid()) {
+    } else {
+      alert();
+
+
+    }
+  });
+    
+  $("#save-ds-7002").on('click', function() {
+    document.getElementById('formSubmitType').value='Save';
+    });
+
+  });
+
+</script>
 @include('common.footer')

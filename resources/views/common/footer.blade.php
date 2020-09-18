@@ -187,7 +187,12 @@ $(document).ready(function(){
   });
 });
 
-
+const saveBtn=document.querySelector('#saveBtn');
+    if(saveBtn!=null){
+        saveBtn.addEventListener('click', (e)=>{
+            document.getElementById('loader').style.display='block';
+        })
+    }
 </script>
 @if(!isset($_GET['orgid']) && !isset($_GET['orgidInternal']))
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
