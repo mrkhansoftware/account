@@ -4,7 +4,7 @@
 
 @include('common.signScript');
 
-{!! Form::open(['action' => 'FinalEvaluationAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_final']) !!}
+{!! Form::open(['action' => 'FinalEvaluationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_final']) !!}
 
 
 <div class="gaccca-main-containt">
