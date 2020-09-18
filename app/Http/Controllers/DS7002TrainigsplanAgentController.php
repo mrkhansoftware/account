@@ -20,7 +20,7 @@ class DS7002TrainigsplanAgentController extends Controller
         $datas = 'App\Services\Helper'::getRequest('ApiDS7002Controller/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        //  echo '<pre>'; print_r($datas); die; 
+        // echo '<pre>'; print_r($datas); die; 
         return view('agent-bookings/DS_7002_Trainigsplan_agent')->with(compact('datas'));
         // return view('agent-bookings/DS_7002_Trainigsplan_agent');
 

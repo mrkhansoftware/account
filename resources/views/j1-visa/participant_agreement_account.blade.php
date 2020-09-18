@@ -2,7 +2,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'ParticipantAgreementAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'ParticipantAgreementAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_paa']) !!}
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Step 4/5 - Terms & Conditions and Trainee Intern Acceptance</h1>
@@ -129,7 +129,7 @@
                   <br/>
                   
                   @if (!(isset($datas['Appli']['Accept_Terms_Conditions__c']) && $datas['Appli']['Accept_Terms_Conditions__c']))
-                    <button class="gaccca-button-save ">Save & Continue</button>
+                    <button id="gaccca_saveBtn_paa" class="gaccca-button-save ">Save & Continue</button>
                     @endif
         </div>
 

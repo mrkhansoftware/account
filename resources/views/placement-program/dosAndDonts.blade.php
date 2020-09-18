@@ -2,7 +2,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'DoAndDontsController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'DoAndDontsController@store', 'method' => 'POST',  'id' => 'gacccaForm_doanddont']) !!}
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Dos and Don’ts</h1>
@@ -76,7 +76,7 @@
           </div>
         </div>
       </div>
-      <button class="gaccca-button-save gaccca-button-save-margin">Confirm</button>
+      <button id="gaccca_saveBtn_doanddont" class="gaccca-button-save gaccca-button-save-margin">Confirm</button>
 
 
    

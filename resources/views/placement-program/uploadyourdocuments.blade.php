@@ -2,7 +2,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_uploaddoc']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -90,7 +90,7 @@
             upload for the next upload. </span>
         </div>
 
-        <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
+        <button id="gaccca_saveBtn_uploaddoc" class="gaccca-button-save gaccca-button-save-margin">Submit</button>
 
       </div>
 

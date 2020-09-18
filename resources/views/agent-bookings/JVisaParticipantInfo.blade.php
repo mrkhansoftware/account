@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_jvisa']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -579,7 +579,7 @@
         </div>
 
 
-        <button class="gaccca-button-save gaccca-button-save-margin">Submit Participant Details</button>
+        <button id="gaccca_saveBtn_jvisa" class="gaccca-button-save gaccca-button-save-margin">Submit Participant Details</button>
 
 
       </div>

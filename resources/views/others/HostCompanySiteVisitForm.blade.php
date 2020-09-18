@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_sitevisitform']) !!}
 
 <div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Host Company Site Visit Form</h1>
@@ -1103,7 +1103,7 @@
       </div>
 
 
-      <button class="gaccca-button-save gaccca-button-save-margin">Sign &amp; Submit</button>
+      <button id="gaccca_saveBtn_sitevisitform" class="gaccca-button-save gaccca-button-save-margin">Sign &amp; Submit</button>
 
     </div>
 
