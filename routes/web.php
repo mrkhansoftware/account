@@ -53,6 +53,12 @@ Route::get('/participant_handbook_account', 'ParticipantHandbookAccountControlle
 Route::resource('ScheduleCallJvisa', 'ScheduleCallController');
 Route::get('/ScheduleCallJvisa', 'ScheduleCallController@index');
 
+Route::get('/ScheduleCall', 'ScheduleCallController@index');
+
+
+Route::get('/ScheduleCallBVisa', 'ScheduleCallController@index');
+
+Route::get('/scheduleCallJVisaSupervisor', 'ScheduleCallController@index');
 
 
 Route::resource('AdditionalDocumentJ1', 'AdditionalDocumentJ1Controller');
@@ -121,8 +127,7 @@ Route::get('/dosAndDonts', 'DoAndDontsController@index');
 
 
 
-Route::resource('ScheduleCall', 'ScheduleCallController');
-Route::get('/ScheduleCall', 'ScheduleCallController@index');
+
 
 
 Route::resource('ApplicantResume', 'ApplicantResumeController');
@@ -164,11 +169,7 @@ Route::get('/b1_Embassy', 'B1EmbassyController@index');
 
 
 
-Route::resource('ScheduleCallBVisa', 'ScheduleCallController');
-Route::get('/ScheduleCallBVisa', 'ScheduleCallController@index');
 
-Route::resource('scheduleCallJVisaSupervisor', 'ScheduleCallController');
-Route::get('/scheduleCallJVisaSupervisor', 'ScheduleCallController@index');
 
 Route::resource('simCard', 'simCardController');
 Route::get('/simCard', 'simCardController@index');
