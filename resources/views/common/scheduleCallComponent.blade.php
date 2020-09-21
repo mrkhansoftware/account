@@ -193,9 +193,10 @@
 
 <script>
     var requestResponse;
-
     function ajaxRequest(formData) {
-
+        if(requestResponse!=undefined && requestResponse!=''){ 
+        formData.requestResponseStr=JSON.stringify(requestResponse);
+        }
         document.getElementById('loader').style.display = 'block';
         $.ajaxSetup({
             headers: {
@@ -209,7 +210,6 @@
             dataType: 'json',
             success: function(data) {
                 requestResponse = data;
-                //console.log(requestResponse);
                 if (formData.methodType == 'slotSelectedMethod') {
                     if (requestResponse.timeSlotDetail != null) {
                         scheduleCallModal();

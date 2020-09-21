@@ -44,17 +44,20 @@ class ScheduleCallController extends Controller
 
 
 
-        $datas = 'App\Services\Helper'::getRequest('ApiSelfScheduleCallController/' . $idCon);
-        $datas = json_decode($datas, true);
-        $datas = json_decode($datas, true);
-        session()->put('callInformation', $datas);
+        $datasResp = 'App\Services\Helper'::getRequest('ApiSelfScheduleCallController/' . $idCon);
+        $datasResp = json_decode($datasResp, true);
+        $datas = json_decode($datasResp, true);
+        session()->put('contactId', $datas['contID']);
         //echo '<pre>';print_r($datas);die;
         return view($viewName)->with(compact('datas'));
     }
     public function ajaxscheduleCall(Request $request){ 
 
         $req=$request->all();
-        $data= session()->get('callInformation');
+        if(isset($req['requestResponseStr'])){
+            $data= json_decode($req['requestResponseStr'], true);
+        }
+        $data['contID']= session()->get('contactId');
         $data['timeZoneDetected']=$req['timeZoneDetected'];
         $data['scheduleCallType']=$req['scheduleCallType'];   
         if($req['methodType']=='showSlots'){
@@ -103,7 +106,7 @@ class ScheduleCallController extends Controller
         $datas='App\Services\Helper'::postRequest($finalReq,'ApiSelfScheduleCallController');
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        session()->put('callInformation', $datas);
+        //session()->put('callInformation', $datas);
             
         return $datas;
         
