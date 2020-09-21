@@ -82,9 +82,7 @@ for (i = 0; i < dropdown.length; i++) {
   jQuery('input[type=file]').on("change", function (ev) {
     jQueryin = jQuery(this);
     var label_lab = jQuery(this).closest("label");
-    console.log(label_lab);
     var file_span = jQuery(label_lab).children("span");
-    console.log(file_span);
     if (ev.originalEvent != null) {
        if(this.files.length > 0){
         if(this.files[0].name.length > 35){
@@ -130,8 +128,6 @@ for (i = 0; i < dropdown.length; i++) {
 
 function gacccaScriptContentTab(evt, btnId, tabName) {
 
-  console.log(evt, btnId, tabName);
-  
 
 var i, gaccca_tabcontent, gaccc_tablinks;
  gaccca_tabcontent = $(".gaccca-tabcontent");
@@ -176,7 +172,6 @@ $(document).ready(function(){
 
     jQuery(document).ready(function() {
     $('[id^="gaccca_saveBtn_"]').click(function() {
-      alert()
       jQuery('[id^="gacccaForm_"]').parsley().validate();
       if (jQuery('[id^="gacccaForm_"]').parsley().isValid()) {
               document.getElementById('loader').style.display='block';

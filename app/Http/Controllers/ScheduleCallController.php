@@ -36,7 +36,7 @@ class ScheduleCallController extends Controller
             }
         } else {
             $idCon = 'isOrganizationLink' . $_GET['orgid'];
-            $viewName='';
+            $viewName='host-company/scheduleCallJVisaSupervisor';
         }
 
 
@@ -51,20 +51,61 @@ class ScheduleCallController extends Controller
         //echo '<pre>';print_r($datas);die;
         return view($viewName)->with(compact('datas'));
     }
-    public function ajaxscheduleCall(Request $request){
+    public function ajaxscheduleCall(Request $request){ 
 
         $req=$request->all();
         $data= session()->get('callInformation');
-        if($req['methodTye']=='showSlots'){
-
-            $data['timeZoneDetected']=$req['timeZoneDetected'];
-            $data['scheduleCallType']=$req['scheduleCallType'];
+        $data['timeZoneDetected']=$req['timeZoneDetected'];
+        $data['scheduleCallType']=$req['scheduleCallType'];   
+        if($req['methodType']=='showSlots'){
+            
             $finalReq['wpcContent']=json_encode( $data);
             $finalReq['processType']='showSlots';
+
+        }else if($req['methodType']=='nextSlots'){
+            
+            $finalReq['wpcContent']=json_encode( $data);
+            $finalReq['processType']='nextSlots';
+
+        }else if($req['methodType']=='preSlots'){
+            
+            $finalReq['wpcContent']=json_encode( $data);
+            $finalReq['processType']='preSlots';
+        }
+        else if($req['methodType']=='changetimezoneAction'){
+            
+            $finalReq['wpcContent']=json_encode( $data);
+            $finalReq['processType']='changetimezoneAction';
+        }
+        else if($req['methodType']=='reScheduleCall'){
+            
+            $finalReq['wpcContent']=json_encode( $data);
+            $finalReq['processType']='reScheduleCall';
+        }
+        else if($req['methodType']=='slotSelectedMethod'){
+            
+            $data['selectedSlot']=$req['slotSelected'];
+            $finalReq['wpcContent']=json_encode( $data);
+            $finalReq['processType']='slotSelectedMethod';
+        }
+        else if($req['methodType']=='createEvent'){
+           
+            $data['questionString']=$req['questionStr'];
+            $finalReq['wpcContent']=json_encode( $data);
+            $finalReq['processType']='createEvent';
         }
 
 
-        return 'App\Services\Helper'::postRequest($finalReq,'ApiSelfScheduleCallController');
+        
+        unset($finalReq['questionStr']);
+        unset($finalReq['slotSelected']);
+        unset($finalReq['requestResponseStr']);
+        $datas='App\Services\Helper'::postRequest($finalReq,'ApiSelfScheduleCallController');
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        session()->put('callInformation', $datas);
+            
+        return $datas;
         
     }
     /**

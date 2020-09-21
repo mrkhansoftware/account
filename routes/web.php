@@ -167,6 +167,8 @@ Route::get('/b1_Embassy', 'B1EmbassyController@index');
 Route::resource('ScheduleCallBVisa', 'ScheduleCallController');
 Route::get('/ScheduleCallBVisa', 'ScheduleCallController@index');
 
+Route::resource('scheduleCallJVisaSupervisor', 'ScheduleCallController');
+Route::get('/scheduleCallJVisaSupervisor', 'ScheduleCallController@index');
 
 Route::resource('simCard', 'simCardController');
 Route::get('/simCard', 'simCardController@index');
