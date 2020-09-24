@@ -248,6 +248,12 @@ Route::post('resumeDetails2', 'ApplicantResumeController@resumeDetails2');
 
 
  
+
+ Route::resource('SimcardManage', 'SimcardManageController');
+ Route::get('/simcardmanagepage', 'SimcardManageController@index');
+
+ Route::post('/common_api_simcardmanage', 'SimcardManageController@commonMethodSimcardManage');
+
  
 
 
