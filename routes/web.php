@@ -246,6 +246,12 @@ Route::get('/customer_information', 'AddNewParticipantController@existingCustome
 
 
  
+
+ Route::resource('SimcardManage', 'SimcardManageController');
+ Route::get('/simcardmanagepage', 'SimcardManageController@index');
+
+ Route::post('/common_api_simcardmanage', 'SimcardManageController@commonMethodSimcardManage');
+
  
 
 
