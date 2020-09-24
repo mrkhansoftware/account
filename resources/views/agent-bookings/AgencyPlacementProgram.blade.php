@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_pp']) !!}
+{!! Form::open(['action' => 'AgencyPlacementProgramController@store','files'=>true, 'method' => 'POST', 'id' => 'gacccaForm_pp']) !!}
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Placement Program Registration Form</h1>
@@ -24,12 +24,12 @@
                   <label class="gaccca-form-element__label" for="text-input-id-fn">
                     Salutation: <span class="gaccca-text-required" title="required">*</span> </label>
                   <span class="gaccca-radio">
-                    <input type="radio" id="radio-ms" value="radio-ms" name="salutation" checked="" />
+                    <input type="radio" id="radio-ms" value="ms." name="leadRecord[Salutation]"  required/>
                     <label class="gaccca-radio__label" for="radio-ms">
                       <span class="gaccca-radio_faux"></span>
                       <span class="gaccca-padding-right-25">Ms.</span>
                     </label>
-                    <input type="radio" id="radio-mr" value="radio-mr" name="salutation" />
+                    <input type="radio" id="radio-mr" value="mr." name="leadRecord[Salutation]" required/>
                     <label class="gaccca-radio__label" for="radio-mr">
                       <span class="gaccca-radio_faux"></span>
                       <span class="gaccca-padding-right-25">Mr.</span>
@@ -307,22 +307,19 @@
                   <label class="gaccca-form-element__label" for="text-input-id-fn">
                     Graduated <span class="gaccca-text-required" title="required">*</span> </label>
                   <span class="gaccca-radio">
-                    <input type="radio" id="radio-yes" value="radio-yes" name="graduated" checked="" />
+                    <input type="radio" id="radio-yes" value="Yes" name="leadRecord[Graduated__c]" required />
                     <label class="gaccca-radio__label" for="radio-yes">
                       <span class="gaccca-radio_faux"></span>
                       <span>Yes</span>
                     </label>
-                  </span>
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-no" value="radio-no" name="graduated" />
+                 
+                    <input type="radio" id="radio-no" value="No" name="leadRecord[Graduated__c]" required/>
                     <label class="gaccca-radio__label" for="radio-no">
                       <span class="gaccca-radio_faux"></span>
                       <span>No</span>
                     </label>
-                  </span>
-
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-se" value="radio-se" name="graduated" />
+                 
+                    <input type="radio" id="radio-se" value="Still Enrolled" name="leadRecord[Graduated__c]" required/>
                     <label class="gaccca-radio__label" for="radio-se">
                       <span class="gaccca-radio_faux"></span>
                       <span>Still Enrolled</span>
@@ -350,30 +347,25 @@
                   <label class="gaccca-form-element__label" for="text-input-id-fn">
                     English Language Skills <span class="gaccca-text-required" title="required">*</span> </label>
                   <span class="gaccca-radio">
-                    <input type="radio" id="radio-beginner" value="radio-beginner" name="english_skills" checked="" />
+                    <input type="radio" id="radio-beginner" value="Beginner" name="leadRecord[English_Language_Skills__c]" required />
                     <label class="gaccca-radio__label" for="radio-beginner">
                       <span class="gaccca-radio_faux"></span>
                       <span>Beginner</span>
                     </label>
-                  </span>
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-intermediate" value="radio-intermediate" name="english_skills" />
+                 
+                    <input type="radio" id="radio-intermediate" value="Intermediate" name="leadRecord[English_Language_Skills__c]" required/>
                     <label class="gaccca-radio__label" for="radio-intermediate">
                       <span class="gaccca-radio_faux"></span>
                       <span>Intermediate</span>
                     </label>
-                  </span>
-
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-advanced" value="radio-advanced" name="english_skills" />
+                  
+                    <input type="radio" id="radio-advanced" value="Advanced" name="leadRecord[English_Language_Skills__c]" required />
                     <label class="gaccca-radio__label" for="radio-advanced">
                       <span class="gaccca-radio_faux"></span>
                       <span>Advanced</span>
                     </label>
-                  </span>
-
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-fluent" value="radio-fluent" name="default" />
+                  
+                    <input type="radio" id="radio-fluent" value="Fluent" name="leadRecord[English_Language_Skills__c]" required/>
                     <label class="gaccca-radio__label" for="radio-fluent">
                       <span class="gaccca-radio_faux"></span>
                       <span>Fluent</span>
@@ -403,12 +395,12 @@
                     Does your internship have to be confirmed by your university? <span class="gaccca-text-required" title="required">*</span> </label>
                  
                   <span class="gaccca-radio">
-                    <input type="radio" id="radio-internship-no" value="radio-internship-no" name="internship" />
+                    <input type="radio" id="radio-internship-no" value="No" name="leadRecord[Internship_is_confirmed_by_university__c]" required/>
                     <label class="gaccca-radio__label" for="radio-internship-no">
                       <span class="gaccca-radio_faux"></span>
                       <span class="gaccca-padding-right-25">No</span>
                     </label>
-                    <input type="radio" id="radio-internship-yes" value="radio-internship-yes" name="internship" checked="" />
+                    <input type="radio" id="radio-internship-yes" value="Yes" name="leadRecord[Internship_is_confirmed_by_university__c]" required />
                     <label class="gaccca-radio__label" for="radio-internship-yes">
                       <span class="gaccca-radio_faux"></span>
                       <span class="gaccca-padding-right-25">Yes</span>
@@ -433,7 +425,7 @@
                 Upload your most current resume/CV <br/> in PDF-format <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
                       <label class="gaccca-file">
-                          <input type="file"  id="myFile" name="fileCV"/>
+                          <input type="file" name="fileCV" data-parsley-trigger="change" data-parsley-filemimetypes="image/jpeg, image/png" required/>
                           <span class="gaccca-file-custom">Choose file...</span>
   
                       </label>
@@ -596,6 +588,8 @@
                     <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               
+            {!! Form::select('leadRecord[Placement_Program__c]', array_reverse($datas['priceList']), '', [ 'class' => 'gaccca-select','required' => 'required']) !!}
+           
                 <br/><span class="gaccca-close-account-info">The program fee must be paid in full after you've received the invoice and the welcome call was successful and you got officially accepted into our program.<strong> The non-refundable application fee (enrollment fee) </strong> for all programs is 530 Euro's. The placement fee remains in our account until a successful placement was made (security deposit). Please refer to §5 and §8 of the terms of the programs. <br/><br/> Please read our <a href="#">Terms and Conditions for all Placement Programs carefully!</a> </span>
             </div>
           </div>
@@ -605,7 +599,7 @@
           <div class="gaccca-form-element gaccca-form-element-margin">
             <div class="gaccca-form-element__control">
               <div class="gaccca-checkbox">
-                <input type="checkbox" name="term_condition" id="checkbox-unique-id-term_condition" value="checkbox-unique-id-term_condition"  />
+                <input type="checkbox"  id="checkbox-unique-id-term_condition" value="checkbox-unique-id-term_condition" required  />
                 <label class="gaccca-checkbox__label" for="checkbox-unique-id-term_condition">
                   <span class="gaccca-checkbox_faux"></span>
                   <span class="gaccca-form-element__label">I have read, understood and accept the Terms and Conditions for the GACC California / IIEEX Internship Program</span>

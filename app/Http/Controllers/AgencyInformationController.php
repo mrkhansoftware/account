@@ -13,7 +13,21 @@ class AgencyInformationController extends Controller
      */
     public function index()
     {
-        return view('agent-bookings/AgencyInformation');
+
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+  
+          $datas='App\Services\Helper'::getRequest('ApiAgencyPriceListUploadClass/'.$idCon);
+          $datas = json_decode($datas, true);
+          $datas = json_decode($datas, true);
+          session()->put('contID', $datas['contID']);
+          session()->put('accountId', $datas['accountId']);
+          session()->put('accountName', $datas['accountName']);
+           //echo '<pre>'; print_r($datas); die;
+         return view('agent-bookings/AgencyInformation')->with(compact('datas'));
+   
     }
 
     /**
@@ -34,9 +48,20 @@ class AgencyInformationController extends Controller
      */
     public function store(Request $request)
     {
-       echo $request->filename->getClientOriginalExtension();
-      //  print_r($request->filename);
-        die;
+        $finalReq=$request->all();
+        if(isset($finalReq['priceList'])){
+            $finalReq['filePriceList']= base64_encode(file_get_contents($request->file('priceList')));
+            $finalReq['fileTypePriceList']=$request->file('priceList')->getMimeType();
+            $finalReq['contID']=session()->get('contID');
+            $finalReq['accountId']=session()->get('accountId');
+            $finalReq['accountName']=session()->get('accountName');
+            unset($finalReq['priceList']);
+            unset($finalReq['_token']);
+      'App\Services\Helper'::postRequest($finalReq,'ApiAgencyPriceListUploadClass');
+       }    
+       return redirect()->action('AgencyInformationController@index', ['isSave' => 1]); 
+         
+            
     }
 
     /**

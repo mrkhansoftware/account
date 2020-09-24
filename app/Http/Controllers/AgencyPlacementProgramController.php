@@ -13,9 +13,17 @@ class AgencyPlacementProgramController extends Controller
      */
     public function index()
     {
-        
-        return view('agent-bookings/AgencyPlacementProgram');
+        $idCon = 'App\Services\Helper'::sessionConId();
+        if ($idCon == '') {
+            return 'App\Services\Helper'::returnUrl();
+        }
 
+        $datas = 'App\Services\Helper'::getRequest('ApiAgencyPlacementRegistrationClass/' . $idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        session()->put('conId', $datas['conId']);
+        session()->put('accountId', $datas['accountId']);
+        return view('agent-bookings/AgencyPlacementProgram')->with(compact('datas'));
     }
 
     /**
@@ -36,7 +44,23 @@ class AgencyPlacementProgramController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $finalReq = $request->all();
+        $finalReq['conId'] = session()->get('conId');
+        $finalReq['typeStr'] = 'savefun';
+        if(isset($finalReq['fileCV'])){
+            $finalReq['fileCV']= base64_encode(file_get_contents($request->file('fileCV')));
+            $finalReq['fileTypeCV']=$request->file('fileCV')->getMimeType();
+        }
+        unset($finalReq['_token']);
+       // echo '<pre/>'; print_r($finalReq); die;
+
+        $resp = 'App\Services\Helper'::postRequest($finalReq, 'ApiAgencyPlacementRegistrationClass');
+        if ($resp == '"OK"') {
+            return redirect()->action('AgencyPlacementProgramController@index', ['isSave' => 1]);
+        } else {
+            echo $resp;
+            die;
+        }
     }
 
     /**

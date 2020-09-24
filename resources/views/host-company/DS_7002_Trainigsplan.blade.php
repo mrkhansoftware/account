@@ -1,14 +1,14 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
-{!! Form::open(['action' => 'DS7002TrainigsplanController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'ds-7002-plan']) !!}
+{!! Form::open(['action' => 'DS7002TrainigsplanController@store', 'method' => 'POST',  'id' => 'ds-7002-plan']) !!}
 
 
 
 
 <div class="gaccca-main-containt">
 <h1 class="gaccca-h1-padding">DS-7002 Training Plan</h1>
-<input type="hidden" name='EncId'  value="{{$datas['encryptId']}}"/>
+<input type="hidden" name='EncId'  value="{{$datas['EncId']}}"/>
                   
 <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
   <p>The DS-7002 Training/Internship Placement Plan is a document issued by the US Department of State which serves as an outline for the program's goals and objectives. It includes the details of the position and informs both parties of the expectations for the program. Please complete all sections below for review by a GACC California staff member. Please always save your entries by using the blue "Save Form" button on the left side; otherwise, your changes will be lost.</p>
@@ -37,7 +37,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-fn">
         Trainee/Intern Name (Surname/Primary, Given Name(s)) <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Name_of_Intern__c]" value="{{isset($datas['onForm']['Name_of_Intern__c'])?$datas['onForm']['Name_of_Intern__c']:''}}" type="text" id="text-input-id-fn" required="" class="gaccca-input" />
+        <input name="onForm[Name_of_Intern__c]" value="{{isset($datas['onForm']['Name_of_Intern__c'])?$datas['onForm']['Name_of_Intern__c']:''}}" type="text" id="text-input-id-fn"  class="gaccca-input gaccca-required" />
 
       </div>
     </div>
@@ -51,7 +51,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         E-mail Address </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Email_Address__c]" value="{{isset($datas['onForm']['Email_Address__c'])?$datas['onForm']['Email_Address__c']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input" />
+        <input name="onForm[Email_Address__c]" value="{{isset($datas['onForm']['Email_Address__c'])?$datas['onForm']['Email_Address__c']:''}}" type="text" id="text-input-id-3"  class="gaccca-input" />
 
 
       </div>
@@ -65,7 +65,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Experience in Field (number of years) </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Experience_in_Field_number_of_years__c]" value="{{isset($datas['onForm']['Experience_in_Field_number_of_years__c'])?$datas['onForm']['Experience_in_Field_number_of_years__c']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input" />
+        <input name="onForm[Experience_in_Field_number_of_years__c]" value="{{isset($datas['onForm']['Experience_in_Field_number_of_years__c'])?$datas['onForm']['Experience_in_Field_number_of_years__c']:''}}" type="text" id="text-input-id-3"  class="gaccca-input" />
 
 
       </div>
@@ -80,7 +80,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Current Field of Study/Profession </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Current_Field_of_Study_Profession__c]" value="{{isset($datas['onForm']['Current_Field_of_Study_Profession__c'])?$datas['onForm']['Current_Field_of_Study_Profession__c']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input" />
+        <input name="onForm[Current_Field_of_Study_Profession__c]" value="{{isset($datas['onForm']['Current_Field_of_Study_Profession__c'])?$datas['onForm']['Current_Field_of_Study_Profession__c']:''}}" type="text" id="text-input-id-3"  class="gaccca-input" />
 
 
       </div>
@@ -94,7 +94,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Date Awarded or Expected </label>
       <div class="gaccca-form-element__control">
-        <input name="Date_Awarded" value="{{isset($datas['Date_Awarded'])?$datas['Date_Awarded']:''}}" type="text"  required="" class="gaccca-input-date" />
+        <input name="Date_Awarded" value="{{isset($datas['Date_Awarded'])?$datas['Date_Awarded']:''}}" type="text"   class="gaccca-input-date" />
 
 
       </div>
@@ -108,7 +108,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Program Sponsor </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Program_Sponsor__c]" value="{{isset($datas['onForm']['Program_Sponsor__c'])?$datas['onForm']['Program_Sponsor__c']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input" />
+        <input name="onForm[Program_Sponsor__c]" value="{{isset($datas['onForm']['Program_Sponsor__c'])?$datas['onForm']['Program_Sponsor__c']:''}}" type="text" id="text-input-id-3"  class="gaccca-input" />
 
 
       </div>
@@ -133,7 +133,7 @@
                   
                 </select> -->
 
-                {!! Form::select('onForm[Program_Category__c]', array_reverse($datas['programCategory']), isset($datas['onForm']['Program_Category__c'])?$datas['onForm']['Program_Category__c']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
+                {!! Form::select('onForm[Program_Category__c]', array_reverse($datas['programCategory']), isset($datas['onForm']['Program_Category__c'])?$datas['onForm']['Program_Category__c']:'', [  'class' => 'gaccca-select',]) !!}
 
         </div>
       </div>
@@ -151,7 +151,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Occupational Category </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Occupational_Category__c]" value="{{isset($datas['onForm']['Occupational_Category__c'])?$datas['onForm']['Occupational_Category__c']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input" />
+        <input name="onForm[Occupational_Category__c]" value="{{isset($datas['onForm']['Occupational_Category__c'])?$datas['onForm']['Occupational_Category__c']:''}}" type="text" id="text-input-id-3"  class="gaccca-input" />
 
 
       </div>
@@ -167,7 +167,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Type of Degree or Certificate or Certificate </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Type_of_Degree_or_Certificate__c]" value="{{isset($datas['onForm']['Type_of_Degree_or_Certificate__c'])?$datas['onForm']['Type_of_Degree_or_Certificate__c']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input" />
+        <input name="onForm[Type_of_Degree_or_Certificate__c]" value="{{isset($datas['onForm']['Type_of_Degree_or_Certificate__c'])?$datas['onForm']['Type_of_Degree_or_Certificate__c']:''}}" type="text" id="text-input-id-3"  class="gaccca-input" />
 
 
       </div>
@@ -182,7 +182,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Training/Internship Dates from </label>
       <div class="gaccca-form-element__control">
-        <input name="trainingDates_From" value="{{isset($datas['trainingDates_From'])?$datas['trainingDates_From']:''}}" type="text"  required="" class="gaccca-input-date" />
+        <input name="trainingDates_From" value="{{isset($datas['trainingDates_From'])?$datas['trainingDates_From']:''}}" type="text"   class="gaccca-input-date" />
 
 
       </div>
@@ -197,7 +197,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Training/Internship Dates to </label>
       <div class="gaccca-form-element__control">
-        <input name="trainingDates_to" value="{{isset($datas['trainingDates_to'])?$datas['trainingDates_to']:''}}" type="text"  required="" class="gaccca-input-date" />
+        <input name="trainingDates_to" value="{{isset($datas['trainingDates_to'])?$datas['trainingDates_to']:''}}" type="text"   class="gaccca-input-date" />
 
 
       </div>
@@ -218,7 +218,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-fn">
         Organization Name <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Organization_Name__c]" value="{{isset($datas['onForm']['Organization_Name__c'])?$datas['onForm']['Organization_Name__c']:''}}" type="text" id="text-input-id-fn" required="" class="gaccca-input" />
+        <input name="onForm[Organization_Name__c]" value="{{isset($datas['onForm']['Organization_Name__c'])?$datas['onForm']['Organization_Name__c']:''}}" type="text" id="text-input-id-fn"  class="gaccca-input gaccca-required" />
 
       </div>
     </div>
@@ -232,7 +232,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-3">
         Address <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Address__c]" value="{{isset($datas['onForm']['Address__c'])?$datas['onForm']['Address__c']:''}}" type="text" id="text-input-id-3" required="" class="gaccca-input" />
+        <input name="onForm[Address__c]" value="{{isset($datas['onForm']['Address__c'])?$datas['onForm']['Address__c']:''}}" type="text" id="text-input-id-3"  class="gaccca-input gaccca-required" />
 
 
       </div>
@@ -246,7 +246,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-4">
         Suite </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Suite__c]" value="{{isset($datas['onForm']['Suite__c'])?$datas['onForm']['Suite__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onForm[Suite__c]" value="{{isset($datas['onForm']['Suite__c'])?$datas['onForm']['Suite__c']:''}}" type="text" id="text-input-id-4"  class="gaccca-input" />
 
       </div>
     </div>
@@ -261,7 +261,7 @@
         City
         <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Organization_City__c]" value="{{isset($datas['onForm']['Organization_City__c'])?$datas['onForm']['Organization_City__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onForm[Organization_City__c]" value="{{isset($datas['onForm']['Organization_City__c'])?$datas['onForm']['Organization_City__c']:''}}" type="text" id="text-input-id-4"  class="gaccca-input gaccca-required" />
 
       </div>
     </div>
@@ -279,7 +279,7 @@
         <div class="gaccca-select_container">
 
       
-          {!! Form::select('onForm[State1__c]', array_reverse($datas['statePick']), isset($datas['onForm']['State1__c'])?$datas['onForm']['State1__c']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
+          {!! Form::select('onForm[State1__c]', array_reverse($datas['statePick']), isset($datas['onForm']['State1__c'])?$datas['onForm']['State1__c']:'', [  'class' => 'gaccca-select gaccca-required']) !!}
 
           <!-- <select class="gaccca-select" id="select-tod">                      
                   <option>select</option>
@@ -301,7 +301,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-10">
         Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Organization_Zip_Code__c]" value="{{isset($datas['onForm']['Organization_Zip_Code__c'])?$datas['onForm']['Organization_Zip_Code__c']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
+        <input name="onForm[Organization_Zip_Code__c]" value="{{isset($datas['onForm']['Organization_Zip_Code__c'])?$datas['onForm']['Organization_Zip_Code__c']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code"  class="gaccca-input gaccca-required" />
       </div>
     </div>
   </div>
@@ -316,7 +316,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-10">
         Website URL <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Website_URL__c]" value="{{isset($datas['onForm']['Website_URL__c'])?$datas['onForm']['Website_URL__c']:''}}" type="text" id="text-input-id-10" required="" class="gaccca-input" />
+        <input name="onForm[Website_URL__c]" value="{{isset($datas['onForm']['Website_URL__c'])?$datas['onForm']['Website_URL__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input gaccca-required" />
       </div>
     </div>
   </div>
@@ -329,7 +329,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-10">
         Employer ID Number (EIN) <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Employer_ID_Number_EIN__c]" value="{{isset($datas['onForm']['Employer_ID_Number_EIN__c'])?$datas['onForm']['Employer_ID_Number_EIN__c']:''}}" type="text" id="text-input-id-10" required="" class="gaccca-input" />
+        <input name="onForm[Employer_ID_Number_EIN__c]" value="{{isset($datas['onForm']['Employer_ID_Number_EIN__c'])?$datas['onForm']['Employer_ID_Number_EIN__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input gaccca-required" />
         <span class="gaccca-input-help-text">9 Digit Number</span>
       </div>
     </div>
@@ -344,7 +344,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-10">
         Exchange Visitor Hours Per Week <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Exchange_Visitor_Hours_Per_Week__c]" value="{{isset($datas['onForm']['Exchange_Visitor_Hours_Per_Week__c'])?$datas['onForm']['Exchange_Visitor_Hours_Per_Week__c']:''}}" type="text" id="text-input-id-10" required="" class="gaccca-input" />
+        <input name="onForm[Exchange_Visitor_Hours_Per_Week__c]" value="{{isset($datas['onForm']['Exchange_Visitor_Hours_Per_Week__c'])?$datas['onForm']['Exchange_Visitor_Hours_Per_Week__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input gaccca-required" />
         <span class="gaccca-input-help-text"> min 32 hours, max. 40 hours per week</span>
       </div>
     </div>
@@ -357,7 +357,7 @@
     <div class="gaccca-form-element gaccca-form-element-margin">
 
       <div class="gaccca-form-element__control">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Stipend <span class="gaccca-text-required" title="required">*</span> </label>
 
         <!-- <span class="gaccca-radio">
@@ -373,9 +373,9 @@
                         </label>
                       </span> -->
 
+                   
 
-
-        @include('common.radioGrp',['fieldName' =>'stipend','obj'=>'onForm','fieldApi'=>'Stipend__c','required'=>'required'])
+        @include('common.radioGrp',['fieldName' =>'stipend','obj'=>'onForm','fieldApi'=>'Stipend__c','className'=>' gaccca-required ', 'textRad'=>'Yes'])
 
 
       </div>
@@ -391,9 +391,9 @@
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-10">
-        If Yes, how much? <span class="gaccca-text-required" title="required">*</span> </label>
+        If Yes, how much?  </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[stipend_amount_per_hour_week_month__c]" value="{{isset($datas['onForm']['stipend_amount_per_hour_week_month__c'])?$datas['onForm']['stipend_amount_per_hour_week_month__c']:''}}" type="text" id="text-input-id-10" required="" class="gaccca-input" />
+        <input name="onForm[stipend_amount_per_hour_week_month__c]" value="{{isset($datas['onForm']['stipend_amount_per_hour_week_month__c'])?$datas['onForm']['stipend_amount_per_hour_week_month__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input" />
         <span class="gaccca-input-help-text">USD/h or USD/months</span>
       </div>
     </div>
@@ -406,7 +406,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-10">
         Non-Monetary Compensation Value <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Non_Monetary_Compensation_Value__c]" value="{{isset($datas['onForm']['Non_Monetary_Compensation_Value__c'])?$datas['onForm']['Non_Monetary_Compensation_Value__c']:''}}" type="text" id="text-input-id-10" required="" class="gaccca-input" />
+        <input name="onForm[Non_Monetary_Compensation_Value__c]" value="{{isset($datas['onForm']['Non_Monetary_Compensation_Value__c'])?$datas['onForm']['Non_Monetary_Compensation_Value__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input gaccca-required" />
         <span class="gaccca-input-help-text">example: accommodation, transportation, meals etc</span>
       </div>
     </div>
@@ -425,7 +425,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-fn">
           Workers' Compensation Policy <span class="gaccca-text-required" title="required">*</span> </label>
 
-        @include('common.radioGrp',['fieldName' =>'policy','obj'=>'onForm','fieldApi'=>'Workers_Compensation_Policy__c','required'=>'required'])
+        @include('common.radioGrp',['fieldName' =>'policy','obj'=>'onForm','fieldApi'=>'Workers_Compensation_Policy__c', 'className'=>' gaccca-required ',  'textRad'=>'Yes'])
 
       </div>
 
@@ -442,7 +442,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-10">
         If so, Name of Carrier <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[If_so_Name_of_Carrier__c]" value="{{isset($datas['onForm']['If_so_Name_of_Carrier__c'])?$datas['onForm']['If_so_Name_of_Carrier__c']:''}}" type="text" id="text-input-id-10" required="" class="gaccca-input" />
+        <input name="onForm[If_so_Name_of_Carrier__c]" value="{{isset($datas['onForm']['If_so_Name_of_Carrier__c'])?$datas['onForm']['If_so_Name_of_Carrier__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input" />
         <span class="gaccca-input-help-text">Name of the Workers compensation Insurer</span>
       </div>
     </div>
@@ -463,21 +463,19 @@
 
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-yes" value="Yes" name="compensation_Policy" {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy__c']=="Yes")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-yes" value="Yes" class='gaccca-required' name="compensation_Policy"  {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="Yes")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-yes">
             <span class="gaccca-radio_faux"></span>
             <span>Yes</span>
           </label>
-        </span>
-        <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-exempt" value="No, exempt" name="compensation_Policy" {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy__c']=="No, exempt")? "checked" : "" }} />
+       
+          <input type="radio" id="radio-policy-exempt" value="No, exempt" class='gaccca-required' name="compensation_Policy"  {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="No, exempt")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-exempt">
             <span class="gaccca-radio_faux"></span>
             <span>No, exempt</span>
           </label>
-        </span>
-        <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-equivalent" value="No, but equivalent coverage" name="compensation_Policy" {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="No, but equivalent coverage")? "checked" : "" }} />
+       
+          <input type="radio" id="radio-policy-equivalent" class='gaccca-required' value="No, but equivalent coverage" name="compensation_Policy"  {{ (isset($datas['onForm']['Does_your_Workers_Compensation_policy_c__c']) && $datas['onForm']['Does_your_Workers_Compensation_policy_c__c']=="No, but equivalent coverage")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-equivalent">
             <span class="gaccca-radio_faux"></span>
             <span>No, but equivalent coverage</span>
@@ -502,7 +500,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-10">
         Number of Fulltime Employees Onsite at Location <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Number_of_Fulltime_Employees_Onsite_at_L__c]" value="{{isset($datas['onForm']['Number_of_Fulltime_Employees_Onsite_at_L__c'])?$datas['onForm']['Number_of_Fulltime_Employees_Onsite_at_L__c']:''}}" type="text" id="text-input-id-10" required="" class="gaccca-input" />
+        <input name="onForm[Number_of_Fulltime_Employees_Onsite_at_L__c]" value="{{isset($datas['onForm']['Number_of_Fulltime_Employees_Onsite_at_L__c'])?$datas['onForm']['Number_of_Fulltime_Employees_Onsite_at_L__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input gaccca-required" />
         <span class="gaccca-input-help-text">Name of the Workers compensation Insurer</span>
       </div>
     </div>
@@ -520,29 +518,25 @@
         <label class="gaccca-form-element__label" for="text-input-id-fn">
           Annual Revenue <span class="gaccca-text-required" title="required">*</span> </label>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-three-million" value="$0 to $3 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) && $datas['onForm']['Annual_Revenue__c']=="$0 to $3 Million")? "checked" : "" }} />
+          <input type="radio" id="radio-policy-three-million" class='gaccca-required'  value="$0 to $3 Million" name="Annual_Revenue"  {{ (isset($datas['onForm']['Annual_Revenue__c']) && $datas['onForm']['Annual_Revenue__c']=="$0 to $3 Million")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-three-million">
             <span class="gaccca-radio_faux"></span>
             <span>$0 to $3 Million</span>
           </label>
-        </span>
-        <span class="gaccca-radio"> 
-          <input type="radio" id="radio-policy-ten-million" value="$3 Million to $10 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) &&  $datas['onForm']['Annual_Revenue__c']=="3 Million to $10 Million")? "checked" : "" }} />
+        
+          <input type="radio" id="radio-policy-ten-million" class='gaccca-required'  value="$3 Million to $10 Million" name="Annual_Revenue"  {{ (isset($datas['onForm']['Annual_Revenue__c']) &&  $datas['onForm']['Annual_Revenue__c']=="3 Million to $10 Million")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-ten-million">
             <span class="gaccca-radio_faux"></span>
             <span>3 Million to $10 Million</span>
           </label>
-        </span>
-        <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-twentyfive-million" value="$10 Million to $25 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) &&  $datas['onForm']['Annual_Revenue__c']=="$10 Million to $25 Million")? "checked" : "" }} />
+        
+          <input type="radio" id="radio-policy-twentyfive-million" class='gaccca-required'  value="$10 Million to $25 Million" name="Annual_Revenue"  {{ (isset($datas['onForm']['Annual_Revenue__c']) &&  $datas['onForm']['Annual_Revenue__c']=="$10 Million to $25 Million")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-twentyfive-million">
             <span class="gaccca-radio_faux"></span>
             <span>$10 Million to $25 Million</span>
           </label>
-        </span> 
-
-        <span class="gaccca-radio">
-          <input type="radio" id="radio-policy-more-million" value="$25 Million or More" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) && $datas['onForm']['Annual_Revenue__c']=="$25 Million or More")? "checked" : "" }} />
+        
+          <input type="radio" id="radio-policy-more-million" class='gaccca-required'  value="$25 Million or More" name="Annual_Revenue"  {{ (isset($datas['onForm']['Annual_Revenue__c']) && $datas['onForm']['Annual_Revenue__c']=="$25 Million or More")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-more-million">
             <span class="gaccca-radio_faux"></span>
             <span>
@@ -627,7 +621,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-4">
         Surname/Primary, Given Name(s) (must match passport name) </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Surname__c]" value="{{isset($datas['onForm']['Surname__c'])?$datas['onForm']['Surname__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onForm[Surname__c]" value="{{isset($datas['onForm']['Surname__c'])?$datas['onForm']['Surname__c']:''}}" type="text" id="text-input-id-4"  class="gaccca-input gaccca-required" />
 
       </div>
     </div>
@@ -640,7 +634,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-4">
         Main Program Supervisor/POC at Host Organization </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Main_Program_Supervisor__c]" value="{{isset($datas['onForm']['Main_Program_Supervisor__c'])?$datas['onForm']['Main_Program_Supervisor__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onForm[Main_Program_Supervisor__c]" value="{{isset($datas['onForm']['Main_Program_Supervisor__c'])?$datas['onForm']['Main_Program_Supervisor__c']:''}}" type="text" id="text-input-id-4"  class="gaccca-input gaccca-required" />
         <span class="gaccca-input-help-text">
           Primary Supervisor at Site of Training
         </span>
@@ -656,7 +650,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-4">
         Title </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[TITLE__c]" value="{{isset($datas['onForm']['TITLE__c'])?$datas['onForm']['TITLE__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onForm[TITLE__c]" value="{{isset($datas['onForm']['TITLE__c'])?$datas['onForm']['TITLE__c']:''}}" type="text" id="text-input-id-4"  class="gaccca-input gaccca-required" />
 
       </div>
     </div>
@@ -669,7 +663,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-4">
         Supervisor Phone </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Supervisor_Phone__c]" value="{{isset($datas['onForm']['Supervisor_Phone__c'])?$datas['onForm']['Supervisor_Phone__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onForm[Supervisor_Phone__c]" value="{{isset($datas['onForm']['Supervisor_Phone__c'])?$datas['onForm']['Supervisor_Phone__c']:''}}" type="text" id="text-input-id-4"  class="gaccca-input gaccca-required" />
 
       </div>
     </div>
@@ -682,7 +676,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-4">
         Supervisor Contact FAX <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Supervisor_Contact_FAX__c]" value="{{isset($datas['onForm']['Supervisor_Contact_FAX__c'])?$datas['onForm']['Supervisor_Contact_FAX__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onForm[Supervisor_Contact_FAX__c]" value="{{isset($datas['onForm']['Supervisor_Contact_FAX__c'])?$datas['onForm']['Supervisor_Contact_FAX__c']:''}}" type="text" id="text-input-id-4"  class="gaccca-input gaccca-required" />
 
       </div>
     </div>
@@ -695,7 +689,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-4">
         Supervisor Contact Email <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onForm[Supervisor_Email__c]" value="{{isset($datas['onForm']['Supervisor_Email__c'])?$datas['onForm']['Supervisor_Email__c']:''}}" type="text" id="text-input-id-4" required="" class="gaccca-input" />
+        <input name="onForm[Supervisor_Email__c]" value="{{isset($datas['onForm']['Supervisor_Email__c'])?$datas['onForm']['Supervisor_Email__c']:''}}" type="text" id="text-input-id-4"  class="gaccca-input gaccca-required" />
 
       </div>
     </div>
@@ -760,7 +754,7 @@
             <div class="gaccca-form-element__control">
             <input name="DSPhaseListwrap[{{$i}}][DSPhase][Id]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Id'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Id']:''}}" type="hidden"  />
 
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase{{$i}}"  class="gaccca-input " />
 
             </div>
           </div>
@@ -776,7 +770,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               Phase Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase_Name__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Name__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Name__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_name{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase_Name__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Name__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Name__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_name{{$i}}"  class="gaccca-input gaccca-required" />
 
             </div>
           </div>
@@ -791,7 +785,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               Phase Location <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Name]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_location{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Name]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_location{{$i}}"  class="gaccca-input gaccca-required" />
             </div>
           </div>
         </div>
@@ -804,7 +798,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               Phase Site Address </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase_Site_Address__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_adress{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase_Site_Address__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_adress{{$i}}"  class="gaccca-input gaccca-required" />
 
             </div>
           </div>
@@ -818,7 +812,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               Start Date of Phase <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][startDate]" value="{{isset($datas['DSPhaseListwrap'][$i]['startDate'])?$datas['DSPhaseListwrap'][$i]['startDate']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},startdate{{$i}}" required="" class="gaccca-input-date" />
+              <input name="DSPhaseListwrap[{{$i}}][startDate]" value="{{isset($datas['DSPhaseListwrap'][$i]['startDate'])?$datas['DSPhaseListwrap'][$i]['startDate']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},startdate{{$i}}"  class="gaccca-input-date gaccca-required" />
 
             </div>
           </div>
@@ -832,7 +826,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               End Date of Phase <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][endDate]" value="{{isset($datas['DSPhaseListwrap'][$i]['endDate'])?$datas['DSPhaseListwrap'][$i]['endDate']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},enddate{{$i}}" required="" class="gaccca-input-date" />
+              <input name="DSPhaseListwrap[{{$i}}][endDate]" value="{{isset($datas['DSPhaseListwrap'][$i]['endDate'])?$datas['DSPhaseListwrap'][$i]['endDate']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},enddate{{$i}}"  class="gaccca-input-date gaccca-required" />
 
             </div>
           </div>
@@ -846,7 +840,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               Training/Internship Field <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Training_Internship_Field__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Training_Internship_Field__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Training_Internship_Field__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},training{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Training_Internship_Field__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Training_Internship_Field__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Training_Internship_Field__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},training{{$i}}"  class="gaccca-input gaccca-required" />
 
             </div>
           </div>
@@ -860,7 +854,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               Primary Phase Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Primary_Phase_Supervisor__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},supervisior{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Primary_Phase_Supervisor__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},supervisior{{$i}}"  class="gaccca-input gaccca-required" />
 
             </div>
           </div>
@@ -874,7 +868,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               Supervisor Title <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Supervisor_Title__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},sup_title{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Supervisor_Title__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},sup_title{{$i}}"  class="gaccca-input gaccca-required" />
 
             </div>
           </div>
@@ -888,7 +882,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               E-mail <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][E_mail__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},email{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][E_mail__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},email{{$i}}"  class="gaccca-input gaccca-required" />
 
             </div>
           </div>
@@ -902,7 +896,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-4">
               Phone Number <span class="gaccca-text-required" title="required">*</span></label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phone_Number__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phone{{$i}}" required="" class="gaccca-input" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phone_Number__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phone{{$i}}"  class="gaccca-input gaccca-required" />
 
             </div>
           </div>
@@ -915,7 +909,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-8">
               Description of Trainee/Intern's role for this program or phase <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Intern_s_role_for_this_program__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},des_of_trainee{{$i}}" required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Intern_s_role_for_this_program__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Intern_s_role_for_this_program__c']:''}}</textarea>
+              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Intern_s_role_for_this_program__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},des_of_trainee{{$i}}"  class="gaccca-textarea gaccca-required">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Intern_s_role_for_this_program__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Intern_s_role_for_this_program__c']:''}}</textarea>
 
 
             </div>
@@ -931,7 +925,7 @@
               Specific goals and objectives for this program or phase <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
 
-              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][goals_for_this_program__c]" required="" id="phase_btn_{{$i+1}},phase__{{$i+1}},goals{{$i}}" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['goals_for_this_program__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['goals_for_this_program__c']:''}}</textarea>
+              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][goals_for_this_program__c]"  id="phase_btn_{{$i+1}},phase__{{$i+1}},goals{{$i}}" class="gaccca-textarea gaccca-required">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['goals_for_this_program__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['goals_for_this_program__c']:''}}</textarea>
 
             </div>
           </div>
@@ -946,7 +940,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-8">
               Please list the names and titles of those who will provide continuous (for example, daily) supervision of the Trainee/Intern, including the primary supervisor. What are these persons' qualifications to teach the planned learning? <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Name_and_qualification_of_Supervisor__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},name_and_title{{$i}}" required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name_and_qualification_of_Supervisor__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name_and_qualification_of_Supervisor__c']:''}}</textarea>
+              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Name_and_qualification_of_Supervisor__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},name_and_title{{$i}}"  class="gaccca-textarea gaccca-required">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name_and_qualification_of_Supervisor__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name_and_qualification_of_Supervisor__c']:''}}</textarea>
             </div>
           </div>
         </div>
@@ -961,7 +955,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-8">
               What plans are in place for the Trainee/Intern to participate in cultural activities while in the United States? <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Cultural_participation_of_trainee__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},cultural_activities{{$i}}" required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Cultural_participation_of_trainee__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Cultural_participation_of_trainee__c']:''}}</textarea>
+              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Cultural_participation_of_trainee__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},cultural_activities{{$i}}"  class="gaccca-textarea gaccca-required">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Cultural_participation_of_trainee__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Cultural_participation_of_trainee__c']:''}}</textarea>
             </div>
           </div>
         </div>
@@ -975,7 +969,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-8">
               What specific knowledge, skills, or techniques will be learned? <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Techniques_will_be_learned__c]" required="" id="phase_btn_{{$i+1}},phase__{{$i+1}},skill_tech{{$i}}" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Techniques_will_be_learned__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Techniques_will_be_learned__c']:''}}</textarea>
+              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Techniques_will_be_learned__c]"  id="phase_btn_{{$i+1}},phase__{{$i+1}},skill_tech{{$i}}" class="gaccca-textarea gaccca-required">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Techniques_will_be_learned__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Techniques_will_be_learned__c']:''}}</textarea>
             </div>
           </div>
         </div>
@@ -988,7 +982,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-8">
               How specifically will these knowledge, skills, or techniques be taught? Include specific tasks and activities (Interns) and/ or methodology of training and chronology/syllabus (Trainees) <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Methodology_of_training_and_chronology__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},task_activity{{$i}}" required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Methodology_of_training_and_chronology__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Methodology_of_training_and_chronology__c']:''}}</textarea>
+              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Methodology_of_training_and_chronology__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},task_activity{{$i}}"  class="gaccca-textarea gaccca-required">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Methodology_of_training_and_chronology__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Methodology_of_training_and_chronology__c']:''}}</textarea>
             </div>
           </div>
         </div>
@@ -1001,7 +995,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-8">
               How will the Trainee/Intern's acquisition of new skills and competencies be measured? <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Acquisition_of_new_skills_by_trainee__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},acquisition{{$i}}" required="" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Acquisition_of_new_skills_by_trainee__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Acquisition_of_new_skills_by_trainee__c']:''}}</textarea>
+              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Acquisition_of_new_skills_by_trainee__c]" id="phase_btn_{{$i+1}},phase__{{$i+1}},acquisition{{$i}}"  class="gaccca-textarea gaccca-required">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Acquisition_of_new_skills_by_trainee__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Acquisition_of_new_skills_by_trainee__c']:''}}</textarea>
             </div>
           </div>
         </div>
@@ -1014,9 +1008,9 @@
             <label class="gaccca-form-element__label" for="text-input-id-8">
 
               Additional Phase Remarks (optional)
-              <span class="gaccca-text-required" title="required">*</span> </label>
+              </label>
             <div class="gaccca-form-element__control">
-              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Additional_Phase_Remarks__c]" required="" id="phase_btn_{{$i+1}},phase__{{$i+1}},additional{{$i}}" class="gaccca-textarea">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Additional_Phase_Remarks__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Additional_Phase_Remarks__c']:''}}</textarea>
+              <textarea name="DSPhaseListwrap[{{$i}}][DSPhase][Additional_Phase_Remarks__c]"  id="phase_btn_{{$i+1}},phase__{{$i+1}},additional{{$i}}" class="gaccca-textarea ">{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Additional_Phase_Remarks__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Additional_Phase_Remarks__c']:''}}</textarea>
             </div>
           </div>
         </div>
@@ -1136,7 +1130,7 @@ Form submitted on &nbsp; {{$datas['formSubmittedDate']}}.
 
 </p>
   @else
-    <button id="save-ds-7002" class="gaccca-button-save gaccca-button-save-margin">Save DS-7002</button>
+    <span id="save-ds-7002" class="gaccca-button-save gaccca-button-save-margin">Save DS-7002</span>
     <button id="send-to-gaccca-btn" class="gaccca-button-save-green gaccca-button-save-margin">Send to GACC California</button>
 @endif
   </div>
@@ -1159,20 +1153,23 @@ Form submitted on &nbsp; {{$datas['formSubmittedDate']}}.
 $(document).ready(function() {
   var errors = [];
   $("#send-to-gaccca-btn").on('click', function() {
+    $('.gaccca-required').prop('required', true);
     document.getElementById('formSubmitType').value='Sent';
     errors = [];
+    document.getElementById('loader').style.display = 'block';
     $('#ds-7002-plan').parsley().validate();
-    alert($('#ds-7002-plan').parsley().validate());
     if ($('#ds-7002-plan').parsley().isValid()) {
     } else {
-      alert();
-
-
+     
+      document.getElementById('loader').style.display = 'none';
     }
   });
     
   $("#save-ds-7002").on('click', function() {
+    $('.gaccca-required').prop('required', false);
     document.getElementById('formSubmitType').value='Save';
+    document.getElementById('loader').style.display = 'block';
+    $('#ds-7002-plan').submit();
     });
 
 

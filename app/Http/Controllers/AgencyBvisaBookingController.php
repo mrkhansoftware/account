@@ -13,7 +13,18 @@ class AgencyBvisaBookingController extends Controller
      */
     public function index()
     {
-        return view('agent-bookings/AgencyBvisaBooking');
+
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+  
+          $datas='App\Services\Helper'::getRequest('ApiAgencyBvisaBookingClass/'.$idCon);
+          $datas = json_decode($datas, true);
+          $datas = json_decode($datas, true);
+          session()->put('conId', $datas['conId']);
+          session()->put('accountId', $datas['accountId']);
+          return view('agent-bookings/AgencyBvisaBooking')->with(compact('datas'));
     }
 
     /**
@@ -33,8 +44,24 @@ class AgencyBvisaBookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {  $finalReq = $request->all();
+        $finalReq['conId'] = session()->get('conId');
+        $finalReq['accountId'] = session()->get('accountId');
+        if ($finalReq['registerationFor'] == 'ExistingCustomer') {
+            $finalReq['con']['Id'] = $finalReq['existingCustomerId'];
+        }
+        $finalReq['typeStr'] = 'savefun';
+        unset($finalReq['_token']);
+        unset($finalReq['conditions']);
+        //      echo '<pre/>'; print_r($finalReq);die;
+
+        $resp = 'App\Services\Helper'::postRequest($finalReq, 'ApiAgencyBvisaBookingClass');
+        if ($resp == '"OK"') {
+            return redirect()->action('AgentParticipantsController@index', ['isSave' => 1]);
+        } else {
+            echo $resp;
+            die;
+        }
     }
 
     /**
@@ -84,15 +111,18 @@ class AgencyBvisaBookingController extends Controller
 
     public function existingCustomerList(){
 
-        return ['sunny123','rahul1234','sssss123'];
 
 
     } 
 
-    public function existingCustomerInfo(){
+    public function existingCustomerInfo(Request $request){
 
-        return [1234,'sunnyvb','sharmamh'];
+        $finalReq= $request->all();
+        $finalReq['typeStr']='fillInfoOfExistingCustomer';
+      //  $finalReq['wpcContent']='';
 
-
+        $datas='App\Services\Helper'::postRequest($finalReq,'ApiAgencyBvisaBookingClass');
+        $datas = json_decode($datas, true);
+        return $datas;
     } 
 }

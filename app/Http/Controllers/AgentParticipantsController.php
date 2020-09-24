@@ -13,8 +13,19 @@ class AgentParticipantsController extends Controller
      */
     public function index()
     {
-        return view('agent-bookings/AgentParticipants');
-    }
+        
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+  
+          $datas='App\Services\Helper'::getRequest('ApiAgentParticipantsController/'.$idCon);
+          $datas = json_decode($datas, true);
+          $datas = json_decode($datas, true);
+          session()->put('conId', $datas['conId']);
+          session()->put('accountId', $datas['accountId']);
+          return view('agent-bookings/AgentParticipants')->with(compact('datas'));
+   }
 
     /**
      * Show the form for creating a new resource.
@@ -33,8 +44,16 @@ class AgentParticipantsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        print_r($request->all());
+    {   
+        $req=$request->all();
+        $req['conId']=session()->get('conId');
+        $req['accountId']=session()->get('accountId');
+        $finalReq['wpcContent']=json_encode( $req);
+        $datas='App\Services\Helper'::postRequest($finalReq,'ApiAgentParticipantsController');
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+           
+        return $datas;
     }
 
     /**

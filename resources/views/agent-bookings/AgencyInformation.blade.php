@@ -1,3 +1,4 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
@@ -17,12 +18,12 @@
   
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="text-input-id-fn">
-                <p><strong>No organization associated with account user. Contact Administrator.
+                
+              @if (isset($datas['accountId']) && $datas['accountId']=='')
+              <p><strong>No organization associated with account user. Contact Administrator.
                 </strong></p>
-            
-                <p><strong>Price list version history
-                </strong></p>
-                <p>There is no price list uploaded.</p>
+            @endif
+               
             </label>
               
             </div>
@@ -32,7 +33,7 @@
       </div>
 
 
-
+      @if (isset($datas['accountId']) && $datas['accountId']!='')
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
   
         <div class="gaccca-form-element gaccca-form-element-margin">
@@ -40,7 +41,7 @@
             Upload or update your current price list <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                   <label class="gaccca-file">
-                      <input type="file"  id="myFile" name="filename"/>
+                      <input type="file"  required name="priceList"/>
                       <span class="gaccca-file-custom">Choose file...</span>
                       
                   </label>
@@ -58,13 +59,13 @@
       </div>
 
       <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
-  
+      @endif
 
 
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
         <div class="gaccca-form-element gaccca-form-element-margin">
           <p> <strong>Price list version history</strong> </p>
-
+        @if(count($datas['contentVersionList'])>0)
           <table class="gaccca-price-table">
             <tr>
               <th>File</th>
@@ -72,21 +73,23 @@
               <th>Uploaded Date</th>
               <th>View</th>
             </tr>
+            @for ($i = 0; $i < count($datas['contentVersionList']); $i++) 
             <tr>
               <td>Price List</td>
-              <td>Test User</td>
-              <td>01/29/2020</td>
-              <td><a href="#">view</a></td>
+              <td>{{$datas['contentVersionList'][$i]['fileUploadedBy']}}</td>
+              <td>{{$datas['contentVersionList'][$i]['fileUploadDate']}}</td>
+              <td>
+              @if(isset($datas['contentVersionList'][$i]['isLatest']) && $datas['contentVersionList'][$i]['isLatest'])  
+              <a target='_blank' href="{{$datas['contentVersionList'][$i]['fileUrlView']}}">view</a>
+            @endif
+            </td>
 
             </tr>
-            <tr>
-              <td>Price List</td>
-              <td>Test User</td>
-              <td>01/29/2020</td>
-              <td><a href="#">view</a></td>
-
-            </tr>
+            @endfor
           </table>
+          @else
+          There is no price list uploaded.
+          @endif
         </div>
 
       </div>
@@ -97,3 +100,7 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+
+@else
+  Permission denied. Please contact administrator.
+  @endif

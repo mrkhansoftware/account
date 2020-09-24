@@ -13,7 +13,17 @@ class AddNewParticipantController extends Controller
      */
     public function index()
     {
-        return view('agent-bookings/Add_New_Participant');
+        $idCon = 'App\Services\Helper'::sessionConId();
+        if ($idCon == '') {
+            return 'App\Services\Helper'::returnUrl();
+        }
+
+        $datas = 'App\Services\Helper'::getRequest('ApiAddNewParticipantController/' . $idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        session()->put('conId', $datas['conId']);
+        session()->put('accountId', $datas['accountId']);
+        return view('agent-bookings/Add_New_Participant')->with(compact('datas'));
     }
 
     /**
@@ -34,7 +44,23 @@ class AddNewParticipantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $finalReq = $request->all();
+        $finalReq['conId'] = session()->get('conId');
+        $finalReq['accountId'] = session()->get('accountId');
+        if ($finalReq['registerationFor'] == 'ExistingCustomer') {
+            $finalReq['con']['Id'] = $finalReq['existingCustomerId'];
+        }
+        $finalReq['typeStr'] = 'savefun';
+        unset($finalReq['_token']);
+        //        echo '<pre/>'; print_r($finalReq);die;
+
+        $resp = 'App\Services\Helper'::postRequest($finalReq, 'ApiAddNewParticipantController');
+        if ($resp == '"OK"') {
+            return redirect()->action('AgentParticipantsController@index', ['isSave' => 1]);
+        } else {
+            echo $resp;
+            die;
+        }
     }
 
     /**
@@ -82,21 +108,19 @@ class AddNewParticipantController extends Controller
         //
     }
 
-    public function existingCustomerList(){
+    public function existingCustomerList()
+    {
+    }
 
-        return ['sunny','rahul'];
+    public function existingCustomerInfo(Request $request)
+    {
 
+        $finalReq = $request->all();
+        $finalReq['typeStr'] = 'fillInfoOfExistingCustomer';
+        //  $finalReq['wpcContent']='';
 
-    } 
-
-    public function existingCustomerInfo(){
-
-        return [1234,'sunny','sharma'];
-
-
-    } 
-
-
-    
-
+        $datas = 'App\Services\Helper'::postRequest($finalReq, 'ApiAddNewParticipantController');
+        $datas = json_decode($datas, true);
+        return $datas;
+    }
 }

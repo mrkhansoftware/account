@@ -13,14 +13,37 @@ class DS7002TrainigsplanAgentController extends Controller
      */
     public function index()
     {
-        $idCon = 'App\Services\Helper'::sessionConId();
-        if ($idCon == '') {
-            return 'App\Services\Helper'::returnUrl();
+        if (!isset($_GET['orgid'])) {
+            $idCon = 'App\Services\Helper'::sessionConId();
+            if ($idCon == '') {
+                return 'App\Services\Helper'::returnUrl();
+            }
+        } else {
+            $idCon = 'isOrganizationLink' . $_GET['orgid'];
         }
-        $datas = 'App\Services\Helper'::getRequest('ApiDS7002Controller/' . $idCon);
+        $datas = 'App\Services\Helper'::getRequest('ApiDS7200TrainingsplanAgentController/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
         // echo '<pre>'; print_r($datas); die; 
+
+        session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+        if (isset($datas['appli']['Id'])) {
+            session()->put('applicantId', $datas['appli']['Id']);
+        }
+        if (isset($datas['appli']['NewGdriveID__c'])) {
+            session()->put('NewGdriveID__c', $datas['appli']['NewGdriveID__c']);
+        }
+
+        if (isset($datas['appli']['Google_Drive_Evaluation_Form__c'])) {
+            session()->put('Google_Drive_Evaluation_Form__c', $datas['appli']['Google_Drive_Evaluation_Form__c']);
+        }
+
+
+        if (isset($datas['onForm']['Id'])) {
+            session()->put('onfrmId', $datas['onForm']['Id']);
+        }
+        session()->put('Contact__c', $datas['appli']['Contact__c']);
+
         return view('agent-bookings/DS_7002_Trainigsplan_agent')->with(compact('datas'));
         // return view('agent-bookings/DS_7002_Trainigsplan_agent');
 
@@ -44,7 +67,28 @@ class DS7002TrainigsplanAgentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $finalReq = $request->all();
+        $EncId = $finalReq['EncId'];
+        $finalReq['applicant']['id'] = session()->get('applicantId');
+        $finalReq['onForm']['id'] = session()->get('onfrmId');
+        $finalReq['applicant']['Contact__c'] = session()->get('Contact__c');
+        $finalReq['applicantData'] = json_encode($finalReq['applicant']);
+        $finalReq['onlineFormData'] = json_encode($finalReq['onForm']);
+        $finalReq['DSPhaseData'] = json_encode($finalReq['DSPhaseListwrap']);
+
+        unset($finalReq['_token']);
+        unset($finalReq['applicant']);
+        unset($finalReq['onForm']);
+        unset($finalReq['EncId']);
+        unset($finalReq['DSPhaseListwrap']);
+
+
+        
+
+echo         'App\Services\Helper'::postRequest($finalReq, 'ApiDS7200TrainingsplanAgentController');
+echo '<pre>'; print_r($finalReq);die;
+
+        return redirect()->action('DS7002TrainigsplanAgentController@index', ['isSave' => 1, 'orgid' => $EncId]);
     }
 
     /**

@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_bvisa']) !!}
+{!! Form::open(['action' => 'AgencyBvisaBookingController@store', 'method' => 'POST',  'id' => 'gacccaForm_bvisa']) !!}
 
  
 <div class="gaccca-main-containt">
@@ -20,14 +20,14 @@
                 <label class="gaccca-form-element__label" for="text-input-id-fn">
                     Register for <span class="gaccca-text-required" title="required">*</span> </label>
                 <span class="gaccca-radio">
-                  <input type="radio" id="radio-43" value="new_customer" name="customer" checked="" />
-                  <label class="gaccca-radio__label" for="radio-43">
+                  <input type="radio" id="radio-NewCustomer" value="NewCustomer" name="registerationFor" required />
+                  <label class="gaccca-radio__label" for="radio-NewCustomer">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-padding-right-25">New Customer</span>
                   </label>
 
-                  <input type="radio" id="radio-44" value="existing_customer" name="customer" />
-                  <label class="gaccca-radio__label" for="radio-44">
+                  <input type="radio" id="radio-ExistingCustomer" value="ExistingCustomer" name="registerationFor" required/>
+                  <label class="gaccca-radio__label" for="radio-ExistingCustomer">
                     <span class="gaccca-radio_faux"></span>
                     <span class="gaccca-padding-right-25">Existing Customer</span>
                   </label>
@@ -49,10 +49,8 @@
                 <label class="gaccca-form-element__label" for="select-01">Existing Customer List</label>
                 <div class="gaccca-form-element__control">
                   <div class="gaccca-select_container">
-                    <select class="gaccca-select"  id="existing-customer-list">                      
-                      <option value="j1"></option>
-                      
-                    </select>
+                  {!! Form::select('existingCustomerId', array_reverse($datas['existingCustomer']), '', [ 'class' => 'gaccca-select', 'id'=>'existing-customer-list']) !!}
+
                   </div>
                 </div>
               </div>
@@ -66,49 +64,43 @@
                   <label class="gaccca-form-element__label" for="text-input-id-fn">
                       I would like to order <span class="gaccca-text-required" title="required">*</span> </label>
                   <span class="gaccca-radio">
-                    <input type="radio" id="radio-w01" value="radio-w01" name="default" checked="" />
+                    <input type="radio" id="radio-w01" value="1" name="visaType"  required/>
                     <label class="gaccca-radio__label" for="radio-w01">
                       <span class="gaccca-radio_faux"></span>
                       <span>Visa service (Business Visitor / Industrial Workers, Technicians / Special Students) up to 90 days EUR/Person</span>
                     </label>
-                  </span>
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-w02" value="radio-w02" name="default" />
+                 
+                    <input type="radio" id="radio-w02" value="2" name="visaType" required/>
                     <label class="gaccca-radio__label" for="radio-w02">
                       <span class="gaccca-radio_faux"></span>
                       <span>Visa service (Business Visitor / Industrial Workers, Technicians / Special Students) for 91-180 days EUR/Person</span>
                     </label>
-                  </span>
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-w03" value="radio-w03" name="default" />
+                  
+                    <input type="radio" id="radio-w03" value="3" name="visaType" required/>
                     <label class="gaccca-radio__label" for="radio-w03">
                       <span class="gaccca-radio_faux"></span>
                       <span>Assistance with a denied B-1/B-2 Visa or Deportation EUR/Person</span>
                     </label>
-                  </span>
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-w04" value="radio-w04" name="default" />
+                  
+                    <input type="radio" id="radio-w04" value="4" name="visaType" required/>
                     <label class="gaccca-radio__label" for="radio-w04">
                       <span class="gaccca-radio_faux"></span>
                       <span>Visa Service for Non-Profit Organisations up to 90 days EUR/Person</span>
                     </label>
-                  </span>
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-w05" value="radio-w05" name="default" />
+                 
+                    <input type="radio" id="radio-w05" value="5" name="visaType" required/>
                     <label class="gaccca-radio__label" for="radio-w05">
                       <span class="gaccca-radio_faux"></span>
                       <span>Visa Service for Non-Profit Organisations more than 91 days EUR/Person</span>
                     </label>
-                  </span>
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-w06" value="radio-w06" name="default" />
+                 
+                    <input type="radio" id="radio-w06" value="6" name="visaType" required/>
                     <label class="gaccca-radio__label" for="radio-w06">
                       <span class="gaccca-radio_faux"></span>
                       <span>Visa for Short-Term Business Study Tour Program (no more than 90 days) EUR/Person</span>
                     </label>
-                  </span>
-                  <span class="gaccca-radio">
-                    <input type="radio" id="radio-w07" value="radio-w07" name="default" />
+                  
+                    <input type="radio" id="radio-w07" value="7" name="visaType" required/>
                     <label class="gaccca-radio__label" for="radio-w07">
                       <span class="gaccca-radio_faux"></span>
                       <span>Individual consultation - case analysis on an hourly basis, 1 hour at EUR</span>
@@ -129,7 +121,7 @@
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__control">
                   <div class="gaccca-checkbox">
-                    <input type="checkbox" name="options" id="checkbox-unique-id-73" value="checkbox-unique-id-73" checked="" />
+                    <input type="checkbox" name="isExpedited" id="checkbox-unique-id-73" value="Yes"  />
                     <label class="gaccca-checkbox__label" for="checkbox-unique-id-73">
                       <span class="gaccca-checkbox_faux"></span>
                       <span class="gaccca-form-element__label">Priority / Expedited Processing within 3 business days, additional fee of EUR/Person</span>
@@ -148,13 +140,13 @@
                   <label class="gaccca-form-element__label" for="text-input-id-fn">
                     I book as <span class="gaccca-text-required" title="required">*</span> </label>
                   <span class="gaccca-radio">
-                    <input type="radio" id="radio-43" value="radio-43" name="book_as" checked="" required="" />
+                    <input type="radio" id="radio-43" value="PrivateCustomer" name="bookingAs"  required="" />
                     <label class="gaccca-radio__label" for="radio-43">
                       <span class="gaccca-radio_faux"></span>
                       <span class="gaccca-padding-right-25">Private Customer</span>
                     </label>
   
-                    <input type="radio" id="radio-44" value="radio-44" name="book_as" />
+                    <input type="radio" id="radio-44" value="BusinessCustomer" name="bookingAs" required="" />
                     <label class="gaccca-radio__label" for="radio-44">
                       <span class="gaccca-radio_faux"></span>
                       <span class="gaccca-padding-right-25">Business Customer</span>
@@ -177,7 +169,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-fn">
                 First name of visa applicant <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}"  required="" class="gaccca-input" />
+                <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}"  id="firstNameField" required="" class="gaccca-input" />
                 
               </div>
             </div>
@@ -190,7 +182,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-2">
                 Last name of visa applicant <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" name="LastName" value="{{isset($datas['LastName'])?$datas['LastName']:''}}"   required="" class="gaccca-input" />
+              <input type="text" name="con[LastName]" value="{{isset($datas['LastName'])?$datas['LastName']:''}}"   id="lastNameField" required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -202,7 +194,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-3">
                 Email address of visa applicant <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}" placeholder="Email address of visa applicant" required="" class="gaccca-input" />
+                <input type="email" name="con[Email]"  value="" placeholder="Email address of visa applicant" required="" class="gaccca-input" id="emailField"  />
                 
               </div>
             </div>
@@ -215,7 +207,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-4">
                 Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}" id="text-input-id-4" placeholder="Phone Number" required="" class="gaccca-input" />
+                <input type="text" name="con[Phone]"  value="" id="phoneField" placeholder="Phone Number" required="" class="gaccca-input" />
                 <span class="gaccca-input-help-text">Please always provide your country code</span>
               </div>
             </div>
@@ -229,7 +221,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-5">
                 Date of Departure to the USA <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element-date">
-              <input type="text" name="con[FirstName]"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+              <input type="text" name="dob"  value="{{isset($datas['con']['FirstName'])?$datas['con']['FirstName']:''}}" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
             </div>
           </div>
   
@@ -244,13 +236,12 @@
 
 
 
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-          
+          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1"  id='bussinessField_company'>
           <div class="gaccca-form-element gaccca-form-element-margin">
             <label class="gaccca-form-element__label" for="text-input-id-fn">
               Company Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text"  name="companyName"  value="{{isset($datas['companyName'])?$datas['companyName']:''}}" id="text-input-id-fn" placeholder="First Name" required="" class="gaccca-input" />
+              <input type="text"  name="companyName"  value="{{isset($datas['companyName'])?$datas['companyName']:''}}" id="bussinessInputField_company"   class="gaccca-input" />
               
             </div>
           </div>
@@ -258,13 +249,12 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-          
+        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1" id='bussinessField_web'> 
           <div class="gaccca-form-element gaccca-form-element-margin">
             <label class="gaccca-form-element__label" for="text-input-id-fn">
               Website <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text"  name="website"  value="{{isset($datas['website'])?$datas['website']:''}}" id="text-input-id-fn" placeholder="First Name" required="" class="gaccca-input" />
+              <input type="text"  name="website"  value="{{isset($datas['website'])?$datas['website']:''}}" id="bussinessInputField_web"  class="gaccca-input" />
               
             </div>
           </div>
@@ -280,12 +270,12 @@
                       <label class="gaccca-form-element__label" for="text-input-id-fn">
                         Salutation: <span class="gaccca-text-required" title="required">*</span> </label>
                       <span class="gaccca-radio">
-                        <input type="radio" id="radio-ms" value="radio-ms" name="salutation" checked="" />
+                        <input type="radio" id="radio-ms" value="ms." name="salutation"  required/>
                         <label class="gaccca-radio__label" for="radio-ms">
                           <span class="gaccca-radio_faux"></span>
                           <span class="gaccca-padding-right-25">Ms.</span>
                         </label>
-                        <input type="radio" id="radio-mr" value="radio-mr" name="salutation" />
+                        <input type="radio" id="radio-mr" value="mr." name="salutation" required/>
                         <label class="gaccca-radio__label" for="radio-mr">
                           <span class="gaccca-radio_faux"></span>
                           <span class="gaccca-padding-right-25">Mr.</span>
@@ -318,7 +308,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-2">
                     Last Name<span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" name="lastNameConPerson"  value="{{isset($datas['lastNameConPerson'])?$datas['lastNameConPerson']:''}}" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" />
+                  <input type="text" name="conPersonInfo[Lastname]"  value="{{isset($datas['lastNameConPerson'])?$datas['lastNameConPerson']:''}}" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" />
                   
                 </div>
               </div>
@@ -331,7 +321,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-8">
                     Street <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <textarea name="conPersonInfo[MailingStreet]"   placeholder="Enter Your Address" required="" class="gaccca-textarea">{{isset($datas['conPersonInfo']['MailingStreet'])?$datas['conPersonInfo']['MailingStreet']:''}}</textarea>
+                    <textarea name="conPersonInfo[MailingStreet]"   placeholder="Enter Your Address" required="" class="gaccca-textarea"  id="streetField" >{{isset($datas['conPersonInfo']['MailingStreet'])?$datas['conPersonInfo']['MailingStreet']:''}}</textarea>
                     
                   </div>
                 </div>
@@ -344,7 +334,7 @@
                   <label class="gaccca-form-element__label" for="text-input-id-9">
                     City <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <input type="text" name="conPersonInfo[MailingCity]"  value="{{isset($datas['conPersonInfo']['MailingCity'])?$datas['conPersonInfo']['MailingCity']:''}}" id="text-input-id-9" placeholder="City" required="" class="gaccca-input" />
+                    <input type="text" name="conPersonInfo[MailingCity]"  value="{{isset($datas['conPersonInfo']['MailingCity'])?$datas['conPersonInfo']['MailingCity']:''}}" id="cityField" placeholder="City" required="" class="gaccca-input" />
                   </div>
                 </div>
               </div>
@@ -355,21 +345,22 @@
                   <label class="gaccca-form-element__label" for="text-input-id-10">
                     Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
                   <div class="gaccca-form-element__control">
-                    <input name="conPersonInfo[MailingPostalCode]"  value="{{isset($datas['conPersonInfo']['MailingPostalCode'])?$datas['conPersonInfo']['MailingPostalCode']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" />
+                    <input name="conPersonInfo[MailingPostalCode]"  value="{{isset($datas['conPersonInfo']['MailingPostalCode'])?$datas['conPersonInfo']['MailingPostalCode']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code" id="postalCodeField" required="" class="gaccca-input" />
                   </div>
                 </div>
               </div>
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-        
-                <div class="gaccca-form-element gaccca-form-element-margin">
-                  <label class="gaccca-form-element__label" for="text-input-id-11">
-                    Country <span class="gaccca-text-required" title="required">*</span> </label>
-                  <div class="gaccca-form-element__control">
-                    <input name="conPersonInfo[MailingCountryCode]"  value="{{isset($datas['conPersonInfo']['MailingCountryCode'])?$datas['conPersonInfo']['MailingCountryCode']:''}}" type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" />
-                    
-                  </div>
-                </div>
-              </div>
+              <div class="gaccca-form-element gaccca-form-element-margin">
+            <label class="gaccca-form-element__label" for="text-input-id-11">
+              Country <span class="gaccca-text-required" title="required">*</span> </label>
+            <div class="gaccca-form-element__control">
+              <!-- <input type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" /> -->
+             
+              {!! Form::select('conPersonInfo[MailingCountryCode]', array_reverse($datas['countryOfBirth']), isset($datas['con']['MailingCountryCode'])?$datas['con']['MailingCountryCode']:'', [ 'class' => 'gaccca-select','required' => 'required', 'id'=>'countryCodeField']) !!}
+           <input type='hidden' id='countryName' name='countryName' />
+              <span class="gaccca-input-help-text"></span>
+            </div>
+          </div>
+        </div>
 
           <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
     
@@ -412,8 +403,8 @@
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__control">
                   <div class="gaccca-checkbox">
-                    <input type="checkbox" name="conditions" id="checkbox-unique-id-73" value="checkbox-unique-id-73" checked="" />
-                    <label class="gaccca-checkbox__label" for="checkbox-unique-id-73">
+                    <input type="checkbox" name="conditions" id="checkbox-unique-id-isConfirmed" value="Yes" required />
+                    <label class="gaccca-checkbox__label" for="checkbox-unique-id-isConfirmed">
                       <span class="gaccca-checkbox_faux"></span>
                       <span class="gaccca-form-element__label"> Yes, I confirm the order conditions:</span>
                     </label>
@@ -444,69 +435,99 @@
 
 
 $( document ).ready(function() {
+  $('[id^=bussinessField_]').hide();
   $('#existing-customer-div').hide();
-  $('input[type=radio][name=customer]').change(function() {
-   
-   if (this.value == 'new_customer') {
-    $('#existing-customer-div').hide();
-   }
-   else if (this.value == 'existing_customer') {
-     var formData = {
-       customer: 'existing_customer'
-     }
-      $.ajaxSetup({
-      headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-      });
-      $.ajax({
-      type: 'get',
-      url: 'existing_customer_list_b_visa',
-      data: formData,
-      dataType: 'json',
-      success: function (data) {
-        console.log(data);
-        var $existing_customerlist = $('#existing-customer-list');
-            $existing_customerlist.empty();
-            
-            for (var i = 0; i < data.length; i++) {
-                $existing_customerlist.append('<option id=' + data[i] + ' value=' + data[i] + '>' + data[i] + '</option>');
-            }
 
-        $('#existing-customer-div').show();
-      },
-      error: function (data) {
-      console.log(data);
-      }
-      });
-      
-   }
+
+  $('input[type=radio][name=bookingAs]').change(function() {
+    if (this.value == 'BusinessCustomer') {
+      $('[id^=bussinessField_]').show();
+      $('[id^=bussinessInputField_]').prop('required', true);
+    }else{
+      $('[id^=bussinessField_]').hide();
+      $('[id^=bussinessInputField_]').prop('required', false);
+    }
+
+  });
+
+
+
+  $('input[type=radio][name=registerationFor]').change(function() {
+
+if (this.value == 'NewCustomer') {
+  $("#existing-customer-list").val('');
+  $('#existing-customer-div').hide();
+  $("#existing-customer-list").prop('required', false);
+  $('#firstNameField').val('');
+  $('#lastNameField').val('');
+  $('#emailField').val('');
+  $('#emailField').prop('readonly', false);
+  $('#phoneField').val('');
+  $('#dobField').val('');
+  $('#streetField').val('');
+  $('#cityField').val('');
+  $('#postalCodeField').val('');
+  $('#countryCodeField').val('');
+} else if (this.value == 'ExistingCustomer') {
+  $('#existing-customer-div').show();
+
+  $("#existing-customer-list").prop('required', true);
+}
+});
+$('#countryCodeField').change(function() {
+  var el = document.getElementById('countryCodeField');
+            document.getElementById('countryName').value=el.options[el.selectedIndex].innerHTML;
+
 });
 
 $('#existing-customer-list').change(function() {
-
-  var formData = {
-       customer_id: 1234
-     }
-      $.ajaxSetup({
-      headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      $('#firstNameField').val('');
+      $('#lastNameField').val('');
+      $('#emailField').val('');
+      $('#emailField').prop('readonly', true);
+      $('#phoneField').val('');
+      $('#dobField').val('');
+      $('#streetField').val('');
+      $('#cityField').val('');
+      $('#postalCodeField').val('');
+      $('#countryCodeField').val('');
+      if (this.value == '') {
+        return;
       }
+      document.getElementById('loader').style.display = 'block';
+      var formData = {
+        existingCustomerId: this.value
+      }
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
       });
       $.ajax({
-      type: 'get',
-      url: 'customer_information_b_visa',
-      data: formData,
-      dataType: 'json',
-      success: function (data) {
-        console.log(data);
-
-      },
-      error: function (data) {
-      console.log(data);
-      }
+        type: 'get',
+        url: 'customer_information',
+        data: formData,
+        dataType: 'json',
+        success: function(data) {
+          console.log(data);
+          document.getElementById('loader').style.display = 'none';
+          $('#firstNameField').val(data.con.FirstName);
+          $('#lastNameField').val(data.con.LastName);
+          $('#emailField').val(data.con.Email);
+          $('#phoneField').val(data.con.Phone);
+          $('#dobField').val(data.dob);
+          $('#streetField').val(data.con.MailingStreet);
+          $('#cityField').val(data.con.MailingCity);
+          $('#postalCodeField').val(data.con.MailingPostalCode);
+          $('#countryCodeField').val(data.con.MailingCountryCode);
+          jQuery('[id^="gacccaForm_"]').parsley().validate();
+        },
+        error: function(data) {
+          document.getElementById('loader').style.display = 'none';
+          console.log(data);
+        }
       });
-})
+    })
 
 
 

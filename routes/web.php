@@ -132,6 +132,7 @@ Route::get('/dosAndDonts', 'DoAndDontsController@index');
 
 Route::resource('ApplicantResume', 'ApplicantResumeController');
 Route::get('/ApplicantResume', 'ApplicantResumeController@index');
+Route::get('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetails');
 
 
 Route::resource('WriteYourScript', 'WriteYourScriptController');
@@ -233,6 +234,7 @@ Route::get('/Add_New_Participant', 'AddNewParticipantController@index');
 Route::get('/existing_customer_list', 'AddNewParticipantController@existingCustomerList');
 
 Route::get('/customer_information', 'AddNewParticipantController@existingCustomerInfo');
+Route::post('resumeDetails2', 'ApplicantResumeController@resumeDetails2');
 
 
 
@@ -242,7 +244,7 @@ Route::get('/customer_information', 'AddNewParticipantController@existingCustome
  Route::get('/AgentParticipants', 'AgentParticipantsController@index');
 
 
- Route::post('/ajax_select_program', 'AgentParticipantsController@store');
+ Route::post('/agentParticipantsList', 'AgentParticipantsController@store');
 
 
  
