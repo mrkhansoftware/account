@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.signScript')
 
-
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_webcam']) !!}
+{!! Form::open(['action' => 'WebcamInterviewController@store', 'method' => 'POST',  'id' => 'gacccaForm_webcam']) !!}
 <div class="gaccca-main-containt">
         <h1 class="gaccca-h1-padding">Applicant Webcam Interview Questions and Report Test User</h1>
         <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
@@ -199,7 +199,7 @@
                         States?</label>
                     <div class="gaccca-form-element__control">
                         <div class="gaccca-select_container">
-                            <select class="gaccca-select" id="select-01">
+                            <select class="gaccca-select" id="select-01" name="onfrm[Have_you_ever_been_to_the_United_States__c]">
                                 <option value="none">--none--</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -245,7 +245,7 @@
                     <label class="gaccca-form-element__label" for="select-01">Do you have dual citizenship?</label>
                     <div class="gaccca-form-element__control">
                         <div class="gaccca-select_container">
-                            <select class="gaccca-select">
+                            <select class="gaccca-select" name="onfrm[Do_you_have_a_dual_citizenship__c]">
                                 <option value="none">--none--</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -283,7 +283,7 @@
                         in your home country that could affect your ability to enter the U.S.?</label>
                     <div class="gaccca-form-element__control">
                         <div class="gaccca-select_container">
-                            <select class="gaccca-select">
+                            <select class="gaccca-select" name="onfrm[Do_you_have_a_criminal_record__c]">
                                 <option value="none">--none--</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -402,7 +402,7 @@
                         ability is</label>
                     <div class="gaccca-form-element__control">
                         <div class="gaccca-select_container">
-                            <select class="gaccca-select" id="select-01">
+                            <select class="gaccca-select" id="select-01" name="onfrm[The_Applicant_s_English_comprehension_ab__c]">
                                 <option value="none">--none--</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -421,7 +421,7 @@
                         is:</label>
                     <div class="gaccca-form-element__control">
                         <div class="gaccca-select_container">
-                            <select class="gaccca-select" id="select-01">
+                            <select class="gaccca-select" id="select-01" name="onfrm[The_Applicant_s_English_speaking_ability__c]">
                                 <option value="none">--none--</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -515,6 +515,7 @@
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <p>You can sign digitally online with your mouse or on your phone with your finger.</p>
                 </div>
+                @include('common.signHTML')
             </div>
 
 

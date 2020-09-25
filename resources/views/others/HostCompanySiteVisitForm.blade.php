@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
-
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_sitevisitform']) !!}
+@include('common.signScript')
+{!! Form::open(['action' => 'HCSiteVisitFormController@store', 'method' => 'POST', 'id' => 'gacccaForm_sitevisitform']) !!}
 
 <div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">Host Company Site Visit Form</h1>
@@ -165,29 +165,29 @@
         <label class="gaccca-form-element__label" for="text-input-id-fn">
           Gross Annual Revenue: <span class="gaccca-text-required" title="required">*</span> </label>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-43" value="radio-43" name="gross " checked="" />
-          <label class="gaccca-radio__label" for="radio-43">
+          <input  type="radio" id="radio-0-3" value="$0 to $3 Million" name="onfrm[Annual_Revenue__c]" checked="" />
+          <label class="gaccca-radio__label" for="radio-0-3">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">$0 to $3 Million</span>
           </label>
         </span>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-44" value="radio-44" name="gross" />
-          <label class="gaccca-radio__label" for="radio-44">
+          <input type="radio" id="radio-3-10" value="$3 Million to $10 Million" name="onfrm[Annual_Revenue__c]" />
+          <label class="gaccca-radio__label" for="radio-3-10">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">$3 Million to $10 Million</span>
           </label>
         </span>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-44" value="radio-44" name="gross" />
-          <label class="gaccca-radio__label" for="radio-44">
+          <input type="radio" id="radio-10-25" value="$10 Million to $25 Million" name="onfrm[Annual_Revenue__c]" />
+          <label class="gaccca-radio__label" for="radio-10-25">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">$10 Million to $25 Million</span>
           </label>
         </span>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-44" value="radio-44" name="gross" />
-          <label class="gaccca-radio__label" for="radio-44">
+          <input type="radio" id="radio-25-more" value="$25 Million or More" name="onfrm[Annual_Revenue__c]" />
+          <label class="gaccca-radio__label" for="radio-25-more">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">$25 Million or More</span>
           </label>
@@ -221,38 +221,38 @@
         <label class="gaccca-form-element__label" for="text-input-id-fn">
           Type of Entity: <span class="gaccca-text-required" title="required">*</span> </label>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-43" value="radio-43" name="gross " checked="" />
-          <label class="gaccca-radio__label" for="radio-43">
+          <input type="radio" id="radio-corporation"  value="Corporation" name="onfrm[Type_of_Entity__c]"checked="" />
+          <label class="gaccca-radio__label" for="radio-corporation">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Corporation</span>
           </label>
         </span>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-44" value="radio-44" name="gross" />
-          <label class="gaccca-radio__label" for="radio-44">
+          <input type="radio" id="radio-partnership"  value="Partnership" name="onfrm[Type_of_Entity__c]" />
+          <label class="gaccca-radio__label" for="radio-partnership">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Partnership</span>
           </label>
         </span>
         <span class="gaccca-radio">
 
-          <input type="radio" id="radio-44" value="radio-44" name="gross" />
-          <label class="gaccca-radio__label" for="radio-44">
+          <input type="radio" id="radio-government" value="Government/Public Sector" name="onfrm[Type_of_Entity__c]" />
+          <label class="gaccca-radio__label" for="radio-government">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Government/Public Sector</span>
           </label>
         </span>
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-44" value="radio-44" name="gross" />
-          <label class="gaccca-radio__label" for="radio-44">
+          <input type="radio" id="radio-non-profit" value="Non Profit" name="onfrm[Type_of_Entity__c]" />
+          <label class="gaccca-radio__label" for="radio-non-profit">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Non Profit</span>
           </label>
         </span>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-44" value="radio-44" name="gross" />
-          <label class="gaccca-radio__label" for="radio-44">
+          <input type="radio" id="radio-other"  value="other" name="onfrm[Type_of_Entity__c]" />
+          <label class="gaccca-radio__label" for="radio-other">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">other</span>
           </label>
@@ -300,13 +300,13 @@
           Is this the only location/branch of this business? <span class="gaccca-text-required" title="required">*</span> </label>
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-yes" value="radio-yes" name="business" checked="" />
+          <input type="radio" id="radio-yes" value="Yes" name="onfrm[Is_this_the_only_branch_of_this_business__c]" checked="" />
           <label class="gaccca-radio__label" for="radio-yes">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Yes</span>
           </label>
 
-          <input type="radio" id="radio-no" value="radio-no" name="business" />
+          <input type="radio" id="radio-no" value="No" name="onfrm[Is_this_the_only_branch_of_this_business__c]" />
           <label class="gaccca-radio__label" for="radio-no">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">No</span>
@@ -329,14 +329,14 @@
           Is this the head office location? <span class="gaccca-text-required" title="required">*</span> </label>
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-yes" value="radio-yes" name="office_location" checked="" />
-          <label class="gaccca-radio__label" for="radio-yes">
+          <input type="radio" id="radio-head-location-yes" value="Yes" name="onfrm[Is_this_the_Head_Office_location__c]" checked="" />
+          <label class="gaccca-radio__label" for="radio-head-location-yes">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Yes</span>
           </label>
 
-          <input type="radio" id="radio-no" value="radio-no" name="office_location" />
-          <label class="gaccca-radio__label" for="radio-no">
+          <input type="radio" id="radio-head-location-no" value="No" name="onfrm[Is_this_the_Head_Office_location__c]" />
+          <label class="gaccca-radio__label" for="radio-head-location-no">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">No</span>
           </label>
@@ -362,14 +362,14 @@
           Is the office a home office? <span class="gaccca-text-required" title="required">*</span> </label>
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-yes" value="radio-yes" name="home_office" checked="" />
-          <label class="gaccca-radio__label" for="radio-yes">
+          <input type="radio" id="radio-home-office-yes" value="Yes" name="onfrm[Is_the_office_a_home_office__c]" checked="" />
+          <label class="gaccca-radio__label" for="radio-home-office-yes">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Yes</span>
           </label>
 
-          <input type="radio" id="radio-no" value="radio-no" name="home_office" />
-          <label class="gaccca-radio__label" for="radio-no">
+          <input type="radio" id="radio-home-office-no"  value="No" name="onfrm[Is_the_office_a_home_office__c]"/>
+          <label class="gaccca-radio__label" for="radio-home-office-no">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">No</span>
           </label>
@@ -389,7 +389,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-8">
         If yes, is the work space separate from the living area? Please describe: <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <textarea name="onfrm[Is_the_office_a_home_office__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Is_the_office_a_home_office__c'])?$datas['onfrm']['Is_the_office_a_home_office__c']:''}}</textarea>
+        <textarea name="onfrm[If_yes_is_the_work_space_separate__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['If_yes_is_the_work_space_separate__c'])?$datas['onfrm']['If_yes_is_the_work_space_separate__c']:''}}</textarea>
 
       </div>
     </div>
@@ -406,14 +406,14 @@
           Does the office include restrooms for employees and interns/trainees?: <span class="gaccca-text-required" title="required">*</span> </label>
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-yes" value="radio-yes" name="include_restrooms" checked="" />
-          <label class="gaccca-radio__label" for="radio-yes">
+          <input type="radio" id="radio-include-restrooms-yes" name="onfrm[Does_the_office_include_restrooms__c]" value="Yes" checked="" />
+          <label class="gaccca-radio__label" for="radio-include-restrooms-yes">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Yes</span>
           </label>
 
-          <input type="radio" id="radio-no" value="radio-no" name="include_restrooms" />
-          <label class="gaccca-radio__label" for="radio-no">
+          <input type="radio" id="radio-include-restrooms-no" value="No" name="onfrm[Does_the_office_include_restrooms__c]" />
+          <label class="gaccca-radio__label" for="radio-include-restrooms-no">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">No</span>
           </label>
@@ -437,14 +437,14 @@
         </label>
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-yes" value="radio-yes" name="company_hosted" checked="" />
-          <label class="gaccca-radio__label" for="radio-yes">
+          <input type="radio" id="radio-hosted-trainees-yes" value="Yes" name="onfrm[Has_the_company_hosted_T_I_before__c]" checked="" />
+          <label class="gaccca-radio__label" for="radio-hosted-trainees-yes">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Yes</span>
           </label>
 
-          <input type="radio" id="radio-no" value="radio-no" name="company_hosted" />
-          <label class="gaccca-radio__label" for="radio-no">
+          <input type="radio" id="radio-hosted-trainees-no" value="No" name="onfrm[Has_the_company_hosted_T_I_before__c]" />
+          <label class="gaccca-radio__label" for="radio-hosted-trainees-no">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">No</span>
           </label>
@@ -479,14 +479,14 @@
           Will the intern/trainee have his own working space/desk: <span class="gaccca-text-required" title="required">*</span> </label>
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-yes" value="radio-yes" name="own_working_space" checked="" />
-          <label class="gaccca-radio__label" for="radio-yes">
+          <input type="radio" id="radio-own-working-space-yes" value="Yes" name="onfrm[Will_the_T_I_have_own_working_space__c]" value="Yes" checked="" />
+          <label class="gaccca-radio__label" for="radio-own-working-space-yes">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Yes</span>
           </label>
 
-          <input type="radio" id="radio-no" value="radio-no" name="own_working_space" />
-          <label class="gaccca-radio__label" for="radio-no">
+          <input type="radio" id="radio-no" value="radio-own-working-space-no" name="onfrm[Will_the_T_I_have_own_working_space__c]" value="No" />
+          <label class="gaccca-radio__label" for="radio-own-working-space-no">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">No</span>
           </label>
@@ -534,14 +534,14 @@
           Will the intern/trainee be using any equipment that requires special training or safety procedures? <span class="gaccca-text-required" title="required">*</span> </label>
 
         <span class="gaccca-radio">
-          <input type="radio" id="radio-yes" value="radio-yes" name="using_any_equipment" checked="" />
-          <label class="gaccca-radio__label" for="radio-yes">
+          <input type="radio" id="radio-equipment-yes" value="Yes" name="onfrm[Equipment_that_requires_special_training__c]" checked="" />
+          <label class="gaccca-radio__label" for="radio-equipment-yes">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Yes</span>
           </label>
 
-          <input type="radio" id="radio-no" value="radio-no" name="using_any_equipment" />
-          <label class="gaccca-radio__label" for="radio-no">
+          <input type="radio" id="radio-equipment-no" value="No" name="onfrm[Equipment_that_requires_special_training__c]" />
+          <label class="gaccca-radio__label" for="radio-equipment-no">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">No</span>
           </label>
@@ -585,7 +585,7 @@
               Appearance of Company: <span class="gaccca-text-required" title="required">*</span> </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-appearance-excellent" value="radio-appearance-excellent" name="appearance_of_company" checked="" />
+              <input type="radio" id="radio-appearance-excellent" value="Excellent" name="onfrm[Appearance_of_Company__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-appearance-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -593,27 +593,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-appearance-very-good" value="radio-appearance-very-good" name="appearance_of_company" checked="" />
+              <input type="radio" id="radio-appearance-very-good" value="Very good" name="onfrm[Appearance_of_Company__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-appearance-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-appearance-good" value="radio-appearance-good" name="appearance_of_company" checked="" />
+              <input type="radio" id="radio-appearance-good" value="Good" name="onfrm[Appearance_of_Company__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-appearance-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-appearance-fair" value="radio-appearance-fair" name="appearance_of_company" checked="" />
+              <input type="radio" id="radio-appearance-fair" value="Fair" name="onfrm[Appearance_of_Company__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-appearance-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-appearance-poor" value="radio-appearance-poor" name="appearance_of_company" checked="" />
+              <input type="radio" id="radio-appearance-poor" value="Poor" name="onfrm[Appearance_of_Company__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-appearance-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -629,7 +629,7 @@
             </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-facilities-excellent" value="radio-facilities-excellent" name="facilities" checked="" />
+              <input type="radio" id="radio-facilities-excellent" value="Excellent"name="onfrm[Facilities_Buildings_Workspace_etc__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-facilities-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -637,27 +637,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-facilities-very-good" value="radio-facilities-very-good" name="facilities" checked="" />
+              <input type="radio" id="radio-facilities-very-good" value="Very good" name="onfrm[Facilities_Buildings_Workspace_etc__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-facilities-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-facilities-good" value="radio-facilities-good" name="facilities" checked="" />
+              <input type="radio" id="radio-facilities-good" value="Good" name="onfrm[Facilities_Buildings_Workspace_etc__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-facilities-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-facilities-fair" value="radio-facilities-fair" name="facilities" checked="" />
+              <input type="radio" id="radio-facilities-fair" value="Fair" name="onfrm[Facilities_Buildings_Workspace_etc__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-facilities-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-facilities-poor" value="radio-facilities-poor" name="facilities" checked="" />
+              <input type="radio" id="radio-facilities-poor" value="Poor" name="onfrm[Facilities_Buildings_Workspace_etc__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-facilities-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -674,7 +674,7 @@
               externally to be warehouse: <span class="gaccca-text-required" title="required">*</span> </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-relativity_of_the_company-excellent" value="radio-relativity_of_the_company-excellent" name="relativity_of_the_company" checked="" />
+              <input type="radio" id="radio-relativity_of_the_company-excellent" value="Excellent" name="onfrm[Company_s_facade_vs_business__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-relativity_of_the_company-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -682,27 +682,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-relativity_of_the_company-very-good" value="radio-relativity_of_the_company-very-good" name="relativity_of_the_company" checked="" />
+              <input type="radio" id="radio-relativity_of_the_company-very-good" value="Very good" name="onfrm[Company_s_facade_vs_business__c]"checked="" />
               <label class="gaccca-radio__label" for="radio-relativity_of_the_company-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-relativity_of_the_company-good" value="radio-relativity_of_the_company-good" name="relativity_of_the_company" checked="" />
+              <input type="radio" id="radio-relativity_of_the_company-good" value="Good" name="onfrm[Company_s_facade_vs_business__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-relativity_of_the_company-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-relativity_of_the_company-fair" value="radio-relativity_of_the_company-fair" name="relativity_of_the_company" checked="" />
+              <input type="radio" id="radio-relativity_of_the_company-fair" value="Fair" name="onfrm[Company_s_facade_vs_business__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-relativity_of_the_company-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-relativity_of_the_company-poor" value="radio-relativity_of_the_company-poor" name="relativity_of_the_company" checked="" />
+              <input type="radio" id="radio-relativity_of_the_company-poor" value="Poor" name="onfrm[Company_s_facade_vs_business__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-relativity_of_the_company-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -716,7 +716,7 @@
               Number of desks and/or office space correlates with the # of employees reported: <span class="gaccca-text-required" title="required">*</span> </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-office_space-excellent" value="radio-office_space-excellent" name="office_space" checked="" />
+              <input type="radio" id="radio-office_space-excellent" value="Excellent" name="onfrm[Number_of_desks_and_or_office_space__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-office_space-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -724,27 +724,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-office_space-very-good" value="radio-office_space-very-good" name="office_space" checked="" />
+              <input type="radio" id="radio-office_space-very-good" value="Very good" name="onfrm[Number_of_desks_and_or_office_space__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-office_space-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-office_space-good" value="radio-office_space-good" name="office_space" checked="" />
+              <input type="radio" id="radio-office_space-good" value="Good" name="onfrm[Number_of_desks_and_or_office_space__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-office_space-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-office_space-fair" value="radio-office_space-fair" name="office_space" checked="" />
+              <input type="radio" id="radio-office_space-fair" value="Fair" name="onfrm[Number_of_desks_and_or_office_space__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-office_space-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-office_space-poor" value="radio-office_space-poor" name="office_space" checked="" />
+              <input type="radio" id="radio-office_space-poor" value="Poor" name="onfrm[Number_of_desks_and_or_office_space__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-office_space-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -760,7 +760,7 @@
               Materials and communication is being conducted in English: <span class="gaccca-text-required" title="required">*</span> </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-materials_and_communication-excellent" value="radio-materials_and_communication-excellent" name="materials_and_communication" checked="" />
+              <input type="radio" id="radio-materials_and_communication-excellent" value="Excellent" name="onfrm[communication_is_being_conducted_in_Eng__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-materials_and_communication-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -768,27 +768,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-materials_and_communication-very-good" value="radio-materials_and_communication-very-good" name="materials_and_communication" checked="" />
+              <input type="radio" id="radio-materials_and_communication-very-good" value="Very good" name="onfrm[communication_is_being_conducted_in_Eng__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-materials_and_communication-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-materials_and_communication-good" value="radio-materials_and_communication-good" name="materials_and_communication" checked="" />
+              <input type="radio" id="radio-materials_and_communication-good" value="Good" name="onfrm[communication_is_being_conducted_in_Eng__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-materials_and_communication-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-materials_and_communication-fair" value="radio-materials_and_communication-fair" name="materials_and_communication" checked="" />
+              <input type="radio" id="radio-materials_and_communication-fair" value="Fair" name="onfrm[communication_is_being_conducted_in_Eng__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-materials_and_communication-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-materials_and_communication-poor" value="radio-materials_and_communication-poor" name="materials_and_communication" checked="" />
+              <input type="radio" id="radio-materials_and_communication-poor" value="Poor" name="onfrm[communication_is_being_conducted_in_Eng__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-materials_and_communication-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -802,7 +802,7 @@
               Facilities, structure, and staff are able to provide the Intern/Trainee with hands-on training: <span class="gaccca-text-required" title="required">*</span> </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-hands_on_training-excellent" value="radio-hands_on_training-excellent" name="hands_on_training" checked="" />
+              <input type="radio" id="radio-hands_on_training-excellent" value="Excellent" name="onfrm[Able_to_provide_hands_on_training__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-hands_on_training-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -810,27 +810,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-hands_on_training-very-good" value="radio-hands_on_training-very-good" name="hands_on_training" checked="" />
+              <input type="radio" id="radio-hands_on_training-very-good" value="Very good" name="onfrm[Able_to_provide_hands_on_training__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-hands_on_training-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-hands_on_training-good" value="radio-hands_on_training-good" name="hands_on_training" checked="" />
+              <input type="radio" id="radio-hands_on_training-good" value="Good" name="onfrm[Able_to_provide_hands_on_training__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-hands_on_training-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-hands_on_training-fair" value="radio-hands_on_training-fair" name="hands_on_training" checked="" />
+              <input type="radio" id="radio-hands_on_training-fair" value="Fair" name="onfrm[Able_to_provide_hands_on_training__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-hands_on_training-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-hands_on_training-poor" value="radio-hands_on_training-poor" name="hands_on_training" checked="" />
+              <input type="radio" id="radio-hands_on_training-poor" value="Poor" name="onfrm[Able_to_provide_hands_on_training__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-hands_on_training-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -846,7 +846,7 @@
               Appearance, professionalism, and demeanor of staff/employer <span class="gaccca-text-required" title="required">*</span> </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-demeanor_of_staff-excellent" value="radio-demeanor_of_staff-excellent" name="demeanor_of_staff" checked="" />
+              <input type="radio" id="radio-demeanor_of_staff-excellent" value="Excellent" name="onfrm[Appearance_professionalism_of_staff__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-demeanor_of_staff-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -854,27 +854,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-demeanor_of_staff-very-good" value="radio-demeanor_of_staff-very-good" name="demeanor_of_staff" checked="" />
+              <input type="radio" id="radio-demeanor_of_staff-very-good" value="Very good" name="onfrm[Appearance_professionalism_of_staff__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-demeanor_of_staff-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-demeanor_of_staff-good" value="radio-demeanor_of_staff-good" name="demeanor_of_staff" checked="" />
+              <input type="radio" id="radio-demeanor_of_staff-good" value="Good" name="onfrm[Appearance_professionalism_of_staff__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-demeanor_of_staff-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-demeanor_of_staff-fair" value="radio-demeanor_of_staff-fair" name="demeanor_of_staff" checked="" />
+              <input type="radio" id="radio-demeanor_of_staff-fair" value="Fair" name="onfrm[Appearance_professionalism_of_staff__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-demeanor_of_staff-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-demeanor_of_staff-poor" value="radio-demeanor_of_staff-poor" name="demeanor_of_staff" checked="" />
+              <input type="radio" id="radio-demeanor_of_staff-poor" value="Poor" name="onfrm[Appearance_professionalism_of_staff__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-demeanor_of_staff-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -887,7 +887,7 @@
               Appearance of site’s neighborhood, grounds, and location <span class="gaccca-text-required" title="required">*</span> </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-grounds_and_location-excellent" value="radio-grounds_and_location-excellent" name="grounds_and_location" checked="" />
+              <input type="radio" id="radio-grounds_and_location-excellent" value="Excellent" name="onfrm[Appearance_of_site_s_neighborhood__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-grounds_and_location-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -895,27 +895,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-grounds_and_location-very-good" value="radio-grounds_and_location-very-good" name="grounds_and_location" checked="" />
+              <input type="radio" id="radio-grounds_and_location-very-good" value="Very good" name="onfrm[Appearance_of_site_s_neighborhood__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-grounds_and_location-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-grounds_and_location-good" value="radio-grounds_and_location-good" name="grounds_and_location" checked="" />
+              <input type="radio" id="radio-grounds_and_location-good" value="Good" name="onfrm[Appearance_of_site_s_neighborhood__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-grounds_and_location-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-grounds_and_location-fair" value="radio-grounds_and_location-fair" name="grounds_and_location" checked="" />
+              <input type="radio" id="radio-grounds_and_location-fair" value="Fair" name="onfrm[Appearance_of_site_s_neighborhood__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-grounds_and_location-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-grounds_and_location-poor" value="radio-grounds_and_location-poor" name="grounds_and_location" checked="" />
+              <input type="radio" id="radio-grounds_and_location-poor" value="Poor" name="onfrm[Appearance_of_site_s_neighborhood__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-grounds_and_location-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -928,7 +928,7 @@
               Adequacy/accessibility of the site to public transportation <span class="gaccca-text-required" title="required">*</span> </label>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-public_transportation-excellent" value="radio-public_transportation-excellent" name="public_transportation" checked="" />
+              <input type="radio" id="radio-public_transportation-excellent" value="Excellent" name="onfrm[Accessibility_of_public_transportation__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-public_transportation-excellent">
                 <span class="gaccca-radio_faux"></span>
 
@@ -936,27 +936,27 @@
             </span>
           </td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-public_transportation-very-good" value="radio-public_transportation-very-good" name="public_transportation" checked="" />
+              <input type="radio" id="radio-public_transportation-very-good" value="Very good" name="onfrm[Accessibility_of_public_transportation__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-public_transportation-very-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-public_transportation-good" value="radio-public_transportation-good" name="public_transportation" checked="" />
+              <input type="radio" id="radio-public_transportation-good" value="Good" name="onfrm[Accessibility_of_public_transportation__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-public_transportation-good">
                 <span class="gaccca-radio_faux"></span>
 
               </label>
             </span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-public_transportation-fair" value="radio-public_transportation-fair" name="public_transportation" checked="" />
+              <input type="radio" id="radio-public_transportation-fair" value="Fair" name="onfrm[Accessibility_of_public_transportation__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-public_transportation-fair">
                 <span class="gaccca-radio_faux"></span>
 
               </label></span></td>
           <td style="text-align: center;"><span class="gaccca-radio">
-              <input type="radio" id="radio-public_transportation-poor" value="radio-public_transportation-poor" name="public_transportation" checked="" />
+              <input type="radio" id="radio-public_transportation-poor" value="Poor" name="onfrm[Accessibility_of_public_transportation__c]" checked="" />
               <label class="gaccca-radio__label" for="radio-public_transportation-poor">
                 <span class="gaccca-radio_faux"></span>
               </label></span></td>
@@ -981,13 +981,13 @@
           If you were seeking a Training/Internship position, would you find this company a pleasant environment in
           which to train/intern?: <span class="gaccca-text-required" title="required">*</span> </label>
         <span class="gaccca-radio">
-          <input type="radio" id="radio-internship_position-yes" value="radio-internship_position-yes" name="internship_position" checked="" />
+          <input type="radio" id="radio-internship_position-yes"  value="Yes" name="onfrm[Would_you_find_a_pleasant_environment__c]" checked="" />
           <label class="gaccca-radio__label" for="radio-internship_position-yes">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">Yes</span>
           </label>
-          <input type="radio" id="radio-internship_position-no" value="radio-internship_position-no" name="radio-internship_position-no" />
-          <label class="gaccca-radio__label" for="radio-mr">
+          <input type="radio" id="radio-internship_position-no" value="No" name="onfrm[Would_you_find_a_pleasant_environment__c]" />
+          <label class="gaccca-radio__label" for="radio-internship_position-no">
             <span class="gaccca-radio_faux"></span>
             <span class="gaccca-padding-right-25">No</span>
           </label>
@@ -1169,6 +1169,7 @@
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>You can sign digitally online with your mouse or on your phone with your finger.</p>
       </div>
+      @include('common.signHTML')
     </div>
 
 
