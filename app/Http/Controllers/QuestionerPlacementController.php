@@ -13,7 +13,19 @@ class QuestionerPlacementController extends Controller
      */
     public function index()
     {
-        return view('others/QuestionerPlacementService');
+
+        if (!isset($_GET['orgid'])) {
+           
+            return 'App\Services\Helper'::returnUrl();
+        
+    } else {
+        $idCon = 'isOrganizationLink' . $_GET['orgid'];
+    }
+    $datas = 'App\Services\Helper'::getRequest('ApiQuestionerPlacementServiceClass/' . $idCon);
+    $datas = json_decode($datas, true);
+    $datas = json_decode($datas, true);
+    //echo '<pre>'; print_r($datas); die;
+    return view('others/QuestionerPlacementService')->with(compact('datas'));
     }
 
     /**
@@ -34,9 +46,22 @@ class QuestionerPlacementController extends Controller
      */
     public function store(Request $request)
     {
-        echo "<pre>";
-        print_r($request->all());
-        die;
+        $finalReq=$request->all();
+        $EncId=$finalReq['app']['Encrypted_Host_Company_Id__c'];
+        $finalReq['applicantData'] = json_encode($finalReq['app']);
+        $finalReq['onlineFormData'] = json_encode($finalReq['onfrm']);
+
+        unset($finalReq['_token']);
+        unset($finalReq['app']);
+        unset($finalReq['onfrm']);
+        //echo '<pre>'; print_r($finalReq);die;
+
+        $response='App\Services\Helper'::postRequest($finalReq, 'ApiQuestionerPlacementServiceClass');
+        if($response=='"OK"'){
+        return redirect()->action('QuestionerPlacementController@index', ['isSave' => 1, 'orgid' => $EncId]);
+        }else{
+            echo $response;die;
+        }
     }
 
     /**
