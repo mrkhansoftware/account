@@ -231,10 +231,10 @@ Route::get('/JVisaParticipantInfo', 'JVisaParticipantInfoController@index');
 Route::resource('AddNewParticipant', 'AddNewParticipantController');
 Route::get('/Add_New_Participant', 'AddNewParticipantController@index');
 
-Route::get('/existing_customer_list', 'AddNewParticipantController@existingCustomerList');
+Route::get('/existing_customer_list', 'AddNewParticipantController@existingCustomerList'); 
 
 Route::get('/customer_information', 'AddNewParticipantController@existingCustomerInfo');
-Route::post('resumeDetails2', 'ApplicantResumeController@resumeDetails2');
+Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPassword');
 
 
 
@@ -268,6 +268,7 @@ Route::post('/b1VideScriptReady', 'VideoResumeController@scriptreadySubmit');
 Route::post('/writeScriptPlacement', 'WriteYourScriptController@writeScriptPlacementMethod'); 
 Route::post('/applicantResumePlacement', 'ApplicantResumeController@ajaxApplicantResume'); 
 Route::post('/scheduleCallBooking', 'ScheduleCallController@ajaxscheduleCall'); 
+Route::post('/applicantResumeAjax', 'ApplicantResumeController@applicantResumeAjaxCall'); 
 Route::get('/resetPassword', 'LoginController@resetPassword');
 
 

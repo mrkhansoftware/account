@@ -2,11 +2,20 @@
 <html>
 
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://assets.ziggeo.com/v2-stable/ziggeo.css" />
     <link href="{{ asset('css/slds.css') }}" rel='stylesheet'>
     <link href="{{ asset('css/all.css') }}" rel='stylesheet'>
     <script src="https://assets.ziggeo.com/v2-stable/ziggeo.js"></script>
     <script>
+        if ("{{$datas['viewerType']}}" == "hrPerson") {
+            var urlInfo = window.location.protocol + "//" + window.location.host + window.location.pathname + '?id={{$datas["contID"]}}&status=open&appId={{$datas["applicationId"]}}';
+            window.history.pushState({
+                path: urlInfo
+            }, '', urlInfo);
+        }
+
+
         var ziggeoApp = new ZiggeoApi.V2.Application({
             token: "80f9af3ec1dfe032714fd61c53f94376"
         });
@@ -88,34 +97,51 @@
             list-style-image: initial;
             list-style-position: initial;
         }
+
+        .instrctionError {
+            text-align: left;
+            color: #ec0909;
+            font-weight: bold;
+        }
+
+        .instrction {
+            text-align: left;
+        }
     </style>
 </head>
 
 <body class="slds-scope" cz-shortcut-listen="true">
 
-@if (isset($datas['needPassword']) && $datas['needPassword'])
-<div class='mainContainer'>
-                <div class="boxContainer" >
-                    <div style="padding-bottom: 19px;color: red;font-size: 15px;">
-                    </div>
-                    <div class='instrction'>
-                        Please enter the password we sent in the email with this link to view the application. 
-                    </div>
-                   
-{!! Form::open(['action' => 'ApplicantResumeController@resumeDetails2','method' => 'POST']) !!}
- <div>
-                        <input Class="inputPass" name="password" type='password' placeholder="Password" value="" required/>
-                    </div>
-                    <div>
-                        
-                        
-                        <button class="inputBtn">Submit</button> 
-                    </div>
-                    {!! Form::close() !!}
-                </div>
+    @if (isset($datas['needPassword']) && $datas['needPassword'])
+    <div class='mainContainer'>
+        <div class="boxContainer">
+            <div style="padding-bottom: 19px;color: red;font-size: 15px;">
+            </div>
+            <div class='instrction'>
+                Please enter the password we sent in the email with this link to view the application.
             </div>
 
-@else
+            {!! Form::open(['action' => 'ApplicantResumeController@resumeDetailsPassword','method' => 'POST']) !!}
+            <div>
+                <input Class="inputPass" name="password" type='password' placeholder="Password" value="" required />
+                <input Class="inputPass" name="contID" type='hidden' placeholder="Password" value="{{$datas['contID']}}"  />
+                <input Class="inputPass" name="applicationId" type='hidden' placeholder="Password" value="{{$datas['applicationId']}}"  />
+                @if (isset($datas['isWrongPassword']) && $datas['isWrongPassword'])
+                <div class='instrctionError'>
+                    Password is wrong.
+                </div>
+                @endif
+            </div>
+            <div>
+
+
+                <button class="inputBtn">Submit</button>
+            </div>
+            {!! Form::close() !!}
+        </div>
+    </div>
+
+    @else
     @if(isset($datas['app']['Template_design__c']) && $datas['app']['Template_design__c']=='One')
 
     @include('common.ApplicantCVResumeTemplateOne',['datas' =>isset($datas)?$datas:''])
@@ -203,13 +229,14 @@
 
                                 </div>
                             </div>
+                            <input type="hidden"  id='feedbackOptionSelected'  />
                         </div>
 
                         <div class="slds-grid ">
                             <div class="slds-form-element slds-element slds-hide-field" id='option3__field1'>
                                 <label class="slds-form-element__label">Possible Date for a Interview</label>
                                 <div class="slds-form-element__control">
-                                    <input type="text" name='psbl' id='datepicker2' Class="slds-input" />
+                                    <input type="text" name='psbl' id='datepicker2' Class="slds-input slds-field" />
                                 </div>
 
                             </div>
@@ -239,7 +266,7 @@
                             <div class="slds-form-element slds-element slds-hide-field" id='option4__field1'>
                                 <label class="slds-form-element__label" for="Fistname">First name</label>
                                 <div class="slds-form-element__control">
-                                    <input type="text" id="Fistname" class="  slds-input" />
+                                    <input type="text" id="Fistname" class="  slds-input slds-field" />
                                 </div>
                             </div>
                         </div>
@@ -248,7 +275,7 @@
                             <div class="slds-form-element slds-element slds-hide-field" id='option4__field2'>
                                 <label class="slds-form-element__label" for="Lastname">Last name</label>
                                 <div class="slds-form-element__control">
-                                    <input type="text" id="Lastname" class="  slds-input" />
+                                    <input type="text" id="Lastname" class="  slds-input slds-field" />
                                 </div>
                             </div>
                         </div>
@@ -258,7 +285,7 @@
                             <div class="slds-form-element slds-element slds-hide-field" id='option4__field3'>
                                 <label class="slds-form-element__label" for="text-input-id-1">Email address</label>
                                 <div class="slds-form-element__control">
-                                    <input type="text" id="Emailaddress" class="  slds-input" />
+                                    <input type="text" id="Emailaddress" class="  slds-input slds-field" />
                                 </div>
                             </div>
                         </div>
@@ -269,7 +296,7 @@
                             <div class="slds-form-element slds-element slds-hide-field" id='option4__field4'>
                                 <label class="slds-form-element__label" for="text-input-id-1">Phone number</label>
                                 <div class="slds-form-element__control">
-                                    <input type="text" id="Phonenumber" class="  slds-input" />
+                                    <input type="text" id="Phonenumber" class="  slds-input slds-field" />
                                 </div>
                             </div>
                         </div>
@@ -281,7 +308,7 @@
                             <div class="slds-form-element slds-element  slds-hide-field" id='optionAll__field1'>
                                 <label class="slds-form-element__label" for="shortMessage">Please add a short message or other information.</label>
                                 <div class="slds-form-element__control">
-                                    <textarea Class="slds-textarea "></textarea>
+                                    <textarea Class="slds-textarea slds-field " id='shortMessage'></textarea>
                                 </div>
                             </div>
 
@@ -289,9 +316,9 @@
                         </div>
                         <div class="slds-grid ">
                             <div class="slds-form-element slds-hide-field" id='optionAll__field2'>
-                                <button class="slds-button slds-button_brand">
+                                <span class="slds-button slds-button_brand" id='feedbackButton'>
                                     SEND
-                                </button>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -332,6 +359,85 @@
                 }
 
             });
+            $("#feedbackButton").click(function() {
+             var radioVal=$('#feedbackOptionSelected').val();
+             var feedbackInfo='';
+            if(radioVal == 'I am interested in this applicant, please give me a call'){ 
+                
+                var feedbackInformation = document.getElementById('shortMessage').value;
+                feedbackInfo=commaSlaceHandler(feedbackInformation);
+            }else if(radioVal == 'I am interested, would like more information about your programs'){
+                
+                var feedbackInformation = document.getElementById('shortMessage').value;
+                feedbackInfo=commaSlaceHandler(feedbackInformation);
+            }else if(radioVal == 'I am interested in scheduling an interview with this applicant'){
+                var feedbackInformation='';
+                if(document.getElementById('datepicker2').value.trim()!=''){
+                feedbackInformation = 'Possible Date for a Interview : ';
+                feedbackInformation+=document.getElementById('datepicker2').value+'\n';
+                }
+                
+                feedbackInformation+='Time : ';
+                feedbackInformation+=document.getElementById('input_2_51_1').value+':';
+                feedbackInformation+=document.getElementById('input_2_51_1').value+' ';
+                feedbackInformation+=document.getElementById('input_2_51_3').value+'\n';
+                if(document.getElementById('shortMessage').value.trim()!=''){
+                feedbackInformation+='Description : ';
+                feedbackInformation+=document.getElementById('shortMessage').value;
+                }
+                feedbackInfo=commaSlaceHandler(feedbackInformation);
+            }else if(radioVal == 'Please reach out to my colleague in regards to this applicant'){
+                var feedbackInformation='';
+                if(document.getElementById('Fistname').value.trim()!=''){
+                feedbackInformation = 'Fist name : ';
+                feedbackInformation+=document.getElementById('Fistname').value+'\n';
+                }
+                if(document.getElementById('Lastname').value.trim()!=''){
+                feedbackInformation+='Last name : ';
+                feedbackInformation+=document.getElementById('Lastname').value+'\n';
+                }
+                if(document.getElementById('Emailaddress').value.trim()!=''){
+                feedbackInformation+='Email : ';
+                feedbackInformation+=document.getElementById('Emailaddress').value+'\n';
+                }
+                if(document.getElementById('Phonenumber').value.trim()!=''){
+                feedbackInformation+='Phone number : ';
+                feedbackInformation+=document.getElementById('Phonenumber').value+'\n';
+                }
+                if(document.getElementById('shortMessage').value.trim()!=''){
+                feedbackInformation+='Message : ';
+                feedbackInformation+=document.getElementById('shortMessage').value+'\n';
+                }
+                feedbackInfo=commaSlaceHandler(feedbackInformation);
+            }else if(radioVal == 'The applicant profile does not match our needs'){
+                
+                var feedbackInformation = document.getElementById('shortMessage').value;
+                feedbackInfo=commaSlaceHandler(feedbackInformation);
+            }else if(radioVal == 'I am not interested at this time; however, we might have interest in the future'){
+                
+                var feedbackInformation = document.getElementById('shortMessage').value;
+                feedbackInfo=commaSlaceHandler(feedbackInformation);
+            }
+                else if(radioVal == 'I am not interested in participating in your program as a host company'){
+                    
+                    var feedbackInformation = document.getElementById('shortMessage').value;
+                    feedbackInfo=commaSlaceHandler(feedbackInformation);
+                }
+                feedbackInfo='Option: '+radioVal+' '+feedbackInfo;
+               //$(".slds-field").val('');
+               formData={
+                methodType:'sendFeedBackEmail',
+                applicationId:"{{$datas['applicationId']}}",
+                feedbackInfo:feedbackInfo,
+                contID:"{{$datas['contID']}}",
+                viewerType:"{{$datas['viewerType']}}"
+                
+            }
+            //ajaxRequest(formData) 
+            });
+
+
+
         });
         var btns = document.getElementsByClassName("docList");
         for (var i = 0; i < btns.length; i++) {
@@ -343,10 +449,18 @@
         }
 
         function videoStatus() {
-            alert("watched");
+            formData={
+                methodType:'watched',
+                applicationId:"{{$datas['applicationId']}}",
+                contID:"{{$datas['contID']}}",
+                viewerType:"{{$datas['viewerType']}}"
+                
+            }
+            ajaxRequest(formData) 
         }
 
         function optionChoosed(v, opt) {
+            $('#feedbackOptionSelected').val(v.value);
             $('[id^=option4__]').hide();
             $('[id^=option3__]').hide();
             $('[id^=optionAll__]').show();
@@ -356,6 +470,42 @@
                 $('[id^=option4__]').show();
             }
         }
+
+        function commaSlaceHandler(str){
+        if(str!=null && str.length!=0){
+            var strSplitted=str.split("\\");
+            if(strSplitted.length>1){
+                str=strSplitted.join("\\\\"); 
+            }
+            strSplitted=str.split("'");
+            if(strSplitted.length>1){
+                str=strSplitted.join("\\'"); 
+            }
+        }
+        return str;
+    }
+
+function ajaxRequest(formData) {
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+$.ajax({
+    type: 'POST',
+    url: 'applicantResumeAjax',
+    data: formData,
+    dataType: 'json',
+    success: function(data) {    
+console.log(data);
+    },
+    error: function(data) {
+        console.log(data);
+    }
+});
+}
+
+
     </script>
 </body>
 

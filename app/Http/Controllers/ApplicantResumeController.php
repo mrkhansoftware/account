@@ -38,42 +38,6 @@ class ApplicantResumeController extends Controller
 
     }
 
-    public function resumeDetails(){
-        if (isset($_GET['isInternal']) && $_GET['isInternal']=='isInternal') {
-            $idCon='_isInternal_'.$_GET['id'];
-
-        }else if(isset($_GET['status']) && isset($_GET['appId'])){
-            $idCon=$_GET['id'];
-            $idCon.='_hrPerson_'.$_GET['appId'];
-
-        }else{
-            $idCon = 'App\Services\Helper'::sessionConId();
-            if ($idCon == '') {
-                return 'App\Services\Helper'::returnUrl();
-            }
-        }
-        $datas = 'App\Services\Helper'::getRequest('ApiApplicantCVResumeTemplateClass/' . $idCon);
-       $datas = json_decode($datas, true);
-      $datas = json_decode($datas, true);
-//         echo $idCon.'<pre>'; print_r($datas); die;
-
-        return view('placement-program/ApplicantPDFWithVideo')->with(compact('datas'));
-    
-      //  return view('placement-program/ApplicantResume');
-
-    }
-
-    public function resumeDetails2(Request $request){
-       echo $_GET['password3'];
-      print_r( $request->all()); die;
-
-        return view('placement-program/ApplicantPDFWithVideo')->with(compact('datas'));
-    
-      //  return view('placement-program/ApplicantResume');
-
-    }
-
-
 
     public function ajaxApplicantResume(Request $request)
     {
@@ -88,4 +52,45 @@ class ApplicantResumeController extends Controller
     }
 
 
+
+    public function resumeDetails()
+    {
+        if (isset($_GET['isInternal']) && $_GET['isInternal'] == 'isInternal') {
+            $idCon = '_isInternal_' . $_GET['id'];
+        } else if (isset($_GET['status']) && isset($_GET['appId'])) {
+            $idCon = $_GET['id'];
+            $idCon .= '_hrPerson_' . $_GET['appId'];
+        } else {
+            $idCon = 'App\Services\Helper'::sessionConId();
+            if ($idCon == '') {
+                return 'App\Services\Helper'::returnUrl();
+            }
+        }
+        $datas = 'App\Services\Helper'::getRequest('ApiApplicantCVResumeTemplateClass/' . $idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        //echo $idCon.'<pre>'; print_r($datas); die;
+        return view('placement-program/ApplicantPDFWithVideo')->with(compact('datas'));
+
+        //  return view('placement-program/ApplicantResume');
+
+    }
+
+    public function resumeDetailsPassword(Request $request)
+    {
+        $req = $request->all();
+        $idCon = $req['contID'] . '_hrPerson_' .$req['applicationId']. '_passwordStr_' . $req['password'];
+        $datas = 'App\Services\Helper'::getRequest('ApiApplicantCVResumeTemplateClass/' . $idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        return view('placement-program/ApplicantPDFWithVideo', ['articles' => 'a'])->with(compact('datas'));
+    }
+
+
+
+    public function applicantResumeAjaxCall(Request $request)
+    {
+        $finalReq = $request->all();
+        return  'App\Services\Helper'::postRequest($finalReq, 'ApiApplicantCVResumeTemplateClass');
+    }
 }

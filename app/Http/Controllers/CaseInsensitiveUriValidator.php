@@ -9,6 +9,7 @@ class CaseInsensitiveUriValidator implements ValidatorInterface
   public function matches(Route $route, Request $request)
   {
     $path = $request->path() == '/' ? '/' : '/'.$request->path();
+    $path=str_ireplace("/apex","",$path);//handling salesforce links
     return preg_match(preg_replace('/$/','i', $route->getCompiled()->getRegex()), rawurldecode($path));
   }
 }
