@@ -1,6 +1,6 @@
 @include('common.header_without_menu')
 
-@include('common.signScript');
+@include('common.signScript')
 
 {!! Form::open(['action' => 'HCMidPointEvaluationController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 

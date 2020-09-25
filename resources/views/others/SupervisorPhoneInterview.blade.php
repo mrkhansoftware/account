@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
-
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_supervisor']) !!}
+@include('common.signScript')
+{!! Form::open(['action' => 'SupervisorInterviewController@store', 'method' => 'POST',  'id' => 'gacccaForm_supervisor']) !!}
 
 <div class="gaccca-main-containt">
         <h1 class="gaccca-h1-padding">Supervisor Phone Interview</h1>
@@ -240,6 +240,7 @@
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <p>You can sign digitally online with your mouse or on your phone with your finger.</p>
                 </div>
+                @include('common.signHTML')
             </div>
 
 

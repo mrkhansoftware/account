@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_questionbvisa']) !!}
+{!! Form::open(['action' => 'QuestionerBVisaController@store', 'method' => 'POST', 'id' => 'gacccaForm_questionbvisa']) !!}
 
 <div class="gaccca-main-containt">
         <h1 class="gaccca-h1-padding">Please Rate Our B- Visa Service</h1>
@@ -11,7 +11,6 @@
         </div>
 
 
-       
           <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
@@ -45,7 +44,7 @@
                                 
                                 <td>
                                   <span class="gaccca-radio">
-                                    <input type="radio" id="radio-knowledge_about_b_visa43" value="radio-knowledge_about_b_visa43" name="knowledge_about_b_visa" checked="" />
+                                    <input type="radio" id="radio-knowledge_about_b_visa43" value="1" name="QuestionEx1" checked="" />
                                     <label class="gaccca-radio__label" for="radio-knowledge_about_b_visa43">
                                       <span class="gaccca-radio_faux"></span>
                                        
@@ -55,14 +54,14 @@
                               
                               </td>
                                 <td><span class="gaccca-radio">
-                                  <input type="radio" id="radio-knowledge_about_b_visa44" value="radio-knowledge_about_b_visa44" name="knowledge_about_b_visa" />
+                                  <input type="radio" id="radio-knowledge_about_b_visa44" value="radio-knowledge_about_b_visa44" name="QuestionEx1" />
                                   <label class="gaccca-radio__label" for="radio-knowledge_about_b_visa44">
                                     <span class="gaccca-radio_faux"></span>
                                    
                                   </label>
                                </span></td>
                                 <td><span class="gaccca-radio">
-                                  <input type="radio" id="radio-knowledge_about_b_visa45" value="radio-knowledge_about_b_visa45" name="knowledge_about_b_visa" />
+                                  <input type="radio" id="radio-knowledge_about_b_visa45" value="radio-knowledge_about_b_visa45" name="QuestionEx1" />
                                   <label class="gaccca-radio__label" for="radio-knowledge_about_b_visa45">
                                     <span class="gaccca-radio_faux"></span>
                                     
@@ -70,7 +69,7 @@
                                   
                                   </span></td>
                                 <td><span class="gaccca-radio">
-                                  <input type="radio" id="radio-knowledge_about_b_visa46" value="radio-knowledge_about_b_visa46" name="knowledge_about_b_visa" />
+                                  <input type="radio" id="radio-knowledge_about_b_visa46" value="radio-knowledge_about_b_visa46" name="QuestionEx1" />
                             <label class="gaccca-radio__label" for="radio-knowledge_about_b_visa46">
                               <span class="gaccca-radio_faux"></span>
                                
@@ -78,13 +77,13 @@
                         
                         
                                    <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-knowledge_about_b_visa47" value="radio-knowledge_about_b_visa47" name="knowledge_about_b_visa" />
+                                    <input type="radio" id="radio-knowledge_about_b_visa47" value="radio-knowledge_about_b_visa47" name="QuestionEx1" />
                                     <label class="gaccca-radio__label" for="radio-knowledge_about_b_visa47">
                                       <span class="gaccca-radio_faux"></span>
                                       
                                     </label></span></td>
                                  <td><span class="gaccca-radio">
-                                  <input type="radio" id="radio-knowledge_about_b_visa48" value="radio-knowledge_about_b_visa48" name="knowledge_about_b_visa" />
+                                  <input type="radio" id="radio-knowledge_about_b_visa48" value="radio-knowledge_about_b_visa48" name="QuestionEx1" />
                                   <label class="gaccca-radio__label" for="radio-knowledge_about_b_visa48">
                                     <span class="gaccca-radio_faux"></span>
                                      
@@ -148,7 +147,7 @@
                                   
                                   <td>
                                     <span class="gaccca-radio">
-                                      <input type="radio" id="radio-knowledge_about_visa_category43" value="radio-knowledge_about_visa_category43" name="knowledge_about_visa_category" checked="" />
+                                      <input type="radio" id="radio-knowledge_about_visa_category43" value="1" name="QuestionEx2" checked="" />
                                       <label class="gaccca-radio__label" for="radio-knowledge_about_visa_category43">
                                         <span class="gaccca-radio_faux"></span>
                                          
@@ -158,14 +157,14 @@
                                 
                                 </td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-knowledge_about_visa_category44" value="radio-knowledge_about_visa_category44" name="knowledge_about_visa_category" />
+                                    <input type="radio" id="radio-knowledge_about_visa_category44" value="2" name="QuestionEx2" />
                                     <label class="gaccca-radio__label" for="radio-knowledge_about_visa_category44">
                                       <span class="gaccca-radio_faux"></span>
                                      
                                     </label>
                                  </span></td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-knowledge_about_visa_category45" value="radio-knowledge_about_visa_category45" name="knowledge_about_visa_category" />
+                                    <input type="radio" id="radio-knowledge_about_visa_category45" value="3" name="QuestionEx2" />
                                     <label class="gaccca-radio__label" for="radio-knowledge_about_visa_category45">
                                       <span class="gaccca-radio_faux"></span>
                                       
@@ -173,7 +172,7 @@
                                     
                                     </span></td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-knowledge_about_visa_category46" value="radio-knowledge_about_visa_category46" name="knowledge_about_visa_category" />
+                                    <input type="radio" id="radio-knowledge_about_visa_category46" value="4" name="QuestionEx2" />
                               <label class="gaccca-radio__label" for="radio-knowledge_about_visa_category46">
                                 <span class="gaccca-radio_faux"></span>
                                  
@@ -181,13 +180,13 @@
                           
                           
                                      <td><span class="gaccca-radio">
-                                      <input type="radio" id="radio-knowledge_about_visa_category47" value="radio-knowledge_about_visa_category47" name="knowledge_about_visa_category" />
+                                      <input type="radio" id="radio-knowledge_about_visa_category47" value="5" name="QuestionEx2" />
                                       <label class="gaccca-radio__label" for="radio-knowledge_about_visa_category47">
                                         <span class="gaccca-radio_faux"></span>
                                         
                                       </label></span></td>
                                    <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-knowledge_about_visa_category48" value="radio-knowledge_about_visa_category48" name="knowledge_about_visa_category" />
+                                    <input type="radio" id="radio-knowledge_about_visa_category48" value="6" name="QuestionEx2" />
                                     <label class="gaccca-radio__label" for="radio-knowledge_about_visa_category48">
                                       <span class="gaccca-radio_faux"></span>
                                        
@@ -253,7 +252,7 @@
                                   
                                   <td>
                                     <span class="gaccca-radio">
-                                      <input type="radio" id="radio-useful_to_achive_goal43" value="radio-useful_to_achive_goal43" name="useful_to_achive_goal" checked="" />
+                                      <input type="radio" id="radio-useful_to_achive_goal43" value="1" name="QuestionEx3" checked="" />
                                       <label class="gaccca-radio__label" for="radio-useful_to_achive_goal43">
                                         <span class="gaccca-radio_faux"></span>
                                          
@@ -263,14 +262,14 @@
                                 
                                 </td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-useful_to_achive_goal44" value="radio-useful_to_achive_goal44" name="useful_to_achive_goal" />
+                                    <input type="radio" id="radio-useful_to_achive_goal44" value="2" name="QuestionEx3" />
                                     <label class="gaccca-radio__label" for="radio-useful_to_achive_goal44">
                                       <span class="gaccca-radio_faux"></span>
                                      
                                     </label>
                                  </span></td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-useful_to_achive_goal45" value="radio-useful_to_achive_goal45" name="useful_to_achive_goal" />
+                                    <input type="radio" id="radio-useful_to_achive_goal45" value="3" name="QuestionEx3" />
                                     <label class="gaccca-radio__label" for="radio-useful_to_achive_goal45">
                                       <span class="gaccca-radio_faux"></span>
                                       
@@ -278,7 +277,7 @@
                                     
                                     </span></td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-useful_to_achive_goal46" value="radio-useful_to_achive_goal46" name="useful_to_achive_goal" />
+                                    <input type="radio" id="radio-useful_to_achive_goal46" value="4" name="QuestionEx3" />
                               <label class="gaccca-radio__label" for="radio-useful_to_achive_goal46">
                                 <span class="gaccca-radio_faux"></span>
                                  
@@ -286,13 +285,13 @@
                           
                           
                                      <td><span class="gaccca-radio">
-                                      <input type="radio" id="radio-useful_to_achive_goal47" value="radio-useful_to_achive_goal47" name="useful_to_achive_goal" />
+                                      <input type="radio" id="radio-useful_to_achive_goal47" value="5" name="QuestionEx3" />
                                       <label class="gaccca-radio__label" for="radio-useful_to_achive_goal47">
                                         <span class="gaccca-radio_faux"></span>
                                         
                                       </label></span></td>
                                    <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-useful_to_achive_goal48" value="radio-useful_to_achive_goal48" name="useful_to_achive_goal" />
+                                    <input type="radio" id="radio-useful_to_achive_goal48" value="6" name="QuestionEx3" />
                                     <label class="gaccca-radio__label" for="radio-useful_to_achive_goal48">
                                       <span class="gaccca-radio_faux"></span>
                                        
@@ -347,7 +346,7 @@
                                   
                                   <td>
                                     <span class="gaccca-radio">
-                                      <input type="radio" id="radio-worth_booking_our_service43" value="radio-worth_booking_our_service43" name="worth_booking_our_service" checked="" />
+                                      <input type="radio" id="radio-worth_booking_our_service43" value="1" name="QuestionEx4" checked="" />
                                       <label class="gaccca-radio__label" for="radio-worth_booking_our_service43">
                                         <span class="gaccca-radio_faux"></span>
                                          
@@ -357,14 +356,14 @@
                                 
                                 </td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-worth_booking_our_service44" value="radio-worth_booking_our_service44" name="worth_booking_our_service" />
+                                    <input type="radio" id="radio-worth_booking_our_service44" value="2" name="QuestionEx4" />
                                     <label class="gaccca-radio__label" for="radio-worth_booking_our_service44">
                                       <span class="gaccca-radio_faux"></span>
                                      
                                     </label>
                                  </span></td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-worth_booking_our_service45" value="radio-worth_booking_our_service45" name="worth_booking_our_service" />
+                                    <input type="radio" id="radio-worth_booking_our_service45" value="3" name="QuestionEx4" />
                                     <label class="gaccca-radio__label" for="radio-worth_booking_our_service45">
                                       <span class="gaccca-radio_faux"></span>
                                       
@@ -372,7 +371,7 @@
                                     
                                     </span></td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-worth_booking_our_service46" value="radio-worth_booking_our_service46" name="worth_booking_our_service" />
+                                    <input type="radio" id="radio-worth_booking_our_service46" value="4" name="QuestionEx4" />
                               <label class="gaccca-radio__label" for="radio-worth_booking_our_service46">
                                 <span class="gaccca-radio_faux"></span>
                                  
@@ -380,13 +379,13 @@
                           
                           
                                      <td><span class="gaccca-radio">
-                                      <input type="radio" id="radio-worth_booking_our_service47" value="radio-worth_booking_our_service47" name="worth_booking_our_service" />
+                                      <input type="radio" id="radio-worth_booking_our_service47" value="5" name="QuestionEx4" />
                                       <label class="gaccca-radio__label" for="radio-worth_booking_our_service47">
                                         <span class="gaccca-radio_faux"></span>
                                         
                                       </label></span></td>
                                    <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-worth_booking_our_service48" value="radio-worth_booking_our_service48" name="worth_booking_our_service" />
+                                    <input type="radio" id="radio-worth_booking_our_service48" value="6" name="QuestionEx4" />
                                     <label class="gaccca-radio__label" for="radio-worth_booking_our_service48">
                                       <span class="gaccca-radio_faux"></span>
                                        
@@ -439,7 +438,7 @@
                                   
                                   <td>
                                     <span class="gaccca-radio">
-                                      <input type="radio" id="radio-recommend_our_service43" value="radio-recommend_our_service43" name="recommend_our_service" checked="" />
+                                      <input type="radio" id="radio-recommend_our_service43" value="1" name="QuestionEx5" checked="" />
                                       <label class="gaccca-radio__label" for="radio-recommend_our_service43">
                                         <span class="gaccca-radio_faux"></span>
                                          
@@ -449,14 +448,14 @@
                                 
                                 </td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-recommend_our_service44" value="radio-recommend_our_service44" name="recommend_our_service" />
+                                    <input type="radio" id="radio-recommend_our_service44" value="2" name="QuestionEx5" />
                                     <label class="gaccca-radio__label" for="radio-recommend_our_service44">
                                       <span class="gaccca-radio_faux"></span>
                                      
                                     </label>
                                  </span></td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-recommend_our_service45" value="radio-recommend_our_service45" name="recommend_our_service" />
+                                    <input type="radio" id="radio-recommend_our_service45" value="3" name="QuestionEx5" />
                                     <label class="gaccca-radio__label" for="radio-recommend_our_service45">
                                       <span class="gaccca-radio_faux"></span>
                                       
@@ -464,7 +463,7 @@
                                     
                                     </span></td>
                                   <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-recommend_our_service46" value="radio-recommend_our_service46" name="recommend_our_service" />
+                                    <input type="radio" id="radio-recommend_our_service46" value="4" name="QuestionEx5" />
                               <label class="gaccca-radio__label" for="radio-recommend_our_service46">
                                 <span class="gaccca-radio_faux"></span>
                                  
@@ -472,13 +471,13 @@
                           
                           
                                      <td><span class="gaccca-radio">
-                                      <input type="radio" id="radio-recommend_our_service47" value="radio-recommend_our_service47" name="recommend_our_service" />
+                                      <input type="radio" id="radio-recommend_our_service47" value="5" name="QuestionEx5" />
                                       <label class="gaccca-radio__label" for="radio-recommend_our_service47">
                                         <span class="gaccca-radio_faux"></span>
                                         
                                       </label></span></td>
                                    <td><span class="gaccca-radio">
-                                    <input type="radio" id="radio-recommend_our_service48" value="radio-recommend_our_service48" name="recommend_our_service" />
+                                    <input type="radio" id="radio-recommend_our_service48" value="6" name="QuestionEx5" />
                                     <label class="gaccca-radio__label" for="radio-recommend_our_service48">
                                       <span class="gaccca-radio_faux"></span>
                                        
@@ -496,13 +495,9 @@
                       </div>
                     
                     
-                    
-      
                 </div>
                  
               </div>
-
-
 
 
 
@@ -521,17 +516,7 @@
             <button id="gaccca_saveBtn_questionbvisa" class="gaccca-button-save gaccca-button-save-margin">Submit</button>
            
 
-
         </div>
-
-
-
-
-
-       
-
-
- 
 
 
     </div>

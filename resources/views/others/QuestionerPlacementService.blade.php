@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_questioner']) !!}
+{!! Form::open(['action' => 'QuestionerPlacementController@store', 'method' => 'POST', 'id' => 'gacccaForm_questioner']) !!}
 
 <div class="gaccca-main-containt">
         <h1 class="gaccca-h1-padding">We would like your feedback! Please rate our placement program.</h1>
@@ -12,7 +12,6 @@
 
 
           <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
             <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <label class="gaccca-form-element__label" for="text-input-id-8">
@@ -56,7 +55,7 @@
                                   
                                   <td>
                                     <span class="gaccca-radio">
-                                      <input type="radio" id="radio-welcome_call43" value="radio-welcome_call43" name="welcome_call" checked="" />
+                                      <input type="radio" id="radio-welcome_call43" value="1" name="QuestionEx2" checked="" />
                                       <label class="gaccca-radio__label" for="radio-welcome_call43">
                                         <span class="gaccca-radio_faux"></span>
                                          
@@ -66,14 +65,14 @@
                                 
                                 </td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-welcome_call44" value="radio-welcome_call44" name="welcome_call" />
+                                    <input type="radio" id="radio-welcome_call44" value="2" name="QuestionEx2" />
                                     <label class="gaccca-radio__label" for="radio-welcome_call44">
                                       <span class="gaccca-radio_faux"></span>
                                      
                                     </label>
                                  </span></td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-welcome_call45" value="radio-welcome_call45" name="welcome_call" />
+                                    <input type="radio" id="radio-welcome_call45" value="3" name="QuestionEx2" />
                                     <label class="gaccca-radio__label" for="radio-welcome_call45">
                                       <span class="gaccca-radio_faux"></span>
                                       
@@ -81,7 +80,7 @@
                                     
                                     </span></td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-welcome_call46" value="radio-welcome_call46" name="welcome_call" />
+                                    <input type="radio" id="radio-welcome_call46" value="4" name="QuestionEx2" />
                               <label class="gaccca-radio__label" for="radio-welcome_call46">
                                 <span class="gaccca-radio_faux"></span>
                                  
@@ -89,13 +88,13 @@
                           
                           
                                      <td style="text-align: center;"><span class="gaccca-radio">
-                                      <input type="radio" id="radio-welcome_call47" value="radio-welcome_call47" name="welcome_call" />
+                                      <input type="radio" id="radio-welcome_call47" value="5" name="QuestionEx2" />
                                       <label class="gaccca-radio__label" for="radio-welcome_call47">
                                         <span class="gaccca-radio_faux"></span>
                                         
                                       </label></span></td>
                                    <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-welcome_call48" value="radio-welcome_call48" name="welcome_call" />
+                                    <input type="radio" id="radio-welcome_call48" value="6" name="QuestionEx2" />
                                     <label class="gaccca-radio__label" for="radio-welcome_call48">
                                       <span class="gaccca-radio_faux"></span>
                                        
@@ -140,27 +139,27 @@
                             </td>
                             
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-instructions-very-easy" value="radio-instructions-very-easy" name="all_instructions" checked="" />
+                               <input type="radio" id="radio-instructions-very-easy" value="Very easy" name="QuestionEx3" checked="" />
                                <label class="gaccca-radio__label" for="radio-instructions-very-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-instructions-easy" value="radio-instructions-easy" name="all_instructions" checked="" />
+                               <input type="radio" id="radio-instructions-easy" value="Easy" name="QuestionEx3" checked="" />
                                <label class="gaccca-radio__label" for="radio-instructions-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-instructions-somewhat_difficult" value="radio-instructions-somewhat_difficult" name="all_instructions" checked="" />
+                               <input type="radio" id="radio-instructions-somewhat_difficult" value="Somewhat difficult" name="QuestionEx3" checked="" />
                                <label class="gaccca-radio__label" for="radio-instructions-somewhat_difficult">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label></span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-instructions-difficult" value="radio-instructions-difficult" name="all_instructions" checked="" />
+                               <input type="radio" id="radio-instructions-difficult" value="Difficult" name="QuestionEx3" checked="" />
                                <label class="gaccca-radio__label" for="radio-instructions-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                </label></span></td>
@@ -176,27 +175,27 @@
                             </td>
                             
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-uploading_documents-very-easy" value="radio-uploading_documents-very-easy" name="uploading_documents" checked="" />
+                               <input type="radio" id="radio-uploading_documents-very-easy" value="Very easy" name="QuestionEx4" checked="" />
                                <label class="gaccca-radio__label" for="radio-uploading_documents-very-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-uploading_documents-easy" value="radio-uploading_documents-easy" name="uploading_documents" checked="" />
+                               <input type="radio" id="radio-uploading_documents-easy" value="Easy" name="QuestionEx4" checked="" />
                                <label class="gaccca-radio__label" for="radio-uploading_documents-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-uploading_documents-somewhat-difficult" value="radio-uploading_documents-somewhat-difficult" name="uploading_documents" checked="" />
+                               <input type="radio" id="radio-uploading_documents-somewhat-difficult" value="Somewhat difficult" name="QuestionEx4" checked="" />
                                <label class="gaccca-radio__label" for="radio-uploading_documents-somewhat-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label></span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-uploading_documents-difficult" value="radio-uploading_documents-difficult" name="uploading_documents" checked="" />
+                               <input type="radio" id="radio-uploading_documents-difficult" value="Difficult" name="QuestionEx4" checked="" />
                                <label class="gaccca-radio__label" for="radio-uploading_documents-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                </label></span></td>
@@ -213,27 +212,27 @@
                             </td>
                             
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-scheduling_calls-very-easy" value="radio-scheduling_calls-very-easy" name="scheduling_calls" checked="" />
+                               <input type="radio" id="radio-scheduling_calls-very-easy" value="Very easy" name="QuestionEx5" checked="" />
                                <label class="gaccca-radio__label" for="radio-scheduling_calls-very-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-scheduling_calls-easy" value="radio-scheduling_calls-easy" name="scheduling_calls" checked="" />
+                               <input type="radio" id="radio-scheduling_calls-easy" value="Easy" name="QuestionEx5" checked="" />
                                <label class="gaccca-radio__label" for="radio-scheduling_calls-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-scheduling_calls-somewhat-difficult" value="radio-scheduling_calls-somewhat-difficult" name="scheduling_calls" checked="" />
+                               <input type="radio" id="radio-scheduling_calls-somewhat-difficult" value="Somewhat difficult" name="QuestionEx5" checked="" />
                                <label class="gaccca-radio__label" for="radio-scheduling_calls-somewhat-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label></span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-scheduling_calls-difficult" value="radio-scheduling_calls-difficult" name="scheduling_calls" checked="" />
+                               <input type="radio" id="radio-scheduling_calls-difficult" value="Difficult" name="QuestionEx5" checked="" />
                                <label class="gaccca-radio__label" for="radio-scheduling_calls-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                </label></span></td>
@@ -248,27 +247,27 @@
                             </td>
                              
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-creating_resume-very-easy" value="radio-creating_resume-very-easy" name="creating_resume" checked="" />
+                               <input type="radio" id="radio-creating_resume-very-easy" value="Very easy" name="QuestionEx6" checked="" />
                                <label class="gaccca-radio__label" for="radio-creating_resume-very-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-creating_resume-easy" value="radio-creating_resume-easy" name="creating_resume" checked="" />
+                               <input type="radio" id="radio-creating_resume-easy" value="Easy" name="QuestionEx6" checked="" />
                                <label class="gaccca-radio__label" for="radio-creating_resume-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-creating_resume-somewhat_difficult" value="radio-creating_resume-somewhat_difficult" name="creating_resume" checked="" />
+                               <input type="radio" id="radio-creating_resume-somewhat_difficult" value="Somewhat difficult" name="QuestionEx6" checked="" />
                                <label class="gaccca-radio__label" for="radio-creating_resume-somewhat_difficult">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label></span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-creating_resume-difficult" value="radio-creating_resume-difficult" name="creating_resume" checked="" />
+                               <input type="radio" id="radio-creating_resume-difficult" value="Difficult" name="QuestionEx6" checked="" />
                                <label class="gaccca-radio__label" for="radio-creating_resume-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                </label></span></td>
@@ -285,27 +284,27 @@
                             </td>
                             
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-Writing_script-very-easy" value="radio-Writing_script-very-easy" name="Writing_script" checked="" />
+                               <input type="radio" id="radio-Writing_script-very-easy" value="Very easy" name="QuestionEx7" checked="" />
                                <label class="gaccca-radio__label" for="radio-Writing_script-very-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-Writing_script-easy" value="radio-Writing_script-easy" name="Writing_script" checked="" />
+                               <input type="radio" id="radio-Writing_script-easy" value="Easy" name="QuestionEx7" checked="" />
                                <label class="gaccca-radio__label" for="radio-Writing_script-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-Writing_script-somewhat_difficult" value="radio-Writing_script-somewhat_difficult" name="Writing_script" checked="" />
+                               <input type="radio" id="radio-Writing_script-somewhat_difficult" value="Somewhat difficult" name="QuestionEx7" checked="" />
                                <label class="gaccca-radio__label" for="radio-Writing_script-somewhat_difficult">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label></span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-Writing_script-difficult" value="radio-Writing_script-difficult" name="Writing_script" checked="" />
+                               <input type="radio" id="radio-Writing_script-difficult" value="Difficult" name="QuestionEx7" checked="" />
                                <label class="gaccca-radio__label" for="radio-Writing_script-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                </label></span></td>
@@ -320,27 +319,27 @@
                             </td>
                             
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-Recording_video-very-easy" value="radio-Recording_video-very-easy" name="Recording_video" checked="" />
+                               <input type="radio" id="radio-Recording_video-very-easy" value="Very easy" name="QuestionEx8" checked="" />
                                <label class="gaccca-radio__label" for="radio-Recording_video-very-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-Recording_video-easy" value="radio-Recording_video-easy" name="Recording_video" checked="" />
+                               <input type="radio" id="radio-Recording_video-easy" value="Easy" name="QuestionEx8" checked="" />
                                <label class="gaccca-radio__label" for="radio-Recording_video-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-Recording_video-somewhat_difficult" value="radio-Recording_video-somewhat_difficult" name="Recording_video" checked="" />
+                               <input type="radio" id="radio-Recording_video-somewhat_difficult" value="Somewhat difficult" name="QuestionEx8" checked="" />
                                <label class="gaccca-radio__label" for="radio-Recording_video-somewhat_difficult">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label></span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-Recording_video-difficult" value="radio-Recording_video-difficult" name="Recording_video" checked="" />
+                               <input type="radio" id="radio-Recording_video-difficult" value="Difficult" name="QuestionEx8" checked="" />
                                <label class="gaccca-radio__label" for="radio-Recording_video-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                </label></span></td>
@@ -355,27 +354,27 @@
                             </td>
                            
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-video_resume-very-easy" value="radio-video_resume-very-easy" name="video_resume" checked="" />
+                               <input type="radio" id="radio-video_resume-very-easy" value="Very easy" name="QuestionEx9" checked="" />
                                <label class="gaccca-radio__label" for="radio-video_resume-very-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-video_resume-easy" value="radio-video_resume-easy" name="video_resume" checked="" />
+                               <input type="radio" id="radio-video_resume-easy" value="Easy" name="QuestionEx9" checked="" />
                                <label class="gaccca-radio__label" for="radio-video_resume-easy">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label>
                            </span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-video_resume-somewhat_difficult" value="radio-video_resume-somewhat_difficult" name="video_resume" checked="" />
+                               <input type="radio" id="radio-video_resume-somewhat_difficult" value="Somewhat difficult" name="QuestionEx9" checked="" />
                                <label class="gaccca-radio__label" for="radio-video_resume-somewhat_difficult">
                                  <span class="gaccca-radio_faux"></span>
                                   
                                </label></span></td>
                             <td style="text-align: center;"><span class="gaccca-radio">
-                               <input type="radio" id="radio-video_resume-difficult" value="radio-video_resume-difficult" name="video_resume" checked="" />
+                               <input type="radio" id="radio-video_resume-difficult" value="Difficult" name="QuestionEx9" checked="" />
                                <label class="gaccca-radio__label" for="radio-video_resume-difficult">
                                  <span class="gaccca-radio_faux"></span>
                                </label></span></td>
@@ -434,7 +433,7 @@
                                   
                                   <td>
                                     <span class="gaccca-radio">
-                                      <input type="radio" id="radio-would_you_recommend43" value="radio-would_you_recommend43" name="would_you_recommend" checked="" />
+                                      <input type="radio" id="radio-would_you_recommend43" value="1" name="QuestionEx11" checked="" />
                                       <label class="gaccca-radio__label" for="radio-would_you_recommend43">
                                         <span class="gaccca-radio_faux"></span>
                                          
@@ -444,14 +443,14 @@
                                 
                                 </td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-would_you_recommend44" value="radio-would_you_recommend44" name="would_you_recommend" />
+                                    <input type="radio" id="radio-would_you_recommend44" value="2" name="QuestionEx11" />
                                     <label class="gaccca-radio__label" for="radio-would_you_recommend44">
                                       <span class="gaccca-radio_faux"></span>
                                      
                                     </label>
                                  </span></td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-would_you_recommend45" value="radio-would_you_recommend45" name="would_you_recommend" />
+                                    <input type="radio" id="radio-would_you_recommend45" value="3" name="QuestionEx11" />
                                     <label class="gaccca-radio__label" for="radio-would_you_recommend45">
                                       <span class="gaccca-radio_faux"></span>
                                       
@@ -459,7 +458,7 @@
                                     
                                     </span></td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-would_you_recommend46" value="radio-would_you_recommend46" name="would_you_recommend" />
+                                    <input type="radio" id="radio-would_you_recommend46" value="4" name="QuestionEx11" />
                               <label class="gaccca-radio__label" for="radio-would_you_recommend46">
                                 <span class="gaccca-radio_faux"></span>
                                  
@@ -467,13 +466,13 @@
                           
                           
                                      <td style="text-align: center;"><span class="gaccca-radio">
-                                      <input type="radio" id="radio-would_you_recommend47" value="radio-would_you_recommend47" name="would_you_recommend" />
+                                      <input type="radio" id="radio-would_you_recommend47" value="5" name="QuestionEx11" />
                                       <label class="gaccca-radio__label" for="radio-would_you_recommend47">
                                         <span class="gaccca-radio_faux"></span>
                                         
                                       </label></span></td>
                                    <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-would_you_recommend48" value="radio-would_you_recommend48" name="would_you_recommend" />
+                                    <input type="radio" id="radio-would_you_recommend48" value="6" name="QuestionEx11" />
                                     <label class="gaccca-radio__label" for="radio-would_you_recommend48">
                                       <span class="gaccca-radio_faux"></span>
                                        
@@ -528,7 +527,7 @@
                                   
                                   <td>
                                     <span class="gaccca-radio">
-                                      <input type="radio" id="radio-worth_booking_our_service43" value="radio-worth_booking_our_service43" name="worth_booking_our_service" checked="" />
+                                      <input type="radio" id="radio-worth_booking_our_service43" value="1" name="QuestionEx12" checked="" />
                                       <label class="gaccca-radio__label" for="radio-worth_booking_our_service43">
                                         <span class="gaccca-radio_faux"></span>
                                          
@@ -538,14 +537,14 @@
                                 
                                 </td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-worth_booking_our_service44" value="radio-worth_booking_our_service44" name="worth_booking_our_service" />
+                                    <input type="radio" id="radio-worth_booking_our_service44" value="2" name="QuestionEx12" />
                                     <label class="gaccca-radio__label" for="radio-worth_booking_our_service44">
                                       <span class="gaccca-radio_faux"></span>
                                      
                                     </label>
                                  </span></td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-worth_booking_our_service45" value="radio-worth_booking_our_service45" name="worth_booking_our_service" />
+                                    <input type="radio" id="radio-worth_booking_our_service45" value="3" name="QuestionEx12" />
                                     <label class="gaccca-radio__label" for="radio-worth_booking_our_service45">
                                       <span class="gaccca-radio_faux"></span>
                                       
@@ -553,7 +552,7 @@
                                     
                                     </span></td>
                                   <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-worth_booking_our_service46" value="radio-worth_booking_our_service46" name="worth_booking_our_service" />
+                                    <input type="radio" id="radio-worth_booking_our_service46" value="4" name="QuestionEx12" />
                               <label class="gaccca-radio__label" for="radio-worth_booking_our_service46">
                                 <span class="gaccca-radio_faux"></span>
                                  
@@ -561,13 +560,13 @@
                           
                           
                                      <td style="text-align: center;"><span class="gaccca-radio">
-                                      <input type="radio" id="radio-worth_booking_our_service47" value="radio-worth_booking_our_service47" name="worth_booking_our_service" />
+                                      <input type="radio" id="radio-worth_booking_our_service47" value="5" name="QuestionEx12" />
                                       <label class="gaccca-radio__label" for="radio-worth_booking_our_service47">
                                         <span class="gaccca-radio_faux"></span>
                                         
                                       </label></span></td>
                                    <td style="text-align: center;"><span class="gaccca-radio">
-                                    <input type="radio" id="radio-worth_booking_our_service48" value="radio-worth_booking_our_service48" name="worth_booking_our_service" />
+                                    <input type="radio" id="radio-worth_booking_our_service48" value="6" name="QuestionEx12" />
                                     <label class="gaccca-radio__label" for="radio-worth_booking_our_service48">
                                       <span class="gaccca-radio_faux"></span>
                                        
