@@ -1,7 +1,7 @@
 @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
+{!! Form::open(['action' => 'simCardController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Activate your SIM Card for the U.S.</h1>
@@ -27,14 +27,14 @@
             <label class="gaccca-form-element__label" for="text-input-id-fn">
                 Choose an option:  <span class="gaccca-text-required" title="required">*</span> </label>
             <span class="gaccca-radio">
-              <input type="radio" id="radio-free-sim"  value="radio-free-sim" name="choose_an_option"  />
+              <input type="radio" id="radio-free-sim"  value="Id like to get a free SIM Card" name="radiobtn"  />
               <label class="gaccca-radio__label" for="radio-free-sim">
                 <span class="gaccca-radio_faux"></span>
                 <span>I'd like to get a free SIM Card</span>
               </label>
             </span>
             <span class="gaccca-radio">
-              <input type="radio" id="radio-activate-my-sim" value="radio-activate-my-sim" name="choose_an_option" />
+              <input type="radio" id="radio-activate-my-sim" value="Id like to activate my SIM Card for the first 30 days" name="radiobtn" />
               <label class="gaccca-radio__label" for="radio-activate-my-sim">
                 <span class="gaccca-radio_faux"></span>
                 <span>I'd like to activate my SIM Card for the first 30 days with a auto-renew for the next 30 days until I cancel before the next months starts</span>
@@ -42,14 +42,14 @@
             </span>
 
             <span class="gaccca-radio">
-                <input type="radio" id="radio-change-my-monthly-plan" value="radio-change-my-monthly-plan" name="choose_an_option" />
+                <input type="radio" id="radio-change-my-monthly-plan" value="Id like to change my monthly plan to different monthly plan" name="radiobtn" />
                 <label class="gaccca-radio__label" for="radio-change-my-monthly-plan">
                   <span class="gaccca-radio_faux"></span>
                   <span>I'd like to change my monthly plan to different monthly plan</span>
                 </label>
               </span>
               <span class="gaccca-radio">
-                <input type="radio" id="radio-change-my-credit-card" value="radio-change-my-credit-card" name="choose_an_option" />
+                <input type="radio" id="radio-change-my-credit-card" value="Id like to change my credit card for the monthly payment" name="radiobtn" />
                 <label class="gaccca-radio__label" for="radio-change-my-credit-card">
                   <span class="gaccca-radio_faux"></span>
                   <span>I'd like to change my credit card for the monthly payment</span>
@@ -57,7 +57,7 @@
               </span>
 
               <span class="gaccca-radio">
-                <input type="radio" id="radio-cancel-my-plan" value="radio-cancel-my-plan" name="choose_an_option"  />
+                <input type="radio" id="radio-cancel-my-plan" value="I would like to cancel my plan" name="radiobtn"  />
                 <label class="gaccca-radio__label" for="radio-cancel-my-plan">
                   <span class="gaccca-radio_faux"></span>
                   <span>I'd like to cancel my plan</span>
@@ -78,7 +78,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
         Date of arrival in the U.S.   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" type="text" id="date-of-arrival" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+          <input name="Scheduled_Start" type="text" id="date-of-arrival" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
           
         </div>
       </div>
@@ -87,7 +87,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
         Cancel my plan on   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="date-of-arrival" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+          <input type="text" name="deactivatedsim" required="" class="gaccca-input-date" />
           
         </div>
       </div>
@@ -98,14 +98,14 @@
           <label class="gaccca-form-element__label" for="text-input-id-fn">
           Choose an Carrier:  <span class="gaccca-text-required" title="required">*</span> </label>
           <span class="gaccca-radio">
-            <input type="radio" id="t-mobile" value="t-mobile" name="carrier" checked="" />
+            <input type="radio" id="t-mobile" value="T-Mobile" name="carrier_sim" checked="" />
             <label class="gaccca-radio__label" for="t-mobile">
               <span class="gaccca-radio_faux"></span>
               <span>T-Mobile</span>
             </label>
           </span>
           <span class="gaccca-radio">
-            <input type="radio" id="atandt" value="atandt" name="carrier" />
+            <input type="radio" id="atandt" value="AT&T" name="carrier_sim" />
             <label class="gaccca-radio__label" for="atandt">
               <span class="gaccca-radio_faux"></span>
               <span>AT&T</span>
@@ -124,7 +124,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Date of activation / arrival in the U.S.  <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+          <input type="text" name="datepicker2"  placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
           
           <span class="gaccca-input-help-text">Fill in your arrival date in the U.S. You have to submit your activation at least 7 days before your arrival to the U.S.</span>
         </div>
@@ -138,7 +138,7 @@
         Date of plan change 
   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+          <input type="text" name="Dateofchange"  placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
           
           <span class="gaccca-input-help-text">Submit a date when your current plan should change to another plan. Plans have a 30 days lengths.</span>
         </div>
@@ -155,8 +155,11 @@
         </label>
         <div class="gaccca-form-element__control">
           <div class="gaccca-select_container">
-            <select class="gaccca-select" id="select-tod">                      
-              <option>none</option>
+            <select class="gaccca-select" id="select-tod" name="App[PLAN__c]">                      
+              <option value="0" >none</option>
+              <option value="1" >none</option>
+              <option value="2" >none</option>
+              
              
             </select>
           </div>
@@ -169,7 +172,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             SIM Card Number  <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5"  required="" class="gaccca-input" />
+          <input type="text" name="simCardNumber"  required="" class="gaccca-input" />
           
           <span class="gaccca-input-help-text">On the back side of your SIM Card, you will find this 14-20 digit number under the big barcode below.</span>
         </div>
@@ -180,7 +183,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Would you like a designated area code for your phone number? Type in a city or area code!  <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5"  required="" class="gaccca-input" />
+          <input type="text" name="city_areaCode"  required="" class="gaccca-input" />
          </div>
       </div>
 
@@ -191,7 +194,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Cardholder name on credit card   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5"  required="" class="gaccca-input" />
+          <input type="text" name="cc_sim_name"  required="" class="gaccca-input" />
          </div>
       </div>
 
@@ -202,7 +205,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Credit card number <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5" placeholder="xxxx xxxx xxxx xxxx" required="" class="gaccca-input" />
+          <input type="text" name="cc_sim_number"  placeholder="xxxx xxxx xxxx xxxx" required="" class="gaccca-input" />
           
           <span class="gaccca-input-help-text">On the front side, you will find a 13-16 digit number. Type in the number without spaces. Important: We only accept
           
@@ -219,7 +222,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             Credit card valid thru   <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5" placeholder="mm/yy" required="" class="gaccca-input" />
+          <input type="text" name="cc_valid" placeholder="mm/yy" required="" class="gaccca-input" />
           
           <span class="gaccca-input-help-text"> Example: 05/21</span>
         </div>
@@ -233,7 +236,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-5">
             CVC  <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element-date">
-          <input type="text" name="onfrm[Name_of_Interviewer__c]"  value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" id="text-input-id-5"  required="" class="gaccca-input" />
+          <input type="text" name="cc_cvc_sim"  required="" class="gaccca-input" />
           <span class="gaccca-input-help-text">You will find the Card Verification Code on the back side of your card. 3 or 4 digits</span>
         </div>
       </div>
@@ -247,8 +250,8 @@
         <div class="gaccca-form-element__control">
           <div class="gaccca-checkbox">
 
-            <input type="checkbox" name="options" id="checkbox-unique-id-73" value="checkbox-unique-id-73" checked="" />
-            <label class="gaccca-checkbox__label" for="checkbox-unique-id-73">
+            <input type="checkbox" name="chckfinal" id="authorize-monthly" value="true" checked="" />
+            <label class="gaccca-checkbox__label" for="authorize-monthly">
               <span class="gaccca-checkbox_faux"></span>
               <span class="gaccca-form-element__label">Yes</span>
             </label>
@@ -268,7 +271,7 @@
 
 <script>
     $( document ).ready(function() {
-      $('#date-of-arrival-div').hide();
+    $('#date-of-arrival-div').hide();
 		$('#choose-an-carrier').hide();
     $('#date-of-activation').hide();
     $('#date-of-plan-change').hide();
@@ -283,12 +286,12 @@
     $('#cancel-my-plan-date').hide();
     
 });
-   $("input[name='choose_an_option']").change(function(){
-    var option = $("input[name='choose_an_option']:checked").val();
+   $("input[name='radiobtn']").change(function(){
+    var option = $("input[name='radiobtn']:checked").val();
     
 
     switch (option) { 
-	case 'radio-free-sim': 
+	case 'Id like to get a free SIM Card': 
       
     $('#date-of-arrival-div').show();
 		$('#choose-an-carrier').show();
@@ -306,7 +309,7 @@
     
   
 		break;
-	case 'radio-activate-my-sim': 
+	case 'Id like to activate my SIM Card for the first 30 days': 
 		$('#date-of-arrival-div').hide();
 		$('#choose-an-carrier').hide();
     $('#date-of-activation').show();
@@ -324,7 +327,7 @@
 
 
 		break;
-	case 'radio-change-my-monthly-plan': 
+	case 'Id like to change my monthly plan to different monthly plan': 
   
     
     $('#date-of-arrival-div').hide();
@@ -344,7 +347,7 @@
 
 
 		break;		
-  case 'radio-change-my-credit-card': 
+  case 'Id like to change my credit card for the monthly payment': 
     
 
     $('#date-of-arrival-div').hide();
@@ -363,7 +366,7 @@
     
 
     break;
-  case 'radio-cancel-my-plan': 
+  case 'I would like to cancel my plan': 
 
     $('#date-of-arrival-div').hide();
 		$('#choose-an-carrier').hide();
