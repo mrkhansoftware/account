@@ -13,6 +13,14 @@ class LogoutController extends Controller
      */
     public function index()
     {
+        // $folderName='AshifKhanTestFile26092022510';
+        // $filename='AshifKhan1';
+        // $filetype='application/pdf';
+        // $filesize="8000";
+        // $headers = 'App\Services\Helper'::resumeableLink($folderName, $filename, $filetype,$filesize);
+        // echo '<pre/>';
+        // print_r($headers['Location']);
+        // die;
         session()->flush();
         return view('logout');
     }

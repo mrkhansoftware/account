@@ -79,7 +79,7 @@ class ApplicantResumeController extends Controller
     public function resumeDetailsPassword(Request $request)
     {
         $req = $request->all();
-        $idCon = $req['contID'] . '_hrPerson_' .$req['applicationId']. '_passwordStr_' . $req['password'];
+        $idCon = $req['contID'] . '_hrPerson_' . $req['applicationId'] . '_passwordStr_' . $req['password'];
         $datas = 'App\Services\Helper'::getRequest('ApiApplicantCVResumeTemplateClass/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
@@ -92,5 +92,40 @@ class ApplicantResumeController extends Controller
     {
         $finalReq = $request->all();
         return  'App\Services\Helper'::postRequest($finalReq, 'ApiApplicantCVResumeTemplateClass');
+    }
+
+
+
+    public function ajaxApplicantResumeAttachment(Request $request)
+    {   $returnData=[];
+        $getTime=getdate(date("U"))[0];
+        $finalReq = $request->all();
+        $contactRef=$finalReq['contactRef'];
+        $filetype=$finalReq['file_type'];
+        $filesize=$finalReq['file_size'];
+        $previousEnd=$finalReq['previousEnd'];
+        $resumeableLink=$finalReq['resumeableLink'];
+        $filedata=$finalReq['content'];
+        $fileNameUserEnd=$finalReq['fileNameUserEnd'];
+        $fileUrl=$finalReq['fileUrl'];
+        $folderName=$finalReq['appName'].'_'.$finalReq['appTime'].$finalReq['applicantId'];
+        $filename='File_Document_'.$getTime.$finalReq['applicantId'];
+        if($resumeableLink==null || $resumeableLink==''){
+        
+        $fileUrl=$folderName.'/'.$filename;
+    }
+        $content=str_replace('data:application/octet-stream;base64,','',$filedata);    
+        $filedata=base64_decode($content);
+        $bodysize=strlen($filedata);
+        $previousEnd=$previousEnd==''?'0':$previousEnd;
+        if($resumeableLink!=null && $resumeableLink!=''){
+            $previousEnd=explode('--previousEnd--',$resumeableLink)[1];
+            $resumeableLink=explode('--previousEnd--',$resumeableLink)[0];
+        }
+        $link= 'App\Services\Helper'::resumeableFileUpload($contactRef,$folderName,$filename,$filetype,$filesize,$bodysize,$previousEnd,$resumeableLink,$filedata,$fileNameUserEnd);
+        $previousEnd=$bodysize+$previousEnd;
+        $returnData['resumeLink']=$link.'--previousEnd--'.$previousEnd;
+        $returnData['fileUrl']=$fileUrl;
+         return $returnData;
     }
 }

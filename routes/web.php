@@ -267,6 +267,7 @@ Route::post('/b1videoUpdate', 'B1VideoController@ajaxQuestionSubmit');
 Route::post('/b1VideScriptReady', 'VideoResumeController@scriptreadySubmit');  
 Route::post('/writeScriptPlacement', 'WriteYourScriptController@writeScriptPlacementMethod'); 
 Route::post('/applicantResumePlacement', 'ApplicantResumeController@ajaxApplicantResume'); 
+Route::post('/applicantResumePlacementAttachment', 'ApplicantResumeController@ajaxApplicantResumeAttachment'); 
 Route::post('/scheduleCallBooking', 'ScheduleCallController@ajaxscheduleCall'); 
 Route::post('/applicantResumeAjax', 'ApplicantResumeController@applicantResumeAjaxCall'); 
 Route::get('/resetPassword', 'LoginController@resetPassword');
