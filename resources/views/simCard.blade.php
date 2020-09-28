@@ -15,7 +15,7 @@
         </p> <p>
         If you don’t cancel your subscription it will automatically be renewed for another 30 day period. Until you cancel your plan we will charge your credit card every 30 days with the cost of your plan. 
     </p>
-      </div>
+      </div> 
       
 
       <div class="gaccca-form-element gaccca-form-element-margin">

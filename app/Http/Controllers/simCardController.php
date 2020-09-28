@@ -35,7 +35,7 @@ class simCardController extends Controller
      */
     public function store(Request $request)
     {
-        echo "<pre>";
+        echo "<pre>"; 
         print_r($request->all());
         die;
     }
