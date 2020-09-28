@@ -33,31 +33,25 @@
           <span class="gaccca-radio_faux"></span>
           <span>I'd like to get a free SIM Card</span>
         </label>
-      </span>
-      <span class="gaccca-radio">
+      
         <input type="radio" id="radio-activate-my-sim" value="Id like to activate my SIM Card for the first 30 days" name="radiobtn" required />
         <label class="gaccca-radio__label" for="radio-activate-my-sim">
           <span class="gaccca-radio_faux"></span>
           <span>I'd like to activate my SIM Card for the first 30 days with a auto-renew for the next 30 days until I cancel before the next months starts</span>
         </label>
-      </span>
-
-      <span class="gaccca-radio">
+     
         <input type="radio" id="radio-change-my-monthly-plan" value="Id like to change my monthly plan to different monthly plan" name="radiobtn" required />
         <label class="gaccca-radio__label" for="radio-change-my-monthly-plan">
           <span class="gaccca-radio_faux"></span>
           <span>I'd like to change my monthly plan to different monthly plan</span>
         </label>
-      </span>
-      <span class="gaccca-radio">
+     
         <input type="radio" id="radio-change-my-credit-card" value="Id like to change my credit card for the monthly payment" name="radiobtn" required />
         <label class="gaccca-radio__label" for="radio-change-my-credit-card">
           <span class="gaccca-radio_faux"></span>
           <span>I'd like to change my credit card for the monthly payment</span>
         </label>
-      </span>
-
-      <span class="gaccca-radio">
+     
         <input type="radio" id="radio-cancel-my-plan" value="I would like to cancel my plan" name="radiobtn" required />
         <label class="gaccca-radio__label" for="radio-cancel-my-plan">
           <span class="gaccca-radio_faux"></span>
