@@ -145,21 +145,21 @@
           <label class="gaccca-form-element__label" for="text-input-id-fn">
             On average, how many hours has the intern/trainee been in attendance per week? <span class="gaccca-text-required" title="required">*</span> </label>
           <span class="gaccca-radio">
-            <input type="radio" id="radio-attendance-32" value="Fewer than 32 Hrs/Week" name="attendance_per_week" {{ ($datas['onfrm']['attendance_per_week__c']=="Fewer than 32 Hrs/Week")? "checked" : "" }} />
+            <input type="radio" id="radio-attendance-32" value="Fewer than 32 Hrs/Week" name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="Fewer than 32 Hrs/Week")? "checked" : "" }} />
             <label class="gaccca-radio__label" for="radio-attendance-32">
               <span class="gaccca-radio_faux"></span>
               <span>Fewer than 32 Hrs/Week</span>
             </label>
           </span>
           <span class="gaccca-radio">
-            <input type="radio" id="radio-attendance-45" value="32-45 Hrs/Week" name="attendance_per_week" {{ ($datas['onfrm']['attendance_per_week__c']=="32-45 Hrs/Week")? "checked" : "" }} />
+            <input type="radio" id="radio-attendance-45" value="32-45 Hrs/Week" name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="32-45 Hrs/Week")? "checked" : "" }} />
             <label class="gaccca-radio__label" for="radio-attendance-45">
               <span class="gaccca-radio_faux"></span>
               <span>32-45 Hrs/Week</span>
             </label>
           </span>
           <span class="gaccca-radio">
-            <input type="radio" id="radio-attendance-more" value="More than 45 Hrs/Week" name="attendance_per_week" {{ ($datas['onfrm']['attendance_per_week__c']=="More than 45 Hrs/Week")? "checked" : "" }} />
+            <input type="radio" id="radio-attendance-more" value="More than 45 Hrs/Week" name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="More than 45 Hrs/Week")? "checked" : "" }} />
             <label class="gaccca-radio__label" for="radio-attendance-more">
               <span class="gaccca-radio_faux"></span>
               <span> More than 45 Hrs/Week</span>
