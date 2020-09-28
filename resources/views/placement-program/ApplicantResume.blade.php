@@ -811,110 +811,6 @@
             </script>
 
             <script language="javascript">
-                $(document).ready(function() {
-                    var resumeableLink = '';
-                    var previousEnd = '';
-                    var file_size = '';
-                    var fileNameUserEnd = '';
-                    var file_type = '';
-                    var contactRef = '{{$datas["contID"]}}';
-                    var file_input = $('#fileIn2');
-                    var submit_btn = $('#submit_btn');
-                    var upload_form = $('#upload_form');
-                    var progress_label = $("#progressLabel");
-                    var chunk_size = 1 * 1024 * 1024;
-                    var offset = 0;
-                    var retry = 0;
-                    file_input.on('change', onFilesSelected);
-                    upload_form.submit(uploadForm);
-
-                    function uploadChunk(evt) {
-                        var upload_size = evt.target.result.length;
-                        offset += chunk_size;
-                        remoteUpload(offset, upload_size, evt.target.result, evt);
-
-                    }
-
-                    function readCallback(evt) {
-                        if (evt.target.error == null) {
-                            uploadChunk(evt);
-                        } else {
-                            progress_label.html("File read error on disk: " + evt.target.error);
-                            return;
-                        }
-                    }
-
-                    function readSlice(e) {
-                        var files = document.getElementById("fileIn2");
-                        var file = files.files[0];
-                        file_type = file.type;
-                        fileNameUserEnd = file.name;
-
-                        document.getElementById('fileSelector').style = 'pointer-events: none';
-                        //   console.log(fileNameUserEnd);
-                        file_size = file.size;
-                        var reader = new FileReader();
-                        if (offset < file.size) {
-                            progress_label.html("Uploading: " + (100 * offset / file.size).toFixed(0) + "%");
-                            //  console.log('chunk_size--'+chunk_size);
-                            //console.log('offset--'+offset);
-                            var blob = file.slice(offset, offset + chunk_size);
-                            //   console.log('blob--'+blob);
-                            reader.onload = readCallback;
-                            reader.readAsDataURL(blob);
-                        } else {
-                            listUpdate();
-                            resumeableLink = '';
-                            previousEnd = '';
-                            file_size = '';
-                            fileNameUserEnd = '';
-                            file_type = '';
-                            chunk_size = 2 * 1024 * 1024; // 1Mbyte Chunk 
-                            offset = 0;
-                            retry = 0;
-                            document.getElementById('fileSelector').style = 'pointer-events: visible';
-                            document.getElementById('nm2').value = '';
-                            document.getElementById('fileIn2').value = '';
-                            progress_label.html("Upload complete");
-
-                        }
-                    }
-
-                    function uploadForm(e) {
-                        e.preventDefault();
-                        offset = 0;
-                        readSlice(e);
-                        progress_label.html("Starting...");
-
-                    }
-
-                    function onFilesSelected(e) {
-                        submit_btn.attr('disabled', false);
-                    }
-                });
-
-                function fileUpload2(val) {
-                    document.getElementById('nm' + val).value = '';
-                    document.getElementById('fileIn' + val).value = '';
-                    document.getElementById('fileIn' + val).click();
-                }
-
-                function check2(val) {
-
-                    var fileInput = document.getElementById('fileIn' + val);
-                    var filename = fileInput.files[0].name;
-                    var typeName = fileInput.files[0].type;
-                    if (typeName != 'image/jpeg' && typeName != 'application/pdf' && typeName != 'image/png' && typeName != 'image/pjpeg') {
-                        document.getElementById('fileIn' + val).value = '';
-                        alert('fileType is not correct. Only allows the following types:  jpg, png, pdf!!!!!!');
-                        return;
-                    }
-
-                    document.getElementById('nm' + val).value = filename;
-                    document.getElementById('submit_btn').click();
-
-                }
-
                 function designSelected(val) {
                     if ('{{$datas["profileLocked"]}}' == 'true' || '{{$datas["profileLocked"]}}' == '1') {
                         return;
@@ -1446,17 +1342,29 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
         <h2 class="gaccca-h2-padding">Attachments</h2>
         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-            <!-- <div class="gaccca-form-element gaccca-form-element-margin">
-                <div class="gaccca-form-element__control">
-                    <label class="gaccca-file">
-                        <input type="file" id="myFile" name="filename" />
-                        <span class="gaccca-file-custom">Choose file...</span>
+            <form id="upload_form" method="post">
+                <div class="gaccca-form-element gaccca-form-element-margin" id='fileSelector'>
+                    <div class="gaccca-form-element__control">
+                        <label class="gaccca-file">
+                            <input type="file" id="fileIn2" name="filename" onchange='check2(2)' />
+                            <input type="hidden" value="" id='nm2' readonly="readonly" />
 
-                    </label>
+                            <span class="gaccca-file-custom">Choose file...</span>
+
+                        </label>
+                    </div>
+                    <label id="progressLabel">No file selected</label>
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb;display:none; height:200px;opacity:0.75;width:200px;">
+                        <div class="waitingHolder" style="top: 300px; width: 300px;">
+                            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." style="width: 40;height:40;" />
+                            <span class="waitingDescription">Document is Uploading . . . .</span>
+                        </div>
+                    </div>
                 </div>
-            </div> -->
+                <input id="submit_btn" type="submit" value="Upload" style='display:none' />
+            </form>
             <div class="gaccca-form-element gaccca-form-element-margin">
-                <table class="gaccca-price-table">
+                <table class="gaccca-price-table" id='fileListTable'>
                     @foreach ($datas['additionalDocList'] as $file)
                     <tr id="{{'fileRow_'.$file['Id']}}">
                         <td>
@@ -1512,7 +1420,7 @@
                     @endif
                     @if (isset($datas['app']['Resume_url__c']) && $datas['app']['Resume_url__c']!='')
                     <label class="gaccca-radio__label">
-                    <a href="/ApplicantPDFWithVideo" target='_blank'>Preview</a>
+                        <a href="/ApplicantPDFWithVideo" target='_blank'>Preview</a>
                     </label>
                     @endif
 
@@ -1525,6 +1433,168 @@
     </div>
 
 </div>
+
+<script>
+    $(document).ready(function() {
+        var resumeableLink = '';
+        var previousEnd = '';
+        var attachmentUrl='';
+        var file_size = '';
+        var fileNameUserEnd = '';
+        var file_type = '';
+        var contactRef = "{{$datas['contID']}}";
+        var file_input = $('#fileIn2');
+        var submit_btn = $('#submit_btn');
+        var upload_form = $('#upload_form');
+        var progress_label = $("#progressLabel");
+        var chunk_size = 1 * 1024 * 1024;
+        var offset = 0;
+        var retry = 0;
+        file_input.on('change', onFilesSelected);
+        upload_form.submit(uploadForm);
+
+        var count = 0
+
+        function remoteUpload(offset, upload_size, content, evt) {
+            count++;
+            formData={
+            applicantId:'{{$datas["applicantId"]}}',
+            contactRef:contactRef,
+            previousEnd:previousEnd,
+            offset:offset,
+            upload_size:upload_size,
+            content:content,
+            resumeableLink:resumeableLink,
+            file_size:file_size,
+            file_type:file_type,
+            fileNameUserEnd:fileNameUserEnd,
+            appName:"{{$datas['appName']}}",
+            appTime:"{{$datas['appTime']}}",
+            fileUrl:attachmentUrl
+            }
+
+            console.log('count:' + count);
+            console.log('resumeableLink:'+resumeableLink);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: 'applicantResumePlacementAttachment',
+                data: formData,
+               success: function(data) {
+                    console.log(data);
+                    resumeableLink = data.resumeLink;
+                    attachmentUrl = data.fileUrl;
+                    offset += content.length;
+                    readSlice(evt);
+
+                },
+                error: function(data) {
+                    console.log('error');
+                    console.log(data);
+                }
+            });
+
+
+
+
+        }
+
+        function uploadChunk(evt) {
+            var upload_size = evt.target.result.length;
+            offset += chunk_size;
+            remoteUpload(offset, upload_size, evt.target.result, evt);
+
+        }
+
+        function readCallback(evt) {
+            if (evt.target.error == null) {
+                uploadChunk(evt);
+            } else {
+                progress_label.html("File read error on disk: " + evt.target.error);
+                return;
+            }
+        }
+
+
+
+        function readSlice(e) {
+            var files = document.getElementById("fileIn2");
+            var file = files.files[0];
+            file_type = file.type;
+            fileNameUserEnd = file.name;
+
+            document.getElementById('fileSelector').style = 'pointer-events: none';
+            //   console.log(fileNameUserEnd);
+            file_size = file.size;
+            var reader = new FileReader();
+            if (offset < file.size) {
+                progress_label.html("Uploading: " + (100 * offset / file.size).toFixed(0) + "%");
+                //  console.log('chunk_size--'+chunk_size);
+                //console.log('offset--'+offset);
+                var blob = file.slice(offset, offset + chunk_size);
+                //   console.log('blob--'+blob);
+                reader.onload = readCallback;
+                reader.readAsDataURL(blob);
+            } else {
+                addAttachment(attachmentUrl,fileNameUserEnd);
+                resumeableLink = '';
+                attachmentUrl='';
+                previousEnd = '';
+                file_size = '';
+                fileNameUserEnd = '';
+                file_type = '';
+                chunk_size = 1 * 1024 * 1024; // 1Mbyte Chunk 
+                offset = 0;
+                retry = 0;
+                document.getElementById('fileSelector').style = 'pointer-events: visible';
+                document.getElementById('nm2').value = '';
+                document.getElementById('fileIn2').value = '';
+                progress_label.html("Upload complete");
+
+            }
+        }
+
+        function uploadForm(e) {
+            e.preventDefault();
+            offset = 0;
+            readSlice(e);
+            progress_label.html("Starting...");
+
+        }
+
+        function onFilesSelected(e) {
+            submit_btn.attr('disabled', false);
+        }
+    });
+
+
+    function fileUpload2(val) {
+        document.getElementById('nm' + val).value = '';
+        document.getElementById('fileIn' + val).value = '';
+        document.getElementById('fileIn' + val).click();
+    }
+
+    function check2(val) {
+
+        var fileInput = document.getElementById('fileIn' + val);
+        var filename = fileInput.files[0].name;
+        var typeName = fileInput.files[0].type;
+        if (typeName != 'image/jpeg' && typeName != 'application/pdf' && typeName != 'image/png' && typeName != 'image/pjpeg') {
+            document.getElementById('fileIn' + val).value = '';
+            alert('fileType is not correct. Only allows the following types:  jpg, png, pdf!!!!!!');
+            return;
+        }
+
+        document.getElementById('nm' + val).value = filename;
+        document.getElementById('submit_btn').click();
+
+    }
+</script>
+
 
 
 <script>
@@ -1549,8 +1619,8 @@
         //alert('{!templateDesign}');
         if ('{{$datas["templateDesign"]}}' != '' && '{{$datas["templateDesign"]}}' != 'Old') {
             document.getElementById('newSectionTemplate').style.display = 'block';
-            if(document.getElementById('templateResume_' + '{{$datas["templateDesign"]}}')!=null){
-            document.getElementById('templateResume_' + '{{$datas["templateDesign"]}}').checked = true;
+            if (document.getElementById('templateResume_' + '{{$datas["templateDesign"]}}') != null) {
+                document.getElementById('templateResume_' + '{{$datas["templateDesign"]}}').checked = true;
             }
         }
         $('[id^="saveResume_"]').click(function() {
@@ -1579,7 +1649,19 @@
 
     });
 
+    function addAttachment(nameOfAttachment,fileNameUserEnd) {
+        if ('{{$datas["profileLocked"]}}' == 'true' || '{{$datas["profileLocked"]}}' == '1') {
+            return
+        };
+        var formData = {
+            fileNameReturn:nameOfAttachment,
+            fileNameUserEnd:fileNameUserEnd,
+            typeStr: 'updateAttachmentList'
+        };
 
+        saveInformation(formData);
+
+    }
 
 
     function deleteOperation(doc) {
@@ -1631,9 +1713,8 @@
 @if(isset($datas['profileLocked']) && !$datas['profileLocked'])
 
 <script>
- 
     function saveInformation(formData) {
-    
+
         if (formData.typeStr == 'fileNameChange' || formData.typeStr == 'fileDelete') { //loadFileIcn_
             document.getElementById('loadFileIcn_' + formData.fileId).style.display = 'block';
         } else {
@@ -1649,23 +1730,27 @@
             url: 'applicantResumePlacement',
             data: formData,
             dataType: 'json',
-            success: function(data) { console.log(data);
+            success: function(data) {
+                console.log(data);
+                data=JSON.parse(data);
                 if (formData.typeStr == 'fileNameChange' || formData.typeStr == 'fileDelete') { //loadFileIcn_
                     document.getElementById('loadFileIcn_' + formData.fileId).style.display = 'none';
                 } else {
                     document.getElementById('loader').style.display = 'none';
                 }
-                
-                if (data == 'OK') {
+
+                if (data.status!=undefined && data.status == 'OK') {
 
 
                     if (formData.typeStr == 'fileDelete') { //loadFileIcn_
-                    document.getElementById('fileRow_' + formData.fileId).innerHTML = '';
-                } 
+                        document.getElementById('fileRow_' + formData.fileId).innerHTML = '';
+                    }
+
+                    if (formData.typeStr == 'updateAttachmentList') {
+                        addRow(data.response,formData.fileNameReturn,formData.fileNameUserEnd);
+                    }
 
 
-
-                    
 
 
 
@@ -1687,7 +1772,29 @@
             }
         });
     }
+
+
+function addRow(attId,fileNameReturn,fileNameUserEnd){
+var row='<tr id="fileRow_'+attId+'">';
+row+='<td>';
+row+='<input type="text" class="myInput'+attId+'" value="'+fileNameUserEnd+'" readonly="true" style="border: 0px; width:100%;padding:10px 0px 10px 10px" onblur="remaneItFunction(this.value,'+"'"+attId+"'"+');return false;" />';
+row+='</td>';
+row+='<td>';
+row+='<a href="javascript: void(0)"><i class="fas fa-pencil-alt" onclick="changeOperation('+"'"+attId+"'"+');"></i></a>';
+row+=' <a href="https://storage.googleapis.com/resume-attachments/'+fileNameReturn+'" target="_blank"><i class="fas fa-external-link-alt"></i></a>';
+row+=' <a href="javascript: void(0)"><i class="fas fa-trash" onclick="deleteOperation('+"'"+attId+"'"+');"></i></a>';
+row+='</td>';
+row+='<td>';
+
+row+=' <a href="javascript: void(0)" class="gaccca-hide" id="loadFileIcn_'+attId+'"><i class="fas fa-spinner fa-spin"></i></a>';
+row+='</td>';
+row+='</tr>';
+$('#fileListTable tr:last').after(row);
+}
 </script>
+
+
+
 @endif
 @include('common.footer')
 
