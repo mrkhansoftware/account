@@ -174,7 +174,7 @@
                             </li>
                             @endif
                   
-                        <!--<li><a href="/simCard_new">Sim Card</a></li> -->
+                        <li><a href="/simCard">Sim Card</a></li>
                         <li class="gaccca-dropdown">
                             <a href="javascript:void(0)" class="gaccca-dropbtn">Profile</a>
                             <div class="gaccca-dropdown-content">
