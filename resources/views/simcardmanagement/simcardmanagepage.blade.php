@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/all.css') }}" rel='stylesheet'>
+    <link href="{{ asset('css/font.css') }}" rel='stylesheet'>
     <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
     <script src="{{ asset('js/jquery-ui.js') }}"></script>

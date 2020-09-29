@@ -10,7 +10,7 @@
   <!-- <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script> -->
   
   <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
-  <link href="{{ asset('css/all.css') }}"  rel='stylesheet' />
+  <link href="{{ asset('css/font.css') }}"  rel='stylesheet' />
 
   <!-- <script src="assets/js/jquery-ui.js"></script> -->
 

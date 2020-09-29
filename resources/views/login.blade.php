@@ -7,7 +7,7 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" >
 <link href="{{ asset('css/jquery-ui.css') }}"  rel='stylesheet' >
-<link href="{{ asset('css/all.css') }}"  rel='stylesheet' >
+<link href="{{ asset('css/font.css') }}"  rel='stylesheet' >
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script> -->
 <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>

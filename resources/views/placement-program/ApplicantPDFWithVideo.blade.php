@@ -5,7 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://assets.ziggeo.com/v2-stable/ziggeo.css" />
     <link href="{{ asset('css/slds.css') }}" rel='stylesheet'>
-    <link href="{{ asset('css/all.css') }}" rel='stylesheet'>
+    <link href="{{ asset('css/font.css') }}" rel='stylesheet'>
     <script src="https://assets.ziggeo.com/v2-stable/ziggeo.js"></script>
     <script>
     if ("{{$datas['viewerType']}}" == "hrPerson") {

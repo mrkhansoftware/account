@@ -33,7 +33,7 @@
   
 
   <link href="{{ asset('css/jquery-ui.css') }}"  rel='stylesheet' >
-  <link href="{{ asset('css/all.css') }}"  rel='stylesheet' >
+  <link href="{{ asset('css/font.css') }}"  rel='stylesheet' >
  
   <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
   <script src="{{ asset('js/parsley.min.js') }}"></script>   
