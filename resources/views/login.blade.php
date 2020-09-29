@@ -10,7 +10,7 @@
 <link href="{{ asset('css/all.css') }}"  rel='stylesheet' >
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script> -->
-<script src="{{ asset('js/jquery-1.8.2.js') }}"></script>
+<script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
 <script src="{{ asset('js/parsley.min.js') }}"></script>   
 <script src="{{ asset('js/jquery-ui.js') }}"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>

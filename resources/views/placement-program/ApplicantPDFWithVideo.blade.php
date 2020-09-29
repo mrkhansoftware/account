@@ -364,7 +364,7 @@
     </div>
 
 
-    <script src="{{ asset('js/jquery-1.8.2.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
     <script>
     var isOpen = true;
     var clearInt;

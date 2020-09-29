@@ -11,12 +11,11 @@
   
   <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
   <link href="{{ asset('css/all.css') }}"  rel='stylesheet' />
-  <!-- <script src="https://code.jquery.com/jquery-1.9.1.js" integrity="sha256-e9gNBsAcA0DBuRWbm0oZfbiCyhjLrI6bmqAl5o+ZjUA="
-    crossorigin="anonymous"></script> -->
+
   <!-- <script src="assets/js/jquery-ui.js"></script> -->
 
-  <!-- <script src="assets/js/jquery.validate.min.js"></script> -->
-  <script src="{{ asset('js/jquery-1.8.2.js') }}"></script>
+
+  <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
   <script src="{{ asset('js/parsley.min.js') }}"></script>   
   <script src="{{ asset('js/jquery-ui.js') }}"></script>
   
