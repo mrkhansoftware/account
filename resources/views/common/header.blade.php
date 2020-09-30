@@ -29,12 +29,8 @@
   
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' />
   <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" >
-  <!-- <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script> -->
-  
-
   <link href="{{ asset('css/jquery-ui.css') }}"  rel='stylesheet' >
   <link href="{{ asset('css/font.css') }}"  rel='stylesheet' >
- 
   <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
   <script src="{{ asset('js/parsley.min.js') }}"></script>   
   <script src="{{ asset('js/jquery-ui.js') }}"></script>
@@ -48,13 +44,13 @@
 @if (isset($_GET['isSave']) && $_GET['isSave']==='1')
 <div class="gaccca-notify_alert gaccca-theme_success" id="success-alert" >
         <span class="gaccca-notify__close" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>Success!</strong> <span id='message-success'>Information has been saved</span>
+        <strong>Success!</strong> <span id='message-success'> Your information and uploads are saved!.</span>
     </div>
     @endif
     @if (isset($_GET['isSent']) && $_GET['isSent']==='1')
 <div class="gaccca-notify_alert gaccca-theme_success" id="success-alert" >
         <span class="gaccca-notify__close" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>Success!</strong> <span id='message-success'>Information has been sent</span>
+        <strong>Success!</strong> <span id='message-success'>The information has been sent successfully.</span>
     </div>
     @endif
 <!--Start---Success notification-------->
@@ -157,18 +153,34 @@
                                     <a href="/finalize_application_account">Finalize your Application</a>
                                     <a href="/j1_review_your_application_account">Review your J1 Application</a>
                                     
+                                    
+                                    
+                                    
+                                    @if(isset($datas['isParticipantAccepted'])&& $datas['isParticipantAccepted'])
                                     <a href="/participant_handbook_account">Participant Handbook</a>
                                     <a href="/ScheduleCallJvisa">Schedule a Call</a>
+                                    @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
                                     <a href="/AdditionalDocumentJ1">Additional Documents</a>
-                                    
+                                    @endif
                                     <a href="/extension_request_account">Extension Request</a>
                                     <a href="/travel_validation_account">Travel Validation</a>
-                                    <a href="/validation_checkin_account">Validation &amp; Check-In</a>
-                                    
+                                    <a href="/validation_checkin_account">Validation &amp; Check-In</a>                                    
                                     <a href="/monthly_Checkin">Monthly Check-In</a>
                                     <a href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
                                     <a href="/final_evaluation_account">Final Evaluation</a>
-                                    
+                                    @else
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Participant Handbook</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Schedule a Call</a>
+                                    @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
+                                    <a href="/AdditionalDocumentJ1">Additional Documents</a>
+                                    @endif
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Extension Request</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Travel Validation</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Validation &amp; Check-In</a>                                    
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;"> Monthly Check-In</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Mid-Point Evaluation</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Final Evaluation</a>
+                                    @endif
                                 </div>
                                 
                             </li>

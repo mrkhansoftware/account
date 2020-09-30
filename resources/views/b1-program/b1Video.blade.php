@@ -50,7 +50,8 @@
 					embedding.pause();
 				}
 				if(!flagInit){
-					myFunction();
+					
+					setInterval(function(){ myFunction(); }, 1000);
 					flagInit=true;
 				}
 			});
@@ -64,12 +65,12 @@
 			var videoPlayed=embedding.get('position');
 			var getDuration=embedding.get('duration');
 			var videoPrecentage=(videoPlayed/getDuration)*100;
-			saveVideoTime(videoPrecentage);
+			saveVideoTime(videoPrecentage.toFixed(2));
 		}
 		
 		</script>
 		
-		<div style='margin-top: 15px;display:none'>
+		<div style='margin-top: 15px;'>
 			<b>Video Completed:</b> <b id='videoWatched'>{{$datas["videoPrecentage"]}}%</b>
 		</div>
 		
@@ -109,8 +110,7 @@
 		var completedTime=0;
 		function saveVideoTime(timeVdo) {
       document.getElementById('videoWatched').innerHTML=timeVdo+'%'; 
-      myFunction() ;
-		}    
+  	}    
 
     
     
