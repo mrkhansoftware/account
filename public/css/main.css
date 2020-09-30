@@ -5,19 +5,19 @@ Copyright (c) 2020 IIEEX
 
 */
 
-
 /* Below Section define css of body section */
+
 body {
-    background: rgba(45, 45, 255, 0.03);
-    font-family: 'Roboto';
-    font-size: 100%;
-    line-height: 1.5;
-    margin: 0px;
+  background: rgba(45, 45, 255, 0.03);
+  font-family: 'Roboto';
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0px;
 }
 
 .gaccca-gutters {
-    margin-right: -.75rem;
-    margin-left: -.75rem;
+  margin-right: -.75rem;
+  margin-left: -.75rem;
 }
 
 /*
@@ -27,7 +27,7 @@ Grid-based layout system, with rows and columns, making it easier to design web 
  */
 
 .gaccca-grid {
-    display: flex;
+  display: flex;
 }
 
 /* 
@@ -36,8 +36,8 @@ The wrap property specifies whether the flexible items should wrap or not
 */
 
 .gaccca-wrap {
-    flex-wrap: wrap;
-    align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 /* Below class use to align text center */
@@ -51,597 +51,573 @@ The wrap property specifies whether the flexible items should wrap or not
 .gaccca-full-width {
   max-width: 100% !important;
 }
-.gaccca-gutters  {
-    padding-right: .75rem;
-    padding-left: .75rem;
+
+.gaccca-gutters {
+  padding-right: .75rem;
+  padding-left: .75rem;
 }
 
 /* Below class use to dispaly menu on page load */
 
-.gaccca-display-menu{
-    display: block;
-   }
+.gaccca-display-menu {
+  display: block;
+}
 
 /* Below class use to hide menu buttonwhich is use in mobile view */
-.gaccca-header-menu-button{
-    display: none;
+
+.gaccca-header-menu-button {
+  display: none;
 }
 
-/* Inside the below class we put the elements like input,select,textarea... */
-.gaccca-form-element{
-    position: relative;
-    min-width: 0; 
+/* element div css  */
+
+.gaccca-form-element {
+  position: relative;
+  min-width: 0;
 }
 
-/* Inside the below class we have login button with google and facebook */
-.gaccca-social-element{
+/* social element div css  */
+
+.gaccca-social-element {
   position: relative;
   min-width: 0;
   text-align: center;
 }
-    
-/* Below class define the margin of elements like input,select,textarea */
-.gaccca-form-element-margin{
-    margin: 0px 20px 33px 120px;
+
+/* Below class define the margin of elements  */
+
+.gaccca-form-element-margin {
+  margin: 0px 20px 33px 120px;
 }
 
-.gaccca-form-element-checkbox-switch{
-    margin: 0px;
+.gaccca-form-element-checkbox-switch {
+  margin: 0px;
 }
 
-.gaccca-form-element-text-participant{
-    margin: 0px;
+.gaccca-form-element-text-participant {
+  margin: 0px;
 }
 
 /* Below class seperate two elements from each other */
+
 .gaccca-form-element__control {
-    clear: left;
-    position: relative;
+  clear: left;
+  position: relative;
 }
 
 /* Below class define the color of ol, h4, p, ul  */
+
 .gaccca-form-element ol, h4, p, ul {
-    color: rgb(62, 62, 60);
+  color: rgb(62, 62, 60);
 }
 
 /* Below class define for radio button and checkbox
 radio button css start
 
 */
-.gaccca-form-element__control .gaccca-radio, .gaccca-form-element__control .gaccca-checkbox {
-    display: block;
-    margin: 5px 0px;
-}
 
+.gaccca-form-element__control .gaccca-radio, .gaccca-form-element__control .gaccca-checkbox {
+  display: block;
+  margin: 5px 0px;
+}
 
 /* Below class define how radio button will look  */
+
 .gaccca-radio [type=radio] {
-    width: 1px;
-    height: 1px;
-    border: 0;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
 }
-        
+
 /* Below class define how radio button will look after checked  */
-.gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio_faux:after,  .gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio--faux:after {
-    width: .5rem;
-    height: .5rem;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    border-radius: 50%;
-    /* background: rgba(27, 82, 151, 1); */
-    background: #1A73E8;
+
+.gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio_faux:after, .gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio--faux:after {
+  width: .5rem;
+  height: .5rem;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 50%;
+  /* background: rgba(27, 82, 151, 1); */
+  background: #1A73E8;
 }
 
-
-.gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio_faux,  .gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio--faux {
-    background: rgb(255, 255, 255);
+.gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio_faux, .gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio--faux {
+  background: rgb(255, 255, 255);
 }
 
- .gaccca-radio [type=radio]+.gaccca-radio__label .gaccca-radio_faux, .gaccca-radio [type=radio]+.gaccca-radio__label .gaccca-radio--faux {
-    margin-right: 0px;
-}
- 
-
-
- .gaccca-radio .gaccca-radio_faux, .gaccca-scope .gaccca-radio .gaccca-radio--faux {
-    width: 1rem;
-    height: 1rem;
-    /* display: inline-block; */
-    position: relative;
-    vertical-align: middle;
-    float: left;
-    border: 1px solid #096DD9;
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
-    transition: border .1s linear,background-color .1s linear;
-    margin-top: 2px;
-    
+.gaccca-radio [type=radio]+.gaccca-radio__label .gaccca-radio_faux, .gaccca-radio [type=radio]+.gaccca-radio__label .gaccca-radio--faux {
+  margin-right: 0px;
 }
 
-.gaccca-radio .gaccca-radio__label > span:nth-child(2) {
+.gaccca-radio .gaccca-radio_faux, .gaccca-scope .gaccca-radio .gaccca-radio--faux {
+  width: 1rem;
+  height: 1rem;
+  /* display: inline-block; */
+  position: relative;
+  vertical-align: middle;
+  float: left;
+  border: 1px solid #096DD9;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  transition: border .1s linear, background-color .1s linear;
+  margin-top: 2px;
+}
+
+.gaccca-radio .gaccca-radio__label>span:nth-child(2) {
   display: block;
   margin-left: 30px;
 }
-/* radio button css end */
 
+/* radio button css end */
 
 /* Below class define how checkbox  button will look
 checkbox css start
 
 */
+
 .gaccca-form-element__control .gaccca-checkbox {
-    display: block;
+  display: block;
 }
 
 .gaccca-checkbox {
-    /* display: inline-block; */
-    position: relative;
+  /* display: inline-block; */
+  position: relative;
 }
 
- .gaccca-checkbox [type=checkbox] {
-    width: 1px;
-    height: 1px;
-    border: 0;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    pointer-events: auto;
+.gaccca-checkbox [type=checkbox] {
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  pointer-events: auto;
 }
-
 
 .gaccca-form-element .gaccca-checkbox [type=checkbox]+.gaccca-checkbox__label .gaccca-checkbox_faux, .gaccca-form-element .gaccca-checkbox [type=checkbox]+.gaccca-checkbox__label .gaccca-checkbox--faux {
-    margin-right: .5rem;
+  margin-right: .5rem;
 }
 
-
- .gaccca-checkbox .gaccca-checkbox_faux, .gaccca-checkbox .gaccca-checkbox--faux {
-    width: 1rem;
-    height: 1rem;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-    border: 1px solid #1890FF;
-    border-radius: .125rem;
-    background: rgb(255, 255, 255);
-    transition: border .1s linear,background-color .1s linear;
+.gaccca-checkbox .gaccca-checkbox_faux, .gaccca-checkbox .gaccca-checkbox--faux {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border: 1px solid #1890FF;
+  border-radius: .125rem;
+  background: rgb(255, 255, 255);
+  transition: border .1s linear, background-color .1s linear;
 }
 
- .gaccca-checkbox [type=checkbox]:checked+.gaccca-checkbox__label .gaccca-checkbox_faux:after, .gaccca-checkbox [type=checkbox]:checked+.gaccca-checkbox__label .gaccca-checkbox--faux:after {
-    display: block;
-    content: '';
-    height: .25rem;
-    width: .5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0) rotate(-45deg);
-    border-bottom: 2px solid #1890FF;
-    border-left: 2px solid #1890FF;
+.gaccca-checkbox [type=checkbox]:checked+.gaccca-checkbox__label .gaccca-checkbox_faux:after, .gaccca-checkbox [type=checkbox]:checked+.gaccca-checkbox__label .gaccca-checkbox--faux:after {
+  display: block;
+  content: '';
+  height: .25rem;
+  width: .5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  border-bottom: 2px solid #1890FF;
+  border-left: 2px solid #1890FF;
 }
 
-
- .gaccca-checkbox .gaccca-checkbox__label .gaccca-form-element__label {
-    display: inline;
-    vertical-align: middle;
-    /* font-size: .8125rem; */
+.gaccca-checkbox .gaccca-checkbox__label .gaccca-form-element__label {
+  display: inline;
+  vertical-align: middle;
+  /* font-size: .8125rem; */
 }
 
 /* checkbox css end */
 
-
-
 /* Below css define how will label look */
 
 .gaccca-form-element__label {
-  
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    display: inline-block;
-    color: #262626;
-    /* font-size: .75rem; */
-    padding-right: 8px;
-    padding-top: .25rem;
-    margin-bottom: 0px;
-    max-width: 370px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 22px;
-
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  display: inline-block;
+  color: #262626;
+  /* font-size: .75rem; */
+  padding-right: 8px;
+  padding-top: .25rem;
+  margin-bottom: 0px;
+  max-width: 370px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
 }
 
-/* Below css define anchor tag color of  */
+/* Below css define anchor tag color in whole web  */
+
 body a {
   color: #3b8ced;
-  }
-
-
-.gaccca-checkbox_toggle{
-    width: 100%;
 }
 
+/*
+
+Below css define is for switch (create by checkbox)
+css start
+*/
+
+.gaccca-checkbox_toggle {
+  width: 100%;
+}
 
 .gaccca-m-bottom_none {
-    margin-bottom: 0!important;
-    margin-top: 30px;
+  margin-bottom: 0!important;
+  margin-top: 30px;
 }
 
-
- .gaccca-checkbox_toggle [type=checkbox] {
-    width: 1px;
-    height: 1px;
-    border: 0;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
+.gaccca-checkbox_toggle [type=checkbox] {
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
 }
 
-
-
- .gaccca-checkbox_toggle [type=checkbox]+.gaccca-checkbox_faux_container  {
-    font-size: .625rem;
-    color: rgb(62, 62, 60);
-    margin-top: 33px;
-    margin-right: 20px;
-    cursor: pointer;
-    
+.gaccca-checkbox_toggle [type=checkbox]+.gaccca-checkbox_faux_container {
+  font-size: .625rem;
+  color: rgb(62, 62, 60);
+  margin-top: 33px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
-
- .gaccca-checkbox_toggle [type=checkbox]:checked+.gaccca-checkbox_faux_container .gaccca-checkbox_faux{
-
-    border-color: rgba(27, 82, 151, 1);
-    background-color: rgba(27, 82, 151, 1);
-
+.gaccca-checkbox_toggle [type=checkbox]:checked+.gaccca-checkbox_faux_container .gaccca-checkbox_faux {
+  border-color: rgba(27, 82, 151, 1);
+  background-color: rgba(27, 82, 151, 1);
 }
 
-
- .gaccca-checkbox_toggle .gaccca-checkbox_faux {
-    display: block;
-    position: relative;
-    width: 3rem;
-    height: 1.2rem;
-    border: 1px solid rgb(176, 173, 171);
-    padding: .125rem;
-    background-color: rgb(176, 173, 171);
-    border-radius: 15rem;
-    transition: background-color .2s cubic-bezier(0.75, 0, 0.08, 1);
+.gaccca-checkbox_toggle .gaccca-checkbox_faux {
+  display: block;
+  position: relative;
+  width: 3rem;
+  height: 1.2rem;
+  border: 1px solid rgb(176, 173, 171);
+  padding: .125rem;
+  background-color: rgb(176, 173, 171);
+  border-radius: 15rem;
+  transition: background-color .2s cubic-bezier(0.75, 0, 0.08, 1);
 }
 
-
-
- .gaccca-checkbox_toggle [type=checkbox]:checked+.gaccca-checkbox_faux_container .gaccca-checkbox_faux:before{
-
-    content: '';
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    width: 1.25rem;
-    height: 1.25rem;
-    background-color: rgb(255, 255, 255);
-    border-radius: 15rem;
-    transition: transform .2s cubic-bezier(0.75, 0, 0.08, 1);
+.gaccca-checkbox_toggle [type=checkbox]:checked+.gaccca-checkbox_faux_container .gaccca-checkbox_faux:before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15rem;
+  transition: transform .2s cubic-bezier(0.75, 0, 0.08, 1);
 }
 
-
- .gaccca-checkbox_toggle [type=checkbox]:checked+.gaccca-checkbox_faux_container .gaccca-checkbox_faux:after{
-
-    content: ' ';
-    position: absolute;
-    top: .25rem;
-    left: .6rem;
-    height: .7rem;
-    width: .45rem;
-    border-bottom: 2px solid rgb(255, 255, 255);
-    border-right: 2px solid rgb(255, 255, 255);
-    border-radius: 0;
-    background-color: transparent;
-    transform: rotate(45deg);
-
-
+.gaccca-checkbox_toggle [type=checkbox]:checked+.gaccca-checkbox_faux_container .gaccca-checkbox_faux:after {
+  content: ' ';
+  position: absolute;
+  top: .25rem;
+  left: .6rem;
+  height: .7rem;
+  width: .45rem;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+  border-radius: 0;
+  background-color: transparent;
+  transform: rotate(45deg);
 }
 
-
-
- .gaccca-checkbox_toggle .gaccca-checkbox_faux:after {
-    content: '';
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    width: 1.25rem;
-    height: 1.25rem;
-    background-color: rgb(255, 255, 255);
-    border-radius: 15rem;
+.gaccca-checkbox_toggle .gaccca-checkbox_faux:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15rem;
 }
 
-
-
-
- .gaccca-checkbox_toggle [type=checkbox]+.gaccca-checkbox_faux_container .gaccca-checkbox_on {
-
-    display: none;
+.gaccca-checkbox_toggle [type=checkbox]+.gaccca-checkbox_faux_container .gaccca-checkbox_on {
+  display: none;
 }
 
-
- .gaccca-checkbox_toggle [type=checkbox]+.gaccca-checkbox_faux_container .gaccca-checkbox_off{
-
-    display: none;
+.gaccca-checkbox_toggle [type=checkbox]+.gaccca-checkbox_faux_container .gaccca-checkbox_off {
+  display: none;
 }
 
+/*
 
+switch css end
+*/
+
+/*
+Below css define is for select tag
+css start
+*/
 
 .gaccca-select_container {
-    position: relative;
+  position: relative;
 }
 
-.gaccca-select_container:before  {
-    position: absolute;
-    content: '';
-    display: block;
-    right: .5rem;
-    width: 0;
-    height: 0;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    pointer-events: none;
-}
-
-.gaccca-select_container:after {
-    border-top: 5px solid rgb(6, 28, 63);
-    bottom: calc((1.75rem / 2) - 6px);
+.gaccca-select_container:before {
+  position: absolute;
+  content: '';
+  display: block;
+  right: .5rem;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  pointer-events: none;
 }
 
 .gaccca-select_container:after {
-    position: absolute;
-    content: '';
-    display: block;
-    /* right: .5rem; */
-    width: 0;
-    height: 0;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    pointer-events: none;
-    margin-bottom: 13px;
-    margin-left: 350px;
+  border-top: 5px solid rgb(6, 28, 63);
+  bottom: calc((1.75rem / 2) - 6px);
 }
 
-
+.gaccca-select_container:after {
+  position: absolute;
+  content: '';
+  display: block;
+  /* right: .5rem; */
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  pointer-events: none;
+  margin-bottom: 13px;
+  margin-left: 350px;
+}
 
 .gaccca-select_container .gaccca-select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    padding-left: .5rem;
-    padding-right: 1.5rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: .5rem;
+  padding-right: 1.5rem;
 }
 
 .gaccca-select {
-     position: static;
-    height: 40px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    box-sizing: border-box;
-    border-radius: 4px;
-    flex: none;
-    order: 1;
-    margin: 4px 2px;
-    max-width: 370px;
-    width: 100%;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    color: #000;
-
+  position: static;
+  height: 40px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  margin: 4px 2px;
+  max-width: 370px;
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #000;
 }
 
-.gaccca-select:disabled{
-    background: #dddddd;
+.gaccca-select:disabled {
+  background: #dddddd;
 }
 
-.gaccca-select:focus{
+.gaccca-select:focus {
   outline: none;
   border: 2px solid black;
 }
 
-.gaccca-select:disabled:hover{
-    cursor:not-allowed
+.gaccca-select:disabled:hover {
+  cursor: not-allowed
 }
 
+/* select tag css end */
 
+/* 
+below css is define website header 
+Header css start
+*/
 
-
-.gaccca-header{
-background: #1A73E8;
-box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
+.gaccca-header {
+  background: #1A73E8;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
 }
 
-.gaccca-content-header{
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1094px;
-    padding: 5px;
-}
-        
- .gaccca-header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:#1A73E8;
-  }
-  
-
-  .gaccca-header ul > li {
-    float: left;
-    /* margin: 13px 0px 0px 59px; */
-    margin: 13px 0px 0px 45px;
-    
-  }
-  
-  .gaccca-header ul > li a, .gaccca-dropbtn {
-    
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 12px 8px;
-        text-decoration: none;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 22px;
-        border: 2.5px solid transparent;
-        line-height: 12px;
-        
-  } 
-  
-  .gaccca-header ul > li a:hover, .gaccca-dropdown:hover .gaccca-dropbtn {
-        border: 2.5px solid #FFFFFF;
-            
-  } 
-  
-  .gaccca-header ul > li.gaccca-dropdown {
-    display: inline-block;
-  }
-  
-  .gaccca-header .gaccca-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #FFF;
-    min-width: 228px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10;
-    margin-top: 0px;
-    border-radius: 10px;
-    border-top: 8px solid #1A73E8;
-  }
-  .gaccca-active-menu{
-    border-bottom: 2px solid #FFF;
-    padding-bottom: 5px;
-  }
-  
-  .gaccca-header .gaccca-dropdown-content a {
-    color: #595959;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    font-size: 20px;
-  }
-  
-  .gaccca-header .gaccca-dropdown-content a:hover {
-    background-color: #f5f5f5;
-    color: #1A73E8;
-  }
-  
- .gaccca-header .gaccca-dropdown:hover .gaccca-dropdown-content {
-    display: block; 
-  } 
-
-  /* .gaccca-header .gaccca-dropdown:visited .gaccca-dropdown-content {
-    display: block;
-  } */
-        
-      
- .gaccca-behind-the-logo{
-    margin: 9px 0px 9px 0px;
-    content:url("../images/logo/logo1.png");
-  }
-
-  .gaccca-behind-the-logo-host-company{
-
-    height: 46px;
-    width: 115px;
-    background: #ffff;
-    margin: 9px auto 9px auto;
-    border-radius: 6px;
-    padding: 5px 15px;
-
-  }
-
-
-
-  .gaccca-behind-the-logo-position{
-    float: left;
-  }
-  
- .gaccca-login-page{
-      /* max-width: 1200px; */
-      width: 100%;
-      margin: 0px auto 0px auto;
- }
-  .gaccca-login-header{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    padding: 5px;
-}
- 
-.gaccca-login-containt{
-
-padding: 1% 25%;
-
+.gaccca-content-header {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1094px;
+  padding: 5px;
 }
 
-.gaccca-signup-containt{
+.gaccca-header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1A73E8;
+}
 
+.gaccca-header ul>li {
+  float: left;
+  /* margin: 13px 0px 0px 59px; */
+  margin: 13px 0px 0px 45px;
+}
+
+.gaccca-header ul>li a, .gaccca-dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 12px 8px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  border: 2.5px solid transparent;
+  line-height: 12px;
+}
+
+.gaccca-header ul>li a:hover, .gaccca-dropdown:hover .gaccca-dropbtn {
+  border: 2.5px solid #FFFFFF;
+}
+
+.gaccca-header ul>li.gaccca-dropdown {
+  display: inline-block;
+}
+
+.gaccca-header .gaccca-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFF;
+  min-width: 228px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  margin-top: 0px;
+  border-radius: 10px;
+  border-top: 8px solid #1A73E8;
+}
+
+.gaccca-active-menu {
+  border-bottom: 2px solid #FFF;
+  padding-bottom: 5px;
+}
+
+.gaccca-header .gaccca-dropdown-content a {
+  color: #595959;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 20px;
+}
+
+.gaccca-header .gaccca-dropdown-content a:hover {
+  background-color: #f5f5f5;
+  color: #1A73E8;
+}
+
+.gaccca-header .gaccca-dropdown:hover .gaccca-dropdown-content {
+  display: block;
+}
+
+/*
+    Header css end
+    */
+
+/* css define logo for website */
+
+.gaccca-behind-the-logo {
+  margin: 9px 0px 9px 0px;
+  content: url("../images/logo/logo1.png");
+}
+
+.gaccca-behind-the-logo-host-company {
+  margin: 9px auto 9px auto;
+  content: url("../images/logo/logo1.png");
+}
+
+.gaccca-behind-the-logo-position {
+  float: left;
+}
+
+/* 
+
+css start for login page
+*/
+
+.gaccca-login-page {
+  width: 100%;
+  margin: 0px auto 0px auto;
+}
+
+.gaccca-login-header {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 5px;
+}
+
+.gaccca-login-containt {
+  padding: 1% 25%;
+}
+
+.gaccca-signup-containt {
   padding: 70px 25% 100px 25%;
-
 }
 
-
-.gaccca-forgot-password-containt{
-
+.gaccca-forgot-password-containt {
   padding: 70px 25% 208px 25%;
 }
 
-
-
-.gaccca-login-or { 
-  width:100%;
-  text-align:center; 
-  border-bottom: 1px solid #000; 
-  line-height:0.1em; 
-  margin:22px 0 30px;
- } 
- .gaccca-login-or span { 
-  background:#fff;
-  padding:0 10px;
-  color: #8C8C8C;
- }
- 
-.gaccca-accout-access-text{
-display: block;
-max-width: 368px;
-width: 100%;
-color: #8C8C8C;
-font-size: xx-large;
-text-align: center;
-margin: 0px auto 0px auto;
+.gaccca-login-or {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 22px 0 30px;
 }
 
-.gaccca-google-sign-btn{
+.gaccca-login-or span {
+  background: #fff;
+  padding: 0 10px;
+  color: #8C8C8C;
+}
+
+.gaccca-accout-access-text {
+  display: block;
+  max-width: 368px;
+  width: 100%;
+  color: #8C8C8C;
+  font-size: xx-large;
+  text-align: center;
+  margin: 0px auto 0px auto;
+}
+
+.gaccca-google-sign-btn {
   width: 200px;
   height: 40px;
   background: #DE4D3B;
   border-radius: 4px;
   border: none;
   cursor: pointer;
-
 }
-.gaccca-google-image{
 
+.gaccca-google-image {
   position: absolute;
   width: 27.54px;
   height: 27px;
@@ -649,46 +625,40 @@ margin: 0px auto 0px auto;
   top: 6px;
   background: #FFF;
 }
+
 .gaccca-google-image img {
   margin: 3px;
 }
 
-.gaccca-google-text{
+.gaccca-google-text {
   color: #FFF;
   font-size: 14px;
   margin-left: 35px;
 }
 
-
-.gaccca-facebook-sign-btn{
+.gaccca-facebook-sign-btn {
   width: 200px;
   height: 40px;
   background: #4267B2;
   border-radius: 4px;
   border: none;
   cursor: pointer;
-
 }
 
-.gaccca-facebbok-image{
-
+.gaccca-facebbok-image {
   position: absolute;
   width: 27.54px;
   height: 27px;
   border-radius: 2px;
   top: 6px;
   background: #FFF;
- 
 }
 
-.gaccca-facebbok-image img{
+.gaccca-facebbok-image img {
   margin: 4px 0px 0px 4px;
 }
- 
 
-
-.gaccca-new-user-btn{
- 
+.gaccca-new-user-btn {
   width: auto;
   height: auto;
   background: #FFF;
@@ -697,30 +667,26 @@ margin: 0px auto 0px auto;
   padding: 0px 41px;
   margin-top: 60px;
   cursor: pointer;
-
 }
-.gaccca-new-user-btn-text{
+
+.gaccca-new-user-btn-text {
   display: block;
   font-size: 18px;
   line-height: 24px;
   color: #389E0D;
   font-weight: bold;
   margin-bottom: 1px;
-
 }
 
-.gaccca-new-user-btn-sub-text{
+.gaccca-new-user-btn-sub-text {
   display: block;
   font-size: 13px;
   line-height: 20px;
   font-weight: bold;
   color: #8C8C8C;
-  
 }
 
-
-.gaccca-login-button{
-
+.gaccca-login-button {
   background: #096DD9;
   border-radius: 2px;
   flex-direction: column;
@@ -737,22 +703,16 @@ margin: 0px auto 0px auto;
   cursor: pointer;
   font-weight: 600;
   width: 200px;
-
 }
 
-
-
- 
-.gaccca-image-responsive{
-
+.gaccca-image-responsive {
   width: 100%;
   max-width: 614px;
   height: auto;
   margin-left: 60px;
- 
-} 
+}
 
-.gaccca-half-login{
+.gaccca-half-login {
   background-image: url("../images/bg.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -760,99 +720,82 @@ margin: 0px auto 0px auto;
   border-left: 1px solid #E5E5E5;
   /* max-width: 543px; */
   height: 100vh;
-  
 }
-
-
-
-
 
 .gaccca-half-login p {
-
-    color: #FFF;
-    font-size: 26px;
-    font-weight: 300;
-    margin: 0px;
-    padding: 13% 13%;
+  color: #FFF;
+  font-size: 26px;
+  font-weight: 300;
+  margin: 0px;
+  padding: 13% 13%;
 }
 
-.gaccca-main-containt{
+/* login page end */
 
+/* 
+From here start main page css : main page css
+
+*/
+
+.gaccca-main-containt {
   max-width: 1000px;
   margin: 40px auto 40px auto;
   background: #FFFFFF;
   border-radius: 18px;
   padding-bottom: 20px;
-
-}
-.gaccca-main-containt h1{ 
-
-    font-size: 48px;
-    line-height: 54px;
-    color: #262626;
-
 }
 
+/* Main containt h1 */
 
-.gaccca-main-containt  .gaccca-h1-padding{ 
-
-    padding: 38px 0px 0px 78px;
-  
+.gaccca-main-containt h1 {
+  font-size: 48px;
+  line-height: 54px;
+  color: #262626;
 }
 
+.gaccca-main-containt .gaccca-h1-padding {
+  padding: 38px 0px 0px 78px;
+}
 
-.gaccca-main-containt h2{ 
-
+.gaccca-main-containt h2 {
   margin: 0;
-  font-size: 24px; 
+  font-size: 24px;
   color: #8C8C8C;
-
 }
 
-
-.gaccca-main-containt  .gaccca-h2-padding{ 
-
-    padding: 0px 0px 24px 120px;
-  
+.gaccca-main-containt .gaccca-h2-padding {
+  padding: 0px 0px 24px 120px;
 }
-        
- .gaccca-sky-blue-box {
 
+/* Sky blue color box css start : page description box */
 
+.gaccca-sky-blue-box {
   background: #E6F7FF;
   border: 1px solid #91D5FF;
   box-sizing: border-box;
   border-radius: 6px;
   max-width: 840px;
   padding: 6px 16px;
-  
-
 }
 
-
 .gaccca-sky-blue-box-margin {
+  margin: 48px 0px 48px 79px;
+}
 
-    margin: 48px 0px 48px 79px;
-    
-   
-  }
-
-
-        
 .gaccca-sky-blue-box p {
-
   font-size: 14px;
   line-height: 22px;
   color: #9696A0;
   flex: none;
   order: 1;
   margin: 10px 4px;
-
 }
 
-        
-.gaccca-button-save{
+/* Sky blue color box css end : page description box */
 
+/* save button css start */
+
+.gaccca-button-save {
   background: #096DD9;
   border-radius: 2px;
   flex-direction: column;
@@ -870,69 +813,79 @@ margin: 0px auto 0px auto;
   outline: none;
 }
 
+/* save button css end */
 
-.gaccca-button-time-slot{
+/* time slot button css start : schedule call page */
 
-    background: #096DD9;
-    border-radius: 5px;
-    flex-direction: column;
-    padding: 2% 13%;
-    font-size: 16px;
-    line-height: 24px;
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    flex: none;
-    align-self: center;
-    border: none;
-    margin-top: 12px;
-    cursor: pointer;
-    
-  }
+.gaccca-button-time-slot {
+  background: #096DD9;
+  border-radius: 5px;
+  flex-direction: column;
+  padding: 2% 13%;
+  font-size: 16px;
+  line-height: 24px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  flex: none;
+  align-self: center;
+  border: none;
+  margin-top: 12px;
+  cursor: pointer;
+}
 
-  .gaccca-button-time-slot:disabled{
+.gaccca-button-time-slot:disabled {
+  background: #D8DDE6;
+  border-radius: 5px;
+  flex-direction: column;
+  padding: 2% 13%;
+  font-size: 16px;
+  line-height: 24px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  flex: none;
+  align-self: center;
+  border: none;
+  margin-top: 12px;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
 
-    background: #D8DDE6;
-    border-radius: 5px;
-    flex-direction: column;
-    padding: 2% 13%;
-    font-size: 16px;
-    line-height: 24px;
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    flex: none;
-    align-self: center;
-    border: none;
-    margin-top: 12px;
-    text-decoration: line-through;
-    cursor: not-allowed;
-  }
-   
+.gaccca-button-reshedule {
+  background: #882121;
+  border-radius: 2px;
+  flex-direction: column;
+  padding: 5px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  flex: none;
+  align-self: center;
+  border: none;
+  cursor: pointer;
+}
 
+.gaccca-reshedule-call-box {
+  max-width: 500px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
 
-.gaccca-button-reshedule{
+.gaccca-reshedule-call-box p {
+  margin: 5px;
+}
 
-    background: #882121;
-    border-radius: 2px;
-    flex-direction: column;
-    padding: 5px 16px;
-    font-size: 16px;
-    line-height: 24px;
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    flex: none;
-    align-self: center;
-    border: none;
-    cursor: pointer;
-  }
+/* time slot button css end : schedule call page */
 
-.gaccca-button-save-green{
-
+.gaccca-button-save-green {
   background: #52C41A;
   border-radius: 2px;
   flex-direction: column;
@@ -947,116 +900,116 @@ margin: 0px auto 0px auto;
   border: none;
   cursor: pointer;
   width: 200px;
-  
-  
-  }
-
-.gaccca-call-slot-box{
-
-    margin-top: 12px;
-    background: forestgreen;
-    padding: 2% 5%;
-    max-width: 190px;
-    border-radius: 5px;
-    font-size: 14px;
-    height: auto;
-    text-align: center;
-    width: 100%;
-    cursor: not-allowed;
 }
 
-.gaccca-call-slot-box p{
-
-    margin: 8px;
-    color: aliceblue;
+.gaccca-call-slot-box {
+  margin-top: 12px;
+  background: forestgreen;
+  padding: 2% 5%;
+  max-width: 190px;
+  border-radius: 5px;
+  font-size: 14px;
+  height: auto;
+  text-align: center;
+  width: 100%;
+  cursor: not-allowed;
 }
 
-.gaccca-button-save-margin{
-    margin: 4px 0px 0px 120px;
+.gaccca-call-slot-box p {
+  margin: 8px;
+  color: aliceblue;
 }
 
-        
-.gaccca-input{
-   
-    position: static;
-    height: 40px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    box-sizing: border-box;
-    border-radius: 4px;
-    flex: none;
-    order: 1;
-    margin: 2px 2px;
-    max-width: 370px;
-    width: 100%;
-    padding:12px;
-
-
+.gaccca-button-save-margin {
+  margin: 4px 0px 0px 120px;
 }
 
-.gaccca-input-date{
-   
-    position: static;
-    height: 40px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    box-sizing: border-box;
-    border-radius: 4px;
-    flex: none;
-    order: 1;
-    margin: 2px 2px;
-    max-width: 370px;
-    width: 100%;
-    padding:12px;
-    background-image: url("../images/datepicker.png");
-    background-position: 337px;
-    background-repeat: no-repeat;
-    background-size: auto;
+/* Input field */
 
+.gaccca-input {
+  position: static;
+  height: 40px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  margin: 2px 2px;
+  max-width: 370px;
+  width: 100%;
+  padding: 12px;
 }
-
-
-#ui-datepicker-div {
-  z-index:5 !important;
-}
-
-
-        
-.gaccca-input-error {
-    background-color: rgb(255, 255, 255);
-    border-color: #ff0000;
-    box-shadow: #ff0000 0 0 0 1px inset;
-    background-clip: padding-box;
-}
-
 
 .gaccca-input::placeholder {
-   
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    color: #BFBFBF;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #BFBFBF;
 }
 
-
-.gaccca-input:focus{
+.gaccca-input:focus {
   border: 2px solid black;
   outline: none;
 }
 
 .gaccca-input:disabled {
-    background-color: #dddddd;
+  background-color: #dddddd;
+}
+
+.gaccca-input:disabled:hover {
+  cursor: not-allowed;
+}
+
+/* Input Help text css */
+
+.gaccca-input-help-text {
+  display: block;
+  max-width: 368px;
+  width: 100%;
+  color: #8C8C8C;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* Input Error css */
+
+.gaccca-input-error {
+  background-color: rgb(255, 255, 255);
+  border-color: #ff0000;
+  box-shadow: #ff0000 0 0 0 1px inset;
+  background-clip: padding-box;
+}
+
+/* Input Field Date */
+
+.gaccca-input-date {
+  position: static;
+  height: 40px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  margin: 2px 2px;
+  max-width: 370px;
+  width: 100%;
+  padding: 12px;
+  background-image: url("../images/datepicker.png");
+  background-position: 337px;
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .gaccca-input-date:disabled {
-    background-color: #dddddd;
+  background-color: #dddddd;
 }
 
 .gaccca-input-date:focus {
@@ -1064,847 +1017,764 @@ margin: 0px auto 0px auto;
   outline: none;
 }
 
-
-.gaccca-input:disabled:hover {
-    cursor: not-allowed;
+#ui-datepicker-div {
+  z-index: 5 !important;
 }
 
+/* Input Field Textarea */
 
-/* input[type="text"]:disabled {
-    
-  } */
-
-
-.gaccca-textarea{
-    position: static;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    box-sizing: border-box;
-    border-radius: 4px;
-    flex: none;
-    order: 1;
-    margin: 4px 2px;
-    max-width: 370px;
-    width: 100%;
-    padding:12px;
-
-
+.gaccca-textarea {
+  position: static;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  margin: 4px 2px;
+  max-width: 370px;
+  width: 100%;
+  padding: 12px;
 }
 
-.gaccca-textarea:disabled{
-
-    background: #dddddd;
+.gaccca-textarea:disabled {
+  background: #dddddd;
 }
 
 .gaccca-textarea:disabled:hover {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
-
 
 .gaccca-textarea::placeholder {
   font-style: normal;
   font-family: 'Roboto';
   font-weight: normal;
   font-size: 16px;
-  color: #BFBFBF;  
+  color: #BFBFBF;
 }
 
-.gaccca-textarea:focus{
+.gaccca-textarea:focus {
   border: 2px solid black;
   outline: none;
 }
 
-.gaccca-script-textarea{
-    position: static;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    box-sizing: border-box;
-    border-radius: 4px;
-    flex: none;
-    order: 1;
-    margin: 4px 2px;
-    max-width: 840px;
-    width: 100%;
-    padding:12px;
-    min-height: 800px;
-
+.gaccca-script-textarea {
+  position: static;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  margin: 4px 2px;
+  max-width: 840px;
+  width: 100%;
+  padding: 12px;
+  min-height: 800px;
 }
-
 
 .gaccca-modal-textarea {
-    position: static;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    box-sizing: border-box;
-    border-radius: 4px;
-    flex: none;
-    order: 1;
-    margin: 4px 2px;
-    max-width: 1029px;
-    width: 100%;
-    padding: 12px;
-    min-height: 250px;
+  position: static;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  margin: 4px 2px;
+  max-width: 1029px;
+  width: 100%;
+  padding: 12px;
+  min-height: 250px;
 }
 
-
-
+/* Input Field File */
 
 .gaccca-file {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    height: 40px;
-    max-width: 350px;
-    width: 100%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 40px;
+  max-width: 350px;
+  width: 100%;
 }
-.gaccca-file-custom{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 5;
-    height: 40px;
-    line-height: 40px;
-    color: #555;
-    background-color: #fff;
-    border: .075rem solid #ddd;
-    border-radius: 4px;
-    box-shadow: inset 0 0.2rem 0.4rem rgba(0,0,0,.05);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding-left: 15px;
 
-    margin-left: -1px;
-    }
-    
-    /* .gaccca-file-custom:before {
-    position: absolute;
-    top: -.075rem;
-    right: -.075rem;
-    bottom: -.075rem;
-    z-index: 6;
-    display: block;
-    content: "Browse";
-    height: 24px;
-    padding: .5rem 1rem;
-    line-height: 24px;
-    color: #555;
-    background-color: #eee;
-    border: .075rem solid #ddd;
-    border-radius: 0 .25rem .25rem 0;
+.gaccca-file-custom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  height: 40px;
+  line-height: 40px;
+  color: #555;
+  background-color: #fff;
+  border: .075rem solid #ddd;
+  border-radius: 4px;
+  box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, .05);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 15px;
+  margin-left: -1px;
 }
- */
 
 .gaccca-file-custom:before {
-    position: absolute;
-    top: 5px;
-    right: 4px;
-    bottom: -.075rem;
-    z-index: 6;
-    display: block;
-    content: "Browse";
-    height: 24px;
-    padding: 2px 4px;
-    line-height: 24px;
-    color: white;
-    background-color: #096DD9;
-    border: .075rem solid #ddd;
-    border-radius: 2px;
-    font-size: 14px;
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  bottom: -.075rem;
+  z-index: 6;
+  display: block;
+  content: "Browse";
+  height: 24px;
+  padding: 2px 4px;
+  line-height: 24px;
+  color: white;
+  background-color: #096DD9;
+  border: .075rem solid #ddd;
+  border-radius: 2px;
+  font-size: 14px;
 }
 
-
-/* .gaccca-file-custom:after {
-    content: "Choose file...";
-} */
-
-.gaccca-file-help-text-color{
-    color: #72777d;
+.gaccca-file-help-text-color {
+  color: #72777d;
 }
 
-.gaccca-input-help-text{
-    display: block;
-    max-width: 368px;
-    width: 100%;
-    color: #8C8C8C;
-    font-size: 14px;
-    line-height: 22px;
-}
-
-
-
-
+/* Start rating css start */
 
 .gaccca-rating {
-    overflow: hidden;
-    display: inline-block;
-    margin-left: 30px;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 30px;
 }
+
 .gaccca-rating-input {
-    float: right;
-    width: 16px;
-    height: 16px;
-    padding: 0;
-    margin: 0 0 0 -16px;
-    opacity: 0;
+  float: right;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0 0 0 -16px;
+  opacity: 0;
 }
 
-.gaccca-rating:hover .gaccca-rating-star:hover,
-.gaccca-rating:hover .gaccca-rating-star:hover ~ .gaccca-rating-star,
-.gaccca-rating-input:checked ~ .gaccca-rating-star {
-    background-position: 0 0;
+.gaccca-rating:hover .gaccca-rating-star:hover, .gaccca-rating:hover .gaccca-rating-star:hover~.gaccca-rating-star, .gaccca-rating-input:checked~.gaccca-rating-star {
+  background-position: 0 0;
 }
 
- .gaccca-rating-star,
-.gaccca-rating:hover .gaccca-rating-star {
-    position: relative;
-    display: block;
-    float: right;
-    width: 16px;
-    height: 16px;
-    background: url("/images/star.png") 0 -16px;
-    margin-left: 5px;
+.gaccca-rating-star, .gaccca-rating:hover .gaccca-rating-star {
+  position: relative;
+  display: block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  background: url("/images/star.png") 0 -16px;
+  margin-left: 5px;
 }
-  
 
-
-
-
-
-
-
-
+/* Start rating css end */
 
 /* Style the gaccca-tab */
+
 .gaccca-tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    max-width: 840px;
-  }
-  
-  /* Style the buttons inside the gaccca-tab */
-  .gaccca-tab span {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    color: rgb(62, 62, 60);
-  }
-  
-  /* Change background color of buttons on hover */
-  .gaccca-tab span:hover {
-    background-color: inherit;
-  }
-  
-  /* Create an active/current gaccca-tablink class */
-  .gaccca-tab span.gaccca-tab-active {
-    background-color: #1A73E8;
-    color: #FFF;
-  }
-  
-  /* Style the gaccca-tab content */
-  .gaccca-tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-    max-width: 816px;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.gaccca-text-required{
-      color: red !important;
-      padding-left:3px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  max-width: 840px;
 }
 
-.gaccca-error-message{
-    color: red !important;
-    padding-left:3px;
-    display: block;
+/* Style the buttons inside the gaccca-tab */
+
+.gaccca-tab span {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: rgb(62, 62, 60);
 }
 
- .clear {
-    clear: both;
-  }
-        
-        
+/* Change background color of buttons on hover */
 
-.gaccca-margin-bootom-80{
-    margin-bottom:80px;
+.gaccca-tab span:hover {
+  background-color: inherit;
 }
 
-.gaccca-margin-bootom-login-element{
-  margin-bottom:15px;
+/* Create an active/current gaccca-tablink class */
+
+.gaccca-tab span.gaccca-tab-active {
+  background-color: #1A73E8;
+  color: #FFF;
 }
 
+/* Style the gaccca-tab content */
 
-.gaccca-margin-0{
-    margin:0px;
+.gaccca-tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-width: 816px;
 }
 
+/* Required */
 
-
-.gaccca-text-center{
-    text-align: center;
+.gaccca-text-required {
+  color: red !important;
+  padding-left: 3px;
 }
 
-.gaccca-text-left{
+.gaccca-error-message {
+  color: red !important;
+  padding-left: 3px;
+  display: block;
+}
+
+.clear {
+  clear: both;
+}
+
+/* Necessary margin ,text align css start */
+
+.gaccca-margin-bootom-80 {
+  margin-bottom: 80px;
+}
+
+.gaccca-margin-bootom-login-element {
+  margin-bottom: 15px;
+}
+
+.gaccca-margin-0 {
+  margin: 0px;
+}
+
+.gaccca-text-center {
+  text-align: center;
+}
+
+.gaccca-text-left {
   text-align: left;
 }
 
-
-.gaccca-padding-left-0{
-    padding-left: 0px;
+.gaccca-padding-left-0 {
+  padding-left: 0px;
 }
 
-.gaccca-padding-right-25{
-    padding-right: 25px;
+.gaccca-padding-right-25 {
+  padding-right: 25px;
 }
 
-
-.gaccca-padding-left-25{
-    padding-left: 25px;
+.gaccca-padding-left-25 {
+  padding-left: 25px;
 }
 
+.gaccca-margin-top-20 {
+  margin-top: 20px;
+}
 
+/* Necessary margin ,text align css end */
 
- 
-/* @media only screen and (min-width: 1096px) { */
-    /* For desktop: */
-    .gaccca-large-size_1-of-12 {
-        width: 8.3333333333%;
-        
-    }
+/* Grid system css start */
 
-     .gaccca-large-size_2-of-12 {
-        width: 16.6666666667%;
-        
-    }
-    
-      .gaccca-large-size_3-of-12 {
-        width: 25%;
-        
-    }
-    
-      .gaccca-large-size_4-of-12{
-        width: 33.3333333333%;
-        
-    }
-    
-      .gaccca-large-size_5-of-12 {
-        width: 41.6666666667%;
-        
-    }
-    
-       .gaccca-large-size_6-of-12{
-        width: 50%;
-        
-    }
-    
-    .gaccca-large-size_7-of-12 {
-        width: 58.3333333333%;
-        
-    }
-    
-     .gaccca-large-size_8-of-12{
-        width: 66.6666666667%;
-        
-    }
-    
-      .gaccca-large-size_9-of-12 {
-        width: 75%;
-        
-    }
-    
-    
-       .gaccca-large-size_10-of-12 {
-        width: 83.3333333333%;
-        
-    }
-    
-      .gaccca-large-size_11-of-12 {
-        width: 91.6666666667%;
-        
-    }
+.gaccca-large-size_1-of-12 {
+  width: 8.3333333333%;
+}
 
-     .gaccca-large-size_1-of-1{
-        width: 100%;
-        
-    }
+.gaccca-large-size_2-of-12 {
+  width: 16.6666666667%;
+}
 
-/* }  */
-       
+.gaccca-large-size_3-of-12 {
+  width: 25%;
+}
 
+.gaccca-large-size_4-of-12 {
+  width: 33.3333333333%;
+}
 
+.gaccca-large-size_5-of-12 {
+  width: 41.6666666667%;
+}
+
+.gaccca-large-size_6-of-12 {
+  width: 50%;
+}
+
+.gaccca-large-size_7-of-12 {
+  width: 58.3333333333%;
+}
+
+.gaccca-large-size_8-of-12 {
+  width: 66.6666666667%;
+}
+
+.gaccca-large-size_9-of-12 {
+  width: 75%;
+}
+
+.gaccca-large-size_10-of-12 {
+  width: 83.3333333333%;
+}
+
+.gaccca-large-size_11-of-12 {
+  width: 91.6666666667%;
+}
+
+.gaccca-large-size_1-of-1 {
+  width: 100%;
+}
+
+/* Grid system css end */
+
+/* Accordian css start */
 
 .gaccca-accordion {
-    background-color: white;
-    color: rgb(62, 62, 60);
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-    margin-bottom: 5px;
-  }
-  
-  .gaccca-active-accordian, .gaccca-accordion:hover {
-    background-color: white; 
-    color: rgb(62, 62, 60);
-  } 
-  
-  .gaccca-panel {
-    padding: 0px 20px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
-    color: rgb(62, 62, 60);
-  }
-
-  button.gaccca-accordion::before {
-    content: '\002B';
-    color:#1890FF;
-    font-weight: bold;
-    float: left;
-    margin-right: 15px;
+  background-color: white;
+  color: rgb(62, 62, 60);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-bottom: 5px;
 }
 
+.gaccca-active-accordian, .gaccca-accordion:hover {
+  background-color: white;
+  color: rgb(62, 62, 60);
+}
+
+.gaccca-panel {
+  padding: 0px 20px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  color: rgb(62, 62, 60);
+}
+
+button.gaccca-accordion::before {
+  content: '\002B';
+  color: #1890FF;
+  font-weight: bold;
+  float: left;
+  margin-right: 15px;
+}
 
 button.gaccca-accordion-minius::before {
-    content: '\002D';
-    color:#1890FF;
-    font-weight: bold;
-    float: left;
-    margin-right: 15px;
+  content: '\002D';
+  color: #1890FF;
+  font-weight: bold;
+  float: left;
+  margin-right: 15px;
 }
 
-  .gaccca-sidenav {
+/* Accordian close */
 
-    width: 300px;
-    position: fixed;
-    z-index: 1;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #1A73E8;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+/* Sidenav css start */
 
+.gaccca-sidenav {
+  width: 300px;
+  position: fixed;
+  z-index: 6;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1A73E8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
-  }
+.gaccca-sidenav-display {
+  display: none;
+}
 
+.gaccca-sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  text-align: right;
+}
 
-  .gaccca-sidenav-display{
-    display: none;
-  }
+.gaccca-sidenav a, .gaccca-dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
 
+/* On mouse-over */
 
-  .gaccca-sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 36px;
-    text-align: right;
-  }
+.gaccca-sidenav a:hover, .gaccca-dropdown-btn:hover {
+  color: white;
+}
 
+/* Sidenav End */
 
-  .gaccca-sidenav a, .gaccca-dropdown-btn {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-    transition: 0.3s;
-  }
-  
-  /* On mouse-over */
-  .gaccca-sidenav a:hover, .gaccca-dropdown-btn:hover {
-    color: white;
-  }
-  
+/* Add an active class to the active dropdown button */
 
-  /* Add an active class to the active dropdown button */
-  .active {
-    background-color: #1A73E8;
-    color: white;
-  }
-  
-  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-  .gaccca-dropdown-container {
-    display: none;
-    background-color: dodgerblue;
-    padding-left: 8px;
-  }
-  
-  /* Optional: Style the caret down icon */
-  .gaccca-fa-caret-down {
-    float: right;
-    padding-right: 8px;
-  }
+.active {
+  background-color: #1A73E8;
+  color: white;
+}
 
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 
+.gaccca-dropdown-container {
+  display: none;
+  background-color: dodgerblue;
+  padding-left: 8px;
+}
 
-.gaccca-download-participant-handbook{
+/* Optional: Style the caret down icon */
 
-    font-weight: normal;
-    color: #ffffff;
-    background: #e74c3c;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 28px;
+.gaccca-fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
 
+.gaccca-download-participant-handbook {
+  font-weight: normal;
+  color: #ffffff;
+  background: #e74c3c;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 28px;
+}
 
-  }
+/* participant download button */
 
-  .gaccca-download-participant-handbook-green{
+.gaccca-download-participant-handbook-green {
+  font-weight: normal;
+  color: #ffffff;
+  background: #52C41A;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 28px;
+  font-size: 16px;
+  align-items: center;
+}
 
-    font-weight: normal;
-    color: #ffffff;
-    background: #52C41A;
-    text-align: center;
-    border-radius: 4px;
-    font-size: 28px;
-    font-size: 16px;
-    /* line-height: 24px; */
-    /* display: flex; */
-    align-items: center;
-    /* text-align: center; */ 
+.gaccca-download-participant-handbook-margin {
+  margin: 0px 15%;
+}
 
-  }
+.gaccca-download-participant-handbook-padding {
+  padding: 10px 100px;
+}
 
-  .gaccca-download-participant-handbook-margin{
-    margin: 0px 15%;
-  }
-
-  .gaccca-download-participant-handbook-padding{
-    padding: 10px 100px;
-  }
-
-
- 
 .gaccca-openbtn {
-    font-size: 35px;
-    cursor: pointer;
-    background-color: #1A73E8;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    float: left;
-  }
-  
-  .gaccca-openbtn:hover {
-    background-color:#1A73E8;
-  }
-
-
-  .gaccca-modal_large {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 50px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-
-  /* Add Animation */
-  @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-  }
-  
-  @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  }
-
-
-  /* Modal Content */
-  .gaccca-modal__content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-  }
-
-
- /* The gaccca-modal__close Button */
- .gaccca-modal__close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .gaccca-modal__close:hover,
-  .gaccca-modal__close:focus {
-   
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .gaccca-modal__header {
-    padding: 2px 16px;
-    background-color: #1A73E8;
-    color: white;
-  }
-  
-  .gaccca-modal__body {
-      
-    padding: 2px 16px;
-    background-color: rgba(45, 45, 255, 0.03);
-}
-  
-  .gaccca-modal__footer {
-   
-    padding: 22px 16px;
-    background-color: rgba(45, 45, 255, 0.03);
-  }
-
-
-  .gaccca-notify_alert {
-    padding: 20px;
-    background-color: #f44336;
-    color: white;
-    position: fixed;
-    width: 71%;
-    left: 13%;
-    z-index: 6;
-
-  }
-  
-  .gaccca-notify__close {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .gaccca-notify_alert.gaccca-theme_success {background-color: #4CAF50;}
-
-
-
-.gaccca-loader-div{
-    width: 100%;
-    height: 100%;
-    z-index: 20;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: rgba(0,0,0,0.4);
+  font-size: 35px;
+  cursor: pointer;
+  background-color: #1A73E8;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  float: left;
 }
 
-  .gaccca-loader {
-    border: 5px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 5px solid #1A73E8;
-    width: 50px;
-    height: 50px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-   
+.gaccca-openbtn:hover {
+  background-color: #1A73E8;
+}
+
+.gaccca-modal_large {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 50px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
   }
-  
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* Modal Content */
+
+.gaccca-modal__content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* The gaccca-modal__close Button */
+
+.gaccca-modal__close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.gaccca-modal__close:hover, .gaccca-modal__close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gaccca-modal__header {
+  padding: 2px 16px;
+  background-color: #1A73E8;
+  color: white;
+}
+
+.gaccca-modal__body {
+  padding: 2px 16px;
+  background-color: rgba(45, 45, 255, 0.03);
+}
+
+.gaccca-modal__footer {
+  padding: 22px 16px;
+  background-color: rgba(45, 45, 255, 0.03);
+}
+
+/* Alert section start */
+
+.gaccca-notify_alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  position: fixed;
+  width: 71%;
+  left: 13%;
+  z-index: 6;
+}
+
+.gaccca-notify__close {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gaccca-notify_alert.gaccca-theme_success {
+  background-color: #4CAF50;
+}
+
+/* Alert section close */
+
+/* Loader start */
+
+.gaccca-loader-div {
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.gaccca-loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #1A73E8;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
   /* Safari */
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-.gaccca-data-table-margin-48{
-    margin: 48px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
 }
 
-.gaccca-inside-data-table{
+/* Loader end */
+
+/* Safari */
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Table start */
+
+.gaccca-data-table-margin-48 {
+  margin: 48px;
+}
+
+.gaccca-inside-data-table {
   max-width: 1200px;
   width: 100%;
   overflow-x: scroll;
 }
 
-.gaccca-price-table{
-     
-    width: 100%;
-    max-width: 422px;
+.gaccca-price-table {
+  width: 100%;
+  max-width: 422px;
 }
 
 .gaccca-price-table, th, td {
-    
-    border-collapse: collapse;
-  }
-  .gaccca-price-table th,.gaccca-price-table td {
-    padding: 5px;
-    text-align: left;    
-  }
-  /* .gaccca-price-table tr{
+  border-collapse: collapse;
+}
+
+.gaccca-price-table th, .gaccca-price-table td {
+  padding: 5px;
+  text-align: left;
+}
+
+/* .gaccca-price-table tr{
    border-top: 1px solid black;
   } */
 
-  .gaccca-price-table a{
-    margin-right: 5px;
+.gaccca-price-table a {
+  margin-right: 5px;
 }
 
-.gaccca-host-company-table{
-    width: 100%;
+.gaccca-host-company-table {
+  width: 100%;
 }
 
 .gaccca-host-company-table, th, td {
-    
-    border-collapse: collapse;
-     
-  }
-  .gaccca-host-company-table th,.gaccca-host-company-table td {
-    padding: 5px;
-    text-align: left;    
-  }
+  border-collapse: collapse;
+}
 
+.gaccca-host-company-table th, .gaccca-host-company-table td {
+  padding: 5px;
+  text-align: left;
+}
 
+/* table end */
 
-/* 
-  .gaccca-host-company-table tr{
-   border-top: 1px solid black;
-  } */
+/* Rating table start */
 
-
-
-.gaccca-rating-table{
-    width: auto;
+.gaccca-rating-table {
+  width: auto;
 }
 
 .gaccca-rating-table, th, td {
-    border-collapse: collapse;     
-  }
+  border-collapse: collapse;
+}
 
-.gaccca-rating-table th,.gaccca-rating-table td {
-    padding: 5px;
-    text-align: left;    
-  }
+.gaccca-rating-table th, .gaccca-rating-table td {
+  padding: 5px;
+  text-align: left;
+}
 
- .gaccca-rating-table td:first-child {
-     padding-right: 20px;
-   }
+.gaccca-rating-table td:first-child {
+  padding-right: 20px;
+}
 
-   .gaccca-rating-table td:last-child {
-    padding-left: 20px;
-  }
+.gaccca-rating-table td:last-child {
+  padding-left: 20px;
+}
 
+/* Rating table end */
 
-  .gaccca-reshedule-call-box{
+/* parsley error classes : start */
 
-    max-width: 500px;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-  }
-  .gaccca-reshedule-call-box p {
-      margin: 5px;
-  }
-
-/* error classes */
-
-input.parsley-success,
-select.parsley-success,
-textarea.parsley-success {
-
+input.parsley-success, select.parsley-success, textarea.parsley-success {
   background-color: #FFFF;
 }
 
-input.gaccca-parsley-error,
-select.gaccca-parsley-error,
-textarea.gaccca-parsley-error
-
-{
-
-    background-color: rgb(255, 255, 255);
-    border-color: #ff0000;
-    box-shadow: #ff0000 0 0 0 1px inset;
-    background-clip: padding-box;
-
+input.gaccca-parsley-error, select.gaccca-parsley-error, textarea.gaccca-parsley-error {
+  background-color: rgb(255, 255, 255);
+  border-color: #ff0000;
+  box-shadow: #ff0000 0 0 0 1px inset;
+  background-clip: padding-box;
 }
 
-
-.gaccca-parsley-error > label > span:nth-child(1) {
-
+.gaccca-parsley-error>label>span:nth-child(1) {
   border: 1px solid #ff0000 !important;
- 
 }
 
-input[type="file"].gaccca-parsley-error + ul + span {
+input[type="file"].gaccca-parsley-error+ul+span {
   border: 1px solid #ff0000 !important;
   color: #ff0000 !important;
-} 
+}
 
-input[type="file"].gaccca-parsley-error + ul + span::before {
+input[type="file"].gaccca-parsley-error+ul+span::before {
   background-color: #ff0000 !important;
-} 
+}
 
-
-input[type="file"].gaccca-parsley-error + ul  {
+input[type="file"].gaccca-parsley-error+ul {
   margin-top: 20px !important;
-  
-} 
-
+}
 
 .gaccca-parsley-errors-list {
   margin: 0 0 0;
@@ -1913,24 +1783,25 @@ input[type="file"].gaccca-parsley-error + ul  {
   font-size: 100%;
   line-height: 1.5;
   font-family: 'Roboto';
-
   opacity: 0;
   color: #ff0000;
-
   transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
   -moz-transition: all .3s ease-in;
   -webkit-transition: all .3s ease-in;
-
-
 }
 
-.gaccca-parsley-errors-list li{
- text-align: left;
+.gaccca-parsley-errors-list li {
+  text-align: left;
 }
+
 .gaccca-parsley-errors-list.filled {
   opacity: 1;
 }
+
+/* parsley error classes : end */
+
+/* scroll to top button */
 
 #gaccca-scroll-to-top-button {
   display: none;
@@ -1941,7 +1812,7 @@ input[type="file"].gaccca-parsley-error + ul  {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color:#096DD9;
+  background-color: #096DD9;
   color: white;
   cursor: pointer;
   padding: 15px;
@@ -1952,284 +1823,184 @@ input[type="file"].gaccca-parsley-error + ul  {
   background-color: #096DD9;
 }
 
-
-.gaccca-margin-top-20{
-  margin-top: 20px;
-}
-
-
-
-
-
 @media only screen and (max-width: 414px) {
-
-  .gaccca-form-element-margin{
+  .gaccca-form-element-margin {
     margin: 0px 5px 33px 6px
-}
-
+  }
 }
 
 /* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-    .gaccca-header ul > li {
-        
-        margin: 13px 0px 0px 35px !important;
-    }
-    .gaccca-behind-the-logo-position{
-     float: left !important;
-     margin-left: 25px !important;
 
-    }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .gaccca-header ul>li {
+    margin: 13px 0px 0px 35px !important;
+  }
+  .gaccca-behind-the-logo-position {
+    float: left !important;
+    margin-left: 25px !important;
+  }
 }
-    
-    /* iPads (portrait) ----------- */
- @media only screen 
- and (min-device-width : 768px) 
- and (max-device-width : 1024px) 
- and (orientation : portrait) {
 
-  .gaccca-display-menu{
-        display: none !important;
-   }
-     
-  .gaccca-header-menu-button{
-        display: block !important;
-    }
+/* iPads (portrait) ----------- */
 
-  .gaccca-behind-the-logo-position{
-        float: right !important;
-        margin-right: 10px !important;
-    }
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .gaccca-display-menu {
+    display: none !important;
+  }
+  .gaccca-header-menu-button {
+    display: block !important;
+  }
+  .gaccca-behind-the-logo-position {
+    float: right !important;
+    margin-right: 10px !important;
+  }
   .gaccca-main-containt .gaccca-h1-padding {
-        padding: 38px 0px 0px 50px !important;
-    }
-    
-
+    padding: 38px 0px 0px 50px !important;
+  }
   .gaccca-main-containt .gaccca-h2-padding {
-        padding: 0px 0px 24px 80px !important;
-    }
-
-  .gaccca-form-element-margin{
-        margin: 0px 20px 33px 80px !important;
-    }
-
-    .gaccca-sky-blue-box-margin {
-        margin: 48px 40px 48px 50px !important;
-    }
-
-    .gaccca-button-save-margin {
-        margin: 4px 0px 0px 80px !important;
-    }
-
-
-
+    padding: 0px 0px 24px 80px !important;
+  }
+  .gaccca-form-element-margin {
+    margin: 0px 20px 33px 80px !important;
+  }
+  .gaccca-sky-blue-box-margin {
+    margin: 48px 40px 48px 50px !important;
+  }
+  .gaccca-button-save-margin {
+    margin: 4px 0px 0px 80px !important;
+  }
 }
-
 
 /* Portrait*/
-@media only screen 
-and (min-device-width: 1024px) 
-and (max-device-height: 1366px) 
-and (-webkit-min-device-pixel-ratio: 2)  
-and (orientation: portrait)  {
 
-    .gaccca-header ul > li {
-       
-        margin: 13px 0px 0px 35px !important;
-    }
-
-    .gaccca-display-menu{
-        display: block !important;
-       }
-     
-       .gaccca-header-menu-button{
-           display: none !important;
-       }
-
-    .gaccca-behind-the-logo-position{
-        float: left !important;
-        
-    }
-
-
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .gaccca-header ul>li {
+    margin: 13px 0px 0px 35px !important;
+  }
+  .gaccca-display-menu {
+    display: block !important;
+  }
+  .gaccca-header-menu-button {
+    display: none !important;
+  }
+  .gaccca-behind-the-logo-position {
+    float: left !important;
+  }
 }
 
-
-
-@media only screen
-and  (max-device-width : 767px) {
-
-    .gaccca-main-containt {
-      margin: 0px auto 40px auto !important;
-      border-radius: 0px !important;
-    }
-    .gaccca-display-menu{
-        display: none !important;
-    }
-     
-    .gaccca-header-menu-button{
-        display: block !important;
-    }
-
-    .gaccca-behind-the-logo-position{
-        float: right !important;
-    }
-     
-    .gaccca-main-containt  .gaccca-h1-padding{ 
-     
-        /* padding: 30px 0px 0px 30px !important; */
-        padding: 30px 0px 0px 15px !important;
-         
-     }
-     .gaccca-main-containt h1{
-       margin: 0px !important;
-     }
-     
-    .gaccca-main-containt  .gaccca-h2-padding{ 
-     
-           padding: 0px 0px 24px 15px !important;
-         
-       }
-     
-    .gaccca-sky-blue-box-margin {
-        margin: 30px 15px 20px 15px !important
-      }
-           
-       .gaccca-form-element-margin{
-           /* margin: 0px 30px 33px 31px !important; */
-           margin: 0px 15px 20px 15px !important;
-
-       }
-     
-       .gaccca-button-save-margin{
-           /* margin: 4px 0px 0px 31px !important; */
-           margin: 4px 0px 0px 15px !important;
-
-       }
-     
-       .gaccca-form-element-checkbox-switch{
-           margin: 0px 30px 33px 31px !important;
-       }
-       .gaccca-form-element-text-participant{
-           margin: 0px 30px 33px 31px !important;
-       }
-     
-       .gaccca-medium-size_1-of-1{
-           width: 100%;
-       }
-     
-     
-       .gaccca-notify_alert {
-           padding: 20px;
-           background-color: #f44336;
-           color: white;
-           position: fixed;
-           width: 95% !important;
-           left: 0px !important;
-          
-         }   
-     .gaccca-price-table{
-               width: 100% !important;
-           }
-     
-           .gaccca-price-table, th, td {
-           
-               border-collapse: collapse !important;
-           
-           }
-     
-     
-         .gaccca-price-table th,.gaccca-price-table td {
-           padding: 5px !important;
-           text-align: left !important;    
-         }
-       
-         .gaccca-price-table a{
-           margin-right: 5px;
-       }
-     
-     
-    
-       .gaccca-download-participant-handbook-padding{
-         padding: 10px 15px !important;
-       }
-     
-     
-       .gaccca-half-login{
-         background-image: url("../images/bg.jpg");
-         background-size: 100% 100%;
-     
-         border-left: 1px solid #E5E5E5;
-     
-       }
-     
-       .gaccca-half-login p {
-         color: #FFF;
-         font-size: 18px;
-         font-weight: 300;
-         margin: 0px;
-         padding: 10% 5%;
-     }
-     
-          
-
+@media only screen and (max-device-width: 767px) {
+  .gaccca-main-containt {
+    margin: 0px auto 40px auto !important;
+    border-radius: 0px !important;
+  }
+  .gaccca-display-menu {
+    display: none !important;
+  }
+  .gaccca-header-menu-button {
+    display: block !important;
+  }
+  .gaccca-behind-the-logo-position {
+    float: right !important;
+  }
+  .gaccca-main-containt .gaccca-h1-padding {
+    /* padding: 30px 0px 0px 30px !important; */
+    padding: 30px 0px 0px 15px !important;
+  }
+  .gaccca-main-containt h1 {
+    margin: 0px !important;
+  }
+  .gaccca-main-containt .gaccca-h2-padding {
+    padding: 0px 0px 24px 15px !important;
+  }
+  .gaccca-sky-blue-box-margin {
+    margin: 30px 15px 20px 15px !important
+  }
+  .gaccca-form-element-margin {
+    /* margin: 0px 30px 33px 31px !important; */
+    margin: 0px 15px 20px 15px !important;
+  }
+  .gaccca-button-save-margin {
+    /* margin: 4px 0px 0px 31px !important; */
+    margin: 4px 0px 0px 15px !important;
+  }
+  .gaccca-form-element-checkbox-switch {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-form-element-text-participant {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-medium-size_1-of-1 {
+    width: 100%;
+  }
+  .gaccca-notify_alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    position: fixed;
+    width: 95% !important;
+    left: 0px !important;
+  }
+  .gaccca-price-table {
+    width: 100% !important;
+  }
+  .gaccca-price-table, th, td {
+    border-collapse: collapse !important;
+  }
+  .gaccca-price-table th, .gaccca-price-table td {
+    padding: 5px !important;
+    text-align: left !important;
+  }
+  .gaccca-price-table a {
+    margin-right: 5px;
+  }
+  .gaccca-download-participant-handbook-padding {
+    padding: 10px 15px !important;
+  }
+  .gaccca-half-login {
+    background-image: url("../images/bg.jpg");
+    background-size: 100% 100%;
+    border-left: 1px solid #E5E5E5;
+  }
+  .gaccca-half-login p {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0px;
+    padding: 10% 5%;
+  }
 }
-    
 
-@media only screen
-and  (min-width : 768px) and  (max-width : 990px) {
-
- 
-.gaccca-header ul > li a, .gaccca-dropbtn {
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  .gaccca-header ul>li a, .gaccca-dropbtn {
     font-size: 14px !important;
-} 
-
-.gaccca-header ul > li {
-        
-  margin: 13px 0px 0px 15px !important;
-
-}
-
-.gaccca-main-containt  .gaccca-h1-padding{ 
-     
-  padding: 38px 0px 0px 30px !important;
-   
-}
-
-.gaccca-main-containt  .gaccca-h2-padding{ 
-     
-  padding: 0px 0px 24px 31px !important;
-
-}
-
-.gaccca-sky-blue-box-margin {
-  margin: 48px 30px 48px 30px !important;
-}
-  
-.gaccca-form-element-margin{
-  margin: 0px 30px 33px 31px !important;
-}
-
-.gaccca-button-save-margin{
-  margin: 4px 0px 0px 31px !important;
-}
-
-.gaccca-form-element-checkbox-switch{
-  margin: 0px 30px 33px 31px !important;
-}
-.gaccca-form-element-text-participant{
-  margin: 0px 30px 33px 31px !important;
-}
-
-.gaccca-medium-size_1-of-1{
-  width: 100%;
-}
-
-
+  }
+  .gaccca-header ul>li {
+    margin: 13px 0px 0px 15px !important;
+  }
+  .gaccca-main-containt .gaccca-h1-padding {
+    padding: 38px 0px 0px 30px !important;
+  }
+  .gaccca-main-containt .gaccca-h2-padding {
+    padding: 0px 0px 24px 31px !important;
+  }
+  .gaccca-sky-blue-box-margin {
+    margin: 48px 30px 48px 30px !important;
+  }
+  .gaccca-form-element-margin {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-button-save-margin {
+    margin: 4px 0px 0px 31px !important;
+  }
+  .gaccca-form-element-checkbox-switch {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-form-element-text-participant {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-medium-size_1-of-1 {
+    width: 100%;
+  }
 }
 
 .gaccca-alert {
@@ -2237,7 +2008,7 @@ and  (min-width : 768px) and  (max-width : 990px) {
   background-color: #f44336;
   color: white;
   margin-bottom: 10px;
-  display:none;
+  display: none;
 }
 
 .gaccca-alert-success {
@@ -2245,9 +2016,8 @@ and  (min-width : 768px) and  (max-width : 990px) {
   background-color: #30b330;
   color: white;
   margin-bottom: 10px;
-  display:none;
+  display: none;
 }
-
 
 .gaccca-alert-closebtn {
   margin-left: 15px;
@@ -2263,38 +2033,30 @@ and  (min-width : 768px) and  (max-width : 990px) {
 .gaccca-alert-closebtn:hover {
   color: black;
 }
-#signHiddenData{
-  display: none;
-}
-.gaccca-hide{
+
+#signHiddenData {
   display: none;
 }
 
+.gaccca-hide {
+  display: none;
+}
 
 @media only screen and (max-width: 700px) {
-
-  .gaccca-display-menu{
-     display: none !important;
- }
-  
- .gaccca-header-menu-button{
-     display: block !important;
- }
-
- .gaccca-behind-the-logo{
-  margin: 9px 9px 9px 0px;
-  content:url("../images/logo/logo_mobile.png");
-}
- 
- .gaccca-behind-the-logo-position{
-     float: right !important;
- }
-
-
- .gaccca-input-date{
-
-  background-image: none !important;
- 
-}
-
+  .gaccca-display-menu {
+    display: none !important;
+  }
+  .gaccca-header-menu-button {
+    display: block !important;
+  }
+  .gaccca-behind-the-logo {
+    margin: 9px 9px 9px 0px;
+    content: url("../images/logo/logo_mobile.png");
+  }
+  .gaccca-behind-the-logo-position {
+    float: right !important;
+  }
+  .gaccca-input-date {
+    background-image: none !important;
+  }
 }

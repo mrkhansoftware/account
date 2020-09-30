@@ -1,10 +1,6 @@
-body{
-	
-	background:#f8f9fa;
-	
+body {
+	background: #f8f9fa;
 }
-
-
 
 .richText {
 	position: relative;
@@ -12,20 +8,18 @@ body{
 	border: #EFEFEF solid 1px;
 	color: #333333;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	
 }
-.alignClass{
-	
-	vertical-align:top;
-	
+
+.alignClass {
+	vertical-align: top;
 }
+
 .commentSection {
-    padding-left: 1rem;
+	padding-left: 1rem;
 	position: relative;
 	background-color: #FAFAFA;
 	color: #333333;
 	font-family: Calibri, Verdana, Helvetica, sans-serif;
-	
 }
 
 .richText .richText-form {
@@ -37,10 +31,7 @@ body{
 	padding: 10px 15px;
 }
 
-.richText .richText-form input[type="text"],
-.richText .richText-form input[type="file"],
-.richText .richText-form input[type="number"],
-.richText .richText-form select {
+.richText .richText-form input[type="text"], .richText .richText-form input[type="file"], .richText .richText-form input[type="number"], .richText .richText-form select {
 	padding: 10px 15px;
 	border: #999999 solid 1px;
 	min-width: 200px;
@@ -68,9 +59,9 @@ body{
 
 .richText .richText-toolbar {
 	min-height: 20px;
-    width: 510px;
-    position: static;
-    z-index:1;
+	width: 510px;
+	position: static;
+	z-index: 1;
 }
 
 .richText .richText-toolbar .richText-length {
@@ -117,10 +108,7 @@ body{
 	transition: background-color 0.4s;
 }
 
-.richText .richText-toolbar ul li a .fa,
-.richText .richText-toolbar ul li a .fas,
-.richText .richText-toolbar ul li a .far,
-.richText .richText-toolbar ul li a svg {
+.richText .richText-toolbar ul li a .fa, .richText .richText-toolbar ul li a .fas, .richText .richText-toolbar ul li a .far, .richText .richText-toolbar ul li a svg {
 	pointer-events: none;
 }
 
@@ -132,7 +120,6 @@ body{
 	right: 0;
 	background-color: rgba(0, 0, 0, 0.3);
 	cursor: default;
-	
 }
 
 .richText .richText-toolbar ul li a .richText-dropdown-outer .richText-dropdown {
@@ -140,7 +127,6 @@ body{
 	display: block;
 	background-color: #FFFFFF;
 	border: #EFEFEF solid 1px;
-	
 	-webkit-box-shadow: 0 0 5px 0 #333;
 	-moz-box-shadow: 0 0 5px 0 #333;
 	box-shadow: 0 0 5px 0 #333;
@@ -156,7 +142,7 @@ body{
 	font-size: 20px;
 	text-align: center;
 	width: 20px;
-	display:none;
+	display: none;
 }
 
 .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown {
@@ -181,21 +167,22 @@ body{
 
 .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li.inline {
 	margin: 5px 10px;
-    padding: 0px 23px;
-    float: left;
-    margin-left: -23px;
-    margin-right: 74px;
+	padding: 0px 23px;
+	float: left;
+	margin-left: -23px;
+	margin-right: 74px;
 }
-.marginAuto{
-	margin:auto;
+
+.marginAuto {
+	margin: auto;
 }
-.colorDesc{
+
+.colorDesc {
 	margin-top: 0px;
-    top: 5px;
-    left: 35px;
-    position: relative;
-    width: 90px !important;
-	
+	top: 5px;
+	left: 35px;
+	position: relative;
+	width: 90px !important;
 }
 
 .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li.inline a {
@@ -204,7 +191,7 @@ body{
 	margin: 0;
 	border: none;
 	text-decoration: none;
-    color: initial;
+	color: initial;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
@@ -250,7 +237,7 @@ body{
 
 .richText .richText-toolbar:last-child {
 	font-size: 12px;
-	display:none;
+	display: none;
 }
 
 .richText .richText-toolbar:after {
@@ -263,68 +250,72 @@ body{
 	padding: 60px 20px;
 	background-color: #FFFFFF;
 	border: #FFFFFF solid 4px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    font-family: Calibri, Verdana, Helvetica, sans-serif;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	font-family: Calibri, Verdana, Helvetica, sans-serif;
 	min-height: 1000px;
 	outline: none;
 	overflow-x: auto;
 }
-.removeClass{
-	background:red;
-	 text-decoration: line-through;
+
+.removeClass {
+	background: red;
+	text-decoration: line-through;
 }
-.editClass{
-	background:yellow;
-	 text-decoration: none;
+
+.editClass {
+	background: yellow;
+	text-decoration: none;
 }
-.suggestionClass{
-	background:cyan;
-	 text-decoration: none;
+
+.suggestionClass {
+	background: cyan;
+	text-decoration: none;
 }
-.undoClass{
-	background:white;
-	 text-decoration: none;
+
+.undoClass {
+	background: white;
+	text-decoration: none;
 }
-.commentClass .fa{
-    padding:3px;
+
+.commentClass .fa {
+	padding: 3px;
 }
+
 .commentClass {
-	margin-bottom:10px;
+	margin-bottom: 10px;
 	background-color: #FFFFFF;
 	border: #FFFFFF solid 4px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    font-family: Calibri, Verdana, Helvetica, sans-serif;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	font-family: Calibri, Verdana, Helvetica, sans-serif;
 	min-height: 100px;
 	outline: none;
 	overflow-x: auto;
-	width:100%;
+	width: 100%;
 }
-.commentBg{
-	
-	background:#f0f8fff2;
+
+.commentBg {
+	background: #f0f8fff2;
 	font-family: Calibri, Verdana, Helvetica, sans-serif;
 	min-height: 35px;
-    border-radius: 7px;
+	border-radius: 7px;
 }
 
 span.commentBg[contenteditable]:empty::before {
-    content: 'Type comment';
-    font-family: Calibri, Verdana, Helvetica, sans-serif;
-}
-span.commentBg[contenteditable]:empty:focus::before {
-    content: '';
+	content: 'Type comment';
 	font-family: Calibri, Verdana, Helvetica, sans-serif;
 }
 
-
-.commentClassReply{
-	display: block;
-    padding: 5px;
-	
+span.commentBg[contenteditable]:empty:focus::before {
+	content: '';
+	font-family: Calibri, Verdana, Helvetica, sans-serif;
 }
 
-.richText .richText-editor ul,
-.richText .richText-editor ol {
+.commentClassReply {
+	display: block;
+	padding: 5px;
+}
+
+.richText .richText-editor ul, .richText .richText-editor ol {
 	margin: 10px 25px;
 }
 
@@ -334,8 +325,7 @@ span.commentBg[contenteditable]:empty:focus::before {
 	width: 100%;
 }
 
-.richText .richText-editor table td,
-.richText .richText-editor table th {
+.richText .richText-editor table td, .richText .richText-editor table th {
 	padding: 10px;
 	border: #EFEFEF solid 1px;
 }
@@ -365,8 +355,7 @@ span.commentBg[contenteditable]:empty:focus::before {
 	cursor: pointer;
 }
 
-.richText .richText-undo,
-.richText .richText-redo {
+.richText .richText-undo, .richText .richText-redo {
 	float: left;
 	display: block;
 	padding: 10px 15px;
@@ -374,8 +363,7 @@ span.commentBg[contenteditable]:empty:focus::before {
 	cursor: pointer;
 }
 
-.richText .richText-undo.is-disabled,
-.richText .richText-redo.is-disabled {
+.richText .richText-undo.is-disabled, .richText .richText-redo.is-disabled {
 	opacity: 0.4;
 }
 
