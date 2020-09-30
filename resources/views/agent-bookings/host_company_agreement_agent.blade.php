@@ -1,3 +1,4 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header_without_menu')
 
 {!! Form::open(['action' => 'HostCompanyAgreementAgentController@store','files'=>true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'HCA-plan']) !!}
@@ -17,6 +18,13 @@
     <p>After completing the Host Company Agreement please click on the tab “DS-7002 Training plan” at the top of the
       page and fill in all required information for this form as well.</p>
   </div>
+
+  <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
+  <input type="hidden" name='applicantId' value="{{isset($datas['appli']['Id'])?$datas['appli']['Id']:''}}" />
+  <input type="hidden" name='Contact__c' value="{{isset($datas['appli']['Contact__c'])?$datas['appli']['Contact__c']:''}}" />
+  <input type="hidden" name='NewGdriveID__c' value="{{isset($datas['appli']['NewGdriveID__c'])?$datas['appli']['NewGdriveID__c']:''}}" />
+  <input type="hidden" name='HostCompany_Gdrive_Folder_Id__c' value="{{isset($datas['appli']['HostCompany_Gdrive_Folder_Id__c'])?$datas['appli']['HostCompany_Gdrive_Folder_Id__c']:''}}" />
+  <input type="hidden" name='onfrmId' value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}" />
 
 
   <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
@@ -957,3 +965,6 @@ $(document).ready(function() {
 </script>
 @endif
 @include('common.footer')
+@else
+Permission denied. Please contact administrator.
+@endif

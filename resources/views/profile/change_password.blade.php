@@ -1,4 +1,5 @@
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Password</h1>

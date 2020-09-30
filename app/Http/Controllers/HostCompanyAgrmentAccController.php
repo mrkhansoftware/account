@@ -30,22 +30,6 @@ class HostCompanyAgrmentAccController extends Controller
 
         // echo '<pre>'; print_r($datas); die; 
 
-        session()->put('lastNameFirstName', $datas['lastNameFirstName']);
-        if (isset($datas['appli']['Id'])) {
-            session()->put('applicantId', $datas['appli']['Id']);
-        }
-        if (isset($datas['appli']['NewGdriveID__c'])) {
-            session()->put('NewGdriveID__c', $datas['appli']['NewGdriveID__c']);
-        }
-
-        if (isset($datas['appli']['HostCompany_Gdrive_Folder_Id__c'])) {
-            session()->put('HostCompany_Gdrive_Folder_Id__c', $datas['appli']['HostCompany_Gdrive_Folder_Id__c']);
-        }
-
-        if (isset($datas['onForm']['Id'])) {
-            session()->put('onfrmId', $datas['onForm']['Id']);
-        }
-        session()->put('Contact__c', $datas['appli']['Contact__c']);
 
         return view('host-company/host_company_agreement_account')->with(compact('datas'));
     }
@@ -72,21 +56,21 @@ class HostCompanyAgrmentAccController extends Controller
         /*------------------file upload ------*/
 
         $unique_Folder_Id;
-        if (session()->get('NewGdriveID__c') == '' || 'App\Services\Helper'::isFolderExist(session()->get('NewGdriveID__c')) != '200') {
+        if ($finalReq['NewGdriveID__c'] == '' || 'App\Services\Helper'::isFolderExist($finalReq['NewGdriveID__c']) != '200') {
             $Google_Drive_Folder_Id = 'App\Services\Helper'::returnFolderId('applicant');
-            $unique_Folder_Id = 'App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, session()->get('lastNameFirstName'));
+            $unique_Folder_Id = 'App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, $finalReq['lastNameFirstName']);
             $finalReq['applicant']['NewGdriveID__c'] = $unique_Folder_Id;
         } else {
-            $unique_Folder_Id = session()->get('NewGdriveID__c');
+            $unique_Folder_Id = $finalReq['NewGdriveID__c'];
         }
 
-        if (session()->get('HostCompany_Gdrive_Folder_Id__c') != ''  && 'App\Services\Helper'::isFolderExist(session()->get('HostCompany_Gdrive_Folder_Id__c')) == '200') {
-            $unique_Folder_Id = session()->get('HostCompany_Gdrive_Folder_Id__c');
+        if ($finalReq['HostCompany_Gdrive_Folder_Id__c'] != ''  && 'App\Services\Helper'::isFolderExist($finalReq['HostCompany_Gdrive_Folder_Id__c']) == '200') {
+            $unique_Folder_Id = $finalReq['HostCompany_Gdrive_Folder_Id__c'];
         }
         if (isset($finalReq['fileCertificate'])) {
             $fileCont = base64_encode(file_get_contents($request->file('fileCertificate')));
             $fileType = $request->file('fileCertificate')->getMimeType();
-            $finalReq['applicant']['Workers_Comp__c'] =   'App\Services\Helper'::fileUpload($unique_Folder_Id, session()->get('lastNameFirstName') . '_Compensation_Certificate', $fileType, $fileCont);
+            $finalReq['applicant']['Workers_Comp__c'] =   'App\Services\Helper'::fileUpload($unique_Folder_Id, $finalReq['lastNameFirstName'] . '_Compensation_Certificate', $fileType, $fileCont);
         }
         /*----------------------------------*/
 
@@ -97,9 +81,9 @@ class HostCompanyAgrmentAccController extends Controller
 
 
         $EncId = $finalReq['EncId'];
-        $finalReq['applicant']['id'] = session()->get('applicantId');
-        $finalReq['onfrm']['id'] = session()->get('onfrmId');
-        $finalReq['applicant']['Contact__c'] = session()->get('Contact__c');
+        $finalReq['applicant']['id'] = $finalReq['applicantId'];
+        $finalReq['onfrm']['id'] = $finalReq['onfrmId'];
+        $finalReq['applicant']['Contact__c'] = $finalReq['Contact__c'];
         $finalReq['applicantData'] = json_encode($finalReq['applicant']);
         $finalReq['onlineFormData'] = json_encode($finalReq['onfrm']);
         if (isset($finalReq['options'])) {
@@ -115,9 +99,12 @@ class HostCompanyAgrmentAccController extends Controller
         // echo '<pre>'; print_r($finalReq);die;
 
 
-        'App\Services\Helper'::postRequest($finalReq, 'ApiHostCompanyAgreementController');
-
+        $resp='App\Services\Helper'::postRequest($finalReq, 'ApiHostCompanyAgreementController');
+if($resp=='"OK"'){
         return redirect()->action('HostCompanyAgrmentAccController@index', ['isSave' => 1, 'orgid' => $EncId]);
+}else{
+    echo $resp;
+}
     }
 
     /**

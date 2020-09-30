@@ -1,3 +1,4 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header_without_menu')
 
 @include('common.signScript')
@@ -19,6 +20,12 @@
       Thank you to be a host company in our program
     </p>
   </div>
+
+  <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
+  <input type="hidden" name='applicantId' value="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}" />
+  <input type="hidden" name='Contact__c' value="{{isset($datas['ap']['Contact__c'])?$datas['ap']['Contact__c']:''}}" />
+  <input type="hidden" name='Google_Drive_Evaluation_Form__c' value="{{isset($datas['ap']['Google_Drive_Evaluation_Form__c'])?$datas['ap']['Google_Drive_Evaluation_Form__c']:''}}" />
+  <input type="hidden" name='onfrmId' value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}" />
 
   <h2 class="gaccca-h2-padding">General Information</h2>
   <input type="hidden" name='EncId' value="{{$datas['encryptId']}}" />
@@ -792,3 +799,7 @@
 
 {!! Form::close() !!}
 @include('common.footer')
+
+@else
+  Permission denied. Please contact administrator.
+  @endif

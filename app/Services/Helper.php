@@ -6,6 +6,7 @@ class Helper
 {
 
 
+   /*** ----Start-----Salesforce Api------** */
    public static function auth()
    {
       $curl = curl_init();
@@ -39,6 +40,8 @@ class Helper
       $url = $instance_url . "/services/apexrest/" . $postClass;
       $curl = curl_init($url);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 0);
+      curl_setopt($curl, CURLOPT_TIMEOUT, 300);
       curl_setopt(
          $curl,
          CURLOPT_HTTPHEADER,
@@ -63,11 +66,16 @@ class Helper
       curl_setopt($curl, CURLOPT_HTTPHEADER, array("Authorization: OAuth $access_token", "Content-type: application/json"));
       curl_setopt($curl, CURLOPT_POST, true);
       curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
+      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 0);
+      curl_setopt($curl, CURLOPT_TIMEOUT, 300);
       $json_response = curl_exec($curl);
       $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
       return $json_response;
    }
 
+   /*** ----End-----Salesforce Api------** */
+
+   /*** ----Start-----Gdrive folder Api------** */
 
    public static function isFolderExist($folderId)
    {
@@ -209,18 +217,43 @@ class Helper
       }
       return $folderId;
    }
+   /*** ----End-----Gdrive folder Api------** */
+
+   /*** ----Start-----Login Session Handle------** */
 
    public static function sessionConId()
    {
-      return session()->get('conId');
+
+      session()->put('Gdrive_Placement_Folder_Id__c', '');
+      session()->put('NewGdriveID__c', '');
+      session()->put('J_Visa_Applicant_Folder_Id__c', '');
+      session()->put('Google_Drive_Folder_Additional_Doc__c', '');
+      session()->put('applicantId', '');
+      session()->put('NewGdriveID__c', '');
+      session()->put('J_Visa_Applicant_Folder_Id__c', '');
+      session()->put('Google_Drive_Folder_Additional_Doc__c', '');
+      session()->put('Contact__c', '');
+      session()->put('conId', '');
+      session()->put('accountId', '');
+      session()->put('accountName', '');
+      session()->put('Program__c', '');
+      session()->put('isInternal', '');
+      session()->put('onfrmId', '');
+      session()->put('Google_Drive_Evaluation_Form__c', '');
+      session()->put('HostCompany_Gdrive_Folder_Id__c', '');
+      session()->put('Google_Drive_Folder__c', '');
+      session()->put('Google_Drive_Folder_For_B1__c', '');
+
+      return session()->get('conIdUser');
    }
 
    public static function returnUrl()
    {
       return redirect()->action('LoginController@index', ['redirectUrl' => basename($_SERVER['PHP_SELF'])]);
    }
+   /*** ----Start-----Login Session Handle------** */
 
-
+   /*** ----Start-----Google Bucket Api------** */
    public static function authGoogleBucket()
    {
       $KEY = '208266487721-fc93t3h7qv9euu2f5klvu20fumlu0ihg.apps.googleusercontent.com';
@@ -298,8 +331,8 @@ class Helper
       if ($resumeableLink != '') {
          $resumeableLink = str_replace('&amp;', '&', $resumeableLink);
       }
-      $combineBody=$previousEnd+$bodysize-1;
-      $range='bytes '.$previousEnd.'-'.$combineBody.'/'.$filesize;
+      $combineBody = $previousEnd + $bodysize - 1;
+      $range = 'bytes ' . $previousEnd . '-' . $combineBody . '/' . $filesize;
 
       $curl = curl_init($resumeableLink);
       curl_setopt($curl, CURLOPT_HEADER, true);
@@ -311,15 +344,16 @@ class Helper
       $response = curl_exec($curl);
       $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
       if (curl_errno($curl)) {
-         $status.= 'Error:' . curl_error($curl);
+         $status .= 'Error:' . curl_error($curl);
       }
-      if($status==200){
-     // $response = json_decode($response, true);
-      return $response;
+      if ($status == 200) {
+         // $response = json_decode($response, true);
+         return $response;
       }
-  
+
 
 
       return $resumeableLink;
    }
+   /*** ------End---Google Bucket Api------** */
 }

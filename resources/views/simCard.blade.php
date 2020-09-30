@@ -1,4 +1,4 @@
-@include('common.header',['datas'=>$datas,'portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 
 {!! Form::open(['action' => 'simCardController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
@@ -150,8 +150,8 @@
     <div class="gaccca-form-element__control">
       <div class="gaccca-select_container">
         <input type="hidden" value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}" name='app[Id]'/>
-        <input type="hidden" value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}" name='app[Contact__c]'/>
-        {!! Form::select('app[PLAN__c]', array_reverse($datas['simcardPlans']), isset($datas['app']['PLAN__c'])?$datas['app']['PLAN__c']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
+        <input type="hidden" value="{{isset($datas['contID'])?$datas['contID' ]:''}}" name='app[Contact__c]'/>
+        {!! Form::select('app[PLAN__c]', array_reverse($datas['simcardPlans']), isset($datas['app']['PLAN__c'])?$datas['app']['PLAN__c']:'', [  'class' => 'gaccca-select gacca-required','required' => 'required']) !!}
          
       </div>
     </div>

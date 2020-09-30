@@ -61,9 +61,12 @@ return view('j1-visa/preDeparture')->with(compact('datas'));
 
 //echo "<pre>"; print_r($finalReq);die;
 
-   'App\Services\Helper'::postRequest($finalReq,'ApiPreDepartureClass');
- 
+  $resp='App\Services\Helper'::postRequest($finalReq,'ApiPreDepartureClass');
+if($resp=='"OK"'){ 
 return redirect()->action('PreDepartureController@index', ['isSave' => 1]);
+}else{
+    echo $resp;
+}
     }
 
     /**

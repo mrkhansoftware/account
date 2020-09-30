@@ -1,8 +1,8 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
 
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
-{!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_uploaddoc']) !!}
+{!! Form::open(['action' => 'UploadYourDocumentsController@store','files'=>true, 'method' => 'POST',  'id' => 'gacccaForm_uploaddoc']) !!}
 
 
 <div class="gaccca-main-containt">
@@ -25,7 +25,7 @@
             Most current CV / Resume in PDF format only </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file" id="myFile" name="resume" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -41,7 +41,7 @@
             Student Status Verification </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file" name="ssv" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -56,7 +56,7 @@
             Copy of your Passport </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="passport" />
               <span class="gaccca-file-custom">Choose file...</span>
 
             </label>
@@ -71,7 +71,7 @@
             If applicable for your case: University requirements and rules for your internship </label>
           <div class="gaccca-form-element__control">
             <label class="gaccca-file">
-              <input type="file" id="myFile" name="filename" />
+              <input type="file"  name="universityRequirementCrt" />
               <span class="gaccca-file-custom">Choose file...</span>
             </label>
           </div>

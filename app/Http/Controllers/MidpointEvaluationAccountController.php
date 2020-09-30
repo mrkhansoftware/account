@@ -80,8 +80,12 @@ class MidpointEvaluationAccountController extends Controller
     
     //echo "<pre>"; print_r($finalReq);die;
     
-       'App\Services\Helper'::postRequest($finalReq,'ApiMidpointEvaluationClass');
+       $resp='App\Services\Helper'::postRequest($finalReq,'ApiMidpointEvaluationClass');
+       if($resp=='"OK"'){
     return redirect()->action('MidpointEvaluationAccountController@index', ['isSave' => 1]);
+       }else{
+           echo $resp;
+       }
     }
 
     /**

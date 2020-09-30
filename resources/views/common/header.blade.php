@@ -82,7 +82,7 @@
                     </div>
                     <ul class="gaccca-display-menu">
                     
-                      @if (stripos($portal_program,"Agency")!==false)
+                      @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Agency")!==false)
 
 
                             <li class="gaccca-dropdown"><a href="#home123">Agent Bookings</a>
@@ -99,7 +99,7 @@
                                 
                             </li>
                             @endif
-                        @if (stripos($portal_program,"Hostcompany")!==false)
+                        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
                             <li class="gaccca-dropdown"><a href="#home123">Host Company</a>
                                 <div class="gaccca-dropdown-content">
                                     <a href="/host_company_agreement_account"  target="_blank">Host Company Agreement</a>
@@ -111,7 +111,7 @@
                                 
                             </li>
                             @endif
-                        @if (stripos($portal_program,"B1")!==false)
+                        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
                    
                             <li class="gaccca-dropdown"><a href="#home123">B1 Program</a>
                                 <div class="gaccca-dropdown-content">
@@ -125,7 +125,7 @@
                             </li>
                             
                             @endif
-                        @if (stripos($portal_program,"Placement")!==false)
+                        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
                     
                             <li class="gaccca-dropdown"><a href="#home">Placement Program</a>
                                 
@@ -145,7 +145,7 @@
                                 
                             </li>
                             @endif
-                        @if (stripos($portal_program,"J1")!==false)
+                        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
                   
                            <li class="gaccca-dropdown"><a href="#home">J1 Program</a>
                                 
@@ -218,7 +218,7 @@
 
 
 
-    @if (stripos($portal_program,"Hostcompany")!==false)
+    @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
     <button class="gaccca-dropdown-btn">Host Company
       <i class="fa gaccca-fa-caret-down"></i>
     </button>
@@ -235,7 +235,7 @@
 
 
 
-    @if (stripos($portal_program,"B1")!==false)
+    @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
     <button class="gaccca-dropdown-btn">B1 Program
       <i class="fa gaccca-fa-caret-down"></i>
     </button>
@@ -246,7 +246,7 @@
         <a href="/ScheduleCallBVisa">Schedule a Call</a>
     </div>
     @endif
-    @if (stripos($portal_program,"Placement")!==false)
+    @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
     <button class="gaccca-dropdown-btn">Placement Program
       <i class="fa gaccca-fa-caret-down"></i>
     </button>
@@ -266,7 +266,7 @@
     </div>
     @endif
 
-    @if (stripos($portal_program,"J1")!==false)
+    @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
     <button class="gaccca-dropdown-btn">J1 Program
       <i class="fa gaccca-fa-caret-down"></i>
     </button>

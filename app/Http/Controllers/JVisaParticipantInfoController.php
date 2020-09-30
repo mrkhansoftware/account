@@ -26,14 +26,7 @@ class JVisaParticipantInfoController extends Controller
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
         // echo '<pre>'; print_r($datas); die;
-        session()->put('conId', $datas['conId']);
-        session()->put('lastNameFirstName', $datas['lastNameFirstName']);
-        if (isset($datas['app']['Id'])) {
-            session()->put('applicantId', $datas['app']['Id']);
-        }
-        session()->put('Contact__c', $datas['app']['Contact__c']);
-        session()->put('Google_Drive_Folder__c', isset($datas['app']['Google_Drive_Folder__c']) ? $datas['app']['Google_Drive_Folder__c'] : '');
-
+       
         return view('agent-bookings/JVisaParticipantInfo')->with(compact('datas'));
     }
 
@@ -76,33 +69,33 @@ class JVisaParticipantInfoController extends Controller
             $statusVerification = base64_encode(file_get_contents($request->file('status_verification')));
             $statusVerificationMimeType = $request->file('status_verification')->getMimeType();
         }
-        $finalReq['App']['id'] = session()->get('applicantId');
-        if (session()->get('Google_Drive_Folder__c') != '') {
-            $finalReq['App']['Google_Drive_Folder__c'] = session()->get('Google_Drive_Folder__c');
+        $finalReq['App']['id'] = $finalReq['applicantId'];
+        if ($finalReq['Google_Drive_Folder__c'] != '') {
+            $finalReq['App']['Google_Drive_Folder__c'] = $finalReq['Google_Drive_Folder__c'];
         }
-        $finalReq['App']['Contact__c'] = session()->get('Contact__c');
+        $finalReq['App']['Contact__c'] = $finalReq['Contact__c'];
 
 
 
         $unique_Folder_Id;
-        if (session()->get('Google_Drive_Folder__c') == ''  || 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Folder__c')) != '200') {
+        if ($finalReq['Google_Drive_Folder__c'] == ''  || 'App\Services\Helper'::isFolderExist($finalReq['Google_Drive_Folder__c']) != '200') {
             $Google_Drive_Folder_Id = 'App\Services\Helper'::returnFolderId('registration');
-            $unique_Folder_Id = 'App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, 'Registration ' . session()->get('lastNameFirstName'));
+            $unique_Folder_Id = 'App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, 'Registration ' . $finalReq['lastNameFirstName']);
             $finalReq['App']['Google_Drive_Folder__c'] = $unique_Folder_Id;
         } else {
-            $unique_Folder_Id = session()->get('Google_Drive_Folder__c');
+            $unique_Folder_Id = $finalReq['Google_Drive_Folder__c'];
         }
 
         if ($passportMimeType != 'NoFile') {
-            'App\Services\Helper'::fileUpload($unique_Folder_Id, session()->get('lastNameFirstName') . '_Passport', $passportMimeType, $passport);
+            'App\Services\Helper'::fileUpload($unique_Folder_Id, $finalReq['lastNameFirstName'] . '_Passport', $passportMimeType, $passport);
         }
         if ($resumeMimeType != 'NoFile') {
 
-            'App\Services\Helper'::fileUpload($unique_Folder_Id, session()->get('lastNameFirstName') . '_Resume', $resumeMimeType, $resume);
+            'App\Services\Helper'::fileUpload($unique_Folder_Id, $finalReq['lastNameFirstName'] . '_Resume', $resumeMimeType, $resume);
         }
         if ($statusVerificationMimeType != 'NoFile') {
 
-            'App\Services\Helper'::fileUpload($unique_Folder_Id, session()->get('lastNameFirstName') . '_SSV', $statusVerificationMimeType, $statusVerification);
+            'App\Services\Helper'::fileUpload($unique_Folder_Id, $finalReq['lastNameFirstName'] . '_SSV', $statusVerificationMimeType, $statusVerification);
         }
 
         $finalReq['applicantData'] = json_encode($finalReq['App']);

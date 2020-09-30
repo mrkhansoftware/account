@@ -57,9 +57,14 @@ class AgencyInformationController extends Controller
             $finalReq['accountName']=session()->get('accountName');
             unset($finalReq['priceList']);
             unset($finalReq['_token']);
-      'App\Services\Helper'::postRequest($finalReq,'ApiAgencyPriceListUploadClass');
+      $resp='App\Services\Helper'::postRequest($finalReq,'ApiAgencyPriceListUploadClass');
+      if($resp=='"OK"'){
+      return redirect()->action('AgencyInformationController@index', ['isSave' => 1]);
+      }else{
+          echo $resp;
+      }
        }    
-       return redirect()->action('AgencyInformationController@index', ['isSave' => 1]); 
+        
          
             
     }

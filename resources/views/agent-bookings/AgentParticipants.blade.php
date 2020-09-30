@@ -1,4 +1,5 @@
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 
 <link href="{{ asset('css/dataTables.jqueryui.min.css') }}" rel='stylesheet'>
@@ -81,7 +82,6 @@
 {!! Form::close() !!}
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/dataTables.jqueryui.min.js') }}"></script>
-@include('common.footer')
 
 <script>
   var reqResponse;
@@ -335,3 +335,7 @@
   }
   onloadMethod();
 </script>
+@include('common.footer')
+@else
+Permission denied. Please contact administrator.
+@endif

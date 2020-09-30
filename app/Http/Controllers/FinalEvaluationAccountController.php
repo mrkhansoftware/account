@@ -79,9 +79,13 @@ class FinalEvaluationAccountController extends Controller
     
     //echo "<pre>"; print_r($finalReq);die;
     
-       'App\Services\Helper'::postRequest($finalReq,'ApiFinalEvaluationController');
+       $resp='App\Services\Helper'::postRequest($finalReq,'ApiFinalEvaluationController');
        //die;
+       if($resp=='"OK"'){
     return redirect()->action('FinalEvaluationAccountController@index', ['isSave' => 1]);
+       }else{
+           echo $resp;
+       }
     }
 
     /**

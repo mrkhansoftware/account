@@ -112,8 +112,12 @@ class ParticipantInformationAccountController extends Controller
    
 
 
-       'App\Services\Helper'::postRequest($body,'APIParticipantInformationAccountClass');
+       $resp='App\Services\Helper'::postRequest($body,'APIParticipantInformationAccountClass');
+       if($resp=='"OK"'){
        return redirect()->action('HostCompanyInformationAccountController@index', ['isSave' => 1]);
+       }else{
+         echo $resp;
+       }
     }
 
     /**

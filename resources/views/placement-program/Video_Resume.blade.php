@@ -1,4 +1,5 @@
-@if (isset($datas['isAccessAble']) && $datas['isAccessAble']) @include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 <style>
 	.myFormStyle {
 		background-color: blue;

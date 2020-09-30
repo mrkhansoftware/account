@@ -39,7 +39,7 @@ session()->put('Program__c', $datas['app']['Program__c']);
 }
 
 
-session()->put('Contact__c', $datas['app']['Contact__c']);
+session()->put('Contact__c', $datas['contID']);
 return view('b1-program/b1_Embassy')->with(compact('datas'));
 
 
@@ -79,7 +79,7 @@ public function store(Request $request)
 
   if(session()->get('Google_Drive_Folder_For_B1__c')==''  || 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Folder_For_B1__c'))!='200'){
      $Google_Drive_Folder_Id=$unique_Folder_Id;
-     $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id,'EB Visavaluation');
+     $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id,'B Visa');
      $finalReq['applicant']['Google_Drive_Folder_For_B1__c']=$unique_Folder_Id;
  }else{
      $unique_Folder_Id= session()->get('Google_Drive_Folder_For_B1__c');
@@ -125,10 +125,12 @@ public function store(Request $request)
  
  //echo "<pre>"; print_r($finalReq);die;
  
-    'App\Services\Helper'::postRequest($finalReq,'ApiB1EmbassyControllerAccount');
-   //die;
+   $resp= 'App\Services\Helper'::postRequest($finalReq,'ApiB1EmbassyControllerAccount');
+   if($resp=='"OK"'){
  return redirect()->action('B1EmbassyController@index', ['isSave' => 1]);
-
+   }else{
+     echo $resp;
+   }
 }
 
 /**

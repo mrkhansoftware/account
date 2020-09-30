@@ -1,7 +1,8 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-@if (isset($datas['Appli']['Hide_Host_Company_Information_in_Account__c']) && !$datas['Appli']['Hide_Host_Company_Information_in_Account__c'])
-                   
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@if (isset($datas['Appli']['Hide_Host_Company_Information_in_Account__c']) && $datas['Appli']['Hide_Host_Company_Information_in_Account__c'])
+ 
+@else
 
 {!! Form::open(['action' => 'HostCompanyInformationAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_hci']) !!}
 
@@ -9,7 +10,8 @@
       <h1 class="gaccca-h1-padding">Step 3/5 - Host Company Information</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>Please fill in all requested information about your host company, your intended internship/training and provide a contact person at your host company responsible for your intended internship/training.
-        </p>
+       
+      </p>
       </div>
       
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
@@ -272,8 +274,14 @@
 
 
 
-              @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
+              @if (isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])
 
+              @else
+              <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
+        <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
+        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+        <input type="hidden" name='Google_Drive_Folder__c' value="{{isset($datas['Appli']['Google_Drive_Folder__c'])?$datas['Appli']['Google_Drive_Folder__c']:''}}"/>
+       
             <button id="gaccca_saveBtn_hci" class="gaccca-button-save gaccca-button-save-margin">Submit & Continue</button>
 
             @endif

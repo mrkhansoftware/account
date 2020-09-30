@@ -60,9 +60,12 @@ class J1ReviewApplicationAccountController extends Controller
       //  echo "<pre>"; print_r($finalReq);die;
     
 
-      'App\Services\Helper'::postRequest($finalReq,'ApiJ1ReviewYourApplicationController');
-    
+      $resp='App\Services\Helper'::postRequest($finalReq,'ApiJ1ReviewYourApplicationController');
+    if($resp=='"OK"'){
     return redirect()->action('J1ReviewApplicationAccountController@index', ['isSave' => 1]);
+    }else{
+        echo $resp;
+    }
    
     }
 

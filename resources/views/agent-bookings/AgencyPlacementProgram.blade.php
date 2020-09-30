@@ -1,5 +1,5 @@
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 {!! Form::open(['action' => 'AgencyPlacementProgramController@store','files'=>true, 'method' => 'POST', 'id' => 'gacccaForm_pp']) !!}
 
@@ -619,3 +619,6 @@
 
     {!! Form::close() !!}
 @include('common.footer')
+@else
+Permission denied. Please contact administrator.
+@endif

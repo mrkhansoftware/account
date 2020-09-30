@@ -130,9 +130,12 @@ unset($finalReq['onfrm']);
 
 //echo "<pre>"; print_r($finalReq);
 
- 'App\Services\Helper'::postRequest($finalReq,'ApiMonthlyCheckInClass');
-
+ $resp='App\Services\Helper'::postRequest($finalReq,'ApiMonthlyCheckInClass');
+if($resp=='"OK"'){
 return redirect()->action('MonthlyCheckinController@index', ['isSave' => 1]);
+}else{
+  echo $resp;
+}
 }
 
 /**

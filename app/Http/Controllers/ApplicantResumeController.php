@@ -14,13 +14,11 @@ class ApplicantResumeController extends Controller
     public function index()
     {
         if (!isset($_GET['orgidInternal'])) {
-            session()->put('isInternal', 'No');
             $idCon = 'App\Services\Helper'::sessionConId();
             if ($idCon == '') {
                 return 'App\Services\Helper'::returnUrl();
             }
         } else {
-            session()->put('isInternal', 'Yes');
             $idCon = 'isInternalOrganization' . $_GET['orgidInternal'];
         }
         $datas = 'App\Services\Helper'::getRequest('ApiApplicantResumeController/' . $idCon);
@@ -28,10 +26,6 @@ class ApplicantResumeController extends Controller
         $datas = json_decode($datas, true);
         // echo '<pre>'; print_r($datas); die;
 
-        if (isset($datas['app']['Id'])) {
-            session()->put('applicantId', $datas['app']['Id']);
-        }
-        session()->put('Contact__c', $datas['app']['Contact__c']);
         return view('placement-program/ApplicantResume')->with(compact('datas'));
 
         //  return view('placement-program/ApplicantResume');
@@ -42,12 +36,15 @@ class ApplicantResumeController extends Controller
     public function ajaxApplicantResume(Request $request)
     {
         $finalReq = $request->all();
-        $finalReq['applicant']['id'] = session()->get('applicantId');
-        $finalReq['applicant']['Contact__c'] = session()->get('Contact__c');
+        $finalReq['applicant']['id'] = $finalReq['applicantId'];
+        $finalReq['applicant']['Contact__c'] = $finalReq['Contact__c'];
         $finalReq['applicantData'] = json_encode($finalReq['applicant']);
-        $finalReq['isInternal'] = session()->get('isInternal');
+        $finalReq['isInternal'] = session()->get('user');
         unset($finalReq['_token']);
         unset($finalReq['applicant']);
+        unset($finalReq['applicantId']);
+        unset($finalReq['Contact__c']);
+        unset($finalReq['user']);
         return  'App\Services\Helper'::postRequest($finalReq, 'ApiApplicantResumeController');
     }
 

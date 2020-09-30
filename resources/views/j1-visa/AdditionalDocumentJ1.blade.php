@@ -1,6 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 {!! Form::open(['action' => 'AdditionalDocumentJ1Controller@store','files' => true, 'method' => 'POST',  'id' => 'gacccaForm_additional']) !!}
 

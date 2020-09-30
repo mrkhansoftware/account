@@ -27,7 +27,7 @@ class VideoResumeController extends Controller
 
         if (isset($datas['ap']['Contact__c'])) {
 
-            session()->put('Contact__c', $datas['ap']['Contact__c']);
+            session()->put('Contact__c', $datas['contID']);
         }
         return view('placement-program/Video_Resume')->with(compact('datas'));  
     

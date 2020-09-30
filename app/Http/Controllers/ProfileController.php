@@ -51,8 +51,12 @@ class ProfileController extends Controller
         $body['conData']=json_encode($finalReq['con']);
         $body['dob']=json_encode($finalReq['dob']);
 
-        'App\Services\Helper'::postRequest($body,'ApiProfileAccountController');
+        $resp='App\Services\Helper'::postRequest($body,'ApiProfileAccountController');
+        if($resp=='"OK"'){
         return redirect()->action('ProfileController@index', ['isSave' => 1]);
+        }else{
+            echo $resp;
+        }
        
         //
     }

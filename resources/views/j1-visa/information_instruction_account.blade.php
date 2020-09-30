@@ -1,6 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Step 1/5 - General Information and Instruction</h1>
@@ -131,7 +130,10 @@
           
     {!! Form::open(['action' => 'InformationInstructionAccountController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'participant-information-account' ]) !!}
     
-    @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
+    @if (isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])
+    @else
+    <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
+    <input type="hidden" name='Contact__c' value="{{isset($datas['contID'])?$datas['contID']:''}}"/>
           {!! Form::submit('Next Step',array('id'=>'saveBtn','class'=>'gaccca-button-save gaccca-button-save-margin save-Class')); !!}
 @endif
           {!! Form::close() !!}

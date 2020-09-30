@@ -37,7 +37,7 @@ class BVisaCaseInformationController extends Controller
                 }
             
          
-          session()->put('Contact__c', $datas['app']['Contact__c']);
+          session()->put('Contact__c', $datas['contID']); 
          return view('b1-program/B_Visa_Case_Information')->with(compact('datas'));
 
         
@@ -76,7 +76,7 @@ class BVisaCaseInformationController extends Controller
 
      if(session()->get('Google_Drive_Folder_For_B1__c')==''  || 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Folder_For_B1__c'))!='200'){
         $Google_Drive_Folder_Id=$unique_Folder_Id;
-        $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id,'EB Visavaluation');
+        $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id,'B Visa');
         $finalReq['applicant']['Google_Drive_Folder_For_B1__c']=$unique_Folder_Id;
     }else{
         $unique_Folder_Id= session()->get('Google_Drive_Folder_For_B1__c');
@@ -145,9 +145,13 @@ class BVisaCaseInformationController extends Controller
     
     //echo "<pre>"; print_r($finalReq);die;
     
-       'App\Services\Helper'::postRequest($finalReq,'ApiBVisaCaseInfoController');
+      $resp= 'App\Services\Helper'::postRequest($finalReq,'ApiBVisaCaseInfoController');
     //   die;
+    if($resp=='"OK"'){
     return redirect()->action('BVisaCaseInformationController@index', ['isSave' => 1]);
+    }else{
+echo $resp;
+    }
 
     }
 

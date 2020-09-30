@@ -27,23 +27,6 @@ if(!isset($_GET['orgid'])){
         $datas = json_decode($datas, true);
      //   echo '<pre>'; print_r($datas); die;
 
-     session()->put('lastNameFirstName', $datas['lastNameFirstName']);
-     if(isset($datas['ap']['Id'])){
-     session()->put('applicantId', $datas['ap']['Id']);
-     }
-     if(isset($datas['ap']['NewGdriveID__c'])){
-       session()->put('NewGdriveID__c', $datas['ap']['NewGdriveID__c']);
-       }
-
-       if(isset($datas['ap']['Google_Drive_Evaluation_Form__c'])){
-           session()->put('Google_Drive_Evaluation_Form__c', $datas['ap']['Google_Drive_Evaluation_Form__c']);
-           }
-       
-     
-     if(isset($datas['onfrm']['Id'])){
-       session()->put('onfrmId', $datas['onfrm']['Id']);
-       }
-     session()->put('Contact__c', $datas['ap']['Contact__c']);
 
         return view('host-company/final_evaluation_hc_account')->with(compact('datas'));
     
@@ -70,9 +53,9 @@ if(!isset($_GET['orgid'])){
     {
        $finalReq = $request->all();
         $EncId=$finalReq['EncId'];
-        $finalReq['applicant']['id']=session()->get('applicantId');
-        $finalReq['onfrm']['id']=session()->get('onfrmId');
-        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+        $finalReq['applicant']['id']=$finalReq['applicantId'];
+        $finalReq['onfrm']['id']=$finalReq['onfrmId'];
+        $finalReq['applicant']['Contact__c']=$finalReq['Contact__c'];
         $finalReq['applicantData']=json_encode($finalReq['applicant']);
         $finalReq['onlineFormData']=json_encode($finalReq['onfrm']);
       
@@ -85,10 +68,13 @@ if(!isset($_GET['orgid'])){
      // echo '<pre>'; print_r($finalReq);die;
       
     
-      'App\Services\Helper'::postRequest($finalReq,'ApiFinalEvaluationHCController');
-   
+     $resp= 'App\Services\Helper'::postRequest($finalReq,'ApiFinalEvaluationHCController');
+   if($resp=='"OK"'){
     return redirect()->action('FinalEvaluationHostComController@index', ['isSave' => 1, 'orgid' => $EncId]);
-        
+
+   }else{
+       echo $resp;
+   }
         
     }
 

@@ -133,8 +133,12 @@ class ValidationCheckinAccountController extends Controller
     
     //echo "<pre>"; print_r($finalReq);die;
     
-       'App\Services\Helper'::postRequest($finalReq,'ApiValidationCheckinController');
+       $resp='App\Services\Helper'::postRequest($finalReq,'ApiValidationCheckinController');
+       if($resp='"OK"'){
     return redirect()->action('ValidationCheckinAccountController@index', ['isSave' => 1]);
+       }else{
+           echo $resp;
+       }
     }
 
     /**

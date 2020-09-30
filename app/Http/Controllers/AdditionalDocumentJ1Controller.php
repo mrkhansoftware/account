@@ -25,7 +25,7 @@ $datas = json_decode($datas, true);
 session()->put('lastNameFirstName', $datas['lastNameFirstName']);
 if(isset($datas['ap']['Id'])){
 session()->put('applicantId', $datas['ap']['Id']);
-}
+} 
 if(isset($datas['ap']['NewGdriveID__c'])){
 session()->put('NewGdriveID__c', $datas['ap']['NewGdriveID__c']);
 }
@@ -178,9 +178,12 @@ if(session()->get('Google_Drive_Folder_Additional_Doc__c')==''  || 'App\Services
 
 //echo "<pre>"; print_r($finalReq);die;
 
-   'App\Services\Helper'::postRequest($finalReq,'ApiAdditionalDocumentJ1Controller');
- 
+   $resp='App\Services\Helper'::postRequest($finalReq,'ApiAdditionalDocumentJ1Controller');
+ if($resp=='"OK"'){
 return redirect()->action('AdditionalDocumentJ1Controller@index', ['isSave' => 1]);
+ }else{
+   echo $resp;
+ }
 }
 
 /**

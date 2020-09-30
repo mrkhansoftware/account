@@ -60,9 +60,13 @@ class ExtensionRequestAccountController extends Controller
     
     //echo "<pre>"; print_r($finalReq);die;
     
-       'App\Services\Helper'::postRequest($finalReq,'ApiExtensionRequestController');
+      $resp= 'App\Services\Helper'::postRequest($finalReq,'ApiExtensionRequestController');
        //die;
+       if($resp=='"OK"'){
     return redirect()->action('ExtensionRequestAccountController@index', ['isSave' => 1]);
+       }else{
+           echo $resp;
+       }
     }
 
     /**

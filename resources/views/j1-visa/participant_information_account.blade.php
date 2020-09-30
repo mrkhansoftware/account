@@ -1,5 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
   <div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Step 2/5 - Participant Information</h1>
@@ -363,7 +364,13 @@
             <strong> Note</strong>: All upload fields are empty again after the upload for the next upload.</label>
 
         </div>
-        @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
+        @if (isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])
+
+        @else
+        <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
+        <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
+        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+        <input type="hidden" name='Google_Drive_Folder__c' value="{{isset($datas['Appli']['Google_Drive_Folder__c'])?$datas['Appli']['Google_Drive_Folder__c']:''}}"/>
         {!! Form::submit('Save &amp; Continue',array('id'=>'saveBtn','class'=>'gaccca-button-save gaccca-button-save-margin save-Class','id'=>'gaccca_saveBtn_pia')); !!}
 @endif
       </div>

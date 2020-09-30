@@ -1,7 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 @include('common.signScript');
 
 {!! Form::open(['action' => 'FinalEvaluationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_final']) !!}
@@ -21,7 +19,13 @@
             We hope that you have had an exceptional experience in the U.S. so far and that you enjoy your last few weeks at your host company.   
         </p>
       </div>
-
+      <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
+        <input type="hidden" name='applicantId' value="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}"/>
+        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+        <input type="hidden" name='NewGdriveID__c' value="{{isset($datas['ap']['NewGdriveID__c'])?$datas['ap']['NewGdriveID__c']:''}}"/>
+        <input type="hidden" name='Google_Drive_Evaluation_Form__c' value="{{isset($datas['ap']['Google_Drive_Evaluation_Form__c'])?$datas['ap']['Google_Drive_Evaluation_Form__c']:''}}"/>
+        <input type="hidden" name='onfrmId' value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}"/>
+       
       <h2 class="gaccca-h2-padding">General Information</h2>
       
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">

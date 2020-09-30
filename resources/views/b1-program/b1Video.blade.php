@@ -1,6 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">B Visa Trainings video</h1>
      

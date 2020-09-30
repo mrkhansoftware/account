@@ -1,6 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 {!! Form::open(['action' => 'DS7002TrainigsplanController@store', 'method' => 'POST',  'id' => 'ds-7002-plan']) !!}
 
 
@@ -17,6 +16,10 @@
   <p>Please use the sample Training Plans that we have provided as an inspiration and orientation.</p>
   <p>Please note, you won't need to sign the document now. You will receive this completed document as a PDF via email by GACC California later for signing.</p>
 </div>
+<input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
+  <input type="hidden" name='applicantId' value="{{isset($datas['appli']['Id'])?$datas['appli']['Id']:''}}" />
+  <input type="hidden" name='Contact__c' value="{{isset($datas['appli']['Contact__c'])?$datas['appli']['Contact__c']:''}}" />
+  <input type="hidden" name='onfrmId' value="{{isset($datas['onForm']['Id'])?$datas['onForm']['Id']:''}}" />
 
 
 <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">

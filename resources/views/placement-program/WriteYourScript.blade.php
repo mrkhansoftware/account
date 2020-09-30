@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 <link href="{{ asset('css/videoScriptCss.css') }}" rel='stylesheet'>
 <script src="{{ asset('js/richtext.js') }}"></script>
 <style>
@@ -224,6 +224,7 @@
 </div>
 
 <script>
+  
   var myVar;
   var commentList = [];
   var cloneCommentListStr = '';
@@ -343,7 +344,7 @@ saveInfo(formData);
 });
 }
 
-  if ('{{$datas["isBeforeSaved"]}' == 'false') {
+  if ('{{$datas["isBeforeSaved"]}}' == 'false') {
     var cont = document.getElementById('videoCcript').value;
     if (cont != '') {
       cont = cont.split('\n');
@@ -411,6 +412,8 @@ saveInfo(formData);
 <script>
 
 function saveInfo (formData){
+  formData.applicantId="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}";
+        formData.Contact__c="{{isset($datas['contID'])?$datas['contID']:''}}";
 document.getElementById('loader').style.display='block';
 
 $.ajaxSetup({

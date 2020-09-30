@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 @include('common.signScript');
 
 {!! Form::open(['action' => 'J1ReviewApplicationAccountController@store', 'data-parsley-validate', 'method' => 'POST',
@@ -11,6 +11,9 @@
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>Please review your Application and click the confirmation button.</p>
     </div>
+    <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
+        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+        
     <h2 class="gaccca-h2-padding">Participant Information</h2>
 
 
@@ -30,8 +33,7 @@
 
 
                         {!! Form::radio('applicant[Do_you_have_dual_citizenship__c]',
-                        'No',isset($datas['Appli']['Do_you_have_dual_citizenship__c'])?($datas['Appli']['Do_you_have_dual_citizenship__c']=='No'?true:false):false,array('id'=>'radio-citizenship-no','required'
-                        => 'required','disabled' => 'disabled')); !!}
+                        'No',isset($datas['Appli']['Do_you_have_dual_citizenship__c'])?($datas['Appli']['Do_you_have_dual_citizenship__c']=='No'?true:false):false,array('id'=>'radio-citizenship-no','disabled' => 'disabled')); !!}
 
 
                         <label class="gaccca-radio__label" for="radio-citizenship-no">
@@ -41,7 +43,7 @@
 
                         {!! Form::radio('applicant[Do_you_have_dual_citizenship__c]',
                         'Yes',isset($datas['Appli']['Do_you_have_dual_citizenship__c'])?($datas['Appli']['Do_you_have_dual_citizenship__c']=='Yes'?true:false):false,array('id'=>'radio-citizenship-yes'
-                        ,'required' => 'required','disabled' => 'disabled')); !!}
+                        ,'disabled' => 'disabled')); !!}
 
                         <label class="gaccca-radio__label" for="radio-citizenship-yes">
                             <span class="gaccca-radio_faux"></span>
@@ -56,14 +58,13 @@
 
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-c">
-                    Citizenship <span class="gaccca-text-required" title="required">*</span> </label>
+                    <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
 
                     {!!
-                    Form::text('applicant[Citizenship__c]',isset($datas['Appli']['Citizenship__c'])?$datas['Appli']['Citizenship__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[Citizenship__c]',isset($datas['Appli']['Citizenship__c'])?$datas['Appli']['Citizenship__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
-                    <span class="gaccca-input-help-text">Please also list your dual citizenship here.</span>
+                    <span class="gaccca-input-help-text">Please also list your dual here.</span>
                 </div>
             </div>
 
@@ -75,8 +76,7 @@
 
 
                     {!!
-                    Form::text('applicant[Country_of_Legal_Permanent_Residency__c]',isset($datas['Appli']['Country_of_Legal_Permanent_Residency__c'])?$datas['Appli']['Country_of_Legal_Permanent_Residency__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[Country_of_Legal_Permanent_Residency__c]',isset($datas['Appli']['Country_of_Legal_Permanent_Residency__c'])?$datas['Appli']['Country_of_Legal_Permanent_Residency__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
 
                 </div>
@@ -91,8 +91,7 @@
                 <div class="gaccca-form-element__control">
 
                     {!!
-                    Form::text('applicant[haveYouEverAppliedForUSVisa__c]',isset($datas['Appli']['haveYouEverAppliedForUSVisa__c'])?$datas['Appli']['haveYouEverAppliedForUSVisa__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[haveYouEverAppliedForUSVisa__c]',isset($datas['Appli']['haveYouEverAppliedForUSVisa__c'])?$datas['Appli']['haveYouEverAppliedForUSVisa__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
                     <span class="gaccca-input-help-text">Please provide type of visa and expiration date as well as
                         information about any previous visa denials</span>
                 </div>
@@ -110,8 +109,7 @@
                 <div class="gaccca-form-element__control">
                     <div class="gaccca-select_container">
                         {!!
-                        Form::text('applicant[Country_of_Birth__c]',isset($datas['Appli']['Country_of_Birth__c'])?$datas['Appli']['Country_of_Birth__c']:'',array('class'=>'gaccca-input','required'
-                        => 'required','disabled' => 'disabled')); !!}
+                        Form::text('applicant[Country_of_Birth__c]',isset($datas['Appli']['Country_of_Birth__c'])?$datas['Appli']['Country_of_Birth__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
                     </div>
                 </div>
@@ -124,8 +122,7 @@
                 <div class="gaccca-form-element__control">
 
                     {!!
-                    Form::text('applicant[City_of_birth__c]',isset($datas['Appli']['City_of_birth__c'])?$datas['Appli']['City_of_birth__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[City_of_birth__c]',isset($datas['Appli']['City_of_birth__c'])?$datas['Appli']['City_of_birth__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
                 </div>
 
@@ -140,8 +137,7 @@
                     <div class="gaccca-select_container">
 
                         {!!
-                        Form::text('applicant[Maritial_Status__c]',isset($datas['Appli']['Maritial_Status__c'])?$datas['Appli']['Maritial_Status__c']:'',array('class'=>'gaccca-input','required'
-                        => 'required','disabled' => 'disabled')); !!}
+                        Form::text('applicant[Maritial_Status__c]',isset($datas['Appli']['Maritial_Status__c'])?$datas['Appli']['Maritial_Status__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
 
                     </div>
@@ -160,8 +156,7 @@
                 <div class="gaccca-form-element__control">
 
                     {!!
-                    Form::text('applicant[Emergency_Contact_Person_outside_the_US__c]',isset($datas['Appli']['Emergency_Contact_Person_outside_the_US__c'])?$datas['Appli']['Emergency_Contact_Person_outside_the_US__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[Emergency_Contact_Person_outside_the_US__c]',isset($datas['Appli']['Emergency_Contact_Person_outside_the_US__c'])?$datas['Appli']['Emergency_Contact_Person_outside_the_US__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
                     <span class="gaccca-input-help-text">Please list a person to contact in case of emergency.</span>
                 </div>
@@ -174,8 +169,7 @@
                     Relationship to Applicant <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
                     {!!
-                    Form::text('applicant[Relationship_to_Applicant__c]',isset($datas['Appli']['Relationship_to_Applicant__c'])?$datas['Appli']['Relationship_to_Applicant__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[Relationship_to_Applicant__c]',isset($datas['Appli']['Relationship_to_Applicant__c'])?$datas['Appli']['Relationship_to_Applicant__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
                     <span class="gaccca-input-help-text">Please define the relationship between you and your emergency
                         contact
                         person, e.g. mother, father, sister, boyfriend, etc.</span>
@@ -193,8 +187,7 @@
 
 
                     {!!
-                    Form::text('applicant[Emergency_Contact_Person_Email_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Email_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Email_Address__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[Emergency_Contact_Person_Email_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Email_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Email_Address__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
 
                     <span class="gaccca-input-help-text">Please list a person to contact in case of emergency.</span>
@@ -209,8 +202,7 @@
                 <div class="gaccca-form-element__control">
 
                     {!!
-                    Form::text('applicant[Emergency_Contact_Person_PhoneNumber__c]',isset($datas['Appli']['Emergency_Contact_Person_PhoneNumber__c'])?$datas['Appli']['Emergency_Contact_Person_PhoneNumber__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[Emergency_Contact_Person_PhoneNumber__c]',isset($datas['Appli']['Emergency_Contact_Person_PhoneNumber__c'])?$datas['Appli']['Emergency_Contact_Person_PhoneNumber__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
                     <span class="gaccca-input-help-text">Please always provide the country code..</span>
                 </div>
@@ -224,8 +216,7 @@
                 </label>
                 <div class="gaccca-form-element__control">
                     {!!
-                    Form::textarea('applicant[Emergency_Contact_Person_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Address__c']:'',array('class'=>'gaccca-textarea','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::textarea('applicant[Emergency_Contact_Person_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Address__c']:'',array('class'=>'gaccca-textarea','disabled' => 'disabled')); !!}
 
                     <span class="gaccca-input-help-text">Street, App #, Zip Code, City, Country</span>
                 </div>
@@ -240,8 +231,7 @@
                 <div class="gaccca-form-element__control">
 
                     {!!
-                    Form::text('applicant[Name_of_University__c]',isset($datas['Appli']['Name_of_University__c'])?$datas['Appli']['Name_of_University__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[Name_of_University__c]',isset($datas['Appli']['Name_of_University__c'])?$datas['Appli']['Name_of_University__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
                 </div>
             </div>
@@ -252,8 +242,7 @@
                 <div class="gaccca-form-element__control">
 
                     {!!
-                    Form::text('applicant[Field_of_Study__c]',isset($datas['Appli']['Field_of_Study__c'])?$datas['Appli']['Field_of_Study__c']:'',array('class'=>'gaccca-input','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('applicant[Field_of_Study__c]',isset($datas['Appli']['Field_of_Study__c'])?$datas['Appli']['Field_of_Study__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
                 </div>
             </div>
@@ -269,8 +258,7 @@
                 <div class="gaccca-form-element__control">
                     <div class="gaccca-select_container">
                         {!!
-                        Form::text('applicant[Type_of_Degree__c]',isset($datas['Appli']['Type_of_Degree__c'])?$datas['Appli']['Type_of_Degree__c']:'',array('class'=>'gaccca-input','required'
-                        => 'required','disabled' => 'disabled')); !!}
+                        Form::text('applicant[Type_of_Degree__c]',isset($datas['Appli']['Type_of_Degree__c'])?$datas['Appli']['Type_of_Degree__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
 
                     </div>
@@ -285,8 +273,7 @@
                     (Expected) Graduation Date <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
                     {!!
-                    Form::text('graduationDate',isset($datas['graduationDate'])?$datas['graduationDate']:'',array('class'=>'gaccca-input-date','required'
-                    => 'required','disabled' => 'disabled')); !!}
+                    Form::text('graduationDate',isset($datas['graduationDate'])?$datas['graduationDate']:'',array('class'=>'gaccca-input-date','disabled' => 'disabled')); !!}
 
                 </div>
             </div>
@@ -300,8 +287,7 @@
                 <div class="gaccca-form-element__control">
                     <div class="gaccca-select_container">
                         {!!
-                        Form::text('applicant[Work_Experience_in_your_Field_of_Study_a__c]',isset($datas['Appli']['Work_Experience_in_your_Field_of_Study_a__c'])?$datas['Appli']['Work_Experience_in_your_Field_of_Study_a__c']:'',array('class'=>'gaccca-input','required'
-                        => 'required','disabled' => 'disabled')); !!}
+                        Form::text('applicant[Work_Experience_in_your_Field_of_Study_a__c]',isset($datas['Appli']['Work_Experience_in_your_Field_of_Study_a__c'])?$datas['Appli']['Work_Experience_in_your_Field_of_Study_a__c']:'',array('class'=>'gaccca-input','disabled' => 'disabled')); !!}
 
                     </div>
                 </div>
@@ -309,7 +295,8 @@
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__label">
                     <a href="/participant_information_account">To update information, open the form.</a>
-                    @if (isset($datas['Appli']['Participant__c']) && !$datas['Appli']['Participant__c'])
+                    @if (isset($datas['Appli']['Participant__c']) && $datas['Appli']['Participant__c'])
+                    @else
                     <br /> <span class="gaccca-text-required" title="required">Please complete participant information
                         form.
                         <input type='text' class='gaccca-hide' required='required' />
@@ -319,7 +306,8 @@
             </div>
 
             @if (isset($datas['Appli']['Hide_Host_Company_Information_in_Account__c']) &&
-            !$datas['Appli']['Hide_Host_Company_Information_in_Account__c'])
+            $datas['Appli']['Hide_Host_Company_Information_in_Account__c'])
+            @else
             <h2 class="gaccca-h2-padding">Host Company Information</h2>
 
 
@@ -333,7 +321,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Field_of_Internship__c]"
                         value="{{isset($datas['Appli']['Field_of_Internship__c'])?$datas['Appli']['Field_of_Internship__c']:''}}"
-                        id="text-input-id-foi" placeholder="Field of Internship " required="" disabled="disabled"
+                        id="text-input-id-foi" placeholder="Field of Internship "  disabled="disabled"
                         class="gaccca-input" />
                     <span class="gaccca-input-help-text">e.g. Marketing, Business Development, Mechanical<br />
                         Engineering, Architecture, Graphic Design
@@ -376,7 +364,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Host_Company__c]"
                         value="{{isset($datas['Appli']['Host_Company__c'])?$datas['Appli']['Host_Company__c']:''}}"
-                        id="text-input-id-hcn" placeholder="Host Company Name" required="" disabled="disabled"
+                        id="text-input-id-hcn" placeholder="Host Company Name"  disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -390,7 +378,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Host_Company_Website__c]"
                         value="{{isset($datas['Appli']['Host_Company_Website__c'])?$datas['Appli']['Host_Company_Website__c']:''}}"
-                        id="text-input-id-hcn" placeholder="Host Company Website" required="" disabled="disabled"
+                        id="text-input-id-hcn" placeholder="Host Company Website"  disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -404,7 +392,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-e-address">
                     Host Company Address <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                    <textarea name="applicant['Address__c]" placeholder="Host Company Address" required=""
+                    <textarea name="applicant['Address__c]" placeholder="Host Company Address" 
                         disabled="disabled"
                         class="gaccca-textarea">{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
 
@@ -419,7 +407,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[City__c]"
                         value="{{isset($datas['Appli']['City__c'])?$datas['Appli']['City__c']:''}}"
-                        id="text-input-id-city" placeholder="City" required="" disabled="disabled"
+                        id="text-input-id-city" placeholder="City"  disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -433,7 +421,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[ZIP_Code__c]"
                         value="{{isset($datas['Appli']['ZIP_Code__c'])?$datas['Appli']['ZIP_Code__c']:''}}"
-                        id="text-input-id-zipcode" placeholder="City" required="" disabled="disabled"
+                        id="text-input-id-zipcode" placeholder="City"  disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -451,7 +439,7 @@
 
                         <input type="text" name="applicant[State__c]"
                             value="{{isset($datas['Appli']['State__c'])?$datas['Appli']['State__c']:''}}"
-                            id="text-input-id-hccp" placeholder="Host Company Contact Person" required=""
+                            id="text-input-id-hccp" placeholder="Host Company Contact Person" 
                             disabled="disabled" class="gaccca-input" />
 
                     </div>
@@ -468,7 +456,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Contact_Person__c]"
                         value="{{isset($datas['Appli']['Contact_Person__c'])?$datas['Appli']['Contact_Person__c']:''}}"
-                        id="text-input-id-hccp" placeholder="Host Company Contact Person" required=""
+                        id="text-input-id-hccp" placeholder="Host Company Contact Person" 
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">Enter the name of the person who will be your supervisor/mentor
                         during your internship/training.</span>
@@ -483,7 +471,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="email" name="applicant[Do_you_have_dual_citizenship__c]"
                         value="{{isset($datas['Appli']['Email_Address__c'])?$datas['Appli']['Email_Address__c']:''}}"
-                        id="text-input-id-ccea" placeholder="Company Contact email address " required=""
+                        id="text-input-id-ccea" placeholder="Company Contact email address " 
                         disabled="disabled" class="gaccca-input" />
 
                 </div>
@@ -497,7 +485,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Phone_Number__c]"
                         value="{{isset($datas['Appli']['Phone_Number__c'])?$datas['Appli']['Phone_Number__c']:''}}"
-                        id="text-input-id-ccp" placeholder="Company Contact phone" required="" disabled="disabled"
+                        id="text-input-id-ccp" placeholder="Company Contact phone"  disabled="disabled"
                         class="gaccca-input" />
                     <span class="gaccca-input-help-text">Use the following format +1-563-6325685</span>
                 </div>
@@ -513,7 +501,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Hours_Per_Week__c]"
                         value="{{isset($datas['Appli']['Hours_Per_Week__c'])?$datas['Appli']['Hours_Per_Week__c']:''}}"
-                        id="text-input-id-hpw" placeholder="Hours per week" required="" disabled="disabled"
+                        id="text-input-id-hpw" placeholder="Hours per week"  disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -530,16 +518,14 @@
 
                     <span class="gaccca-radio">
                         {!! Form::radio('stipend',
-                        'No',isset($datas['stipend'])?($datas['stipend']=='No'?true:false):false,array('id'=>'radio-no','required'
-                        => 'required','disabled' => 'disabled')); !!}
+                        'No',isset($datas['stipend'])?($datas['stipend']=='No'?true:false):false,array('id'=>'radio-no','disabled' => 'disabled')); !!}
 
                         <label class="gaccca-radio__label" for="radio-no">
                             <span class="gaccca-radio_faux"></span>
                             <span class="gaccca-padding-right-25">No</span>
                         </label>
                         {!! Form::radio('stipend',
-                        'Yes',isset($datas['stipend'])?($datas['stipend']=='Yes'?true:false):false,array('id'=>'radio-yes','required'
-                        => 'required','disabled' => 'disabled')); !!}
+                        'Yes',isset($datas['stipend'])?($datas['stipend']=='Yes'?true:false):false,array('id'=>'radio-yes','disabled' => 'disabled')); !!}
 
                         <label class="gaccca-radio__label" for="radio-yes">
                             <span class="gaccca-radio_faux"></span>
@@ -564,7 +550,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[If_Yes_How_Much_Stipend__c]"
                         value="{{isset($datas['Appli']['If_Yes_How_Much_Stipend__c'])?$datas['Appli']['If_Yes_How_Much_Stipend__c']:''}}"
-                        id="text-input-id-hpw" placeholder="Hours per week" required="" disabled="disabled"
+                        id="text-input-id-hpw" placeholder="Hours per week"  disabled="disabled"
                         class="gaccca-input" />
                     <span class="gaccca-input-help-text">Please enter the amount paid to you per hour, week or month,
                         e.g 16 USD/hour, 1300 USD/month, 500 USD/week</span>
@@ -584,7 +570,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Value_Of_Housing_In_USD_Per_Month__c]"
                         value="{{isset($datas['Appli']['Value_Of_Housing_In_USD_Per_Month__c'])?$datas['Appli']['Value_Of_Housing_In_USD_Per_Month__c']:''}}"
-                        id="text-input-id-vohiupm" placeholder="- Value of Housing in USD per month" required=""
+                        id="text-input-id-vohiupm" placeholder="- Value of Housing in USD per month" 
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -600,7 +586,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Value_Of_Transportation_In_USD_Per_Month__c]"
                         value="{{isset($datas['Appli']['Value_Of_Transportation_In_USD_Per_Month__c'])?$datas['Appli']['Value_Of_Transportation_In_USD_Per_Month__c']:''}}"
-                        id="text-input-id-votiupm" placeholder="- Value of Transportation in USD per month" required=""
+                        id="text-input-id-votiupm" placeholder="- Value of Transportation in USD per month" 
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -615,7 +601,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Total_Flight_Expenses_In_USD__c]"
                         value="{{isset($datas['Appli']['Total_Flight_Expenses_In_USD__c'])?$datas['Appli']['Total_Flight_Expenses_In_USD__c']:''}}"
-                        id="text-input-id-tfeiu" placeholder="Total Flight Expenses in USD" required=""
+                        id="text-input-id-tfeiu" placeholder="Total Flight Expenses in USD" 
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -630,7 +616,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Other_Compensation__c]"
                         value="{{isset($datas['Appli']['Other_Compensation__c'])?$datas['Appli']['Other_Compensation__c']:''}}"
-                        id="text-input-id-hpw" placeholder="- Other compensation" required="" disabled="disabled"
+                        id="text-input-id-hpw" placeholder="- Other compensation"  disabled="disabled"
                         class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a. Please also name the
                         expense, e.g visa fee.</span>
@@ -641,7 +627,9 @@
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__label">
                     <a href="/host_company_information_account"> To update information, open the form. </a>
-                    @if (isset($datas['Appli']['hostCompany__c']) && !$datas['Appli']['hostCompany__c'])
+                    @if (isset($datas['Appli']['hostCompany__c']) && $datas['Appli']['hostCompany__c'])
+
+                    @else
                     <br /> <span class="gaccca-text-required" title="required">Please complete the host company
                         information form. <input type='text' class='gaccca-hide' required='required' /></span>
                     @endif
@@ -792,7 +780,7 @@
                     <div class="gaccca-form-element__control">
                         <input type="text" name='applicant[Number_of_j_2_visa__c]'
                             value="{{isset($datas['Appli']['Number_of_j_2_visa__c'])?$datas['Appli']['Number_of_j_2_visa__c']:''}}"
-                            id="text-input-id-people" placeholder="" required="" disabled="disabled"
+                            id="text-input-id-people" placeholder=""  disabled="disabled"
                             class="gaccca-input" />
                     </div>
                 </div>
@@ -804,7 +792,7 @@
                         <div class="gaccca-select_container">
                             <input type="text" name="applicant[How_did_you_hear_about_the_program__c]"
                                 value="{{isset($datas['Appli']['How_did_you_hear_about_the_program__c'])?$datas['Appli']['How_did_you_hear_about_the_program__c']:''}}"
-                                id="text-input-id-hpw" placeholder="- Other compensation" required=""
+                                id="text-input-id-hpw" placeholder="- Other compensation" 
                                 disabled="disabled" class="gaccca-input" />
 
                         </div>
@@ -842,7 +830,8 @@
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__label">
                     <a href="/finalize_application_account">To update information, open the form.</a>
-                    @if (isset($datas['Appli']['finnalize__c']) && !$datas['Appli']['finnalize__c'])
+                    @if (isset($datas['Appli']['finnalize__c']) && $datas['Appli']['finnalize__c'])
+                    @else
                     <br /> <span class="gaccca-text-required" title="required">Please complete finalize your application
                         form. <input type='text' class='gaccca-hide' required='required' /></span>
                     @endif
@@ -864,16 +853,19 @@
                     </div>
                 </div>
             </div>
-            @if (isset($datas['Appli']['Confirm__c']) && !$datas['Appli']['Confirm__c'])
-
+            @if (isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])
+@else
             @include('common.signHTML');
 
             <div class="gaccca-form-element gaccca-form-element-margin">
-                @if ((isset($datas['Appli']['finnalize__c']) && !$datas['Appli']['finnalize__c']) ||
-                (isset($datas['Appli']['hostCompany__c']) && !$datas['Appli']['hostCompany__c']) ||
-                (isset($datas['Appli']['Participant__c']) && !$datas['Appli']['Participant__c']))
+                @if ((isset($datas['Appli']['finnalize__c']) && $datas['Appli']['finnalize__c']) ||
+                (isset($datas['Appli']['hostCompany__c']) && $datas['Appli']['hostCompany__c']) ||
+                (isset($datas['Appli']['Participant__c']) && $datas['Appli']['Participant__c']))
+
+                @else
                 <span class="gaccca-text-required" title="required">Please complete all given required forms
                     above.<br /> @endif
+                    
                     <button id="gaccca_saveBtn_j1review" class="gaccca-button-save "
                         {{((isset($datas['Appli']['finnalize__c']) && !$datas['Appli']['finnalize__c']) || (isset($datas['Appli']['hostCompany__c']) && !$datas['Appli']['hostCompany__c']) || (isset($datas['Appli']['Participant__c']) && !$datas['Appli']['Participant__c']))?'disabled':''}}>Send
                         Application to GACC California</button>

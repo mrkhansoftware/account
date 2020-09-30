@@ -1,4 +1,4 @@
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_close']) !!}

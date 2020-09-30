@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:'','title'=>'Profile','page'=>'profile_account'])
+@include('common.header',['datas'=>$datas,'title'=>'Profile','page'=>'profile_account'])
 
   {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST', 'id' => 'gacccaForm_profile']) !!}
 

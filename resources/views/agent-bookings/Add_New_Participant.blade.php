@@ -1,6 +1,5 @@
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
-
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 {!! Form::open(['action' => 'AddNewParticipantController@store', 'method' => 'POST', 'id' => 'gacccaForm_participent']) !!}
 
 <div class="gaccca-main-containt">
@@ -183,7 +182,7 @@
 </div>
 
 {!! Form::close() !!}
-@include('common.footer')
+
 <script>
   $(document).ready(function() {
     $('#existing-customer-div').hide();
@@ -263,3 +262,7 @@
 
   });
 </script>
+@include('common.footer')
+@else
+Permission denied. Please contact administrator.
+@endif

@@ -1,6 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 {!! Form::open(['action' => 'ParticipantAgreementAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_paa']) !!}
 
@@ -119,7 +118,7 @@
         
 
                     <span class="gaccca-radio">
-                      <input required='' type="radio" id="radio-Yes" value="Yes" name="isAccepted" checked="{{$datas['Appli']['Accept_Terms_Conditions__c']}}"  />
+                      <input required='' type="radio" id="radio-Yes" value="Yes" name="isAccepted" {{isset($datas['Appli']['Accept_Terms_Conditions__c']) && $datas['Appli']['Accept_Terms_Conditions__c']?'checked':''}}  />
                       <label class="gaccca-radio__label" for="radio-Yes">
                         <span class="gaccca-radio_faux"></span>
                         <span class="gaccca-form-element__label">I agree</span>
@@ -128,8 +127,12 @@
                   <br/>
                   <br/>
                   
-                  @if (!(isset($datas['Appli']['Accept_Terms_Conditions__c']) && $datas['Appli']['Accept_Terms_Conditions__c']))
-                    <button id="gaccca_saveBtn_paa" class="gaccca-button-save ">Save & Continue</button>
+                  @if (isset($datas['Appli']['Accept_Terms_Conditions__c']) && $datas['Appli']['Accept_Terms_Conditions__c'])
+                  @else 
+                  <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
+        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+        
+                  <button id="gaccca_saveBtn_paa" class="gaccca-button-save ">Save & Continue</button>
                     @endif
         </div>
 

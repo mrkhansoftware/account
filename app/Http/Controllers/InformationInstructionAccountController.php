@@ -52,8 +52,12 @@ class InformationInstructionAccountController extends Controller
         $body['applicantId']=session()->get('applicantId');
         $body['contactId']=session()->get('Contact__c');
         //print_r($body);
-        'App\Services\Helper'::postRequest($body,'ApiInformationInstructionAccountClass');
-       return redirect()->action('ParticipantInformationAccountController@index', ['isSave' => 1]);
+        $resp='App\Services\Helper'::postRequest($body,'ApiInformationInstructionAccountClass');
+       if($resp=='"OK"'){
+        return redirect()->action('ParticipantInformationAccountController@index', ['isSave' => 1]);
+       }else{
+           echo $resp;
+       }
         //
     }
 

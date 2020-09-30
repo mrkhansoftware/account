@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 
 @include('common.scheduleCallComponent',['scheduleCallTypeName' => 'J1'])

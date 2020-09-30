@@ -1,6 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 <link href="{{ asset('css/ckEditor.css') }}" rel='stylesheet'>
 
@@ -1365,6 +1364,7 @@
             </form>
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <table class="gaccca-price-table" id='fileListTable'>
+                <tr ><td></td><td></td><td></td></tr>
                     @foreach ($datas['additionalDocList'] as $file)
                     <tr id="{{'fileRow_'.$file['Id']}}">
                         <td>
@@ -1714,7 +1714,9 @@
 
 <script>
     function saveInformation(formData) {
-
+        formData.applicantId="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}";
+        formData.Contact__c="{{isset($datas['contID'])?$datas['contID']:''}}";
+        formData.user="{{isset($_GET['orgidInternal'])?'Yes':'No'}}";
         if (formData.typeStr == 'fileNameChange' || formData.typeStr == 'fileDelete') { //loadFileIcn_
             document.getElementById('loadFileIcn_' + formData.fileId).style.display = 'block';
         } else {

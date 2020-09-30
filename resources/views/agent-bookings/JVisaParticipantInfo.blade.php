@@ -1,6 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 {!! Form::open(['action' => 'JVisaParticipantInfoController@store','files'=>true, 'method' => 'POST', 'id' => 'gacccaForm_jvisa']) !!}
 
@@ -13,6 +12,11 @@
       case you do not have an English version, please complete the form "Proof of Student Status" or "Proof of Student
       Graduation")
     </p>
+    <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
+  <input type="hidden" name='applicantId' value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}" />
+  <input type="hidden" name='Contact__c' value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}" />
+  <input type="hidden" name='Google_Drive_Folder__c' value="{{isset($datas['app']['Google_Drive_Folder__c'])?$datas['app']['Google_Drive_Folder__c']:''}}" />
+
   </div>
   @if (isset($datas['confirmed']) && $datas['confirmed'])
 

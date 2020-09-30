@@ -84,14 +84,12 @@ unset($finalReq['onfrm']);
 
 
 
-
-
-
-echo "<pre>"; print_r($finalReq);
-
-'App\Services\Helper'::postRequest($finalReq,'ApiWeeklyCheckInClass');
-
+$resp='App\Services\Helper'::postRequest($finalReq,'ApiWeeklyCheckInClass');
+if($resp=='"OK"'){
 return redirect()->action('WeeklyCheckinController@index', ['isSave' => 1]);
+}else{
+    echo $resp;
+}
     }
 
     /**

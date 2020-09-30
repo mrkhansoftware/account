@@ -42,12 +42,13 @@ class WriteYourScriptController extends Controller
     {
         $finalReq= $request->all();
 
-        $finalReq['applicant']['id']=session()->get('applicantId');
-        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+        $finalReq['applicant']['id']=$finalReq['applicantId'];
+        $finalReq['applicant']['Contact__c']=$finalReq['Contact__c'];
         $finalReq['applicantData'] = json_encode($finalReq['applicant']);
         unset($finalReq['_token']);
         unset($finalReq['applicant']);
-        
+        unset($finalReq['applicantId']);
+        unset($finalReq['Contact__c']);
         return  'App\Services\Helper'::postRequest($finalReq, 'ApiWriteYourScriptController');
       
     }

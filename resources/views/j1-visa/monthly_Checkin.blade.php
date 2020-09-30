@@ -1,7 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-
-@include('common.header',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-
+@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
 
 {!! Form::open(['action' => 'MonthlyCheckinController@store', 'files' => true,'method' => 'POST', 'id' => 'gacccaForm_mc']) !!}
 
@@ -16,7 +14,13 @@
         a mandatory component of the J-1 program.</p>
       <p>Missing mandatory monthly check-ins can lead to termination of your J-1 program.</p>
     </div>
-
+    <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
+        <input type="hidden" name='applicantId' value="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}"/>
+        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+        <input type="hidden" name='NewGdriveID__c' value="{{isset($datas['ap']['NewGdriveID__c'])?$datas['ap']['NewGdriveID__c']:''}}"/>
+        <input type="hidden" name='Google_Drive_Evaluation_Form__c' value="{{isset($datas['ap']['Google_Drive_Evaluation_Form__c'])?$datas['ap']['Google_Drive_Evaluation_Form__c']:''}}"/>
+        <input type="hidden" name='onfrmId' value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}"/>
+       
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">

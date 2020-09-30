@@ -60,9 +60,12 @@ class FinalizeApplicationAccountController extends Controller
         unset($finalReq['applicant']);
         
 
-       'App\Services\Helper'::postRequest($finalReq,'ApiFinalizeApplicationController');
+       $resp='App\Services\Helper'::postRequest($finalReq,'ApiFinalizeApplicationController');
+       if($resp=='"OK"'){
        return redirect()->action('J1ReviewApplicationAccountController@index', ['isSave' => 1]);
-    
+       }else{
+           echo $resp;
+       }
     }
 
     /**
