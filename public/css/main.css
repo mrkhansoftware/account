@@ -1,3 +1,12 @@
+/*!
+main.css - https://account.iieex.org/
+
+Copyright (c) 2020 IIEEX
+
+*/
+
+
+/* Below Section define css of body section */
 body {
     background: rgba(45, 45, 255, 0.03);
     font-family: 'Roboto';
@@ -10,18 +19,35 @@ body {
     margin-right: -.75rem;
     margin-left: -.75rem;
 }
+
+/*
+ 
+Grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
+ 
+ */
+
 .gaccca-grid {
     display: flex;
 }
-       
+
+/* 
+
+The wrap property specifies whether the flexible items should wrap or not
+*/
+
 .gaccca-wrap {
     flex-wrap: wrap;
     align-items: flex-start;
 }
+
+/* Below class use to align text center */
+
 .gaccca-center {
-  
   text-align: center;
 }
+
+/* Below class use to define full width */
+
 .gaccca-full-width {
   max-width: 100% !important;
 }
@@ -30,28 +56,31 @@ body {
     padding-left: .75rem;
 }
 
+/* Below class use to dispaly menu on page load */
+
 .gaccca-display-menu{
     display: block;
    }
 
+/* Below class use to hide menu buttonwhich is use in mobile view */
 .gaccca-header-menu-button{
     display: none;
 }
 
-
+/* Inside the below class we put the elements like input,select,textarea... */
 .gaccca-form-element{
     position: relative;
     min-width: 0; 
-       
 }
 
+/* Inside the below class we have login button with google and facebook */
 .gaccca-social-element{
   position: relative;
   min-width: 0;
   text-align: center;
 }
     
-
+/* Below class define the margin of elements like input,select,textarea */
 .gaccca-form-element-margin{
     margin: 0px 20px 33px 120px;
 }
@@ -64,33 +93,28 @@ body {
     margin: 0px;
 }
 
+/* Below class seperate two elements from each other */
 .gaccca-form-element__control {
     clear: left;
     position: relative;
 }
 
-/* .gaccca-form-element__control span {
-    color: rgb(62, 62, 60);
-} */
+/* Below class define the color of ol, h4, p, ul  */
 .gaccca-form-element ol, h4, p, ul {
     color: rgb(62, 62, 60);
 }
 
+/* Below class define for radio button and checkbox
+radio button css start
+
+*/
 .gaccca-form-element__control .gaccca-radio, .gaccca-form-element__control .gaccca-checkbox {
     display: block;
     margin: 5px 0px;
 }
 
-/* .gaccca-form-element__control img {
-    position: absolute;
-    top: 2px;
-    right: 5px
-} */
 
-
-
-
-
+/* Below class define how radio button will look  */
 .gaccca-radio [type=radio] {
     width: 1px;
     height: 1px;
@@ -102,7 +126,7 @@ body {
     position: absolute;
 }
         
-
+/* Below class define how radio button will look after checked  */
 .gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio_faux:after,  .gaccca-radio [type=radio]:checked+.gaccca-radio__label .gaccca-radio--faux:after {
     width: .5rem;
     height: .5rem;
@@ -146,8 +170,13 @@ body {
   display: block;
   margin-left: 30px;
 }
+/* radio button css end */
 
 
+/* Below class define how checkbox  button will look
+checkbox css start
+
+*/
 .gaccca-form-element__control .gaccca-checkbox {
     display: block;
 }
@@ -207,9 +236,13 @@ body {
     /* font-size: .8125rem; */
 }
 
+/* checkbox css end */
+
+
+
+/* Below css define how will label look */
 
 .gaccca-form-element__label {
-  
   
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -224,16 +257,10 @@ body {
     font-size: 14px;
     line-height: 22px;
 
-
 }
 
-/* .gaccca-form-element__label a {
-
-color: #3b8ced;
-} */
-
+/* Below css define anchor tag color of  */
 body a {
-
   color: #3b8ced;
   }
 
@@ -354,7 +381,6 @@ body a {
 
 
 
-
 .gaccca-select_container {
     position: relative;
 }
@@ -460,7 +486,8 @@ box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
 
   .gaccca-header ul > li {
     float: left;
-    margin: 13px 0px 0px 59px;
+    /* margin: 13px 0px 0px 59px; */
+    margin: 13px 0px 0px 45px;
     
   }
   
@@ -528,15 +555,8 @@ box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
         
       
  .gaccca-behind-the-logo{
-
-    height: 46px;
-    width: 115px;
-    background: #ffff;
     margin: 9px 0px 9px 0px;
-    float: left;
-    border-radius: 6px;
-    padding: 5px 15px;
-
+    content:url("../images/logo/logo1.png");
   }
 
   .gaccca-behind-the-logo-host-company{
@@ -621,7 +641,7 @@ margin: 0px auto 0px auto;
 
 }
 .gaccca-google-image{
-  /* background-image: url("../images/google-button/google-logo.png"); */
+
   position: absolute;
   width: 27.54px;
   height: 27px;
@@ -769,7 +789,6 @@ margin: 0px auto 0px auto;
 
     font-size: 48px;
     line-height: 54px;
-    /* color: #787885; */
     color: #262626;
 
 }
@@ -1001,6 +1020,8 @@ margin: 0px auto 0px auto;
     background-size: auto;
 
 }
+
+
 #ui-datepicker-div {
   z-index:5 !important;
 }
@@ -1860,7 +1881,6 @@ textarea.gaccca-parsley-error
     box-shadow: #ff0000 0 0 0 1px inset;
     background-clip: padding-box;
 
-
 }
 
 
@@ -2042,6 +2062,11 @@ and (orientation: portrait)  {
 
 @media only screen
 and  (max-device-width : 767px) {
+
+    .gaccca-main-containt {
+      margin: 0px auto 40px auto !important;
+      border-radius: 0px !important;
+    }
     .gaccca-display-menu{
         display: none !important;
     }
@@ -2056,26 +2081,34 @@ and  (max-device-width : 767px) {
      
     .gaccca-main-containt  .gaccca-h1-padding{ 
      
-        padding: 38px 0px 0px 30px !important;
+        /* padding: 30px 0px 0px 30px !important; */
+        padding: 30px 0px 0px 15px !important;
          
+     }
+     .gaccca-main-containt h1{
+       margin: 0px !important;
      }
      
     .gaccca-main-containt  .gaccca-h2-padding{ 
      
-           padding: 0px 0px 24px 31px !important;
+           padding: 0px 0px 24px 15px !important;
          
        }
      
-       .gaccca-sky-blue-box-margin {
-           margin: 48px 30px 48px 30px !important;
-         }
+    .gaccca-sky-blue-box-margin {
+        margin: 30px 15px 20px 15px !important
+      }
            
        .gaccca-form-element-margin{
-           margin: 0px 30px 33px 31px !important;
+           /* margin: 0px 30px 33px 31px !important; */
+           margin: 0px 15px 20px 15px !important;
+
        }
      
        .gaccca-button-save-margin{
-           margin: 4px 0px 0px 31px !important;
+           /* margin: 4px 0px 0px 31px !important; */
+           margin: 4px 0px 0px 15px !important;
+
        }
      
        .gaccca-form-element-checkbox-switch{
@@ -2114,20 +2147,13 @@ and  (max-device-width : 767px) {
            padding: 5px !important;
            text-align: left !important;    
          }
-         /* .gaccca-price-table tr{
-          border-top: 1px solid black !important;
-         } */
-     
+       
          .gaccca-price-table a{
            margin-right: 5px;
        }
      
      
-     /* 
-       .gaccca-download-participant-handbook-margin{
-         margin: 0px 30px !important;
-       } */
-     
+    
        .gaccca-download-participant-handbook-padding{
          padding: 10px 15px !important;
        }
@@ -2254,9 +2280,21 @@ and  (min-width : 768px) and  (max-width : 990px) {
  .gaccca-header-menu-button{
      display: block !important;
  }
+
+ .gaccca-behind-the-logo{
+  margin: 9px 9px 9px 0px;
+  content:url("../images/logo/logo_mobile.png");
+}
  
  .gaccca-behind-the-logo-position{
      float: right !important;
  }
+
+
+ .gaccca-input-date{
+
+  background-image: none !important;
  
- }
+}
+
+}

@@ -78,7 +78,7 @@
             <div class="gaccca-grid gaccca-wrap">
                 <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                     <div class="gaccca-behind-the-logo gaccca-behind-the-logo-position">
-                    <img src="{{ asset('images/logo/logo1.png') }}"/>
+                    <!-- <img src="{{ asset('images/logo/logo1.png') }}"/> -->
                     </div>
                     <ul class="gaccca-display-menu">
                     
