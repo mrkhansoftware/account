@@ -254,8 +254,8 @@ Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPa
 
  Route::post('/common_api_simcardmanage', 'SimcardManageController@commonMethodSimcardManage');
 
+ Route::get('/cronjob', 'CronJobController@index');
  
-
 
 
 
