@@ -1394,7 +1394,7 @@ button.gaccca-accordion-minius::before {
   z-index: 6;
   height: 100%;
   top: 0;
-  left: 0;
+  right: 0;
   background-color: #1A73E8;
   overflow-x: hidden;
   transition: 0.5s;
@@ -1495,7 +1495,7 @@ button.gaccca-accordion-minius::before {
   color: white;
   padding: 10px 15px;
   border: none;
-  float: left;
+  float: right;
 }
 
 .gaccca-openbtn:hover {
@@ -2054,7 +2054,7 @@ input[type="file"].gaccca-parsley-error+ul {
     content: url("../images/logo/logo_mobile.png");
   }
   .gaccca-behind-the-logo-position {
-    float: right !important;
+    float: left !important;margin-left: 5px;
   }
   .gaccca-input-date {
     background-image: none !important;
