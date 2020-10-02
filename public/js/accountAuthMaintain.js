@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         userInfo.email = user.providerData[0].email;
         userInfo.uid = user.uid;
         userInfo.provider = user.providerData[0].providerId;
-        console.log(' User is signed in.');
+        //console.log(' User is signed in.');
         //callInit(userInfo);
     } else {
         console.log('No User is signed in.');
