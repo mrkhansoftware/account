@@ -14,7 +14,7 @@
     </p>
     <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
   <input type="hidden" name='applicantId' value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}" />
-  <input type="hidden" name='Contact__c' value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}" />
+  <input type="hidden" name='Contact__c' value="{{isset($_GET['participant'])?$_GET['participant']:''}}" />
   <input type="hidden" name='Google_Drive_Folder__c' value="{{isset($datas['app']['Google_Drive_Folder__c'])?$datas['app']['Google_Drive_Folder__c']:''}}" />
 
   </div>
@@ -278,7 +278,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-egd">
           (Expected) Graduation Date <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="graduationDate" value="{{isset($datas['graduationDate'])?$datas['graduationDate']:''}}" type="text" id="text-input-id-egdx" required="" class="gaccca-input-date" />
+          <input name="graduationDate" value="{{isset($datas['graduationDate'])?$datas['graduationDate']:''}}" type="text" id="text-input-id-egdx" required="" class="gaccca-input-date" readonly/>
         </div>
       </div>
 
@@ -368,7 +368,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-ssdoi">
           Scheduled Start Date of Internship/Training <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="Scheduled_Start" value="{{isset($datas['Scheduled_Start'])?$datas['Scheduled_Start']:''}}" type="text" id="text-input-id-ssdoixxa" required="" class="gaccca-input-date" />
+          <input name="Scheduled_Start" value="{{isset($datas['Scheduled_Start'])?$datas['Scheduled_Start']:''}}" type="text" id="text-input-id-ssdoixxa" required="" class="gaccca-input-date" readonly/>
         </div>
       </div>
 
@@ -377,7 +377,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-sedoi">
           Scheduled End Date of Internship/Training <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="Scheduled_End" value="{{isset($datas['Scheduled_End'])?$datas['Scheduled_End']:''}}" type="text" id="text-input-id-sedoixxe" required="" class="gaccca-input-date" />
+          <input name="Scheduled_End" value="{{isset($datas['Scheduled_End'])?$datas['Scheduled_End']:''}}" type="text" id="text-input-id-sedoixxe" required="" class="gaccca-input-date" readonly/>
         </div>
       </div>
       <br />
@@ -505,9 +505,9 @@
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-howmuch">
-          If yes, how much? <span class="gaccca-text-required" title="required">*</span> </label>
+          If yes, how much? <span class="gaccca-text-required" title="required"></span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[If_Yes_How_Much_Stipend__c]" value="{{isset($datas['App']['If_Yes_How_Much_Stipend__c'])?$datas['App']['If_Yes_How_Much_Stipend__c']:''}}" type="text" id="text-input-id-howmuch" required="" class="gaccca-input" />
+          <input name="App[If_Yes_How_Much_Stipend__c]" value="{{isset($datas['App']['If_Yes_How_Much_Stipend__c'])?$datas['App']['If_Yes_How_Much_Stipend__c']:''}}" type="text" id="text-input-id-howmuch"  class="gaccca-input" />
           <br />
           <span class="gaccca-input-help-text">Please enter the amount paid to you per hour, week or month, e.g 16 USD/hour, 1300 USD/month, 500 USD/week</span>
         </div>

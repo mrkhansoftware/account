@@ -25,7 +25,7 @@ class ParticipantAgreementAccountController extends Controller
         if(isset($datas['Appli']['Id'])){
         session()->put('applicantId', $datas['Appli']['Id']);
         }
-        session()->put('Contact__c', $datas['Appli']['Contact__c']);
+        session()->put('Contact__c', $datas['contID']);
         return view('j1-visa/participant_agreement_account')->with(compact('datas'));
         
 

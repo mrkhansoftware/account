@@ -39,7 +39,7 @@ class ValidationCheckinAccountController extends Controller
           if(isset($datas['onfrm']['Id'])){
             session()->put('onfrmId', $datas['onfrm']['Id']);
             }
-          session()->put('Contact__c', $datas['ap']['Contact__c']);
+          session()->put('Contact__c', $datas['contID']);
          return view('j1-visa/validation_checkin_account')->with(compact('datas'));
         
     }
@@ -134,7 +134,7 @@ class ValidationCheckinAccountController extends Controller
     //echo "<pre>"; print_r($finalReq);die;
     
        $resp='App\Services\Helper'::postRequest($finalReq,'ApiValidationCheckinController');
-       if($resp='"OK"'){
+       if($resp=='"OK"'){
     return redirect()->action('ValidationCheckinAccountController@index', ['isSave' => 1]);
        }else{
            echo $resp;

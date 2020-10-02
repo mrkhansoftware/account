@@ -58,17 +58,15 @@ class HostCompanyAgreementAgentController extends Controller
         $finalReq = $request->all();
         /*------------------file upload ------*/
 
-        $unique_Folder_Id;
-        if ($finalReq['NewGdriveID__c'] == '' || 'App\Services\Helper'::isFolderExist($finalReq['NewGdriveID__c']) != '200') {
-            $Google_Drive_Folder_Id = 'App\Services\Helper'::returnFolderId('applicant');
-            $unique_Folder_Id = 'App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, $finalReq['lastNameFirstName']);
-            $finalReq['applicant']['NewGdriveID__c'] = $unique_Folder_Id;
+        $unique_Folder_Id='';
+      
+        $unique_Folder_Id='';
+        if ($finalReq['Google_Drive_Folder__c'] == ''  || 'App\Services\Helper'::isFolderExist($finalReq['Google_Drive_Folder__c']) != '200') {
+            $Google_Drive_Folder_Id = 'App\Services\Helper'::returnFolderId('registration');
+            $unique_Folder_Id = 'App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, 'Registration ' . $finalReq['lastNameFirstName']);
+            $finalReq['applicant']['Google_Drive_Folder__c'] = $unique_Folder_Id;
         } else {
-            $unique_Folder_Id = $finalReq['NewGdriveID__c'];
-        }
-
-        if ($finalReq['HostCompany_Gdrive_Folder_Id__c'] != ''  && 'App\Services\Helper'::isFolderExist($finalReq['HostCompany_Gdrive_Folder_Id__c']) == '200') {
-            $unique_Folder_Id = $finalReq['HostCompany_Gdrive_Folder_Id__c'];
+            $unique_Folder_Id = $finalReq['Google_Drive_Folder__c'];
         }
         if (isset($finalReq['fileCertificate'])) {
             $fileCont = base64_encode(file_get_contents($request->file('fileCertificate')));
@@ -98,7 +96,13 @@ class HostCompanyAgreementAgentController extends Controller
         unset($finalReq['options']);
         unset($finalReq['fileCertificate']);
         unset($finalReq['EncId']);
-
+        unset($finalReq['applicantId']);
+        unset($finalReq['lastNameFirstName']);
+        unset($finalReq['Contact__c']);
+        unset($finalReq['NewGdriveID__c']);
+        unset($finalReq['HostCompany_Gdrive_Folder_Id__c']);  
+        unset($finalReq['Google_Drive_Folder__c']);   
+        unset($finalReq['onfrmId']);   
       
 
       $resp=  'App\Services\Helper'::postRequest($finalReq, 'ApiHostCompanyAgreementAgentController');

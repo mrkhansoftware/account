@@ -62,7 +62,11 @@ class HCMidPointEvaluationController extends Controller
         unset($finalReq['applicant']);
         unset($finalReq['onfrm']);
         unset($finalReq['EncId']);
-
+        unset($finalReq['applicantId']);
+        unset($finalReq['onfrmId']);
+        unset($finalReq['Contact__c']);
+        unset($finalReq['lastNameFirstName']);
+        unset($finalReq['Google_Drive_Evaluation_Form__c']);
 
         //echo '<pre>'; print_r($finalReq);die;
 

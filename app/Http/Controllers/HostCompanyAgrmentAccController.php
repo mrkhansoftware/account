@@ -95,9 +95,14 @@ class HostCompanyAgrmentAccController extends Controller
         unset($finalReq['options']);
         unset($finalReq['fileCertificate']);
         unset($finalReq['EncId']);
-
+        unset($finalReq['applicantId']);
+        unset($finalReq['lastNameFirstName']);
+        unset($finalReq['Contact__c']);
+        unset($finalReq['NewGdriveID__c']);
+        unset($finalReq['HostCompany_Gdrive_Folder_Id__c']);   
+        unset($finalReq['onfrmId']);     
         // echo '<pre>'; print_r($finalReq);die;
-
+         
 
         $resp='App\Services\Helper'::postRequest($finalReq, 'ApiHostCompanyAgreementController');
 if($resp=='"OK"'){

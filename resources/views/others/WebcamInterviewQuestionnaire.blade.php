@@ -12,7 +12,7 @@
         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
             <div class="gaccca-form-element gaccca-form-element-margin">
-                <p> Thank you for submitting your feedback.
+                <p> Thank you for submitting.
                 </p>
             </div>
         </div>

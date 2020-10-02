@@ -154,8 +154,6 @@
           @if (isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])
           @else
           <br/> 
-          <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
-        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
         
           <button id="gaccca_saveBtn_finalize" class="gaccca-button-save">Review your j-1 Visa Application</button>
         @endif

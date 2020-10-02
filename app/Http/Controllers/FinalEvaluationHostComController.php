@@ -25,7 +25,7 @@ if(!isset($_GET['orgid'])){
         $datas='App\Services\Helper'::getRequest('ApiFinalEvaluationHCController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-     //   echo '<pre>'; print_r($datas); die;
+      // echo '<pre>'; print_r($datas); die;
 
 
         return view('host-company/final_evaluation_hc_account')->with(compact('datas'));
@@ -63,8 +63,11 @@ if(!isset($_GET['orgid'])){
         unset($finalReq['applicant']);
         unset($finalReq['onfrm']);
         unset($finalReq['EncId']);
-      
-      
+        unset($finalReq['applicantId']);
+        unset($finalReq['onfrmId']);
+        unset($finalReq['Contact__c']);
+        unset($finalReq['lastNameFirstName']);
+        unset($finalReq['Google_Drive_Evaluation_Form__c']);
      // echo '<pre>'; print_r($finalReq);die;
       
     

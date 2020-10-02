@@ -77,7 +77,7 @@ class JVisaParticipantInfoController extends Controller
 
 
 
-        $unique_Folder_Id;
+        $unique_Folder_Id='';
         if ($finalReq['Google_Drive_Folder__c'] == ''  || 'App\Services\Helper'::isFolderExist($finalReq['Google_Drive_Folder__c']) != '200') {
             $Google_Drive_Folder_Id = 'App\Services\Helper'::returnFolderId('registration');
             $unique_Folder_Id = 'App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, 'Registration ' . $finalReq['lastNameFirstName']);
@@ -104,6 +104,11 @@ class JVisaParticipantInfoController extends Controller
         unset($finalReq['passport']);
         unset($finalReq['resume']);
         unset($finalReq['status_verification']);
+        unset($finalReq['lastNameFirstName']);
+        unset($finalReq['applicantId']);
+        unset($finalReq['Contact__c']);
+        unset($finalReq['Google_Drive_Folder__c']);
+         
 
         $resp = 'App\Services\Helper'::postRequest($finalReq, 'ApiJVisaParticipantInfoClass');
         if ($resp == '"OK"') {

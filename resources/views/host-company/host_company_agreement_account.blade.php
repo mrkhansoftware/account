@@ -180,7 +180,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Name of Intern/Trainee <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input type="text" name="onfrm[Name_of_Intern__c]" value="{{isset($datas['onfrm']['Name_of_Intern__c'])?$datas['onfrm']['Name_of_Intern__c']:''}}"  class="gaccca-input gaccca-required" />
@@ -194,10 +194,10 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           Training/Internship Dates from <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="startDate" value="{{isset($datas['startDate'])?$datas['startDate']:''}}" type="text"  class="gaccca-input-date gaccca-required" />
+          <input name="startDate" value="{{isset($datas['startDate'])?$datas['startDate']:''}}" type="text"  class="gaccca-input-date gaccca-required" readonly/>
           <span class="gaccca-input-help-text">From</span>
 
         </div>
@@ -208,10 +208,10 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           Training/Internship Dates to <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="endDate" value="{{isset($datas['endDate'])?$datas['endDate']:''}}" type="text"   class="gaccca-input-date gaccca-required" />
+          <input name="endDate" value="{{isset($datas['endDate'])?$datas['endDate']:''}}" type="text"   class="gaccca-input-date gaccca-required" readonly/>
           <span class="gaccca-input-help-text">to</span>
 
         </div>
@@ -240,7 +240,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Host Company Name <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Name_of_Host_Company__c]" value="{{isset($datas['onfrm']['Name_of_Host_Company__c'])?$datas['onfrm']['Name_of_Host_Company__c']:''}}" type="text"  class="gaccca-input gaccca-required" />
@@ -254,7 +254,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           Host Company Website <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Website_URL__c]" value="{{isset($datas['onfrm']['Website_URL__c'])?$datas['onfrm']['Website_URL__c']:''}}" type="text"  class="gaccca-input gaccca-required" />
@@ -268,7 +268,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           Parent Company <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Parent_Company__c]" value="{{isset($datas['onfrm']['Parent_Company__c'])?$datas['onfrm']['Parent_Company__c']:''}}" type="text"  class="gaccca-input gaccca-required" />
@@ -282,7 +282,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           Host Company location (of site of activity) / City
           <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
@@ -298,7 +298,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-8">
+        <label class="gaccca-form-element__label" >
           Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <textarea name="onfrm[Current_U_S_Address__c]" placeholder="Enter Your Address"   class="gaccca-textarea gaccca-required">{{isset($datas['onfrm']['Current_U_S_Address__c'])?$datas['onfrm']['Current_U_S_Address__c']:''}}</textarea>
@@ -310,7 +310,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-9">
+        <label class="gaccca-form-element__label" >
           Suite <span class="gaccca-text-required" title="required"></span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Suite__c]" value="{{isset($datas['onfrm']['Suite__c'])?$datas['onfrm']['Suite__c']:''}}" type="text" id="text-input-id-9" class="gaccca-input" />
@@ -326,7 +326,7 @@
 
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="select-tod">State
+        <label class="gaccca-form-element__label" >State
           <span class="gaccca-text-required" title="required">*</span>
         </label>
         <div class="gaccca-form-element__control">
@@ -346,7 +346,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Zip_Code__c]" value="{{isset($datas['onfrm']['Zip_Code__c'])?$datas['onfrm']['Zip_Code__c']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code"  class="gaccca-input gaccca-required" />
@@ -362,7 +362,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="select-tod">How many branches/ Subsidiary location does the
+        <label class="gaccca-form-element__label" >How many branches/ Subsidiary location does the
           company have?
 
           <span class="gaccca-text-required" title="required">*</span>
@@ -373,7 +373,7 @@
                 <option>select</option>
 
               </select> -->
-           {!! Form::select('onfrm[branches__c]', array_reverse($datas['branchesPick']), isset($datas['onfrm']['branches__c'])?$datas['onfrm']['branches__c']:'', [  'class' => 'gaccca-select gaccca-required']) !!}
+           {!! Form::select('onfrm[branches__c]', $datas['branchesPick'], isset($datas['onfrm']['branches__c'])?$datas['onfrm']['branches__c']:'', [  'class' => 'gaccca-select gaccca-required']) !!}
 
           </div>
         </div>
@@ -387,7 +387,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Employer ID Number (EIN) <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Employer_ID_Number_EIN__c]" value="{{isset($datas['onfrm']['Employer_ID_Number_EIN__c'])?$datas['onfrm']['Employer_ID_Number_EIN__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -410,7 +410,7 @@
       <div class="gaccca-form-element gaccca-form-element-margin">
 
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             Is your company’s gross annual revenue over $3 million? <span class="gaccca-text-required" title="required">*</span> </label>
 
         
@@ -429,7 +429,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Please summarize your company’s business activities <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[summarize_company_business__c]" value="{{isset($datas['onfrm']['summarize_company_business__c'])?$datas['onfrm']['summarize_company_business__c']:''}}" type="text"  class="gaccca-input gaccca-required" />
@@ -441,7 +441,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Total # of full time employees at site of activity <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[no_of_full_time_employees_at_site__c]" value="{{isset($datas['onfrm']['no_of_full_time_employees_at_site__c'])?$datas['onfrm']['no_of_full_time_employees_at_site__c']:''}}" type="text"   class="gaccca-input gaccca-required"  />
@@ -453,7 +453,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Total # of full time employees company-wide <span class="gaccca-text-required" title="required">*</span>
         </label>
         <div class="gaccca-form-element__control">
@@ -466,7 +466,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Total # of J-1 interns or trainees at site of activity including those of other J-1 Sponsors <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[no_of_J1_interns__c]" value="{{isset($datas['onfrm']['no_of_J1_interns__c'])?$datas['onfrm']['no_of_J1_interns__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -478,7 +478,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Have you worked with other visa sponsors before?  </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Have_you_worked_with_other_visa_sponsors__c]" value="{{isset($datas['onfrm']['Have_you_worked_with_other_visa_sponsors__c'])?$datas['onfrm']['Have_you_worked_with_other_visa_sponsors__c']:''}}" type="text" id="text-input-id-10" class="gaccca-input" />
@@ -491,7 +491,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Workers Compensation Insurance Policy Provider <span class="gaccca-text-required" title="required">*</span>
         </label>
         <div class="gaccca-form-element__control">
@@ -504,7 +504,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Workers Compensation Policy Number <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Workers_Compensation_Policy_Number__c]" value="{{isset($datas['onfrm']['Workers_Compensation_Policy_Number__c'])?$datas['onfrm']['Workers_Compensation_Policy_Number__c']:''}}" type="text"  class="gaccca-input gaccca-required" />
@@ -516,11 +516,11 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-10">
+        <label class="gaccca-form-element__label" >
           Workers Compensation Policy expiration date <span class="gaccca-text-required" title="required">*</span>
         </label>
         <div class="gaccca-form-element__control">
-          <input name="policyExpDate" value="{{isset($datas['policyExpDate'])?$datas['policyExpDate']:''}}" type="text"   class="gaccca-input-date gaccca-required" />
+          <input name="policyExpDate" value="{{isset($datas['policyExpDate'])?$datas['policyExpDate']:''}}" type="text"   class="gaccca-input-date gaccca-required" readonly/>
         </div>
       </div>
     </div>
@@ -584,7 +584,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Supervisor Name <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Name_of_Supervisor__c]" value="{{isset($datas['onfrm']['Name_of_Supervisor__c'])?$datas['onfrm']['Name_of_Supervisor__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -597,7 +597,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Supervisor Position <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Supervisor_Position__c]" value="{{isset($datas['onfrm']['Supervisor_Position__c'])?$datas['onfrm']['Supervisor_Position__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -611,10 +611,10 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Supervisor Email <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="onfrm[Supervisor_Email__c]" value="{{isset($datas['onfrm']['Supervisor_Email__c'])?$datas['onfrm']['Supervisor_Email__c']:''}}" type="email"   class="gaccca-input gaccca-required" />
+          <input name="onfrm[Supervisor_Email__c]" value="{{isset($datas['onfrm']['Supervisor_Email__c'])?$datas['onfrm']['Supervisor_Email__c']:''}}" type="email"   class="gaccca-input gaccca-email gaccca-required" />
 
         </div>
       </div>
@@ -625,7 +625,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Supervisor Phone <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Supervisor_Phone__c]" value="{{isset($datas['onfrm']['Supervisor_Phone__c'])?$datas['onfrm']['Supervisor_Phone__c']:''}}" type="text"  class="gaccca-input gaccca-required" />
@@ -638,7 +638,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Qualifications of Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Qualifications_of_Supervisor__c]" value="{{isset($datas['onfrm']['Qualifications_of_Supervisor__c'])?$datas['onfrm']['Qualifications_of_Supervisor__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -652,7 +652,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Company Contact Name <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Company_Contact_Name__c]" value="{{isset($datas['onfrm']['Company_Contact_Name__c'])?$datas['onfrm']['Company_Contact_Name__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -666,7 +666,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Company Contact Position <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Company_Contact_Position__c]" value="{{isset($datas['onfrm']['Company_Contact_Position__c'])?$datas['onfrm']['Company_Contact_Position__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -679,10 +679,10 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Contact Email <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="onfrm[Contact_Email__c]" value="{{isset($datas['onfrm']['Contact_Email__c'])?$datas['onfrm']['Contact_Email__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
+          <input name="onfrm[Contact_Email__c]" value="{{isset($datas['onfrm']['Contact_Email__c'])?$datas['onfrm']['Contact_Email__c']:''}}" type="email"   class="gaccca-input gaccca-email gaccca-required" />
 
         </div>
       </div>
@@ -692,7 +692,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-fn">
+        <label class="gaccca-form-element__label" >
           Contact Phone <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Contact_Phone__c]" value="{{isset($datas['onfrm']['Contact_Phone__c'])?$datas['onfrm']['Contact_Phone__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -725,7 +725,7 @@
       <div class="gaccca-form-element gaccca-form-element-margin">
 
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             The Host Company is offering a<span class="gaccca-text-required" title="required">*</span> </label>
           <span class="gaccca-radio">
             <input type="radio" id="radio-position-no" value="paid position" name="cmpnyPosition" class='gaccca-required'  {{isset($datas['onfrm']['Host_Company_Offering__c']) && $datas['onfrm']['Host_Company_Offering__c']=='paid position'?'checked':''}} />
@@ -754,7 +754,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The stipend amount per hour/week/month is </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[stipend_amount_per_hour_week_month__c]" value="{{isset($datas['onfrm']['stipend_amount_per_hour_week_month__c'])?$datas['onfrm']['stipend_amount_per_hour_week_month__c']:''}}" type="text"  class="gaccca-input" />
@@ -782,7 +782,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           Value of housing in USD </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Value_of_housing_in_USD__c]" value="{{isset($datas['onfrm']['Value_of_housing_in_USD__c'])?$datas['onfrm']['Value_of_housing_in_USD__c']:''}}" type="text"  class="gaccca-input" />
@@ -795,7 +795,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           Value of transportation in USD </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Value_of_transportation_in_USD__c]" value="{{isset($datas['onfrm']['Value_of_transportation_in_USD__c'])?$datas['onfrm']['Value_of_transportation_in_USD__c']:''}}" type="text"   class="gaccca-input" />
@@ -809,7 +809,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           Flight expenses in USD </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Flight_expenses_in_USD__c]" value="{{isset($datas['onfrm']['Flight_expenses_in_USD__c'])?$datas['onfrm']['Flight_expenses_in_USD__c']:''}}" type="text"   class="gaccca-input" />
@@ -822,7 +822,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           Other (please specify) </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Other_please_specify__c]" value="{{isset($datas['onfrm']['Other_please_specify__c'])?$datas['onfrm']['Other_please_specify__c']:''}}" type="text"  class="gaccca-input" />
@@ -835,7 +835,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           Field of internship / training <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[Current_Field_of_Study_Profession__c]" value="{{isset($datas['onfrm']['Current_Field_of_Study_Profession__c'])?$datas['onfrm']['Current_Field_of_Study_Profession__c']:''}}" type="text"   class="gaccca-input gaccca-required" />
@@ -848,7 +848,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           How many hours per week will be the intern / trainee be trained? <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input name="onfrm[How_many_hours_per_week__c]" value="{{isset($datas['onfrm']['How_many_hours_per_week__c'])?$datas['onfrm']['How_many_hours_per_week__c']:''}}" type="text"  class="gaccca-input gaccca-required" />
@@ -867,7 +867,7 @@
 
       <div class="gaccca-form-element gaccca-form-element-margin">
 
-        <label class="gaccca-form-element__label" for="text-input-id-4">
+        <label class="gaccca-form-element__label" >
           Where will the intern/trainee perform his tasks?
           <span class="gaccca-text-required" title="required">*</span> </label>
 
@@ -953,11 +953,25 @@ $(document).ready(function() {
   });
     
   $("#save-ds-7002").on('click', function() {
-    document.getElementById('loader').style.display = 'block';
-    $('.gaccca-required').prop('required', false);
-    document.getElementById('formSubmitType').value='Save';
-    $('#HCA-plan').submit();
-    });
+
+document.getElementById('formSubmitType').value = 'Save';
+$('.gaccca-required').prop('required', false);
+$(".gaccca-email").each(function(index) {
+  $(this).prop('required', $(this).val().trim().length != 0)
+})
+document.getElementById('loader').style.display = 'block';
+errors = [];
+$('#HCA-plan').parsley().validate();
+if ($('#HCA-plan').parsley().isValid()) {
+  $('#HCA-plan').submit();
+} else {
+
+  document.getElementById('loader').style.display = 'none';
+}
+
+
+
+});
 
   });
 

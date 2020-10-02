@@ -85,6 +85,17 @@ for (i = 0; i < dropdown.length; i++) {
     var file_span = jQuery(label_lab).children("span");
     if (ev.originalEvent != null) {
        if(this.files.length > 0){
+         var fileTypeAllowed=this.getAttribute('fileTypes')==null?'':this.getAttribute('fileTypes');
+         var uploadingFileType=this.files[0].type;
+         fileTypeAllowed=fileTypeAllowed.toLowerCase();
+         uploadingFileType=uploadingFileType.toLowerCase();
+
+         if(fileTypeAllowed!='' && !fileTypeAllowed.includes(uploadingFileType)){
+           this.value='';
+           alert('Please upload a valid file as mentioned.');return;
+         }
+
+         
         if(this.files[0].name.length > 35){
           jQuery(file_span).text(this.files[0].name.slice(0, 25)+'...');
         }else{
@@ -142,27 +153,27 @@ for (i = 0; i < gaccc_tablinks.length; i++) {
 gaccc_tablinks[i].className = gaccc_tablinks[i].className.replace(" gaccca-tab-active", "");
 }
 
-$("#"+tabName).css('display','block');
+jQuery("#"+tabName).css('display','block');
 
 // evt.currentTarget.className += " gaccca-tab-active";
-$("#"+btnId).addClass("gaccca-tab-active"); 
+jQuery("#"+btnId).addClass("gaccca-tab-active"); 
 }
 
 gacccaScriptContentTab('','phase_btn_1', 'phase__1');
 
 
-$("#openNav").bind('click',function(){
-  $("#mySidepanel").css('display','block');
+jQuery("#openNav").bind('click',function(){
+  jQuery("#mySidepanel").css('display','block');
 });
 
-$("#closeNav").bind('click',function(){
-  $("#mySidepanel").css('display','none');
+jQuery("#closeNav").bind('click',function(){
+  jQuery("#mySidepanel").css('display','none');
 })
 
-$(document).ready(function(){
-  $(window).resize(function(){
-   if ($(window).width() >= 1093) {
-    $("#mySidepanel").css('display','none');
+jQuery(document).ready(function(){
+  jQuery(window).resize(function(){
+   if (jQuery(window).width() >= 1093) {
+    jQuery("#mySidepanel").css('display','none');
 }
   });
 });

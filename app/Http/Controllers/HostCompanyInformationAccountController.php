@@ -26,7 +26,7 @@ class HostCompanyInformationAccountController extends Controller
         if (isset($datas['Appli']['Id'])) {
             session()->put('applicantId', $datas['Appli']['Id']);
         }
-        session()->put('Contact__c', $datas['Appli']['Contact__c']);
+        session()->put('Contact__c', $datas['contID']);
 
         return view('j1-visa/host_company_information_account')->with(compact('datas'));
     }
@@ -55,7 +55,7 @@ class HostCompanyInformationAccountController extends Controller
         $finalReq['applicantData'] = json_encode($finalReq['applicant']);
         unset($finalReq['_token']);
         unset($finalReq['applicant']);
-        // echo '<pre>';print_r($finalReq);
+//        echo '<pre>';print_r($finalReq);die;
         $resp='App\Services\Helper'::postRequest($finalReq, 'ApiHostCompanyInformationController');
         if($resp=='"OK"'){
         return redirect()->action('ParticipantAgreementAccountController@index', ['isSave' => 1]);

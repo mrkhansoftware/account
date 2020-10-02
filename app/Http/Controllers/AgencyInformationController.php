@@ -61,7 +61,7 @@ class AgencyInformationController extends Controller
       if($resp=='"OK"'){
       return redirect()->action('AgencyInformationController@index', ['isSave' => 1]);
       }else{
-          echo $resp;
+          echo $resp.'aaa';
       }
        }    
         

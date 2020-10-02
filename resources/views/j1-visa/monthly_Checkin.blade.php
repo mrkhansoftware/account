@@ -14,13 +14,7 @@
         a mandatory component of the J-1 program.</p>
       <p>Missing mandatory monthly check-ins can lead to termination of your J-1 program.</p>
     </div>
-    <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
-        <input type="hidden" name='applicantId' value="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}"/>
-        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
-        <input type="hidden" name='NewGdriveID__c' value="{{isset($datas['ap']['NewGdriveID__c'])?$datas['ap']['NewGdriveID__c']:''}}"/>
-        <input type="hidden" name='Google_Drive_Evaluation_Form__c' value="{{isset($datas['ap']['Google_Drive_Evaluation_Form__c'])?$datas['ap']['Google_Drive_Evaluation_Form__c']:''}}"/>
-        <input type="hidden" name='onfrmId' value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}"/>
-       
+      
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
@@ -48,7 +42,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please provide the new address <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea name="onfrm[Current_U_S_Address__c]"   placeholder="Enter Your Address" id='sec1Field' class="gaccca-textarea">{{isset($datas['onfrm']['Current_U_S_Address__c'])?$datas['onfrm']['Current_U_S_Address__c']:''}}</textarea>
+        <textarea name="onfrm[Current_U_S_Address__c]"    id='sec1Field' class="gaccca-textarea">{{isset($datas['onfrm']['Current_U_S_Address__c'])?$datas['onfrm']['Current_U_S_Address__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -147,7 +141,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please provide Name, Email Address and phone number <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea name="onfrm[Supervisor_Details__c]" id='sec4Field' placeholder="Enter Your Address"  class="gaccca-textarea">{{isset($datas['onfrm']['Supervisor_Details__c'])?$datas['onfrm']['Supervisor_Details__c']:''}}</textarea>
+        <textarea name="onfrm[Supervisor_Details__c]" id='sec4Field'   class="gaccca-textarea">{{isset($datas['onfrm']['Supervisor_Details__c'])?$datas['onfrm']['Supervisor_Details__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -178,7 +172,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please specify <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea name="onfrm[working_between_32_40_h_w_Explain__c]" id='sec5Field'  placeholder="Enter Your Address"  class="gaccca-textarea">{{isset($datas['onfrm']['working_between_32_40_h_w_Explain__c'])?$datas['onfrm']['working_between_32_40_h_w_Explain__c']:''}}</textarea>
+        <textarea name="onfrm[working_between_32_40_h_w_Explain__c]" id='sec5Field'    class="gaccca-textarea">{{isset($datas['onfrm']['working_between_32_40_h_w_Explain__c'])?$datas['onfrm']['working_between_32_40_h_w_Explain__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>
@@ -230,7 +224,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If yes, please specify: i.e. issues with your host company, issues with cultural adjustment <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element__control">
-        <textarea name="onfrm[Yes_Discuss__c]" id='sec6Field' placeholder="Enter Your Address" class="gaccca-textarea">{{isset($datas['onfrm']['Yes_Discuss__c'])?$datas['onfrm']['Yes_Discuss__c']:''}}</textarea>
+        <textarea name="onfrm[Yes_Discuss__c]" id='sec6Field'  class="gaccca-textarea">{{isset($datas['onfrm']['Yes_Discuss__c'])?$datas['onfrm']['Yes_Discuss__c']:''}}</textarea>
         <span class="gaccca-input-help-text"></span>
     </div>
   </div>

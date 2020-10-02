@@ -38,7 +38,7 @@ class FinalEvaluationAccountController extends Controller
           if(isset($datas['onfrm']['Id'])){
             session()->put('onfrmId', $datas['onfrm']['Id']);
             }
-          session()->put('Contact__c', $datas['ap']['Contact__c']);
+          session()->put('Contact__c', $datas['contID']);
          return view('j1-visa/final_evaluation_account')->with(compact('datas'));
         
     }

@@ -94,10 +94,10 @@
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-c">
-            Citizenship <span class="gaccca-text-required" title="required">*</span> </label>
+            Citizenship <span class="gaccca-text-required" title="required"></span> </label>
           <div class="gaccca-form-element__control">
             
-            {!! Form::text('applicant[Citizenship__c]',isset($datas['Appli']['Citizenship__c'])?$datas['Appli']['Citizenship__c']:'',array('class'=>'gaccca-input','required' => 'required')); !!}
+            {!! Form::text('applicant[Citizenship__c]',isset($datas['Appli']['Citizenship__c'])?$datas['Appli']['Citizenship__c']:'',array('class'=>'gaccca-input')); !!}
             
             <span class="gaccca-input-help-text">Please also list your dual citizenship here.</span>
           </div>
@@ -212,7 +212,7 @@
           <div class="gaccca-form-element__control">
             
 
-              {!! Form::text('applicant[Emergency_Contact_Person_Email_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Email_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Email_Address__c']:'',array('class'=>'gaccca-input','required' => 'required')); !!}
+              {!! Form::email('applicant[Emergency_Contact_Person_Email_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Email_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Email_Address__c']:'',array('class'=>'gaccca-input','required' => 'required')); !!}
           </div>
         </div>
 
@@ -288,7 +288,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-egd">
             (Expected) Graduation Date <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            {!! Form::text('graduationDate',isset($datas['graduationDate'])?$datas['graduationDate']:'',array('class'=>'gaccca-input-date','required' => 'required')); !!}
+            {!! Form::text('graduationDate',isset($datas['graduationDate'])?$datas['graduationDate']:'',array('class'=>'gaccca-input-date','required' => 'required','readonly' => 'readonly')); !!}
 
           </div>
         </div>

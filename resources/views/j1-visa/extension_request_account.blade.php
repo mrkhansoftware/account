@@ -20,7 +20,7 @@
   
         <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
           <div class="gaccca-form-element gaccca-form-element-margin">
-            <label class="gaccca-form-element__label" for="text-input-id-1">
+            <label class="gaccca-form-element__label" >
                 Name of your Host-Company <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               <input type="text" 
@@ -68,7 +68,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-4">
                 End Date on your current DS-2019 <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <input type="text" name='DS_2019' id="text-input-id-4"  required="" class="gaccca-input-date" />
+                <input type="text" name='DS_2019' id="text-input-id-4"  required="" class="gaccca-input-date" readonly/>
                 
               </div>
           </div>
@@ -100,7 +100,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-5">
                     Date of Extension begin  <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" name='Date_of_Extension'  required="" class="gaccca-input-date" />
+                  <input type="text" name='Date_of_Extension'  required="" class="gaccca-input-date" readonly />
                   
                 </div>
             </div>
@@ -115,7 +115,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-5">
                     New End date of your program  <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" name='New_End_date'   required="" class="gaccca-input-date" />
+                  <input type="text" name='New_End_date'   required="" class="gaccca-input-date" readonly/>
                   
                 </div>
             </div>

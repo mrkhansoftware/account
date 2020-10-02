@@ -25,7 +25,7 @@ class VideoResumeController extends Controller
             session()->put('applicantId', $datas['ap']['Id']);
         }
 
-        if (isset($datas['ap']['Contact__c'])) {
+        if (isset($datas['contID'])) {
 
             session()->put('Contact__c', $datas['contID']);
         }

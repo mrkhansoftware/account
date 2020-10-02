@@ -34,10 +34,10 @@
             </div>
 
             <div class="gaccca-form-element gaccca-form-element-margin">
-              <label class="gaccca-form-element__label" for="text-input-id-colpr">
+              <label class="gaccca-form-element__label" for="text-input-id-colpr"> 
                 Scheduled Start Date of Internship/Training  </label>
               <div class="gaccca-form-element__control">
-                <input type="text" name="scheduled_Start"  value="{{isset($datas['scheduled_Start'])?$datas['scheduled_Start']:''}}" id="text-input-id-colpr"  class="gaccca-input-date" />
+                <input type="text" name="scheduled_Start"  value="{{isset($datas['scheduled_Start'])?$datas['scheduled_Start']:''}}" id="text-input-id-colpr"  class="gaccca-input-date" readonly/>
                 
               </div>
             </div>
@@ -48,7 +48,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-us-visa">
                 Scheduled End Date of Internship/Training  </label>
               <div class="gaccca-form-element__control">
-                <input type="text" name="scheduled_End"  value="{{isset($datas['scheduled_End'])?$datas['scheduled_End']:''}}" id="text-input-id-us-visa"   class="gaccca-input-date" />
+                <input type="text" name="scheduled_End"  value="{{isset($datas['scheduled_End'])?$datas['scheduled_End']:''}}" id="text-input-id-us-visa"   class="gaccca-input-date" readonly/>
                 <span class="gaccca-input-help-text">Please provide type of visa and expiration date as well as information about any previous visa denials</span>
               </div>
             </div>
@@ -212,9 +212,9 @@
 
               <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-hpw">
-                    If yes, how much?   <span class="gaccca-text-required" title="required">*</span> </label>
+                    If yes, how much?   <span class="gaccca-text-required" title="required"></span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" name="applicant[If_Yes_How_Much_Stipend__c]"  value="{{isset($datas['Appli']['If_Yes_How_Much_Stipend__c'])?$datas['Appli']['If_Yes_How_Much_Stipend__c']:''}}" id="text-input-id-hpw"  required="" class="gaccca-input" />
+                  <input type="text" name="applicant[If_Yes_How_Much_Stipend__c]"  value="{{isset($datas['Appli']['If_Yes_How_Much_Stipend__c'])?$datas['Appli']['If_Yes_How_Much_Stipend__c']:''}}" id="text-input-id-hpw"   class="gaccca-input" />
                   <span class="gaccca-input-help-text">Please enter the amount paid to you per hour, week or  month, e.g 16 USD/hour, 1300 USD/month, 500 USD/week</span>
                 </div>
   
@@ -277,11 +277,7 @@
               @if (isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])
 
               @else
-              <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
-        <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
-        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
-        <input type="hidden" name='Google_Drive_Folder__c' value="{{isset($datas['Appli']['Google_Drive_Folder__c'])?$datas['Appli']['Google_Drive_Folder__c']:''}}"/>
-       
+          
             <button id="gaccca_saveBtn_hci" class="gaccca-button-save gaccca-button-save-margin">Submit & Continue</button>
 
             @endif

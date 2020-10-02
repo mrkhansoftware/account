@@ -11,9 +11,6 @@
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>Please review your Application and click the confirmation button.</p>
     </div>
-    <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
-        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
-        
     <h2 class="gaccca-h2-padding">Participant Information</h2>
 
 

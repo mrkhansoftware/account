@@ -66,6 +66,12 @@ class DS7002TrainigsplanAgentController extends Controller
         unset($finalReq['applicantId']);
         unset($finalReq['onfrmId']);
         unset($finalReq['Contact__c']);
+        unset($finalReq['applicantId']);
+        unset($finalReq['lastNameFirstName']);
+        unset($finalReq['Contact__c']);
+        unset($finalReq['NewGdriveID__c']);
+        unset($finalReq['HostCompany_Gdrive_Folder_Id__c']);   
+        unset($finalReq['onfrmId']);   
 
         
 

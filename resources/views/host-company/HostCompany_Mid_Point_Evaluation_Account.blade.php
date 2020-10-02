@@ -33,7 +33,7 @@
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-1">
+        <label class="gaccca-form-element__label" >
           Name of Supervisor's Intern/Trainee <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input type="text" name="onfrm[Name_of_Supervisor_s_Intern_Trainee__c]" value="{{isset($datas['onfrm']['Name_of_Supervisor_s_Intern_Trainee__c'])?$datas['onfrm']['Name_of_Supervisor_s_Intern_Trainee__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
@@ -47,7 +47,7 @@
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-1">
+        <label class="gaccca-form-element__label" >
           Name of Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input type="text" name="onfrm[Name_of_Supervisor__c]" value="{{isset($datas['onfrm']['Name_of_Supervisor__c'])?$datas['onfrm']['Name_of_Supervisor__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
@@ -59,7 +59,7 @@
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-1">
+        <label class="gaccca-form-element__label" >
           Name of Host Company <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input type="text" name="onfrm[Name_of_Host_Company__c]" value="{{isset($datas['onfrm']['Name_of_Host_Company__c'])?$datas['onfrm']['Name_of_Host_Company__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
@@ -71,7 +71,7 @@
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-1">
+        <label class="gaccca-form-element__label" >
           Supervisor's Current Business Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input type="text" name="onfrm[Supervisor_s_Current_Business_Address__c]" value="{{isset($datas['onfrm']['Supervisor_s_Current_Business_Address__c'])?$datas['onfrm']['Supervisor_s_Current_Business_Address__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
@@ -85,7 +85,7 @@
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-1">
+        <label class="gaccca-form-element__label" >
           Zip Code, City, State <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input type="text" name="onfrm[Zip_Code__c]" value="{{isset($datas['onfrm']['Zip_Code__c'])?$datas['onfrm']['Zip_Code__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
@@ -99,7 +99,7 @@
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-1">
+        <label class="gaccca-form-element__label" >
           Supervisor's Business Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
           <input type="text" name="onfrm[Phone__c]" value="{{isset($datas['onfrm']['Phone__c'])?$datas['onfrm']['Phone__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
@@ -113,10 +113,10 @@
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-1">
+        <label class="gaccca-form-element__label" >
           Supervisor's Business Email Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input type="text" name="onfrm[EMail__c]" value="{{isset($datas['onfrm']['EMail__c'])?$datas['onfrm']['EMail__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
+          <input type="email" name="onfrm[EMail__c]" value="{{isset($datas['onfrm']['EMail__c'])?$datas['onfrm']['EMail__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
           <br />
 
 
@@ -149,24 +149,24 @@
       <div class="gaccca-form-element gaccca-form-element-margin">
 
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             On average, how many hours has the intern/trainee been in attendance per week? <span class="gaccca-text-required" title="required">*</span> </label>
           <span class="gaccca-radio">
-            <input type="radio" id="radio-attendance-32" value="Fewer than 32 Hrs/Week" name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="Fewer than 32 Hrs/Week")? "checked" : "" }} />
+            <input type="radio" id="radio-attendance-32" value="Fewer than 32 Hrs/Week" required name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="Fewer than 32 Hrs/Week")? "checked" : "" }} />
             <label class="gaccca-radio__label" for="radio-attendance-32">
               <span class="gaccca-radio_faux"></span>
               <span>Fewer than 32 Hrs/Week</span>
             </label>
           </span>
           <span class="gaccca-radio">
-            <input type="radio" id="radio-attendance-45" value="32-45 Hrs/Week" name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="32-45 Hrs/Week")? "checked" : "" }} />
+            <input type="radio" id="radio-attendance-45" value="32-45 Hrs/Week" required name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="32-45 Hrs/Week")? "checked" : "" }} />
             <label class="gaccca-radio__label" for="radio-attendance-45">
               <span class="gaccca-radio_faux"></span>
               <span>32-45 Hrs/Week</span>
             </label>
           </span>
           <span class="gaccca-radio">
-            <input type="radio" id="radio-attendance-more" value="More than 45 Hrs/Week" name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="More than 45 Hrs/Week")? "checked" : "" }} />
+            <input type="radio" id="radio-attendance-more" value="More than 45 Hrs/Week" required name="attendance_per_week" {{ (isset($datas['onfrm']['attendance_per_week__c']) && $datas['onfrm']['attendance_per_week__c']=="More than 45 Hrs/Week")? "checked" : "" }} />
             <label class="gaccca-radio__label" for="radio-attendance-more">
               <span class="gaccca-radio_faux"></span>
               <span> More than 45 Hrs/Week</span>
@@ -184,7 +184,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-2">
+        <label class="gaccca-form-element__label" >
           How well has the intern/trainee adapted to the business environment of your company? <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1=poor / 5=excellent</span>
         @include('common.starRating',['required'=>'required', 'fieldName' =>'business_environment_adaption_by_intern__c'])
@@ -202,7 +202,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The intern/trainee is interested in his/her work. <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
         @include('common.starRating',['required'=>'required', 'fieldName' =>'My_internship_training_is_interesting__c'])
@@ -226,7 +226,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           How well has the intern/trainee performed all tasks/projects assigned so far? <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1=poor / 5=excellent</span>
 
@@ -249,7 +249,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-8">
+        <label class="gaccca-form-element__label" >
           Please provide three examples of internship/training tasks/projects the intern/trainee has been involved in: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
 
@@ -265,7 +265,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             Does the intern/trainee have the necessary qualifications for his/her position? <span class="gaccca-text-required" title="required">*</span> </label>
 
 
@@ -297,11 +297,11 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-8">
-          If no, please expand on this: <span class="gaccca-text-required" title="required">*</span> </label>
+        <label class="gaccca-form-element__label" >
+          If no, please expand on this: <span class="gaccca-text-required" title="required"> </span> </label>
         <div class="gaccca-form-element__control">
 
-          <textarea name="onfrm[Qualification_of_intern_for_position_NO__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Qualification_of_intern_for_position_NO__c'])?$datas['onfrm']['Qualification_of_intern_for_position_NO__c']:''}}</textarea>
+          <textarea name="onfrm[Qualification_of_intern_for_position_NO__c]"   class="gaccca-textarea">{{isset($datas['onfrm']['Qualification_of_intern_for_position_NO__c'])?$datas['onfrm']['Qualification_of_intern_for_position_NO__c']:''}}</textarea>
 
         </div>
       </div>
@@ -313,7 +313,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             Have you encountered problems with the intern/trainee so far?<span class="gaccca-text-required" title="required">*</span> </label>
 
           <!-- <span class="gaccca-radio">
@@ -338,10 +338,10 @@
 
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-1">
-          If yes, please specify <span class="gaccca-text-required" title="required">*</span> </label>
+        <label class="gaccca-form-element__label" >
+          If yes, please specify <span class="gaccca-text-required" title="required"> </span> </label>
         <div class="gaccca-form-element__control">
-          <input type="text" name="onfrm[If_yes_please_specify__c]" value="{{isset($datas['onfrm']['If_yes_please_specify__c'])?$datas['onfrm']['If_yes_please_specify__c']:''}}" id="text-input-id-1" required="" class="gaccca-input" />
+          <input type="text" name="onfrm[If_yes_please_specify__c]" value="{{isset($datas['onfrm']['If_yes_please_specify__c'])?$datas['onfrm']['If_yes_please_specify__c']:''}}" id="text-input-id-1"  class="gaccca-input" />
           <br />
 
 
@@ -361,7 +361,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             Could these problems be resolved ? </label>
 
           <!-- <span class="gaccca-radio">
@@ -389,7 +389,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             Has the intern/trainee's command of English been adequate for the internship/training?<span class="gaccca-text-required" title="required">*</span> </label>
 
 
@@ -430,7 +430,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The intern/trainee's command of English has improved since the beginning of the internship/training. <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
 
@@ -450,7 +450,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The intern/trainee is making progress. <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
 
@@ -467,7 +467,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The intern/trainee makes positive contributions to the company. <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
 
@@ -485,7 +485,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The intern/trainee is friendly. <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
 
@@ -511,7 +511,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The intern/trainee is reliable. <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
 
@@ -532,7 +532,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The intern/trainee is motivated. <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
 
@@ -554,7 +554,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             Is the intern/trainee punctual? <span class="gaccca-text-required" title="required">*</span> </label>
 
 
@@ -601,7 +601,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           The intern/trainee is flexible and able to accept changes to the work environment. <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
         @include('common.starRating',['required'=>'required', 'fieldName' =>'Flexible_trainee_accept_changes__c'])
@@ -620,7 +620,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-3">
+        <label class="gaccca-form-element__label" >
           How well does the intern/trainee accept constructive criticism? <span class="gaccca-text-required" title="required">*</span> </label><br />
         <span class="gaccca-file-help-text-color">1=not well / 5=perfectly fine</span>
         @include('common.starRating',['required'=>'required', 'fieldName' =>'Acceptance_of_criticism_by_trainee__c'])
@@ -641,7 +641,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             The intern/trainee is actively participating in American cultural activities. <span class="gaccca-text-required" title="required">*</span> </label>
 
           <!-- <span class="gaccca-radio">
@@ -672,7 +672,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-8">
+        <label class="gaccca-form-element__label" >
           Has your company offered the intern/trainee the opportunity to participate in cultural activities? Please specify: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
 
@@ -687,7 +687,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
-          <label class="gaccca-form-element__label" for="text-input-id-fn">
+          <label class="gaccca-form-element__label" >
             Overall, I am absolutely satisfied with the intern/trainee's performance so far. <span class="gaccca-text-required" title="required">*</span> </label>
 
           <!-- <span class="gaccca-radio">
@@ -714,7 +714,7 @@
     <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
-        <label class="gaccca-form-element__label" for="text-input-id-8">
+        <label class="gaccca-form-element__label" >
           Please add any additional comments or concerns you may have: </label>
         <div class="gaccca-form-element__control">
 

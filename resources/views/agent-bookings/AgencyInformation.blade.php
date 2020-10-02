@@ -40,7 +40,7 @@
             Upload or update your current price list <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
                   <label class="gaccca-file">
-                      <input type="file"  required name="priceList"/>
+                      <input type="file"  required name="priceList"  fileTypes="application/pdf"/>
                       <span class="gaccca-file-custom">Choose file...</span>
                       
                   </label>

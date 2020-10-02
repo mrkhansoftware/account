@@ -129,8 +129,7 @@
                   
                   @if (isset($datas['Appli']['Accept_Terms_Conditions__c']) && $datas['Appli']['Accept_Terms_Conditions__c'])
                   @else 
-                  <input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
-        <input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+                 
         
                   <button id="gaccca_saveBtn_paa" class="gaccca-button-save ">Save & Continue</button>
                     @endif

@@ -26,7 +26,7 @@ class J1ReviewApplicationAccountController extends Controller
           if(isset($datas['Appli']['Id'])){
           session()->put('applicantId', $datas['Appli']['Id']);
           }
-          session()->put('Contact__c', $datas['Appli']['Contact__c']);
+          session()->put('Contact__c', $datas['contID']);
          return view('j1-visa/j1_review_your_application_account')->with(compact('datas'));
     }
 

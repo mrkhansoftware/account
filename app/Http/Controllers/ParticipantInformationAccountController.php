@@ -27,7 +27,7 @@ class ParticipantInformationAccountController extends Controller
         if(isset($datas['Appli']['Id'])){
         session()->put('applicantId', $datas['Appli']['Id']);
         }
-        session()->put('Contact__c', $datas['Appli']['Contact__c']);
+        session()->put('Contact__c', $datas['contID']); 
         session()->put('Google_Drive_Folder__c', isset($datas['Appli']['Google_Drive_Folder__c'])?$datas['Appli']['Google_Drive_Folder__c']:'');
         return view('j1-visa/participant_information_account')->with(compact('datas'));
     }
@@ -110,7 +110,7 @@ class ParticipantInformationAccountController extends Controller
     $body['applicantData']=json_encode($finalReq['applicant']);
     $body['graduationDate']=$finalReq['graduationDate'];
    
-
+//echo '<pre/>'.print_r($body);die;
 
        $resp='App\Services\Helper'::postRequest($body,'APIParticipantInformationAccountClass');
        if($resp=='"OK"'){

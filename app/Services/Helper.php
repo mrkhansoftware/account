@@ -224,25 +224,25 @@ class Helper
    public static function sessionConId()
    {
 
-      session()->put('Gdrive_Placement_Folder_Id__c', '');
-      session()->put('NewGdriveID__c', '');
-      session()->put('J_Visa_Applicant_Folder_Id__c', '');
-      session()->put('Google_Drive_Folder_Additional_Doc__c', '');
-      session()->put('applicantId', '');
-      session()->put('NewGdriveID__c', '');
-      session()->put('J_Visa_Applicant_Folder_Id__c', '');
-      session()->put('Google_Drive_Folder_Additional_Doc__c', '');
-      session()->put('Contact__c', '');
-      session()->put('conId', '');
-      session()->put('accountId', '');
-      session()->put('accountName', '');
-      session()->put('Program__c', '');
-      session()->put('isInternal', '');
-      session()->put('onfrmId', '');
-      session()->put('Google_Drive_Evaluation_Form__c', '');
-      session()->put('HostCompany_Gdrive_Folder_Id__c', '');
-      session()->put('Google_Drive_Folder__c', '');
-      session()->put('Google_Drive_Folder_For_B1__c', '');
+      session()->put('Gdrive_Placement_Folder_Id__c', null);
+      session()->put('NewGdriveID__c', null);
+      session()->put('J_Visa_Applicant_Folder_Id__c', null);
+      session()->put('Google_Drive_Folder_Additional_Doc__c', null);
+      session()->put('applicantId', null);
+      session()->put('NewGdriveID__c', null);
+      session()->put('J_Visa_Applicant_Folder_Id__c', null);
+      session()->put('Google_Drive_Folder_Additional_Doc__c', null);
+      session()->put('Contact__c', null);
+      session()->put('conId', null);
+      session()->put('accountId', null);
+      session()->put('accountName', null);
+      session()->put('Program__c', null);
+      session()->put('isInternal', null);
+      session()->put('onfrmId', null);
+      session()->put('Google_Drive_Evaluation_Form__c', null);
+      session()->put('HostCompany_Gdrive_Folder_Id__c', null);
+      session()->put('Google_Drive_Folder__c', null);
+      session()->put('Google_Drive_Folder_For_B1__c', null);
 
       return session()->get('conIdUser');
    }
