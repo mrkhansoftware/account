@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Embassy Entry','page'=>'b1_Embassy'])
 
 {!! Form::open(['action' => 'B1EmbassyController@store','files'=>true, 'method' => 'POST',   'id' => 'gacccaForm_b1emb']) !!}
 

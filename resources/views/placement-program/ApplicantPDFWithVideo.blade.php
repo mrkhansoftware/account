@@ -124,10 +124,10 @@
 
             {!! Form::open(['action' => 'ApplicantResumeController@resumeDetailsPassword','method' => 'POST']) !!}
             <div>
-                <input Class="inputPass" name="password" type='password' placeholder="Password" value="" required />
-                <input Class="inputPass" name="contID" type='hidden' placeholder="Password"
+                <input Class="inputPass" name="password" type='password'  value="" required />
+                <input Class="inputPass" name="contID" type='hidden' 
                     value="{{$datas['contID']}}" />
-                <input Class="inputPass" name="applicationId" type='hidden' placeholder="Password"
+                <input Class="inputPass" name="applicationId" type='hidden' 
                     value="{{$datas['applicationId']}}" />
                 @if (isset($datas['isWrongPassword']) && $datas['isWrongPassword'])
                 <div class='instrctionError'>

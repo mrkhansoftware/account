@@ -19,7 +19,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-1">
               First Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <!-- <input type="text" id="text-input-id-1" placeholder="First Name" required="" class="gaccca-input" /> -->
+              <!-- <input type="text" id="text-input-id-1"  required="" class="gaccca-input" /> -->
               {!! Form::text('con[FirstName]',isset($datas['con']['FirstName'])?$datas['con']['FirstName']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
@@ -39,7 +39,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-2">
               Last Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <!-- <input type="text" id="text-input-id-2" placeholder="Last Name" required="" class="gaccca-input" /> -->
+              <!-- <input type="text" id="text-input-id-2" required="" class="gaccca-input" /> -->
               {!! Form::text('con[LastName]',isset($datas['con']['LastName'])?$datas['con']['LastName']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
@@ -60,7 +60,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-3">
               Date of birth <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element gaccca-form-element-margin-date">
-              <!-- <input type="text" id="datepicker" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" /> -->
+              <!-- <input type="text" id="datepicker"  required="" class="gaccca-input-date" /> -->
               {!! Form::text('dob',isset($datas['dob'])?$datas['dob']:'', [
 	              'class'                         => 'gaccca-input-date',
 	              'required'                      => 'required',
@@ -80,7 +80,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-4">
                 City of birth <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <!-- <input type="text" id="text-input-id-4" placeholder="City of birth" required="" class="gaccca-input" /> -->
+                <!-- <input type="text" id="text-input-id-4"  required="" class="gaccca-input" /> -->
                 {!! Form::text('con[City_Of_Birth__c]',isset($datas['con']['City_Of_Birth__c'])?$datas['con']['City_Of_Birth__c']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
@@ -98,7 +98,7 @@
               <label class="gaccca-form-element__label" for="text-input-id-5">
                 Country of birth <span class="gaccca-text-required" title="required">*</span> </label>
               <div class="gaccca-form-element__control">
-                <!-- <input type="text" id="text-input-id-5" placeholder="Country of birth" required="" class="gaccca-input" /> -->
+                <!-- <input type="text" id="text-input-id-5"  required="" class="gaccca-input" /> -->
                 {!! Form::text('con[Country_Of_Birth__c]',isset($datas['con']['Country_Of_Birth__c'])?$datas['con']['Country_Of_Birth__c']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
@@ -132,7 +132,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-7">
               Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <!-- <input type="text" id="text-input-id-7" placeholder="+1" required="" class="gaccca-input" /> -->
+              <!-- <input type="text" id="text-input-id-7"  required="" class="gaccca-input" /> -->
               {!! Form::text('con[Phone]',isset($datas['con']['Phone'])?$datas['con']['Phone']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
@@ -149,7 +149,7 @@
               Address <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
              
-                <!-- <textarea  placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea> -->
+                <!-- <textarea required="" class="gaccca-textarea"></textarea> -->
                 {!! Form::textarea('con[MailingStreet]',isset($datas['con']['MailingStreet'])?$datas['con']['MailingStreet']:'', [
 	              'class'                         => 'gaccca-textarea',
 	              'required'                      => 'required',
@@ -167,7 +167,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-9">
               City <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <!-- <input type="text" id="text-input-id-9" placeholder="City" required="" class="gaccca-input" /> -->
+              <!-- <input type="text" id="text-input-id-9"  required="" class="gaccca-input" /> -->
               {!! Form::text('con[MailingCity]',isset($datas['con']['MailingCity'])?$datas['con']['MailingCity']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
@@ -182,7 +182,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-10">
               Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <!-- <input type="text" id="text-input-id-10" placeholder="Zip Code" required="" class="gaccca-input" /> -->
+              <!-- <input type="text" id="text-input-id-10"  required="" class="gaccca-input" /> -->
               {!! Form::text('con[MailingPostalCode]',isset($datas['con']['MailingPostalCode'])?$datas['con']['MailingPostalCode']:'', [
 	              'class'                         => 'gaccca-input',
 	              'required'                      => 'required',
@@ -197,7 +197,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-11">
               Country <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <!-- <input type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" /> -->
+              <!-- <input type="text" id="text-input-id-11" required="" class="gaccca-input" /> -->
              
             {!! Form::select('con[MailingCountryCode]', array_reverse($datas['countryOfBirth']), isset($datas['con']['MailingCountryCode'])?$datas['con']['MailingCountryCode']:'', [  'class' => 'gaccca-select','required' => 'required']) !!}
            

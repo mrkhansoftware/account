@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Upload Your Documents','page'=>'uploadyourdocuments'])
 
 {!! Form::open(['action' => 'UploadYourDocumentsController@store','files'=>true, 'method' => 'POST',  'id' => 'gacccaForm_uploaddoc']) !!}
 

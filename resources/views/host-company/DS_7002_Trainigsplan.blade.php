@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'DS-7002 Training Plan','page'=>'DS_7002_Trainigsplan'])
 {!! Form::open(['action' => 'DS7002TrainigsplanController@store', 'method' => 'POST', 'id' => 'ds-7002-plan']) !!}
 
 
@@ -304,7 +304,7 @@
         <label class="gaccca-form-element__label">
           Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="onForm[Organization_Zip_Code__c]" value="{{isset($datas['onForm']['Organization_Zip_Code__c'])?$datas['onForm']['Organization_Zip_Code__c']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code" class="gaccca-input gaccca-required" />
+          <input name="onForm[Organization_Zip_Code__c]" value="{{isset($datas['onForm']['Organization_Zip_Code__c'])?$datas['onForm']['Organization_Zip_Code__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input gaccca-required" />
         </div>
       </div>
     </div>

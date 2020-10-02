@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Extension Request','page'=>'extension_request_account'])
 {!! Form::open(['action' => 'ExtensionRequestAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_extension']) !!}
 
 
@@ -25,7 +25,7 @@
             <div class="gaccca-form-element__control">
               <input type="text" 
               value="{{isset($datas['ap']['Host_Company__c'])?$datas['ap']['Host_Company__c']:''}}" 
-               placeholder="Name of your Host-Company" required="" class="gaccca-input" disabled/>
+                required="" class="gaccca-input" disabled/>
               
               
             </div>
@@ -38,7 +38,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-2">
                 Name of your Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" name='supervisorName' id="text-input-id-2" placeholder="Name of your Supervisor" required="" class="gaccca-input" />
+              <input type="text" name='supervisorName' id="text-input-id-2"  required="" class="gaccca-input" />
               
             </div>
           </div>
@@ -52,7 +52,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-3">
                 eMail-Adresse Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element gaccca-form-element-margin-date">
-              <input type="email" name='supervisorEmail' id="text-input-id-3" placeholder="eMail-Adresse Supervisor" required="" class="gaccca-input" />
+              <input type="email" name='supervisorEmail' id="text-input-id-3"  required="" class="gaccca-input" />
               
             </div>
           </div>
