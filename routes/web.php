@@ -23,9 +23,14 @@ IlluminateRoute::$validators = array_filter($validators, function($validator) {
   return get_class($validator) != UriValidator::class;
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'LoginController@index');
+
+
+
 Route::resource('participantInformationAccount', 'ParticipantInformationAccountController');
 Route::get('/participant_information_account', 'ParticipantInformationAccountController@index');
 
