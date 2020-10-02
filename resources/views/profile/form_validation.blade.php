@@ -198,7 +198,7 @@
               First Name <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
               
-              <input type="text" id="first-name-input" required="" placeholder="First Name" class="gaccca-input" />
+              <input type="text" id="first-name-input" required="" class="gaccca-input" />
               <span class="gaccca-error-message" id="first-name-error-msg"></span>
               <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
             </div>
@@ -213,7 +213,7 @@
             <label class="gaccca-form-element__label" for="email-input">
               Email <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="email" name="email" id="email-input" placeholder="Email" class="gaccca-input" required="" />
+              <input type="email" name="email" id="email-input"  class="gaccca-input" required="" />
               <span class="gaccca-error-message" id="email-error-msg"></span>
               <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
             </div>
@@ -226,7 +226,7 @@
             <label class="gaccca-form-element__label" for="only-number-input">
               Only Number <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="text" placeholder="0" min="0" max="20000" data-parsley-validation-threshold="0"
+              <input type="text"  min="0" max="20000" data-parsley-validation-threshold="0"
                 data-parsley-trigger="keyup" data-parsley-type="number" class="gaccca-input" required="" />
               <span class="gaccca-error-message" id="only-number-error-msg"></span>
             </div>

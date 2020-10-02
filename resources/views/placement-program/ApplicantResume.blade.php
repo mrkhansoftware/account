@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Resume editor - Create your resume','page'=>'ApplicantResume'])
 
 <link href="{{ asset('css/ckEditor.css') }}" rel='stylesheet'>
 

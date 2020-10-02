@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Dos and Don\'ts','page'=>'dosAndDonts'])
 
 {!! Form::open(['action' => 'DoAndDontsController@store', 'method' => 'POST',  'id' => 'gacccaForm_doanddont']) !!}
 

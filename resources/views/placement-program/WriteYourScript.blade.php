@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Write your video script','page'=>'WriteYourScript'])
 <link href="{{ asset('css/videoScriptCss.css') }}" rel='stylesheet'>
 <script src="{{ asset('js/richtext.js') }}"></script>
 <style>

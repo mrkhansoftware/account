@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Review your J1 Application','page'=>'j1_review_your_application_account'])
 @include('common.signScript');
 
 {!! Form::open(['action' => 'J1ReviewApplicationAccountController@store', 'data-parsley-validate', 'method' => 'POST',
@@ -318,7 +318,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Field_of_Internship__c]"
                         value="{{isset($datas['Appli']['Field_of_Internship__c'])?$datas['Appli']['Field_of_Internship__c']:''}}"
-                        id="text-input-id-foi" placeholder="Field of Internship "  disabled="disabled"
+                        id="text-input-id-foi"   disabled="disabled"
                         class="gaccca-input" />
                     <span class="gaccca-input-help-text">e.g. Marketing, Business Development, Mechanical<br />
                         Engineering, Architecture, Graphic Design
@@ -332,7 +332,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="scheduled_Start" disabled="disabled"
                         value="{{isset($datas['scheduled_Start'])?$datas['scheduled_Start']:''}}"
-                        id="text-input-id-colpr" placeholder="" class="gaccca-input-date" />
+                        id="text-input-id-colpr"  class="gaccca-input-date" />
 
                 </div>
             </div>
@@ -345,7 +345,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="scheduled_End" disabled="disabled"
                         value="{{isset($datas['scheduled_End'])?$datas['scheduled_End']:''}}" id="text-input-id-us-visa"
-                        placeholder="" class="gaccca-input-date" />
+                         class="gaccca-input-date" />
                     <span class="gaccca-input-help-text">Please provide type of visa and expiration date as well as
                         information about any previous visa denials</span>
                 </div>
@@ -361,7 +361,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Host_Company__c]"
                         value="{{isset($datas['Appli']['Host_Company__c'])?$datas['Appli']['Host_Company__c']:''}}"
-                        id="text-input-id-hcn" placeholder="Host Company Name"  disabled="disabled"
+                        id="text-input-id-hcn"   disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -375,7 +375,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Host_Company_Website__c]"
                         value="{{isset($datas['Appli']['Host_Company_Website__c'])?$datas['Appli']['Host_Company_Website__c']:''}}"
-                        id="text-input-id-hcn" placeholder="Host Company Website"  disabled="disabled"
+                        id="text-input-id-hcn"  disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -389,7 +389,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-e-address">
                     Host Company Address <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                    <textarea name="applicant['Address__c]" placeholder="Host Company Address" 
+                    <textarea name="applicant['Address__c]"  
                         disabled="disabled"
                         class="gaccca-textarea">{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
 
@@ -404,7 +404,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[City__c]"
                         value="{{isset($datas['Appli']['City__c'])?$datas['Appli']['City__c']:''}}"
-                        id="text-input-id-city" placeholder="City"  disabled="disabled"
+                        id="text-input-id-city"   disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -418,7 +418,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[ZIP_Code__c]"
                         value="{{isset($datas['Appli']['ZIP_Code__c'])?$datas['Appli']['ZIP_Code__c']:''}}"
-                        id="text-input-id-zipcode" placeholder="City"  disabled="disabled"
+                        id="text-input-id-zipcode"  disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -436,7 +436,7 @@
 
                         <input type="text" name="applicant[State__c]"
                             value="{{isset($datas['Appli']['State__c'])?$datas['Appli']['State__c']:''}}"
-                            id="text-input-id-hccp" placeholder="Host Company Contact Person" 
+                            id="text-input-id-hccp" 
                             disabled="disabled" class="gaccca-input" />
 
                     </div>
@@ -453,7 +453,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Contact_Person__c]"
                         value="{{isset($datas['Appli']['Contact_Person__c'])?$datas['Appli']['Contact_Person__c']:''}}"
-                        id="text-input-id-hccp" placeholder="Host Company Contact Person" 
+                        id="text-input-id-hccp" 
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">Enter the name of the person who will be your supervisor/mentor
                         during your internship/training.</span>
@@ -468,7 +468,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="email" name="applicant[Do_you_have_dual_citizenship__c]"
                         value="{{isset($datas['Appli']['Email_Address__c'])?$datas['Appli']['Email_Address__c']:''}}"
-                        id="text-input-id-ccea" placeholder="Company Contact email address " 
+                        id="text-input-id-ccea"  
                         disabled="disabled" class="gaccca-input" />
 
                 </div>
@@ -482,7 +482,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Phone_Number__c]"
                         value="{{isset($datas['Appli']['Phone_Number__c'])?$datas['Appli']['Phone_Number__c']:''}}"
-                        id="text-input-id-ccp" placeholder="Company Contact phone"  disabled="disabled"
+                        id="text-input-id-ccp"   disabled="disabled"
                         class="gaccca-input" />
                     <span class="gaccca-input-help-text">Use the following format +1-563-6325685</span>
                 </div>
@@ -498,7 +498,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Hours_Per_Week__c]"
                         value="{{isset($datas['Appli']['Hours_Per_Week__c'])?$datas['Appli']['Hours_Per_Week__c']:''}}"
-                        id="text-input-id-hpw" placeholder="Hours per week"  disabled="disabled"
+                        id="text-input-id-hpw"   disabled="disabled"
                         class="gaccca-input" />
 
                 </div>
@@ -547,7 +547,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[If_Yes_How_Much_Stipend__c]"
                         value="{{isset($datas['Appli']['If_Yes_How_Much_Stipend__c'])?$datas['Appli']['If_Yes_How_Much_Stipend__c']:''}}"
-                        id="text-input-id-hpw" placeholder="Hours per week"  disabled="disabled"
+                        id="text-input-id-hpw"   disabled="disabled"
                         class="gaccca-input" />
                     <span class="gaccca-input-help-text">Please enter the amount paid to you per hour, week or month,
                         e.g 16 USD/hour, 1300 USD/month, 500 USD/week</span>
@@ -567,7 +567,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Value_Of_Housing_In_USD_Per_Month__c]"
                         value="{{isset($datas['Appli']['Value_Of_Housing_In_USD_Per_Month__c'])?$datas['Appli']['Value_Of_Housing_In_USD_Per_Month__c']:''}}"
-                        id="text-input-id-vohiupm" placeholder="- Value of Housing in USD per month" 
+                        id="text-input-id-vohiupm" 
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -583,7 +583,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Value_Of_Transportation_In_USD_Per_Month__c]"
                         value="{{isset($datas['Appli']['Value_Of_Transportation_In_USD_Per_Month__c'])?$datas['Appli']['Value_Of_Transportation_In_USD_Per_Month__c']:''}}"
-                        id="text-input-id-votiupm" placeholder="- Value of Transportation in USD per month" 
+                        id="text-input-id-votiupm"  
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -598,7 +598,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Total_Flight_Expenses_In_USD__c]"
                         value="{{isset($datas['Appli']['Total_Flight_Expenses_In_USD__c'])?$datas['Appli']['Total_Flight_Expenses_In_USD__c']:''}}"
-                        id="text-input-id-tfeiu" placeholder="Total Flight Expenses in USD" 
+                        id="text-input-id-tfeiu"  
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -613,7 +613,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Other_Compensation__c]"
                         value="{{isset($datas['Appli']['Other_Compensation__c'])?$datas['Appli']['Other_Compensation__c']:''}}"
-                        id="text-input-id-hpw" placeholder="- Other compensation"  disabled="disabled"
+                        id="text-input-id-hpw"   disabled="disabled"
                         class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a. Please also name the
                         expense, e.g visa fee.</span>
@@ -777,7 +777,7 @@
                     <div class="gaccca-form-element__control">
                         <input type="text" name='applicant[Number_of_j_2_visa__c]'
                             value="{{isset($datas['Appli']['Number_of_j_2_visa__c'])?$datas['Appli']['Number_of_j_2_visa__c']:''}}"
-                            id="text-input-id-people" placeholder=""  disabled="disabled"
+                            id="text-input-id-people"   disabled="disabled"
                             class="gaccca-input" />
                     </div>
                 </div>
@@ -789,7 +789,7 @@
                         <div class="gaccca-select_container">
                             <input type="text" name="applicant[How_did_you_hear_about_the_program__c]"
                                 value="{{isset($datas['Appli']['How_did_you_hear_about_the_program__c'])?$datas['Appli']['How_did_you_hear_about_the_program__c']:''}}"
-                                id="text-input-id-hpw" placeholder="- Other compensation" 
+                                id="text-input-id-hpw"  
                                 disabled="disabled" class="gaccca-input" />
 
                         </div>

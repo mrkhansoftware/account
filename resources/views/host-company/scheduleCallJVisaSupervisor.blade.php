@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu')
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'Meeting Schedule','page'=>'ScheduleCallBVisa'])
 
 
 @include('common.scheduleCallComponent',['scheduleCallTypeName' => 'J1Supervisor'])

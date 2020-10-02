@@ -1,5 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu')
+
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'Host Company Agreement','page'=>'host_company_agreement_agent'])
 
 {!! Form::open(['action' => 'HostCompanyAgreementAgentController@store','files'=>true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'HCA-plan']) !!}
 
@@ -302,7 +303,7 @@
         <label class="gaccca-form-element__label">
           Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea name="onfrm[Current_U_S_Address__c]" placeholder="Enter Your Address" class="gaccca-textarea gaccca-required">{{isset($datas['onfrm']['Current_U_S_Address__c'])?$datas['onfrm']['Current_U_S_Address__c']:''}}</textarea>
+          <textarea name="onfrm[Current_U_S_Address__c]"  class="gaccca-textarea gaccca-required">{{isset($datas['onfrm']['Current_U_S_Address__c'])?$datas['onfrm']['Current_U_S_Address__c']:''}}</textarea>
         </div>
       </div>
     </div>
@@ -350,7 +351,7 @@
         <label class="gaccca-form-element__label">
           Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="onfrm[Zip_Code__c]" value="{{isset($datas['onfrm']['Zip_Code__c'])?$datas['onfrm']['Zip_Code__c']:''}}" type="text" id="text-input-id-10" placeholder="Zip Code" class="gaccca-input gaccca-required" />
+          <input name="onfrm[Zip_Code__c]" value="{{isset($datas['onfrm']['Zip_Code__c'])?$datas['onfrm']['Zip_Code__c']:''}}" type="text" id="text-input-id-10"  class="gaccca-input gaccca-required" />
 
         </div>
       </div>

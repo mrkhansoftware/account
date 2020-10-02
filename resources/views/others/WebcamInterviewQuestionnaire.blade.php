@@ -1,6 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
-@include('common.signScript')
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'Applicant Webcam Interview Questions and Report','page'=>'WebcamInterviewQuestionnaire'])
 
 {!! Form::open(['action' => 'WebcamInterviewController@store', 'method' => 'POST', 'id' => 'gacccaForm_webcam']) !!}
 <div class="gaccca-main-containt">

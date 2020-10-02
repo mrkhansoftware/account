@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'Host Company Site Visit Form','page'=>'HostCompanySiteVisitForm'])
 
 @include('common.signScript')
 {!! Form::open(['action' => 'HCSiteVisitFormController@store','files'=>true,'data-parsley-validate', 'method' => 'POST', 'id' => 'gacccaForm_sitevisitform']) !!}

@@ -1,5 +1,5 @@
 @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
-@include('common.header_without_menu',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'Please rate our placement program','page'=>'QuestionerPlacementService'])
 
 
 {!! Form::open(['action' => 'QuestionerPlacementController@store', 'method' => 'POST', 'id' => 'gacccaForm_questioner']) !!}

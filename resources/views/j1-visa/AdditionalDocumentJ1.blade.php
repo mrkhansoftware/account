@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Additional Documents','page'=>'AdditionalDocumentJ1'])
 
 {!! Form::open(['action' => 'AdditionalDocumentJ1Controller@store','files' => true, 'method' => 'POST',  'id' => 'gacccaForm_additional']) !!}
 

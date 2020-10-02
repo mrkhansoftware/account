@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'Supervisor Phone Interview','page'=>'SupervisorPhoneInterview'])
 
 @include('common.signScript')
 {!! Form::open(['action' => 'SupervisorInterviewController@store', 'method' => 'POST', 'id' => 'gacccaForm_supervisor']) !!}

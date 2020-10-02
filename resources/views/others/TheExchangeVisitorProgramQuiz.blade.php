@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'The Exchange Visitor Program Quiz','page'=>'TheExchangeVisitorProgramQuiz'])
 
 
 {!! Form::open(['action' => 'VisitorProgramQuizController@store', 'method' => 'POST', 'id' => 'gacccaForm_exchange']) !!}

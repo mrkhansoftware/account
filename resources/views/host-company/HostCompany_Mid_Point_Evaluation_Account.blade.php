@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu')
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'Midpoint Evaluation','page'=>'HostCompany_Mid_Point_Evaluation_Account'])
 
 @include('common.signScript')
 

@@ -1,4 +1,4 @@
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Sim Card','page'=>'simCard'])
 
 
 {!! Form::open(['action' => 'simCardController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}

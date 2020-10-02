@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'','page'=>'page'])
+@include('common.header',['datas'=>$datas,'title' =>'Add New Participant','page'=>'Add_New_Participant'])
 {!! Form::open(['action' => 'AddNewParticipantController@store', 'method' => 'POST', 'id' => 'gacccaForm_participent']) !!}
 
 <div class="gaccca-main-containt">
@@ -60,7 +60,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-fn">
             First Name <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input type="text" name="con[FirstName]" value="" id="firstNameField" placeholder="First Name" required="" class="gaccca-input" />
+            <input type="text" name="con[FirstName]" value="" id="firstNameField" required="" class="gaccca-input" />
 
           </div>
         </div>
@@ -73,7 +73,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-2">
             Last Name <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input name="con[LastName]" value="" type="text" id="lastNameField" placeholder="Last Name" required="" class="gaccca-input" />
+            <input name="con[LastName]" value="" type="text" id="lastNameField"  required="" class="gaccca-input" />
 
           </div>
         </div>
@@ -85,7 +85,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-3">
             Email <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input name="con[email]" value="" type="email" id="emailField" placeholder="Email" required="" class="gaccca-input" />
+            <input name="con[email]" value="" type="email" id="emailField"  required="" class="gaccca-input" />
 
           </div>
         </div>
@@ -98,7 +98,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-4">
             Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input name="con[Phone]" value="" type="text" id="phoneField" placeholder="Phone Number" required="" class="gaccca-input" />
+            <input name="con[Phone]" value="" type="text" id="phoneField" required="" class="gaccca-input" />
             <span class="gaccca-input-help-text">Please always provide your country code</span>
           </div>
         </div>
@@ -112,7 +112,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-5">
             Date of birth <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element-date">
-            <input name="dob" value="{{isset($datas['dob'])?$datas['dob']:''}}" type="text" id="dobField" placeholder="DD/MM/YYYY" required="" class="gaccca-input-date" />
+            <input name="dob" value="{{isset($datas['dob'])?$datas['dob']:''}}" type="text" id="dobField"  required="" class="gaccca-input-date" />
           </div>
         </div>
 
@@ -128,7 +128,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-8">
             Address <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <textarea name="con[MailingStreet]" value="" id="streetField" placeholder="Enter Your Address" required="" class="gaccca-textarea"></textarea>
+            <textarea name="con[MailingStreet]" value="" id="streetField"  required="" class="gaccca-textarea"></textarea>
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-9">
             City <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input name="con[MailingCity]" value="{{isset($datas['con']['MailingCity'])?$datas['con']['MailingCity']:''}}" type="text" id="cityField" placeholder="City" required="" class="gaccca-input" />
+            <input name="con[MailingCity]" value="{{isset($datas['con']['MailingCity'])?$datas['con']['MailingCity']:''}}" type="text" id="cityField"  required="" class="gaccca-input" />
             <span class="gaccca-input-help-text">Please use English letters only i.e. ue instead of ü / e instead of é / ss instead of ß</span>
           </div>
         </div>
@@ -151,7 +151,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-10">
             Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            <input name="con[MailingPostalCode]" value="{{isset($datas['con']['MailingPostalCode'])?$datas['con']['MailingPostalCode']:''}}" type="text" id="postalCodeField" placeholder="Zip Code" required="" class="gaccca-input" />
+            <input name="con[MailingPostalCode]" value="{{isset($datas['con']['MailingPostalCode'])?$datas['con']['MailingPostalCode']:''}}" type="text" id="postalCodeField" required="" class="gaccca-input" />
             <span class="gaccca-input-help-text">If you like to change your name, please email us</span>
           </div>
         </div>
@@ -164,7 +164,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-11">
           Country <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <!-- <input type="text" id="text-input-id-11" placeholder="Country" required="" class="gaccca-input" /> -->
+          <!-- <input type="text" id="text-input-id-11"  required="" class="gaccca-input" /> -->
 
           {!! Form::select('con[MailingCountryCode]', array_reverse($datas['countryOfBirth']), isset($datas['con']['MailingCountryCode'])?$datas['con']['MailingCountryCode']:'', [ 'class' => 'gaccca-select','required' => 'required', 'id'=>'countryCodeField']) !!}
 

@@ -1,6 +1,6 @@
 
         @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu',['portal_program' =>isset($datas['portalProgram'])?$datas['portalProgram']:''])
+        @include('common.header_without_menu',['datas'=>$datas,'title' =>'Please Rate Our B- Visa Service','page'=>'QuestionerBVisaService'])
 
 
 {!! Form::open(['action' => 'QuestionerBVisaController@store', 'method' => 'POST', 'id' => 'gacccaForm_questionbvisa']) !!}
