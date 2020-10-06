@@ -22,9 +22,9 @@ class AgencyInformationController extends Controller
           $datas='App\Services\Helper'::getRequest('ApiAgencyPriceListUploadClass/'.$idCon);
           $datas = json_decode($datas, true);
           $datas = json_decode($datas, true);
-          session()->put('contID', $datas['contID']);
-          session()->put('accountId', $datas['accountId']);
-          session()->put('accountName', $datas['accountName']);
+          session()->put('contID', isset($datas['contID'])?$datas['contID']:'');
+          session()->put('accountId', isset($datas['accountId'])?$datas['accountId']:'');
+          session()->put('accountName', isset($datas['accountName'])?$datas['accountName']:'');
            //echo '<pre>'; print_r($datas); die;
          return view('agent-bookings/AgencyInformation')->with(compact('datas'));
    

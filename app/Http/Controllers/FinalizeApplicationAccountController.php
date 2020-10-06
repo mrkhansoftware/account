@@ -24,11 +24,13 @@ class FinalizeApplicationAccountController extends Controller
           $datas = json_decode($datas, true);
           $datas = json_decode($datas, true);
          // print_r($datas);
-          session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+         session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
+         
           if(isset($datas['Appli']['Id'])){
           session()->put('applicantId', $datas['Appli']['Id']);
           }
-          session()->put('Contact__c', $datas['contID']);
+          session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
+         
          return view('j1-visa/finalize_application_account')->with(compact('datas'));
         
 

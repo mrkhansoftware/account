@@ -36,8 +36,12 @@ class BVisaCaseInformationController extends Controller
                 session()->put('Google_Drive_Folder_For_B1__c', $datas['app']['Google_Drive_Folder_For_B1__c']);
                 }
             
-         
-          session()->put('Contact__c', $datas['contID']); 
+                if(isset($datas['lastNameFirstName'])){
+                  session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+                  }
+                if(isset($datas['contID'])){
+                  session()->put('Contact__c', $datas['contID']);
+                  }
          return view('b1-program/B_Visa_Case_Information')->with(compact('datas'));
 
         

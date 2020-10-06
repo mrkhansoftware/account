@@ -28,7 +28,9 @@ class B1VideoController extends Controller
           if(isset($datas['app']['Id'])){
           session()->put('applicantId', $datas['app']['Id']);
           }
-          session()->put('Contact__c', $datas['contID']);
+          if(isset($datas['contID'])){
+            session()->put('Contact__c', $datas['contID']);
+            }
          return view('b1-program/b1Video')->with(compact('datas'));
 
         

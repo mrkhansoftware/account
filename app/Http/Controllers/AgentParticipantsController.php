@@ -22,8 +22,8 @@ class AgentParticipantsController extends Controller
           $datas='App\Services\Helper'::getRequest('ApiAgentParticipantsController/'.$idCon);
           $datas = json_decode($datas, true);
           $datas = json_decode($datas, true);
-          session()->put('conId', $datas['conId']);
-          session()->put('accountId', $datas['accountId']);
+          session()->put('conId', isset($datas['conId'])?$datas['conId']:'');
+        session()->put('accountId', isset($datas['accountId'])?$datas['accountId']:'');
           return view('agent-bookings/AgentParticipants')->with(compact('datas'));
    }
 

@@ -23,7 +23,7 @@ class ValidationCheckinAccountController extends Controller
           $datas = json_decode($datas, true);
           $datas = json_decode($datas, true);
           //echo '<pre>'; print_r($datas); die;
-          session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+          session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
           if(isset($datas['ap']['Id'])){
           session()->put('applicantId', $datas['ap']['Id']);
           }
@@ -39,7 +39,7 @@ class ValidationCheckinAccountController extends Controller
           if(isset($datas['onfrm']['Id'])){
             session()->put('onfrmId', $datas['onfrm']['Id']);
             }
-          session()->put('Contact__c', $datas['contID']);
+          session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
          return view('j1-visa/validation_checkin_account')->with(compact('datas'));
         
     }
@@ -67,7 +67,7 @@ class ValidationCheckinAccountController extends Controller
      
         /*-----FILE UPLOAD-------------*/
      
-        $unique_Folder_Id;
+        $unique_Folder_Id='';
         if(session()->get('NewGdriveID__c')=='' || 'App\Services\Helper'::isFolderExist(session()->get('NewGdriveID__c'))!='200'){
          $Google_Drive_Folder_Id='App\Services\Helper'::returnFolderId('applicant');
          $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, session()->get('lastNameFirstName'));

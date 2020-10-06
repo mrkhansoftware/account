@@ -24,7 +24,7 @@ return 'App\Services\Helper'::returnUrl();
 $datas = json_decode($datas, true);
 $datas = json_decode($datas, true);
 //echo '<pre>'; print_r($datas); die;
-session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
 if(isset($datas['ap']['Id'])){
 session()->put('applicantId', $datas['ap']['Id']);
 }
@@ -40,7 +40,7 @@ session()->put('Google_Drive_Evaluation_Form__c', $datas['ap']['Google_Drive_Eva
 if(isset($datas['onfrm']['Id'])){
 session()->put('onfrmId', $datas['onfrm']['Id']);
 }
-session()->put('Contact__c', $datas['contID']);
+session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
 
 return view('j1-visa/monthly_Checkin')->with(compact('datas'));
 

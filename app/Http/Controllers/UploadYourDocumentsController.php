@@ -34,8 +34,8 @@ class UploadYourDocumentsController extends Controller
         if (isset($datas['app']['Gdrive_Placement_Folder_Id__c'])) {
             session()->put('Gdrive_Placement_Folder_Id__c', $datas['app']['Gdrive_Placement_Folder_Id__c']);
         }
-        session()->put('lastNameFirstName', $datas['lastNameFirstName']);
-        session()->put('Contact__c', $datas['contID']);
+        session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
+        session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
         return view('placement-program/uploadyourdocuments')->with(compact('datas'));
     }
 

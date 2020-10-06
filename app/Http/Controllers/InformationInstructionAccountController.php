@@ -22,11 +22,11 @@ class InformationInstructionAccountController extends Controller
           $datas='App\Services\Helper'::getRequest('ApiInformationInstructionAccountClass/'.$idCon);
           $datas = json_decode($datas, true);
           $datas = json_decode($datas, true);
-          session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+          session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
           if(isset($datas['Appli']['Id'])){
           session()->put('applicantId', $datas['Appli']['Id']);
           }
-          session()->put('Contact__c', $datas['contID']);
+          session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
       return view('j1-visa/information_instruction_account')->with(compact('datas'));
     }
 

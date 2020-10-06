@@ -22,7 +22,6 @@ return 'App\Services\Helper'::returnUrl();
 $datas='App\Services\Helper'::getRequest('ApiPreDepartureClass/'.$idCon);
 $datas = json_decode($datas, true);
 $datas = json_decode($datas, true);
-session()->put('lastNameFirstName', $datas['lastNameFirstName']);
 
 return view('j1-visa/preDeparture')->with(compact('datas'));
     

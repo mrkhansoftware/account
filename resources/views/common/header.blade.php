@@ -36,7 +36,6 @@
   <script src="{{ asset('js/jquery-ui.js') }}"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-
   
 </head>
 
