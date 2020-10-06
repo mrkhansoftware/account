@@ -37,9 +37,12 @@ session()->put('Google_Drive_Folder_For_B1__c', $datas['app']['Google_Drive_Fold
 if(isset($datas['app']['Program__c'])){
 session()->put('Program__c', $datas['app']['Program__c']);
 }
-
-
-session()->put('Contact__c', $datas['contID']);
+if(isset($datas['lastNameFirstName'])){
+session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+}
+if(isset($datas['contID'])){
+  session()->put('Contact__c', $datas['contID']);
+  }
 return view('b1-program/b1_Embassy')->with(compact('datas'));
 
 
@@ -68,7 +71,7 @@ public function store(Request $request)
   
      /*-----FILE UPLOAD-------------*/
   
-     $unique_Folder_Id;
+     $unique_Folder_Id='';
      if(session()->get('NewGdriveID__c')=='' || 'App\Services\Helper'::isFolderExist(session()->get('NewGdriveID__c'))!='200'){
       $Google_Drive_Folder_Id='App\Services\Helper'::returnFolderId('applicant');
       $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, session()->get('lastNameFirstName'));

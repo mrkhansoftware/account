@@ -47,7 +47,7 @@ class ProfileController extends Controller
 
         $finalReq = $request->all();
         unset($finalReq['_token']);
-        $finalReq['con']['id']=session()->get('conId');
+        $finalReq['con']['id']=session()->get('conIdUser');
         $body['conData']=json_encode($finalReq['con']);
         $body['dob']=json_encode($finalReq['dob']);
 

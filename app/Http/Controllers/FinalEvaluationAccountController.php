@@ -22,7 +22,7 @@ class FinalEvaluationAccountController extends Controller
           $datas = json_decode($datas, true);
           $datas = json_decode($datas, true);
           //echo '<pre>'; print_r($datas); die;
-          session()->put('lastNameFirstName', $datas['lastNameFirstName']);
+          session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
           if(isset($datas['ap']['Id'])){
           session()->put('applicantId', $datas['ap']['Id']);
           }
@@ -38,7 +38,7 @@ class FinalEvaluationAccountController extends Controller
           if(isset($datas['onfrm']['Id'])){
             session()->put('onfrmId', $datas['onfrm']['Id']);
             }
-          session()->put('Contact__c', $datas['contID']);
+          session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
          return view('j1-visa/final_evaluation_account')->with(compact('datas'));
         
     }

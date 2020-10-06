@@ -23,7 +23,7 @@
 		</script>
 		<script>
 			var embedding, videoSaved;
-
+            var videoPrecentVal=0;
 			ziggeoApp.on("ready", function() {
 				var player = new ZiggeoApi.V2.Player({
 					element: document.getElementById("replace_me-v2_player"),
@@ -81,7 +81,11 @@
 					timeVdo: videoPrecentage.toFixed(2),
 					typeStr: 'saveVdoTime'
 				};
+				if(videoPrecentage.toFixed(2)>videoPrecentVal){
+				videoPrecentVal=videoPrecentage.toFixed(2);
 				ajaxMethod(formData);
+				}
+
 			}
 		</script>
 
