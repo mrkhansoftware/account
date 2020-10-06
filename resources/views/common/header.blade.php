@@ -97,7 +97,7 @@
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Agency")!==false)
 
 
-                            <li class="gaccca-dropdown"><a href="#home123">Agent Bookings</a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">Agent Bookings</a>
 
                                 <div class="gaccca-dropdown-content">
                                     <a href="/AgencyJobSearch" target='_blank'>Job Search</a>
@@ -112,7 +112,7 @@
                             </li>
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
-                            <li class="gaccca-dropdown"><a href="#home123">Host Company</a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">Host Company</a>
                                 <div class="gaccca-dropdown-content">
                                     <a href="/host_company_agreement_account" target="_blank">Host Company Agreement</a>
                                     <a href="/DS_7002_Trainigsplan" target="_blank">DS-7002 Training Plan</a>
@@ -125,7 +125,7 @@
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
 
-                            <li class="gaccca-dropdown"><a href="#home123">B1 Program</a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">B1 Program</a>
                                 <div class="gaccca-dropdown-content">
                                     <a href="/B_Visa_Case_Information">Case Information</a>
                                     <a href="/b1Video">Video</a>
@@ -139,7 +139,7 @@
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
 
-                            <li class="gaccca-dropdown"><a href="#home">Placement Program</a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">Placement Program</a>
 
                                 <div class="gaccca-dropdown-content">
                                     <a href="/VideoTutorials">Video Tutorials</a>
@@ -159,7 +159,7 @@
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
 
-                            <li class="gaccca-dropdown"><a href="#home">J1 Program</a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">J1 Program</a>
 
                                 <div class="gaccca-dropdown-content">
                                     <a href="/information_instruction_account">Information &amp; Instruction</a>
@@ -334,7 +334,7 @@
         </div>
         @endif
 
-        <a href="#clients">Sim Card</a>
+        <a href="/simCard">Sim Card</a>
 
 
         <button class="gaccca-dropdown-btn">Profile
@@ -349,7 +349,7 @@
             <a href="/password_account">Password</a>
             <a href="/close_account">Close Account</a>
         </div>
-        <a href="#contact">Logout</a>
+        <a href="/logout_account">Logout</a>
     </div>
 
 
