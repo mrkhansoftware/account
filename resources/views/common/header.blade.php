@@ -212,7 +212,7 @@
                     <ul class="gaccca-display-menu-profile">
 
                         <li class="gaccca-dropdown-profile">
-                            <a class="gaccca-user-name" href="javascript:void(0)"> Hi, Sunny </a>
+                            <a class="gaccca-user-name" href="javascript:void(0)"> Hi, {{session()->get('contactName')}} </a>
                             <span class="user-icon"><i class="fas fa-user-circle"></i></span>
                         </li>
                         <li class="gaccca-dropdown-profile">
