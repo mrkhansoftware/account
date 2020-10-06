@@ -74,131 +74,144 @@
             <div class="gaccca-grid gaccca-wrap">
                 <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
                     <div class="gaccca-behind-the-logo gaccca-behind-the-logo-position">
-                    <!-- <img src="{{ asset('images/logo/logo1.png') }}"/> -->
                     </div>
+                   
+                    <div class="gaccca-display-menu-div">
                     <ul class="gaccca-display-menu">
                     
-                      @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Agency")!==false)
+                    @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Agency")!==false)
 
 
-                            <li class="gaccca-dropdown"><a href="#home123">Agent Bookings</a>
-                                
-                                <div class="gaccca-dropdown-content">
-                                    <a href="/AgencyJobSearch" target='_blank'>Job Search</a>
-                                    <a href="/AgencyInformation">Information</a>
-                                    <a href="/AgentParticipants">Participant List</a>
-                                    <a href="/Add_New_Participant">J Visa</a>
-                                    <a href="/AgencyBvisaBooking">B Visa</a>
-                                    <a href="/AgencyPlacementProgramRegistrationForm">Placement</a>
-                                    
-                                </div>
-                                
-                            </li>
-                            @endif
-                        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
-                            <li class="gaccca-dropdown"><a href="#home123">Host Company</a>
-                                <div class="gaccca-dropdown-content">
-                                    <a href="/host_company_agreement_account"  target="_blank">Host Company Agreement</a>
-                                    <a href="/DS_7002_Trainigsplan"  target="_blank">DS-7002 Training Plan</a>
-                                    <a href="/HostCompany_Mid_Point_Evaluation_Account"  target="_blank">Midpoint Evaluation</a>
-                                    <a href="/final_evaluation_hc_account"  target="_blank">Final Evaluation</a>
-                                    
-                                </div>
-                                
-                            </li>
-                            @endif
-                        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
-                   
-                            <li class="gaccca-dropdown"><a href="#home123">B1 Program</a>
-                                <div class="gaccca-dropdown-content">
-                                    <a href="/B_Visa_Case_Information" >Case Information</a>
-                                    <a href="/b1Video" >Video</a>
-                                    <a href="/b1_Embassy">Embassy &amp; Entry</a>
-                                    <a href="/ScheduleCallBVisa">Schedule a Call</a>
-                                    
-                                </div>
-                                
-                            </li>
-                            
-                            @endif
-                        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
+                          <li class="gaccca-dropdown"><a href="#home123">Agent Bookings</a>
+                              
+                              <div class="gaccca-dropdown-content">
+                                  <a href="/AgencyJobSearch" target='_blank'>Job Search</a>
+                                  <a href="/AgencyInformation">Information</a>
+                                  <a href="/AgentParticipants">Participant List</a>
+                                  <a href="/Add_New_Participant">J Visa</a>
+                                  <a href="/AgencyBvisaBooking">B Visa</a>
+                                  <a href="/AgencyPlacementProgramRegistrationForm">Placement</a>
+                                  
+                              </div>
+                              
+                          </li>
+                          @endif
+                      @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
+                          <li class="gaccca-dropdown"><a href="#home123">Host Company</a>
+                              <div class="gaccca-dropdown-content">
+                                  <a href="/host_company_agreement_account"  target="_blank">Host Company Agreement</a>
+                                  <a href="/DS_7002_Trainigsplan"  target="_blank">DS-7002 Training Plan</a>
+                                  <a href="/HostCompany_Mid_Point_Evaluation_Account"  target="_blank">Midpoint Evaluation</a>
+                                  <a href="/final_evaluation_hc_account"  target="_blank">Final Evaluation</a>
+                                  
+                              </div>
+                              
+                          </li>
+                          @endif
+                      @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
+                 
+                          <li class="gaccca-dropdown"><a href="#home123">B1 Program</a>
+                              <div class="gaccca-dropdown-content">
+                                  <a href="/B_Visa_Case_Information" >Case Information</a>
+                                  <a href="/b1Video" >Video</a>
+                                  <a href="/b1_Embassy">Embassy &amp; Entry</a>
+                                  <a href="/ScheduleCallBVisa">Schedule a Call</a>
+                                  
+                              </div>
+                              
+                          </li>
+                          
+                          @endif
+                      @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
+                  
+                          <li class="gaccca-dropdown"><a href="#home">Placement Program</a>
+                              
+                              <div class="gaccca-dropdown-content">
+                                  <a href="/VideoTutorials">Video Tutorials</a>
+                                  <a href="/uploadyourdocuments">Upload Your Documents</a>
+                                  <a href="/dosAndDonts">Dos and Don'ts</a>
+                                  <a href="/ScheduleCall">Schedule a Call</a>
+                                  <a href="/ApplicantResume">Create your resume</a>
+                                  <a href="/WriteYourScript">Write your script</a>
+                                  
+                                  <a href="/VideoInstructions">Video Instructions</a>
+                                  <a href="/Video_Resume">Record your Video Resume</a>
+                                  <a href="/InterviewPreparation">Interview Preparation</a>
+                                  
+                              </div>
+                              
+                          </li>
+                          @endif
+                      @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
+                
+                         <li class="gaccca-dropdown"><a href="#home">J1 Program</a>
+                              
+                              <div class="gaccca-dropdown-content">
+                                  <a href="/information_instruction_account">Information &amp; Instruction</a>
+                                  <a href="/participant_information_account">Participant Information</a>
+                                  <a href="/host_company_information_account">Host Company Information</a>
+                                  <a href="/participant_agreement_account">Participant Agreement</a>
+                                  <a href="/finalize_application_account">Finalize your Application</a>
+                                  <a href="/j1_review_your_application_account">Review your J1 Application</a>
+                                  
+                                  
+                                  
+                                  
+                                  @if(isset($datas['isParticipantAccepted'])&& $datas['isParticipantAccepted'])
+                                  <a href="/participant_handbook_account">Participant Handbook</a>
+                                  <a href="/ScheduleCallJvisa">Schedule a Call</a>
+                                  @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
+                                  <a href="/AdditionalDocumentJ1">Additional Documents</a>
+                                  @endif
+                                  <a href="/extension_request_account">Extension Request</a>
+                                  <a href="/travel_validation_account">Travel Validation</a>
+                                  <a href="/validation_checkin_account">Validation &amp; Check-In</a>                                    
+                                  <a href="/monthly_Checkin">Monthly Check-In</a>
+                                  <a href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
+                                  <a href="/final_evaluation_account">Final Evaluation</a>
+                                  @else
+                                  <a href="javascript:void(0)" style="cursor: not-allowed;">Participant Handbook</a>
+                                  <a href="javascript:void(0)" style="cursor: not-allowed;">Schedule a Call</a>
+                                  @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
+                                  <a href="/AdditionalDocumentJ1">Additional Documents</a>
+                                  @endif
+                                  <a href="javascript:void(0)" style="cursor: not-allowed;">Extension Request</a>
+                                  <a href="javascript:void(0)" style="cursor: not-allowed;">Travel Validation</a>
+                                  <a href="javascript:void(0)" style="cursor: not-allowed;">Validation &amp; Check-In</a>                                    
+                                  <a href="javascript:void(0)" style="cursor: not-allowed;"> Monthly Check-In</a>
+                                  <a href="javascript:void(0)" style="cursor: not-allowed;">Mid-Point Evaluation</a>
+                                  <a href="javascript:void(0)" style="cursor: not-allowed;">Final Evaluation</a>
+                                  @endif
+                              </div>
+                              
+                          </li>
+                          @endif
+                
+                      <li><a href="/simCard">Sim Card</a></li>
                     
-                            <li class="gaccca-dropdown"><a href="#home">Placement Program</a>
-                                
-                                <div class="gaccca-dropdown-content">
-                                    <a href="/VideoTutorials">Video Tutorials</a>
-                                    <a href="/uploadyourdocuments">Upload Your Documents</a>
-                                    <a href="/dosAndDonts">Dos and Don'ts</a>
-                                    <a href="/ScheduleCall">Schedule a Call</a>
-                                    <a href="/ApplicantResume">Create your resume</a>
-                                    <a href="/WriteYourScript">Write your script</a>
-                                    
-                                    <a href="/VideoInstructions">Video Instructions</a>
-                                    <a href="/Video_Resume">Record your Video Resume</a>
-                                    <a href="/InterviewPreparation">Interview Preparation</a>
-                                    
-                                </div>
-                                
-                            </li>
-                            @endif
-                        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
-                  
-                           <li class="gaccca-dropdown"><a href="#home">J1 Program</a>
-                                
-                                <div class="gaccca-dropdown-content">
-                                    <a href="/information_instruction_account">Information &amp; Instruction</a>
-                                    <a href="/participant_information_account">Participant Information</a>
-                                    <a href="/host_company_information_account">Host Company Information</a>
-                                    <a href="/participant_agreement_account">Participant Agreement</a>
-                                    <a href="/finalize_application_account">Finalize your Application</a>
-                                    <a href="/j1_review_your_application_account">Review your J1 Application</a>
-                                    
-                                    
-                                    
-                                    
-                                    @if(isset($datas['isParticipantAccepted'])&& $datas['isParticipantAccepted'])
-                                    <a href="/participant_handbook_account">Participant Handbook</a>
-                                    <a href="/ScheduleCallJvisa">Schedule a Call</a>
-                                    @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
-                                    <a href="/AdditionalDocumentJ1">Additional Documents</a>
-                                    @endif
-                                    <a href="/extension_request_account">Extension Request</a>
-                                    <a href="/travel_validation_account">Travel Validation</a>
-                                    <a href="/validation_checkin_account">Validation &amp; Check-In</a>                                    
-                                    <a href="/monthly_Checkin">Monthly Check-In</a>
-                                    <a href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
-                                    <a href="/final_evaluation_account">Final Evaluation</a>
-                                    @else
-                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Participant Handbook</a>
-                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Schedule a Call</a>
-                                    @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
-                                    <a href="/AdditionalDocumentJ1">Additional Documents</a>
-                                    @endif
-                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Extension Request</a>
-                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Travel Validation</a>
-                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Validation &amp; Check-In</a>                                    
-                                    <a href="javascript:void(0)" style="cursor: not-allowed;"> Monthly Check-In</a>
-                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Mid-Point Evaluation</a>
-                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Final Evaluation</a>
-                                    @endif
-                                </div>
-                                
-                            </li>
-                            @endif
-                  
-                        <li><a href="/simCard">Sim Card</a></li>
-                        <li class="gaccca-dropdown">
-                            <a href="javascript:void(0)" class="gaccca-dropbtn">Profile</a>
-                            <div class="gaccca-dropdown-content">
-                                <a href="/profile_account">My Profile</a>
-                                <a href="/password_account">Password</a>
-                                <a href="/close_account">Close Account</a>
-                            </div>
-                        </li>
-                        <li><a href="/logout_account">Logout
                      
-                        </a></li>
-                    </ul>
+                  </ul>
+                
+                    </div>
+
+                    <ul class="gaccca-display-menu-profile">
+                    
+                      <li class="gaccca-dropdown-profile">
+                      <a class="gaccca-user-name" href="javascript:void(0)"> Hi, Sunny </a>
+                      <span class="user-icon"><i class="fas fa-user-circle"></i></span>
+                      </li>
+                      <li class="gaccca-dropdown-profile">
+                      <a href="javascript:void(0)" class="gaccca-dropbtn"><i class="fas fa-caret-down"></i></a>
+                          <div class="gaccca-dropdown-content-profile">
+                              <a href="/profile_account">My Profile</a>
+                              <a href="/password_account">Password</a>
+                              <a href="/close_account">Close Account</a>
+                              <a href="/logout_account">Logout</a>
+                          </div>
+
+                      </li>
+                  </ul>
+                  
                     <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button" >☰</button>  
                     
                 </div>

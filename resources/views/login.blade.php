@@ -30,11 +30,11 @@
 
 <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
-<div class="gaccca-behind-the-logo">
+<!-- <div class="gaccca-behind-the-logo"> -->
 
-<img src="{{ asset('images/logo/logo1.png') }}"/>
+<img class="gaccca-login-page-logo" src="{{ asset('images/logo/logo12.png') }}"/>
 
-</div>
+<!-- </div> -->
 
 </div>
 
@@ -206,10 +206,29 @@
 
 <div class="gaccca-form-element gaccca-margin-top-20">
 <div class="gaccca-form-element__control">
+<a style="text-decoration: none;">Already have an account ?</a>
 <a href="javascript:void(0)" id="go-login-from-signup"> Go back to login </a>
 </div>
 </div>
 </div>
+
+
+<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+
+<div class="gaccca-form-element gaccca-margin-top-60">
+<div class="gaccca-form-element__control">
+
+<p class="gaccca-signup-text">Create a free account to get access to our online program application and forms, price list, terms & conditions and additional program information. See what you need for your J-1 Visa Application, Placement and other services with us.</p>
+
+<p class="gaccca-signup-text"> <strong> No service is booked automatically! </strong> By creating an account you agree to our privacy, data protection and cookie policy.</p>
+
+<p class="gaccca-signup-text">
+If you don’t receive an email within 3 minutes, please use the online chat or send us an email (info @ iieex.org). Check also your SPAM Folder.
+</p>
+</div>
+</div>
+</div>
+
 
 
 
@@ -285,8 +304,17 @@
 <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_1-of-1" style="background: #FFF; ">
 <!-- <img src="assets/images/bg.jpg" class="gaccca-image-responsive"> -->
 <div class="gaccca-half-login">
-<p>
+<p id="free-account-text">
 Create a free account to get access to our online program application and forms, price list and additional program information. See what you will need for your J-1 Visa Application, Placement and other booked services with us. By creating this account no service is booked automatically! Please fill out all requested information. If you don’t receive an email with your password within 3 minutes, please use the online chat or send us an email (info @ iieex.org). Check also your SPAM Folder</p>
+
+<div class="gaccca-create-program-account" id="create-your-IIEEX-program-account">
+    <span class="gaccca-create-program-account-heading">Create your IIEEX Program Account</span>
+    <h4 class="gaccca-create-program-account-text">Start & book your J-1 Visa Application for an Internship or Trainee </h4>
+    <h4 class="gaccca-create-program-account-text">Monitor the J-1 Visa Proccess from arival to departure</h4> 
+    <h4 class="gaccca-create-program-account-text">Create your resume for the placement program </h4>
+    <h4 class="gaccca-create-program-account-text">Manage your SIM Card for the USA</h4>
+</div>
+
 </div>
 
 </div>
@@ -310,17 +338,21 @@ $(document).ready(function(){
 
 $("#signup-containt").hide();
 $("#forgot-password-containt").hide();
-
+$("#create-your-IIEEX-program-account").hide();
 
 $("#forget-password-btn").click(function(){
 $("#signup-containt").hide();
 $("#login-containt").hide();
 $("#forgot-password-containt").show();
+$("#create-your-IIEEX-program-account").hide();
+$("#free-account-text").show();
 });
 
 $("#go-login-from-signup").click(function(){
 $("#signup-containt").hide();
 $("#forgot-password-containt").hide();
+$("#create-your-IIEEX-program-account").hide();
+$("#free-account-text").show();
 $("#login-containt").show();
 });
 
@@ -328,6 +360,8 @@ $("#login-containt").show();
 $("#go-login-from-forget-password").click(function(){
 $("#signup-containt").hide();
 $("#forgot-password-containt").hide();
+$("#create-your-IIEEX-program-account").hide();
+$("#free-account-text").show();
 $("#login-containt").show();
 });
 
@@ -335,7 +369,9 @@ $("#login-containt").show();
 $("#new-user").click(function(){
 $("#forgot-password-containt").hide();
 $("#login-containt").hide();
+$("#free-account-text").hide();
 $("#signup-containt").show();
+$("#create-your-IIEEX-program-account").show();
 });
 
 

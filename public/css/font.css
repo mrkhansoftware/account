@@ -58,6 +58,9 @@
   content: "\f00c";
 }
 
+.fa-caret-down:before {
+  content: "\f0d7";
+}
 .fa-edit:before {
   content: "\f044";
 }
