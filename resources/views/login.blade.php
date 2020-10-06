@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Account</title>
-
+   <!-- Google Tag Manager -->
+   <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5CMGZN2');
+    </script>
+    <!-- End Google Tag Manager -->
+    <title>Login Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="title" content="login_account" />
+    <meta name="description" content="Over the account you can access the programs and services" />
+    <meta name="keywords" content="Account IIEEX, Account GACCCA" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="30 days" />
+    <meta name="author" content="IIEEX, GACCCA" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://account.iieex.org/login_account" />
+    <meta property="og:site_name" content="https://account.iieex.org" />
+    <meta name="google-site-verification" content="-6V8H3sxoJ6qUsdyr6IkfGBlVoHhB5C3QQFTFTmR4mI" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+<link rel="icon" href="{{ asset('images/favicon/favicon-iieex-16.png') }}" type="image/png" sizes="16x16" />
+    <link rel="icon" href="{{ asset('images/favicon/favicon-iieex-32.png') }}" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="{{ asset('images/favicon/favicon-iieex-60.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/favicon/favicon-iieex-76.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/favicon/favicon-iieex-120.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/favicon/favicon-iieex-152.png') }}" />
+
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" >
 <link href="{{ asset('css/jquery-ui.css') }}"  rel='stylesheet' >
@@ -223,7 +263,7 @@
 <p class="gaccca-signup-text"> <strong> No service is booked automatically! </strong> By creating an account you agree to our privacy, data protection and cookie policy.</p>
 
 <p class="gaccca-signup-text">
-If you don’t receive an email within 3 minutes, please use the online chat or send us an email (info @ iieex.org). Check also your SPAM Folder.
+If you don’t receive an email within 3 minutes, please use the online chat or send us an email (info@iieex.org). Check also your SPAM Folder.
 </p>
 </div>
 </div>
@@ -305,7 +345,7 @@ If you don’t receive an email within 3 minutes, please use the online chat or 
 <!-- <img src="assets/images/bg.jpg" class="gaccca-image-responsive"> -->
 <div class="gaccca-half-login">
 <p id="free-account-text">
-Create a free account to get access to our online program application and forms, price list and additional program information. See what you will need for your J-1 Visa Application, Placement and other booked services with us. By creating this account no service is booked automatically! Please fill out all requested information. If you don’t receive an email with your password within 3 minutes, please use the online chat or send us an email (info @ iieex.org). Check also your SPAM Folder</p>
+Create a free account to get access to our online program application and forms, price list and additional program information. See what you will need for your J-1 Visa Application, Placement and other booked services with us. By creating this account no service is booked automatically! Please fill out all requested information. If you don’t receive an email with your password within 3 minutes, please use the online chat or send us an email (info@iieex.org). Check also your SPAM Folder</p>
 
 <div class="gaccca-create-program-account" id="create-your-IIEEX-program-account">
     <span class="gaccca-create-program-account-heading">Create your IIEEX Program Account</span>
