@@ -238,9 +238,9 @@
                         
                         </a>
                             <div class="gaccca-dropdown-content-profile">
-                                <a href="/profile_account">My Profile</a>
-                                <a href="/password_account">Password</a>
-                                <a href="/close_account">Close Account</a>
+                                <a class="{{ ($page == 'profile_account') ? 'gaccca-active-submenu' : '' }}" href="/profile_account">My Profile</a>
+                                <a class="{{ ($page == 'password_account') ? 'gaccca-active-submenu' : '' }}" href="/password_account">Password</a>
+                                <a class="{{ ($page == 'close_account') ? 'gaccca-active-submenu' : '' }}" href="/close_account">Close Account</a>
                                 <a href="/logout_account">Logout</a>
                             </div>
 
