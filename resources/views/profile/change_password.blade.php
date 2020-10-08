@@ -1,5 +1,5 @@
 
-@include('common.header',['datas'=>$datas,'title' =>'Password','page'=>'password_account'])
+@include('common.header',['datas'=>$datas,'title' =>'Password','page'=>'password_account','parent_page'=>'Profile'])
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Password</h1>

@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Information','page'=>'AgencyInformation'])
+@include('common.header',['datas'=>$datas,'title' =>'Information','page'=>'AgencyInformation','parent_page'=>'Agent Bookings'])
 
 {!! Form::open(['action' => 'AgencyInformationController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'agency-information','enctype' => 'multipart/form-data']) !!}
 

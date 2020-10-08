@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Host Company Information','page'=>'host_company_information_account'])
+@include('common.header',['datas'=>$datas,'title' =>'Host Company Information','page'=>'host_company_information_account','parent_page'=>'J1 Program'])
 @if (isset($datas['Appli']['Hide_Host_Company_Information_in_Account__c']) && $datas['Appli']['Hide_Host_Company_Information_in_Account__c'])
  
 @else

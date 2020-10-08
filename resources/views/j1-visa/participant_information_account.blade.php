@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 
-@include('common.header',['datas'=>$datas,'title' =>'Participant Information','page'=>'participant_information_account'])
+@include('common.header',['datas'=>$datas,'title' =>'Participant Information','page'=>'participant_information_account','parent_page'=>'J1 Program'])
 
   <div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Step 2/5 - Participant Information</h1>

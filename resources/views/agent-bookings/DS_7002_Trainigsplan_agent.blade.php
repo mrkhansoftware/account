@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header_without_menu',['datas'=>$datas,'title' =>'DS-7002 Training Plan','page'=>'DS_7002_Trainigsplan_agent'])
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'DS-7002 Training Plan','page'=>'DS_7002_Trainigsplan_agent','parent_page'=>'Agent Bookings'])
 {!! Form::open(['action' => 'DS7002TrainigsplanAgentController@store', 'method' => 'POST', 'id' => 'ds-7002-plan']) !!}
 
 

@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Interview Preparation','page'=>'InterviewPreparation'])
+@include('common.header',['datas'=>$datas,'title' =>'Interview Preparation','page'=>'InterviewPreparation','parent_page'=>'Placement Program'])
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST']) !!}
 

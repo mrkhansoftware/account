@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Video Resume','page'=>'Video_Resume'])
+@include('common.header',['datas'=>$datas,'title' =>'Video Resume','page'=>'Video_Resume','parent_page'=>'Placement Program'])
 <style>
 	.myFormStyle {
 		background-color: blue;

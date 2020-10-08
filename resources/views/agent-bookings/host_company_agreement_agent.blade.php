@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 
-@include('common.header_without_menu',['datas'=>$datas,'title' =>'Host Company Agreement','page'=>'host_company_agreement_agent'])
+@include('common.header_without_menu',['datas'=>$datas,'title' =>'Host Company Agreement','page'=>'host_company_agreement_agent','parent_page'=>'Agent Bookings'])
 
 {!! Form::open(['action' => 'HostCompanyAgreementAgentController@store','files'=>true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'HCA-plan']) !!}
 

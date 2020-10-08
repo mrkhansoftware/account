@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'B Visa-Agency','page'=>'AgencyBvisaBooking'])
+@include('common.header',['datas'=>$datas,'title' =>'B Visa-Agency','page'=>'AgencyBvisaBooking','parent_page'=>'Agent Bookings'])
 
 
 {!! Form::open(['action' => 'AgencyBvisaBookingController@store', 'method' => 'POST',  'id' => 'gacccaForm_bvisa']) !!}

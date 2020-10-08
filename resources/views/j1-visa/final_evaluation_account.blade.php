@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Final Evaluation','page'=>'final_evaluation_account'])
+@include('common.header',['datas'=>$datas,'title' =>'Final Evaluation','page'=>'final_evaluation_account','parent_page'=>'J1 Program'])
 @include('common.signScript');
 
 {!! Form::open(['action' => 'FinalEvaluationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_final']) !!}

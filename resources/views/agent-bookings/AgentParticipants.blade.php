@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'AgentParticipants','page'=>'AgentParticipants'])
+@include('common.header',['datas'=>$datas,'title' =>'AgentParticipants','page'=>'AgentParticipants','parent_page'=>'Agent Bookings'])
 
 
 <link href="{{ asset('css/dataTables.jqueryui.min.css') }}" rel='stylesheet'>

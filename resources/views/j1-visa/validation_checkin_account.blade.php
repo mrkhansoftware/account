@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Validation Check-In','page'=>'validation_checkin_account'])
+@include('common.header',['datas'=>$datas,'title' =>'Validation Check-In','page'=>'validation_checkin_account','parent_page'=>'J1 Program'])
 
 {!! Form::open(['action' => 'ValidationCheckinAccountController@store','files' => true, 'method' => 'POST', 'id' => 'gacccaForm_vca']) !!}
 

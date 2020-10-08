@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'B Visa','page'=>'B_Visa_Case_Information'])
+@include('common.header',['datas'=>$datas,'title' =>'B Visa','page'=>'B_Visa_Case_Information','parent_page'=>'B1 Program'])
 
 {!! Form::open(['action' => 'BVisaCaseInformationController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_bvisa']) !!}
 

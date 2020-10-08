@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Video Instructions','page'=>'VideoInstructions'])
+@include('common.header',['datas'=>$datas,'title' =>'Video Instructions','page'=>'VideoInstructions','parent_page'=>'Placement Program'])
 
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}

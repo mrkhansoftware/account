@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 
-@include('common.header',['datas'=>$datas,'title' =>'Finalize your Application','page'=>'finalize_application_account'])
+@include('common.header',['datas'=>$datas,'title' =>'Finalize your Application','page'=>'finalize_application_account','parent_page'=>'J1 Program'])
 {!! Form::open(['action' => 'FinalizeApplicationAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_finalize']) !!}
 
 <div class="gaccca-main-containt">

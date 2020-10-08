@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Monthly Check-In','page'=>'monthly_Checkin'])
+@include('common.header',['datas'=>$datas,'title' =>'Monthly Check-In','page'=>'monthly_Checkin','parent_page'=>'J1 Program'])
 
 {!! Form::open(['action' => 'MonthlyCheckinController@store', 'files' => true,'method' => 'POST', 'id' => 'gacccaForm_mc']) !!}
 

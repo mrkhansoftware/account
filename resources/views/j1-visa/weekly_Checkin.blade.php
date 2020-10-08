@@ -1,6 +1,6 @@
 
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Weekly Check-In','page'=>'weekly_checkin'])
+@include('common.header',['datas'=>$datas,'title' =>'Weekly Check-In','page'=>'weekly_checkin','parent_page'=>'J1 Program'])
 
 {!! Form::open(['action' => 'WeeklyCheckinController@store', 'method' => 'POST', 'id' => 'gacccaForm_weekly']) !!}
 

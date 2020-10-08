@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 
-@include('common.header',['datas'=>$datas,'title' =>'Video Tutorials','page'=>'VideoTutorials'])
+@include('common.header',['datas'=>$datas,'title' =>'Video Tutorials','page'=>'VideoTutorials','parent_page'=>'Placement Program'])
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 <link rel="stylesheet" href="https://assets.ziggeo.com/v2-stable/ziggeo.css" />

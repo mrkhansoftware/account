@@ -71,7 +71,9 @@ The wrap property specifies whether the flexible items should wrap or not
 .gaccca-display-menu-profile{
   display: block;
   float: right;
-  margin-right: 15px !important;
+  /* margin-right: 15px !important; */
+  margin-right:138px !important
+
 }
 
 .user-icon {
@@ -558,8 +560,11 @@ Header css start
 }
 
 .gaccca-active-menu {
-  border-bottom: 2px solid #FFF;
-  padding-bottom: 5px;
+  border-bottom: 2px solid #FFF !important;
+}
+
+.gaccca-active-submenu {
+  color:#1A73E8 !important;
 }
 
 .gaccca-header .gaccca-dropdown-content a,.gaccca-header .gaccca-dropdown-content-profile a {
@@ -597,7 +602,8 @@ Header css start
   content: url("../images/logo/logo1.png");
 }
 .gaccca-login-page-logo{
-  margin: 8px 0px 9px 0px;
+  /* margin: 8px 0px 9px 0px; */
+  margin: 90px 0px 9px 54px;
 }
 
 .gaccca-behind-the-logo-host-company {
@@ -607,7 +613,9 @@ Header css start
 
 .gaccca-behind-the-logo-position {
   float: left;
-  margin-left: 15px;
+  /* margin-left: 15px; */
+  margin-left: 140px;
+
 }
 
 /* 
@@ -628,7 +636,7 @@ css start for login page
 }
 
 .gaccca-login-containt {
-  padding: 1% 25%;
+  padding: 100px 22%;
 }
 
 .gaccca-signup-containt {
@@ -655,41 +663,44 @@ css start for login page
 
 .gaccca-accout-access-text {
   display: block;
-  max-width: 368px;
-  width: 100%;
-  color: #8C8C8C;
-  font-size: xx-large;
+  color: #595959;
+  font-size: 36px;
+  font-weight: bold;
+  opacity: 0.3;
   text-align: center;
-  margin: 0px auto 0px auto;
 }
 
 .gaccca-google-sign-btn {
   width: 200px;
   height: 40px;
-  /* background: #DE4D3B; */
-  background: #4787ed;
+  background: #DE4D3B;
+  /* background: #4787ed; */
   border-radius: 4px;
   border: none;
   cursor: pointer;
 }
 
 .gaccca-google-image {
-  position: absolute;
+  
   width: 27.54px;
   height: 27px;
   border-radius: 2px;
   top: 6px;
   background: #FFF;
+  float: left;
+ 
 }
 
 .gaccca-google-image img {
   margin: 3px;
 }
 
-.gaccca-google-text {
+.gaccca-inside-social-button-text {
   color: #FFF;
   font-size: 14px;
-  margin-left: 35px;
+  float: left;
+  margin-left: 18px;
+  margin-top: 5px;
 }
 
 .gaccca-facebook-sign-btn {
@@ -702,13 +713,13 @@ css start for login page
 }
 
 .gaccca-facebbok-image {
-  position: absolute;
   width: 27.54px;
   height: 27px;
   border-radius: 2px;
-  top: 6px;
   background: #FFF;
+  float: left;
 }
+
 
 .gaccca-facebbok-image img {
   margin: 4px 0px 0px 4px;
@@ -738,7 +749,6 @@ css start for login page
   display: block;
   font-size: 13px;
   line-height: 20px;
-  font-weight: bold;
   color: #8C8C8C;
 }
 
@@ -746,9 +756,9 @@ css start for login page
   background: #096DD9;
   border-radius: 2px;
   flex-direction: column;
-  padding: 8px 20px;
-  font-size: 16px;
-  line-height: 24px;
+  padding: 8px 0px;
+  font-size: 20px;
+  line-height: 28px;
   display: inline-block;
   align-items: center;
   text-align: center;
@@ -757,8 +767,9 @@ css start for login page
   align-self: center;
   border: none;
   cursor: pointer;
-  font-weight: 600;
+  /* font-weight: 600; */
   width: 200px;
+  height: 44px;
 }
 
 .gaccca-image-responsive {
@@ -777,6 +788,9 @@ css start for login page
   /* max-width: 543px; */
   height: 100vh;
 }
+.gaccca-half-login-image{
+ display: block;
+}
 
 .gaccca-half-login p {
   color: #FFF;
@@ -788,14 +802,13 @@ css start for login page
 
 .gaccca-create-program-account{
 
-  position: absolute;
-  right: 0;
   margin-top: 232px;
   background: #096DD9;
   border-radius: 30px 0px 0px 30px;
   max-width:  602px;
   color: #FFF;
   padding: 21px 25px;
+  float: right;
 }
 .gaccca-create-program-account-heading{
 
@@ -820,17 +833,60 @@ css start for login page
       color: #FFF;
       margin: 8px 0px;
 }
+.gaccca-create-program-account-mobile{
+  display: none;
+}
+.gaccca-signup-text-div{
+  max-width: 370px;
+  margin: 0px auto;
 
+}
 .gaccca-signup-text{
   font-style: normal;
   font-weight: normal;
   font-size: 11px;
   line-height: 16px;
   color: #8C8C8C;
+  text-align: left;
+}
+
+.gaccca-reserved{
+  margin: 0px 0px 61px 100px;
 }
 
 
 /* login page end */
+
+
+
+.gaccca-breadcrumb-link{
+  max-width: 1000px;
+  margin: 0px auto 0px auto;
+}
+
+ul.gaccca-breadcrumb {
+  padding: 0px 5px;
+  list-style: none;
+  margin: 11px 0px 3px 0px;
+}
+ul.gaccca-breadcrumb li {
+  display: inline;
+  font-size: 12px;
+}
+ul.gaccca-breadcrumb li+li:before {
+  padding: 8px;
+  color:#8C8C8C;
+  content: "/\00a0";
+}
+ul.gaccca-breadcrumb li a {
+  color: #8C8C8C;
+  text-decoration: none;
+}
+/* ul.gaccca-breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+} */
+
 
 /* 
 From here start main page css : main page css
@@ -839,11 +895,12 @@ From here start main page css : main page css
 
 .gaccca-main-containt {
   max-width: 1000px;
-  margin: 40px auto 40px auto;
+  margin: 0px auto 58px auto;
   background: #FFFFFF;
   border-radius: 18px;
   padding-bottom: 20px;
 }
+
 
 /* Main containt h1 */
 
@@ -855,6 +912,7 @@ From here start main page css : main page css
 
 .gaccca-main-containt .gaccca-h1-padding {
   padding: 38px 0px 0px 78px;
+  margin: 0px;
 }
 
 .gaccca-main-containt h2 {
@@ -986,11 +1044,12 @@ From here start main page css : main page css
 /* time slot button css end : schedule call page */
 
 .gaccca-button-save-green {
-  background: #52C41A;
-  border-radius: 2px;
+  background: #389E0D;
+  border-radius: 5px;
   flex-direction: column;
-  padding: 8px 22px;
-  font-size: 16px;
+  padding: 8px 0px;
+  font-size: 18px;
+  font-weight: bold;
   line-height: 24px;
   align-items: center;
   text-align: center;
@@ -999,6 +1058,7 @@ From here start main page css : main page css
   align-self: center;
   border: none;
   cursor: pointer;
+  height: 40px;
   width: 200px;
 }
 
@@ -1600,6 +1660,7 @@ button.gaccca-accordion-minius::before {
   padding: 10px 15px;
   border: none;
   float: right;
+  margin-top: 10px;
 }
 
 .gaccca-openbtn:hover {
@@ -1926,6 +1987,10 @@ input[type="file"].gaccca-parsley-error+ul {
 #gaccca-scroll-to-top-button:hover {
   background-color: #096DD9;
 }
+.gaccca-go-back-login{
+  display: none;
+    text-align: none;
+}
 
 @media only screen and (max-width: 414px) {
   .gaccca-form-element-margin {
@@ -1941,7 +2006,20 @@ input[type="file"].gaccca-parsley-error+ul {
   }
   .gaccca-behind-the-logo-position {
     float: left !important;
-    margin-left: 25px !important;
+    margin-left: 15px !important;
+  }
+  .gaccca-header ul>li a{
+    font-size: 17px !important;
+  }
+  .gaccca-display-menu-profile{
+    margin-right : 15px !important;
+  }
+  .gaccca-create-program-account{
+    max-width: 230px !important;
+    
+  }
+  .gaccca-create-program-account-text{
+    margin: 20px 0px !important;
   }
 }
 
@@ -1951,12 +2029,23 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-display-menu {
     display: none !important;
   }
+  .gaccca-display-menu-profile{
+    display: none !important;
+    margin-right: 10px !important;
+  }
   .gaccca-header-menu-button {
     display: block !important;
   }
+  .gaccca-openbtn{
+    margin-top: 15px !important;
+    padding: 10px 20px !important;
+  }
   .gaccca-behind-the-logo-position {
-    float: right !important;
-    margin-right: 10px !important;
+    float: left !important;
+    margin: 15px !important;
+  }
+  .gaccca-header ul>li a{
+    font-size: 17px !important;
   }
   .gaccca-main-containt .gaccca-h1-padding {
     padding: 38px 0px 0px 50px !important;
@@ -1973,6 +2062,14 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-button-save-margin {
     margin: 4px 0px 0px 80px !important;
   }
+
+  .gaccca-create-program-account{
+    max-width: 193px !important;
+    padding: 35px 11px !important;
+  }
+  .gaccca-create-program-account-text{
+    margin: 20px 0px !important;
+  }
 }
 
 /* Portrait*/
@@ -1982,6 +2079,10 @@ input[type="file"].gaccca-parsley-error+ul {
     margin: 13px 0px 0px 35px !important;
   }
   .gaccca-display-menu {
+    display: block !important;
+  }
+
+  .gaccca-display-menu-profile{
     display: block !important;
   }
   .gaccca-header-menu-button {
@@ -1998,6 +2099,9 @@ input[type="file"].gaccca-parsley-error+ul {
     border-radius: 0px !important;
   }
   .gaccca-display-menu {
+    display: none !important;
+  }
+  .gaccca-display-menu-profile{
     display: none !important;
   }
   .gaccca-header-menu-button {
@@ -2061,9 +2165,17 @@ input[type="file"].gaccca-parsley-error+ul {
     padding: 10px 15px !important;
   }
   .gaccca-half-login {
-    background-image: url("../images/bg.jpg");
-    background-size: 100% 100%;
-    border-left: 1px solid #E5E5E5;
+    background-image: none !important;
+    background-size: none;
+    border-left: none;
+    height: auto !important;
+  }
+  .gaccca-reserved{
+    margin: 0px 0px 0px 90px !important;
+  }
+  .gaccca-go-back-login{
+    display: block !important;
+    text-align: left !important;
   }
   .gaccca-half-login p {
     color: #FFF;
@@ -2150,20 +2262,50 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-display-menu {
     display: none !important;
   }
+  .gaccca-display-menu-profile{
+    display: none !important;
+  }
   .gaccca-header-menu-button {
     display: block !important;
   }
   .gaccca-behind-the-logo {
-    margin: 9px 9px 9px 0px;
+    margin: 14px 9px 9px 0px;
     content: url("../images/logo/logo_mobile.png");
   }
   .gaccca-login-page-logo{
-    margin: 9px 9px 9px 0px !important;
+    margin: 27px 9px 9px 21px !important;
   }
+  .gaccca-signup-containt{
+    padding: 70px 5% 100px 5% !important;
+  }
+  .gaccca-login-containt {
+    padding: 100px 10% !important;
+}
   .gaccca-behind-the-logo-position {
-    float: left !important;margin-left: 5px;
+    float: left !important;
+    margin-left: 10px;
   }
   .gaccca-input-date {
     background-image: none !important;
   }
+  .gaccca-half-login-image{
+    display: none;
+   }
+
+   .gaccca-create-program-account-mobile {
+
+    background: #096DD9;
+    max-width:  602px;
+    color: #FFF;
+    padding: 21px 25px;
+    display: block !important;
+    margin: 35px -25px 25px -25px !important;
+    float: left !important;
+    border-radius: 0px !important;
+    
+}
+.gaccca-create-program-account-text{
+  margin: 15px 0px !important;
+}
+
 }

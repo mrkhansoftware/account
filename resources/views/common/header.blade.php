@@ -96,23 +96,30 @@
 
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Agency")!==false)
 
-
-                            <li class="gaccca-dropdown"><a href="javascript:void(0)">Agent Bookings</a>
-
+                            
+                            
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)"> 
+                            <span  class="{{ ($parent_page == 'Agent Bookings') ? 'gaccca-active-menu' : '' }}">Agent Bookings </span>
+                                <img src="{{ asset('images/vector.png') }}"/>
+                            </a>
+                            
                                 <div class="gaccca-dropdown-content">
-                                    <a href="/AgencyJobSearch" target='_blank'>Job Search</a>
-                                    <a href="/AgencyInformation">Information</a>
-                                    <a href="/AgentParticipants">Participant List</a>
-                                    <a href="/Add_New_Participant">J Visa</a>
-                                    <a href="/AgencyBvisaBooking">B Visa</a>
-                                    <a href="/AgencyPlacementProgramRegistrationForm">Placement</a>
+                                    <a class="{{ ($page == 'AgencyJobSearch') ? 'gaccca-active-submenu' : '' }}" href="/AgencyJobSearch" target='_blank'>Job Search</a>
+                                    <a class="{{ ($page == 'AgencyInformation') ? 'gaccca-active-submenu' : '' }}" href="/AgencyInformation">Information</a>
+                                    <a class="{{ ($page == 'AgentParticipants') ? 'gaccca-active-submenu' : '' }}" href="/AgentParticipants">Participant List</a>
+                                    <a class="{{ ($page == 'Add_New_Participant') ? 'gaccca-active-submenu' : '' }}" href="/Add_New_Participant">J Visa</a>
+                                    <a class="{{ ($page == 'AgencyBvisaBooking') ? 'gaccca-active-submenu' : '' }}" href="/AgencyBvisaBooking">B Visa</a>
+                                    <a class="{{ ($page == 'AgencyPlacementProgramRegistrationForm') ? 'gaccca-active-submenu' : '' }}" href="/AgencyPlacementProgramRegistrationForm">Placement</a>
 
                                 </div>
 
                             </li>
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
-                            <li class="gaccca-dropdown"><a href="javascript:void(0)">Host Company</a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)"> 
+                            <span class="{{ ($parent_page == 'Host Company') ? 'gaccca-active-menu' : '' }}">Host Company </span>
+                            <img src="{{ asset('images/vector.png') }}"/>
+                        </a>
                                 <div class="gaccca-dropdown-content">
                                     <a href="/host_company_agreement_account" target="_blank">Host Company Agreement</a>
                                     <a href="/DS_7002_Trainigsplan" target="_blank">DS-7002 Training Plan</a>
@@ -125,12 +132,16 @@
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
 
-                            <li class="gaccca-dropdown"><a href="javascript:void(0)">B1 Program</a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">
+                            <span class="{{ ($parent_page == 'B1 Program') ? 'gaccca-active-menu' : '' }}">B1 Program </span>
+                            
+                            <img src="{{ asset('images/vector.png') }}"/>
+                            </a>
                                 <div class="gaccca-dropdown-content">
-                                    <a href="/B_Visa_Case_Information">Case Information</a>
-                                    <a href="/b1Video">Video</a>
-                                    <a href="/b1_Embassy">Embassy &amp; Entry</a>
-                                    <a href="/ScheduleCallBVisa">Schedule a Call</a>
+                                    <a class="{{ ($page == 'B_Visa_Case_Information') ? 'gaccca-active-submenu' : '' }}" href="/B_Visa_Case_Information">Case Information</a>
+                                    <a class="{{ ($page == 'b1Video') ? 'gaccca-active-submenu' : '' }}" href="/b1Video">Video</a>
+                                    <a class="{{ ($page == 'b1_Embassy') ? 'gaccca-active-submenu' : '' }}" href="/b1_Embassy">Embassy &amp; Entry</a>
+                                    <a class="{{ ($page == 'ScheduleCallBVisa') ? 'gaccca-active-submenu' : '' }}" href="/ScheduleCallBVisa">Schedule a Call</a>
 
                                 </div>
 
@@ -139,19 +150,22 @@
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
 
-                            <li class="gaccca-dropdown"><a href="javascript:void(0)">Placement Program</a>
+                            <li class="gaccca-dropdown"><a  href="javascript:void(0)"> 
+                            <span class="{{ ($parent_page == 'Placement Program') ? 'gaccca-active-menu' : '' }}">Placement Program </span>
+                            <img src="{{ asset('images/vector.png') }}"/>
+                            </a>
 
                                 <div class="gaccca-dropdown-content">
-                                    <a href="/VideoTutorials">Video Tutorials</a>
-                                    <a href="/uploadyourdocuments">Upload Your Documents</a>
-                                    <a href="/dosAndDonts">Dos and Don'ts</a>
-                                    <a href="/ScheduleCall">Schedule a Call</a>
-                                    <a href="/ApplicantResume">Create your resume</a>
-                                    <a href="/WriteYourScript">Write your script</a>
+                                    <a class="{{ ($page == 'VideoTutorials') ? 'gaccca-active-submenu' : '' }}" href="/VideoTutorials">Video Tutorials</a>
+                                    <a class="{{ ($page == 'uploadyourdocuments') ? 'gaccca-active-submenu' : '' }}" href="/uploadyourdocuments">Upload Your Documents</a>
+                                    <a class="{{ ($page == 'dosAndDonts') ? 'gaccca-active-submenu' : '' }}" href="/dosAndDonts">Dos and Don'ts</a>
+                                    <a class="{{ ($page == 'ScheduleCall') ? 'gaccca-active-submenu' : '' }}" href="/ScheduleCall">Schedule a Call</a>
+                                    <a class="{{ ($page == 'ApplicantResume') ? 'gaccca-active-submenu' : '' }}" href="/ApplicantResume">Create your resume</a>
+                                    <a class="{{ ($page == 'WriteYourScript') ? 'gaccca-active-submenu' : '' }}" href="/WriteYourScript">Write your script</a>
 
-                                    <a href="/VideoInstructions">Video Instructions</a>
-                                    <a href="/Video_Resume">Record your Video Resume</a>
-                                    <a href="/InterviewPreparation">Interview Preparation</a>
+                                    <a class="{{ ($page == 'VideoInstructions') ? 'gaccca-active-submenu' : '' }}" href="/VideoInstructions">Video Instructions</a>
+                                    <a class="{{ ($page == 'Video_Resume') ? 'gaccca-active-submenu' : '' }}" href="/Video_Resume">Record your Video Resume</a>
+                                    <a class="{{ ($page == 'InterviewPreparation') ? 'gaccca-active-submenu' : '' }}" href="/InterviewPreparation">Interview Preparation</a>
 
                                 </div>
 
@@ -159,36 +173,37 @@
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
 
-                            <li class="gaccca-dropdown"><a href="javascript:void(0)">J1 Program</a>
+                            <li class="gaccca-dropdown"><a  href="javascript:void(0)"><span class="{{ ($parent_page == 'J1 Program') ? 'gaccca-active-menu' : '' }}">J1 Program </span> <img src="{{ asset('images/vector.png') }}"/>
+                            </a>
 
                                 <div class="gaccca-dropdown-content">
-                                    <a href="/information_instruction_account">Information &amp; Instruction</a>
-                                    <a href="/participant_information_account">Participant Information</a>
-                                    <a href="/host_company_information_account">Host Company Information</a>
-                                    <a href="/participant_agreement_account">Participant Agreement</a>
-                                    <a href="/finalize_application_account">Finalize your Application</a>
-                                    <a href="/j1_review_your_application_account">Review your J1 Application</a>
+                                    <a class="{{ ($page == 'information_instruction_account') ? 'gaccca-active-submenu' : '' }}" href="/information_instruction_account">Information &amp; Instruction</a>
+                                    <a class="{{ ($page == 'participant_information_account') ? 'gaccca-active-submenu' : '' }}" href="/participant_information_account">Participant Information</a>
+                                    <a class="{{ ($page == 'host_company_information_account') ? 'gaccca-active-submenu' : '' }}" href="/host_company_information_account">Host Company Information</a>
+                                    <a class="{{ ($page == 'participant_agreement_account') ? 'gaccca-active-submenu' : '' }}" href="/participant_agreement_account">Participant Agreement</a>
+                                    <a class="{{ ($page == 'finalize_application_account') ? 'gaccca-active-submenu' : '' }}" href="/finalize_application_account">Finalize your Application</a>
+                                    <a class="{{ ($page == 'j1_review_your_application_account') ? 'gaccca-active-submenu' : '' }}" href="/j1_review_your_application_account">Review your J1 Application</a>
 
 
 
 
                                     @if(isset($datas['isParticipantAccepted'])&& $datas['isParticipantAccepted'])
-                                    <a href="/participant_handbook_account">Participant Handbook</a>
-                                    <a href="/ScheduleCallJvisa">Schedule a Call</a>
+                                    <a class="{{ ($page == 'participant_handbook_account') ? 'gaccca-active-submenu' : '' }}" href="/participant_handbook_account">Participant Handbook</a>
+                                    <a class="{{ ($page == 'ScheduleCallJvisa') ? 'gaccca-active-submenu' : '' }}" href="/ScheduleCallJvisa">Schedule a Call</a>
                                     @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
-                                    <a href="/AdditionalDocumentJ1">Additional Documents</a>
+                                    <a class="{{ ($page == 'AdditionalDocumentJ1') ? 'gaccca-active-submenu' : '' }}" href="/AdditionalDocumentJ1">Additional Documents</a>
                                     @endif
-                                    <a href="/extension_request_account">Extension Request</a>
-                                    <a href="/travel_validation_account">Travel Validation</a>
-                                    <a href="/validation_checkin_account">Validation &amp; Check-In</a>
-                                    <a href="/monthly_Checkin">Monthly Check-In</a>
-                                    <a href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
-                                    <a href="/final_evaluation_account">Final Evaluation</a>
+                                    <a class="{{ ($page == 'extension_request_account') ? 'gaccca-active-submenu' : '' }}" href="/extension_request_account">Extension Request</a>
+                                    <a class="{{ ($page == 'travel_validation_account') ? 'gaccca-active-submenu' : '' }}" href="/travel_validation_account">Travel Validation</a>
+                                    <a class="{{ ($page == '') ? 'gaccca-active-submenu' : 'validation_checkin_account' }}" href="/validation_checkin_account">Validation &amp; Check-In</a>
+                                    <a class="{{ ($page == 'monthly_Checkin') ? 'gaccca-active-submenu' : '' }}" href="/monthly_Checkin">Monthly Check-In</a>
+                                    <a class="{{ ($page == 'midpoint_evaluation_account') ? 'gaccca-active-submenu' : '' }}" href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
+                                    <a class="{{ ($page == 'final_evaluation_account') ? 'gaccca-active-submenu' : '' }}" href="/final_evaluation_account">Final Evaluation</a>
                                     @else
                                     <a href="javascript:void(0)" style="cursor: not-allowed;">Participant Handbook</a>
                                     <a href="javascript:void(0)" style="cursor: not-allowed;">Schedule a Call</a>
                                     @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
-                                    <a href="/AdditionalDocumentJ1">Additional Documents</a>
+                                    <a class="{{ ($page == 'AdditionalDocumentJ1') ? 'gaccca-active-submenu' : '' }}" href="/AdditionalDocumentJ1">Additional Documents</a>
                                     @endif
                                     <a href="javascript:void(0)" style="cursor: not-allowed;">Extension Request</a>
                                     <a href="javascript:void(0)" style="cursor: not-allowed;">Travel Validation</a>
@@ -202,7 +217,7 @@
                             </li>
                             @endif
 
-                            <li><a href="/simCard">Sim Card</a></li>
+                            <li><a href="/simCard"><span class="{{ ($parent_page == 'Sim Card') ? 'gaccca-active-menu' : '' }}">Sim Card</span></a></li>
 
 
                         </ul>
@@ -213,10 +228,15 @@
 
                         <li class="gaccca-dropdown-profile">
                             <a class="gaccca-user-name" href="javascript:void(0)"> Hi, {{session()->get('contactName')}} </a>
-                            <span class="user-icon"><i class="fas fa-user-circle"></i></span>
+                            
                         </li>
                         <li class="gaccca-dropdown-profile">
-                            <a href="javascript:void(0)" class="gaccca-dropbtn"><i class="fas fa-caret-down"></i></a>
+                        
+                        <a href="javascript:void(0)" class="gaccca-dropbtn">
+                        <img src="{{ asset('images/user.png') }}"/>
+                        <i class="fas fa-caret-down"></i>
+                        
+                        </a>
                             <div class="gaccca-dropdown-content-profile">
                                 <a href="/profile_account">My Profile</a>
                                 <a href="/password_account">Password</a>
@@ -227,8 +247,10 @@
                         </li>
                     </ul>
 
-                    <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button">☰</button>
+                    <!-- <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button">☰</button> -->
+                    <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button"><i class="fas fa-bars"></i></button>
 
+                    
                 </div>
             </div>
         </div>
@@ -241,7 +263,7 @@
         <a href="javascript:void(0)" id="closeNav" class="closebtn">×</a>
 
         <button class="gaccca-dropdown-btn">Agent Bookings
-            <i class="fa gaccca-fa-caret-down"></i>
+        <img src="{{ asset('images/vector.png') }}"/>
         </button>
 
         <div class="gaccca-dropdown-container">
@@ -260,7 +282,7 @@
 
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
         <button class="gaccca-dropdown-btn">Host Company
-            <i class="fa gaccca-fa-caret-down"></i>
+        <img src="{{ asset('images/vector.png') }}"/>
         </button>
 
         <div class="gaccca-dropdown-container">
@@ -277,7 +299,7 @@
 
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
         <button class="gaccca-dropdown-btn">B1 Program
-            <i class="fa gaccca-fa-caret-down"></i>
+        <img src="{{ asset('images/vector.png') }}"/>
         </button>
         <div class="gaccca-dropdown-container">
             <a href="/B_Visa_Case_Information">Case Information</a>
@@ -288,7 +310,7 @@
         @endif
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
         <button class="gaccca-dropdown-btn">Placement Program
-            <i class="fa gaccca-fa-caret-down"></i>
+        <img src="{{ asset('images/vector.png') }}"/>
         </button>
 
 
@@ -307,8 +329,8 @@
         @endif
 
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
-        <button class="gaccca-dropdown-btn">J1 Program
-            <i class="fa gaccca-fa-caret-down"></i>
+        <button class="gaccca-dropdown-btn ">J1 Program
+        <img src="{{ asset('images/vector.png') }}"/>
         </button>
 
 
@@ -355,3 +377,12 @@
 
 
     <div class="clear"></div>
+
+
+
+    <div class="gaccca-breadcrumb-link">
+        <ul class="gaccca-breadcrumb">
+            <li><a href="JavaScript:Void(0)">@if (isset($parent_page)){{$parent_page}} @endif</a></li>
+            <li>@if (isset($title)){{$title}} @endif</li>
+        </ul>
+    </div>

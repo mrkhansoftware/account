@@ -1,5 +1,7 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Add New Participant','page'=>'Add_New_Participant'])
+
+@include('common.header',['datas'=>$datas,'title' =>'Add New Participant','page'=>'Add_New_Participant','parent_page'=>'Agent Bookings'])
+
 {!! Form::open(['action' => 'AddNewParticipantController@store', 'method' => 'POST', 'id' => 'gacccaForm_participent']) !!}
 
 <div class="gaccca-main-containt">

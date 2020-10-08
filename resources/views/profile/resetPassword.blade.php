@@ -1,5 +1,5 @@
 
-@include('common.header_without_menu',['title'=>'Reset Password','page'=>'resetPassword'])
+@include('common.header_without_menu',['title'=>'Reset Password','page'=>'resetPassword','parent_page'=>'Profile'])
 
 <div class="gaccca-main-containt">
             
