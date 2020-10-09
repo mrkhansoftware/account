@@ -21,7 +21,9 @@
     </script>
     <!-- End Google Tag Manager -->
     <title>@if (isset($title)){{$title}} @endif</title>
+    @if (isset($page) && $page!='ApplicantResume' && $page!='Video_Resume' && $page!='b1Video')
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    @endif
     <meta name="title" content="@if (isset($page)){{$page}} @endif" />
     <meta name="description" content="Over the account you can access the programs and services" />
     <meta name="keywords" content="Account IIEEX, Account GACCCA" />
