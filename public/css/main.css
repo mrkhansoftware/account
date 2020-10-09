@@ -598,12 +598,16 @@ Header css start
 /* css define logo for website */
 
 .gaccca-behind-the-logo {
-  margin: 8px 0px 9px 0px;
+  margin: 8px 0px 8px 0px;
   content: url("../images/logo/logo1.png");
 }
 .gaccca-login-page-logo{
-  /* margin: 8px 0px 9px 0px; */
-  margin: 90px 0px 9px 54px;
+  display: block;
+  margin: 20px 0px 0px 40px;
+}
+.gaccca-login-page-logo-small{
+  display: none;
+  margin: 20px 0px 0px 40px;
 }
 
 .gaccca-behind-the-logo-host-company {
@@ -636,11 +640,11 @@ css start for login page
 }
 
 .gaccca-login-containt {
-  padding: 100px 22%;
+  padding: 20px 22%;
 }
 
 .gaccca-signup-containt {
-  padding: 70px 25% 100px 25%;
+  padding: 20px 25% 0px 25%;
 }
 
 .gaccca-forgot-password-containt {
@@ -673,26 +677,27 @@ css start for login page
 .gaccca-google-sign-btn {
   width: 200px;
   height: 40px;
-  background: #DE4D3B;
-  /* background: #4787ed; */
+  /* background: #DE4D3B; */
+  background: #4787ed;
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  padding: 2px;
 }
 
 .gaccca-google-image {
   
-  width: 27.54px;
-  height: 27px;
+  width: 35.54px;
+  height: 36px;
   border-radius: 2px;
-  top: 6px;
   background: #FFF;
   float: left;
- 
+  /* margin-top: 0.5px;
+  margin-left: 0.5px; */
 }
 
 .gaccca-google-image img {
-  margin: 3px;
+  margin: 7px;
 }
 
 .gaccca-inside-social-button-text {
@@ -700,6 +705,13 @@ css start for login page
   font-size: 14px;
   float: left;
   margin-left: 18px;
+  margin-top: 5px;
+}
+.gaccca-social-button-text-margin-top-google{
+  margin-top: 10px;
+}
+
+.gaccca-social-button-text-margin-top-facebook{
   margin-top: 5px;
 }
 
@@ -781,7 +793,9 @@ css start for login page
 
 .gaccca-half-login {
   background-image: url("../images/bg.jpg");
-  background-size: 100% 100%;
+  /* background-size: 100% auto; */
+  background-size: cover;
+
   background-repeat: no-repeat;
   /* padding: 15% 13%; */
   border-left: 1px solid #E5E5E5;
@@ -809,6 +823,7 @@ css start for login page
   color: #FFF;
   padding: 21px 25px;
   float: right;
+  margin-left: 25px;
 }
 .gaccca-create-program-account-heading{
 
@@ -851,7 +866,7 @@ css start for login page
 }
 
 .gaccca-reserved{
-  margin: 0px 0px 61px 100px;
+  margin: 0px 0px 1px 100px;
 }
 
 
@@ -1988,8 +2003,7 @@ input[type="file"].gaccca-parsley-error+ul {
   background-color: #096DD9;
 }
 .gaccca-go-back-login{
-  display: none;
-    text-align: none;
+    text-align: left;
 }
 
 @media only screen and (max-width: 414px) {
@@ -2007,6 +2021,7 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-behind-the-logo-position {
     float: left !important;
     margin-left: 15px !important;
+    margin-top: 15px !important;
   }
   .gaccca-header ul>li a{
     font-size: 17px !important;
@@ -2021,6 +2036,7 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-create-program-account-text{
     margin: 20px 0px !important;
   }
+
 }
 
 /* iPads (portrait) ----------- */
@@ -2070,6 +2086,7 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-create-program-account-text{
     margin: 20px 0px !important;
   }
+ 
 }
 
 /* Portrait*/
@@ -2091,6 +2108,9 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-behind-the-logo-position {
     float: left !important;
   }
+  .gaccca-behind-the-logo-position{
+    margin-left: 20px !important;
+  }
 }
 
 @media only screen and (max-device-width: 767px) {
@@ -2108,7 +2128,7 @@ input[type="file"].gaccca-parsley-error+ul {
     display: block !important;
   }
   .gaccca-behind-the-logo-position {
-    float: right !important;
+    float: left !important;
   }
   .gaccca-main-containt .gaccca-h1-padding {
     /* padding: 30px 0px 0px 30px !important; */
@@ -2175,7 +2195,6 @@ input[type="file"].gaccca-parsley-error+ul {
   }
   .gaccca-go-back-login{
     display: block !important;
-    text-align: left !important;
   }
   .gaccca-half-login p {
     color: #FFF;
@@ -2184,20 +2203,60 @@ input[type="file"].gaccca-parsley-error+ul {
     margin: 0px;
     padding: 10% 5%;
   }
+
 }
 
-@media only screen and (min-width: 768px) and (max-width: 990px) {
+@media only screen and  (max-width: 1290px) and (min-width: 990px) {
+
+  .gaccca-behind-the-logo-position{
+    margin-left: 15px !important;
+    
+  }
+  .gaccca-display-menu-profile{
+    margin-right: 10px !important;
+  }
+  .gaccca-header ul>li{
+    margin-left: 23px !important;
+  }
+  .gaccca-header ul>li a{
+    font-size: 20px !important;
+  }
+  ul.gaccca-breadcrumb{
+    margin: 11px 0px 3px 20px !important;
+  }
+}
+
+@media only screen and  (max-width: 990px) and (min-width: 700px) {
   .gaccca-header ul>li a, .gaccca-dropbtn {
     font-size: 14px !important;
   }
   .gaccca-header ul>li {
-    margin: 13px 0px 0px 15px !important;
+    margin: 0px 0px 0px 10px !important;
   }
+
+  .gaccca-behind-the-logo-position{
+    margin-left: 15px !important;
+    margin-top: 15px !important;
+  }
+  .gaccca-behind-the-logo{
+    content: url(../images/logo/logo_mobile.png) !important;
+  }
+
+  .gaccca-header ul>li a {
+    font-size: 12px !important;
+  }
+  .gaccca-display-menu-profile{
+    margin-right: 10px !important;
+  }
+
   .gaccca-main-containt .gaccca-h1-padding {
     padding: 38px 0px 0px 30px !important;
   }
   .gaccca-main-containt .gaccca-h2-padding {
     padding: 0px 0px 24px 31px !important;
+  }
+  ul.gaccca-breadcrumb{
+    margin: 11px 0px 3px 20px !important;
   }
   .gaccca-sky-blue-box-margin {
     margin: 48px 30px 48px 30px !important;
@@ -2216,6 +2275,44 @@ input[type="file"].gaccca-parsley-error+ul {
   }
   .gaccca-medium-size_1-of-1 {
     width: 100%;
+  }
+  .gaccca-create-program-account{
+    max-width: 230px !important;
+  }
+  .gaccca-login-page-logo{
+    display: none !important;
+  }
+  .gaccca-login-page-logo-small{
+    display: block !important;
+    margin: 20px 0px 0px 20px !important;
+  }
+  
+  .gaccca-accout-access-text{
+    font-size: 35px !important;
+  }
+  .gaccca-new-user-btn-text{
+    font-size: 17px !important;
+  }
+  .gaccca-new-user-btn-sub-text{
+    font-size: 10px !important;
+  }
+  .gaccca-new-user-btn{
+    padding: 0px 17px !important;
+  }
+  .gaccca-reserved{
+    margin: 0px 0px 0px 20px !important;
+  }
+  .gaccca-login-containt {
+    padding: 20px 10% !important;
+  }
+  .gaccca-signup-containt{
+    padding: 20px 10% 5px 10% !important;
+  }
+  .gaccca-go-back-login{
+    display: block !important;
+  }
+  .gaccca-create-program-account{
+    margin-top: 100px !important;
   }
 }
 
@@ -2273,13 +2370,17 @@ input[type="file"].gaccca-parsley-error+ul {
     content: url("../images/logo/logo_mobile.png");
   }
   .gaccca-login-page-logo{
+    display: none !important;
+  }
+  .gaccca-login-page-logo-small{
+    display: block !important;
     margin: 27px 9px 9px 21px !important;
   }
   .gaccca-signup-containt{
-    padding: 70px 5% 100px 5% !important;
+    padding: 35px 5% 25px 5% !important;
   }
   .gaccca-login-containt {
-    padding: 100px 10% !important;
+    padding: 25px 10% !important;
 }
   .gaccca-behind-the-logo-position {
     float: left !important;
@@ -2291,21 +2392,49 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-half-login-image{
     display: none;
    }
+   .gaccca-large-size_6-of-12{
+     width: 100% !important;
+   }
 
    .gaccca-create-program-account-mobile {
 
     background: #096DD9;
-    max-width:  602px;
+    width: 100%;
     color: #FFF;
-    padding: 21px 25px;
+    padding: 21px 5%;
     display: block !important;
-    margin: 35px -25px 25px -25px !important;
+    margin: 35px 0px 25px 0px !important;
     float: left !important;
     border-radius: 0px !important;
     
 }
-.gaccca-create-program-account-text{
-  margin: 15px 0px !important;
+
+.gaccca-create-program-account-heading{
+  font-size: 24px !important;
+  text-align: left !important;
 }
 
+.gaccca-create-program-account-text{
+  margin: 15px 0px !important;
+  text-align: left !important;
+}
+ul.gaccca-breadcrumb{
+  margin: 11px 0px 3px 20px !important;
+}
+
+.gaccca-sky-blue-box-margin{
+ margin:  48px 30px 48px 30px !important;
+}
+.gaccca-main-containt .gaccca-h1-padding{
+  padding: 38px 0px 0px 30px !important;
+}
+.gaccca-main-containt .gaccca-h2-padding{
+  padding: 0px 0px 24px 31px !important;
+}
+.gaccca-form-element-margin{
+  margin: 0px 30px 33px 31px !important;
+}
+.gaccca-button-save-margin{
+  margin: 4px 0px 0px 31px !important;
+}
 }

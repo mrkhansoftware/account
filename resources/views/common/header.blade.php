@@ -231,11 +231,11 @@
                             
                         </li>
                         <li class="gaccca-dropdown-profile">
-                        
+                        <span>
                         <a href="javascript:void(0)" class="gaccca-dropbtn">
                         <img src="{{ asset('images/user.png') }}"/>
                         <i class="fas fa-caret-down"></i>
-                        
+    </span>
                         </a>
                             <div class="gaccca-dropdown-content-profile">
                                 <a class="{{ ($page == 'profile_account') ? 'gaccca-active-submenu' : '' }}" href="/profile_account">My Profile</a>
@@ -382,7 +382,7 @@
 
     <div class="gaccca-breadcrumb-link">
         <ul class="gaccca-breadcrumb">
-            <li><a href="JavaScript:Void(0)">@if (isset($parent_page)){{$parent_page}} @endif</a></li>
+            <li><a>@if (isset($parent_page)){{$parent_page}} @endif</a></li>
             <li>@if (isset($title)){{$title}} @endif</li>
         </ul>
     </div>

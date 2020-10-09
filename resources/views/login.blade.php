@@ -63,7 +63,7 @@
 
 <body style="background: #FFF;">
     <div class="gaccca-grid gaccca-wrap  gaccca-login-page">
-        <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_1-of-1" style="background: #FFF;">
+        <div class="gaccca-col gaccca-large-size_6-of-12" style="background: #FFF;">
 
 
             <div class="gaccca-login-header">
@@ -75,6 +75,7 @@
                         <!-- <div class="gaccca-behind-the-logo"> -->
 
                         <img class="gaccca-login-page-logo" src="{{ asset('images/logo/logo12.png') }}" />
+                        <img class="gaccca-login-page-logo-small" src="{{ asset('images/logo/small_logo.png') }}" />
 
                         <!-- </div> -->
 
@@ -95,7 +96,7 @@
 
                                 <img src="{{ asset('images/social-button/Google.png') }}" height="22" width="22" />
 
-                            </div> <span class="gaccca-inside-social-button-text"> Sign in with Google+ </span>
+                            </div> <span class="gaccca-inside-social-button-text gaccca-social-button-text-margin-top-google"> Sign in with Google </span>
                         </button>
                     </div>
                 </div>
@@ -108,7 +109,7 @@
                             <div class="gaccca-facebbok-image">
                                 <img src="{{ asset('images/social-button/f.png') }}" />
 
-                            </div> <span class="gaccca-inside-social-button-text"> Login with Facebook </span>
+                            </div> <span class="gaccca-inside-social-button-text gaccca-social-button-text-margin-top-facebook"> Login with Facebook </span>
                         </button>
                     </div>
                 </div>
@@ -162,11 +163,11 @@
                 <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
                     <div class="gaccca-form-element">
-                    <div class="gaccca-signup-text-div">
-                        <div class="gaccca-form-element__control">
-                            <a href="javascript:void(0)" id="forget-password-btn">Forgot your password? </a>
+                        <div class="gaccca-signup-text-div">
+                            <div class="gaccca-form-element__control">
+                                <a href="javascript:void(0)" id="forget-password-btn">Forgot your password? </a>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 
@@ -187,108 +188,123 @@
 
 
 
-            <div class="gaccca-signup-containt" id="signup-containt">
-                <div class="gaccca-alert" id='signUpMsg'>
-                    <span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    <strong>Error!</strong> <span id='errorMessageSignUp'></span>
-                </div>
-                <div class="gaccca-alert-success" id='signUpMsgSuccess'>
-                    <span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    <strong>Success! </strong> <span id='successMessageSignup'></span>
-                </div>
-                <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element">Sign Up</span>
+            <div id="signup-containt">
+                <div class="gaccca-signup-containt">
+                    <div class="gaccca-alert" id='signUpMsg'>
+                        <span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>Error!</strong> <span id='errorMessageSignUp'></span>
+                    </div>
+                    <div class="gaccca-alert-success" id='signUpMsgSuccess'>
+                        <span class="gaccca-alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>Success! </strong> <span id='successMessageSignup'></span>
+                    </div>
+                    <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element">Sign Up</span>
 
 
-                <form id='signup-form' data-parsley-validate=''>
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-                        <div class="gaccca-social-element">
-                            <div class="gaccca-form-element__control">
-                                <input type="text" id="signup-firstname" placeholder="First Name" required="" class="gaccca-input" />
+                    <form id='signup-form' data-parsley-validate=''>
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="text" id="signup-firstname" placeholder="First Name" required="" class="gaccca-input" />
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-                        <div class="gaccca-social-element">
-                            <div class="gaccca-form-element__control">
-                                <input type="text" id="signup-lastname" placeholder="Last Name" required="" class="gaccca-input" />
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="text" id="signup-lastname" placeholder="Last Name" required="" class="gaccca-input" />
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
 
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
-                        <div class="gaccca-social-element">
-                            <div class="gaccca-form-element__control">
-                                <input type="email" id="signup-email" placeholder="Email" required="" class="gaccca-input" />
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="email" id="signup-email" placeholder="Email" required="" class="gaccca-input" />
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
 
-                        <div class="gaccca-social-element">
-                            <div class="gaccca-form-element__control">
-                                <input type="Password" id="signup-password" placeholder="Password" required="" class="gaccca-input" />
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <input type="Password" id="signup-password" placeholder="Password" required="" class="gaccca-input" />
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element ">
+                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
-                        <div class="gaccca-social-element">
-                            <div class="gaccca-form-element__control">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
 
-                                <button class="gaccca-button-save-green gaccca-margin-top-20">Create Account</button>
+                                    <button class="gaccca-button-save-green gaccca-margin-top-20">Create Account</button>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                    </form>
 
-                    <div class="gaccca-form-element gaccca-margin-top-20">
-                        <div class="gaccca-social-element">
-                            <div class="gaccca-form-element__control">
-                                <a class="gaccca-go-back-login" style="text-decoration: none;">Already have an account?</a>
-                                <a class="gaccca-go-back-login" href="javascript:void(0)" id="go-login-from-signup">Go back to login </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
-                <div class="gaccca-create-program-account-mobile">
-                    <span class="gaccca-create-program-account-heading">Create your IIEEX Program Account</span>
-                    <h4 class="gaccca-create-program-account-text">Start & book your J-1 Visa Application for an Internship or Trainee </h4>
-                    <h4 class="gaccca-create-program-account-text">Monitor the J-1 Visa Proccess from arival to departure</h4>
-                    <h4 class="gaccca-create-program-account-text">Create your resume for the placement program </h4>
-                    <h4 class="gaccca-create-program-account-text">Manage your SIM Card for the USA</h4>
-                </div>
-
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-
-                    <div class="gaccca-form-element gaccca-margin-top-60">
-                        <div class="gaccca-social-element">
-                            <div class="gaccca-form-element__control">
-                                <div class="gaccca-signup-text-div">
-                                <p class="gaccca-signup-text">Create a free account to get access to our online program application and forms, price list, terms & conditions and additional program information. See what you need for your J-1 Visa Application, Placement and other services with us.</p>
-
-                                <p class="gaccca-signup-text"> <strong> No service is booked automatically! </strong> By creating an account you agree to our privacy, data protection and cookie policy.</p>
-
-                                <p class="gaccca-signup-text">
-                                    If you don’t receive an email within 3 minutes, please use the online chat or send us an email (info@iieex.org). Check also your SPAM Folder.
-                                </p>
+                        <div class="gaccca-form-element gaccca-margin-top-20">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <a class="gaccca-go-back-login" style="text-decoration: none;">Already have an account?</a>
+                                    <a class="gaccca-go-back-login" href="javascript:void(0)" id="go-login-from-signup">Go back to login </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="clear"></div>
+                <div class="gaccca-create-program-account-mobile">
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
+                        <div class="gaccca-form-element gaccca-margin-top-20">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <div class="gaccca-signup-text-div">
+                                        <span class="gaccca-create-program-account-heading">Create your IIEEX Program Account</span>
+                                        <h4 class="gaccca-create-program-account-text">Start & book your J-1 Visa Application for an Internship or Trainee </h4>
+                                        <h4 class="gaccca-create-program-account-text">Monitor the J-1 Visa Proccess from arival to departure</h4>
+                                        <h4 class="gaccca-create-program-account-text">Create your resume for the placement program </h4>
+                                        <h4 class="gaccca-create-program-account-text">Manage your SIM Card for the USA</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="gaccca-signup-containt">
+                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+
+                        <div class="gaccca-form-element gaccca-margin-top-20">
+                            <div class="gaccca-social-element">
+                                <div class="gaccca-form-element__control">
+                                    <div class="gaccca-signup-text-div">
+                                        <p class="gaccca-signup-text">Create a free account to get access to our online program application and forms, price list, terms & conditions and additional program information. See what you need for your J-1 Visa Application, Placement and other services with us.</p>
+
+                                        <p class="gaccca-signup-text"> <strong> No service is booked automatically! </strong> By creating an account you agree to our privacy, data protection and cookie policy.</p>
+
+                                        <p class="gaccca-signup-text">
+                                            If you don’t receive an email within 3 minutes, please use the online chat or send us an email (info@iieex.org). Check also your SPAM Folder.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 
@@ -348,10 +364,10 @@
                 <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
 
                     <div class="gaccca-form-element gaccca-margin-top-20">
-                    <div class="gaccca-signup-text-div">
-                        <div class="gaccca-form-element__control">
-                            <a href="javascript:void(0)" id="go-login-from-forget-password"> Go back to login </a>
-                        </div>
+                        <div class="gaccca-signup-text-div">
+                            <div class="gaccca-form-element__control">
+                                <a href="javascript:void(0)" id="go-login-from-forget-password"> Go back to login </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -359,16 +375,16 @@
 
 
             </div>
-<div class="gaccca-reserved">
-<img  src="{{ asset('images/c.png') }}" />
-<img  src="{{ asset('images/IIEEXreserved.png') }}" />
+            <div class="gaccca-reserved">
+                <img src="{{ asset('images/c.png') }}" />
+                <img src="{{ asset('images/IIEEXreserved.png') }}" />
 
 
-</div>
+            </div>
 
         </div>
 
-        <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_1-of-1 gaccca-half-login-image" style="background: #FFF; ">
+        <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-half-login-image" style="background: #FFF; ">
             <!-- <img src="assets/images/bg.jpg" class="gaccca-image-responsive"> -->
             <div class="gaccca-half-login">
                 <!--<p id="free-account-text">
