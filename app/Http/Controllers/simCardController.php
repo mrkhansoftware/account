@@ -138,7 +138,8 @@ class simCardController extends Controller
         if ($resp == '"OK"') {
             return redirect()->action('simCardController@index', ['isSave' => 1]);
         } else {
-            echo $resp;
+          
+    'App\Services\Helper'::apiErrorReq($finalReqSend,$resp,'ApiSimCardController');
             die;
         }
     }

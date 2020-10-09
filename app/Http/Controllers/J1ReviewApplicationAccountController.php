@@ -64,7 +64,8 @@ class J1ReviewApplicationAccountController extends Controller
     if($resp=='"OK"'){
     return redirect()->action('J1ReviewApplicationAccountController@index', ['isSave' => 1]);
     }else{
-        echo $resp;
+      
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiJ1ReviewYourApplicationController');
     }
    
     }

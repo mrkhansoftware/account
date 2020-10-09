@@ -134,7 +134,8 @@ unset($finalReq['onfrm']);
 if($resp=='"OK"'){
 return redirect()->action('MonthlyCheckinController@index', ['isSave' => 1]);
 }else{
-  echo $resp;
+ 
+  'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiMonthlyCheckInClass');
 }
 }
 

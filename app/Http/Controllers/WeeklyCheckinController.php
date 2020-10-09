@@ -88,7 +88,8 @@ $resp='App\Services\Helper'::postRequest($finalReq,'ApiWeeklyCheckInClass');
 if($resp=='"OK"'){
 return redirect()->action('WeeklyCheckinController@index', ['isSave' => 1]);
 }else{
-    echo $resp;
+    
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiWeeklyCheckInClass');
 }
     }
 

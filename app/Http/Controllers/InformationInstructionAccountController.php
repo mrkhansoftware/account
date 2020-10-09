@@ -56,7 +56,8 @@ class InformationInstructionAccountController extends Controller
        if($resp=='"OK"'){
         return redirect()->action('ParticipantInformationAccountController@index', ['isSave' => 1]);
        }else{
-           echo $resp;
+         
+    'App\Services\Helper'::apiErrorReq($body,$resp,'ApiInformationInstructionAccountClass');
        }
         //
     }

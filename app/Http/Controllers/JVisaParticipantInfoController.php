@@ -114,7 +114,8 @@ class JVisaParticipantInfoController extends Controller
         if ($resp == '"OK"') {
             return redirect()->action('AgentParticipantsController@index', ['isSave' => 1]);
         } else {
-            echo $resp;
+           
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiJVisaParticipantInfoClass');
             die;
         }
     }

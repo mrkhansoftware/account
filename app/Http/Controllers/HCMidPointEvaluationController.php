@@ -76,7 +76,8 @@ class HCMidPointEvaluationController extends Controller
 if($resp=='"OK"'){
         return redirect()->action('HCMidPointEvaluationController@index', ['isSave' => 1, 'orgid' => $EncId]);
 }else{
-    echo $resp;
+  
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiMidPointHCController');
 }
     }
 

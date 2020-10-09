@@ -1,4 +1,4 @@
-@include('common.header',['datas'=>$datas,'title' =>'CloseAccount','page'=>'CloseAccount','parent_page'=>'Profile'])
+@include('common.header',['datas'=>$datas,'title' =>'Close Account','page'=>'CloseAccount','parent_page'=>'Profile'])
 
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_close']) !!}

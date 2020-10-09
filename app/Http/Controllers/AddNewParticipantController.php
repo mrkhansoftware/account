@@ -58,8 +58,7 @@ class AddNewParticipantController extends Controller
         if ($resp == '"OK"') {
             return redirect()->action('AgentParticipantsController@index', ['isSave' => 1]);
         } else {
-            echo $resp;
-            die;
+            'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiAddNewParticipantController');
         }
     }
 

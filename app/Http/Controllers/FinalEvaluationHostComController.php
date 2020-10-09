@@ -76,7 +76,8 @@ if(!isset($_GET['orgid'])){
     return redirect()->action('FinalEvaluationHostComController@index', ['isSave' => 1, 'orgid' => $EncId]);
 
    }else{
-       echo $resp;
+     
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiFinalEvaluationHCController');
    }
         
     }

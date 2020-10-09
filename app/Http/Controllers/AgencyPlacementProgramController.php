@@ -58,8 +58,8 @@ class AgencyPlacementProgramController extends Controller
         if ($resp == '"OK"') {
             return redirect()->action('AgencyPlacementProgramController@index', ['isSave' => 1]);
         } else {
-            echo $resp;
-            die;
+           
+            'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiAgencyPlacementRegistrationClass');
         }
     }
 

@@ -55,7 +55,8 @@ class ProfileController extends Controller
         if($resp=='"OK"'){
         return redirect()->action('ProfileController@index', ['isSave' => 1]);
         }else{
-            echo $resp;
+        
+    'App\Services\Helper'::apiErrorReq($body,$resp,'ApiProfileAccountController');
         }
        
         //

@@ -154,7 +154,8 @@ class BVisaCaseInformationController extends Controller
     if($resp=='"OK"'){
     return redirect()->action('BVisaCaseInformationController@index', ['isSave' => 1]);
     }else{
-echo $resp;
+
+      'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiBVisaCaseInfoController');
     }
 
     }

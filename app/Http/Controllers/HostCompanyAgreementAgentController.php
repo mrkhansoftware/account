@@ -109,7 +109,8 @@ class HostCompanyAgreementAgentController extends Controller
    if($resp=='"OK"'){
         return redirect()->action('HostCompanyAgreementAgentController@index', ['isSave' => 1, 'orgid' => $EncId]);
    }else{
-       echo $resp;
+       
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiHostCompanyAgreementAgentController');
    }
     }
 

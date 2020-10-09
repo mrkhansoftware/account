@@ -64,7 +64,7 @@ public function store(Request $request)
      
     /*-----FILE UPLOAD-------------*/
  
-    $unique_Folder_Id;
+    $unique_Folder_Id='';
     if(session()->get('NewGdriveID__c')=='' || 'App\Services\Helper'::isFolderExist(session()->get('NewGdriveID__c'))!='200'){
      $Google_Drive_Folder_Id='App\Services\Helper'::returnFolderId('applicant');
      $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, session()->get('lastNameFirstName'));
@@ -85,7 +85,7 @@ if(session()->get('Google_Drive_Folder_Additional_Doc__c')==''  || 'App\Services
     $finalReq['applicant']['Google_Drive_Folder_Additional_Doc__c']=$unique_Folder_Id;
   
 }else{
-   echo $unique_Folder_Id= session()->get('Google_Drive_Folder_Additional_Doc__c');
+    $unique_Folder_Id= session()->get('Google_Drive_Folder_Additional_Doc__c');
 }
 
 
@@ -182,7 +182,9 @@ if(session()->get('Google_Drive_Folder_Additional_Doc__c')==''  || 'App\Services
  if($resp=='"OK"'){
 return redirect()->action('AdditionalDocumentJ1Controller@index', ['isSave' => 1]);
  }else{
-   echo $resp;
+
+  'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiAdditionalDocumentJ1Controller');
+   
  }
 }
 

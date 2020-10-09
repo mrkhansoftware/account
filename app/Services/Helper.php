@@ -158,7 +158,7 @@ class Helper
       curl_setopt_array($ch, $options);
       $result = curl_exec($ch);
       if (curl_errno($ch)) {
-         echo 'Error:' . curl_error($ch);
+        // echo 'Error:' . curl_error($ch);
       }
       curl_close($ch);
       $response = json_decode($result, true);
@@ -200,7 +200,7 @@ class Helper
       curl_setopt_array($ch, $options);
       $result = curl_exec($ch);
       if (curl_errno($ch)) {
-         echo 'Error:' . curl_error($ch);
+        // echo 'Error:' . curl_error($ch);
       }
       curl_close($ch);
 
@@ -304,7 +304,7 @@ class Helper
       $response = curl_exec($curl);
       $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
       if (curl_errno($curl)) {
-         echo 'Error:' . curl_error($curl);
+        // echo 'Error:' . curl_error($curl);
       }
 
 
@@ -356,4 +356,13 @@ class Helper
       return $resumeableLink;
    }
    /*** ------End---Google Bucket Api------** */
+
+   public static function apiErrorReq($requestData,$requestError,$requestClass){
+     $finalReq['requestData']=json_encode($requestData);
+     $finalReq['requestError']=$requestError;
+     $finalReq['requestClass']=$requestClass;
+      $resp='App\Services\Helper'::postRequest($finalReq,'ApiErrorEmailClass');
+      echo 'Internal server error. Please try later.';
+   }
+
 }

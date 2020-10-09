@@ -78,7 +78,8 @@ class DS7002TrainigsplanController extends Controller
 if($resp=='"OK"'){
         return redirect()->action('DS7002TrainigsplanController@index', ['isSave' => 1, 'orgid' => $EncId]);
 }else{
-    echo $resp;
+   
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiDS7002Controller');
 }
     }
 

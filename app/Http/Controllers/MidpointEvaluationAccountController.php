@@ -84,7 +84,8 @@ class MidpointEvaluationAccountController extends Controller
        if($resp=='"OK"'){
     return redirect()->action('MidpointEvaluationAccountController@index', ['isSave' => 1]);
        }else{
-           echo $resp;
+         
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiMidpointEvaluationClass');
        }
     }
 

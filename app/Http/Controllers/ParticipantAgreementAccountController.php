@@ -63,7 +63,8 @@ class ParticipantAgreementAccountController extends Controller
        if($resp=='"OK"'){
         return redirect()->action('FinalizeApplicationAccountController@index', ['isSave' => 1]);
        }else{
-           echo $resp;
+         
+  'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiParticipantAgreementAccountClass');
        }
     }
 

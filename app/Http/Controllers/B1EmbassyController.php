@@ -132,7 +132,8 @@ public function store(Request $request)
    if($resp=='"OK"'){
  return redirect()->action('B1EmbassyController@index', ['isSave' => 1]);
    }else{
-     echo $resp;
+     
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiB1EmbassyControllerAccount');
    }
 }
 

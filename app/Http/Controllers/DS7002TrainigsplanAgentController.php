@@ -80,7 +80,8 @@ $resp='App\Services\Helper'::postRequest($finalReq, 'ApiDS7200TrainingsplanAgent
 if($resp=='"OK"'){
         return redirect()->action('DS7002TrainigsplanAgentController@index', ['isSave' => 1, 'orgid' => $EncId]);
 }else{
-    echo $resp;
+   
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiDS7200TrainingsplanAgentController');
 }
     }
 
