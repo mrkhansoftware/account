@@ -263,7 +263,7 @@
 
     <div id="mySidepanel" class="gaccca-sidenav gaccca-sidenav-display">
         <a href="javascript:void(0)" id="closeNav" class="closebtn">×</a>
-
+        @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Agency")!==false)
         <button class="gaccca-dropdown-btn">Agent Bookings
         <img src="{{ asset('images/vector.png') }}"/>
         </button>
@@ -276,7 +276,7 @@
             <a href="/AgencyBvisaBooking">B Visa</a>
             <a href="/AgencyPlacementProgramRegistrationForm">Placement</a>
         </div>
-
+        @endif
 
 
 
@@ -362,7 +362,7 @@
 
 
         <button class="gaccca-dropdown-btn">Profile
-            <i class="fa gaccca-fa-caret-down"></i>
+        <img src="{{ asset('images/vector.png') }}"/>
         </button>
 
 
