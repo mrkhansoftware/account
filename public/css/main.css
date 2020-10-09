@@ -2213,13 +2213,13 @@ input[type="file"].gaccca-parsley-error+ul {
     
   }
   .gaccca-display-menu-profile{
-    margin-right: 10px !important;
+    margin-right: 0px !important;
   }
   .gaccca-header ul>li{
     margin-left: 23px !important;
   }
   .gaccca-header ul>li a{
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   ul.gaccca-breadcrumb{
     margin: 11px 0px 3px 20px !important;
@@ -2243,10 +2243,10 @@ input[type="file"].gaccca-parsley-error+ul {
   }
 
   .gaccca-header ul>li a {
-    font-size: 12px !important;
+    font-size: 11px !important;
   }
   .gaccca-display-menu-profile{
-    margin-right: 10px !important;
+    margin-right: 0px !important;
   }
 
   .gaccca-main-containt .gaccca-h1-padding {
