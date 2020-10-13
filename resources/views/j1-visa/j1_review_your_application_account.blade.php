@@ -6,7 +6,7 @@
 'id' => 'gacccaForm_j1review']) !!}
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
     <h1 class="gaccca-h1-padding">Review your Application</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>Please review your Application and click the confirmation button.</p>

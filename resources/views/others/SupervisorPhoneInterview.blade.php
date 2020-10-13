@@ -4,7 +4,7 @@
 @include('common.signScript')
 {!! Form::open(['action' => 'SupervisorInterviewController@store', 'method' => 'POST', 'id' => 'gacccaForm_supervisor']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
     <h1 class="gaccca-h1-padding">Supervisor Phone Interview</h1>
 
     

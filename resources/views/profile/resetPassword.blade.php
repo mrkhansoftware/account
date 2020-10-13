@@ -1,7 +1,7 @@
 
 @include('common.header_without_menu',['title'=>'Reset Password','page'=>'resetPassword','parent_page'=>'Profile'])
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
             
             
             <h2 class="gaccca-h2-padding">Reset Password</h2>

@@ -15,10 +15,7 @@ body {
   margin: 0px;
 }
 
-.gaccca-gutters {
-  margin-right: -.75rem;
-  margin-left: -.75rem;
-}
+
 
 /*
  
@@ -52,10 +49,10 @@ The wrap property specifies whether the flexible items should wrap or not
   max-width: 100% !important;
 }
 
-.gaccca-gutters {
+/* .gaccca-gutters {
   padding-right: .75rem;
   padding-left: .75rem;
-}
+} */
 
 /* Below class use to dispaly menu on page load */
 
@@ -2389,6 +2386,10 @@ input[type="file"].gaccca-parsley-error+ul {
 
 @media only screen and (max-width: 720px) {
 
+  .gaccca-gutters {
+    margin-right: 6px;
+    margin-left: 6px;;
+  }
 
   .gaccca-small-size_1-of-12 {
     width: 8.3333333333%;
@@ -2535,6 +2536,10 @@ input[type="file"].gaccca-parsley-error+ul {
     font-size: 14px !important;
   } */
 
+  .gaccca-gutters {
+    margin-right: 10px;
+    margin-left: 10px;;
+  }
 
   .gaccca-medium-size_1-of-12 {
     width: 8.3333333333%;
@@ -2683,6 +2688,11 @@ input[type="file"].gaccca-parsley-error+ul {
 @media only screen and (min-width: 1025px) {
 
   /* Grid system css start */
+
+  .gaccca-gutters {
+    margin-right: 10px;
+    margin-left: 10px;;
+  }
 
 .gaccca-large-size_1-of-12 {
   width: 8.3333333333%;

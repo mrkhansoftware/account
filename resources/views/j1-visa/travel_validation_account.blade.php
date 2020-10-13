@@ -4,7 +4,7 @@
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">Request a Travel Validation</h1>
     
       <div class="gaccca-form-element gaccca-form-element-margin">

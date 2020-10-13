@@ -3,7 +3,7 @@
 
 {!! Form::open(['action' => 'ParticipantAgreementAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_paa']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">Step 4/5 - Terms & Conditions and Trainee Intern Acceptance</h1>
      
       

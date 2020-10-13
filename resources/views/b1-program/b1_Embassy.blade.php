@@ -4,7 +4,7 @@
 {!! Form::open(['action' => 'B1EmbassyController@store','files'=>true, 'method' => 'POST',   'id' => 'gacccaForm_b1emb']) !!}
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
     <h1 class="gaccca-h1-padding">Embassy Preparation &amp; Entry</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
       <p> Just a few more steps left! </p>

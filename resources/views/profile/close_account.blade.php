@@ -3,7 +3,7 @@
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_close']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">Close Account</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>If you want to close your account, you can do so here.You will be no longer be able to access your account after doing so.</p>

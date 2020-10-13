@@ -2,7 +2,7 @@
 
 @include('common.header',['datas'=>$datas,'title' =>'Participant Information','page'=>'participant_information_account','parent_page'=>'J1 Program'])
 
-  <div class="gaccca-main-containt">
+  <div class="gaccca-main-containt gaccca-gutters">
     <h1 class="gaccca-h1-padding">Step 2/5 - Participant Information</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
       <p>Please fill in the required fields below about yourself. Please upload a copy of your passport, a most recent

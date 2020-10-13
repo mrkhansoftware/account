@@ -4,7 +4,7 @@
 {!! Form::open(['action' => 'MonthlyCheckinController@store', 'files' => true,'method' => 'POST', 'id' => 'gacccaForm_mc']) !!}
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
     <h1 class="gaccca-h1-padding">Monthly Check-In</h1> 
     @if (isset($datas['isFormAvailable']) && $datas['isFormAvailable'])
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">

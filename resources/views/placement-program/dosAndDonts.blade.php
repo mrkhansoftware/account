@@ -3,7 +3,7 @@
 
 {!! Form::open(['action' => 'DoAndDontsController@store', 'method' => 'POST',  'id' => 'gacccaForm_doanddont']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">Dos and Don’ts</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>Please review the list of Program “Do’s & Don’ts” below in order to ensure successful cooperation and good communication throughout the application process.<br/>

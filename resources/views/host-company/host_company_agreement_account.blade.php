@@ -5,7 +5,7 @@
 
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
   <h1 class="gaccca-h1-padding">Host Company Agreement</h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
     <p>The Host Company Agreement is a document between GACC California and you, the Host Company. Please complete the

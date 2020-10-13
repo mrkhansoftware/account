@@ -5,7 +5,7 @@
 
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
   <h1 class="gaccca-h1-padding">DS-7002 Training Plan</h1>
   <input type="hidden" name='EncId' value="{{$datas['EncId']}}" />
 

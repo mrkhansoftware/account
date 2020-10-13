@@ -4,7 +4,7 @@
 {!! Form::open(['action' => 'JVisaParticipantInfoController@store','files'=>true, 'method' => 'POST', 'id' => 'gacccaForm_jvisa']) !!}
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
   <h1 class="gaccca-h1-padding">J-1 Visa Participant Information</h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
     <p>Please fill in the required fields below about yourself. Please upload a copy of your passport, a most recent

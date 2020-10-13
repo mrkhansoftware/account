@@ -1,7 +1,7 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['datas'=>$datas,'title' =>'Information Instruction','page'=>'information_instruction_account','parent_page'=>'J1 Program'])
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">Step 1/5 - General Information and Instruction</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>Please make sure you meet all the requirements to participate in the program. If you are uncertain whether you meet those requirements or for which visa category you qualify, please contact us directly.

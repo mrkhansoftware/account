@@ -3,7 +3,7 @@
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">Interview Preparation Guide</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>Even though the American style of interview is usually shorter than other parts of the world, you still need to be fully prepared to give an initial excellent impression to the employer. As soon as your GACC California Program Coordinator provides you with the phone interview guidelines, be ready to discuss any of the following topics. All phone and webcam interviews are pre-arranged by your Coordinator, including any follow-up or second interviews. </p>

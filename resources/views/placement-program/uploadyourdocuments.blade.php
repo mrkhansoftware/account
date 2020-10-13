@@ -5,7 +5,7 @@
 {!! Form::open(['action' => 'UploadYourDocumentsController@store','files'=>true, 'method' => 'POST',  'id' => 'gacccaForm_uploaddoc']) !!}
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
     <h1 class="gaccca-h1-padding">Upload your Documents</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
       <p>

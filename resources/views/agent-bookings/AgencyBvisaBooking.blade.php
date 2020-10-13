@@ -5,7 +5,7 @@
 {!! Form::open(['action' => 'AgencyBvisaBookingController@store', 'method' => 'POST',  'id' => 'gacccaForm_bvisa']) !!}
 
  
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">B Visa</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p> B Visa Form </p>

@@ -4,7 +4,7 @@
 {!! Form::open(['action' => 'PreDepartureController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">Pre-Departure Orientation Confirmation</h1>
       
 

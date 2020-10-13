@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['datas'=>$datas,'title' =>'b1 Video','page'=>'b1Video','parent_page'=>'B1 Program'])
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
 	<h1 class="gaccca-h1-padding">B Visa Trainings video</h1>
 
 

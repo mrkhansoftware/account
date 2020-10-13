@@ -3,7 +3,7 @@
 
 {!! Form::open(['action' => 'ValidationCheckinAccountController@store','files' => true, 'method' => 'POST', 'id' => 'gacccaForm_vca']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
   <h1 class="gaccca-h1-padding">Validation and Check-In </h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
     <p>Within the first week of beginning your training at your U.S. Host Company you must complete our online

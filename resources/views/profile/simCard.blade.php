@@ -2,7 +2,7 @@
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
       <h1 class="gaccca-h1-padding">Activate your SIM Card for the U.S.</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
        <p>Included in your DS-2019 shipping, you will also find a SIM Card for your stay in the U.S. </p>

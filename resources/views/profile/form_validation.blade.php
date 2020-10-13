@@ -159,7 +159,7 @@
   <div class="clear"></div>
 
 
-  <div class="gaccca-main-containt">
+  <div class="gaccca-main-containt gaccca-gutters">
     <h1 class="gaccca-h1-padding">Validation</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
       <p>Please provide all requested information. The provided information will be used for your visa application.

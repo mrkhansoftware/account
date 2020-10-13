@@ -5,7 +5,7 @@
 
 {!! Form::open(['action' => 'QuestionerBVisaController@store', 'method' => 'POST', 'id' => 'gacccaForm_questionbvisa']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
         <h1 class="gaccca-h1-padding">Please Rate Our B- Visa Service</h1>
        
 

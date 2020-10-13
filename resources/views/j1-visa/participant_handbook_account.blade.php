@@ -4,7 +4,7 @@
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST']) !!}
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
 
 
 <h1 class="gaccca-h1-padding">Participant Handbook</h1>

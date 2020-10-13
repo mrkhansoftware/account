@@ -4,7 +4,7 @@
 @include('common.signScript')
 {!! Form::open(['action' => 'HCSiteVisitFormController@store','files'=>true,'data-parsley-validate', 'method' => 'POST', 'id' => 'gacccaForm_sitevisitform']) !!}
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
   <h1 class="gaccca-h1-padding">Host Company Site Visit Form</h1>
 
 

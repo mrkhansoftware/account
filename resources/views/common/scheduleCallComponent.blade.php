@@ -1,4 +1,4 @@
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
     <h1 class="gaccca-h1-padding">
 
         @if($scheduleCallTypeName=='J1')

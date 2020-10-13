@@ -6,7 +6,7 @@
 
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
 <h1 class="gaccca-h1-padding">Weekly Check-In</h1>
     @if (isset($datas['isFormAvailable']) && $datas['isFormAvailable'])
     

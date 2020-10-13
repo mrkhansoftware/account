@@ -8,7 +8,7 @@
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST']) !!}
 
 
-<div class="gaccca-main-containt">
+<div class="gaccca-main-containt gaccca-gutters">
   <h1 class="gaccca-h1-padding">Current Participants Of Your Agency</h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
       <br />Here you will find a list of all participants from your agency.
