@@ -1,5 +1,5 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
-@include('common.header',['datas'=>$datas,'title' =>'Resume editor - Create your resume','page'=>'ApplicantResume','parent_page'=>'Placement Program'])
+@include('common.header',['datas'=>$datas,'title' =>'Create your resume','page'=>'ApplicantResume','parent_page'=>'Placement Program'])
 
 <link href="{{ asset('css/ckEditor.css') }}" rel='stylesheet'>
 
@@ -36,7 +36,7 @@
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p> Just a few more steps left! </p>
 
-        <p> To get an idea of what a simple but good video and profile look like, please check out the following link: <a href="#"> Sample Template</a> </p>
+        <p> To get an idea of what a simple but good video and profile look like, please check out the following link: <a target="_blank" href="https://account.iieex.org/ApplicantPDFWithVideo?id=0031I00000jrHqLQAU&isInternal=isInternal"> Sample Template</a> </p>
     </div>
     <!------>
 
