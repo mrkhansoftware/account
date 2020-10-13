@@ -6,9 +6,9 @@
             
             <h2 class="gaccca-h2-padding">Reset Password</h2>
             
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                  <form id='reset-form-data'>
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                     
                     <div class="gaccca-form-element gaccca-form-element-margin">
                         <label class="gaccca-form-element__label" for="text-input-id-fn">
@@ -22,7 +22,7 @@
                 
                 
                 
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                     
                     <div class="gaccca-form-element gaccca-form-element-margin">
                         <label class="gaccca-form-element__label" for="text-input-id-3">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 </form>
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                     
                     <div class="gaccca-form-element gaccca-form-element-margin">
                         

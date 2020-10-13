@@ -6,9 +6,9 @@
     <h1 class="gaccca-h1-padding">Applicant Webcam Interview Questions and Report {{isset($datas['app']['Contact__r']['Name'])?$datas['app']['Contact__r']['Name']:''}} </h1>
 
     @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <p> Thank you for submitting.
@@ -41,9 +41,9 @@
 
 
     <h2 class="gaccca-h2-padding">Academic Background</h2>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     What do/did you study? </label>
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     When did you receive your degree/When do you expect to finish? </label>
@@ -66,7 +66,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     What level is your degree? (Bachelor’s, Master’s, Doctorate, etc) </label>
@@ -79,7 +79,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     If graduated, what have you been doing since you graduated? </label>
@@ -92,7 +92,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Do you have any previous internship experience in your field? </label>
@@ -111,9 +111,9 @@
 
 
     <h2 class="gaccca-h2-padding">Internship/ Training</h2>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Why do you want to do an internship/training in the U.S. specifically? Why not in another
@@ -125,7 +125,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     How did you find the internship/training at (Ashif Dev Test)? </label>
@@ -137,7 +137,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Have you had an interview with (pts akhan) or anyone else at the company by phone or webcam?
@@ -150,7 +150,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     What skills and knowledge do you hope to gain from this internship/training? </label>
@@ -162,7 +162,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     An important aspect of the J-1 visa is learning about american culture. What plans do you have
@@ -174,7 +174,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     How do you expect this experience to benefit your future career? </label>
@@ -185,7 +185,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     What will you do after your training/internship is finished? </label>
@@ -207,7 +207,7 @@
 
 
     <h2 class="gaccca-h2-padding">Visa/ Immigration Related:</h2>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
 
@@ -229,7 +229,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Have you ever been denied a visa or refused entry to the U.S. in the past? </label>
@@ -240,7 +240,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Do you have any previous visas to the U.S.? (if yes, GACC California/IIEEX needs a copy)
@@ -270,7 +270,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     If Yes </label>
@@ -305,7 +305,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     If Yes </label>
@@ -319,7 +319,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <p><u>Post-interview reminders:</u><br />
                     The questions are now finished, however you may want to take notes on the following information.
@@ -400,7 +400,7 @@
 
 
     <h2 class="gaccca-h2-padding">Report:</h2>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
 
@@ -438,7 +438,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Additional information/explanation of the ratings: </label>
@@ -451,7 +451,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Additional notes: </label>
@@ -468,7 +468,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <p><strong>Definition of Ratings:</strong></p>
                 <p><strong>Excellent:</strong>The applicant has no noticeable grammatical errors, comprehends the
@@ -491,7 +491,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Name of Interviewer: </label>
@@ -512,9 +512,9 @@
 
 
     <h2 class="gaccca-h2-padding">Please Note:</h2>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <p>You can sign digitally online with your mouse or on your phone with your finger.</p>
             </div>

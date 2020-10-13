@@ -9,9 +9,9 @@
 
     
     @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
     <p>     Supervisor Phone Interview form submitted.
@@ -45,9 +45,9 @@
 
 
     <h2 class="gaccca-h2-padding">Company information:</h2>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Briefly describe your company: </label>
@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     In what kind of environment will the intern or trainee be training? (i.e. cubicle-based office, open floor plan, factory setup, etc) </label>
@@ -73,7 +73,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     What kinds of tasks do you have prepared for the intern or trainee? What about cultural activities? </label>
@@ -87,7 +87,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Will you be the supervisor throughout the duration of the program? </label>
@@ -100,7 +100,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Will the intern or trainee be working with anything that will require extra safety precautions or special training? </label>
@@ -113,7 +113,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Will the intern or trainee be expected to provide any of their own equipment or tools? i.e. laptop etc. </label>
@@ -126,7 +126,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Have you received a copy of the Host Company Handbook and read it? (If not, please confirm so we can resend it.) </label>
@@ -147,9 +147,9 @@
 
 
     <h2 class="gaccca-h2-padding">Intern/Trainee information:</h2>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     How did you find the intern/trainee?</label>
@@ -162,7 +162,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Have you interviewed him or her on the phone or by webcam? </label>
@@ -175,7 +175,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Do you feel his or her English skills are sufficient for what the position requires?
@@ -189,7 +189,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Has this internship opportunity been advertised to Americans as well? </label>
@@ -201,7 +201,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Can you confirm that you understand the purpose of the J-1 visa program and that you will not attempt to extend an offer of employment or change the visa status of your Interns or Trainees, as it is required that they return home after completing the program? </label>
@@ -214,7 +214,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <p><u>Post-interview reminders:</u><br />
                     The questions are now finished, thank you I have a few final reminders. Do you have any questions before I start? As a next step you will receive a final copy of the Training Plan and Host Company Agreement by email from GACCCA. Please sign and submit as soon as possible.</p>
@@ -232,7 +232,7 @@
             </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Name of Interviewer:</label>
@@ -253,9 +253,9 @@
 
 
     <h2 class="gaccca-h2-padding">Please Note:</h2>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <p>You can sign digitally online with your mouse or on your phone with your finger.</p>
             </div>

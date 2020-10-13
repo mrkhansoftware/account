@@ -14,9 +14,9 @@
     <p> Please make sure all information is up-to-date.</p>
   </div>
   <h2 class="gaccca-h2-padding">Personal Information</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin gaccca-has-error">
         <label class="gaccca-form-element__label" for="text-input-id-1">
           First Name <span class="gaccca-text-required" title="required">*</span> </label>
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-2">
@@ -55,7 +55,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
       <div class="gaccca-form-element gaccca-form-element-margin">
@@ -76,7 +76,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-4">
@@ -94,7 +94,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-5">
@@ -112,8 +112,8 @@
     </div>
   </div>
   <h2 class="gaccca-h2-padding">Contact Information</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-6">
@@ -128,7 +128,7 @@
         </div>
       </div>
     </div>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-7">
@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-8">
@@ -163,7 +163,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-9">
@@ -178,7 +178,7 @@
         </div>
       </div>
     </div>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-10">
@@ -193,7 +193,7 @@
         </div>
       </div>
     </div>
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-11">

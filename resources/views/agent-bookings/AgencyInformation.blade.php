@@ -11,9 +11,9 @@
         <p>You can also upload current price list and other documents.</p>
       </div>
     
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="text-input-id-fn">
@@ -33,7 +33,7 @@
 
 
       @if (isset($datas['accountId']) && $datas['accountId']!='')
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-fss">
@@ -50,7 +50,7 @@
       </div>
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
         <div class="gaccca-form-element gaccca-form-element-margin">
           <p> <strong>Note:</strong> All upload fields are empty again after the upload for the next upload. </p>
         </div>
@@ -61,7 +61,7 @@
       @endif
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
         <div class="gaccca-form-element gaccca-form-element-margin">
           <p> <strong>Price list version history</strong> </p>
         @if(count($datas['contentVersionList'])>0)

@@ -101,7 +101,7 @@
     <div class="gaccca-header">
       <div class="gaccca-content-header">
         <div class="gaccca-grid gaccca-wrap">
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-behind-the-logo-host-company">
                 <!-- <img src="{{ asset('images/logo/logo1.png') }}"/> -->
             </div>

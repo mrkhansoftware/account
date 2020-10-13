@@ -15,9 +15,9 @@
       <p>Missing mandatory monthly check-ins can lead to termination of your J-1 program.</p>
     </div>
       
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -36,7 +36,7 @@
 
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-hide" id='sec1'>
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id='sec1'>
   
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
@@ -50,7 +50,7 @@
 
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -68,7 +68,7 @@
       </div>
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-hide" id='sec2'>
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id='sec2'>
   <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-4">
       If no, please provide the new phone number <span class="gaccca-text-required" title="required">*</span> </label>
@@ -81,7 +81,7 @@
 
 </div>
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -100,7 +100,7 @@
 
       
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-hide" id='sec3'>
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id='sec3'>
   
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
@@ -116,7 +116,7 @@
 
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -135,7 +135,7 @@
 
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-hide" id="sec4">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id="sec4">
   
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
@@ -148,7 +148,7 @@
 </div>
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -166,7 +166,7 @@
 
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-hide" id="sec5">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id="sec5">
   
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
@@ -180,7 +180,7 @@
 
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -201,7 +201,7 @@
 
       </div>
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -218,7 +218,7 @@
       </div> 
  
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-hide" id="sec6">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id="sec6">
   
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
@@ -245,7 +245,7 @@
 
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-poi">
@@ -262,7 +262,7 @@
 
       </div>
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-poi">
@@ -280,7 +280,7 @@
       </div>
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-poi">
@@ -298,7 +298,7 @@
       </div>
 
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-2">
@@ -319,9 +319,9 @@
 
     </div>
     @else
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
               
-                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                           <div class="gaccca-form-element gaccca-form-element-margin">
     Thank you for your mandatory monthly Check-in. The next monthly Check-in will be on &nbsp;{{$datas['nextMonthlyCheckInDate']}}. We will send you a reminder.
     </div>

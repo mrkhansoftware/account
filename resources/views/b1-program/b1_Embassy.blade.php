@@ -17,11 +17,11 @@
       
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
       <h2 class="gaccca-h2-padding">Before the appointment</h2>
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
         <div class="gaccca-form-element gaccca-form-element-margin">
@@ -78,7 +78,7 @@
 
 
       <h2 class="gaccca-h2-padding">After the appointment</h2>
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
         <div class="gaccca-form-element gaccca-form-element-margin">

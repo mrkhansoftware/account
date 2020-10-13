@@ -9,9 +9,9 @@
 
 
   @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p> Thank you for submitting.
@@ -23,7 +23,7 @@
   @else
 
   <h2 class="gaccca-h2-padding">GACC California Site Visit Representative Information (Interviewer)</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <input type='hidden' name="onfrm[Id]" value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}">
     <input type='hidden' name="app[Id]" value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}">
     <input type='hidden' name="app[Contact__c]" value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}">
@@ -32,7 +32,7 @@
     <input type='hidden' name="NewGdriveID__c" value="{{isset($datas['app']['NewGdriveID__c'])?$datas['app']['NewGdriveID__c']:''}}">
     <input type='hidden' name="Site_Visit_Representative_Folder_Id__c" value="{{isset($datas['app']['Site_Visit_Representative_Folder_Id__c'])?$datas['app']['Site_Visit_Representative_Folder_Id__c']:''}}">
     <input type='hidden' name="lastNameFirstName" value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}">
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-8">
           First and Last Name: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Mailing Address: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Phone Number: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Email Address: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -85,7 +85,7 @@
   <h2 class="gaccca-h2-padding">GACC California Host Company (Interviewee):</h2>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Name of Host Company: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -96,7 +96,7 @@
     </div>
   </div>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Complete Address (include, City, State, Zip Code): <span class="gaccca-text-required" title="required">*</span> </label>
@@ -107,7 +107,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Name of Supervisor: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -119,7 +119,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Title/Position at Company: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -131,7 +131,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Phone Number: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -142,7 +142,7 @@
     </div>
   </div>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Email Address: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -153,7 +153,7 @@
     </div>
   </div>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Name of Host Company Representative conducting Site Visit (if not supervisor): <span class="gaccca-text-required" title="required">*</span> </label>
@@ -164,7 +164,7 @@
     </div>
   </div>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Number of employees at training/intern site: <span class="gaccca-text-required" title="required">*</span>
@@ -177,7 +177,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -218,7 +218,7 @@
 
   </div>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Nature of business/ endeavor (ie: Retail, Clothing, Restaurant, Manufacturing, Law Firm, Resort etc…): <span class="gaccca-text-required" title="required">*</span> </label>
@@ -230,7 +230,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -278,7 +278,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Length of time in business: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -289,7 +289,7 @@
     </div>
   </div>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Length of time at this location: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -302,7 +302,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -331,7 +331,7 @@
 
   </div>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -364,7 +364,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -395,7 +395,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         If yes, is the work space separate from the living area? Please describe: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -408,7 +408,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -438,7 +438,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -469,7 +469,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         If yes, describe the experience: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -481,7 +481,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -513,7 +513,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Please describe the setup and the distance to the supervisor’s desk/work space (include a picture of the intern/trainee’s desk and the supervisor’s desk): <span class="gaccca-text-required" title="required">*</span> </label>
@@ -524,7 +524,7 @@
     </div>
   </div>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Please describe the equipment and materials provided for the intern/trainee: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -536,7 +536,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -566,7 +566,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         If yes, please describe <span class="gaccca-text-required" title="required">*</span> </label>
@@ -578,7 +578,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <table class="gaccca-host-company-table">
         <tr>
@@ -983,7 +983,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -1012,7 +1012,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Please explain and/or include additional comments: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -1022,7 +1022,7 @@
       </div>
     </div>
   </div>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin " id='uploadFile1'>
       <label class="gaccca-form-element__label">
@@ -1171,7 +1171,7 @@
       </div>
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
           Date of Site Visit * <span class="gaccca-text-required" title="required">*</span> </label>
@@ -1184,9 +1184,9 @@
   </div>
 
   <h2 class="gaccca-h2-padding">Please Note:</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>You can sign digitally online with your mouse or on your phone with your finger.</p>
       </div>

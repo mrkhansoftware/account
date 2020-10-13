@@ -7,9 +7,9 @@
 <div class="gaccca-main-containt">
         <h1 class="gaccca-h1-padding">We would like your feedback! Please rate our placement program.</h1>
         @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
     <p>     Thank you for submitting your feedback.
@@ -23,8 +23,8 @@
         </div>
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Why did you choose our placement service over other services you found on the internet? Tell us about what and why was important for you to sign up with us instead with others?</label>
@@ -42,7 +42,7 @@
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
          
                 <div class="gaccca-form-element gaccca-form-element-margin">
       
@@ -137,7 +137,7 @@
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <table class="gaccca-rating-table">
                         <tr>
@@ -408,7 +408,7 @@
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         Was there anything you wish you knew from the beginning of the placement process, which we missed? <span class="gaccca-text-required" title="required"></span> </label>
@@ -421,7 +421,7 @@
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
          
                 <div class="gaccca-form-element gaccca-form-element-margin">
       
@@ -515,7 +515,7 @@
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
          
                 <div class="gaccca-form-element gaccca-form-element-margin">
       
@@ -611,7 +611,7 @@
 
               
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         What could we have done better? </label>

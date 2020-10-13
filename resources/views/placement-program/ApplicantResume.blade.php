@@ -1338,9 +1338,9 @@
 
     <!----->
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
         <h2 class="gaccca-h2-padding">Attachments</h2>
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <form id="upload_form" method="post">
                 <div class="gaccca-form-element gaccca-form-element-margin" id='fileSelector'>
                     <div class="gaccca-form-element__control">
@@ -1388,7 +1388,7 @@
         </div>
 
         <h2 class="gaccca-h2-padding">Preview</h2>
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__control">
                     @if (isset($datas['profileLocked']) && !$datas['profileLocked'])

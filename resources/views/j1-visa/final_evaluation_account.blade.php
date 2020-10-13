@@ -9,9 +9,9 @@
   <h1 class="gaccca-h1-padding">Final Evaluation</h1>
   @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p> Thank you for submitting your evaluation.
         </p>
@@ -42,9 +42,9 @@
 
   <h2 class="gaccca-h2-padding">General Information</h2>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
           Name of Intern/Trainee <span class="gaccca-text-required" title="required">*</span> </label>
@@ -58,7 +58,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -71,7 +71,7 @@
       </div>
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
       <div class="gaccca-form-element gaccca-form-element-margin">
@@ -87,7 +87,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -101,7 +101,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -115,7 +115,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -129,7 +129,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -143,7 +143,7 @@
 
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -158,7 +158,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -182,15 +182,15 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>Please rate the service of the German American Chamber of Commerce California</p>
       </div>
     </div>
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -204,7 +204,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -215,7 +215,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -229,7 +229,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -246,7 +246,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -268,7 +268,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -290,7 +290,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -305,7 +305,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -321,7 +321,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -339,7 +339,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -359,9 +359,9 @@
 
   <h2 class="gaccca-h2-padding">American Culture</h2>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>Please rate your cultural experience in the U.S.!</p>
       </div>
@@ -371,7 +371,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
           <label class="gaccca-form-element__label" >
@@ -386,7 +386,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -403,7 +403,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -423,7 +423,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -439,7 +439,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -455,7 +455,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -471,7 +471,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -490,7 +490,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -507,7 +507,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <div class="gaccca-form-element__control">
           <label class="gaccca-form-element__label" >
@@ -523,7 +523,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label" >
@@ -550,9 +550,9 @@
 
   <h2 class="gaccca-h2-padding">Host Company and Supervisor</h2>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>Please rate your Host Company!</p>
 
@@ -566,7 +566,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -584,7 +584,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -602,7 +602,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -619,7 +619,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -636,7 +636,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -652,7 +652,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
     <div class="gaccca-form-element gaccca-form-element-margin">
@@ -670,7 +670,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
     <div class="gaccca-form-element gaccca-form-element-margin">
@@ -688,7 +688,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
     <div class="gaccca-form-element gaccca-form-element-margin">
@@ -711,7 +711,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -728,7 +728,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <div class="gaccca-form-element__control">
         <label class="gaccca-form-element__label" >
@@ -746,7 +746,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
     <div class="gaccca-form-element gaccca-form-element-margin">
@@ -764,7 +764,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -785,9 +785,9 @@
   <h2 class="gaccca-h2-padding">Internship</h2>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>Please let us know your thoughts about your internship!</p>
 
@@ -801,7 +801,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -817,7 +817,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -835,7 +835,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
         Please list skills you learned: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -850,7 +850,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
         Please list some of the main tasks you completed / things you did during your internship/training? <span class="gaccca-text-required" title="required">*</span> </label>
@@ -866,7 +866,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
         What has been the best part of your internship/training?: <span class="gaccca-text-required" title="required">*</span> </label>
@@ -881,7 +881,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -898,7 +898,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -918,7 +918,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -935,7 +935,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
@@ -954,7 +954,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <label class="gaccca-form-element__label" >
         Please leave any additional comments concerning your internship/training </label>
@@ -972,7 +972,7 @@
 
 
   <h2 class="gaccca-h2-padding">Join the Intern and Trainee Alumni Network</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <p>Your intern/trainee experience was made possible by the U.S. Department of State's J-1 Exchange Visitor Program. As a former participant in an intern/trainee exchange program, the State Department has offered to register you on their International Exchange Alumni website helping you to connect with other alumni of exchange programs in your country and around the world. It will also allow you to compete for funding opportunities such as the U.S. Department of State's prestigious Alumni Innovation Engagement Fund (AIEF).</p>
 
@@ -981,7 +981,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <div class="gaccca-form-element__control">
         <label class="gaccca-form-element__label" >
@@ -1002,7 +1002,7 @@
 
 
   <h2 class="gaccca-h2-padding">Please Note</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <p>You can sign this evaluation digital online with your mouse or on your phone with your finger.
 

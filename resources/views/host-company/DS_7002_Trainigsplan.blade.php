@@ -22,7 +22,7 @@
   <input type="hidden" name='onfrmId' value="{{isset($datas['onForm']['Id'])?$datas['onForm']['Id']:''}}" />
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
     <div class="gaccca-form-element gaccca-form-element-margin">
       <p> Applicant: {{$datas['appli']['Contact__r']['Name']}}</p>
       <h4>Complete your changes until: {{$datas['DeadlineForHostCompany']}} </h4>
@@ -32,9 +32,9 @@
 
   <h2 class="gaccca-h2-padding">SECTION 1: ADDITIONAL EXCHANGE VISITOR INFORMATION</h2>
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -48,7 +48,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -62,7 +62,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -77,7 +77,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -91,7 +91,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -105,7 +105,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -122,7 +122,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
       <div class="gaccca-form-element gaccca-form-element-margin">
@@ -148,7 +148,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -164,7 +164,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -179,7 +179,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -194,7 +194,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -213,9 +213,9 @@
 
 
   <h2 class="gaccca-h2-padding">SECTION 2: SITE OF ACTIVITY INFORMATION</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -229,7 +229,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -243,7 +243,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -257,7 +257,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -271,7 +271,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
       <div class="gaccca-form-element gaccca-form-element-margin">
@@ -298,7 +298,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -313,7 +313,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -326,7 +326,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -341,7 +341,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -355,7 +355,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -390,7 +390,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -403,7 +403,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -420,7 +420,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -439,7 +439,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -456,7 +456,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -497,7 +497,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -513,7 +513,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -561,10 +561,10 @@
 
 
   <h2 class="gaccca-h2-padding">SECTION 3: CERTIFICATIONS</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>Trainee/Intern - I certify that:</p>
@@ -607,10 +607,10 @@
 
 
   <h2 class="gaccca-h2-padding">SECTION 4: TRAINING/INTERNSHIP PLACEMENT PLAN</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>Each Training/Internship Placement Plan should cover a definite period of time and should consist of definite phases of training or tasks performed with a specific objective for each phase. The plan must also contain information on how the trainees/interns will accomplish those objectives (e.g. classes, individual instruction, shadowing). Each phase must build upon the previous phase to show a progression in the training/internship. Depending on the length of the internship/training, multiple phases are needed.</p>
@@ -618,7 +618,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -631,7 +631,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -647,7 +647,7 @@
 
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -660,7 +660,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -673,7 +673,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -686,7 +686,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <label class="gaccca-form-element__label">
@@ -708,10 +708,10 @@
 
 
   <h2 class="gaccca-h2-padding"> PHASE INFORMATION</h2>
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
         <p>The phase information outlines the goals and objectives of the intended program. The number of phases is dependent on the type and length of program: up to 6 months= 1-2 phases; up to 9 months= 2-3 phases; up to 12 months= 3-4 phases; up to 18 months= 4-5 phases.
@@ -721,7 +721,7 @@
     </div>
 
 
-    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
 
@@ -749,7 +749,7 @@
         @for($i = 0; $i <= (count($datas['DSPhaseListwrap'])-1); $i++) <div id="phase__{{$i+1}}" class="gaccca-tabcontent">
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -767,7 +767,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -782,7 +782,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -795,7 +795,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -809,7 +809,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -823,7 +823,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -837,7 +837,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -851,7 +851,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -865,7 +865,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -879,7 +879,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -893,7 +893,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -906,7 +906,7 @@
           </div>
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -921,7 +921,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -937,7 +937,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -952,7 +952,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -966,7 +966,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -979,7 +979,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -992,7 +992,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element ">
               <label class="gaccca-form-element__label">
@@ -1005,7 +1005,7 @@
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
             <div class="gaccca-form-element">
               <label class="gaccca-form-element__label">
@@ -1041,7 +1041,7 @@
   </div>
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <p>Phase Supervisor - I certify that:</p>
@@ -1076,10 +1076,10 @@
 
 
 <h2 class="gaccca-h2-padding">PRIVACY ACT STATEMENT</h2>
-<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <p>AUTHORITIES: The information is sought pursuant to Section 102 of the Mutual Educational and Cultural Exchange Act of 1961, as amended (the Fulbright-Hays Act)(22 U.S.C. 2452) which provides for the administration of the Exchange Visitor Program (J visa).</p>
@@ -1095,10 +1095,10 @@
 
 
 <h2 class="gaccca-h2-padding">PAPER WORK REDUCTION ACT</h2>
-<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <p>Public reporting burden for this collection of information is estimated to average 1.5 hours per response, including time required for searching existing data sources, gathering the necessary documentation, providing the information and/or documents required, and reviewing the final collection. You do not have to supply this information unless this collection displays a currently valid OMB control number. If you have comments on the accuracy of this burden estimate and/or recommendations for reducing it, please send them to: ECA/EC, SA-5, Fifth Floor, U.S. Department of State, Washington, DC 20522.</p>
@@ -1109,10 +1109,10 @@
 </div>
 
 <h2 class="gaccca-h2-padding">HAVE YOU SAVED YOUR TRAINING PLAN?</h2>
-<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       <p>Please save the DS-7002 Training Plan one last time before sending it back to us.</p>
@@ -1123,7 +1123,7 @@
 
 
 
-  <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+  <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
       @if (isset($datas['isHostCompanyReadonly']) && $datas['isHostCompanyReadonly'])

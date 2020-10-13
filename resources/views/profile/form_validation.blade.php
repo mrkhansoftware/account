@@ -30,7 +30,7 @@
 
       <div class="gaccca-grid gaccca-wrap">
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
           <div class="gaccca-behind-the-logo gaccca-behind-the-logo-position">
 
@@ -172,7 +172,7 @@
     <!-- <form id="my-profile" data-parsley-validate=""> -->
     {!! Form::open(['action' => 'ParticipantInformationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'my-profile']) !!}
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-form-element gaccca-form-element-margin">
           <label class="gaccca-form-element__label" for="text-input-id-poi">
@@ -192,7 +192,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
           <div class="gaccca-form-element gaccca-form-element-margin gaccca-has-error">
             <label class="gaccca-form-element__label" for="first-name-input">
               First Name <span class="gaccca-text-required" title="required">*</span> </label>
@@ -208,7 +208,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
           <div class="gaccca-form-element gaccca-form-element-margin gaccca-has-error">
             <label class="gaccca-form-element__label" for="email-input">
               Email <span class="gaccca-text-required" title="required">*</span> </label>
@@ -221,7 +221,7 @@
         </div>
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
           <div class="gaccca-form-element gaccca-form-element-margin gaccca-has-error">
             <label class="gaccca-form-element__label" for="only-number-input">
               Only Number <span class="gaccca-text-required" title="required">*</span> </label>
@@ -235,7 +235,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
           <div class="gaccca-form-element gaccca-form-element-margin">
             <label class="gaccca-form-element__label" for="text-input-id-8">
               Access information </label>
@@ -248,7 +248,7 @@
           </div>
         </div>
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
           <div class="gaccca-form-element gaccca-form-element-margin">
             <label class="gaccca-form-element__label" for="select-01">Insurance Provider</label>
@@ -272,7 +272,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
           <div class="gaccca-form-element gaccca-form-element-margin">
 
@@ -306,7 +306,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
           <div class="gaccca-form-element gaccca-form-element-margin">
             <div class="gaccca-form-element__control">
@@ -329,7 +329,7 @@
 
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
           <div class="gaccca-form-element gaccca-form-element-margin">
             <table class="gaccca-rating-table">
               <tr>
@@ -413,7 +413,7 @@
        
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
           <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" for="text-input-id-4">
                   Date <span class="gaccca-text-required" title="required">*</span> </label>
@@ -428,7 +428,7 @@
 
 
       </div>
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <button type="button" id="save-btn" class="gaccca-button-save gaccca-button-save-margin">Save</button>
 

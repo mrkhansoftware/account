@@ -63,14 +63,14 @@
 
 <body style="background: #FFF;">
     <div class="gaccca-grid gaccca-wrap  gaccca-login-page">
-        <div class="gaccca-col gaccca-large-size_6-of-12" style="background: #FFF;">
+        <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_6-of-12" style="background: #FFF;">
 
 
             <div class="gaccca-login-header">
 
                 <div class="gaccca-grid gaccca-wrap">
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
                         <!-- <div class="gaccca-behind-the-logo"> -->
 
@@ -88,7 +88,7 @@
             <div class="gaccca-login-containt" id="login-containt">
 
                 <span class="gaccca-accout-access-text gaccca-margin-bootom-login-element">Access your Account</span>
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
 
                     <div class="gaccca-social-element">
                         <button class="gaccca-google-sign-btn" type="button" id='googleLogin'>
@@ -102,7 +102,7 @@
                 </div>
 
 
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
 
                     <div class="gaccca-social-element">
                         <button class="gaccca-facebook-sign-btn" type="button" id='fbLogin'>
@@ -127,7 +127,7 @@
                 @endif
                 <form id='login-form-data'>
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
                         <div class="gaccca-social-element">
                             <div class="gaccca-form-element__control">
                                 <input type="email" id="login-email" placeholder="Email" required="" class="gaccca-input" />
@@ -137,7 +137,7 @@
                     </div>
 
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
 
                         <div class="gaccca-social-element">
                             <div class="gaccca-form-element__control">
@@ -149,7 +149,7 @@
                     </div>
 
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
 
                         <div class="gaccca-social-element">
                             <div class="gaccca-form-element__control">
@@ -160,7 +160,7 @@
                 </form>
 
 
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
                     <div class="gaccca-form-element">
                         <div class="gaccca-signup-text-div">
@@ -171,7 +171,7 @@
                     </div>
                 </div>
 
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
 
                     <div class="gaccca-social-element">
                         <div class="gaccca-form-element__control">
@@ -202,7 +202,7 @@
 
 
                     <form id='signup-form' data-parsley-validate=''>
-                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
                                     <input type="text" id="signup-firstname" placeholder="First Name" required="" class="gaccca-input" />
@@ -211,7 +211,7 @@
                         </div>
 
 
-                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
                                     <input type="text" id="signup-lastname" placeholder="Last Name" required="" class="gaccca-input" />
@@ -222,7 +222,7 @@
 
 
 
-                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
                                     <input type="email" id="signup-email" placeholder="Email" required="" class="gaccca-input" />
@@ -231,7 +231,7 @@
                         </div>
 
 
-                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
 
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
@@ -241,7 +241,7 @@
                         </div>
 
 
-                        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
                             <div class="gaccca-social-element">
                                 <div class="gaccca-form-element__control">
@@ -253,7 +253,7 @@
                         </div>
                     </form>
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
                         <div class="gaccca-form-element gaccca-margin-top-20">
                             <div class="gaccca-social-element">
@@ -267,7 +267,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="gaccca-create-program-account-mobile">
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
                         <div class="gaccca-form-element gaccca-margin-top-20">
                             <div class="gaccca-social-element">
@@ -286,7 +286,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="gaccca-signup-containt">
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
                         <div class="gaccca-form-element gaccca-margin-top-20">
                             <div class="gaccca-social-element">
@@ -326,7 +326,7 @@
 
 
 
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
                     <div class="gaccca-social-element">
                         <div class="gaccca-form-element__control">
                             <p>Enter the email address associated with your account.</p>
@@ -341,7 +341,7 @@
                 <form id='forget-form-data' data-parsley-validate=''>
 
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element">
                         <div class="gaccca-social-element">
                             <div class="gaccca-form-element__control">
                                 <input type="email" id="forget-pass-email" placeholder="Email" required="" class="gaccca-input" />
@@ -351,7 +351,7 @@
 
 
 
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-margin-bootom-login-element ">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-margin-bootom-login-element ">
 
                         <div class="gaccca-social-element">
                             <div class="gaccca-form-element__control">
@@ -361,7 +361,7 @@
                         </div>
                     </div>
                 </form>
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
                     <div class="gaccca-form-element gaccca-margin-top-20">
                         <div class="gaccca-signup-text-div">
@@ -384,7 +384,7 @@
 
         </div>
 
-        <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-half-login-image" style="background: #FFF; ">
+        <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_6-of-12 gaccca-half-login-image" style="background: #FFF; ">
             <!-- <img src="assets/images/bg.jpg" class="gaccca-image-responsive"> -->
             <div class="gaccca-half-login">
                 <!--<p id="free-account-text">

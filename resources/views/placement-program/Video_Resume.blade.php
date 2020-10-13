@@ -138,7 +138,7 @@
 	<div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
 		<p>You have the option to use a teleprompter which automatically appears when you start recording. Input the video script you want to see in Teleprompter.</p>
 	</div>
-	<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+	<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 		<div class="gaccca-form-element gaccca-form-element-margin">
 			<div style="border-style: solid;border-width: 1px;border-color: #6ca9f2;margin-top: -16px ;width: 485px !important;height: 450px !important;display:block" id='vdoBorder'>
 				<table>
@@ -171,13 +171,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+		<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 			<div class="gaccca-form-element gaccca-form-element-margin">
 				<div class="gaccca-form-element__control"> <span id="telepromtrbtn" class="ShowTeleprompter gaccca-button-save">Show Teleprompter</span>
 				</div>
 			</div>
 		</div>
-		<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+		<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 			<div class="gaccca-form-element gaccca-form-element-margin">
 				<label class="gaccca-form-element__label" for="text-input-id-8">Please copy and paste your video script into the text box. All changes will be saved automatically.</label>
 				<div class="gaccca-form-element__control">
@@ -365,7 +365,7 @@
 			});
 		</script>
 	</div>
-	<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+	<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 		<div class="gaccca-form-element gaccca-form-element-margin">
 			<label class="gaccca-form-element__label" for="text-input-id-8">Let us know if you think you finished your video resume by clicking the button below.</label>
 			<div class="gaccca-form-element__control">

@@ -9,11 +9,11 @@
         <p>If you want to close your account, you can do so here.You will be no longer be able to access your account after doing so.</p>
       </div>
  
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
        
   
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
           <div class="gaccca-form-element gaccca-form-element-margin">
             <label class="gaccca-form-element__label" for="text-input-id-1">

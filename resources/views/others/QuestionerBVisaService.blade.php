@@ -10,9 +10,9 @@
        
 
         @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-<div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
     <div class="gaccca-form-element gaccca-form-element-margin">
     <p>     Thank you for submitting your feedback.
@@ -27,9 +27,9 @@
         </div>
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
          
                 <div class="gaccca-form-element gaccca-form-element-margin">
       
@@ -120,7 +120,7 @@
               </div>
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         2. What was the main reason why you booked our service? </label>
@@ -139,7 +139,7 @@
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
          
                 <div class="gaccca-form-element gaccca-form-element-margin">
       
@@ -231,7 +231,7 @@
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         4. Which part of our service did you find most useful? </label>
@@ -244,7 +244,7 @@
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
          
                 <div class="gaccca-form-element gaccca-form-element-margin">
       
@@ -338,7 +338,7 @@
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
          
                 <div class="gaccca-form-element gaccca-form-element-margin">
       
@@ -429,7 +429,7 @@
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
          
                 <div class="gaccca-form-element gaccca-form-element-margin">
       
@@ -522,7 +522,7 @@
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                     <label class="gaccca-form-element__label" for="text-input-id-8">
                         9. What could we have done better? </label>

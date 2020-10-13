@@ -7,7 +7,7 @@
       <h1 class="gaccca-h1-padding">Step 4/5 - Terms & Conditions and Trainee Intern Acceptance</h1>
      
       
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <h2 class="gaccca-h2-padding">I. Terms and Conditions for the J1-Visa Program of the German American Chamber of Commerce California, Inc.</h2>
 

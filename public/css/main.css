@@ -63,22 +63,23 @@ The wrap property specifies whether the flexible items should wrap or not
   display: block;
   float: left;
 }
-.gaccca-display-menu-div{
+
+.gaccca-display-menu-div {
   max-width: 1000px;
   margin: 0px auto 0px auto;
 }
 
-.gaccca-display-menu-profile{
+.gaccca-display-menu-profile {
   display: block;
   float: right;
   /* margin-right: 15px !important; */
-  margin-right:138px !important
-
+  margin-right: 138px !important
 }
 
 .user-icon {
   color: white;
 }
+
 .user-icon i {
   font-size: 30px;
 }
@@ -500,8 +501,7 @@ Header css start
   margin-left: 45px;
 }
 
-
-.gaccca-header ul>li.gaccca-dropdown-profile{
+.gaccca-header ul>li.gaccca-dropdown-profile {
   line-height: 80px;
   margin-left: 0px;
 }
@@ -518,7 +518,8 @@ Header css start
   border: 2.5px solid transparent;
   line-height: 12px;
 }
-.gaccca-user-name{
+
+.gaccca-user-name {
   font-size: 17px !important;
 }
 
@@ -529,7 +530,6 @@ Header css start
 .gaccca-header ul>li.gaccca-dropdown:hover a {
   border: 2.5px solid #FFFFFF;
 }
-
 
 .gaccca-header ul>li.gaccca-dropdown {
   display: inline-block;
@@ -543,9 +543,7 @@ Header css start
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10;
   margin-top: 0px;
-  
 }
-
 
 .gaccca-header .gaccca-dropdown-content-profile {
   display: none;
@@ -556,7 +554,6 @@ Header css start
   z-index: 10;
   margin-top: 0px;
   right: 0px;
-  
 }
 
 .gaccca-active-menu {
@@ -564,10 +561,10 @@ Header css start
 }
 
 .gaccca-active-submenu {
-  color:#1A73E8 !important;
+  color: #1A73E8 !important;
 }
 
-.gaccca-header .gaccca-dropdown-content a,.gaccca-header .gaccca-dropdown-content-profile a {
+.gaccca-header .gaccca-dropdown-content a, .gaccca-header .gaccca-dropdown-content-profile a {
   color: #595959;
   padding: 12px 16px;
   text-decoration: none;
@@ -577,7 +574,7 @@ Header css start
   border: 2.5px solid #FFFFFF;
 }
 
-.gaccca-header .gaccca-dropdown-content a:hover,.gaccca-header .gaccca-dropdown-content-profile a:hover {
+.gaccca-header .gaccca-dropdown-content a:hover, .gaccca-header .gaccca-dropdown-content-profile a:hover {
   background-color: #f5f5f5;
   color: #1A73E8;
   border: 2.5px solid #f5f5f5 !important;
@@ -601,11 +598,13 @@ Header css start
   margin: 8px 0px 8px 0px;
   content: url("../images/logo/logo1.png");
 }
-.gaccca-login-page-logo{
+
+.gaccca-login-page-logo {
   display: block;
   margin: 20px 0px 0px 40px;
 }
-.gaccca-login-page-logo-small{
+
+.gaccca-login-page-logo-small {
   display: none;
   margin: 20px 0px 0px 40px;
 }
@@ -619,7 +618,6 @@ Header css start
   float: left;
   /* margin-left: 15px; */
   margin-left: 140px;
-
 }
 
 /* 
@@ -640,7 +638,7 @@ css start for login page
 }
 
 .gaccca-login-containt {
-  padding: 20px 22%;
+  padding: 20px 15%;
 }
 
 .gaccca-signup-containt {
@@ -668,11 +666,12 @@ css start for login page
 .gaccca-accout-access-text {
   display: block;
   color: #595959;
-  font-size: 36px;
+  font-size: 2.64vw;
   font-weight: bold;
   opacity: 0.3;
   text-align: center;
 }
+
 
 .gaccca-google-sign-btn {
   width: 200px;
@@ -686,7 +685,6 @@ css start for login page
 }
 
 .gaccca-google-image {
-  
   width: 35.54px;
   height: 36px;
   border-radius: 2px;
@@ -707,11 +705,12 @@ css start for login page
   margin-left: 18px;
   margin-top: 5px;
 }
-.gaccca-social-button-text-margin-top-google{
+
+.gaccca-social-button-text-margin-top-google {
   margin-top: 10px;
 }
 
-.gaccca-social-button-text-margin-top-facebook{
+.gaccca-social-button-text-margin-top-facebook {
   margin-top: 5px;
 }
 
@@ -731,7 +730,6 @@ css start for login page
   background: #FFF;
   float: left;
 }
-
 
 .gaccca-facebbok-image img {
   margin: 4px 0px 0px 4px;
@@ -795,15 +793,16 @@ css start for login page
   background-image: url("../images/bg.jpg");
   /* background-size: 100% auto; */
   background-size: cover;
-
   background-repeat: no-repeat;
   /* padding: 15% 13%; */
   border-left: 1px solid #E5E5E5;
   /* max-width: 543px; */
   height: 100vh;
+  background-position: top right;
 }
-.gaccca-half-login-image{
- display: block;
+
+.gaccca-half-login-image {
+  display: block;
 }
 
 .gaccca-half-login p {
@@ -814,19 +813,18 @@ css start for login page
   padding: 13% 13%;
 }
 
-.gaccca-create-program-account{
-
+.gaccca-create-program-account {
   margin-top: 232px;
   background: #096DD9;
   border-radius: 30px 0px 0px 30px;
-  max-width:  602px;
+  max-width: 602px;
   color: #FFF;
   padding: 21px 25px;
   float: right;
   margin-left: 25px;
 }
-.gaccca-create-program-account-heading{
 
+.gaccca-create-program-account-heading {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -837,26 +835,28 @@ css start for login page
   margin-bottom: 23px;
 }
 
-.gaccca-create-program-account-text{
-     font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      line-height: 21px;
-      display: flex;
-      align-items: center;
-      color: #FFF;
-      margin: 8px 0px;
+.gaccca-create-program-account-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  margin: 8px 0px;
 }
-.gaccca-create-program-account-mobile{
+
+.gaccca-create-program-account-mobile {
   display: none;
 }
-.gaccca-signup-text-div{
+
+.gaccca-signup-text-div {
   max-width: 370px;
   margin: 0px auto;
-
 }
-.gaccca-signup-text{
+
+.gaccca-signup-text {
   font-style: normal;
   font-weight: normal;
   font-size: 11px;
@@ -865,16 +865,13 @@ css start for login page
   text-align: left;
 }
 
-.gaccca-reserved{
+.gaccca-reserved {
   margin: 0px 0px 1px 100px;
 }
 
-
 /* login page end */
 
-
-
-.gaccca-breadcrumb-link{
+.gaccca-breadcrumb-link {
   max-width: 1000px;
   margin: 0px auto 0px auto;
 }
@@ -884,24 +881,27 @@ ul.gaccca-breadcrumb {
   list-style: none;
   margin: 11px 0px 3px 0px;
 }
+
 ul.gaccca-breadcrumb li {
   display: inline;
   font-size: 12px;
 }
+
 ul.gaccca-breadcrumb li+li:before {
   padding: 8px;
-  color:#8C8C8C;
+  color: #8C8C8C;
   content: "/\00a0";
 }
+
 ul.gaccca-breadcrumb li a {
   color: #8C8C8C;
   text-decoration: none;
 }
+
 /* ul.gaccca-breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
 } */
-
 
 /* 
 From here start main page css : main page css
@@ -915,7 +915,6 @@ From here start main page css : main page css
   border-radius: 18px;
   padding-bottom: 20px;
 }
-
 
 /* Main containt h1 */
 
@@ -1466,57 +1465,9 @@ From here start main page css : main page css
 
 /* Necessary margin ,text align css end */
 
-/* Grid system css start */
 
-.gaccca-large-size_1-of-12 {
-  width: 8.3333333333%;
-}
 
-.gaccca-large-size_2-of-12 {
-  width: 16.6666666667%;
-}
 
-.gaccca-large-size_3-of-12 {
-  width: 25%;
-}
-
-.gaccca-large-size_4-of-12 {
-  width: 33.3333333333%;
-}
-
-.gaccca-large-size_5-of-12 {
-  width: 41.6666666667%;
-}
-
-.gaccca-large-size_6-of-12 {
-  width: 50%;
-}
-
-.gaccca-large-size_7-of-12 {
-  width: 58.3333333333%;
-}
-
-.gaccca-large-size_8-of-12 {
-  width: 66.6666666667%;
-}
-
-.gaccca-large-size_9-of-12 {
-  width: 75%;
-}
-
-.gaccca-large-size_10-of-12 {
-  width: 83.3333333333%;
-}
-
-.gaccca-large-size_11-of-12 {
-  width: 91.6666666667%;
-}
-
-.gaccca-large-size_1-of-1 {
-  width: 100%;
-}
-
-/* Grid system css end */
 
 /* Accordian css start */
 
@@ -2002,319 +1953,11 @@ input[type="file"].gaccca-parsley-error+ul {
 #gaccca-scroll-to-top-button:hover {
   background-color: #096DD9;
 }
-.gaccca-go-back-login{
-    text-align: left;
+
+.gaccca-go-back-login {
+  text-align: left;
 }
 
-@media only screen and (max-width: 414px) {
-  .gaccca-form-element-margin {
-    margin: 0px 5px 33px 6px
-  }
-}
-
-/* iPads (landscape) ----------- */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .gaccca-header ul>li {
-    margin: 13px 0px 0px 35px !important;
-  }
-  .gaccca-behind-the-logo-position {
-    float: left !important;
-    margin-left: 15px !important;
-    margin-top: 15px !important;
-  }
-  .gaccca-header ul>li a{
-    font-size: 17px !important;
-  }
-  .gaccca-display-menu-profile{
-    margin-right : 15px !important;
-  }
-  .gaccca-create-program-account{
-    max-width: 230px !important;
-    
-  }
-  .gaccca-create-program-account-text{
-    margin: 20px 0px !important;
-  }
-
-}
-
-/* iPads (portrait) ----------- */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .gaccca-display-menu {
-    display: none !important;
-  }
-  .gaccca-display-menu-profile{
-    display: none !important;
-    margin-right: 10px !important;
-  }
-  .gaccca-header-menu-button {
-    display: block !important;
-  }
-  .gaccca-openbtn{
-    margin-top: 15px !important;
-    padding: 10px 20px !important;
-  }
-  .gaccca-behind-the-logo-position {
-    float: left !important;
-    margin: 15px !important;
-  }
-  .gaccca-header ul>li a{
-    font-size: 17px !important;
-  }
-  .gaccca-main-containt .gaccca-h1-padding {
-    padding: 38px 0px 0px 50px !important;
-  }
-  .gaccca-main-containt .gaccca-h2-padding {
-    padding: 0px 0px 24px 80px !important;
-  }
-  .gaccca-form-element-margin {
-    margin: 0px 20px 33px 80px !important;
-  }
-  .gaccca-sky-blue-box-margin {
-    margin: 48px 40px 48px 50px !important;
-  }
-  .gaccca-button-save-margin {
-    margin: 4px 0px 0px 80px !important;
-  }
-
-  .gaccca-create-program-account{
-    max-width: 193px !important;
-    padding: 35px 11px !important;
-  }
-  .gaccca-create-program-account-text{
-    margin: 20px 0px !important;
-  }
- 
-}
-
-/* Portrait*/
-
-@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  .gaccca-header ul>li {
-    margin: 13px 0px 0px 35px !important;
-  }
-  .gaccca-display-menu {
-    display: block !important;
-  }
-
-  .gaccca-display-menu-profile{
-    display: block !important;
-  }
-  .gaccca-header-menu-button {
-    display: none !important;
-  }
-  .gaccca-behind-the-logo-position {
-    float: left !important;
-  }
-  .gaccca-behind-the-logo-position{
-    margin-left: 20px !important;
-  }
-}
-
-@media only screen and (max-device-width: 767px) {
-  .gaccca-main-containt {
-    margin: 0px auto 40px auto !important;
-    border-radius: 0px !important;
-  }
-  .gaccca-display-menu {
-    display: none !important;
-  }
-  .gaccca-display-menu-profile{
-    display: none !important;
-  }
-  .gaccca-header-menu-button {
-    display: block !important;
-  }
-  .gaccca-behind-the-logo-position {
-    float: left !important;
-  }
-  .gaccca-main-containt .gaccca-h1-padding {
-    /* padding: 30px 0px 0px 30px !important; */
-    padding: 30px 0px 0px 15px !important;
-  }
-  .gaccca-main-containt h1 {
-    margin: 0px !important;
-  }
-  .gaccca-main-containt .gaccca-h2-padding {
-    padding: 0px 0px 24px 15px !important;
-  }
-  .gaccca-sky-blue-box-margin {
-    margin: 30px 15px 20px 15px !important
-  }
-  .gaccca-form-element-margin {
-    /* margin: 0px 30px 33px 31px !important; */
-    margin: 0px 15px 20px 15px !important;
-  }
-  .gaccca-button-save-margin {
-    /* margin: 4px 0px 0px 31px !important; */
-    margin: 4px 0px 0px 15px !important;
-  }
-  .gaccca-form-element-checkbox-switch {
-    margin: 0px 30px 33px 31px !important;
-  }
-  .gaccca-form-element-text-participant {
-    margin: 0px 30px 33px 31px !important;
-  }
-  .gaccca-medium-size_1-of-1 {
-    width: 100%;
-  }
-  .gaccca-notify_alert {
-    padding: 20px;
-    background-color: #f44336;
-    color: white;
-    position: fixed;
-    width: 95% !important;
-    left: 0px !important;
-  }
-  .gaccca-price-table {
-    width: 100% !important;
-  }
-  .gaccca-price-table, th, td {
-    border-collapse: collapse !important;
-  }
-  .gaccca-price-table th, .gaccca-price-table td {
-    padding: 5px !important;
-    text-align: left !important;
-  }
-  .gaccca-price-table a {
-    margin-right: 5px;
-  }
-  .gaccca-download-participant-handbook-padding {
-    padding: 10px 15px !important;
-  }
-  .gaccca-half-login {
-    background-image: none !important;
-    background-size: none;
-    border-left: none;
-    height: auto !important;
-  }
-  .gaccca-reserved{
-    margin: 0px 0px 0px 90px !important;
-  }
-  .gaccca-go-back-login{
-    display: block !important;
-  }
-  .gaccca-half-login p {
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 300;
-    margin: 0px;
-    padding: 10% 5%;
-  }
-
-}
-
-@media only screen and  (max-width: 1310px) and (min-width: 990px) {
-
-  .gaccca-behind-the-logo-position{
-    margin-left: 15px !important;
-    
-  }
-  .gaccca-display-menu-profile{
-    margin-right: 0px !important;
-  }
-  .gaccca-header ul>li{
-    margin-left: 23px !important;
-  }
-  .gaccca-header ul>li a{
-    font-size: 18px !important;
-  }
-  ul.gaccca-breadcrumb{
-    margin: 11px 0px 3px 20px !important;
-  }
-}
-
-@media only screen and  (max-width: 990px) and (min-width: 700px) {
-  .gaccca-header ul>li a, .gaccca-dropbtn {
-    font-size: 14px !important;
-  }
-  .gaccca-header ul>li {
-    margin: 0px 0px 0px 10px !important;
-  }
-
-  .gaccca-behind-the-logo-position{
-    margin-left: 15px !important;
-    margin-top: 15px !important;
-  }
-  .gaccca-behind-the-logo{
-    content: url(../images/logo/logo_mobile.png) !important;
-  }
-
-  .gaccca-header ul>li a {
-    font-size: 11px !important;
-  }
-  .gaccca-display-menu-profile{
-    margin-right: 0px !important;
-  }
-
-  .gaccca-main-containt .gaccca-h1-padding {
-    padding: 38px 0px 0px 30px !important;
-  }
-  .gaccca-main-containt .gaccca-h2-padding {
-    padding: 0px 0px 24px 31px !important;
-  }
-  ul.gaccca-breadcrumb{
-    margin: 11px 0px 3px 20px !important;
-  }
-  .gaccca-sky-blue-box-margin {
-    margin: 48px 30px 48px 30px !important;
-  }
-  .gaccca-form-element-margin {
-    margin: 0px 30px 33px 31px !important;
-  }
-  .gaccca-button-save-margin {
-    margin: 4px 0px 0px 31px !important;
-  }
-  .gaccca-form-element-checkbox-switch {
-    margin: 0px 30px 33px 31px !important;
-  }
-  .gaccca-form-element-text-participant {
-    margin: 0px 30px 33px 31px !important;
-  }
-  .gaccca-medium-size_1-of-1 {
-    width: 100%;
-  }
-  .gaccca-create-program-account{
-    max-width: 230px !important;
-  }
-  .gaccca-login-page-logo{
-    display: none !important;
-  }
-  .gaccca-login-page-logo-small{
-    display: block !important;
-    margin: 20px 0px 0px 20px !important;
-  }
-  
-  .gaccca-accout-access-text{
-    font-size: 35px !important;
-  }
-  .gaccca-new-user-btn-text{
-    font-size: 17px !important;
-  }
-  .gaccca-new-user-btn-sub-text{
-    font-size: 10px !important;
-  }
-  .gaccca-new-user-btn{
-    padding: 0px 17px !important;
-  }
-  .gaccca-reserved{
-    margin: 0px 0px 0px 20px !important;
-  }
-  .gaccca-login-containt {
-    padding: 20px 10% !important;
-  }
-  .gaccca-signup-containt{
-    padding: 20px 10% 5px 10% !important;
-  }
-  .gaccca-go-back-login{
-    display: block !important;
-  }
-  .gaccca-create-program-account{
-    margin-top: 100px !important;
-  }
-}
 
 .gaccca-alert {
   padding: 10px;
@@ -2355,11 +1998,452 @@ input[type="file"].gaccca-parsley-error+ul {
   display: none;
 }
 
-@media only screen and (max-width: 700px) {
+
+
+
+
+/* @media only screen and (max-width: 414px) {
+  .gaccca-form-element-margin {
+    margin: 0px 5px 33px 6px
+  }
+} */
+
+/* iPads (landscape) ----------- */
+
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .gaccca-header ul>li {
+    margin: 13px 0px 0px 35px !important;
+  }
+  .gaccca-behind-the-logo-position {
+    float: left !important;
+    margin-left: 15px !important;
+    margin-top: 15px !important;
+  }
+  .gaccca-header ul>li a {
+    font-size: 17px !important;
+  }
+  .gaccca-display-menu-profile {
+    margin-right: 15px !important;
+  }
+  .gaccca-create-program-account {
+    max-width: 230px !important;
+  }
+  .gaccca-create-program-account-text {
+    margin: 20px 0px !important;
+  }
+} */
+
+/* iPads (portrait) ----------- */
+
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .gaccca-display-menu {
     display: none !important;
   }
-  .gaccca-display-menu-profile{
+  .gaccca-display-menu-profile {
+    display: none !important;
+    margin-right: 10px !important;
+  }
+  .gaccca-header-menu-button {
+    display: block !important;
+  }
+  .gaccca-openbtn {
+    margin-top: 15px !important;
+    padding: 10px 20px !important;
+  }
+  .gaccca-behind-the-logo-position {
+    float: left !important;
+    margin: 15px !important;
+  }
+  .gaccca-header ul>li a {
+    font-size: 17px !important;
+  }
+  .gaccca-main-containt .gaccca-h1-padding {
+    padding: 38px 0px 0px 50px !important;
+  }
+  .gaccca-main-containt .gaccca-h2-padding {
+    padding: 0px 0px 24px 80px !important;
+  }
+  .gaccca-form-element-margin {
+    margin: 0px 20px 33px 80px !important;
+  }
+  .gaccca-sky-blue-box-margin {
+    margin: 48px 40px 48px 50px !important;
+  }
+  .gaccca-button-save-margin {
+    margin: 4px 0px 0px 80px !important;
+  }
+  .gaccca-create-program-account {
+    max-width: 193px !important;
+    padding: 35px 11px !important;
+  }
+  .gaccca-create-program-account-text {
+    margin: 20px 0px !important;
+  }
+} */
+
+/* Portrait*/
+
+/* @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .gaccca-header ul>li {
+    margin: 13px 0px 0px 35px !important;
+  }
+  .gaccca-display-menu {
+    display: block !important;
+  }
+  .gaccca-display-menu-profile {
+    display: block !important;
+  }
+  .gaccca-header-menu-button {
+    display: none !important;
+  }
+  .gaccca-behind-the-logo-position {
+    float: left !important;
+  }
+  .gaccca-behind-the-logo-position {
+    margin-left: 20px !important;
+  }
+} */
+
+/* @media only screen and (max-device-width: 767px) { */
+  /* .gaccca-main-containt {
+    margin: 0px auto 40px auto !important;
+    border-radius: 0px !important;
+  }
+  .gaccca-display-menu {
+    display: none !important;
+  }
+  .gaccca-display-menu-profile {
+    display: none !important;
+  }
+  .gaccca-header-menu-button {
+    display: block !important;
+  }
+  .gaccca-behind-the-logo-position {
+    float: left !important;
+  } */
+  /* .gaccca-main-containt .gaccca-h1-padding { */
+    /* padding: 30px 0px 0px 30px !important; */
+    /* padding: 30px 0px 0px 15px !important; */
+  /* } */
+  /* .gaccca-main-containt h1 {
+    margin: 0px !important;
+  }
+  .gaccca-main-containt .gaccca-h2-padding {
+    padding: 0px 0px 24px 15px !important;
+  }
+  .gaccca-sky-blue-box-margin {
+    margin: 30px 15px 20px 15px !important
+  } */
+  /* .gaccca-form-element-margin { */
+    /* margin: 0px 30px 33px 31px !important; */
+    /* margin: 0px 15px 20px 15px !important; */
+  /* } */
+  /* .gaccca-button-save-margin { */
+    /* margin: 4px 0px 0px 31px !important; */
+    /* margin: 4px 0px 0px 15px !important; */
+  /* } */
+  /* .gaccca-form-element-checkbox-switch {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-form-element-text-participant {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-medium-size_1-of-1 {
+    width: 100%;
+  }
+  .gaccca-notify_alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    position: fixed;
+    width: 95% !important;
+    left: 0px !important;
+  }
+  .gaccca-price-table {
+    width: 100% !important;
+  }
+  .gaccca-price-table, th, td {
+    border-collapse: collapse !important;
+  }
+  .gaccca-price-table th, .gaccca-price-table td {
+    padding: 5px !important;
+    text-align: left !important;
+  }
+  .gaccca-price-table a {
+    margin-right: 5px;
+  }
+  .gaccca-download-participant-handbook-padding {
+    padding: 10px 15px !important;
+  }
+  .gaccca-half-login {
+    background-image: none !important;
+    background-size: none;
+    border-left: none;
+    height: auto !important;
+  }
+  .gaccca-reserved {
+    margin: 0px 0px 0px 90px !important;
+  }
+  .gaccca-go-back-login {
+    display: block !important;
+  }
+  .gaccca-half-login p {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0px;
+    padding: 10% 5%;
+  } */
+/* } */
+
+/* @media only screen and (max-width: 1310px) and (min-width: 990px) {
+  .gaccca-behind-the-logo-position {
+    margin-left: 15px !important;
+  }
+  .gaccca-display-menu-profile {
+    margin-right: 0px !important;
+  }
+  .gaccca-header ul>li {
+    margin-left: 23px !important;
+  }
+  .gaccca-header ul>li a {
+    font-size: 18px !important;
+  }
+  ul.gaccca-breadcrumb {
+    margin: 11px 0px 3px 20px !important;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media only screen and (max-width: 990px) and (min-width: 700px) {
+  .gaccca-header ul>li a, .gaccca-dropbtn {
+    font-size: 14px !important;
+  }
+  .gaccca-header ul>li {
+    margin: 0px 0px 0px 10px !important;
+  }
+  .gaccca-behind-the-logo-position {
+    margin-left: 15px !important;
+    margin-top: 15px !important;
+  }
+  .gaccca-behind-the-logo {
+    content: url(../images/logo/logo_mobile.png) !important;
+  }
+  .gaccca-header ul>li a {
+    font-size: 11px !important;
+  }
+  .gaccca-display-menu-profile {
+    margin-right: 0px !important;
+  }
+  .gaccca-main-containt .gaccca-h1-padding {
+    padding: 38px 0px 0px 30px !important;
+  }
+  .gaccca-main-containt .gaccca-h2-padding {
+    padding: 0px 0px 24px 31px !important;
+  }
+  ul.gaccca-breadcrumb {
+    margin: 11px 0px 3px 20px !important;
+  }
+  .gaccca-sky-blue-box-margin {
+    margin: 48px 30px 48px 30px !important;
+  }
+  .gaccca-form-element-margin {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-button-save-margin {
+    margin: 4px 0px 0px 31px !important;
+  }
+  .gaccca-form-element-checkbox-switch {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-form-element-text-participant {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-medium-size_1-of-1 {
+    width: 100%;
+  }
+  .gaccca-create-program-account {
+    max-width: 230px !important;
+  }
+  .gaccca-login-page-logo {
+    display: none !important;
+  }
+  .gaccca-login-page-logo-small {
+    display: block !important;
+    margin: 20px 0px 0px 20px !important;
+  }
+  .gaccca-accout-access-text {
+    font-size: 35px !important;
+  }
+  .gaccca-new-user-btn-text {
+    font-size: 17px !important;
+  }
+  .gaccca-new-user-btn-sub-text {
+    font-size: 10px !important;
+  }
+  .gaccca-new-user-btn {
+    padding: 0px 17px !important;
+  }
+  .gaccca-reserved {
+    margin: 0px 0px 0px 20px !important;
+  }
+  .gaccca-login-containt {
+    padding: 20px 10% !important;
+  }
+  .gaccca-forgot-password-containt {
+    padding: 20px 10% 5px 10% !important;
+  }
+  .gaccca-signup-containt {
+    padding: 20px 10% 5px 10% !important;
+  }
+  .gaccca-go-back-login {
+    display: block !important;
+  }
+  .gaccca-create-program-account {
+    margin-top: 100px !important;
+  }
+} */
+
+
+
+
+
+
+
+
+
+/* @media only screen and (max-width: 700px) { */
+
+/* @media only screen and (max-width: 541px) {
+
+
+.gaccca-small-size_1-of-12 {
+    width: 8.3333333333%;
+}
+
+ .gaccca-small-size_2-of-12 {
+    width: 16.6666666667%;
+}
+
+ .gaccca-small-size_3-of-12 {
+    width: 25%;
+}
+
+ .gaccca-small-size_4-of-12{
+    width: 33.3333333333%;
+}
+
+ .gaccca-small-size_5-of-12 {
+    width: 41.6666666667%;
+}
+
+ .gaccca-small-size_6-of-12{
+    width: 50%;
+}
+
+ .gaccca-small-size_7-of-12 {
+    width: 58.3333333333%;
+}
+
+ .gaccca-small-size_8-of-12{
+    width: 66.6666666667%;
+}
+
+ .gaccca-small-size_9-of-12 {
+    width: 75%;
+}
+
+ .gaccca-small-size_10-of-12 {
+    width: 83.3333333333%;
+}
+
+ .gaccca-small-size_11-of-12 {
+    width: 91.6666666667%;
+}
+
+ .gaccca-small-size_1-of-1{
+    width: 100%;
+}
+
+
+  
+} */
+
+
+
+@media only screen and (max-width: 720px) {
+
+
+  .gaccca-small-size_1-of-12 {
+    width: 8.3333333333%;
+  }
+  
+  .gaccca-small-size_2-of-12 {
+    width: 16.6666666667%;
+  }
+  
+  .gaccca-small-size_3-of-12 {
+    width: 25%;
+  }
+  
+  .gaccca-small-size_4-of-12 {
+    width: 33.3333333333%;
+  }
+  
+  .gaccca-small-size_5-of-12 {
+    width: 41.6666666667%;
+  }
+  
+  .gaccca-small-size_6-of-12 {
+    width: 50%;
+  }
+  
+  .gaccca-small-size_7-of-12 {
+    width: 58.3333333333%;
+  }
+  
+  .gaccca-small-size_8-of-12 {
+    width: 66.6666666667%;
+  }
+  
+  .gaccca-small-size_9-of-12 {
+    width: 75%;
+  }
+  
+  .gaccca-small-size_10-of-12 {
+    width: 83.3333333333%;
+  }
+  
+  .gaccca-small-size_11-of-12 {
+    width: 91.6666666667%;
+  }
+  
+  .gaccca-small-size_1-of-1 {
+    width: 100%;
+  }
+
+
+
+  .gaccca-display-menu {
+    display: none !important;
+  }
+  .gaccca-display-menu-profile {
     display: none !important;
   }
   .gaccca-header-menu-button {
@@ -2369,35 +2453,44 @@ input[type="file"].gaccca-parsley-error+ul {
     margin: 14px 9px 9px 0px;
     content: url("../images/logo/logo_mobile.png");
   }
-  .gaccca-login-page-logo{
+  .gaccca-login-page-logo {
     display: none !important;
   }
-  .gaccca-login-page-logo-small{
+  .gaccca-login-page-logo-small {
     display: block !important;
     margin: 27px 9px 9px 21px !important;
   }
-  .gaccca-signup-containt{
+  .gaccca-signup-containt {
     padding: 35px 5% 25px 5% !important;
   }
   .gaccca-login-containt {
+    padding: 35px 5% 25px 5% !important;
+  }
+  .gaccca-forgot-password-containt {
     padding: 25px 10% !important;
-}
+  }
+
   .gaccca-behind-the-logo-position {
     float: left !important;
     margin-left: 10px;
   }
+  .gaccca-half-login-image {
+    display: none;
+  }
+  
+  .gaccca-accout-access-text{
+   font-size: 4.64vw !important;
+  }
+
   .gaccca-input-date {
     background-image: none !important;
   }
-  .gaccca-half-login-image{
-    display: none;
-   }
-   .gaccca-large-size_6-of-12{
-     width: 100% !important;
-   }
 
-   .gaccca-create-program-account-mobile {
 
+  .gaccca-large-size_6-of-12 {
+    width: 100% !important;
+  }
+  .gaccca-create-program-account-mobile {
     background: #096DD9;
     width: 100%;
     color: #FFF;
@@ -2406,35 +2499,249 @@ input[type="file"].gaccca-parsley-error+ul {
     margin: 35px 0px 25px 0px !important;
     float: left !important;
     border-radius: 0px !important;
-    
+  }
+  .gaccca-create-program-account-heading {
+    font-size: 24px !important;
+    text-align: left !important;
+  }
+  .gaccca-create-program-account-text {
+    margin: 15px 0px !important;
+    text-align: left !important;
+  }
+  ul.gaccca-breadcrumb {
+    margin: 11px 0px 3px 20px !important;
+  }
+  .gaccca-sky-blue-box-margin {
+    margin: 48px 30px 48px 30px !important;
+  }
+  .gaccca-main-containt .gaccca-h1-padding {
+    padding: 38px 0px 0px 30px !important;
+  }
+  .gaccca-main-containt .gaccca-h2-padding {
+    padding: 0px 0px 24px 31px !important;
+  }
+  .gaccca-form-element-margin {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-button-save-margin {
+    margin: 4px 0px 0px 31px !important;
+  }
+ 
 }
 
-.gaccca-create-program-account-heading{
-  font-size: 24px !important;
-  text-align: left !important;
+
+ @media only screen and (max-width: 1024px) and (min-width: 720px) {
+  /* .gaccca-header ul>li a, .gaccca-dropbtn {
+    font-size: 14px !important;
+  } */
+
+
+  .gaccca-medium-size_1-of-12 {
+    width: 8.3333333333%;
+  }
+  
+  .gaccca-medium-size_2-of-12 {
+    width: 16.6666666667%;
+  }
+  
+  .gaccca-medium-size_3-of-12 {
+    width: 25%;
+  }
+  
+  .gaccca-medium-size_4-of-12 {
+    width: 33.3333333333%;
+  }
+  
+  .gaccca-medium-size_5-of-12 {
+    width: 41.6666666667%;
+  }
+  
+  .gaccca-medium-size_6-of-12 {
+    width: 50%;
+  }
+  
+  .gaccca-medium-size_7-of-12 {
+    width: 58.3333333333%;
+  }
+  
+  .gaccca-medium-size_8-of-12 {
+    width: 66.6666666667%;
+  }
+  
+  .gaccca-medium-size_9-of-12 {
+    width: 75%;
+  }
+  
+  .gaccca-medium-size_10-of-12 {
+    width: 83.3333333333%;
+  }
+  
+  .gaccca-medium-size_11-of-12 {
+    width: 91.6666666667%;
+  }
+  
+  .gaccca-medium-size_1-of-1 {
+    width: 100%;
+  }
+
+
+
+  .gaccca-header ul>li {
+    margin: 0px 0px 0px 10px !important;
+  }
+  .gaccca-behind-the-logo-position {
+    margin-left: 15px !important;
+    margin-top: 15px !important;
+  }
+  .gaccca-behind-the-logo {
+    content: url(../images/logo/logo_mobile.png) !important;
+  }
+  .gaccca-header ul>li a {
+    /* font-size: 11px !important; */
+    font-size: 1.47vw !important;
+
+  }
+  .gaccca-display-menu-profile {
+    margin-right: 0px !important;
+  }
+  .gaccca-main-containt .gaccca-h1-padding {
+    padding: 38px 0px 0px 30px !important;
+  }
+  .gaccca-main-containt .gaccca-h2-padding {
+    padding: 0px 0px 24px 31px !important;
+  }
+  ul.gaccca-breadcrumb {
+    margin: 11px 0px 3px 20px !important;
+  }
+  .gaccca-sky-blue-box-margin {
+    margin: 48px 30px 48px 30px !important;
+  }
+  .gaccca-form-element-margin {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-button-save-margin {
+    margin: 4px 0px 0px 31px !important;
+  }
+  .gaccca-form-element-checkbox-switch {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-form-element-text-participant {
+    margin: 0px 30px 33px 31px !important;
+  }
+  .gaccca-medium-size_1-of-1 {
+    width: 100%;
+  }
+  .gaccca-create-program-account {
+    max-width: 230px !important;
+  }
+  .gaccca-login-page-logo {
+    display: none !important;
+  }
+  .gaccca-login-page-logo-small {
+    display: block !important;
+    margin: 20px 0px 0px 20px !important;
+  }
+  /* .gaccca-accout-access-text {
+    font-size: 35px !important;
+  } */
+  .gaccca-new-user-btn-text {
+    font-size: 17px !important;
+  }
+  .gaccca-new-user-btn-sub-text {
+    font-size: 10px !important;
+  }
+  .gaccca-new-user-btn {
+    padding: 0px 17px !important;
+  }
+  .gaccca-reserved {
+    margin: 0px 0px 0px 20px !important;
+  }
+  .gaccca-login-containt {
+    padding: 20px 10% !important;
+  }
+  .gaccca-forgot-password-containt {
+    padding: 20px 10% 5px 10% !important;
+  }
+  .gaccca-signup-containt {
+    padding: 20px 10% 5px 10% !important;
+  }
+  .gaccca-go-back-login {
+    display: block !important;
+  }
+  .gaccca-half-login-image {
+    display: block;
+  }
+  .gaccca-half-login{
+    height: 135vh !important;
+  }
+  
+  .gaccca-create-program-account {
+    margin-top: 100px !important;
+  }
+} 
+
+@media only screen and (min-width: 1025px) {
+
+  /* Grid system css start */
+
+.gaccca-large-size_1-of-12 {
+  width: 8.3333333333%;
 }
 
-.gaccca-create-program-account-text{
-  margin: 15px 0px !important;
-  text-align: left !important;
-}
-ul.gaccca-breadcrumb{
-  margin: 11px 0px 3px 20px !important;
+.gaccca-large-size_2-of-12 {
+  width: 16.6666666667%;
 }
 
-.gaccca-sky-blue-box-margin{
- margin:  48px 30px 48px 30px !important;
+.gaccca-large-size_3-of-12 {
+  width: 25%;
 }
-.gaccca-main-containt .gaccca-h1-padding{
-  padding: 38px 0px 0px 30px !important;
+
+.gaccca-large-size_4-of-12 {
+  width: 33.3333333333%;
 }
-.gaccca-main-containt .gaccca-h2-padding{
-  padding: 0px 0px 24px 31px !important;
+
+.gaccca-large-size_5-of-12 {
+  width: 41.6666666667%;
 }
-.gaccca-form-element-margin{
-  margin: 0px 30px 33px 31px !important;
+
+.gaccca-large-size_6-of-12 {
+  width: 50%;
 }
-.gaccca-button-save-margin{
-  margin: 4px 0px 0px 31px !important;
+
+.gaccca-large-size_7-of-12 {
+  width: 58.3333333333%;
 }
+
+.gaccca-large-size_8-of-12 {
+  width: 66.6666666667%;
+}
+
+.gaccca-large-size_9-of-12 {
+  width: 75%;
+}
+
+.gaccca-large-size_10-of-12 {
+  width: 83.3333333333%;
+}
+
+.gaccca-large-size_11-of-12 {
+  width: 91.6666666667%;
+}
+
+.gaccca-large-size_1-of-1 {
+  width: 100%;
+}
+
+/* Grid system css end */
+
+.gaccca-header ul>li a {
+    font-size: 1.62vw !important;
+  }
+  .gaccca-display-menu-profile{
+    margin-right: 5% !important;
+  }
+  .gaccca-behind-the-logo-position{
+    margin-left: 5% !important;
+  }
+
 }

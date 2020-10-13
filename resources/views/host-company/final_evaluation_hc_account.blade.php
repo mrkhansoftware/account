@@ -11,9 +11,9 @@
       <h1 class="gaccca-h1-padding">Final Evaluation</h1>
       @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
 
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
               
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
 <p>     Thank you for submitting your evaluation.
 </p>
@@ -45,12 +45,12 @@ Enjoy the remainder of your time at your host company
 
       <h2 class="gaccca-h2-padding">General Information</h2>
       
-      <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+      <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
        
 
 
-        <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" >
                 Name of Supervisor   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -62,7 +62,7 @@ Enjoy the remainder of your time at your host company
           </div>
 
           
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" >
                 Name of Host Company   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -74,7 +74,7 @@ Enjoy the remainder of your time at your host company
           </div>
 
           
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" >
                 Supervisor's Current Business Address   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -87,7 +87,7 @@ Enjoy the remainder of your time at your host company
           </div>
 
           
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" >
                 Zip Code, City, State    <span class="gaccca-text-required" title="required">*</span> </label>
@@ -99,7 +99,7 @@ Enjoy the remainder of your time at your host company
           </div>
 
           
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" >
                 Supervisor's Business Phone Number   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -112,7 +112,7 @@ Enjoy the remainder of your time at your host company
           </div>
 
           
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" >
                 Supervisor's Business Email Address   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -126,7 +126,7 @@ Enjoy the remainder of your time at your host company
           </div>
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
               <label class="gaccca-form-element__label" >
                 Name of the Intern / Trainee   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -151,9 +151,9 @@ Enjoy the remainder of your time at your host company
 
 
 
-          <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+          <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
               <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" >
@@ -171,7 +171,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -197,7 +197,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -216,7 +216,7 @@ Enjoy the remainder of your time at your host company
 
             
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -233,7 +233,7 @@ Enjoy the remainder of your time at your host company
               </div>
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -251,7 +251,7 @@ Enjoy the remainder of your time at your host company
 
                       
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -267,7 +267,7 @@ Enjoy the remainder of your time at your host company
               </div>
 
               
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -284,7 +284,7 @@ Enjoy the remainder of your time at your host company
 
               
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -309,7 +309,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -331,7 +331,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -350,7 +350,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -369,7 +369,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -389,7 +389,7 @@ Enjoy the remainder of your time at your host company
 
 
       
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -416,7 +416,7 @@ Enjoy the remainder of your time at your host company
 
 
             
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__control">
                     <label class="gaccca-form-element__label" for="text-input-id-fn">
@@ -448,7 +448,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -463,7 +463,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__control">
                     <label class="gaccca-form-element__label" for="text-input-id-fn">
@@ -498,7 +498,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -515,7 +515,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
                     Please list 3 major tasks/projects the intern/trainee has actively contributed to/worked on   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -532,7 +532,7 @@ Enjoy the remainder of your time at your host company
 
 
               
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
                     What have been the intern/trainee's strongest attributes while at your company?   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -546,7 +546,7 @@ Enjoy the remainder of your time at your host company
     
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                 <div class="gaccca-form-element__control">
                     <label class="gaccca-form-element__label" for="text-input-id-fn">
@@ -572,7 +572,7 @@ Enjoy the remainder of your time at your host company
             </div>
 
 
-            <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
                     If no, please specify   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -589,7 +589,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -607,7 +607,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -623,7 +623,7 @@ Enjoy the remainder of your time at your host company
               </div>
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -641,7 +641,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -658,7 +658,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
                     Please comment on the cultural advantages of hosting a J-1 intern/trainee at your company <span class="gaccca-text-required" title="required">*</span>   <span class="gaccca-text-required" title="required">*</span> </label>
@@ -670,7 +670,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
                     If applicable, please let us know if there was anything that did not run smoothly. <span class="gaccca-text-required" title="required">*</span> <span class="gaccca-text-required" title="required">*</span> </label>
@@ -683,7 +683,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -705,7 +705,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
                     Please name a few cultural activities your company let the intern/trainee be part of <span class="gaccca-text-required" title="required">*</span> <span class="gaccca-text-required" title="required">*</span> </label>
@@ -719,7 +719,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
   
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -734,7 +734,7 @@ Enjoy the remainder of your time at your host company
 
 
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
@@ -755,9 +755,9 @@ Enjoy the remainder of your time at your host company
 
               <h2 class="gaccca-h2-padding">Please Note:</h2>
 
-              <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+              <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                   <div class="gaccca-form-element gaccca-form-element-margin">
                    <p>You can sign this evaluation digital online with your mouse or on your phone with your finger.</p>
                    <p>After signing we will save the evaluation as a pdf in our records.</p> 
@@ -771,9 +771,9 @@ Enjoy the remainder of your time at your host company
 
 
 
-                <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
-                    <div class="gaccca-col gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1">
+                    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                     @include('common.signHTML');
                       </div>
                     </div>
