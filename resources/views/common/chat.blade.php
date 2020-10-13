@@ -1,14 +1,14 @@
 <script type="text/javascript">
     var customVariable=[];
     
-    if(contId!=''){
-        customVariable.push({ name: 'Contact Link:', value: 'https://gaccca.lightning.force.com/'+contId });
+    if(contIdAccountUserVal!=''){
+        customVariable.push({ name: 'Contact Link:', value: 'https://gaccca.lightning.force.com/'+contIdAccountUserVal });
     } 
-    if(applicantId!=''){
-        customVariable.push({ name: 'Applicant Link:', value: 'https://gaccca.lightning.force.com/'+applicantId });
+    if(applicantIdAccountUserVal!=''){
+        customVariable.push({ name: 'Applicant Link:', value: 'https://gaccca.lightning.force.com/'+applicantIdAccountUserVal });
     }
-    if(applicantName!=''){
-        customVariable.push({ name: 'Applicant Name:', value: '\n '+applicantName });
+    if(applicantNameAccountUserVal!=''){
+        customVariable.push({ name: 'Applicant Name:', value: '\n '+applicantNameAccountUserVal });
     }
   
     window.__lc = window.__lc || {};

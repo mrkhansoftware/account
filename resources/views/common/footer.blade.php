@@ -1,3 +1,5 @@
+
+
 </body>
 
 
@@ -201,6 +203,7 @@ jQuery(document).ready(function(){
 
 </script>
 @if(!isset($_GET['orgid']) && !isset($_GET['orgidInternal']))
+
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
 @endif
 </html>

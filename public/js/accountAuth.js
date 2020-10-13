@@ -1,6 +1,6 @@
 var config = {
-    apiKey: "AIzaSyBmMaHSgryh-b19TgfsFslx3VSbxUWnOKE",
-    authDomain: "loginaccount-277810.firebaseapp.com",
+    apiKey: "AIzaSyDoXrUMd94ut_eBbv7BRc-IGWVjh0P58hc",
+    authDomain: "gaccca-wordpress.firebaseapp.com",
 };
 firebase.initializeApp(config);
 var providerGoogle = new firebase.auth.GoogleAuthProvider();
