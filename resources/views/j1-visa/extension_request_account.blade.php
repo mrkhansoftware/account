@@ -3,7 +3,7 @@
 {!! Form::open(['action' => 'ExtensionRequestAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_extension']) !!}
 
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Extension Request</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>If you would like to extend your internship, you must inform us at least 6 weeks before the end of the current DS-2019. An extension is only possible in the previous internship company. It must be connected to the previous internship period. The total duration of the initial application plus the extension may not exceed 12 months for the J-1 category INTERNAL and 18 months for the TRAINEE category. You must continue to complete a qualified internship in the same field with new tasks.

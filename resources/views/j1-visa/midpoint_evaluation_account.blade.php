@@ -4,7 +4,7 @@
 
 {!! Form::open(['action' => 'MidpointEvaluationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_mea']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">Mid-Point Evaluation</h1>
   @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
   <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">

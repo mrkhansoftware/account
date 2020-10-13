@@ -126,7 +126,7 @@
 
 	}
 </script>
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
 	<h1 class="gaccca-h1-padding">Create Your Video Resume </h1>
 	@if (isset($datas['profileLocked']) && $datas['profileLocked'])
 	<div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">

@@ -1,7 +1,7 @@
 
 @include('common.header',['datas'=>$datas,'title' =>'Change Password','page'=>'password_account','parent_page'=>'Profile'])
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Password</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>You can change your password</p>

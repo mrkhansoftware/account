@@ -5,7 +5,7 @@
 
 {!! Form::open(['action' => 'HCMidPointEvaluationController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">Mid Point Evaluation</h1>
 
   @if (isset($datas['onfrmSubmitted']) && !$datas['onfrmSubmitted'])

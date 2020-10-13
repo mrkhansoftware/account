@@ -141,7 +141,7 @@
 </style>
 
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">Write your video script</h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
     <p>Start drafting your script for your video resume.</p>

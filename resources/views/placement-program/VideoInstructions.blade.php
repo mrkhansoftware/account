@@ -4,7 +4,7 @@
 
 {!! Form::open(['action' => 'CloseAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Video Instructions</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>The video script you prepared should be a short presentation of your personality, academic history, previous work experiences and skills.<br/>

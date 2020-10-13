@@ -31,7 +31,7 @@
     }
 </style>
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Create Your Resume</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p> Just a few more steps left! </p>

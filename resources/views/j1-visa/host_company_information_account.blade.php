@@ -6,7 +6,7 @@
 
 {!! Form::open(['action' => 'HostCompanyInformationAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_hci']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Step 3/5 - Host Company Information</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>Please fill in all requested information about your host company, your intended internship/training and provide a contact person at your host company responsible for your intended internship/training.

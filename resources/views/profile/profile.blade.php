@@ -6,7 +6,7 @@
 
 
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">My Profile</h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
     <p>Please provide all requested information. The provided information will be used for your visa application.

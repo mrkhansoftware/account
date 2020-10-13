@@ -5,7 +5,7 @@
 {!! Form::open(['action' => 'FinalEvaluationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_final']) !!}
 
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">Final Evaluation</h1>
   @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
 

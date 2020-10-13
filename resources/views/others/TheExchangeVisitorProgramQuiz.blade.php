@@ -4,7 +4,7 @@
 
 {!! Form::open(['action' => 'VisitorProgramQuizController@store', 'method' => 'POST', 'id' => 'gacccaForm_exchange']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">The Exchange Visitor Program Quiz</h1>
 
   @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])

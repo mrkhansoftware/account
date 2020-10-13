@@ -3,7 +3,7 @@
 @include('common.header',['datas'=>$datas,'title' =>'Finalize your Application','page'=>'finalize_application_account','parent_page'=>'J1 Program'])
 {!! Form::open(['action' => 'FinalizeApplicationAccountController@store', 'method' => 'POST',  'id' => 'gacccaForm_finalize']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Step 5/5 - Finalize your Application</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>This is the last step of your application where you can book and start our J-1 Visa Program.

@@ -4,7 +4,7 @@
 {!! Form::open(['action' => 'AgencyInformationController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'agency-information','enctype' => 'multipart/form-data']) !!}
 
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Agency Information</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>On this page you will find information about the relationship between you and us, for example program info, sales support etc. </p>

@@ -10,7 +10,7 @@
         token: "5a468567d6c000081048db95ef255348"
     });
 </script>
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Video Tutorials</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>These videos will help guide you step-by-step through your account and creating your online video resume.</p>

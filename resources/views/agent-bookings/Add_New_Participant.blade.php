@@ -4,7 +4,7 @@
 
 {!! Form::open(['action' => 'AddNewParticipantController@store', 'method' => 'POST', 'id' => 'gacccaForm_participent']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">Add New Participant</h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
     <p> If you want to add a new Participant to our systems, please use the form below.</p>

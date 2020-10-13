@@ -4,7 +4,7 @@
 
 {!! Form::open(['action' => 'QuestionerPlacementController@store', 'method' => 'POST', 'id' => 'gacccaForm_questioner']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
         <h1 class="gaccca-h1-padding">We would like your feedback! Please rate our placement program.</h1>
         @if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
         <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">

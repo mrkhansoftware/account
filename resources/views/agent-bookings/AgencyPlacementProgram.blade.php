@@ -3,7 +3,7 @@
 
 {!! Form::open(['action' => 'AgencyPlacementProgramController@store','files'=>true, 'method' => 'POST', 'id' => 'gacccaForm_pp']) !!}
 
-<div class="gaccca-main-containt gaccca-gutters">
+<div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Placement Program Registration Form</h1>
       <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p>If you would like to join our placement program please fill out this form and book our service. Please submit only one booking! We will review your booking and schedule a welcome call with you within in the next few days.</p>
