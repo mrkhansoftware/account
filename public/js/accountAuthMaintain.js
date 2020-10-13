@@ -1,7 +1,7 @@
 const userInfo = {};
 var config = {
-    apiKey: "AIzaSyBmMaHSgryh-b19TgfsFslx3VSbxUWnOKE",
-    authDomain: "loginaccount-277810.firebaseapp.com",
+    apiKey: "AIzaSyDoXrUMd94ut_eBbv7BRc-IGWVjh0P58hc",
+    authDomain: "gaccca-wordpress.firebaseapp.com",
 };
 firebase.initializeApp(config);
 
@@ -14,6 +14,9 @@ firebase.auth().onAuthStateChanged(function (user) {
         userInfo.provider = user.providerData[0].providerId;
         //console.log(' User is signed in.');
         //callInit(userInfo);
+        if(userInfo.email!=emailAccountUserVal){
+            window.location.href = '/login_account';
+        }
     } else {
         console.log('No User is signed in.');
         window.location.href = '/login_account';

@@ -388,3 +388,11 @@
             <li>@if (isset($title)){{$title}} @endif</li>
         </ul>
     </div>
+
+    <script>
+var emailAccountUserVal="{{session()->get('userEmail')}}";
+var contIdAccountUserVal="{{isset($datas['contID'])?$datas['contID']:''}}";
+var applicantIdAccountUserVal="{{isset($datas['applicantId'])?$datas['applicantId']:''}}";
+var applicantNameAccountUserVal="{{isset($datas['applicantName'])?$datas['applicantName']:''}}";
+</script>
+@include('common.chat')

@@ -39,9 +39,11 @@ class LoginController extends Controller
        if( $response['canAccessAccount']=='Yes'){
        session()->put('conIdUser', $response['conId']);
        session()->put('contactName', $response['contactName']);
+       session()->put('userEmail', $response['userEmail']);
        }
        unset($response['conIdUser']);
        unset($response['contactName']);
+       unset($response['userEmail']);
      return json_encode($response);
        
   }

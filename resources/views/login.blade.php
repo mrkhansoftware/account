@@ -468,7 +468,7 @@
 
     function createOrMergeAccount(isRedirect) {
         var userInfo = currentUserInfo();
-        console.log(userInfo);
+       // console.log(userInfo);
         if (userInfo.uid == '' || userInfo.uid == undefined) return;
         var formData = {
             firstName: userInfo.firstName != undefined ? userInfo.firstName : userInfo.email,
@@ -506,7 +506,7 @@
                     return;
                 }
                 if (isRedirect) {
-                    console.log(currentUserInfo());
+                    //console.log(currentUserInfo());
                     window.location.href = '/' + '{{isset($_GET["redirectUrl"])?$_GET["redirectUrl"]:"profile_account"}}';
                 }
 
