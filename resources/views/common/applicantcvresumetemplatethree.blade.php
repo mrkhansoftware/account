@@ -1,5 +1,6 @@
 <style>
     .containerClass {
+        
         background: #EAE8E7;
         widht: 100%;
     }
