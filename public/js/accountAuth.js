@@ -240,7 +240,7 @@ if (resetPassBtn != null) {
         var actionCodeSettings = {
             // After password reset, the user will be give the ability to go back
             // to this page.
-            url: 'https://newaccount-gaccca.cs2.force.com',
+            url: 'https://account.iieex.org',
             handleCodeInApp: false
         };
         firebase.auth().sendPasswordResetEmail(email, actionCodeSettings)
@@ -257,7 +257,7 @@ if (resetPassBtn != null) {
                 document.getElementById('loader').style.display = 'none';
                 var errorCode = error.code;
                 var errorMessage = error.message;
-
+console.log(errorMessage);
                 if (errorCode == 'auth/user-not-found') {
                     document.getElementById('resetMsg').style.display = 'block';
                     document.getElementById('errorMessageReset').innerHTML = 'user not found';

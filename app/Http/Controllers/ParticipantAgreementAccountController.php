@@ -51,7 +51,6 @@ class ParticipantAgreementAccountController extends Controller
     {
 
         $finalReq = $request->all();
-        echo "<pre>";
         unset($finalReq['_token']);
         $finalReq['applicant']['id']=session()->get('applicantId');
         $finalReq['applicant']['Contact__c']=session()->get('Contact__c');

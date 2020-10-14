@@ -54,7 +54,6 @@ class FinalizeApplicationAccountController extends Controller
      */
     public function store(Request $request)
     {  $finalReq = $request->all();
-        echo "<pre>";
         $finalReq['applicant']['id']=session()->get('applicantId');
         $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
         $finalReq['applicantData']=json_encode($finalReq['applicant']);
