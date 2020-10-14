@@ -663,7 +663,7 @@ css start for login page
 .gaccca-accout-access-text {
   display: block;
   color: #595959;
-  font-size: 2.64vw;
+  font-size: 36px;
   font-weight: bold;
   opacity: 0.3;
   text-align: center;
@@ -785,7 +785,9 @@ css start for login page
   height: auto;
   margin-left: 60px;
 }
-
+.gaccca-half-login-first{
+  height: 100vh;
+}
 .gaccca-half-login {
   background-image: url("../images/bg.jpg");
   /* background-size: 100% auto; */
@@ -863,7 +865,17 @@ css start for login page
 }
 
 .gaccca-reserved {
-  margin: 0px 0px 1px 100px;
+  bottom: 10px;
+  position: relative;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+.gaccca-reserved-text{
+  display: block;
+  font-size: 14px;
+  color: #BFBFBF;
+  line-height: 16px;
+  padding-bottom: 2px;
 }
 
 /* login page end */
@@ -2479,9 +2491,9 @@ input[type="file"].gaccca-parsley-error+ul {
     display: none;
   }
   
-  .gaccca-accout-access-text{
+  /* .gaccca-accout-access-text{
    font-size: 4.64vw !important;
-  }
+  } */
 
   .gaccca-input-date {
     background-image: none !important;
@@ -2526,6 +2538,10 @@ input[type="file"].gaccca-parsley-error+ul {
   }
   .gaccca-button-save-margin {
     margin: 4px 0px 0px 31px !important;
+  }
+  .gaccca-reserved{
+    text-align: center;
+    margin-left: 0px !important;
   }
  
 }
@@ -2592,19 +2608,19 @@ input[type="file"].gaccca-parsley-error+ul {
 
 
   .gaccca-header ul>li {
-    margin: 0px 0px 0px 10px !important;
+    margin: 0px 0px 0px 5px !important;
   }
   .gaccca-behind-the-logo-position {
     margin-left: 15px !important;
     margin-top: 15px !important;
   }
   .gaccca-behind-the-logo {
-    content: url(../images/logo/logo_mobile.png) !important;
+    content: url("../images/logo/logo_mobile.png") !important;
   }
   .gaccca-header ul>li a {
-    /* font-size: 11px !important; */
-    font-size: 1.47vw !important;
-
+    font-size: 11px !important;
+    /* font-size: 1.47vw !important; */
+    padding: 11px 5px !important;
   }
   .gaccca-display-menu-profile {
     margin-right: 0px !important;
@@ -2646,9 +2662,9 @@ input[type="file"].gaccca-parsley-error+ul {
     display: block !important;
     margin: 20px 0px 0px 20px !important;
   }
-  /* .gaccca-accout-access-text {
-    font-size: 35px !important;
-  } */
+  .gaccca-accout-access-text {
+    font-size: 30px !important;
+  }
   .gaccca-new-user-btn-text {
     font-size: 17px !important;
   }
@@ -2658,9 +2674,9 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-new-user-btn {
     padding: 0px 17px !important;
   }
-  .gaccca-reserved {
+  /* .gaccca-reserved {
     margin: 0px 0px 0px 20px !important;
-  }
+  } */
   .gaccca-login-containt {
     padding: 20px 10% !important;
   }
@@ -2677,7 +2693,7 @@ input[type="file"].gaccca-parsley-error+ul {
     display: block;
   }
   .gaccca-half-login{
-    height: 135vh !important;
+    height: 100vh !important;
   }
   
   .gaccca-create-program-account {
@@ -2745,7 +2761,7 @@ input[type="file"].gaccca-parsley-error+ul {
 /* Grid system css end */
 
 .gaccca-header ul>li a {
-    font-size: 1.62vw !important;
+    font-size: 20px !important;
   }
   .gaccca-display-menu-profile{
     margin-right: 5% !important;
@@ -2753,5 +2769,20 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-behind-the-logo-position{
     margin-left: 5% !important;
   }
+
+}
+
+@media only screen and (max-width: 1230px) and (min-width: 1024px) {
+
+  .gaccca-behind-the-logo-position {
+    margin-left: 1% !important;
+}
+
+.gaccca-header ul>li{
+  margin-left: 6px !important;
+}
+.gaccca-display-menu-profile{
+  margin-right: 1% !important;
+}
 
 }

@@ -178,7 +178,13 @@ jQuery(document).ready(function(){
    if (jQuery(window).width() >= 1093) {
     jQuery("#mySidepanel").css('display','none');
 }
+
+
+
   });
+
+  
+  
 });
 
 

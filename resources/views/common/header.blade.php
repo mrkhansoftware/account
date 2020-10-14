@@ -220,7 +220,7 @@
                             </li>
                             @endif
 
-                            <li><a href="/simCard"><span class="{{ ($parent_page == 'Sim Card') ? 'gaccca-active-menu' : '' }}">Sim Card</span></a></li>
+                            <!-- <li><a href="/simCard"><span class="{{ ($parent_page == 'Sim Card') ? 'gaccca-active-menu' : '' }}">Sim Card</span></a></li> -->
 
 
                         </ul>
