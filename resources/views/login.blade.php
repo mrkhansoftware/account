@@ -2,25 +2,8 @@
 <html>
 
 <head>
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5CMGZN2');
-    </script>
-    <!-- End Google Tag Manager -->
-    <title>Login Account</title>
+    
+    <title>IIEEX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <meta name="title" content="login_account" />
     <meta name="description" content="Over the account you can access the programs and services" />
@@ -532,15 +515,7 @@
                     firebase.auth().signOut();
                     return;
                 }
-                if (data.exStatus == 'No') {
-
-                    var firstName = userInfo.firstName != undefined ? userInfo.firstName : userInfo.email;
-                    var lastName = userInfo.lastName != undefined ? userInfo.lastName : userInfo.email;
-                    var email = userInfo.email;
-                    password = makeid(10);
-                    signUpForm(email, password, firstName, lastName, true);
-                    return;
-                }
+                
                 if (isRedirect) {
                     //console.log(currentUserInfo());
                     window.location.href = '/' + '{{isset($_GET["redirectUrl"])?$_GET["redirectUrl"]:"profile_account"}}';
