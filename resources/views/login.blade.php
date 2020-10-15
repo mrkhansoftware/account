@@ -370,7 +370,7 @@
                 <!-- <img style="float: left;" src="{{ asset('images/2020IIEEXreserved.png') }}" /> -->
                 
                 <span class="gaccca-reserved-text"><img style="margin-right: 2px;" src="{{ asset('images/c.png') }}" />2020 IIEEX. All rights reserved</span>
-                <span class="gaccca-reserved-text">By using our site, you acknowledge that you have read and understand our Privacy Policy and our Terms of Service</span>
+                <span class="gaccca-reserved-text">By using our site, you acknowledge that you have read and understand our <a target="_blank" href="/privacy-policy">Privacy Policy</a>  and our <a target="_blank" href="/terms-of-service"> Terms of Service</a></span>
                 
             </div>
 

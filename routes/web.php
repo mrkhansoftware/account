@@ -31,6 +31,11 @@ Route::get('/', 'LoginController@index');
 
 
 
+Route::resource('TermAndPolicy', 'TermAndPolicyController');
+Route::get('/terms-of-service', 'TermAndPolicyController@termService');
+Route::get('/privacy-policy', 'TermAndPolicyController@privacyPolicy');
+
+
 Route::resource('participantInformationAccount', 'ParticipantInformationAccountController');
 Route::get('/participant_information_account', 'ParticipantInformationAccountController@index');
 
