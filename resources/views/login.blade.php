@@ -470,7 +470,7 @@
 
 
         var x = screen.height;
-        console.log(x);
+       // console.log(x);
         if (x <= 825) {
             $("#gaccca-reserved-id").css("position", "relative")
         } else {
@@ -483,7 +483,7 @@
             } else {
                 $("#gaccca-reserved-id").css("position", "absolute")
             }
-            console.log(x);
+          //  console.log(x);
         });
 
 
