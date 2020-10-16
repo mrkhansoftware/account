@@ -2,7 +2,18 @@
 <html>
 
 <head>
- 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-976534-20"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-976534-20');
+    </script>
     <title>@if (isset($title)){{$title}} @endif</title>
     @if (isset($page) && $page!='ApplicantResume' && $page!='Video_Resume' && $page!='b1Video')
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -82,13 +93,13 @@
 
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Agency")!==false)
 
-                            
-                            
-                            <li class="gaccca-dropdown"><a href="javascript:void(0)"> 
-                            <span  class="{{ ($parent_page == 'Agent Bookings') ? 'gaccca-active-menu' : '' }}">Agent Bookings </span>
-                                <img src="{{ asset('images/vector.png') }}"/>
-                            </a>
-                            
+
+
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">
+                                    <span class="{{ ($parent_page == 'Agent Bookings') ? 'gaccca-active-menu' : '' }}">Agent Bookings </span>
+                                    <img src="{{ asset('images/vector.png') }}" />
+                                </a>
+
                                 <div class="gaccca-dropdown-content">
                                     <a class="{{ ($page == 'AgencyJobSearch') ? 'gaccca-active-submenu' : '' }}" href="/AgencyJobSearch" target='_blank'>Job Search</a>
                                     <a class="{{ ($page == 'AgencyInformation') ? 'gaccca-active-submenu' : '' }}" href="/AgencyInformation">Information</a>
@@ -102,10 +113,10 @@
                             </li>
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
-                            <li class="gaccca-dropdown"><a href="javascript:void(0)"> 
-                            <span class="{{ ($parent_page == 'Host Company') ? 'gaccca-active-menu' : '' }}">Host Company </span>
-                            <img src="{{ asset('images/vector.png') }}"/>
-                        </a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">
+                                    <span class="{{ ($parent_page == 'Host Company') ? 'gaccca-active-menu' : '' }}">Host Company </span>
+                                    <img src="{{ asset('images/vector.png') }}" />
+                                </a>
                                 <div class="gaccca-dropdown-content">
                                     <a href="/host_company_agreement_account" target="_blank">Host Company Agreement</a>
                                     <a href="/DS_7002_Trainigsplan" target="_blank">DS-7002 Training Plan</a>
@@ -119,10 +130,10 @@
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
 
                             <li class="gaccca-dropdown"><a href="javascript:void(0)">
-                            <span class="{{ ($parent_page == 'B1 Program') ? 'gaccca-active-menu' : '' }}">B1 Program </span>
-                            
-                            <img src="{{ asset('images/vector.png') }}"/>
-                            </a>
+                                    <span class="{{ ($parent_page == 'B1 Program') ? 'gaccca-active-menu' : '' }}">B1 Program </span>
+
+                                    <img src="{{ asset('images/vector.png') }}" />
+                                </a>
                                 <div class="gaccca-dropdown-content">
                                     <a class="{{ ($page == 'B_Visa_Case_Information') ? 'gaccca-active-submenu' : '' }}" href="/B_Visa_Case_Information">Case Information</a>
                                     <a class="{{ ($page == 'b1Video') ? 'gaccca-active-submenu' : '' }}" href="/b1Video">Video</a>
@@ -136,10 +147,10 @@
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
 
-                            <li class="gaccca-dropdown"><a  href="javascript:void(0)"> 
-                            <span class="{{ ($parent_page == 'Placement Program') ? 'gaccca-active-menu' : '' }}">Placement Program </span>
-                            <img src="{{ asset('images/vector.png') }}"/>
-                            </a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)">
+                                    <span class="{{ ($parent_page == 'Placement Program') ? 'gaccca-active-menu' : '' }}">Placement Program </span>
+                                    <img src="{{ asset('images/vector.png') }}" />
+                                </a>
 
                                 <div class="gaccca-dropdown-content">
                                     <a class="{{ ($page == 'VideoTutorials') ? 'gaccca-active-submenu' : '' }}" href="/VideoTutorials">Video Tutorials</a>
@@ -159,8 +170,8 @@
                             @endif
                             @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
 
-                            <li class="gaccca-dropdown"><a  href="javascript:void(0)"><span class="{{ ($parent_page == 'J1 Program') ? 'gaccca-active-menu' : '' }}">J1 Program </span> <img src="{{ asset('images/vector.png') }}"/>
-                            </a>
+                            <li class="gaccca-dropdown"><a href="javascript:void(0)"><span class="{{ ($parent_page == 'J1 Program') ? 'gaccca-active-menu' : '' }}">J1 Program </span> <img src="{{ asset('images/vector.png') }}" />
+                                </a>
 
                                 <div class="gaccca-dropdown-content">
                                     <a class="{{ ($page == 'information_instruction_account') ? 'gaccca-active-submenu' : '' }}" href="/information_instruction_account">Information &amp; Instruction</a>
@@ -214,15 +225,15 @@
 
                         <li class="gaccca-dropdown-profile">
                             <a class="gaccca-user-name" href="javascript:void(0)"> Hi, {{session()->get('contactName')}} </a>
-                            
+
                         </li>
                         <li class="gaccca-dropdown-profile">
-                        <span>
-                        <a href="javascript:void(0)" class="gaccca-dropbtn">
-                        <img src="{{ asset('images/user.png') }}"/>
-                        <i class="fas fa-caret-down"></i>
-    </span>
-                        </a>
+                            <span>
+                                <a href="javascript:void(0)" class="gaccca-dropbtn">
+                                    <img src="{{ asset('images/user.png') }}" />
+                                    <i class="fas fa-caret-down"></i>
+                            </span>
+                            </a>
                             <div class="gaccca-dropdown-content-profile">
                                 <a class="{{ ($page == 'profile_account') ? 'gaccca-active-submenu' : '' }}" href="/profile_account">My Profile</a>
                                 <a class="{{ ($page == 'password_account') ? 'gaccca-active-submenu' : '' }}" href="/password_account">Password</a>
@@ -236,7 +247,7 @@
                     <!-- <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button">☰</button> -->
                     <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button"><i class="fas fa-bars"></i></button>
 
-                    
+
                 </div>
             </div>
         </div>
@@ -249,7 +260,7 @@
         <a href="javascript:void(0)" id="closeNav" class="closebtn">×</a>
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Agency")!==false)
         <button class="gaccca-dropdown-btn">Agent Bookings
-        <img src="{{ asset('images/vector.png') }}"/>
+            <img src="{{ asset('images/vector.png') }}" />
         </button>
 
         <div class="gaccca-dropdown-container">
@@ -268,7 +279,7 @@
 
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Hostcompany")!==false)
         <button class="gaccca-dropdown-btn">Host Company
-        <img src="{{ asset('images/vector.png') }}"/>
+            <img src="{{ asset('images/vector.png') }}" />
         </button>
 
         <div class="gaccca-dropdown-container">
@@ -285,7 +296,7 @@
 
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"B1")!==false)
         <button class="gaccca-dropdown-btn">B1 Program
-        <img src="{{ asset('images/vector.png') }}"/>
+            <img src="{{ asset('images/vector.png') }}" />
         </button>
         <div class="gaccca-dropdown-container">
             <a href="/B_Visa_Case_Information">Case Information</a>
@@ -296,7 +307,7 @@
         @endif
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"Placement")!==false)
         <button class="gaccca-dropdown-btn">Placement Program
-        <img src="{{ asset('images/vector.png') }}"/>
+            <img src="{{ asset('images/vector.png') }}" />
         </button>
 
 
@@ -316,7 +327,7 @@
 
         @if (stripos(isset($datas['portalProgram'])?$datas['portalProgram']:'',"J1")!==false)
         <button class="gaccca-dropdown-btn ">J1 Program
-        <img src="{{ asset('images/vector.png') }}"/>
+            <img src="{{ asset('images/vector.png') }}" />
         </button>
 
 
@@ -346,7 +357,7 @@
 
 
         <button class="gaccca-dropdown-btn">Profile
-        <img src="{{ asset('images/vector.png') }}"/>
+            <img src="{{ asset('images/vector.png') }}" />
         </button>
 
 
@@ -374,9 +385,9 @@
     </div>
 
     <script>
-var emailAccountUserVal="{{session()->get('userEmail')}}";
-var contIdAccountUserVal="{{isset($datas['contID'])?$datas['contID']:''}}";
-var applicantIdAccountUserVal="{{isset($datas['applicantId'])?$datas['applicantId']:''}}";
-var applicantNameAccountUserVal="{{isset($datas['applicantName'])?$datas['applicantName']:''}}";
-</script>
-@include('common.chat')
+        var emailAccountUserVal = "{{session()->get('userEmail')}}";
+        var contIdAccountUserVal = "{{isset($datas['contID'])?$datas['contID']:''}}";
+        var applicantIdAccountUserVal = "{{isset($datas['applicantId'])?$datas['applicantId']:''}}";
+        var applicantNameAccountUserVal = "{{isset($datas['applicantName'])?$datas['applicantName']:''}}";
+    </script>
+    @include('common.chat')
