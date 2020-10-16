@@ -11,9 +11,9 @@ class CaseInsensitiveUriValidator implements ValidatorInterface
   {
      $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
    if(stripos($actual_link,"www.account.iieex.org")){
-    echo  $url=str_ireplace("www.","",$actual_link);
-    header("Location: ".$url);
-    exit();
+    //echo  $url=str_ireplace("www.","",$actual_link);
+    //header("Location: ".$url);
+    //exit();
    }
     $path = $request->path() == '/' ? '/' : '/'.$request->path();
     $path=str_ireplace("/apex","",$path);//handling salesforce links
