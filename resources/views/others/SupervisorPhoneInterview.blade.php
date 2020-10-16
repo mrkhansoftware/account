@@ -54,7 +54,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Briefly_describe_your_company__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Briefly_describe_your_company__c'])?$datas['onfrm']['Briefly_describe_your_company__c']:''}}</textarea>
+                    <textarea name="onfrm[Briefly_describe_your_company__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Briefly_describe_your_company__c'])?$datas['onfrm']['Briefly_describe_your_company__c']:''}}</textarea>
 
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Training_Environment__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Training_Environment__c'])?$datas['onfrm']['Training_Environment__c']:''}}</textarea>
+                    <textarea name="onfrm[Training_Environment__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Training_Environment__c'])?$datas['onfrm']['Training_Environment__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
 
 
 
-                    <textarea name="onfrm[What_kinds_of_tasks_you_have_prepared__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['What_kinds_of_tasks_you_have_prepared__c'])?$datas['onfrm']['What_kinds_of_tasks_you_have_prepared__c']:''}}</textarea>
+                    <textarea name="onfrm[What_kinds_of_tasks_you_have_prepared__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['What_kinds_of_tasks_you_have_prepared__c'])?$datas['onfrm']['What_kinds_of_tasks_you_have_prepared__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Will_you_be_the_supervisor_throughout__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Will_you_be_the_supervisor_throughout__c'])?$datas['onfrm']['Will_you_be_the_supervisor_throughout__c']:''}}</textarea>
+                    <textarea name="onfrm[Will_you_be_the_supervisor_throughout__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Will_you_be_the_supervisor_throughout__c'])?$datas['onfrm']['Will_you_be_the_supervisor_throughout__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Require_extra_safety_precautions__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Require_extra_safety_precautions__c'])?$datas['onfrm']['Require_extra_safety_precautions__c']:''}}</textarea>
+                    <textarea name="onfrm[Require_extra_safety_precautions__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Require_extra_safety_precautions__c'])?$datas['onfrm']['Require_extra_safety_precautions__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Provide_any_of_their_own_equipment__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Provide_any_of_their_own_equipment__c'])?$datas['onfrm']['Provide_any_of_their_own_equipment__c']:''}}</textarea>
+                    <textarea name="onfrm[Provide_any_of_their_own_equipment__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Provide_any_of_their_own_equipment__c'])?$datas['onfrm']['Provide_any_of_their_own_equipment__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -133,7 +133,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Received_a_copy_of_the_HC_Handbook__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Received_a_copy_of_the_HC_Handbook__c'])?$datas['onfrm']['Received_a_copy_of_the_HC_Handbook__c']:''}}</textarea>
+                    <textarea name="onfrm[Received_a_copy_of_the_HC_Handbook__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Received_a_copy_of_the_HC_Handbook__c'])?$datas['onfrm']['Received_a_copy_of_the_HC_Handbook__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@
 
 
 
-                    <textarea name="onfrm[How_did_you_find_the_intern_trainee__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['How_did_you_find_the_intern_trainee__c'])?$datas['onfrm']['How_did_you_find_the_intern_trainee__c']:''}}</textarea>
+                    <textarea name="onfrm[How_did_you_find_the_intern_trainee__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['How_did_you_find_the_intern_trainee__c'])?$datas['onfrm']['How_did_you_find_the_intern_trainee__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Have_you_interviewed_on_the_phone_WC__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Have_you_interviewed_on_the_phone_WC__c'])?$datas['onfrm']['Have_you_interviewed_on_the_phone_WC__c']:''}}</textarea>
+                    <textarea name="onfrm[Have_you_interviewed_on_the_phone_WC__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Have_you_interviewed_on_the_phone_WC__c'])?$datas['onfrm']['Have_you_interviewed_on_the_phone_WC__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Do_you_feel_Eng_skills_are_sufficient__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Do_you_feel_Eng_skills_are_sufficient__c'])?$datas['onfrm']['Do_you_feel_Eng_skills_are_sufficient__c']:''}}</textarea>
+                    <textarea name="onfrm[Do_you_feel_Eng_skills_are_sufficient__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Do_you_feel_Eng_skills_are_sufficient__c'])?$datas['onfrm']['Do_you_feel_Eng_skills_are_sufficient__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -195,7 +195,7 @@
                     Has this internship opportunity been advertised to Americans as well? </label>
                 <div class="gaccca-form-element__control">
 
-                    <textarea name="onfrm[Internship_adv_to_Americans_as_well__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Internship_adv_to_Americans_as_well__c'])?$datas['onfrm']['Internship_adv_to_Americans_as_well__c']:''}}</textarea>
+                    <textarea name="onfrm[Internship_adv_to_Americans_as_well__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Internship_adv_to_Americans_as_well__c'])?$datas['onfrm']['Internship_adv_to_Americans_as_well__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -207,7 +207,7 @@
                     Can you confirm that you understand the purpose of the J-1 visa program and that you will not attempt to extend an offer of employment or change the visa status of your Interns or Trainees, as it is required that they return home after completing the program? </label>
                 <div class="gaccca-form-element__control">
 
-                    <textarea name="onfrm[Understand_the_purpose_of_the_visa_prog__c]" required="" class="gaccca-textarea">{{isset($datas['onfrm']['Understand_the_purpose_of_the_visa_prog__c'])?$datas['onfrm']['Understand_the_purpose_of_the_visa_prog__c']:''}}</textarea>
+                    <textarea name="onfrm[Understand_the_purpose_of_the_visa_prog__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Understand_the_purpose_of_the_visa_prog__c'])?$datas['onfrm']['Understand_the_purpose_of_the_visa_prog__c']:''}}</textarea>
                 </div>
             </div>
         </div>
@@ -237,7 +237,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-8">
                     Name of Interviewer:</label>
                 <div class="gaccca-form-element__control">
-                    <input name="onfrm[Name_of_Interviewer__c]" value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" type="text" class="gaccca-input" />
+                    <input name="onfrm[Name_of_Interviewer__c]" required="" value="{{isset($datas['onfrm']['Name_of_Interviewer__c'])?$datas['onfrm']['Name_of_Interviewer__c']:''}}" type="text" class="gaccca-input" />
 
 
                 </div>
