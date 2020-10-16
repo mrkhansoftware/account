@@ -10,7 +10,7 @@ class CaseInsensitiveUriValidator implements ValidatorInterface
   public function matches(Route $route, Request $request)
   {
      $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-   if(stripos($actual_link,"www.localhost:8000")){
+   if(stripos($actual_link,"www.account.iieex.org")){
     echo  $url=str_ireplace("www.","",$actual_link);
     header("Location: ".$url);
     exit();
