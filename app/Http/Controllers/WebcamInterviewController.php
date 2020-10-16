@@ -61,7 +61,7 @@ class WebcamInterviewController extends Controller
         if($response=='"OK"'){
         return redirect()->action('WebcamInterviewController@index', ['isSave' => 1, 'orgid' => $EncId]);
         }else{
-            echo $response;die;
+            'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiWebcamInterviewQuestionnaireClass');
         }
     }
 

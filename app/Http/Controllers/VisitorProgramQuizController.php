@@ -60,7 +60,7 @@ class VisitorProgramQuizController extends Controller
         if($response=='"OK"'){
         return redirect()->action('VisitorProgramQuizController@index', ['isSave' => 1, 'orgid' => $EncId]);
         }else{
-            echo $response;die;
+            'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiTheExchangeVisitorProgramQuizClass');
         }
     }
 

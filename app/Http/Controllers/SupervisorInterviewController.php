@@ -60,7 +60,7 @@ class SupervisorInterviewController extends Controller
         if($response=='"OK"'){
         return redirect()->action('SupervisorInterviewController@index', ['isSave' => 1, 'orgid' => $EncId]);
         }else{
-            echo $response;die;
+            'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiSupervisorPhoneInterview');
         }
     }
 

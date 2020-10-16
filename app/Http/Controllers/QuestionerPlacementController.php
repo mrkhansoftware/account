@@ -60,7 +60,7 @@ class QuestionerPlacementController extends Controller
         if($response=='"OK"'){
         return redirect()->action('QuestionerPlacementController@index', ['isSave' => 1, 'orgid' => $EncId]);
         }else{
-            echo $response;die;
+            'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiQuestionerPlacementServiceClass');
         }
     }
 
