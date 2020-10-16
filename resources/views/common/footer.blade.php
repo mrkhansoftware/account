@@ -36,7 +36,7 @@ jQuery("#openNav").bind('click', function () {
 
 });
 
-var dropdown =  $('.gaccca-dropdown-btn');
+var dropdown =  jQuery('.gaccca-dropdown-btn');
 var i;
 for (i = 0; i < dropdown.length; i++) {
       dropdown[i].addEventListener("click", function() {
@@ -144,13 +144,13 @@ function gacccaScriptContentTab(evt, btnId, tabName) {
 
 
 var i, gaccca_tabcontent, gaccc_tablinks;
- gaccca_tabcontent = $(".gaccca-tabcontent");
+ gaccca_tabcontent = jQuery(".gaccca-tabcontent");
 
 for (i = 0; i < gaccca_tabcontent.length; i++) {
 gaccca_tabcontent[i].style.display = "none";
 }
 
-gaccc_tablinks = $(".gaccca-tablinks");
+gaccc_tablinks = jQuery(".gaccca-tablinks");
 
 for (i = 0; i < gaccc_tablinks.length; i++) {
 gaccc_tablinks[i].className = gaccc_tablinks[i].className.replace(" gaccca-tab-active", "");
@@ -191,7 +191,7 @@ jQuery(document).ready(function(){
 
 
     jQuery(document).ready(function() {
-    $('[id^="gaccca_saveBtn_"]').click(function() {
+      jQuery('[id^="gaccca_saveBtn_"]').click(function() {
       jQuery('[id^="gacccaForm_"]').parsley().validate();
       if (jQuery('[id^="gacccaForm_"]').parsley().isValid()) {
               document.getElementById('loader').style.display='block';
