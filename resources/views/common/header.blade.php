@@ -192,7 +192,7 @@
                                     @endif
                                     <a class="{{ ($page == 'extension_request_account') ? 'gaccca-active-submenu' : '' }}" href="/extension_request_account">Extension Request</a>
                                     <a class="{{ ($page == 'travel_validation_account') ? 'gaccca-active-submenu' : '' }}" href="/travel_validation_account">Travel Validation</a>
-                                    <a class="{{ ($page == '') ? 'gaccca-active-submenu' : 'validation_checkin_account' }}" href="/validation_checkin_account">Validation &amp; Check-In</a>
+                                    <a class="{{ ($page == 'validation_checkin_account') ? 'gaccca-active-submenu' : '' }}" href="/validation_checkin_account">Validation &amp; Check-In</a>
                                     <a class="{{ ($page == 'monthly_Checkin') ? 'gaccca-active-submenu' : '' }}" href="/monthly_Checkin">Monthly Check-In</a>
                                     <a class="{{ ($page == 'midpoint_evaluation_account') ? 'gaccca-active-submenu' : '' }}" href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
                                     <a class="{{ ($page == 'final_evaluation_account') ? 'gaccca-active-submenu' : '' }}" href="/final_evaluation_account">Final Evaluation</a>

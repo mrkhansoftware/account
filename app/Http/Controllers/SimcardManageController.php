@@ -13,8 +13,16 @@ class SimcardManageController extends Controller
      */
     public function index()
     {
-        return view('simcardmanagement/simcardmanagepage');
-    }
+        
+        $idCon= 'App\Services\Helper'::sessionConId();
+        if($idCon==''){
+           return 'App\Services\Helper'::returnUrl();
+        }
+        $datas='App\Services\Helper'::getRequest('ApiSimCardManageController/'.$idCon);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+        return view('simcardmanagement/simcardmanagepage')->with(compact('datas'));
+   }
 
 
     public function commonMethodSimcardManage(Request $request)

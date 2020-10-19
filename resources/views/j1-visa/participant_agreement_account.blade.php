@@ -151,7 +151,6 @@
 {!! Form::close() !!}
 @include('common.footer')
 
-@include('common.footer')
   @else
   Permission denied. Please contact administrator.
   @endif

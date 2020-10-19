@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['datas'=>$datas,'title' =>'Final Evaluation','page'=>'final_evaluation_account','parent_page'=>'J1 Program'])
-@include('common.signScript');
+@include('common.signScript')
 
 {!! Form::open(['action' => 'FinalEvaluationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_final']) !!}
 
@@ -1013,7 +1013,7 @@
         Enjoy your remaining time in the U.S. and at your host company. We hope you had a great internship/training experience in the U.S.</p>
 
     </div>
-    @include('common.signHTML');
+    @include('common.signHTML')
   </div>
 
   @if (isset($datas['isFormSent']) && $datas['isFormSent'])
