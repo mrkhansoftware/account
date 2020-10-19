@@ -79,10 +79,13 @@ $finalReq['applicantData']=json_encode($finalReq['applicant']);
 $finalReq['onlineFormData']=json_encode($finalReq['onfrm']);
 unset($finalReq['_token']);
 unset($finalReq['applicant']);
-
+unset($finalReq['lastNameFirstName']);
+unset($finalReq['applicantId']);
+unset($finalReq['Contact__c']);
+unset($finalReq['NewGdriveID__c']);
+unset($finalReq['Google_Drive_Evaluation_Form__c']);
 unset($finalReq['onfrm']);
-
-
+unset($finalReq['onfrmId']);
 
 $resp='App\Services\Helper'::postRequest($finalReq,'ApiWeeklyCheckInClass');
 if($resp=='"OK"'){
