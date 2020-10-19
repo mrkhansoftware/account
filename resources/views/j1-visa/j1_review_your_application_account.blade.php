@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['datas'=>$datas,'title' =>'Review your J1 Application','page'=>'j1_review_your_application_account','parent_page'=>'J1 Program'])
-@include('common.signScript');
+@include('common.signScript')
 
 {!! Form::open(['action' => 'J1ReviewApplicationAccountController@store', 'data-parsley-validate', 'method' => 'POST',
 'id' => 'gacccaForm_j1review']) !!}
@@ -852,7 +852,7 @@
             </div>
             @if (isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])
 @else
-            @include('common.signHTML');
+            @include('common.signHTML')
 
             <div class="gaccca-form-element gaccca-form-element-margin">
                 @if ((isset($datas['Appli']['finnalize__c']) && $datas['Appli']['finnalize__c']) ||

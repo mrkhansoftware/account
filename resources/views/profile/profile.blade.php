@@ -9,9 +9,9 @@
 <div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">My Profile</h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
-    <p>Please provide all requested information. The provided information will be used for your visa application.
+    <p>Please provide all requested information. 
     </p>
-    <p> Please make sure all information is up-to-date.</p>
+    <p> The provided information will be used for your visa application. Please make sure all information is up-to-date.</p>
   </div>
   <h2 class="gaccca-h2-padding">Personal Information</h2>
   <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">

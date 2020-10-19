@@ -2543,6 +2543,13 @@ input[type="file"].gaccca-parsley-error+ul {
     text-align: center;
     margin-left: 0px !important;
   }
+
+  .gaccca-download-participant-handbook-padding {
+    padding: 10px 10px !important;
+}
+.gaccca-download-participant-handbook-margin {
+  margin: 0px 8% !important;
+}
  
 }
 
