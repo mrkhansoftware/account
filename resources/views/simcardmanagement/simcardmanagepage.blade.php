@@ -1,10 +1,47 @@
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
+
 <!DOCTYPE html>
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-976534-20"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-976534-20');
+    </script>
+    <title>GACC California -Aerobile SIM Activation List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="title" content="SimCardManagePage" />
+    <meta name="description" content="Over the account you can access the programs and services" />
+    <meta name="keywords" content="Account IIEEX, Account GACCCA" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="30 days" />
+    <meta name="author" content="IIEEX, GACCCA" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://account.iieex.org/SimCardManagePage" />
+    <meta property="og:site_name" content="https://account.iieex.org" />
+    <meta name="google-site-verification" content="-6V8H3sxoJ6qUsdyr6IkfGBlVoHhB5C3QQFTFTmR4mI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <link rel="icon" href="{{ asset('images/favicon/favicon-iieex-16.png') }}" type="image/png" sizes="16x16" />
+    <link rel="icon" href="{{ asset('images/favicon/favicon-iieex-32.png') }}" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="{{ asset('images/favicon/favicon-iieex-60.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/favicon/favicon-iieex-76.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/favicon/favicon-iieex-120.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/favicon/favicon-iieex-152.png') }}" />
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/font.css') }}" rel='stylesheet'>
     <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
@@ -480,15 +517,15 @@
             var recordId = $(this).attr("data-recordid");
             var localFieldId = $(this).attr("data-loclFieldId");
             $("#" + showingSpan).html($("#" + localFieldId).val());
-            var className=$("#" + localFieldId).attr("class");
-            if(className!=undefined && className.includes('gaccca-input-date')){
-                datatype='date';
-                valueInput=returnConvertedDate($("#" + localFieldId).val());
-            }else{
-                datatype='text'; 
-                valueInput =$("#" + localFieldId).val();
+            var className = $("#" + localFieldId).attr("class");
+            if (className != undefined && className.includes('gaccca-input-date')) {
+                datatype = 'date';
+                valueInput = returnConvertedDate($("#" + localFieldId).val());
+            } else {
+                datatype = 'text';
+                valueInput = $("#" + localFieldId).val();
             }
-            saveRecordUpdate(recordId,fieldApi,valueInput,datatype);
+            saveRecordUpdate(recordId, fieldApi, valueInput, datatype);
 
         });
         $('.gaccca-input-date').datepicker({
@@ -657,7 +694,7 @@
         }
     }
 
-    function saveRecordUpdate(recordId,fieldApi,val,dataType){
+    function saveRecordUpdate(recordId, fieldApi, val, dataType) {
         var formData = {
             'appId': recordId,
             "fieldName": fieldApi,
@@ -667,8 +704,9 @@
         }
         ajaxRequest(formData);
     }
-    function sendTransactionFailEmailAction(val){
-        if(!confirm("Are you sure to send the transaction failure email? ")){
+
+    function sendTransactionFailEmailAction(val) {
+        if (!confirm("Are you sure to send the transaction failure email? ")) {
             return;
         }
         var formData = {
@@ -677,14 +715,14 @@
         }
         ajaxRequest(formData);
     }
-    
+
     function commissionPaid() {
         if ($('#checkNumberId').val().trim() == '' || $('#checkAmountId').val().trim() == '') {
             alert('Check Information missing');
             return;
         }
         var applicantSelected = [];
-        var commissionCheck = document.getElementsByClassName('commissionCheck_'+accesskeyVar);
+        var commissionCheck = document.getElementsByClassName('commissionCheck_' + accesskeyVar);
         for (var i = 0; i < commissionCheck.length; i++) {
             if (commissionCheck[i].checked) {
                 applicantSelected.push(commissionCheck[i].getAttribute("id"));
@@ -697,18 +735,18 @@
         var formData = {
             'ids': applicantSelected,
             "methodType": 'commissionMethod',
-            'checkAmount':$('#checkAmountId').val(),
-            'check':$('#checkNumberId').val(),
-            'commissionStatus':'Paid',
-            'currentStatus':'Due'
+            'checkAmount': $('#checkAmountId').val(),
+            'check': $('#checkNumberId').val(),
+            'commissionStatus': 'Paid',
+            'currentStatus': 'Due'
         }
         ajaxRequest(formData);
     }
 
     function selectAll() {
-        var commissionCheck = document.getElementsByClassName('commissionCheck_'+accesskeyVar);
+        var commissionCheck = document.getElementsByClassName('commissionCheck_' + accesskeyVar);
         for (var i = 0; i < commissionCheck.length; i++) {
-            commissionCheck[i].checked = document.getElementById('All_Commission_'+accesskeyVar).checked;
+            commissionCheck[i].checked = document.getElementById('All_Commission_' + accesskeyVar).checked;
         }
     }
 
@@ -743,7 +781,7 @@
         ajaxRequest(formData);
     }
 
-    function ajaxRequest(formData){
+    function ajaxRequest(formData) {
         console.log(formData);
         $.ajaxSetup({
             headers: {
@@ -757,32 +795,32 @@
             data: formData,
             dataType: 'json',
             beforeSend: function() {
-                if(formData.methodType=='saveApplicant' || formData.methodType=='sendTransactionFailEmailAction' || formData.methodType== 'commissionMethod'){
+                if (formData.methodType == 'saveApplicant' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod') {
                     $("#loaderRecordSave").css('display', 'block');
 
-                }else{
-                $(".loader").css('display', 'block');
-                $('#' + tabNameVar + '_ajax').css('display', 'none');
+                } else {
+                    $(".loader").css('display', 'block');
+                    $('#' + tabNameVar + '_ajax').css('display', 'none');
                 }
 
             },
             success: function(data) {
                 console.log(data);
-                if((formData.methodType=='saveApplicant' || formData.methodType=='sendTransactionFailEmailAction' || formData.methodType== 'commissionMethod') && data=='OK' ){
+                if ((formData.methodType == 'saveApplicant' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod') && data == 'OK') {
                     $("#loaderRecordSave").css('display', 'none');
-                    if(formData.methodType=='sendTransactionFailEmailAction'){
-alert('Transaction failure email has been sent.');
+                    if (formData.methodType == 'sendTransactionFailEmailAction') {
+                        alert('Transaction failure email has been sent.');
                     }
-                    if(formData.methodType=='commissionMethod'){
+                    if (formData.methodType == 'commissionMethod') {
                         loadValues()
                     }
-                }else{
-                applicantCount = data.totalApplicantRecords;
-                $('#' + tabNameVar + '_ajax').html(data.html);
-                $('#' + tabNameVar + '_ajax').css('display', 'block');
-                $(".loader").css('display', 'none');
-                loadAjaxContent();
-                updateTabRecordCount(data.totalRecords);
+                } else {
+                    applicantCount = data.totalApplicantRecords;
+                    $('#' + tabNameVar + '_ajax').html(data.html);
+                    $('#' + tabNameVar + '_ajax').css('display', 'block');
+                    $(".loader").css('display', 'none');
+                    loadAjaxContent();
+                    updateTabRecordCount(data.totalRecords);
                 }
             },
             error: function(data) {
@@ -822,3 +860,8 @@ alert('Transaction failure email has been sent.');
 </script>
 
 </html>
+
+
+@else
+Permission denied. Please contact administrator.
+@endif
