@@ -41,9 +41,11 @@ class LoginController extends Controller
        session()->put('contactName', $response['contactName']);
        session()->put('userEmail', $response['userEmail']);
        }
+       $response['pageName']=$response['simcardPortalUser']=='Yes'?'SimCardManagePage':'profile_account';
        unset($response['conIdUser']);
        unset($response['contactName']);
        unset($response['userEmail']);
+       unset($response['simcardPortalUser']);
      return json_encode($response);
        
   }

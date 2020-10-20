@@ -530,8 +530,11 @@
                 }
 
                 if (isRedirect) {
-                    //console.log(currentUserInfo());
+                    if(data.pageName=='profile_account'){
                     window.location.href = '/' + '{{isset($_GET["redirectUrl"])?$_GET["redirectUrl"]:"profile_account"}}';
+                    }else{
+                        window.location.href = '/' +data.pageName;                     
+                    }
                 }
 
 
