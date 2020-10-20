@@ -3,224 +3,267 @@
 
 <head>
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<link href="{{ asset('css/font.css') }}" rel='stylesheet'>
-<script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
-<link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
-<script src="{{ asset('js/jquery-ui.js') }}"></script>
-<style>
-body {
-    background: white;
-}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="{{ asset('css/font.css') }}" rel='stylesheet'>
+    <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
+    <style>
+        body {
+            background: white;
+        }
 
-/* Style the gaccca-simcard-tab */
-.gaccca-simcard-tab {
-    overflow: hidden;
-    border-bottom: 1px solid #ccc;
+        .loaderRecordSave {
+            display: none;
+            position: fixed;
+            top: 64%;
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #3498db;
+            width: 60px;
+            height: 60px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
 
-}
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
 
-/* Style the buttons inside the gaccca-simcard-tab */
-.gaccca-simcard-tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-family: sans-serif;
-    line-height: 1.5;
-}
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
 
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-/* Create an active/current tablink class */
-.gaccca-simcard-tab button.active {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-    color: rgb(0, 122, 221)
-}
+        /* Style the gaccca-simcard-tab */
+        .gaccca-simcard-tab {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
 
-.gaccca-simcard-tab button.tab-hidden {
-    display: none;
-}
+        }
 
-/* Style the gaccca-simcard-tab content */
-.gaccca_simcard_tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border-top: none;
-}
-
-.gaccca-loader-div {
-    width: 100%;
-    height: 100%;
-    z-index: 20;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.gaccca-loader {
-    border: 5px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 5px solid #1A73E8;
-    width: 50px;
-    height: 50px;
-    -webkit-animation: spin 2s linear infinite;
-    /* Safari */
-    animation: spin 2s linear infinite;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
-    margin-top: 100px;
-
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 3000px;
-    margin-top: 20px;
-}
+        /* Style the buttons inside the gaccca-simcard-tab */
+        .gaccca-simcard-tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
 
 
-td,
-th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    font-size: small;
-}
+        /* Create an active/current tablink class */
+        .gaccca-simcard-tab button.active {
 
-.gaccca-margin-left {
+            color: rgb(0, 122, 221)
+        }
 
-    margin-left: 100px;
-}
+        .gaccca-simcard-tab button.tab-hidden {
+            display: none;
+        }
 
+        /* Style the gaccca-simcard-tab content */
+        .gaccca_simcard_tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
 
-.editable-container.popover {
-    width: auto;
-}
+        .gaccca-loader-div {
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
 
-.editable-container.editable-popup {
-    max-width: none !important;
-}
+        .gaccca-loader {
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid #1A73E8;
+            width: 50px;
+            height: 50px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
 
-.popup-text {
-    position: relative;
-    padding: 1px;
-    text-align: left;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    background-clip: padding-box;
-    padding: 9px;
-    background-color: #f7f7f7;
-    margin-bottom: 14px;
-    width: 300px;
-}
+        }
 
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+            margin-top: 100px;
 
-.popup-text .popup-title {
-    font-size: small;
-    margin-bottom: 10px;
-}
+        }
 
-.button-div {
-    margin-top: 10px;
-}
-
-.edit-pencil {
-    float: right;
-}
-
-.header-text-h3 {
-    color: white;
-    margin-top: 0px;
-    font-family: sans-serif;
-    font-weight: 100;
-}
-
-.header-text-h4 {
-    color: white;
-    margin-bottom: 0px;
-    font-family: sans-serif;
-    margin-top: 5px;
-
-}
-
-.header-text-h5 {
-    color: white;
-    margin-bottom: 0px;
-    font-family: sans-serif;
-    font-weight: 100;
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            table-layout: fixed;
+            width: 3000px;
+            margin-top: 20px;
+        }
 
 
-}
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: small;
+        }
 
-.header-user-info {
-    float: right;
-    display: inline-block;
-    text-align: center;
-}
+        th {
+            cursor: pointer;
+        }
 
-.header-text {
-    float: left;
-    display: inline-block;
+        .gaccca-margin-left {
 
-}
+            margin-left: 100px;
+        }
 
-.user-icon {
-    color: white;
-    margin-top: 5px;
-    font-size: 35px;
-    margin-bottom: 5px;
-}
 
-.header-simcard-li {
-    margin: 0px !important;
-}
+        .editable-container.popover {
+            width: auto;
+        }
 
-.header-simcard-li a {
-    font-family: sans-serif;
-    font-weight: 100 !important;
-    font-size: 15px !important;
-    border: none !important;
-    padding: 4px 8px !important;
-}
+        .editable-container.editable-popup {
+            max-width: none !important;
+        }
 
-.gaccca-header ul>li.header-simcard-li a:hover {
-    border: none !important;
-}
+        .popup-text {
+            position: relative;
+            padding: 1px;
+            text-align: left;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            background-clip: padding-box;
+            padding: 9px;
+            background-color: #f7f7f7;
+            margin-bottom: 14px;
+            width: 300px;
+        }
 
-.list-icon {
-    float:left;
-    display: inline-block;
-    margin-top: 17px;
-    font-size: 34px;
-    color: white;
-    margin-right: 10px;
-}
 
-.gaccca-simcard-header {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1300px;
-    padding: 5px;
-}
-</style>
+        .popup-text .popup-title {
+            font-size: small;
+            margin-bottom: 10px;
+        }
+
+        .button-div {
+            margin-top: 10px;
+        }
+
+        .edit-pencil {
+            float: right;
+        }
+
+        .header-text-h3 {
+            color: white;
+            margin-top: 0px;
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+
+        .header-text-h4 {
+            color: white;
+            margin-bottom: 0px;
+            font-family: sans-serif;
+            margin-top: 5px;
+
+        }
+
+        .header-text-h5 {
+            color: white;
+            margin-bottom: 0px;
+            font-family: sans-serif;
+            font-weight: 100;
+
+
+        }
+
+        .header-user-info {
+            float: right;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .header-text {
+            float: left;
+            display: inline-block;
+
+        }
+
+        .user-icon {
+            color: white;
+            margin-top: 5px;
+            font-size: 35px;
+            margin-bottom: 5px;
+        }
+
+        .header-simcard-li {
+            margin: 0px !important;
+        }
+
+        .header-simcard-li a {
+            font-family: sans-serif;
+            font-weight: 100 !important;
+            font-size: 15px !important;
+            border: none !important;
+            padding: 4px 8px !important;
+        }
+
+        .gaccca-header ul>li.header-simcard-li a:hover {
+            border: none !important;
+        }
+
+        .gaccca-header ul>li {
+            line-height: 30px;
+        }
+
+        .list-icon {
+            float: left;
+            display: inline-block;
+            margin-top: 17px;
+            font-size: 34px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .gaccca-simcard-header {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1300px;
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -230,43 +273,42 @@ th {
 
 
 
+    <div class="loaderRecordSave" id='loaderRecordSave'></div>
 
+    <div class="gaccca-header">
+        <div class="gaccca-simcard-header">
+            <div class="gaccca-grid gaccca-wrap">
+                <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
+                    <!-- <div class="gaccca-behind-the-logo gaccca-behind-the-logo-position"> -->
+                    <!-- <img src="{{ asset('images/logo/logo1.png') }}"/> -->
+                    <span class="list-icon"><i class="fas fa-list-alt"></i></span>
+                    <div class="header-text">
 
-<div class="gaccca-header">
-    <div class="gaccca-simcard-header">
-        <div class="gaccca-grid gaccca-wrap">
-            <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
-                <!-- <div class="gaccca-behind-the-logo gaccca-behind-the-logo-position"> -->
-                <!-- <img src="{{ asset('images/logo/logo1.png') }}"/> -->
-                <span class="list-icon"><i class="fas fa-list-alt"></i></span>
-                <div class="header-text">
+                        <h5 class="header-text-h5"> Sim Card </h5>
+                        <h3 class="header-text-h3"> GACC California -Aerobile SIM Activation List </h3>
+                    </div>
 
-                    <h5 class="header-text-h5"> Sim Card </h5>
-                    <h3 class="header-text-h3"> GACC California -Aerobile SIM Activation List </h3>
+                    <!-- </div> -->
+                    <div class="header-user-info">
+                        <h4 class="header-text-h4">Test User</h4>
+                        <span class="user-icon"><i class="fas fa-user-circle"></i></span>
+                        <ul class="header-button-group-list">
+                            <li class="header-simcard-li"><a href="/profile_account" target="_blank">Profile</a>
+                            </li>
+                            <li class="header-simcard-li"><a href="/password_account" target="_blank">Change
+                                    Password</a></li>
+                            <li class="header-simcard-li"><a href="/logout_account">Logout</a></li>
+                        </ul>
+                        <!-- fa fa-user-circle-o -->
+                    </div>
+                    <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button">☰</button>
+
                 </div>
-
-                <!-- </div> -->
-                <div class="header-user-info">
-                    <h4 class="header-text-h4">Test User</h4>
-                    <span class="user-icon"><i class="fas fa-user-circle"></i></span>
-                    <ul class="header-button-group-list">
-                        <li class="header-simcard-li"><a href="/profile_account" target="_blank">Profile</a>
-                        </li>
-                        <li class="header-simcard-li"><a href="/password_account" target="_blank">Change
-                                Password</a></li>
-                        <li class="header-simcard-li"><a href="/logout_account">Logout</a></li>
-                    </ul>
-                    <!-- fa fa-user-circle-o -->
-                </div>
-                <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button">☰</button>
-
             </div>
         </div>
     </div>
-</div>
 
-<div class="clear"></div>
-
+    <div class="clear"></div>
 
 
 
@@ -278,120 +320,123 @@ th {
 
 
 
-<div class="gaccca-simcard-tab">
-    <button class="gaccca_simcard_tablinks" id='tab_Booked_Simcard' data-accesskey="Booked" data-status='Booked Payment Pending' onclick="simCardManageTab(event, this,  'booked_and_payment')">Booked and
-        Payment Pending (0)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="Waiting" data-status='Waiting for number' onclick="simCardManageTab(event, this,  'waiting_for_number')">Waiting For
-        number (0)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="Active" data-status='Active' onclick="simCardManageTab(event, this,  'active_id')">Active (0)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="CancelleLationRequested" data-status='Cancellation requested' onclick="simCardManageTab(event, this,  'cancellation_request')">Cancellation
-        requested(3)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="Cancelled" data-status='Cancellation confirmed' onclick="simCardManageTab(event, this,  'cancellation_confirmed')">Cancellation
-        confirmed(331)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="Problem" data-status='Problem' onclick="simCardManageTab(event, this,  'problem')">Problem(0)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="ChangePlan" data-status='Plan change' onclick="simCardManageTab(event, this,  'plan_change')">Plan change(2)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="ChangeCC" data-status='Credit card change' onclick="simCardManageTab(event, this,  'credit_card_change')">Credit Card
-        change(1)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="All" data-status='All' onclick="simCardManageTab(event, this,  'all')">All</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="Commission" data-status='Commission' onclick="simCardManageTab(event, this,  'commission_pending')">Commission
-        Pending(24)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="CommissionPaid" data-status='CommissionPaid' onclick="simCardManageTab(event, this,  'commission_paid')">Commission
-        Paid(120)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="Shipped" data-status='Shipped' onclick="simCardManageTab(event, this,  'shipped')">Shipped(120)</button>
+
+    <div class="gaccca-simcard-tab">
+        <button class="gaccca_simcard_tablinks" id='tab_Booked_Simcard' data-accesskey="Booked" data-status='Booked Payment Pending' onclick="simCardManageTab(event, this,  'booked_and_payment')">Booked and
+            Payment Pending (<span id='tabRecordbooked'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="Waiting" data-status='Waiting for number' onclick="simCardManageTab(event, this,  'waiting_for_number')">Waiting For
+            number (<span id='tabRecordwaiting'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="Active" data-status='Active' onclick="simCardManageTab(event, this,  'active_id')">
+            Active (<span id='tabRecordactive'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="CancelleLationRequested" data-status='Cancellation requested' onclick="simCardManageTab(event, this,  'cancellation_request')">Cancellation
+            requested(<span id='tabRecordcancelR'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="Cancelled" data-status='Cancellation confirmed' onclick="simCardManageTab(event, this,  'cancellation_confirmed')">Cancellation
+            confirmed(<span id='tabRecordcancelC'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="Problem" data-status='Problem' onclick="simCardManageTab(event, this,  'problem')">
+            Problem(<span id='tabRecordproblem'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="ChangePlan" data-status='Plan change' onclick="simCardManageTab(event, this,  'plan_change')">Plan change(<span id='tabRecordplanchange'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="ChangeCC" data-status='Credit card change' onclick="simCardManageTab(event, this,  'credit_card_change')">Credit Card
+            change(<span id='tabRecordccChange'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="All" data-status='All' onclick="simCardManageTab(event, this,  'all')">All(<span id='tabRecordall'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="Commission" data-status='Commission' onclick="simCardManageTab(event, this,  'commission_pending')">Commission
+            Pending(<span id='tabRecordcommission'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="CommissionPaid" data-status='CommissionPaid' onclick="simCardManageTab(event, this,  'commission_paid')">Commission
+            Paid(<span id='tabRecordcommissionPaid'></span>)</button>
+        <button class="gaccca_simcard_tablinks" data-accesskey="Shipped" data-status='Shipped' onclick="simCardManageTab(event, this,  'shipped')">Shipped(<span id='tabRecordShipped'></span>)</button>
 
 
-</div>
-
-
-
-
-
-<div id="booked_and_payment" class="gaccca_simcard_tabcontent">
-
-    @include('simcardmanagement.loader')
-    <div id="booked_and_payment_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-        
     </div>
-</div>
-
-<div id="waiting_for_number" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
-<div id="waiting_for_number_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
-
-<div id="active_id" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
-
-<div id="active_id_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
-
-<div id="cancellation_request" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
-
-<div id="cancellation_request_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
 
 
-<div id="cancellation_confirmed" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
-
-<div id="cancellation_confirmed_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
-
-<div id="problem" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
-
-<div id="problem_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
-
-<div id="plan_change" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
-
-<div id="plan_change_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
-
-<div id="credit_card_change" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
-
-<div id="credit_card_change_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
 
 
-<div id="all" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
 
-<div id="all_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
+    <div id="booked_and_payment" class="gaccca_simcard_tabcontent">
+
+        @include('simcardmanagement.loader')
+        <div id="booked_and_payment_ajax">
+
+        </div>
+    </div>
+
+    <div id="waiting_for_number" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
+        <div id="waiting_for_number_ajax">
+        </div>
+    </div>
+
+    <div id="active_id" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
+
+        <div id="active_id_ajax">
+        </div>
+    </div>
+
+    <div id="cancellation_request" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
+
+        <div id="cancellation_request_ajax">
+        </div>
+    </div>
 
 
-<div id="commission_pending" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
+    <div id="cancellation_confirmed" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
 
-<div id="commission_pending_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
+        <div id="cancellation_confirmed_ajax">
+        </div>
+    </div>
 
-<div id="commission_paid" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
+    <div id="problem" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
 
-<div id="commission_paid_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
+        <div id="problem_ajax">
+        </div>
+    </div>
 
-<div id="shipped" class="gaccca_simcard_tabcontent">
-@include('simcardmanagement.loader')
+    <div id="plan_change" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
 
-<div id="shipped_ajax" style="width:1300px;float: left;display:block;overflow-x:scroll;">
-</div>
-</div>
+        <div id="plan_change_ajax">
+        </div>
+    </div>
+
+    <div id="credit_card_change" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
+
+        <div id="credit_card_change_ajax">
+        </div>
+    </div>
+
+
+    <div id="all" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
+
+        <div id="all_ajax">
+        </div>
+    </div>
+
+
+    <div id="commission_pending" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
+
+        <div id="commission_pending_ajax">
+        </div>
+    </div>
+
+    <div id="commission_paid" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
+
+        <div id="commission_paid_ajax">
+        </div>
+    </div>
+
+    <div id="shipped" class="gaccca_simcard_tabcontent">
+        @include('simcardmanagement.loader')
+
+        <div id="shipped_ajax">
+        </div>
+    </div>
 
 
 
@@ -401,138 +446,379 @@ th {
 
 
 <script>
+    function loadAjaxContent() {
+
+        $(".popup-text").hide();
+        $('[id^="edit_"]').on("click", function() {
+            $(".popup-text").hide();
+            $(".edit-pencil").show();
+            var current_id = $(this).attr("id");
+            var which_element = current_id.split("edit_");
+            $("#editdiv_" + which_element[1]).show();
+            $("#edit_" + which_element[1]).hide();
+            var current_value = $("#editdiv_" + which_element[1]).next().text();
+            $("#input_value_" + which_element[1]).val(current_value);
+
+        });
+
+        $('[id^="close_button_"]').on("click", function() {
+            $(".edit-pencil").show();
+            var current_id = $(this).attr("id");
+            var which_element = current_id.split("close_button_");
+            $("#editdiv_" + which_element[1]).hide();
 
 
+        });
 
-function loadAjaxContent (){
+        $('[id^="save_button_"]').on("click", function() {
+            $(".edit-pencil").show();
+            var current_id = $(this).attr("id");
+            var which_element = current_id.split("save_button_");
+            $("#editdiv_" + which_element[1]).hide();
+            var showingSpan = $(this).attr("data-showing");
+            var fieldApi = $(this).attr("data-fieldapi");
+            var recordId = $(this).attr("data-recordid");
+            var localFieldId = $(this).attr("data-loclFieldId");
+            $("#" + showingSpan).html($("#" + localFieldId).val());
+            var className=$("#" + localFieldId).attr("class");
+            if(className!=undefined && className.includes('gaccca-input-date')){
+                datatype='date';
+                valueInput=returnConvertedDate($("#" + localFieldId).val());
+            }else{
+                datatype='text'; 
+                valueInput =$("#" + localFieldId).val();
+            }
+            saveRecordUpdate(recordId,fieldApi,valueInput,datatype);
 
-$(".popup-text").hide();
-$('[id^="edit_"]').on("click", function() {
-    $(".popup-text").hide();
-    $(".edit-pencil").show();
-    var current_id = $(this).attr("id");
-    var which_element = current_id.split("edit_");
-    $("#editdiv_" + which_element[1]).show();
-    $("#edit_" + which_element[1]).hide();
-    var current_value = $("#editdiv_" + which_element[1]).next().text();
-    $("#input_value_" + which_element[1]).val(current_value);
+        });
+        $('.gaccca-input-date').datepicker({
 
-});
+            changeMonth: true,
+            changeYear: true,
 
-$('[id^="close_button_"]').on("click", function() {
-    $(".edit-pencil").show();
-    var current_id = $(this).attr("id");
-    var which_element = current_id.split("close_button_");
-    $("#editdiv_" + which_element[1]).hide();
+        });
+    }
+    var recordStatusTypeVar = '';
+    var accesskeyVar = '';
+    var tabNameVar = '';
+    var recordPerPageVar = 30;
+    var recordPerPageVarCommission = 40;
+    var applicantCount = 0;
+    var offSetGlobalVar = [];
+    offSetGlobalVar["offSetBooked"] = 0;
+    offSetGlobalVar["offSetWaiting"] = 0;
+    offSetGlobalVar["offSetActive"] = 0;
+    offSetGlobalVar["offSetCancelled"] = 0;
+    offSetGlobalVar["offSetCancelleLationRequested"] = 0;
+    offSetGlobalVar["offSetProblem"] = 0;
+    offSetGlobalVar["offSetChangePlan"] = 0;
+    offSetGlobalVar["offSetChangeCC"] = 0;
+    offSetGlobalVar["offSetAll"] = 0;
+    offSetGlobalVar["offSetShipped"] = 0;
+    offSetGlobalVar["offSetCommission"] = 0;
+    offSetGlobalVar["offSetCommissionPaid"] = 0;
+
+    var orderByOrderGlobalVar = [];
+    orderByOrderGlobalVar['orderByOrderBooked'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderWaiting'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderActive'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderCancelled'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderCancelleLationRequested'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderProblem'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderChangePlan'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderChangeCC'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderAll'] = 'desc';
+    orderByOrderGlobalVar['orderByOrderShipped'] = 'desc'
+    orderByOrderGlobalVar['orderByOrderCommission'] = 'asc';
+    orderByOrderGlobalVar['orderByOrderCommissionPaid'] = 'asc';
+
+    var orderByFieldGlobalVar = [];
+    orderByFieldGlobalVar['orderByFieldBooked'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldWaiting'] = 'Activation_Date__c';
+    orderByFieldGlobalVar['orderByFieldActive'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldCancelled'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldCancelleLationRequested'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldProblem'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldChangePlan'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldChangeCC'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldAll'] = 'Status__c';
+    orderByFieldGlobalVar['orderByFieldShipped'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldCommission'] = 'Sim_Card_Booked_Time__c';
+    orderByFieldGlobalVar['orderByFieldCommissionPaid'] = 'Sim_Card_Booked_Time__c';
 
 
-});
+    var searchRecordGlobalVar = [];
+    searchRecordGlobalVar['searchRecordBooked'] = {};
+    searchRecordGlobalVar['searchRecordWaiting'] = {};
+    searchRecordGlobalVar['searchRecordActive'] = {};
+    searchRecordGlobalVar['searchRecordCancelled'] = {};
+    searchRecordGlobalVar['searchRecordCancelleLationRequested'] = {};
+    searchRecordGlobalVar['searchRecordProblem'] = {};
+    searchRecordGlobalVar['searchRecordChangePlan'] = {};
+    searchRecordGlobalVar['searchRecordChangeCC'] = {};
+    searchRecordGlobalVar['searchRecordAll'] = {};
+    searchRecordGlobalVar['searchRecordShipped'] = {};
+    searchRecordGlobalVar['searchRecordCommission'] = {};
+    searchRecordGlobalVar['searchRecordCommissionPaid'] = {};
 
-$('[id^="save_button_"]').on("click", function() {
-    $(".edit-pencil").show();
-    var current_id = $(this).attr("id");
-    var which_element = current_id.split("save_button_");
-    $("#editdiv_" + which_element[1]).hide();
+    function searchRecordGlobalMethod(tabName) {
+        var obj = {
+            SIM_Card_Number: returnValSerchInp('simCardNumber_', tabName),
+            Requested_Area_Code: returnValSerchInp('reqAreaCode_', tabName),
+            Issued_U_S_Phone_Number: returnValSerchInp('activatedPhone_', tabName),
+            PLAN: returnValSerchInp('plan_', tabName),
+            Activation_Date: returnConvertedDate(returnValSerchInp('activationDate_', tabName)),
+            Activation_confirmed: returnValSerchInp('activationConfirmFrom_', tabName),
+            AutoRenew: returnValSerchInp('autoRenew_', tabName),
+            Cancellation_Date: returnConvertedDate(returnValSerchInp('cancellationDate_', tabName)),
+            paymentSubmited: returnValSerchInp('paymentSubmitted_', tabName),
+            deactivation_Date_by_Aerobile_SM: returnConvertedDate(returnValSerchInp('deactivationDate_', tabName)),
+            serviceEndDate: returnConvertedDate(returnValSerchInp('serviceEndDateFrom_', tabName)),
+            serviceEndDateTo: returnConvertedDate(returnValSerchInp('serviceEndDateTo_', tabName)),
+            creditCardDetail: returnValSerchInp('creditCard_', tabName),
+            customerInfo: returnValSerchInp('customerInfo_', tabName),
+            noteInfo: returnValSerchInp('transactionId_', tabName),
+            extraNote: returnValSerchInp('note_', tabName),
+            checkNumber: returnValSerchInp('checkNumber_', tabName)
+        }
 
+        return obj;
+    }
 
-});
-$('.gaccca-input-date').datepicker({
+    function returnConvertedDate(val) {
+        if (val.trim() == '') {
+            return '';
+        } else {
+            values = val.split('/');
+            return values[2] + '-' + values[0] + '-' + values[1];
+        }
+    }
 
-    changeMonth: true,
-    changeYear: true,
+    function returnValSerchInp(idField, tabName) {
+        return $('#' + idField + tabName).val() == undefined ? '' : $('#' + idField + tabName).val();
+    }
 
-});  
-}
+    function simCardManageTab(evt, val, tabName) {
+        tabNameVar = tabName;
+        accesskeyVar = val.getAttribute("data-accesskey");
+        recordStatusTypeVar = val.getAttribute("data-status");
+        var i, gaccca_simcard_tabcontent, gaccca_simcard_tablinks;
+        gaccca_simcard_tabcontent = document.getElementsByClassName("gaccca_simcard_tabcontent");
+        for (i = 0; i < gaccca_simcard_tabcontent.length; i++) {
+            gaccca_simcard_tabcontent[i].style.display = "none";
+        }
+        gaccca_simcard_tablinks = document.getElementsByClassName("gaccca_simcard_tablinks");
+        for (i = 0; i < gaccca_simcard_tablinks.length; i++) {
+            gaccca_simcard_tablinks[i].className = gaccca_simcard_tablinks[i].className.replace(" active", "");
+        }
 
-
-
-
-
-
-function simCardManageTab(evt,val, tabName) {
-
-var accesskey=val.getAttribute("data-accesskey");
-    var offset=component.get("v.offSet"+accesskey);
-    var recordPerPage=30;
-    var recordStatusType= val.getAttribute("data-status");
-    var queryType='Other';
-    if(accesskey=='Commission' || accesskey=='CommissionPaid'){
-        recordStatusType='All';
-        queryType=accesskey;
-        recordPerPage=40;
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+        loadValues();
 
     }
-    recordStatusType=recordStatusType=='Booked Payment Pending'?'Booked & Payment Pending':recordStatusType;
-    
 
 
+    function sortCall(val) {
+        orderByFieldGlobalVar["orderByField" + accesskeyVar] = val.getAttribute("data-fieldapi");
+        orderByOrderGlobalVar["orderByOrder" + accesskeyVar] = orderByOrderGlobalVar["orderByOrder" + accesskeyVar] == 'desc' ? 'asc' : 'desc';
+        loadValues();
+    }
 
-var i, gaccca_simcard_tabcontent, gaccca_simcard_tablinks;
-gaccca_simcard_tabcontent = document.getElementsByClassName("gaccca_simcard_tabcontent");
-for (i = 0; i < gaccca_simcard_tabcontent.length; i++) {
-    gaccca_simcard_tabcontent[i].style.display = "none";
-}
-gaccca_simcard_tablinks = document.getElementsByClassName("gaccca_simcard_tablinks");
-for (i = 0; i < gaccca_simcard_tablinks.length; i++) {
-    gaccca_simcard_tablinks[i].className = gaccca_simcard_tablinks[i].className.replace(" active", "");
-}
+    function next() {
+        var recordPerPage = recordPerPageVar;
+        if (accesskeyVar == 'Commission' || accesskeyVar == 'CommissionPaid') {
+            recordPerPage = recordPerPageVarCommission;
 
-document.getElementById(tabName).style.display = "block";
-evt.currentTarget.className += " active";
-var formData = {
-    'tabName': tabName
-}
-
-    $.ajaxSetup({
-        headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
+        if (applicantCount != 0 && applicantCount == recordPerPage) {
+
+            offSetGlobalVar["offSet" + accesskeyVar] = offSetGlobalVar["offSet" + accesskeyVar] + recordPerPage;
+            loadValues();
+        }
+    }
+
+    function previous() {
+        var recordPerPage = recordPerPageVar;
+        if (accesskeyVar == 'Commission' || accesskeyVar == 'CommissionPaid') {
+            recordPerPage = recordPerPageVarCommission;
+
+        }
+        if (offSetGlobalVar["offSet" + accesskeyVar] == 0) {
+            return;
+        }
+        offSetGlobalVar["offSet" + accesskeyVar] = offSetGlobalVar["offSet" + accesskeyVar] - recordPerPage;
+        loadValues();
+    }
+
+    function searchRecords(evt) {
+        if (evt.which == 13) {
+            loadValues();
+        }
+    }
+
+    function saveRecordUpdate(recordId,fieldApi,val,dataType){
+        var formData = {
+            'appId': recordId,
+            "fieldName": fieldApi,
+            "fieldValue": val,
+            "dataType": dataType,
+            "methodType": 'saveApplicant'
+        }
+        ajaxRequest(formData);
+    }
+    function sendTransactionFailEmailAction(val){
+        if(!confirm("Are you sure to send the transaction failure email? ")){
+            return;
+        }
+        var formData = {
+            'appId': val.getAttribute("data-sendTmail"),
+            "methodType": 'sendTransactionFailEmailAction'
+        }
+        ajaxRequest(formData);
+    }
+    
+    function commissionPaid() {
+        if ($('#checkNumberId').val().trim() == '' || $('#checkAmountId').val().trim() == '') {
+            alert('Check Information missing');
+            return;
+        }
+        var applicantSelected = [];
+        var commissionCheck = document.getElementsByClassName('commissionCheck_'+accesskeyVar);
+        for (var i = 0; i < commissionCheck.length; i++) {
+            if (commissionCheck[i].checked) {
+                applicantSelected.push(commissionCheck[i].getAttribute("id"));
+            }
+        }
+        if (applicantSelected.length == 0) {
+            alert('Please select records');
+            return;
+        }
+        var formData = {
+            'ids': applicantSelected,
+            "methodType": 'commissionMethod',
+            'checkAmount':$('#checkAmountId').val(),
+            'check':$('#checkNumberId').val(),
+            'commissionStatus':'Paid',
+            'currentStatus':'Due'
+        }
+        ajaxRequest(formData);
+    }
+
+    function selectAll() {
+        var commissionCheck = document.getElementsByClassName('commissionCheck_'+accesskeyVar);
+        for (var i = 0; i < commissionCheck.length; i++) {
+            commissionCheck[i].checked = document.getElementById('All_Commission_'+accesskeyVar).checked;
+        }
+    }
+
+    function loadValues() {
+        var offset = offSetGlobalVar["offSet" + accesskeyVar];
+        var recordPerPage = recordPerPageVar;
+        var orderByField = orderByFieldGlobalVar["orderByField" + accesskeyVar];
+        var orderByOrder = orderByOrderGlobalVar["orderByOrder" + accesskeyVar];
+        var queryType = 'Other';
+        if (accesskeyVar == 'Commission' || accesskeyVar == 'CommissionPaid') {
+            recordStatusTypeVar = 'All';
+            queryType = accesskeyVar;
+            recordPerPage = recordPerPageVarCommission;
+
+        }
+        var searchObjString = searchRecordGlobalMethod(tabNameVar);
+        recordStatusTypeVar = recordStatusTypeVar == 'Booked Payment Pending' ? 'Booked & Payment Pending' : recordStatusTypeVar;
+
+        var formData = {
+            'tabName': tabNameVar,
+            "orderByField": orderByField,
+            "orderByOrder": orderByOrder,
+            "recordStatusType": recordStatusTypeVar,
+            "offset": offset,
+            "searchObj": searchObjString,
+            "recordPerPage": recordPerPage,
+            "queryType": queryType,
+            "methodType": 'fetchAccount',
+            "accesskey": accesskeyVar
+        }
+        console.log(formData);
+        ajaxRequest(formData);
+    }
+
+    function ajaxRequest(formData){
+        console.log(formData);
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
 
         $.ajax({
-        type: 'post',
-        url: 'common_api_simcardmanage',
-        data: formData,
-        dataType: 'json',
-        beforeSend: function() {
-            console.log(tabName);
-        // setting a timeout
-        $(".loader").css('display','block');
-        $('#'+tabName+'_ajax').css('display','none');
+            type: 'post',
+            url: 'common_api_simcardmanage',
+            data: formData,
+            dataType: 'json',
+            beforeSend: function() {
+                if(formData.methodType=='saveApplicant' || formData.methodType=='sendTransactionFailEmailAction' || formData.methodType== 'commissionMethod'){
+                    $("#loaderRecordSave").css('display', 'block');
 
-    },
-        success: function (data) {
-        $('#'+tabName+'_ajax').html(data.html);
-        $('#'+tabName+'_ajax').css('display','block');
-        $(".loader").css('display','none');
-        loadAjaxContent();
-        
-        },
-        error: function (data) {
-        
-        }
+                }else{
+                $(".loader").css('display', 'block');
+                $('#' + tabNameVar + '_ajax').css('display', 'none');
+                }
+
+            },
+            success: function(data) {
+                console.log(data);
+                if((formData.methodType=='saveApplicant' || formData.methodType=='sendTransactionFailEmailAction' || formData.methodType== 'commissionMethod') && data=='OK' ){
+                    $("#loaderRecordSave").css('display', 'none');
+                    if(formData.methodType=='sendTransactionFailEmailAction'){
+alert('Transaction failure email has been sent.');
+                    }
+                    if(formData.methodType=='commissionMethod'){
+                        loadValues()
+                    }
+                }else{
+                applicantCount = data.totalApplicantRecords;
+                $('#' + tabNameVar + '_ajax').html(data.html);
+                $('#' + tabNameVar + '_ajax').css('display', 'block');
+                $(".loader").css('display', 'none');
+                loadAjaxContent();
+                updateTabRecordCount(data.totalRecords);
+                }
+            },
+            error: function(data) {
+                console.log(data);
+            }
         });
-
-}
-
+    }
 
 
+    function updateTabRecordCount(totalRecords) {
+        //tabRecordwaiting 
+        $('#tabRecordShipped').html(totalRecords.Shipped);
+        $('#tabRecordactive').html(totalRecords.active);
+        $('#tabRecordall').html(totalRecords.all);
+        $('#tabRecordbooked').html(totalRecords.booked);
+        $('#tabRecordcancelC').html(totalRecords.cancelC);
+        $('#tabRecordcancelR').html(totalRecords.cancelR);
+        $('#tabRecordccChange').html(totalRecords.ccChange);
+        $('#tabRecordcommission').html(totalRecords.commission);
+        $('#tabRecordcommissionPaid').html(totalRecords.commissionPaid);
+        $('#tabRecordplanchange').html(totalRecords.planchange);
+        $('#tabRecordproblem').html(totalRecords.problem);
+        $('#tabRecordwaiting').html(totalRecords.waiting);
+    }
+
+    function onScreenChange() {
 
 
+        if (window.innerWidth >= 1366) {
 
+        }
 
+    }
 
-function onScreenChange() {
-
-
-if (window.innerWidth >= 1366) {
-
-}
-
-}
-
-$(window).on('resize', onScreenChange);
-document.getElementById('tab_Booked_Simcard').click();
+    $(window).on('resize', onScreenChange);
+    document.getElementById('tab_Booked_Simcard').click();
 </script>
 
 </html>

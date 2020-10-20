@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class SimcardManageController extends Controller
 {
     /**
@@ -28,10 +30,25 @@ class SimcardManageController extends Controller
     public function commonMethodSimcardManage(Request $request)
     {
     
-   
+    $requestDataPage=$requestData=$request->all();
+    
+
+    
+    if($requestData['methodType']=='fetchAccount'){
     $tab_name = $request->tabName;
-	$view = view("simcardmanagement/common_page_simcardmanage",compact('tab_name'))->render();
-    return response()->json(['html'=>$view]);
+    $requestData['searchObjString']=json_encode($requestData['searchObj']);
+    unset($requestData['tabName']);
+    unset($requestData['searchObj']);
+    unset($requestData['accesskey']);
+    $datas='App\Services\Helper'::postRequest($requestData,'ApiSimCardManageController');
+    $datas = json_decode($datas, true);
+    $datas = json_decode($datas, true);
+	$view = view("simcardmanagement/common_page_simcardmanage",compact('tab_name','datas','requestDataPage'))->render();
+    return response()->json(['html'=>$view,'totalRecords'=>$datas['totalRecords'],'totalApplicantRecords'=>count($datas['appList'])]);
+    }else{
+        $datas='App\Services\Helper'::postRequest($requestData,'ApiSimCardManageController');
+        return $datas; 
+    }
         //return ['Hello','World'];
     }
 
