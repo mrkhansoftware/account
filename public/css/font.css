@@ -68,7 +68,7 @@
 
 }
 .fa-user-circle{
-font-size: 65px;
+font-size: 65px !important;
 }
 .fa-check:before {
   content: "\f00c";
