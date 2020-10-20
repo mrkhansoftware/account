@@ -777,12 +777,12 @@
             "methodType": 'fetchAccount',
             "accesskey": accesskeyVar
         }
-        console.log(formData);
+        //console.log(formData);
         ajaxRequest(formData);
     }
 
     function ajaxRequest(formData) {
-        console.log(formData);
+        //console.log(formData);
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -805,7 +805,7 @@
 
             },
             success: function(data) {
-                console.log(data);
+                //console.log(data);
                 if ((formData.methodType == 'saveApplicant' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod') && data == 'OK') {
                     $("#loaderRecordSave").css('display', 'none');
                     if (formData.methodType == 'sendTransactionFailEmailAction') {
