@@ -327,7 +327,7 @@
 
                     <!-- </div> -->
                     <div class="header-user-info">
-                        <h4 class="header-text-h4">Test User</h4>
+                        <h4 class="header-text-h4">{{$datas['userName']}}</h4>
                         <span class="user-icon"><i class="fas fa-user-circle"></i></span>
                         <ul class="header-button-group-list">
                             <li class="header-simcard-li"><a href="/profile_account" target="_blank">Profile</a>
