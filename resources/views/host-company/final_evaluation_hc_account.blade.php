@@ -1,7 +1,7 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header_without_menu',['datas'=>$datas,'title' =>'Final Evaluation','page'=>'final_evaluation_hc_account'])
 
-@include('common.signScript');
+@include('common.signScript')
 
 
 {!! Form::open(['action' => 'FinalEvaluationHostComController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
@@ -452,10 +452,10 @@ Enjoy the remainder of your time at your host company
       
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
-                    If yes, please specify:  <span class="gaccca-text-required" title="required">*</span> </label>
+                    If yes, please specify:  <span class="gaccca-text-required" title="required"></span> </label>
                   <div class="gaccca-form-element__control">
                    
-                      <textarea name="onfrm[If_yes_specify__c]" required=""  class="gaccca-textarea">{{isset($datas['onfrm']['If_yes_specify__c'])?$datas['onfrm']['If_yes_specify__c']:''}}</textarea>
+                      <textarea name="onfrm[If_yes_specify__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['If_yes_specify__c'])?$datas['onfrm']['If_yes_specify__c']:''}}</textarea>
                     
                   </div>
                 </div>
@@ -575,9 +575,9 @@ Enjoy the remainder of your time at your host company
             <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
-                    If no, please specify   <span class="gaccca-text-required" title="required">*</span> </label>
+                    If no, please specify   <span class="gaccca-text-required" title="required"></span> </label>
                   <div class="gaccca-form-element__control">
-                    <textarea name="onfrm[If_no_specify__c]"   required=""  class="gaccca-textarea">{{isset($datas['onfrm']['If_no_specify__c'])?$datas['onfrm']['If_no_specify__c']:''}}</textarea>
+                    <textarea name="onfrm[If_no_specify__c]"      class="gaccca-textarea">{{isset($datas['onfrm']['If_no_specify__c'])?$datas['onfrm']['If_no_specify__c']:''}}</textarea>
     
                     
                   </div>
@@ -661,7 +661,7 @@ Enjoy the remainder of your time at your host company
               <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
-                    Please comment on the cultural advantages of hosting a J-1 intern/trainee at your company <span class="gaccca-text-required" title="required">*</span>   <span class="gaccca-text-required" title="required">*</span> </label>
+                    Please comment on the cultural advantages of hosting a J-1 intern/trainee at your company <span class="gaccca-text-required" title="required">*</span>   <span class="gaccca-text-required" title="required"></span> </label>
                   <div class="gaccca-form-element__control">
                     <textarea name="onfrm[Please_comment_cultural_advantages__c]"   required=""  class="gaccca-textarea">{{isset($datas['onfrm']['Please_comment_cultural_advantages__c'])?$datas['onfrm']['Please_comment_cultural_advantages__c']:''}}</textarea>
                   </div>
@@ -673,9 +673,9 @@ Enjoy the remainder of your time at your host company
               <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                 <div class="gaccca-form-element gaccca-form-element-margin">
                   <label class="gaccca-form-element__label" >
-                    If applicable, please let us know if there was anything that did not run smoothly. <span class="gaccca-text-required" title="required">*</span> <span class="gaccca-text-required" title="required">*</span> </label>
+                    If applicable, please let us know if there was anything that did not run smoothly. <span class="gaccca-text-required" title="required"></span> <span class="gaccca-text-required" title="required"></span> </label>
                   <div class="gaccca-form-element__control">
-                    <textarea name="onfrm[If_applicable_run_smoothly__c]"  required=""  class="gaccca-textarea">{{isset($datas['onfrm']['If_applicable_run_smoothly__c'])?$datas['onfrm']['If_applicable_run_smoothly__c']:''}}</textarea>
+                    <textarea name="onfrm[If_applicable_run_smoothly__c]"     class="gaccca-textarea">{{isset($datas['onfrm']['If_applicable_run_smoothly__c'])?$datas['onfrm']['If_applicable_run_smoothly__c']:''}}</textarea>
                   </div>
                 </div>
               </div>
@@ -774,7 +774,7 @@ Enjoy the remainder of your time at your host company
                 <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
       
                     <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
-                    @include('common.signHTML');
+                    @include('common.signHTML')
                       </div>
                     </div>
 

@@ -859,6 +859,7 @@
     document.getElementById('tab_Booked_Simcard').click();
 </script>
 
+<script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
 </html>
 
 
