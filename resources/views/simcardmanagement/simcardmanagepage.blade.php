@@ -244,7 +244,7 @@
             margin-bottom: 0px;
             font-family: sans-serif;
             font-weight: 100;
-
+            margin-top: 13px;
 
         }
 
@@ -300,7 +300,7 @@
             margin-left: auto;
             margin-right: auto;
             max-width: 1300px;
-            padding: 5px;
+           
         }
     </style>
 </head>
@@ -328,7 +328,7 @@
                     </div>
 
                     <!-- </div> -->
-                    <div class="header-user-info">
+                    <!-- <div class="header-user-info">
                         <h4 class="header-text-h4">{{$datas['userName']}}</h4>
                         <span class="user-icon"><i class="fas fa-user-circle"></i></span>
                         <ul class="header-button-group-list">
@@ -338,8 +338,29 @@
                                     Password</a></li>
                             <li class="header-simcard-li"><a href="/logout_account">Logout</a></li>
                         </ul>
-                        <!-- fa fa-user-circle-o -->
-                    </div>
+                        
+                    </div> -->
+                    <ul class="gaccca-display-menu-profile gaccca-font-family">
+
+                        <li class="gaccca-dropdown-profile">
+                            <a class="gaccca-user-name" href="javascript:void(0)"> Hi, {{$datas['userName']}} </a>
+
+                        </li>
+                        <li class="gaccca-dropdown-profile">
+                            <span>
+                                <a href="javascript:void(0)" class="gaccca-dropbtn">
+                                    <img src="{{ asset('images/user.png') }}" />
+                                    <i class="fas fa-caret-down"></i>
+                            </span>
+                            </a>
+                            <div class="gaccca-dropdown-content-profile">
+                                <a  href="/profile_account" target="_blank">My Profile</a>
+                                <a  href="/password_account" target="_blank">Password</a>
+                                <a  href="/logout_account">Logout</a>
+                            </div>
+
+                        </li>
+                    </ul>
                     <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button">☰</button>
 
                 </div>
