@@ -299,8 +299,11 @@
         .gaccca-simcard-header {
             margin-left: auto;
             margin-right: auto;
-            max-width: 1300px;
-           
+            /* max-width: 1300px; */
+            padding-left: 20px;
+        }
+        .gaccca-display-menu-profile {
+            display: block !important;
         }
     </style>
 </head>
@@ -340,7 +343,7 @@
                         </ul>
                         
                     </div> -->
-                    <ul class="gaccca-display-menu-profile gaccca-font-family">
+                    <ul class="gaccca-display-menu-profile gaccca-font-family gaccca-margin-right-0">
 
                         <li class="gaccca-dropdown-profile">
                             <a class="gaccca-user-name" href="javascript:void(0)"> Hi, {{$datas['userName']}} </a>
@@ -361,7 +364,7 @@
 
                         </li>
                     </ul>
-                    <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button">☰</button>
+                    <!-- <button id="openNav" class="gaccca-openbtn gaccca-header-menu-button">☰</button> -->
 
                 </div>
             </div>

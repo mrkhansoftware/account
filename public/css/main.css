@@ -1473,6 +1473,10 @@ From here start main page css : main page css
   font-family: sans-serif;
 }
 
+.gaccca-margin-right-0{
+  margin-right: 0px !important;
+}
+
 /* Necessary margin ,text align css end */
 
 
@@ -2784,6 +2788,9 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-behind-the-logo-position{
     margin-left: 5% !important;
   }
+  .gaccca-margin-right-0 {
+    margin-right: 0px !important;
+}
 
 }
 
