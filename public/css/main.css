@@ -1070,10 +1070,8 @@ From here start main page css : main page css
   background: #389E0D;
   border-radius: 5px;
   flex-direction: column;
-  padding: 8px 0px;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 24px;
+  padding: 8px 16px;
+  font-size: 16px;
   align-items: center;
   text-align: center;
   color: #FFFFFF;
@@ -1081,7 +1079,6 @@ From here start main page css : main page css
   align-self: center;
   border: none;
   cursor: pointer;
-  height: 40px;
   width: 200px;
 }
 
@@ -2706,6 +2703,13 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-create-program-account {
     margin-top: 100px !important;
   }
+
+  .gaccca-download-participant-handbook-padding {
+    padding: 10px 50px;
+}
+
+
+
 } 
 
 @media only screen and (min-width: 1025px) {
