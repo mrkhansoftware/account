@@ -47,6 +47,8 @@
     <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
     <style>
         body {
             background: white;
@@ -844,6 +846,8 @@
         $('#tabRecordplanchange').html(totalRecords.planchange);
         $('#tabRecordproblem').html(totalRecords.problem);
         $('#tabRecordwaiting').html(totalRecords.waiting);
+        var tableHeight=window.innerHeight-300;
+        $(".simcardContent").css('height', tableHeight);
     }
 
     function onScreenChange() {
@@ -857,6 +861,7 @@
 
     $(window).on('resize', onScreenChange);
     document.getElementById('tab_Booked_Simcard').click();
+    var emailAccountUserVal = "{{session()->get('userEmail')}}";
 </script>
 
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>

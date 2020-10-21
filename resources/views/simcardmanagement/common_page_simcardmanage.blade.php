@@ -11,7 +11,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
 <span style='color: #0070d2;    font-weight: 700;'>
     {{$requestDataPage['offset']+1}} to {{$requestDataPage['offset']+count($datas['appList'])}}
 </span>
-<div style="overflow:auto;max-height: 520px;">
+<div style="overflow:auto;max-height: 520px;" class='simcardContent'>
     <table>
         <tr>
             <th>S.No.
