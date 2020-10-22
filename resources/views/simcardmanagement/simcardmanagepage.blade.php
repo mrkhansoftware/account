@@ -93,7 +93,7 @@
         .gaccca-simcard-tab {
             overflow: hidden;
             border-bottom: 1px solid #ccc;
-
+            background: #1a73e8;
         }
 
         /* Style the buttons inside the gaccca-simcard-tab */
@@ -103,17 +103,21 @@
             border: none;
             outline: none;
             cursor: pointer;
-            padding: 10px 10px;
+            padding: 6px 4px !important;
+            margin: 0px 10px;
             transition: 0.3s;
             font-family: sans-serif;
             line-height: 1.5;
+            margin-bottom: 10px;
+            color: white;
+            border-bottom: 1px solid #1a73e8;
         }
 
 
         /* Create an active/current tablink class */
         .gaccca-simcard-tab button.active {
-
-            color: rgb(0, 122, 221)
+            color: white;
+            border-bottom: 1px solid;
         }
 
         .gaccca-simcard-tab button.tab-hidden {
