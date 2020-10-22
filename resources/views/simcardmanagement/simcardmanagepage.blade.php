@@ -103,7 +103,7 @@
             border: none;
             outline: none;
             cursor: pointer;
-            padding: 14px 16px;
+            padding: 10px 10px;
             transition: 0.3s;
             font-family: sans-serif;
             line-height: 1.5;
@@ -165,8 +165,8 @@
             font-family: arial, sans-serif;
             border-collapse: collapse;
             table-layout: fixed;
-            width: 3000px;
-            margin-top: 20px;
+
+
         }
 
 
@@ -174,12 +174,16 @@
         th {
             border: 1px solid #dddddd;
             text-align: left;
-            padding: 8px;
+            padding: 0px 4px;
             font-size: small;
         }
 
         th {
             cursor: pointer;
+        }
+
+        thead {
+            background: #E6F7FF;
         }
 
         .gaccca-margin-left {
@@ -302,8 +306,51 @@
             /* max-width: 1300px; */
             padding-left: 20px;
         }
+
         .gaccca-display-menu-profile {
             display: block !important;
+        }
+
+        .pageCount {
+            color: #0070d2;
+            font-weight: 700;
+            margin-right: 65px;
+            float: right;
+        }
+
+        input,
+        select {
+            min-width: 90px;
+            padding: 0px !important;
+            font-size: 14px !important;
+            height: 30px !important;
+        }
+
+        button {
+            padding: 6px 14px !important;
+            font-size: 14px !important;
+            line-height: 15px !important;
+        }
+
+        .simcardContent {
+            overflow-x: scroll;
+            overflow-y: auto;
+        }
+
+        .simcardContent-tobScroll {
+            overflow-x: scroll;
+            overflow-y: auto;
+        }
+
+        .simcardContent-tobScroll div {
+            font-size: 1px;
+            line-height: 2px;
+        }
+
+        .stickyScroll {
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -357,9 +404,9 @@
                             </span>
                             </a>
                             <div class="gaccca-dropdown-content-profile">
-                                <a  href="/profile_account" target="_blank">My Profile</a>
-                                <a  href="/password_account" target="_blank">Password</a>
-                                <a  href="/logout_account">Logout</a>
+                                <a href="/profile_account" target="_blank">My Profile</a>
+                                <a href="/password_account" target="_blank">Password</a>
+                                <a href="/logout_account">Logout</a>
                             </div>
 
                         </li>
@@ -560,6 +607,39 @@
             changeYear: true,
 
         });
+
+        $(function() {
+            var tableContainer = $(".simcardContent_" + accesskeyVar);
+            var table = $(".simcardContent_" + accesskeyVar + " table");
+            var fakeContainer = $(".simcardContent-tobScroll");
+            var fakeDiv = $(".simcardContent-tobScroll div");
+
+            var tableWidth = table.width();
+            fakeDiv.width(tableWidth);
+            fakeContainer.scroll(function() {
+                tableContainer.scrollLeft(fakeContainer.scrollLeft());
+            });
+            tableContainer.scroll(function() {
+                fakeContainer.scrollLeft(tableContainer.scrollLeft());
+            });
+
+            window.onscroll = function() {
+                myFunction()
+            };
+            var scrollDiv = document.getElementById("myScroll_" + accesskeyVar);
+            var sticky = scrollDiv.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    scrollDiv.classList.add("stickyScroll");
+                } else {
+                    scrollDiv.classList.remove("stickyScroll");
+                }
+            }
+
+
+        })
+
     }
     var recordStatusTypeVar = '';
     var accesskeyVar = '';
@@ -777,6 +857,7 @@
     }
 
     function loadValues() {
+        $(".simcardContent-tobScroll").removeClass("simcardContent-tobScroll")
         var offset = offSetGlobalVar["offSet" + accesskeyVar];
         var recordPerPage = recordPerPageVar;
         var orderByField = orderByFieldGlobalVar["orderByField" + accesskeyVar];
@@ -870,8 +951,8 @@
         $('#tabRecordplanchange').html(totalRecords.planchange);
         $('#tabRecordproblem').html(totalRecords.problem);
         $('#tabRecordwaiting').html(totalRecords.waiting);
-        var tableHeight=window.innerHeight-300;
-        $(".simcardContent").css('height', tableHeight);
+        //var tableHeight=window.innerHeight-300;
+        // $(".simcardContent").css('height', tableHeight);
     }
 
     function onScreenChange() {
@@ -889,6 +970,7 @@
 </script>
 
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
+
 </html>
 
 

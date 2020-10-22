@@ -1,3 +1,4 @@
+
 <button class="gaccca-button-save" onclick='previous()'><i class="fas fa-less-than"></i></button>
 <button class="gaccca-button-save" onclick='next()'><i class="fas fa-greater-than"></i></button>
 <button class="gaccca-button-save gaccca-margin-left" onclick="loadValues()">Search</button>
@@ -7,12 +8,17 @@
 Check#:&nbsp; <input value="" type="text" id='checkNumberId' class="gaccca-input" style="width: 100px;" />
 Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca-input" style="width: 100px;" />
 @endif
-<br /><br />
-<span style='color: #0070d2;    font-weight: 700;'>
+<span class='pageCount'>
     {{$requestDataPage['offset']+1}} to {{$requestDataPage['offset']+count($datas['appList'])}}
 </span>
-<div style="overflow:auto;max-height: 520px;" class='simcardContent'>
+<div id="myScroll_{{$requestDataPage['accesskey']}}"> 
+<div class="simcardContent-tobScroll">
+  <div>&nbsp;</div>
+</div>
+</div>
+<div style="overflow:auto;margin-bottom:50px;" class="simcardContent_{{$requestDataPage['accesskey']}}">
     <table>
+        <thead>
         <tr>
             <th>S.No.
                 @if($requestDataPage['accesskey']=='Commission')
@@ -38,7 +44,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
                 @endif
 
             </th>
-            <th onclick="sortCall(this)" data-fieldApi="Issued_U_S_Phone_Number__c">activated Phone number by Aerobile
+            <th onclick="sortCall(this)" data-fieldApi="Issued_U_S_Phone_Number__c">Activated Phone number by Aerobile
                 @if($requestDataPage['orderByField']=='Issued_U_S_Phone_Number__c')
                 @if($requestDataPage['orderByOrder']=='desc')
                 <i class="fas fa-arrow-up"></i>
@@ -207,7 +213,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
             $dateVar=date_format($dateVar,"m/d/Y");
             @endphp
             <td> <input value="{{$requestDataPage['searchObj']['deactivation_Date_by_Aerobile_SM']==''?'':$dateVar}}" type="text" class="gaccca-input-date" id='deactivationDate_{{$tab_name}}' /></td>
-            <td><input value="{{$requestDataPage['searchObj']['creditCardDetail']}}" type="text" class="gaccca-input" id='creditCard_{{$tab_name}}' /></td>
+            <td><input value="{{$requestDataPage['searchObj']['creditCardDetail']}}" type="text" class="gaccca-input" id='creditCard_{{$tab_name}}' style="width:200px !important"/></td>
             <td>
                 {!! Form::select('paymentSubmited', array_reverse($datas['paymentSubmited']), $requestDataPage['searchObj']['paymentSubmited'], [ 'class' => 'gaccca-select','id' => 'paymentSubmitted_'.$tab_name]) !!}
 
@@ -218,16 +224,16 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
             $dateVar2 = date_create($requestDataPage['searchObj']['serviceEndDateTo']);
             $dateVar2=date_format($dateVar2,"m/d/Y");
             @endphp
-            <td>From <br>
-                <input value="{{$requestDataPage['searchObj']['serviceEndDate']==''?'':$dateVar1}}" type="text" class="gaccca-input-date" id='serviceEndDateFrom_{{$tab_name}}' />
-                <br>
-                To
-                <input value="{{$requestDataPage['searchObj']['serviceEndDateTo']==''?'':$dateVar2}}" type="text" class="gaccca-input-date" id='serviceEndDateTo_{{$tab_name}}' />
+            <td> 
+                <input placeholder="From" value="{{$requestDataPage['searchObj']['serviceEndDate']==''?'':$dateVar1}}" type="text" class="gaccca-input-date" id='serviceEndDateFrom_{{$tab_name}}' style="height:20px !important"/>
+                <input placeholder="To" value="{{$requestDataPage['searchObj']['serviceEndDateTo']==''?'':$dateVar2}}" type="text" class="gaccca-input-date" id='serviceEndDateTo_{{$tab_name}}' style="height:20px !important"/>
 
             </td>
-            <td><input value="{{$requestDataPage['searchObj']['noteInfo']}}" type="text" class="gaccca-input" id='transactionId_{{$tab_name}}' /></td>
-            <td><input value="{{$requestDataPage['searchObj']['extraNote']}}" type="text" class="gaccca-input" id='note_{{$tab_name}}' /></td>
+            <td><input value="{{$requestDataPage['searchObj']['noteInfo']}}" type="text" class="gaccca-input" id='transactionId_{{$tab_name}}' style="width:200px !important"/></td>
+            <td><input value="{{$requestDataPage['searchObj']['extraNote']}}" type="text" class="gaccca-input" id='note_{{$tab_name}}' style="width:200px !important"/></td>
         </tr>
+        </thead>
+        <tbody>
         @php $index = 1; @endphp
         @foreach (isset($datas['appList'])?$datas['appList']:[] as $applicant)
         <tr>
@@ -490,6 +496,6 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         @php $index++; @endphp
         @endforeach
 
-
+        </tbody>
     </table>
 </div>
