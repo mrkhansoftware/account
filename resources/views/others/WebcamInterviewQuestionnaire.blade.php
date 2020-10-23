@@ -276,7 +276,7 @@
                     If Yes </label>
                 <div class="gaccca-form-element__control">
 
-                    <textarea name="onfrm[Dual_citizenship__c]" class="gaccca-textarea">{{isset($datas['onfrm']['Dual_citizenship__c'])?$datas['onfrm']['Dual_citizenship__c']:''}}</textarea>
+                    <textarea name="onfrm[Dual_citizenship__c]" class="gaccca-textarea"  maxlength='255'>{{isset($datas['onfrm']['Dual_citizenship__c'])?$datas['onfrm']['Dual_citizenship__c']:''}}</textarea>
                 </div>
             </div>
         </div>

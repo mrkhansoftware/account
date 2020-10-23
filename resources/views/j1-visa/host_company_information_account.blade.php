@@ -85,7 +85,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-e-address">
                     Host Company Address <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <textarea name="applicant[Address__c]"   required="" class="gaccca-textarea">{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
+                  <textarea name="applicant[Address__c]"   required="" class="gaccca-textarea" maxlength='255'>{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
                   
                 </div>
               </div>

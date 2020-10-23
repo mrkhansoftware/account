@@ -72,6 +72,11 @@
 
       }, 5000);
     }
+    jQuery(document).ready(function() {
+            jQuery("input.gaccca-input:text").attr('maxlength', '255');
+            jQuery("#signHiddenData").removeAttr('maxlength'); 
+            
+        });
   </script>
 </head>
 

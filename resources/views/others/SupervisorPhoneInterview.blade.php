@@ -133,7 +133,7 @@
                 <div class="gaccca-form-element__control">
 
 
-                    <textarea name="onfrm[Received_a_copy_of_the_HC_Handbook__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Received_a_copy_of_the_HC_Handbook__c'])?$datas['onfrm']['Received_a_copy_of_the_HC_Handbook__c']:''}}</textarea>
+                    <textarea name="onfrm[Received_a_copy_of_the_HC_Handbook__c]"  class="gaccca-textarea" maxlength='255'>{{isset($datas['onfrm']['Received_a_copy_of_the_HC_Handbook__c'])?$datas['onfrm']['Received_a_copy_of_the_HC_Handbook__c']:''}}</textarea>
                 </div>
             </div>
         </div>

@@ -225,7 +225,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-e-address">
           Emergency Contact Person Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea name="App[Emergency_Contact_Person_Address__c]" value="{{isset($datas['App']['Emergency_Contact_Person_Address__c'])?$datas['App']['Emergency_Contact_Person_Address__c']:''}}"  required="" class="gaccca-textarea"></textarea>
+          <textarea name="App[Emergency_Contact_Person_Address__c]" value="{{isset($datas['App']['Emergency_Contact_Person_Address__c'])?$datas['App']['Emergency_Contact_Person_Address__c']:''}}"  required="" class="gaccca-textarea" maxlength='255'></textarea>
           <span class="gaccca-input-help-text">Street, App #, Zip Code, City, Country</span>
         </div>
       </div>
@@ -404,7 +404,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-hca">
           Host Company Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Address__c]" value="{{isset($datas['App']['Address__c'])?$datas['App']['Address__c']:''}}" type="text" id="text-input-id-hca" required="" class="gaccca-input" />
+          <input name="App[Address__c]" value="{{isset($datas['App']['Address__c'])?$datas['App']['Address__c']:''}}" type="text" id="text-input-id-hca" required="" class="gaccca-input" maxlength='255'/>
         </div>
       </div>
 

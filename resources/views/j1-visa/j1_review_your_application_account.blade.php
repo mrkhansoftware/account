@@ -211,9 +211,9 @@
                 <label class="gaccca-form-element__label" for="text-input-id-e-address">
                     Emergency Contact Person Address <span class="gaccca-text-required" title="required">*</span>
                 </label>
-                <div class="gaccca-form-element__control">
+                <div class="gaccca-form-element__control"> 
                     {!!
-                    Form::textarea('applicant[Emergency_Contact_Person_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Address__c']:'',array('class'=>'gaccca-textarea','disabled' => 'disabled')); !!}
+                    Form::textarea('applicant[Emergency_Contact_Person_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Address__c']:'',array('class'=>'gaccca-textarea','disabled' => 'disabled', 'maxlength'=>'255')); !!}
 
                     <span class="gaccca-input-help-text">Street, App #, Zip Code, City, Country</span>
                 </div>
@@ -391,7 +391,7 @@
                 <div class="gaccca-form-element__control">
                     <textarea name="applicant['Address__c]"  
                         disabled="disabled"
-                        class="gaccca-textarea">{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
+                        class="gaccca-textarea" maxlength='255'>{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
 
                 </div>
             </div>

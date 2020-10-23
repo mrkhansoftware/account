@@ -234,7 +234,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-e-address">
             Emergency Contact Person Address <span class="gaccca-text-required" title="required">*</span> </label>
           <div class="gaccca-form-element__control">
-            {!! Form::textarea('applicant[Emergency_Contact_Person_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Address__c']:'',array('class'=>'gaccca-textarea','required' => 'required')); !!}
+            {!! Form::textarea('applicant[Emergency_Contact_Person_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Address__c']:'',array('class'=>'gaccca-textarea','required' => 'required','maxlength' => '255')); !!}
 
             <span class="gaccca-input-help-text">Street, App #, Zip Code, City, Country</span>
           </div>

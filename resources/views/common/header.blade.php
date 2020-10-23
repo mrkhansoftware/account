@@ -389,5 +389,10 @@
         var contIdAccountUserVal = "{{isset($datas['contID'])?$datas['contID']:''}}";
         var applicantIdAccountUserVal = "{{isset($datas['applicantId'])?$datas['applicantId']:''}}";
         var applicantNameAccountUserVal = "{{isset($datas['applicantName'])?$datas['applicantName']:''}}";
+
+        jQuery(document).ready(function() {
+            jQuery("input.gaccca-input:text").attr('maxlength', '255');
+            jQuery("#signHiddenData").removeAttr('maxlength'); 
+        });
     </script>
     @include('common.chat')
