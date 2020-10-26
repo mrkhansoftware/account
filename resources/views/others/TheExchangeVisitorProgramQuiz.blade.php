@@ -400,7 +400,7 @@
               <span> The primary goals of the Exchange Visitor Program are to allow participants the opportunity to engage broadly with Americans, share their culture, strengthen their English language abilities, and learn new skills or build skills that will help them in future careers.</span>
             </label>
 
-            <input type="radio" required id="sradio-w30" value="The primary objective of the program is for the foreign national to participate in a labor program, receive a wage and save up enough money to return to the home country to start her or his career" name="QuestionEx10" />
+            <input type="radio" required id="sradio-w30" value="The primary objective of the program is for the foreign national to participate in a labor program, receive a wage and save up enough money to return to the home country to start her or his career." name="QuestionEx10" />
             <label class="gaccca-radio__label" for="sradio-w30">
               <span class="gaccca-radio_faux"></span>
               <span> The primary objective of the program is for the foreign national to participate in a labor program, receive a wage and save up enough money to return to the home country to start her or his career.</span>

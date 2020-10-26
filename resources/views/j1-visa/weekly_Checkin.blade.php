@@ -296,7 +296,7 @@
               
                         <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                           <div class="gaccca-form-element gaccca-form-element-margin">  
-    Thank you for your mandatory monthly Check-in. The next monthly Check-in will be on &nbsp;{{$datas['nextWeeklyCheckInDate']}}. We will send you a reminder.
+    Thank you for your mandatory weekly Check-in. The next weekly Check-in will be on &nbsp;{{$datas['nextWeeklyCheckInDate']}}. We will send you a reminder.
     </div>
     </div>
     </div>
