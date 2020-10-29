@@ -5,6 +5,9 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-976534-20"></script>
     <script>
+
+
+
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -13,6 +16,14 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-976534-20');
+
+        
+    </script>
+    <script>
+    var url=window.location.href;
+    if(url.includes("/?Type=") || url.includes("/?type=")){
+    window.location.href="/login_account?Type={{isset($_GET['Type'])?$_GET['Type']:''}}";
+    }
     </script>
     <title>IIEEX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -429,7 +440,6 @@
 <script src="{{ asset('js/accountAuth.js') }}"></script>
 <script>
     $(document).ready(function() {
-
         $("#signup-containt").hide();
         $("#forgot-password-containt").hide();
         $("#create-your-IIEEX-program-account").hide();
@@ -498,7 +508,7 @@
 
 
 
-    function createOrMergeAccount(isRedirect) {
+    function createOrMergeAccount(isRedirect) { 
         var userInfo = currentUserInfo();
         // console.log(userInfo);
         if (userInfo.uid == '' || userInfo.uid == undefined) return;
@@ -507,7 +517,8 @@
             lastName: userInfo.lastName != undefined ? userInfo.lastName : userInfo.email,
             email: userInfo.email,
             uid: userInfo.uid,
-            providerId: userInfo.providerId
+            providerId: userInfo.providerId,
+            programType:'{{isset($_GET["Type"])?$_GET["Type"]:""}}'
         };
         $.ajaxSetup({
             headers: {
