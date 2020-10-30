@@ -156,6 +156,7 @@
           {!! Form::textarea('con[MailingStreet]',isset($datas['con']['MailingStreet'])?$datas['con']['MailingStreet']:'', [
           'class' => 'gaccca-textarea',
           'required' => 'required',
+          'maxlength' => '200'
           ]) !!}
 
           <span class="gaccca-input-help-text"></span>
