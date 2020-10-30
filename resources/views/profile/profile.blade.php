@@ -66,6 +66,7 @@
           {!! Form::text('dob',isset($datas['dob'])?$datas['dob']:'', [
           'class' => 'gaccca-input-date',
           'required' => 'required',
+          'readonly' => 'readonly',
           ]) !!}
           <span class="gaccca-input-help-text"></span>
         </div>
