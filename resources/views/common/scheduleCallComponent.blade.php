@@ -280,7 +280,7 @@
                 if (slotTime.isMyslot) {
                     slotList += '<div class="gaccca-call-slot-box">';
                     slotList += '<p>' + slotTime.slotTimeShow + '</p>'
-                    slotList += '<p>Hangout Meet Room ID: <a target="_blank" href="' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
+                    slotList += '<p>Hangout Meet Room ID: <a target="_blank" href="https://' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
                     slotList += '</div>';
                 } else if (!slotTime.isBookedSlot) {
                     slotList += '<button class="gaccca-button-time-slot" id="slotEmpty_' + slotTime.slotId + '" slot-value=' + dayInt + '-' + slotInt + '>' + slotTime.slotTimeShow + '</button>';
@@ -305,7 +305,7 @@
         let slotBooked = '';
         slotBooked = '<button class="gaccca-button-reshedule" id="rescheduleCallBtn">Reschdule the call</button>';
         slotBooked += '<p><strong>Call schedule on:</strong> ' + requestResponse.finalTimeSlotInfo + '</p>';
-        slotBooked += '<p>Hangout Meet Room ID: <a target="_blank" href="' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
+        slotBooked += '<p>Hangout Meet Room ID: <a target="_blank" href="https://' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
         document.getElementById('rescheduleCallSection').innerHTML = slotBooked;
         loadJquery(true);
     }
