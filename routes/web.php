@@ -190,6 +190,9 @@ Route::get('/simCard', 'simCardController@index');
 Route::resource('WebcamInterview', 'WebcamInterviewController');
 Route::get('/WebcamInterviewQuestionnaire', 'WebcamInterviewController@index');
 
+Route::resource('IntroductionCallCont', 'IntroductionCallController');
+Route::get('/IntroductionCall', 'IntroductionCallController@index');
+
 
 Route::resource('SupervisorInterview', 'SupervisorInterviewController');
 Route::get('/SupervisorPhoneInterview', 'SupervisorInterviewController@index');
