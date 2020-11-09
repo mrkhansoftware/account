@@ -469,7 +469,7 @@
           <label class="gaccca-form-element__label" for="text-input-id-fn">
             Is the program in which you are participating in considered:<span class="gaccca-text-required" title="required">*</span></label>
           <span class="gaccca-radio">
-            <input type="radio" required id="sradio-w35" value="An internship / training program" name="QuestionEx12" />
+            <input type="radio" required id="sradio-w35" value="An internship / training program?" name="QuestionEx12" />
             <label class="gaccca-radio__label" for="sradio-w35">
               <span class="gaccca-radio_faux"></span>
               <span>An internship / training program?</span>

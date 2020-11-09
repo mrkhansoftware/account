@@ -1,4 +1,4 @@
-@if (isset($datas['onfrmSubmitted']) && $datas['onfrmSubmitted'])
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header_without_menu',['datas'=>$datas,'title' =>'Please rate our placement program','page'=>'QuestionerPlacementService'])
 
 
