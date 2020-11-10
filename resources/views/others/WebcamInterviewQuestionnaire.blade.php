@@ -128,7 +128,7 @@
         <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
-                    How did you find the internship/training at (Ashif Dev Test)? </label>
+                    How did you find the internship/training at ({{isset($datas['app']['Organization__r']['Name'])?$datas['app']['Organization__r']['Name']:''}})? </label>
                 <div class="gaccca-form-element__control">
 
                     <textarea name="onfrm[How_did_you_find_I_T_in_this_HC__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['How_did_you_find_I_T_in_this_HC__c'])?$datas['onfrm']['How_did_you_find_I_T_in_this_HC__c']:''}}</textarea>
@@ -140,7 +140,7 @@
         <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <div class="gaccca-form-element gaccca-form-element-margin">
                 <label class="gaccca-form-element__label" for="text-input-id-8">
-                    Have you had an interview with (pts akhan) or anyone else at the company by phone or webcam?
+                    Have you had an interview with ({{isset($datas['app']['Supervisor_contact__r']['Name'])?$datas['app']['Supervisor_contact__r']['Name']:''}}) or anyone else at the company by phone or webcam?
                 </label>
                 <div class="gaccca-form-element__control">
                     <input name="onfrm[Have_you_had_an_interview_with_SV__c]" value="{{isset($datas['onfrm']['Have_you_had_an_interview_with_SV__c'])?$datas['onfrm']['Have_you_had_an_interview_with_SV__c']:''}}" type="text" class="gaccca-input" />
