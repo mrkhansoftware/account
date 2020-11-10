@@ -14,7 +14,7 @@
     </p>
     <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
   <input type="hidden" name='applicantId' value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}" />
-  <input type="hidden" name='Contact__c' value="{{isset($_GET['participant'])?$_GET['participant']:''}}" />
+  <input type="hidden" name='Contact__c' value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}" />
   <input type="hidden" name='Google_Drive_Folder__c' value="{{isset($datas['app']['Google_Drive_Folder__c'])?$datas['app']['Google_Drive_Folder__c']:''}}" />
 
   </div>
