@@ -208,7 +208,7 @@ jQuery(document).ready(function(){
 
 
 </script>
-@if(!isset($_GET['orgid']) && !isset($_GET['orgidInternal']))
+@if(!isset($_GET['orgid']) && !isset($_GET['orgidInternal']) && session()->get('sessionIsInternal')!='Yes')
 
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
 @endif

@@ -30,6 +30,7 @@ class LoginController extends Controller
 
     public function ajaxAfterLogin(Request $request)
     {
+      session()->flush();
       $finalReq = $request->all();
       $finalReq['verifyAccountKey']='No';
       $response='App\Services\Helper'::postRequest($finalReq,'ApiLoginAccountController');

@@ -972,9 +972,9 @@
     document.getElementById('tab_Booked_Simcard').click();
     var emailAccountUserVal = "{{session()->get('userEmail')}}";
 </script>
-
+@if(session()->get('sessionIsInternal')!='Yes')
 <script src="{{ asset('js/accountAuthMaintain.js') }}"></script>
-
+@endif
 </html>
 
 
