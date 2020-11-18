@@ -129,16 +129,16 @@
       dataTable += '<td>' + visaStatus + '</td>';
       dataTable += '<td>';
       if (reqResponse.appMap[con.Id].Agent_Confirmed__c) {
-        dataTable += 'Case: Submitted ';
+        dataTable += 'Case: Submitted <br/>';
       } else {
-        dataTable += 'Case: <a target="_blank" href="/JVisaParticipantInfo?participant=' + reqResponse.appMap[con.Id].Id + '">Add participant details</a> ';
+        dataTable += 'Case: <a target="_blank" href="/JVisaParticipantInfo?participant=' + reqResponse.appMap[con.Id].Id + '">Add participant details</a><br/> ';
       }
       if (reqResponse.appMap[con.Id].Agent_Confirmed__c) {
         if (reqResponse.hcaMapSubmitted[con.Id]) {
-          dataTable += 'HCA: Submitted ';
+          dataTable += 'HCA: Submitted <br/>';
 
         } else {
-          dataTable += 'HCA: <a target="_blank" href="/host_company_agreement_agent?orgid=' + reqResponse.appMap[con.Id].Encrypted_Host_Company_Id__c + '">Click</a> ';
+          dataTable += 'HCA: <a target="_blank" href="/host_company_agreement_agent?orgid=' + reqResponse.appMap[con.Id].Encrypted_Host_Company_Id__c + '">Click</a> <br/>';
 
         }
 

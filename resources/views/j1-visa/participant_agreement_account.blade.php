@@ -1,6 +1,6 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['datas'=>$datas,'title' =>'Participant Agreement','page'=>'participant_agreement_account','parent_page'=>'J1 Program'])
- 
+
 {!! Form::open(['action' => 'ParticipantAgreementAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_paa']) !!}
 
 <div class="gaccca-main-containt">
