@@ -34,7 +34,24 @@
     <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
     <script src="{{ asset('js/parsley.min.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
+    <style>
+.container {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
 
+.responsive-iframe {
+  position: absolute;
+  top: 108px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+   </style>
 
 
 
@@ -64,7 +81,10 @@
                 <div class="clear"></div>
 
 
-                <h1>Term of service</h1>
+                             
+<div class="container"> 
+  <iframe class="responsive-iframe" src="https://www.termsfeed.com/live/4e20203b-fa99-4c90-8da1-d2199a53c152"></iframe>
+</div>
             </div>
 
         </div>
