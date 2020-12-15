@@ -42,7 +42,7 @@ class InsuranceController extends Controller
      */
     public function store(Request $request)
     {
-        $body= $request->getContent();; 
+        $body= '-';
         'App\Services\Helper'::apiErrorReq($body,'','WebHookResponse');
     }
 
