@@ -13,13 +13,13 @@ class InsuranceController extends Controller
      */
     public function index()
     {
-        $idCon= 'App\Services\Helper'::sessionConId();
-        if($idCon==''){
-           return 'App\Services\Helper'::returnUrl();
-        }
-        $datas='App\Services\Helper'::getRequest('ApiProfileAccountController/'.$idCon);
-        $datas = json_decode($datas, true);
-        $datas = json_decode($datas, true);
+             $idCon= 'App\Services\Helper'::sessionConId();
+         if($idCon==''){
+            return 'App\Services\Helper'::returnUrl();
+         }
+         $datas='App\Services\Helper'::getRequest('ApiProfileAccountController/'.$idCon);
+         $datas = json_decode($datas, true);
+         $datas = json_decode($datas, true);
         return view('Insurance')->with(compact('datas'));
        
     }
@@ -42,7 +42,8 @@ class InsuranceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $body= $request->getContent();; 
+        'App\Services\Helper'::apiErrorReq($body,'','WebHookResponse');
     }
 
     /**
