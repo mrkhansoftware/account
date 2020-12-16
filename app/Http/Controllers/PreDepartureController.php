@@ -22,7 +22,9 @@ return 'App\Services\Helper'::returnUrl();
 $datas='App\Services\Helper'::getRequest('ApiPreDepartureClass/'.$idCon);
 $datas = json_decode($datas, true);
 $datas = json_decode($datas, true);
-
+if(isset($datas['applicantId'])){
+    session()->put('applicantId', $datas['applicantId']);
+    }
 return view('j1-visa/preDeparture')->with(compact('datas'));
     
         
