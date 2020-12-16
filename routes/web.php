@@ -249,9 +249,14 @@ Route::get('/JVisaParticipantInfo', 'JVisaParticipantInfoController@index');
 Route::resource('AddNewParticipant', 'AddNewParticipantController');
 Route::get('/Add_New_Participant', 'AddNewParticipantController@index');
 
+Route::resource('muxVideo', 'MuxVideoController');
+Route::get('/muxVideo', 'MuxVideoController@index');
+Route::get('/MuxVideoResult', 'MuxVideoController@index2');
+
 Route::get('/existing_customer_list', 'AddNewParticipantController@existingCustomerList'); 
 
 Route::get('/customer_information', 'AddNewParticipantController@existingCustomerInfo');
+Route::get('/muxVideoLink', 'MuxVideoController@muxVideoLinkMethod');
 Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPassword');
 
 
