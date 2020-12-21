@@ -263,7 +263,7 @@ Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPa
 
 
  Route::post('/agentParticipantsList', 'AgentParticipantsController@store');
- Route::post('/webHookResponse', 'InsuranceController@store');
+ Route::post('/InsuranceResponse', 'InsuranceController@store');
 
  
 

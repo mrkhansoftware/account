@@ -17,7 +17,7 @@ class InsuranceController extends Controller
          if($idCon==''){
             return 'App\Services\Helper'::returnUrl();
          }
-         $datas='App\Services\Helper'::getRequest('ApiProfileAccountController/'.$idCon);
+         $datas='App\Services\Helper'::getRequest('ApiInsuranceAccountController/'.$idCon);
          $datas = json_decode($datas, true);
          $datas = json_decode($datas, true);
         return view('Insurance')->with(compact('datas'));
@@ -42,8 +42,21 @@ class InsuranceController extends Controller
      */
     public function store(Request $request)
     {
-        $body= $request->getContent();
-        'App\Services\Helper'::apiErrorReq($body,'','WebHookResponse');
+        $finalReq = $request->all();
+        $finalReq['conId']=session()->get('conIdUser');
+        $finalReq['insurancePlane']=json_encode($finalReq['Insurance']);
+        
+        unset($finalReq['_token']);
+        unset($finalReq['Insurance']);
+//        print_r($finalReq);die;
+        
+        $resp='App\Services\Helper'::postRequest($finalReq,'ApiInsuranceAccountController');
+        if($resp=='"OK"'){
+        return redirect()->action('InsuranceController@index', ['isSent' => 1]);
+        }else{
+        
+    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiInsuranceAccountController');
+        }
     }
 
     /**
