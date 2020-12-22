@@ -29,13 +29,13 @@
 <div class="gaccca-form-element__control">
 
 <span class="gaccca-radio" style='display:flex'>
-  <input type="radio" id="radio-free-sim" value="Book" name="Insurance[Type__c]" required />
+  <input type="radio" id="radio-free-sim" value="Booking" name="Insurance[Type__c]" required />
   <label class="gaccca-radio__label" for="radio-free-sim" style="margin-left: 10px;">
     <span class="gaccca-radio_faux"></span>
     <span>I would like to book</span>
   </label>
 
-  <input type="radio" id="radio-activate-my-sim" value="Extend" name="Insurance[Type__c]" required />
+  <input type="radio" id="radio-activate-my-sim" value="Extension" name="Insurance[Type__c]" required />
   <label class="gaccca-radio__label" for="radio-activate-my-sim" style="margin-left: 10px;">
     <span class="gaccca-radio_faux"></span>
     <span>I would like to extend</span>

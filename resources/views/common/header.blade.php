@@ -187,6 +187,7 @@
                                     @if(isset($datas['isParticipantAccepted'])&& $datas['isParticipantAccepted'])
                                     <a class="{{ ($page == 'participant_handbook_account') ? 'gaccca-active-submenu' : '' }}" href="/participant_handbook_account">Participant Handbook</a>
                                     <a class="{{ ($page == 'ScheduleCallJvisa') ? 'gaccca-active-submenu' : '' }}" href="/ScheduleCallJvisa">Schedule a Call</a>
+                                    <a class="{{ ($page == 'Insurance') ? 'gaccca-active-submenu' : '' }}" href="/Insurance">Insurance</a>
                                     @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
                                     <a class="{{ ($page == 'AdditionalDocumentJ1') ? 'gaccca-active-submenu' : '' }}" href="/AdditionalDocumentJ1">Additional Documents</a>
                                     @endif
@@ -199,6 +200,7 @@
                                     @else
                                     <a href="javascript:void(0)" style="cursor: not-allowed;">Participant Handbook</a>
                                     <a href="javascript:void(0)" style="cursor: not-allowed;">Schedule a Call</a>
+                                    <a class="{{ ($page == 'Insurance') ? 'gaccca-active-submenu' : '' }}" href="/Insurance">Insurance</a>
                                     @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
                                     <a class="{{ ($page == 'AdditionalDocumentJ1') ? 'gaccca-active-submenu' : '' }}" href="/AdditionalDocumentJ1">Additional Documents</a>
                                     @endif
@@ -332,25 +334,46 @@
 
 
         <div class="gaccca-dropdown-container">
-            <a href="/information_instruction_account">Information &amp; Instruction</a>
-            <a href="/participant_information_account">Participant Information</a>
-            <a href="/host_company_information_account">Host Company Information</a>
-            <a href="/participant_agreement_account">Participant Agreement</a>
-            <a href="/finalize_application_account">Finalize your Application</a>
-            <a href="/j1_review_your_application_account">Review your J1 Application</a>
+                                    <a class="{{ ($page == 'information_instruction_account') ? 'gaccca-active-submenu' : '' }}" href="/information_instruction_account">Information &amp; Instruction</a>
+                                    <a class="{{ ($page == 'participant_information_account') ? 'gaccca-active-submenu' : '' }}" href="/participant_information_account">Participant Information</a>
+                                    <a class="{{ ($page == 'host_company_information_account') ? 'gaccca-active-submenu' : '' }}" href="/host_company_information_account">Host Company Information</a>
+                                    <a class="{{ ($page == 'participant_agreement_account') ? 'gaccca-active-submenu' : '' }}" href="/participant_agreement_account">Participant Agreement</a>
+                                    <a class="{{ ($page == 'finalize_application_account') ? 'gaccca-active-submenu' : '' }}" href="/finalize_application_account">Finalize your Application</a>
+                                    <a class="{{ ($page == 'j1_review_your_application_account') ? 'gaccca-active-submenu' : '' }}" href="/j1_review_your_application_account">Review your J1 Application</a>
 
-            <a href="/participant_handbook_account">Participant Handbook</a>
-            <a href="/ScheduleCallJvisa">Schedule a Call</a>
-            <a href="/AdditionalDocumentJ1">Additional Documents</a>
 
-            <a href="/extension_request_account">Extension Request</a>
-            <a href="/travel_validation_account">Travel Validation</a>
-            <a href="/validation_checkin_account">Validation &amp; Check-In</a>
 
-            <a href="/monthly_Checkin">Monthly Check-In</a>
-            <a href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
-            <a href="/final_evaluation_account">Final Evaluation</a>
-        </div>
+
+                                    @if(isset($datas['isParticipantAccepted'])&& $datas['isParticipantAccepted'])
+                                    <a class="{{ ($page == 'participant_handbook_account') ? 'gaccca-active-submenu' : '' }}" href="/participant_handbook_account">Participant Handbook</a>
+                                    <a class="{{ ($page == 'ScheduleCallJvisa') ? 'gaccca-active-submenu' : '' }}" href="/ScheduleCallJvisa">Schedule a Call</a>
+                                    <a class="{{ ($page == 'Insurance') ? 'gaccca-active-submenu' : '' }}" href="/Insurance">Insurance</a>
+                                    @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
+                                    <a class="{{ ($page == 'AdditionalDocumentJ1') ? 'gaccca-active-submenu' : '' }}" href="/AdditionalDocumentJ1">Additional Documents</a>
+                                    @endif
+                                    <a class="{{ ($page == 'extension_request_account') ? 'gaccca-active-submenu' : '' }}" href="/extension_request_account">Extension Request</a>
+                                    <a class="{{ ($page == 'travel_validation_account') ? 'gaccca-active-submenu' : '' }}" href="/travel_validation_account">Travel Validation</a>
+                                    <a class="{{ ($page == 'validation_checkin_account') ? 'gaccca-active-submenu' : '' }}" href="/validation_checkin_account">Validation &amp; Check-In</a>
+                                    <a class="{{ ($page == 'monthly_Checkin') ? 'gaccca-active-submenu' : '' }}" href="/monthly_Checkin">Monthly Check-In</a>
+                                    <a class="{{ ($page == 'midpoint_evaluation_account') ? 'gaccca-active-submenu' : '' }}" href="/midpoint_evaluation_account">Mid-Point Evaluation</a>
+                                    <a class="{{ ($page == 'final_evaluation_account') ? 'gaccca-active-submenu' : '' }}" href="/final_evaluation_account">Final Evaluation</a>
+                                    @else
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Participant Handbook</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Schedule a Call</a>
+                                    <a class="{{ ($page == 'Insurance') ? 'gaccca-active-submenu' : '' }}" href="/Insurance">Insurance</a>
+                                    @if(isset($datas['isAdditionalDocument'])&& $datas['isAdditionalDocument'])
+                                    <a class="{{ ($page == 'AdditionalDocumentJ1') ? 'gaccca-active-submenu' : '' }}" href="/AdditionalDocumentJ1">Additional Documents</a>
+                                    @endif
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Extension Request</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Travel Validation</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Validation &amp; Check-In</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;"> Monthly Check-In</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Mid-Point Evaluation</a>
+                                    <a href="javascript:void(0)" style="cursor: not-allowed;">Final Evaluation</a>
+                                    @endif
+                                </div>
+
+
         @endif
 
         <a href="/simCard">Sim Card</a>
