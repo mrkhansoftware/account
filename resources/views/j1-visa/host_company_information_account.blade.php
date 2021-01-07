@@ -157,7 +157,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-ccp">
                     Company Contact phone   <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                  <input type="text" name="applicant[Phone_Number__c]"  value="{{isset($datas['Appli']['Phone_Number__c'])?$datas['Appli']['Phone_Number__c']:''}}" id="text-input-id-ccp"  required="" class="gaccca-input" />
+                  <input type="text" name="applicant[Phone_Number__c]"  value="{{isset($datas['Appli']['Phone_Number__c'])?$datas['Appli']['Phone_Number__c']:''}}" id="text-input-id-ccp"  required="" class="gaccca-input"  maxlength="40"/>
                   <span class="gaccca-input-help-text">Use the following format +1-563-6325685</span>
                 </div>
   
