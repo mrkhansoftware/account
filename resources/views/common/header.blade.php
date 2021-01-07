@@ -415,6 +415,7 @@
 
         jQuery(document).ready(function() {
             jQuery("input.gaccca-input:text").attr('maxlength', '255');
+            jQuery("input.gaccca-input-phone:text").attr('maxlength', '40');
             jQuery("#signHiddenData").removeAttr('maxlength'); 
         });
     </script>
