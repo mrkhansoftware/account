@@ -228,7 +228,6 @@ class Helper
       session()->put('NewGdriveID__c', null);
       session()->put('J_Visa_Applicant_Folder_Id__c', null);
       session()->put('Google_Drive_Folder_Additional_Doc__c', null);
-      session()->put('applicantId', null);
       session()->put('NewGdriveID__c', null);
       session()->put('J_Visa_Applicant_Folder_Id__c', null);
       session()->put('Google_Drive_Folder_Additional_Doc__c', null);
@@ -238,7 +237,6 @@ class Helper
       session()->put('accountName', null);
       session()->put('Program__c', null);
       session()->put('isInternal', null);
-      session()->put('onfrmId', null);
       session()->put('Google_Drive_Evaluation_Form__c', null);
       session()->put('HostCompany_Gdrive_Folder_Id__c', null);
       session()->put('Google_Drive_Folder__c', null);
