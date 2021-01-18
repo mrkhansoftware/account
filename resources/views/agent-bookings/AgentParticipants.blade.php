@@ -297,7 +297,7 @@
 
 
   function commonFunction(formData) {
-    console.log(formData);
+    //console.log(formData);
     document.getElementById('loader').style.display = 'block';
     $.ajaxSetup({
       headers: {
@@ -311,7 +311,7 @@
       dataType: 'json',
       success: function(data) {
         reqResponse = data;
-        console.log(data);
+        //console.log(data);
         if (formData.programVal == 'J1') {
           j1Program();
         } else if (formData.programVal == 'B1') {
