@@ -117,7 +117,7 @@ class UploadYourDocumentsController extends Controller
 
         //echo "<pre>"; print_r($finalReq);die;
         $resp = 'App\Services\Helper'::postRequest($finalReq, 'ApiUploadYourDocumentsClass');
-        echo "<pre>"; print_r($finalReq);die;
+       // echo "<pre>"; print_r($finalReq);die;
         if ($resp == '"OK"') {
             return redirect()->action('UploadYourDocumentsController@index', ['isSave' => 1]);
         } else {
