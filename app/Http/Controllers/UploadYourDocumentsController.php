@@ -109,6 +109,10 @@ class UploadYourDocumentsController extends Controller
         $finalReq['applicant']['Contact__c'] = session()->get('Contact__c');
         $finalReq['applicantData'] = json_encode($finalReq['applicant']);
         unset($finalReq['_token']);
+        unset($finalReq['universityRequirementCrt']);
+        unset($finalReq['passport']);
+        unset($finalReq['ssv']);
+        unset($finalReq['resume']);
         unset($finalReq['applicant']);
 
 
