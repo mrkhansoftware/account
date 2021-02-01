@@ -27,7 +27,7 @@
 
     </div>
     <div class="gaccca-modal__footer">
-      <button class="gaccca-button-save " id='confirmCallBtn'>confirm the call</button>
+      <button class="gaccca-button-save " id='confirmCallBtn'>Schedule a Call</button>
       <span style='color: #e21717;font-weight: bold;display:none' id='callBookingError'>
         Another participant has booked this slot in the meantime. Please choose another slot.
       </span>

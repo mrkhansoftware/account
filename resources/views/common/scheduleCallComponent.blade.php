@@ -33,7 +33,13 @@
         </p>
         @elseif($scheduleCallTypeName=='Agent')
         <p>
-            Here you see all available appointments slots with your visa coordinator. Please select a spot that works best for you and confirm the call with the button "Schedule a Call" If you like to reschedule a call please use also this page.
+        As an Agent of Us, we make it easy as possible to schedule an online call for any topic you like to talk about with Us.
+        </p>
+        <p>
+        Here you see all available appointment slots with your contact partner.
+        </p>
+        <p>
+        Please select a spot that works best for you and confirm the call with the button "Schedule a Call" If you like to re-schedule a call please use also this page.
         </p>
         @elseif($scheduleCallTypeName=='Placement')
         <p>
