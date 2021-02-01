@@ -103,6 +103,8 @@
                                 <div class="gaccca-dropdown-content">
                                     <a class="{{ ($page == 'AgencyJobSearch') ? 'gaccca-active-submenu' : '' }}" href="/AgencyJobSearch" target='_blank'>Job Search</a>
                                     <a class="{{ ($page == 'AgencyInformation') ? 'gaccca-active-submenu' : '' }}" href="/AgencyInformation">Information</a>
+                                    <a class="{{ ($page == 'ScheduleCallAgent') ? 'gaccca-active-submenu' : '' }}" href="/ScheduleCallAgent">Schedule a Call</a>
+
                                     <a class="{{ ($page == 'AgentParticipants') ? 'gaccca-active-submenu' : '' }}" href="/AgentParticipants">Participant List</a>
                                     <a class="{{ ($page == 'Add_New_Participant') ? 'gaccca-active-submenu' : '' }}" href="/Add_New_Participant">J Visa</a>
                                     <a class="{{ ($page == 'AgencyBvisaBooking') ? 'gaccca-active-submenu' : '' }}" href="/AgencyBvisaBooking">B Visa</a>
@@ -268,6 +270,7 @@
         <div class="gaccca-dropdown-container">
             <a href="/AgencyJobSearch" target='_blank'>Job Search</a>
             <a href="/AgencyInformation">Information</a>
+            <a href="/ScheduleCallAgent">Schedule a Call</a>
             <a href="/AgentParticipants">Participant List</a>
             <a href="/Add_New_Participant">J Visa</a>
             <a href="/AgencyBvisaBooking">B Visa</a>

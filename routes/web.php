@@ -74,6 +74,7 @@ Route::get('/ScheduleCall', 'ScheduleCallController@index');
 Route::get('/ScheduleCallBVisa', 'ScheduleCallController@index');
 
 Route::get('/scheduleCallJVisaSupervisor', 'ScheduleCallController@index');
+Route::get('/scheduleCallAgent', 'ScheduleCallController@index');
 
 
 Route::resource('AdditionalDocumentJ1', 'AdditionalDocumentJ1Controller');

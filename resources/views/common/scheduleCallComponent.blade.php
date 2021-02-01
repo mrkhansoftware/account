@@ -31,7 +31,10 @@
         <p>
             Here you see all available appointments slots with your visa coordinator. Please select a spot that works best for you and confirm the call with the button "Schedule a Call" If you like to reschedule a call please use also this page.
         </p>
-
+        @elseif($scheduleCallTypeName=='Agent')
+        <p>
+            Here you see all available appointments slots with your visa coordinator. Please select a spot that works best for you and confirm the call with the button "Schedule a Call" If you like to reschedule a call please use also this page.
+        </p>
         @elseif($scheduleCallTypeName=='Placement')
         <p>
             Here you see all available appointments slots with your placement coordinator. Please select a spot which works best for you an confirm the call with the button "Schedule a Call"

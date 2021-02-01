@@ -25,6 +25,9 @@ class ScheduleCallController extends Controller
             if (stripos(strtoupper($page), strtoupper('ScheduleCallBVisa'))) {
                 $idCon = 'isB1VisaLink' .  $idCon;
                 $viewName='b1-program/ScheduleCallBVisa';
+            }else if (stripos(strtoupper($page), strtoupper('ScheduleCallAgent'))) {
+                $idCon = 'isAgentLink' .  $idCon;
+                $viewName='agent-bookings/ScheduleCallAgent';
             } else if (stripos(strtoupper($page), strtoupper('ScheduleCallJvisa'))) {
                 $idCon = 'isJ1VisaLink' .  $idCon;
                 $viewName='j1-visa/ScheduleCallJvisa';
