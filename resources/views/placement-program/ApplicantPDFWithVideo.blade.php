@@ -177,7 +177,7 @@
 
     @elseif(isset($datas['app']['Template_design__c']) && $datas['app']['Template_design__c']=='Three')
 
-    @include('common.ApplicantCVResumeTemplateTwo',['datas' =>isset($datas)?$datas:''])
+    @include('common.applicantcvresumetemplateThree',['datas' =>isset($datas)?$datas:''])
 
     @else
     @endif
