@@ -201,7 +201,6 @@
           @if (isset($datas['isInternal']) && $datas['isInternal'])
           <br/><br/><br/>
           <button class="gaccca-button-save " id='saveEditedScript'>Save edited script</button>
-          <button class="gaccca-button-save " id='informApplicant'>Inform applicant to continue </button>
           @endif
       </div>
 

@@ -180,7 +180,7 @@
 		</div>
 		<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 			<div class="gaccca-form-element gaccca-form-element-margin">
-				<label class="gaccca-form-element__label" for="text-input-id-8">Please copy and paste your video script into the text box. All changes will be saved automatically.</label>
+				<label class="gaccca-form-element__label" for="text-input-id-8">Please copy and paste your video script into the text box.</label>
 				<div class="gaccca-form-element__control">
 					<textarea name="teleprompter" id="teleprompterArea" data-gramm="true" data-txt_gramm_id="773be24c-eef4-657f-8d24-64ae226215d1" data-gramm_id="773be24c-eef4-657f-8d24-64ae226215d1" spellcheck="false" data-gramm_editor="true" class='gaccca-textarea'>{{isset($datas['app']['Write_Your_Script__c'])?$datas['app']['Write_Your_Script__c']:''}}</textarea>
 				</div>
