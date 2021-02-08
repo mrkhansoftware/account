@@ -420,6 +420,8 @@
 					if (methodType == 'readyToSendMethod') {
 						onUpdate('Thank you, we received your video resume.');
 					} else if (methodType == 'vdoUpload') {
+						
+						document.getElementById('Teleprompter').style.display = 'none';
 						onUpdate('Video created & submitted on our server.');
 					}
 
