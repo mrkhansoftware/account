@@ -201,12 +201,13 @@
           @if (isset($datas['isInternal']) && $datas['isInternal'])
           <br/><br/><br/>
           <button class="gaccca-button-save " id='saveEditedScript'>Save edited script</button>
+          <button class="gaccca-button-save " id='informApplicant'>Inform applicant to continue </button>
           @endif
       </div>
 
     </div>
 
-
+    @if (!(isset($datas['isInternal']) && $datas['isInternal']))
     <div class="gaccca-form-element gaccca-sky-blue-box-margin" id='scriptBtns'>
       <button {{$datas["blockWriteScript"]?'disabled':''}} class="gaccca-button-save {{$datas['blockWriteScript']?'gaccca-btn-disabled':''}}"  id='saveScriptbtn'>Save script</button>
 
@@ -215,7 +216,7 @@
       <p> Your placement coordinator will reply a feedback and maybe improve your draft before you will record your video. </p>
       <button {{$datas["blockWriteScript"]?'disabled':''}} class="gaccca-button-save {{$datas['blockWriteScript']?'gaccca-btn-disabled':''}}  "  id='readyScriptbtn'>Ready with my script</button>
     </div>
-
+@endif
 
   </div>
 
@@ -332,6 +333,7 @@ saveInfo(formData);
 <script>
 
 const saveEditedScript=document.querySelector('#saveEditedScript');
+const informApplicant=document.querySelector('#informApplicant');
     if(saveEditedScript!=null){
       saveEditedScript.addEventListener('click', (e)=>{
         var formData = {
@@ -341,6 +343,18 @@ typeStr:'saveEditedScript'
 saveInfo(formData);
 });
 }
+
+if(informApplicant!=null){
+  informApplicant.addEventListener('click', (e)=>{
+        if(!confirm('Please confirm'))return;
+        var formData = {
+          scriptInfo:document.getElementById('videoCcript').value,
+typeStr:'informApplicant'
+};
+saveInfo(formData);
+});
+}
+
 
   if ('{{$datas["isBeforeSaved"]}}' == 'false') {
     var cont = document.getElementById('videoCcript').value;
@@ -436,7 +450,11 @@ onUpdate('Thank you, we received your video script!');
 document.getElementById('scriptBtns').innerHTML='';
 document.getElementById('videoCcript').readonly=true;
 
- }else if(data=='OK'){
+ }
+ else if(data=='OK' && formData.typeStr=='informApplicant'){
+  onUpdate('Infrom applicant, Placement Coordinator viewed and ready with script email sent');
+ }
+ else if(data=='OK'){
 
  }else{
 
