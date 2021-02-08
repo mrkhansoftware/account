@@ -104,7 +104,29 @@
 <script>
 	ZiggeoApi.token = "80f9af3ec1dfe032714fd61c53f94376";
 </script>
+<script>
+	function initMehtod() {
+		// document.getElementsByClassName('ba-videorecorder-theme-modern-norecorder')[0].style.background='none';
+		document.getElementById('vdoBorder').style.display = 'block';
+		if (document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0] == undefined) {
 
+			document.getElementById('logoImage').style.display = 'none';
+			document.getElementById('vdoBorder').style.border = 'none';
+
+		}
+		if (document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0] != undefined) {
+		document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0].addEventListener("click", function() {
+			document.getElementById('logoImage').style.display = 'none';
+			document.getElementById('vdoBorder').style.border = 'none';
+
+			document.getElementById('telepromtrbtn').click();
+
+		});
+		}
+
+
+	}
+</script>
 <div class="gaccca-main-containt">
 	<h1 class="gaccca-h1-padding">Create Your Video Resume </h1>
 	@if (isset($datas['profileLocked']) && $datas['profileLocked'])
@@ -426,29 +448,4 @@
 			//savef();
 		});
 	});
-</script>
-<script>
-	function initMehtod() {
-		// document.getElementsByClassName('ba-videorecorder-theme-modern-norecorder')[0].style.background='none';
-		document.getElementById('vdoBorder').style.display = 'block';
-		if (document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0] == undefined) {
-
-			document.getElementById('logoImage').style.display = 'none';
-			document.getElementById('vdoBorder').style.border = 'none';
-
-		}
-
-		if (document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0] != undefined) {
-		document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0].addEventListener("click", function() {
-			document.getElementById('logoImage').style.display = 'none';
-			document.getElementById('vdoBorder').style.border = 'none';
-
-			document.getElementById('telepromtrbtn').click();
-
-		});
-		}
-
-
-	}
-</script>
-@include('common.footer') @else Permission denied. Please contact administrator. @endif
+</script>@include('common.footer') @else Permission denied. Please contact administrator. @endif
