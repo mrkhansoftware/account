@@ -1386,11 +1386,15 @@ From here start main page css : main page css
   font-size: 17px;
   color: rgb(62, 62, 60);
 }
-
+.gaccca-btn-disabled{
+  background: #096dd985;
+    cursor: not-allowed;
+}
 /* Change background color of buttons on hover */
 
 .gaccca-tab span:hover {
   background-color: inherit;
+  text-decoration: underline;
 }
 
 /* Create an active/current gaccca-tablink class */

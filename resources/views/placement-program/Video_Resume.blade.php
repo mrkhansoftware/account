@@ -182,7 +182,7 @@
 			<div class="gaccca-form-element gaccca-form-element-margin">
 				<label class="gaccca-form-element__label" for="text-input-id-8">Please copy and paste your video script into the text box. All changes will be saved automatically.</label>
 				<div class="gaccca-form-element__control">
-					<textarea name="teleprompter" id="teleprompterArea" data-gramm="true" data-txt_gramm_id="773be24c-eef4-657f-8d24-64ae226215d1" data-gramm_id="773be24c-eef4-657f-8d24-64ae226215d1" spellcheck="false" data-gramm_editor="true" class='gaccca-textarea'></textarea>
+					<textarea name="teleprompter" id="teleprompterArea" data-gramm="true" data-txt_gramm_id="773be24c-eef4-657f-8d24-64ae226215d1" data-gramm_id="773be24c-eef4-657f-8d24-64ae226215d1" spellcheck="false" data-gramm_editor="true" class='gaccca-textarea'>{{isset($datas['app']['Write_Your_Script__c'])?$datas['app']['Write_Your_Script__c']:''}}</textarea>
 				</div>
 			</div>
 		</div>
@@ -372,6 +372,11 @@
 			<div class="gaccca-form-element__control">
 				<br />
 				<button id="readyToSend" class="gaccca-button-save">Ready with video resume</button>
+				<p>
+				<label class="gaccca-radio__label">
+                        <a href="/ApplicantPDFWithVideo" target='_blank'>Preview</a>
+					</label>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -413,9 +418,9 @@
 				if (data == 'OK') {
 
 					if (methodType == 'readyToSendMethod') {
-						onUpdate('Thank you, we received your video resume .');
+						onUpdate('Thank you, we received your video resume.');
 					} else if (methodType == 'vdoUpload') {
-						//onUpdate('Thank you, we received your video resume .');
+						onUpdate('Video created & submitted on our server.');
 					}
 
 					document.getElementById('readyToSend').disabled = true;

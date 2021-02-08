@@ -157,13 +157,13 @@
       <div class="gaccca-tab">
         <span id="your_script_btn" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event,'your_script_btn', 'your_script'); return false;">Your Script</span>
         <span id="sample_script_btn" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event,'sample_script_btn', 'sample_script')">Sample Script</span>
-        <span id="edited_script_btn" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event,'edited_script_btn', 'edited_script')">Edited Video Script</span>
+        <span id="edited_script_btn" class="gaccca-tablinks" onclick="gacccaScriptContentTab(event,'edited_script_btn', 'edited_script')">Edited Video Script By Your Placement Coordinator </span>
 
       </div>
 
       <div id="your_script" class="gaccca-tabcontent">
 
-        <textarea rows="20" {{$datas["blockWriteScript"]?'readonly':''}} id="WriteScriptId" style="z-index: auto; position: relative; line-height: 24px; font-size: 13px; transition: none; background: #fcfcfc !important;margin: 0px 0px 10px;width: 100%;height: 800px;" >{{isset($datas['app']['Write_Your_Script__c'])?$datas['app']['Write_Your_Script__c']:''}}</textarea>
+        <textarea rows="20" {{$datas["blockWriteScript"]?'readonly':''}} id="WriteScriptId" style="z-index: auto; position: relative; line-height: 24px; font-size: 13px; transition: none; background: #fcfcfc !important;margin: 0px 0px 10px;width: 100%;height: 800px;font-family: Arial;" >{{isset($datas['app']['Write_Your_Script__c'])?$datas['app']['Write_Your_Script__c']:''}}</textarea>
       </div>
 
       <div id="sample_script" class="gaccca-tabcontent">
@@ -201,6 +201,7 @@
           @if (isset($datas['isInternal']) && $datas['isInternal'])
           <br/><br/><br/>
           <button class="gaccca-button-save " id='saveEditedScript'>Save edited script</button>
+          <button class="gaccca-button-save " id='informApplicant'>Inform applicant to continue </button>
           @endif
       </div>
 
@@ -208,14 +209,12 @@
 
 
     <div class="gaccca-form-element gaccca-sky-blue-box-margin" id='scriptBtns'>
-      @if (isset($datas['isInternal']) && !$datas['isInternal'] && isset($datas['blockWriteScript']) && !$datas['blockWriteScript'] )
-      <button class="gaccca-button-save "  id='saveScriptbtn'>Save script</button>
+      <button {{$datas["blockWriteScript"]?'disabled':''}} class="gaccca-button-save {{$datas['blockWriteScript']?'gaccca-btn-disabled':''}}"  id='saveScriptbtn'>Save script</button>
 
       <p> Let us know if you think you finished your script by clicking the button below. </p>
 
       <p> Your placement coordinator will reply a feedback and maybe improve your draft before you will record your video. </p>
-      <button class="gaccca-button-save "  id='readyScriptbtn'>Ready with my script</button>
-      @endif
+      <button {{$datas["blockWriteScript"]?'disabled':''}} class="gaccca-button-save {{$datas['blockWriteScript']?'gaccca-btn-disabled':''}}  "  id='readyScriptbtn'>Ready with my script</button>
     </div>
 
 
@@ -353,6 +352,7 @@ saveInfo(formData);
 
   }
   $(document).ready(function() {
+   
     $('.content').richText();
     $(".richText").keyup(function() {
       document.getElementById('videoCcript').value = document.getElementsByClassName('richText-editor')[0].innerHTML;
@@ -383,6 +383,8 @@ saveInfo(formData);
 
 
     });
+
+
   });
 
   function updateReply(repId) {
@@ -451,7 +453,9 @@ console.log(data);
 }
 });
 }
-
+$(document).ready(function(){
+$("#your_script_btn").click();
+});
 </script>
 
 @include('common.footer')

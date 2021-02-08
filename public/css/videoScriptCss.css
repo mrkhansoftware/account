@@ -19,11 +19,11 @@ body {
 	position: relative;
 	background-color: #FAFAFA;
 	color: #333333;
-	font-family: Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 }
 
 .richText .richText-form {
-	font-family: Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 }
 
 .richText .richText-form label {
@@ -65,7 +65,7 @@ body {
 }
 
 .richText .richText-toolbar .richText-length {
-	font-family: Verdana, Helvetica, sans-serif;
+	font-family:Arial;
 	font-size: 13px;
 	vertical-align: middle;
 	line-height: 34px;
@@ -152,7 +152,7 @@ body {
 .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li {
 	display: block;
 	float: none;
-	font-family: Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 }
 
 .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li a {
@@ -251,7 +251,7 @@ body {
 	background-color: #FFFFFF;
 	border: #FFFFFF solid 4px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	font-family: Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 	min-height: 1000px;
 	outline: none;
 	overflow-x: auto;
@@ -286,7 +286,7 @@ body {
 	background-color: #FFFFFF;
 	border: #FFFFFF solid 4px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	font-family: Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 	min-height: 100px;
 	outline: none;
 	overflow-x: auto;
@@ -295,19 +295,19 @@ body {
 
 .commentBg {
 	background: #f0f8fff2;
-	font-family: Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 	min-height: 35px;
 	border-radius: 7px;
 }
 
 span.commentBg[contenteditable]:empty::before {
 	content: 'Type comment';
-	font-family: Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 }
 
 span.commentBg[contenteditable]:empty:focus::before {
 	content: '';
-	font-family: Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 }
 
 .commentClassReply {
@@ -340,7 +340,7 @@ span.commentBg[contenteditable]:empty:focus::before {
 	background-color: #282828;
 	border: none;
 	color: #33FF33;
-	font-family: Monospace, Calibri, Verdana, Helvetica, sans-serif;
+	font-family: Arial;
 	max-width: 100%;
 	min-width: 100%;
 	width: 100%;
