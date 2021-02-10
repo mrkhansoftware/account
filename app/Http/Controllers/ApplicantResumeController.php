@@ -45,7 +45,11 @@ class ApplicantResumeController extends Controller
         unset($finalReq['applicantId']);
         unset($finalReq['Contact__c']);
         unset($finalReq['user']);
-        return  'App\Services\Helper'::postRequest($finalReq, 'ApiApplicantResumeController');
+        $response='App\Services\Helper'::postRequest($finalReq, 'ApiApplicantResumeController');
+        if(strripos($response,'\"status\":\"OK\",\"response\":')==''){
+            'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiApplicantResumeController');
+        }
+        return  $response;
     }
 
 

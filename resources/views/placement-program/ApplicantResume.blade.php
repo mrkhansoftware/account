@@ -1733,7 +1733,7 @@
             data: formData,
             dataType: 'json',
             success: function(data) {
-                console.log(data);
+                //console.log(data);
                 data=JSON.parse(data);
                 if (formData.typeStr == 'fileNameChange' || formData.typeStr == 'fileDelete') { //loadFileIcn_
                     document.getElementById('loadFileIcn_' + formData.fileId).style.display = 'none';
@@ -1758,7 +1758,7 @@
 
                 } else {
 
-                    onError('Error: Contact to admin');
+                    onError('Internal Error: Contact to admin');
 
                 }
 
