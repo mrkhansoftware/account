@@ -140,6 +140,7 @@
                 var isKeyPressedFlag = false;
                 var myLastCallFlag = false;
                 var myLastCall;
+                var autoSaveCVFlag;
                 jQuery(function() {
                     isKeyPressedFlag = true;
 
@@ -525,6 +526,7 @@
                 }
 
                 function cvData() {
+                    autoSaveCVFlag=true;
                     document.getElementById('hiddenData').value = document.getElementById('cvData').innerHTML;
                     $(document).ready(function() {
                         var cvResumeJSON = {
@@ -619,10 +621,7 @@
                         document.getElementById('hiddenDataJSON').value = jsonDataToSave;
                         /*-------------------------------*/
                         // //alert(document.getElementById('hiddenData').value);
-                        if ('{{$datas["profileLocked"]}}' == 'false' || '{{$datas["profileLocked"]}}' == '') {
-                            //  alert();
-                            // saveCV();
-                        }
+                        
                     });
                 }
 
@@ -635,6 +634,8 @@
                     }
 
                 }
+
+                setInterval(function(){ if(autoSaveCVFlag){saveResumeInformation(false);};autoSaveCVFlag=false; }, 10000);
             </script>
             <style>
                 .cke_table-faked-selection {
@@ -1624,16 +1625,8 @@
             }
         }
         $('[id^="saveResume_"]').click(function() {
-            var htmlContent = document.getElementById('hiddenData').value;
-            var jsonContent = document.getElementById('hiddenDataJSON').value;
-            var formData = {
-                htmlContent: htmlContent,
-                jsonContent: jsonContent,
-                typeStr: 'CVCont'
-            };
-
-            saveInformation(formData);
-
+            
+            saveResumeInformation(true);
         })
 
 
@@ -1648,6 +1641,20 @@
 
 
     });
+   
+function saveResumeInformation(loaderFlag){
+    var htmlContent = document.getElementById('hiddenData').value;
+            var jsonContent = document.getElementById('hiddenDataJSON').value;
+            if(htmlContent==undefined || jsonContent==undefined)return;
+            var formData = {
+                htmlContent: htmlContent,
+                jsonContent: jsonContent,
+                typeStr: 'CVCont',
+                loaderFlag:loaderFlag
+            };
+
+            saveInformation(formData);
+}
 
     function addAttachment(nameOfAttachment,fileNameUserEnd) {
         if ('{{$datas["profileLocked"]}}' == 'true' || '{{$datas["profileLocked"]}}' == '1') {
@@ -1721,6 +1728,9 @@
             document.getElementById('loadFileIcn_' + formData.fileId).style.display = 'block';
         } else {
             document.getElementById('loader').style.display = 'block';
+            if(formData.loaderFlag!=undefined && !formData.loaderFlag){
+                document.getElementById('loader').style.display = 'none';
+            }
         }
         $.ajaxSetup({
             headers: {
@@ -1769,7 +1779,7 @@
                 } else {
                     document.getElementById('loader').style.display = 'none';
                 }
-                onError('Error: Contact to admin');
+                //onError('Error: Contact to admin');
                 console.log(data);
             }
         });
