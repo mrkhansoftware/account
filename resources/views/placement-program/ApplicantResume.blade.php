@@ -1474,8 +1474,8 @@
             fileUrl:attachmentUrl
             }
 
-            console.log('count:' + count);
-            console.log('resumeableLink:'+resumeableLink);
+            //console.log('count:' + count);
+            //console.log('resumeableLink:'+resumeableLink);
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1486,7 +1486,7 @@
                 url: 'applicantResumePlacementAttachment',
                 data: formData,
                success: function(data) {
-                    console.log(data);
+                    //console.log(data);
                     resumeableLink = data.resumeLink;
                     attachmentUrl = data.fileUrl;
                     offset += content.length;
