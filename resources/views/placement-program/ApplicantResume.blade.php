@@ -1356,7 +1356,6 @@
                     <label id="progressLabel">No file selected</label>
                     <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb;display:none; height:200px;opacity:0.75;width:200px;">
                         <div class="waitingHolder" style="top: 300px; width: 300px;">
-                            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." style="width: 40;height:40;" />
                             <span class="waitingDescription">Document is Uploading . . . .</span>
                         </div>
                     </div>
