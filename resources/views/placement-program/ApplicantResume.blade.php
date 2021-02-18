@@ -1778,7 +1778,7 @@ function saveResumeInformation(loaderFlag){
                 } else {
                     document.getElementById('loader').style.display = 'none';
                 }
-                onError('Error log: Please contact the Admin!'+ JSON.stringify(data));
+                //onError('Error log: Please contact the Admin!'+ JSON.stringify(data));
                 console.log(data);
             }
         });
