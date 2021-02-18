@@ -49,10 +49,12 @@ class B1VideoController extends Controller
   
   
   
+    $response='App\Services\Helper'::postRequest($finalReq,'ApiBvisaController');
+    if($response!='"OK"'){
+        'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiBvisaController');
+    }
 
-//echo "<pre>"; print_r($finalReq);die;
-
-return  'App\Services\Helper'::postRequest($finalReq,'ApiBvisaController');
+return  $response; 
 
     }
 
