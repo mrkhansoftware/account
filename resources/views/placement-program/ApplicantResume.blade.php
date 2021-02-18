@@ -1767,7 +1767,7 @@ function saveResumeInformation(loaderFlag){
 
                 } else {
 
-                    onError('Internal Error: Contact to admin');
+                    onError('Error: Please contact the Admin!'+ JSON.stringify(data));
 
                 }
 
@@ -1778,7 +1778,7 @@ function saveResumeInformation(loaderFlag){
                 } else {
                     document.getElementById('loader').style.display = 'none';
                 }
-                onError('Error log: Contact to admin');
+                onError('Error log: Please contact the Admin!'+ JSON.stringify(data));
                 console.log(data);
             }
         });

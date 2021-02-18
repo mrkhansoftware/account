@@ -179,14 +179,16 @@
 					}
 				} else {
 					console.log(data);
-					onError('Error: Contact to admin');
+					onError('Error: Please contact the Admin!'+ data);
+
 
 				}
 
 			},
 			error: function(data) {
 				document.getElementById('loader').style.display = 'none';
-				onError('Error: Contact to admin');
+				onError('Error Log: Please contact the Admin!'+ JSON.stringify(data));
+
 				console.log(data);
 			}
 		});
