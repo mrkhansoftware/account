@@ -49,7 +49,11 @@ class WriteYourScriptController extends Controller
         unset($finalReq['applicant']);
         unset($finalReq['applicantId']);
         unset($finalReq['Contact__c']);
-        return  'App\Services\Helper'::postRequest($finalReq, 'ApiWriteYourScriptController');
+        $response='App\Services\Helper'::postRequest($finalReq, 'ApiWriteYourScriptController');
+        if($response!='"OK"'){
+            'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiWriteYourScriptController');
+        }
+        return  $response;
       
     }
 

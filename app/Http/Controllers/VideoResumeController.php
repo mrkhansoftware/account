@@ -52,7 +52,11 @@ class VideoResumeController extends Controller
         unset($finalReq['methodType']);
         unset($finalReq['applicant']);
 
-      return  'App\Services\Helper'::postRequest($finalReq, 'ApiVideoTutorialsClass');
+        $response='App\Services\Helper'::postRequest($finalReq, 'ApiVideoTutorialsClass');
+        if($response!='"OK"'){
+            'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiVideoTutorialsClass');
+        }
+      return $response; 
        
     
     }

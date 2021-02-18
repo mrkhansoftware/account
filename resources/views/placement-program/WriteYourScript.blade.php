@@ -465,7 +465,7 @@ document.getElementById('videoCcript').readonly=true;
 },
 error: function (data) {
 document.getElementById('loader').style.display='none';
-onError('Error: Contact to admin');
+onError('Error Log: Contact to admin');
 console.log(data);
 }
 });
