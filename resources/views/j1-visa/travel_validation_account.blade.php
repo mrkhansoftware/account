@@ -23,7 +23,7 @@
 
     <p> Please let your supervisor know about your travel plans and ask him to sign our Travel Validation form in case you intend to leave the U.S. during the time of your internship. Please then send this signed form back to us!</p>
 
-    <p>In case of any questions or concerns, please email visa@gaccca.org or call +1 (619) 795-3270.</p>
+    <p>In case of any questions or concerns, please email visa@gaccca.org or call +1 619 272 1237.</p>
 
 
     <br/>
