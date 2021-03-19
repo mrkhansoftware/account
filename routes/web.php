@@ -279,7 +279,7 @@ Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPa
 
 
 Route::get('/user', 'UserController@index');
-
+Route::get('/downloadICS', 'UserController@getICS');
 Route::get('/AgencyJobSearch', 'AgencyJobSearchController@index');
 Route::get('/AgencyJobSearchDetail', 'AgencyJobSearchController@detail');
 Route::get('/login_account', 'LoginController@index');

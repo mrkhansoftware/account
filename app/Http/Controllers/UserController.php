@@ -15,8 +15,29 @@ class UserController extends Controller
     public function index()
     {
         //
-        
-        return view('user');
+        die;
+    }
+
+    public function getICS()
+    {
+      
+        $icalObject = "BEGIN:VCALENDAR
+        VERSION:2.0
+        BEGIN:VEVENT
+        DTSTART:20210318T134500Z
+        DTEND:20210318T141500Z
+        SUMMARY:Ashif Khan
+        DESCRIPTION:TestFile.com
+        LOCATION:www.face.com
+        END:VEVENT
+        END:VCALENDAR
+        ";
+        header('Content-type: text/calendar; charset=utf-8');
+        header('Content-Disposition: attachment; filename="cal1.ics"');
+
+        $icalObject = str_replace(' ', '', $icalObject);
+
+        echo $icalObject;
     }
 
     /**
