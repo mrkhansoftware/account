@@ -70,6 +70,9 @@
         </div>
 
     </div>
+    <div class="gaccca-col gaccca-large-size_12-of-12 gaccca-medium-size_1-of-1 gaccca-text-center" id='calendarLinks'>
+
+    </div>
 
     <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_1-of-1">
         <div class="gaccca-form-element gaccca-form-element-margin" id='scheduleCallSection'>
@@ -91,7 +94,7 @@
         
         </div>
     </div>
-     
+    
 
 </div>
 
@@ -168,6 +171,7 @@
 
     function showSlots() {
         document.getElementById('rescheduleCallSection').innerHTML = '';
+        document.getElementById('calendarLinks').innerHTML = '';
         document.getElementById('scheduleCallSection').innerHTML = '';
         document.getElementById('button-weekly-slots').innerHTML = '';
         document.getElementById('placementVisaMissing').innerHTML = '';
@@ -189,7 +193,7 @@
                 if (slotTime.isMyslot) {
                     slotList += '<div class="gaccca-call-slot-box">';
                     slotList += '<p>' + slotTime.slotTimeShow + '</p>'
-                    slotList += '<p>Hangout Meet Room ID: <a target="_blank" href="https://' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
+                    slotList += '<p>Hangout Meet Room ID: <a target="_blank" href="' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
                     slotList += '</div>';
                 } else if (!slotTime.isBookedSlot) {
                     slotList += '<button class="gaccca-button-time-slot" id="slotEmpty_' + slotTime.slotId + '" slot-value=' + dayInt + '-' + slotInt + '>' + slotTime.slotTimeShow + '</button>';
@@ -212,10 +216,17 @@
 
     function showBookedSlots() {
         let slotBooked = '';
+        let calLinks = '';
         slotBooked = '<button class="gaccca-button-reshedule" id="rescheduleCallBtn">Reschdule the call</button>';
         slotBooked += '<p><strong>Call schedule on:</strong> ' + requestResponse.finalTimeSlotInfo + '</p>';
-        slotBooked += '<p>Hangout Meet Room ID: <a target="_blank" href="https://' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
+        slotBooked += '<p>Hangout Meet Room ID: <a target="_blank" href="' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
         document.getElementById('rescheduleCallSection').innerHTML = slotBooked;
+        /*calLinks+=requestResponse.registerEventInfo.Google_Calendar_Event_URL__c+'&nbsp;&nbsp;&nbsp;';
+        calLinks+=requestResponse.registerEventInfo.Outlook_Live_Calendar_Event_URL__c+'&nbsp;&nbsp;&nbsp;';
+        calLinks+=requestResponse.registerEventInfo.Outlook_Office_Calendar_Event_URL__c+'&nbsp;&nbsp;&nbsp;';
+        calLinks+=requestResponse.registerEventInfo.Yahoo_Calendar_Event_URL__c+'&nbsp;&nbsp;&nbsp;';
+        calLinks+=requestResponse.registerEventInfo.ICS_file__c+'&nbsp;&nbsp;&nbsp;';
+        document.getElementById('calendarLinks').innerHTML=calLinks;*/
         loadJquery(true);
     }
 </script>

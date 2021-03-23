@@ -20,24 +20,33 @@ class UserController extends Controller
 
     public function getICS()
     {
-      
+        if(isset($_GET['id'])){
+        
+        $datas = 'App\Services\Helper'::getRequest('ApiScheduleCallICSFileClass/' . $_GET['id']);
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
         $icalObject = "BEGIN:VCALENDAR
         VERSION:2.0
-        BEGIN:VEVENT
-        DTSTART:20210318T134500Z
-        DTEND:20210318T141500Z
-        SUMMARY:Ashif Khan
-        DESCRIPTION:TestFile.com
-        LOCATION:www.face.com
+        BEGIN:VEVENT";
+        $icalObject.="
+        DTSTART:".$datas['DTSTART'];
+        $icalObject.="
+        DTEND:".$datas['DTEND'];
+        $icalObject.="
+        SUMMARY:".$datas['eventName'];
+        $icalObject.="
+        DESCRIPTION:".$datas['description'];
+        $icalObject.="
+        LOCATION:".$datas['hangoutLink'];
+        $icalObject.="
         END:VEVENT
         END:VCALENDAR
         ";
         header('Content-type: text/calendar; charset=utf-8');
-        header('Content-Disposition: attachment; filename="cal1.ics"');
-
+        header('Content-Disposition: attachment; filename="IIEEX-Cal.ics"');
         $icalObject = str_replace(' ', '', $icalObject);
-
         echo $icalObject;
+        }
     }
 
     /**
