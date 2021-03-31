@@ -70,7 +70,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-8">
           Email Address: <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="onfrm[Interviewer_Email_Address__c]" value="{{isset($datas['onfrm']['Interviewer_Email_Address__c'])?$datas['onfrm']['Interviewer_Email_Address__c']:''}}" required="" class="gaccca-input" />
+          <input  type='email' name="onfrm[Interviewer_Email_Address__c]" value="{{isset($datas['onfrm']['Interviewer_Email_Address__c'])?$datas['onfrm']['Interviewer_Email_Address__c']:''}}" required="" class="gaccca-input" />
 
         </div>
       </div>
