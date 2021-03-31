@@ -147,7 +147,7 @@
       <label class="gaccca-form-element__label" for="text-input-id-8">
         Email Address: <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
-        <input name="onfrm[Supervisor_Email__c]" value="{{isset($datas['onfrm']['Supervisor_Email__c'])?$datas['onfrm']['Supervisor_Email__c']:''}}" required="" class="gaccca-input" />
+        <input type='email' name="onfrm[Supervisor_Email__c]" value="{{isset($datas['onfrm']['Supervisor_Email__c'])?$datas['onfrm']['Supervisor_Email__c']:''}}" required="" class="gaccca-input" />
 
       </div>
     </div>
