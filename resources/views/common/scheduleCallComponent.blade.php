@@ -131,10 +131,10 @@
 
 
                 } else {
-                    if (requestResponse.isReSchedule && requestResponse.registerEventInfo.Google_Calendar_Event_URL__c == undefined) {
+                    if (requestResponse.isReSchedule && requestResponse.registerEventInfo.ICS_file__c == undefined) {
                         document.getElementById('gaccca_myModal').style.display = 'none';
-//                        showFun();
-  //                      return;
+                        showFun();
+                        return;
                     }
                     showSlots();
                     if (requestResponse.isReSchedule) {
