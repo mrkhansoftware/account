@@ -25,6 +25,9 @@ class UserController extends Controller
         $datas = 'App\Services\Helper'::getRequest('ApiScheduleCallICSFileClass/' . $_GET['id']);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
+        $datas['description']=str_replace('<br>', '\\n', $datas['description']);
+        $datas['description']=str_replace(' ', '##spaceManage##', $datas['description']);
+        $datas['eventName']=str_replace(' ', '##spaceManage##', $datas['eventName']);
         $icalObject = "BEGIN:VCALENDAR
         VERSION:2.0
         BEGIN:VEVENT";
@@ -45,6 +48,7 @@ class UserController extends Controller
         header('Content-type: text/calendar; charset=utf-8');
         header('Content-Disposition: attachment; filename="IIEEX-Cal.ics"');
         $icalObject = str_replace(' ', '', $icalObject);
+        $icalObject = str_replace('##spaceManage##', ' ', $icalObject);
         echo $icalObject;
         }
     }

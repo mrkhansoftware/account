@@ -33,13 +33,13 @@
         </p>
         @elseif($scheduleCallTypeName=='Agent')
         <p>
-        As an Agent of Us, we make it easy as possible to schedule an online call for any topic you like to talk about with Us.
+            As an Agent of Us, we make it easy as possible to schedule an online call for any topic you like to talk about with Us.
         </p>
         <p>
-        Here you see all available appointment slots with your contact partner.
+            Here you see all available appointment slots with your contact partner.
         </p>
         <p>
-        Please select a spot that works best for you and confirm the call with the button "Schedule a Call" If you like to re-schedule a call please use also this page.
+            Please select a spot that works best for you and confirm the call with the button "Schedule a Call" If you like to re-schedule a call please use also this page.
         </p>
         @elseif($scheduleCallTypeName=='Placement')
         <p>
@@ -55,9 +55,9 @@
             <label class="gaccca-form-element__label" for="select-01">Time Zone:</label>
             <div class="gaccca-form-element__control">
                 <div class="gaccca-select_container">
-                {!! Form::select('tmzone', array_reverse($datas['timeZoneMapValues']), '', [ 'class' => 'gaccca-select','id' => 'time-zone-change']) !!}
+                    {!! Form::select('tmzone', array_reverse($datas['timeZoneMapValues']), '', [ 'class' => 'gaccca-select','id' => 'time-zone-change']) !!}
 
-                
+
                 </div>
             </div>
         </div>
@@ -91,10 +91,10 @@
     </div>
     <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_1-of-1">
         <div class="gaccca-form-element gaccca-form-element-margin" id='placementVisaMissing'>
-        
+
         </div>
     </div>
-    
+
 
 </div>
 
@@ -105,10 +105,11 @@
 
 <script>
     var requestResponse;
+
     function ajaxRequest(formData) {
-        formData.contactId="{{$datas['contID']}}";
-        if(requestResponse!=undefined && requestResponse!=''){ 
-        formData.requestResponseStr=JSON.stringify(requestResponse);
+        formData.contactId = "{{$datas['contID']}}";
+        if (requestResponse != undefined && requestResponse != '') {
+            formData.requestResponseStr = JSON.stringify(requestResponse);
         }
         document.getElementById('loader').style.display = 'block';
         $.ajaxSetup({
@@ -130,6 +131,11 @@
 
 
                 } else {
+                    if (requestResponse.isReSchedule && requestResponse.registerEventInfo.Google_Calendar_Event_URL__c == undefined) {
+                        document.getElementById('gaccca_myModal').style.display = 'none';
+                        showFun();
+                        return;
+                    }
                     showSlots();
                     if (requestResponse.isReSchedule) {
                         showBookedSlots();
@@ -177,7 +183,7 @@
         document.getElementById('placementVisaMissing').innerHTML = '';
 
 
-        if(requestResponse.placementOrVisaMissing){
+        if (requestResponse.placementOrVisaMissing) {
             document.getElementById('placementVisaMissing').innerHTML = 'Booking Slots will be available soon. ';
             return;
         }
@@ -193,7 +199,7 @@
                 if (slotTime.isMyslot) {
                     slotList += '<div class="gaccca-call-slot-box">';
                     slotList += '<p>' + slotTime.slotTimeShow + '</p>'
-                    slotList += '<p>Hangout Meet Room ID: <a target="_blank" href="' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
+                    slotList += '<p>Hangout Meet Room ID: <a target="_blank" href="https://' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
                     slotList += '</div>';
                 } else if (!slotTime.isBookedSlot) {
                     slotList += '<button class="gaccca-button-time-slot" id="slotEmpty_' + slotTime.slotId + '" slot-value=' + dayInt + '-' + slotInt + '>' + slotTime.slotTimeShow + '</button>';
@@ -217,16 +223,18 @@
     function showBookedSlots() {
         let slotBooked = '';
         let calLinks = '';
+
         slotBooked = '<button class="gaccca-button-reshedule" id="rescheduleCallBtn">Reschdule the call</button>';
         slotBooked += '<p><strong>Call schedule on:</strong> ' + requestResponse.finalTimeSlotInfo + '</p>';
-        slotBooked += '<p>Hangout Meet Room ID: <a target="_blank" href="' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
+        slotBooked += '<p>Hangout Meet Room ID: <a target="_blank" href="https://' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
+
         document.getElementById('rescheduleCallSection').innerHTML = slotBooked;
-        /*calLinks+=requestResponse.registerEventInfo.Google_Calendar_Event_URL__c+'&nbsp;&nbsp;&nbsp;';
-        calLinks+=requestResponse.registerEventInfo.Outlook_Live_Calendar_Event_URL__c+'&nbsp;&nbsp;&nbsp;';
-        calLinks+=requestResponse.registerEventInfo.Outlook_Office_Calendar_Event_URL__c+'&nbsp;&nbsp;&nbsp;';
-        calLinks+=requestResponse.registerEventInfo.Yahoo_Calendar_Event_URL__c+'&nbsp;&nbsp;&nbsp;';
-        calLinks+=requestResponse.registerEventInfo.ICS_file__c+'&nbsp;&nbsp;&nbsp;';
-        document.getElementById('calendarLinks').innerHTML=calLinks;*/
+        calLinks += requestResponse.registerEventInfo.Google_Calendar_Event_URL__c + '&nbsp;&nbsp;&nbsp;';
+        calLinks += requestResponse.registerEventInfo.Outlook_Live_Calendar_Event_URL__c + '&nbsp;&nbsp;&nbsp;';
+        calLinks += requestResponse.registerEventInfo.Outlook_Office_Calendar_Event_URL__c + '&nbsp;&nbsp;&nbsp;';
+        calLinks += requestResponse.registerEventInfo.Yahoo_Calendar_Event_URL__c + '&nbsp;&nbsp;&nbsp;';
+        calLinks += requestResponse.registerEventInfo.ICS_file__c + '&nbsp;&nbsp;&nbsp;';
+        document.getElementById('calendarLinks').innerHTML = calLinks;
         loadJquery(true);
     }
 </script>
