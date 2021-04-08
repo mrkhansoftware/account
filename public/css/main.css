@@ -1390,6 +1390,25 @@ From here start main page css : main page css
   background: #096dd985;
     cursor: not-allowed;
 }
+
+.gaccca-btn-disabled-g {
+  cursor: not-allowed;
+  background: #F5F5F5;
+  color: #CCCCCC;
+}
+.gaccca-block-msg{
+  color:#CF1322;
+}
+.gaccca-form-element-margin-cv{
+  margin: 0px 20px 33px 35px;
+}
+.gaccca-reset-resume-btn{
+  float: right;
+    margin-right: 135px;
+    color: red;
+    background: white;
+    border: 1px solid red;
+}
 /* Change background color of buttons on hover */
 
 .gaccca-tab span:hover {

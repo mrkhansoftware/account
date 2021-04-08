@@ -291,6 +291,7 @@ body {
 	outline: none;
 	overflow-x: auto;
 	width: 100%;
+	cursor: pointer;
 }
 
 .commentBg {

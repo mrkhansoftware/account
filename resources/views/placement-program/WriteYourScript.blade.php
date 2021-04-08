@@ -209,13 +209,23 @@
 
     @if (!(isset($datas['isInternal']) && $datas['isInternal']))
     <div class="gaccca-form-element gaccca-sky-blue-box-margin" id='scriptBtns'>
-      <button {{$datas["blockWriteScript"]?'disabled':''}} class="gaccca-button-save {{$datas['blockWriteScript']?'gaccca-btn-disabled':''}}"  id='saveScriptbtn'>Save script</button>
+      <button {{$datas["blockWriteScript"]?'disabled':''}} class="gaccca-button-save {{$datas['blockWriteScript']?'gaccca-btn-disabled-g':''}}"  id='saveScriptbtn'>Save script</button>
 
       <p> Let us know if you think you finished your script by clicking the button below. </p>
 
       <p> Your placement coordinator will reply a feedback and maybe improve your draft before you will record your video. </p>
-      <button {{$datas["blockWriteScript"]?'disabled':''}} class="gaccca-button-save {{$datas['blockWriteScript']?'gaccca-btn-disabled':''}}  "  id='readyScriptbtn'>Ready with my script</button>
+      <button {{$datas["blockWriteScript"]?'disabled':''}} class="gaccca-button-save {{$datas['blockWriteScript']?'gaccca-btn-disabled-g':''}}  "  id='readyScriptbtn'>Ready with my script</button>
+      @if (isset($datas['blockWriteScript']) && $datas['blockWriteScript'])
+    <div class="gaccca-form-element__control gaccca-block-msg">
+			<br />
+      Your video script is locked. <br/>
+Your placement coordinator is now reviewing your video script and will provide feedback soon.
+
+			</div>
+    @endif
+    
     </div>
+  
 @endif
 
   </div>
@@ -320,6 +330,7 @@ saveInfo(formData);
 const readyScriptbtn=document.querySelector('#readyScriptbtn');
     if(readyScriptbtn!=null){
       readyScriptbtn.addEventListener('click', (e)=>{
+        if(!confirm('Are you ready with your script?'))return;
         var formData = {
 scriptInfo:document.getElementById('WriteScriptId').value,
 typeStr:'readyScriptbtn'
@@ -442,14 +453,12 @@ url: 'writeScriptPlacement',
 data: formData,
 dataType: 'json',
 success: function (data) {
-  console.log(data);
-document.getElementById('loader').style.display='none';
  if(data=='OK' && formData.typeStr=='readyScriptbtn'){
 onUpdate('Thank you, we received your video script!');
 
 document.getElementById('scriptBtns').innerHTML='';
 document.getElementById('videoCcript').readonly=true;
-
+window.location.reload();return;
  }
  else if(data=='OK' && formData.typeStr=='informApplicant'){
   onUpdate('Infrom applicant, Placement Coordinator viewed and ready with script email sent');
@@ -461,6 +470,7 @@ document.getElementById('videoCcript').readonly=true;
   onError('Error: Please contact the Admin!'+ data);
 
  }  
+document.getElementById('loader').style.display='none';
 
 },
 error: function (data) {

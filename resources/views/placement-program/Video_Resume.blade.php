@@ -40,7 +40,7 @@
 	}
 
 	#teleprompterArea {
-		width: 100%;
+		max-width: 400px;
 		height: 214px;
 		min-height: 190px;
 	}
@@ -98,16 +98,36 @@
 			display: none !important;
 		}
 	}
+	.labelVideoScript{
+		max-width: 80%;
+	}
+	.previewlabel{
+		margin-left: 35px;
+	}
+	.vdoBorder{
+		border-style: solid;
+		border-width: 1px;
+		border-color: #6ca9f2;
+		width: 400px !important;
+		height: 300px !important;
+		display:block;
+	}
+	.grayClr{
+		color:#8C8C8C;
+	}
 </style>
 <link rel="stylesheet" href="https://assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
 <script src="https://assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
 <script>
 	ZiggeoApi.token = "80f9af3ec1dfe032714fd61c53f94376";
+	var ziggeoApp = new ZiggeoApi.V2.Application({
+        token: "80f9af3ec1dfe032714fd61c53f94376"
+    });
 </script>
 <script>
 	function initMehtod() {
 		// document.getElementsByClassName('ba-videorecorder-theme-modern-norecorder')[0].style.background='none';
-		document.getElementById('vdoBorder').style.display = 'block';
+		//document.getElementById('vdoBorder').style.display = 'block';
 		if (document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0] == undefined) {
 
 			document.getElementById('logoImage').style.display = 'none';
@@ -131,32 +151,86 @@
 	<h1 class="gaccca-h1-padding">Create Your Video Resume </h1>
 	@if (isset($datas['profileLocked']) && $datas['profileLocked'])
 	<div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
-		<p>Profile locked</p>
+		<p>Your CVOne Video resume was blocked by your placement coordinator. Your placement coordinator is now working on your application. If you have any questions please contact your placement coordinator via emial or schedule a call.</p>
 	</div>
+	<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-sky-blue-box-margin">
+	<label class="gaccca-radio__label previewlabel">
+                        <a href="/ApplicantPDFWithVideo" target='_blank'>Preview your video resume</a>
+					</label>
+		</div>
 	@else
 
 
 	<div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
-		<p>You have the option to use a teleprompter which automatically appears when you start recording. Input the video script you want to see in Teleprompter.</p>
+		<p>You have the option to use a teleprompter which automatically appears when you start recording. 
+Your most current video script will be inserted automatically on this page.</p>
 	</div>
 	<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 		<div class="gaccca-form-element gaccca-form-element-margin">
-			<div style="border-style: solid;border-width: 1px;border-color: #6ca9f2;margin-top: -16px ;width: 485px !important;height: 450px !important;display:block" id='vdoBorder'>
-				<table>
-					<tr>
-						<td>
-							<image src="{{ asset('images/logo/gacca_logo.gif') }}" onload="initMehtod()" id="logoImage" style="position: relative;top: 110px;left: 136px;z-index: 100;" />
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<ziggeorecorder ziggeo-timelimit='180' ziggeo-width='477' ziggeo-height='380' ziggeo-theme='modern' allowupload='false' id="myRecorder"></ziggeorecorder>
-						</td>
-					</tr>
-				</table>
+			<div class="vdoBorder" id='vdoBorder' style="{{isset($datas['app']['Link_to_video__c'])?'display:none':'display:block'}}">
+			@if (!(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c']))
+                   
+						<image src="{{ asset('images/logo/gacca_logo.gif') }}" onload="initMehtod()" id="logoImage" style="position: absolute;top: 30px;left: 90px;z-index: 100;" />
+							<ziggeorecorder ziggeo-timelimit='180' ziggeo-width='400' ziggeo-height='300' ziggeo-theme='modern' allowupload='false' id="myRecorder"></ziggeorecorder>
+			
+							<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1" id='showLastRecording'style="{{isset($datas['app']['Link_to_video__c'])?'display:block':'display:none'}}" >
+				<div class="gaccca-form-element__control"> 
+				<label class="gaccca-radio__label ">
+                        <a href="javascript:void(0)"  id='show_last'>Show last recording</a>
+					</label>
+					
+
 			</div>
 		</div>
+		@endif
+			</div>
+			<div class='video' style="{{isset($datas['app']['Link_to_video__c'])?'display:block':'display:none'}}" id='vdo_player'>
+					<div id="replace_me-v2_player"></div>
+					 <script>
+						function zigeoAppInit(videoKey){
+                        ziggeoApp.on("ready", function() {
+                            var player = new ZiggeoApi.V2.Player({
+                                element: document.getElementById("replace_me-v2_player"),
+                                attrs: {
+                                    width: 400,
+                                    height: 300,
+                                    theme: "modern",
+                                    themecolor: "blue",
+                                    video: videoKey
+                                }
+                            });
+
+                            player.activate();
+                            var elementss = document.getElementById('replace_me-v2_player');
+                            var embedding = ZiggeoApi.V2.Recorder.findByElement(elementss);
+                            embedding.on("playing", function() {
+                                
+                            });
+
+                        });
+						}
+						zigeoAppInit("{{isset($datas['app']['Link_to_video__c'])?$datas['app']['Link_to_video__c']:''}}");
+					</script>
+					
+
+					@if (!(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c']))
+                   
+<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
+				<div class="gaccca-form-element__control"> 
+				<label class="gaccca-radio__label ">
+				<span class='grayClr'>Not yet satisfied with your video?</span><a href="javascript:void(0)" id='record_again'>Record again!</a>
+					</label>
+					
+
+			</div>
+		</div>
+		@endif
+                </div>
+
+		</div>
 	</div>
+	<br/>
+			
 	<div>  
 		<div id="Teleprompter" style="display:none;position;">
 			<div class="Countdown" data-readytext="Ready to record">2</div>
@@ -174,18 +248,28 @@
 		</div>
 		<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 			<div class="gaccca-form-element gaccca-form-element-margin">
-				<div class="gaccca-form-element__control"> <span id="telepromtrbtn" class="ShowTeleprompter gaccca-button-save">Show Teleprompter</span>
+				<div class="gaccca-form-element__control"> 
+					
+				<span id="telepromtrbtn" class="{{(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c'])?'ShowTeleprompter gaccca-button-save gaccca-btn-disabled-g':'ShowTeleprompter gaccca-button-save'}}">Show Teleprompter
+
+				</span>
+				<label class="gaccca-radio__label previewlabel">
+                        <a href="/ApplicantPDFWithVideo" target='_blank'>Preview your video resume</a>
+					</label>
+
 				</div>
 			</div>
 		</div>
 		<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 			<div class="gaccca-form-element gaccca-form-element-margin">
-				<label class="gaccca-form-element__label" for="text-input-id-8">Please copy and paste your video script into the text box.</label>
+				<label class="gaccca-form-element__label" for="text-input-id-8"></label>
 				<div class="gaccca-form-element__control">
 					<textarea name="teleprompter" id="teleprompterArea" data-gramm="true" data-txt_gramm_id="773be24c-eef4-657f-8d24-64ae226215d1" data-gramm_id="773be24c-eef4-657f-8d24-64ae226215d1" spellcheck="false" data-gramm_editor="true" class='gaccca-textarea'>{{isset($datas['app']['Write_Your_Script__c'])?$datas['app']['Write_Your_Script__c']:''}}</textarea>
 				</div>
 			</div>
 		</div>
+		@if (!(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c']))
+            
 		<script>
 			jQuery(function() {
 				function nl2br(str, is_xhtml) {
@@ -365,36 +449,50 @@
 
 			});
 		</script>
+		@endif
 	</div>
 	<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 		<div class="gaccca-form-element gaccca-form-element-margin">
-			<label class="gaccca-form-element__label" for="text-input-id-8">Let us know if you think you finished your video resume by clicking the button below.</label>
+		@if (!(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c']))
+		
+		<label class="gaccca-form-element__label labelVideoScript" for="text-input-id-8">Let your placement coordinator know if you think you finished your video resume by clicking the button below. 
+The page will be locked until the review is done. Please click only if you are really satisfied with your recordings.</label>
+@endif
 			<div class="gaccca-form-element__control">
 				<br />
-				<button id="readyToSend" class="gaccca-button-save">Ready with video resume</button>
-				<p>
-				<label class="gaccca-radio__label">
-                        <a href="/ApplicantPDFWithVideo" target='_blank'>Preview</a>
-					</label>
-				</p>
+				<button id="readyToSend" class=" {{(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c'])?'gaccca-button-save gaccca-btn-disabled-g':'gaccca-button-save'}}">Ready with video resume</button>
+				
 			</div>
+			@if (isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c'])
+			<div class="gaccca-form-element__control gaccca-block-msg">
+			<br />
+			Your video resume is locked.<br/>
+Your placement coordinator is now reviewing your recording and will provide feedback soon.
+
+
+
+			</div>
+			@endif
 		</div>
 	</div>
 
 	@endif
 </div>
+@if (!(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c']))
+
 <script>
 	const readyToSend = document.querySelector('#readyToSend');
 	if (readyToSend != null) {
 		readyToSend.addEventListener('click', (e) => {
-			if (!confirm('Are you sure?')) {
+			if (!confirm('Are you ready with your video resume?')) {
 				return;
 			}
 			readyToSendMethod('readyToSendMethod', '-');
 		});
 	}
+</script>
 
-
+<script>
 	function readyToSendMethod(methodType, vdId) {
 
 		document.getElementById('loader').style.display = 'block'; //alert(vdId);
@@ -414,24 +512,31 @@
 			dataType: 'json',
 			success: function(data) {
 				console.log(data)
-				document.getElementById('loader').style.display = 'none';
 				if (data == 'OK') {
 
 					if (methodType == 'readyToSendMethod') {
 						onUpdate('Thank you, we received your video resume.');
+						document.getElementById('readyToSend').disabled = true;
+						window.location.reload();return;
 					} else if (methodType == 'vdoUpload') {
 						
 						document.getElementById('Teleprompter').style.display = 'none';
 						onUpdate('Video created & submitted on our server.');
+						zigeoAppInit(vdId);
+						jQuery('#vdoBorder').hide();
+		jQuery('#vdo_player').show();
+		jQuery('#showLastRecording').show();
 					}
 
-					document.getElementById('readyToSend').disabled = true;
+				
 				} else {
 
 					onError('Error: Please contact the Admin!'+ data);
 
 
 				}
+				document.getElementById('loader').style.display = 'none';
+				
 
 			},
 			error: function(data) {
@@ -442,7 +547,11 @@
 			}
 		});
 	}
-
+</script>
+@endif
+@if (!(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c']))
+      
+<script>
 	ZiggeoApi.Events.on("system_ready", function() {
 		//Lets get the ziggeo-recorder element reference
 		var element = document.getElementById('myRecorder');
@@ -457,4 +566,18 @@
 			//savef();
 		});
 	});
-</script>@include('common.footer') @else Permission denied. Please contact administrator. @endif
+</script>
+@endif
+<script>
+	jQuery('#show_last').click(function(){
+		jQuery('#vdoBorder').hide();
+		jQuery('#vdo_player').show();
+	});
+
+    jQuery('#record_again').click(function(){
+		jQuery('#vdoBorder').show();
+		jQuery('#vdo_player').hide();
+	});
+
+</script>
+@include('common.footer') @else Permission denied. Please contact administrator. @endif

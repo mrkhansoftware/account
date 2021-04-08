@@ -35,8 +35,9 @@
     <h1 class="gaccca-h1-padding">Create Your Resume</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
         <p> Just a few more steps left! </p>
-
-        <p> To get an idea of what a simple but good video and profile look like, please check out the following link: <a target="_blank" href="https://account.iieex.org/ApplicantPDFWithVideo?id=0031I00000jrHqLQAU&isInternal=isInternal"> Sample Template</a> </p>
+<p>To get an idea of what a simple but good video and profile look like, please check out the following <a target="_blank" href="https://account.iieex.org/ApplicantPDFWithVideo?id=0031I00000jrHqLQAU&isInternal=isInternal"> Sample Template</a>
+This page has an auto save function of every 1 minute, but you can also click the “Save resume” Button anytime.
+</p>
     </div>
     <!------>
 
@@ -133,6 +134,17 @@
                 .displayNone {
                     display: none !important;
                 }
+                .gaccca-main-containt .gaccca-h2-padding {
+    padding: 0px 0px 24px 15px;
+}
+.previewlabel{
+        margin-left: 35px;
+        font-size: initial;
+        pointer-events: all;
+    }
+    .labelVideoScript{
+		max-width: 80%;
+	}
             </style>
 
             <script>
@@ -825,11 +837,18 @@
                 <div style="font-size:11px;" styleClass="ckeditor">
                     <div id="content" style="padding-left: 40px;{{isset($datas['profileLocked']) && $datas['profileLocked']?'pointer-events: none':''}}">
 
-                        @if (isset($datas['profileLocked']) && !$datas['profileLocked'])
-                        <div class="gaccca-col gaccca-large-size_12-of-12 gaccca-medium-size_12-of-12  gaccca-center" width='100%'>
-
-                            <button class="gaccca-button-save " id='saveResume_top'>Save resume</button>
-                            <br /><br /><br />
+                        <div class="gaccca-col gaccca-large-size_12-of-12 gaccca-medium-size_12-of-12  " width='100%'>
+                        <div class="gaccca-form-element gaccca-form-element-margin-cv">
+				<div class="gaccca-form-element__control"> 
+                            <button class="{{(isset($datas['profileLocked']) && $datas['profileLocked'])?'gaccca-button-save gaccca-btn-disabled-g':'gaccca-button-save'}} " id='saveResume_top'>Save resume</button>
+                            @if (isset($datas['app']['Resume_url__c']) && $datas['app']['Resume_url__c']!='')
+                    <label class="gaccca-radio__label previewlabel">
+                        <a href="/ApplicantPDFWithVideo" target='_blank'><i class="fas fa-external-link-alt"></i>&nbsp;&nbsp;Preview your CV</a>
+                    </label>
+                  
+                    <button class="gaccca-button-save gaccca-reset-resume-btn" id='Reset_CV_btn'><i class="fas fa-trash"></i>&nbsp;&nbsp;Reset resume</button>
+                            <br />
+				</div></div>
                         </div>
                         @endif
                         <div id="editor" class="page" style="position:relative;font-size:12px;">
@@ -1307,15 +1326,22 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
-                    @if (isset($datas['profileLocked']) && !$datas['profileLocked'])
 
-                    <div class="gaccca-col gaccca-large-size_12-of-12 gaccca-medium-size_12-of-12  gaccca-center" width='100%'>
-                        <br /><br /><br />
-                        <button class="gaccca-button-save " id='saveResume_bottom'>Save resume</button>
-
-                    </div>
+<div class="gaccca-col gaccca-large-size_12-of-12 gaccca-medium-size_12-of-12  " width='100%'>
+<div class="gaccca-form-element gaccca-form-element-margin-cv">
+<div class="gaccca-form-element__control"> 
+    <br />
+    <button class="{{(isset($datas['profileLocked']) && $datas['profileLocked'])?'gaccca-button-save gaccca-btn-disabled-g':'gaccca-button-save'}}" id='saveResume_bottom'>Save resume</button>
+    @if (isset($datas['app']['Resume_url__c']) && $datas['app']['Resume_url__c']!='')
+                    <label class="gaccca-radio__label previewlabel">
+                        <a href="/ApplicantPDFWithVideo" target='_blank'><i class="fas fa-external-link-alt"></i>&nbsp;&nbsp;Preview your CV</a>
+                    </label>
                     @endif
+</div></div>
+
+</div>
+                    </div>
+                   
 
 
 
@@ -1339,11 +1365,11 @@
 
     <!----->
 
-    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
+    <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1" style="padding-left: 40px;">
         <h2 class="gaccca-h2-padding">Attachments</h2>
         <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
             <form id="upload_form" method="post">
-                <div class="gaccca-form-element gaccca-form-element-margin" id='fileSelector'>
+                <div class="gaccca-form-element gaccca-form-element-margin-cv" id='fileSelector'>
                     <div class="gaccca-form-element__control">
                         <label class="gaccca-file">
                             <input type="file" id="fileIn2" name="filename" onchange='check2(2)' />
@@ -1362,7 +1388,7 @@
                 </div>
                 <input id="submit_btn" type="submit" value="Upload" style='display:none' />
             </form>
-            <div class="gaccca-form-element gaccca-form-element-margin">
+            <div class="gaccca-form-element gaccca-form-element-margin-cv">
                 <table class="gaccca-price-table" id='fileListTable'>
                 <tr ><td></td><td></td><td></td></tr>
                     @foreach ($datas['additionalDocList'] as $file)
@@ -1386,13 +1412,13 @@
                 </table>
             </div>
         </div>
+        @if (isset($datas['profileLocked']) && !$datas['profileLocked'])
 
-        <h2 class="gaccca-h2-padding">Preview</h2>
+        <h2 class="gaccca-h2-padding">Design</h2>
         <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
-            <div class="gaccca-form-element gaccca-form-element-margin">
+            <div class="gaccca-form-element gaccca-form-element-margin-cv">
                 <div class="gaccca-form-element__control">
-                    @if (isset($datas['profileLocked']) && !$datas['profileLocked'])
-
+             
                     <label class="gaccca-form-element__label" for="text-input-id-fn">
                         Select the Template Design <span class="gaccca-text-required" title="required">*</span> </label>
                     <span class="gaccca-radio">
@@ -1417,19 +1443,43 @@
 
 
                     </span>
-                    @endif
-                    @if (isset($datas['app']['Resume_url__c']) && $datas['app']['Resume_url__c']!='')
-                    <label class="gaccca-radio__label">
-                        <a href="/ApplicantPDFWithVideo" target='_blank'>Preview</a>
-                    </label>
-                    @endif
+                   
+                    
 
                 </div>
 
             </div>
 
         </div>
+        @endif
 
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
+		<div class="gaccca-form-element gaccca-form-element-margin-cv">
+		@if (!(isset($datas['profileLocked']) && $datas['profileLocked']))
+		
+		<label class="gaccca-form-element__label labelVideoScript" for="text-input-id-8">
+
+        Let your placement coordinator know if you think you finished your resume by clicking the button below.<br/>
+Please make sure it is a very good draft with all the necessary information. The page will be locked until the review is done. <br/>
+Please click only if you are really satisfied with your draft.
+    </label>
+@endif
+			<div class="gaccca-form-element__control">
+				<br />
+				<button id="ready_with_resume" class=" {{(isset($datas['profileLocked']) && $datas['profileLocked'])?'gaccca-button-save gaccca-btn-disabled-g':'gaccca-button-save'}}">Ready with my resume</button>
+				
+			</div>
+			@if (isset($datas['profileLocked']) && $datas['profileLocked'])
+			<div class="gaccca-form-element__control gaccca-block-msg">
+			<br />
+            Your resume is locked. <br/>
+Your placement coordinator is now reviewing your resume and will provide feedback soon.
+
+			</div>
+			@endif
+		</div>
+	</div>
+        
     </div>
 
 </div>
@@ -1638,6 +1688,29 @@
             saveInformation(formData);
         })
 
+        $('#Reset_CV_btn').click(function() {
+        if(!confirm('Do you want to reset your resume?\nAll your data will be deleted and you can start from scratch.')){
+            return;
+        }
+        var formData = {
+                templateName:'',
+                typeStr: 'reset-CV'
+            };
+
+            saveInformation(formData);
+        })
+
+        $('#ready_with_resume').click(function() {
+        if(!confirm('Are you ready with your resume?')){
+            return;
+        }
+        var formData = {
+                templateName:'',
+                typeStr: 'ready_with_resume'
+            };
+
+            saveInformation(formData);
+        })
 
     });
    
@@ -1746,6 +1819,8 @@ function saveResumeInformation(loaderFlag){
                 data=JSON.parse(data);
                 if (formData.typeStr == 'fileNameChange' || formData.typeStr == 'fileDelete') { //loadFileIcn_
                     document.getElementById('loadFileIcn_' + formData.fileId).style.display = 'none';
+                }else if (formData.typeStr == 'reset-CV' || formData.typeStr =='ready_with_resume') { 
+                    window.location.reload();return;
                 } else {
                     document.getElementById('loader').style.display = 'none';
                 }
@@ -1804,8 +1879,13 @@ $('#fileListTable tr:last').after(row);
 }
 </script>
 
+@else
+<script>
+function saveInformation(formData){
+    console.log('Profile Locked');
+}
 
-
+</script>
 @endif
 @include('common.footer')
 

@@ -580,7 +580,8 @@
                 <div class='contentRow'>
                     <div class='title'>
                         <i class="fas fa-thumbs-up"></i>
-                        {!!$datas['cvData']['skill']['skillTitle']!!}
+                        {!!isset($datas['cvData']['skill']['skillTitle'])?$datas['cvData']['skill']['skillTitle']:''!!}
+                       
                     </div>
                     <div class='contentRow blockMargin'>
                         <table>

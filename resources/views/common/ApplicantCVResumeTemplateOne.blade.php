@@ -457,7 +457,7 @@
             <div class="skillOther cvContentClass slds-grid blockMargin">
                 <div class='Skill contentPadding'>
                     <div class='title'>
-                        {!!$datas['cvData']['skill']['skillTitle']!!}
+                        {!!isset($datas['cvData']['skill']['skillTitle'])?$datas['cvData']['skill']['skillTitle']:''!!}
                         
                     </div>
                     <div class="grid">
