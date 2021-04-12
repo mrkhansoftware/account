@@ -40,9 +40,9 @@
 	}
 
 	#teleprompterArea {
-		max-width: 400px;
-		height: 214px;
-		min-height: 190px;
+		max-width: 600px;
+		height: 280px;
+		min-height: 280px;
 	}
 
 	#Teleprompter {
@@ -130,13 +130,11 @@
 		//document.getElementById('vdoBorder').style.display = 'block';
 		if (document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0] == undefined) {
 
-			document.getElementById('logoImage').style.display = 'none';
 			document.getElementById('vdoBorder').style.border = 'none';
 
 		}
 		if (document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0] != undefined) {
 		document.getElementsByClassName("ba-videorecorder-chooser-button-0")[0].addEventListener("click", function() {
-			document.getElementById('logoImage').style.display = 'none';
 			document.getElementById('vdoBorder').style.border = 'none';
 
 			document.getElementById('telepromtrbtn').click();
@@ -170,7 +168,6 @@ Your most current video script will be inserted automatically on this page.</p>
 			<div class="vdoBorder" id='vdoBorder' style="{{isset($datas['app']['Link_to_video__c'])?'display:none':'display:block'}}">
 			@if (!(isset($datas['app']['Is_Video_Resume_Ready__c']) && $datas['app']['Is_Video_Resume_Ready__c']))
                    
-						<image src="{{ asset('images/logo/gacca_logo.gif') }}" onload="initMehtod()" id="logoImage" style="position: absolute;top: 30px;left: 90px;z-index: 100;" />
 							<ziggeorecorder ziggeo-timelimit='180' ziggeo-width='400' ziggeo-height='300' ziggeo-theme='modern' allowupload='false' id="myRecorder"></ziggeorecorder>
 			
 							<div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1" id='showLastRecording'style="{{isset($datas['app']['Link_to_video__c'])?'display:block':'display:none'}}" >
@@ -218,7 +215,7 @@ Your most current video script will be inserted automatically on this page.</p>
 <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 				<div class="gaccca-form-element__control"> 
 				<label class="gaccca-radio__label ">
-				<span class='grayClr'>Not yet satisfied with your video?</span><a href="javascript:void(0)" id='record_again'>Record again!</a>
+				<span class='grayClr'>Not yet satisfied with your video? </span> <a href="javascript:void(0)" id='record_again'>Record again!</a>
 					</label>
 					
 

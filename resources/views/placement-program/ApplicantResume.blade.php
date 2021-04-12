@@ -145,6 +145,10 @@ This page has an auto save function of every 1 minute, but you can also click th
     .labelVideoScript{
 		max-width: 80%;
 	}
+    .fa-caret-up:before {
+    content: "\f0d8";
+}
+
             </style>
 
             <script>
