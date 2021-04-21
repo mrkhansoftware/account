@@ -13,10 +13,18 @@ class AgencyJobSearchController extends Controller
      */
     public function index()
     {
+        $idCon = 'App\Services\Helper'::sessionConId();
+        if ($idCon == '') {
+            return 'App\Services\Helper'::returnUrl();
+        }
         return view('agent-bookings/AgencyJobSearch');
     }
     public function detail()
     {
+        $idCon = 'App\Services\Helper'::sessionConId();
+        if ($idCon == '') {
+            return 'App\Services\Helper'::returnUrl();
+        }
         return view('agent-bookings/AgencyJobSearchDetail');
     }
 
