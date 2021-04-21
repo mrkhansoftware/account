@@ -26,7 +26,6 @@
             <b>Supervisor Phone Number: </b>{{isset($datas['app']['Supervisor_contact__r']['Phone'])?$datas['app']['Supervisor_contact__r']['Phone']:''}} <br />
             <b>Supervisor Email: </b>{{isset($datas['app']['Supervisor_contact__r']['Email'])?$datas['app']['Supervisor_contact__r']['Email']:''}} <br />
             <b>Host Company: </b>{{isset($datas['app']['Organization__r']['Name'])?$datas['app']['Organization__r']['Name']:''}} <br />
-            <b>Questions for the Supervisor Interview: </b>{{isset($datas['app']['Questions_for_the_Supervisor_Interview__c'])?$datas['app']['Questions_for_the_Supervisor_Interview__c']:''}}
             <input type='hidden' name="onfrm[Id]" value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}">
                         <input type='hidden' name="app[Id]" value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}">
                         <input type='hidden' name="app[Contact__c]" value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}">
@@ -38,7 +37,7 @@
 
 
     <div class="gaccca-form-element gaccca-form-element-margin">
-        <p>Questions for the Supervisor Interview:</p>
+        <p>Questions for the Supervisor Interview: {{isset($datas['app']['Questions_for_the_Supervisor_Interview__c'])?$datas['app']['Questions_for_the_Supervisor_Interview__c']:''}}</p>
         <p><u>Pre-interview reminders:</u> This phone interview is to briefly verify the internship. Thanks so much for taking the time out of your schedule.</p>
         <p>Do you have any questions before we get started?</p>
     </div>
