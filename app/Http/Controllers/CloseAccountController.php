@@ -21,7 +21,6 @@ class CloseAccountController extends Controller
         $datas='App\Services\Helper'::getRequest('ApiProfileAccountController/'.$idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        print_r($datas); die;
         return view('profile/close_account')->with(compact('datas'));
       //  return view('profile/close_account');
     }
