@@ -519,7 +519,7 @@
 
         <div class="gaccca-form-element__control">
           <label class="gaccca-form-element__label">
-            Annual Revenue <span class="gaccca-text-required" title="required">*</span> </label>
+            Annual Revenue <span class="gaccca-text-required" title="required">*</span> </label> 
           <span class="gaccca-radio">
             <input type="radio" id="radio-policy-three-million" class='gaccca-required' value="$0 to $3 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) && $datas['onForm']['Annual_Revenue__c']=="$0 to $3 Million")? "checked" : "" }} />
             <label class="gaccca-radio__label" for="radio-policy-three-million">
