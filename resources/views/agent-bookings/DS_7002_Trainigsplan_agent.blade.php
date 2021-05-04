@@ -524,7 +524,7 @@
               <span>$0 to $3 Million</span>
             </label>
 
-            <input type="radio" id="radio-policy-ten-million" class='gaccca-required' value="$3 Million to $10 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) &&  $datas['onForm']['Annual_Revenue__c']=="3 Million to $10 Million")? "checked" : "" }} />
+            <input type="radio" id="radio-policy-ten-million" class='gaccca-required' value="$3 Million to $10 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) &&  $datas['onForm']['Annual_Revenue__c']=="$3 Million to $10 Million")? "checked" : "" }} />
             <label class="gaccca-radio__label" for="radio-policy-ten-million">
               <span class="gaccca-radio_faux"></span>
               <span>3 Million to $10 Million</span>
