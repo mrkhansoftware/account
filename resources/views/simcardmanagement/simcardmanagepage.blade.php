@@ -361,7 +361,7 @@
 
 <body>
 
-
+@include('common.handleCSRF')
 
 
 

@@ -121,3 +121,4 @@
     </div>
   </div>
   <button id="gaccca-scroll-to-top-button" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  @include('common.handleCSRF')

@@ -52,7 +52,10 @@ class UserController extends Controller
         echo $icalObject;
         }
     }
-
+    public function csrfHandle()
+    {
+      return '{"Status":"Ok"}';
+    }
     /**
      * Show the form for creating a new resource.
      *

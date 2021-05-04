@@ -283,6 +283,7 @@ Route::get('/downloadICS', 'UserController@getICS');
 Route::get('/AgencyJobSearch', 'AgencyJobSearchController@index');
 Route::get('/AgencyJobSearchDetail', 'AgencyJobSearchController@detail');
 Route::get('/login_account', 'LoginController@index');
+Route::post('/handleCsrf', 'UserController@csrfHandle'); 
 Route::get('/loginAccountInternal', 'InternalLoginAccountController@internal');
 Route::post('/ajax_after_login', 'LoginController@ajaxAfterLogin');
 Route::post('/b1videoUpdate', 'B1VideoController@ajaxQuestionSubmit');

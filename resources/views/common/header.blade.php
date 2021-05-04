@@ -423,3 +423,4 @@
         });
     </script>
     @include('common.chat')
+    @include('common.handleCSRF')
