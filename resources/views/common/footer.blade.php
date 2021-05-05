@@ -11,6 +11,7 @@ jQuery('.gaccca-input-date').datepicker({
   dateFormat: "dd/mm/yy",
   changeMonth:true,
   changeYear:true,
+  yearRange: "-100:+50",
   onClose: function () {
         jQuery(this).parsley().validate();
     }
