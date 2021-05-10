@@ -20,8 +20,8 @@
   </div>
 
   <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
-  <input type="hidden" name='applicantId' value="{{isset($datas['appli']['Id'])?$datas['appli']['Id']:''}}" />
-  <input type="hidden" name='Contact__c' value="{{isset($datas['appli']['Contact__c'])?$datas['appli']['Contact__c']:''}}" />
+  <input type="hidden" id='applicantIdRecord' name='applicantId' value="{{isset($datas['appli']['Id'])?$datas['appli']['Id']:''}}" />
+  <input type="hidden" id='applicantIdContact' name='Contact__c' value="{{isset($datas['appli']['Contact__c'])?$datas['appli']['Contact__c']:''}}" />
   <input type="hidden" name='NewGdriveID__c' value="{{isset($datas['appli']['NewGdriveID__c'])?$datas['appli']['NewGdriveID__c']:''}}" />
   <input type="hidden" name='HostCompany_Gdrive_Folder_Id__c' value="{{isset($datas['appli']['HostCompany_Gdrive_Folder_Id__c'])?$datas['appli']['HostCompany_Gdrive_Folder_Id__c']:''}}" />
   <input type="hidden" name='onfrmId' value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}" />
@@ -938,6 +938,14 @@ Form submitted on &nbsp; {{$datas['formSubmittedDate']}}.
 
 <script>
 $(document).ready(function() {
+var applicantIdRecord=$('#applicantIdRecord').val().trim();
+var applicantIdContact= $('#applicantIdContact').val().trim();
+  if(applicantIdRecord=='' || applicantIdContact=='' || applicantIdRecord=='null' || applicantIdContact=='null'){
+    window.location.reload();
+}
+
+
+
   var errors = [];
   $("#send-to-gaccca-btn").on('click', function() {
     document.getElementById('formSubmitType').value='Sent';
