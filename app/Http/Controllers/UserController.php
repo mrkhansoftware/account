@@ -52,6 +52,18 @@ class UserController extends Controller
         echo $icalObject;
         }
     }
+
+    public function bookingCancel()
+    {
+        if(isset($_GET['id']) && isset($_GET['email'])){
+        
+        $datas = 'App\Services\Helper'::getRequest('ApiBookingCancelClass/' . $_GET['id'].'userEmailString'.$_GET['email']);
+        echo 'Your booking has been cancelled.';
+        }
+    }
+
+
+
     public function csrfHandle()
     {
       return '{"Status":"Ok"}';
