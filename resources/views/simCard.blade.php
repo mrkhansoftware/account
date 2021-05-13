@@ -73,7 +73,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-5">
       Date of arrival in the U.S. <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element-date">
-      <input name="arivalDateUS" type="text" id="date-of-arrival" placeholder="DD/MM/YYYY"   class="gaccca-input-date gacca-required" />
+      <input name="arivalDateUS" type="text" id="date-of-arrival" placeholder="DD/MM/YYYY"   class="gaccca-input-date gacca-required" readonly/>
 
     </div>
   </div>
@@ -82,7 +82,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-5">
       Cancel my plan on <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element-date">
-      <input type="text" name="cancellationDate"  class="gaccca-input-date gacca-required" />
+      <input type="text" name="cancellationDate"  class="gaccca-input-date gacca-required" readonly/>
 
     </div>
   </div>
@@ -118,7 +118,7 @@
     <label class="gaccca-form-element__label" for="text-input-id-5">
       Date of activation / arrival in the U.S. <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element-date">
-      <input type="text" name="activationDate" placeholder="DD/MM/YYYY"  class="gaccca-input-date gacca-required" />
+      <input type="text" name="activationDate" placeholder="DD/MM/YYYY"  class="gaccca-input-date gacca-required" readonly/>
 
       <span class="gaccca-input-help-text">Fill in your arrival date in the U.S. You have to submit your activation at least 7 days before your arrival to the U.S.</span>
     </div>
@@ -132,7 +132,7 @@
       Date of plan change
       <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element-date">
-      <input type="text" name="Dateofchange" placeholder="DD/MM/YYYY"   class="gaccca-input-date gacca-required" />
+      <input type="text" name="Dateofchange" placeholder="DD/MM/YYYY"   class="gaccca-input-date gacca-required" readonly/>
 
       <span class="gaccca-input-help-text">Submit a date when your current plan should change to another plan. Plans have a 30 days lengths.</span>
     </div>
