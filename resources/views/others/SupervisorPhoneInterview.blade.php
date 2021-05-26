@@ -32,9 +32,9 @@
                         <input type='hidden' name="app[Contact__c]" value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}">
                         <input type='hidden' name="app[Encrypted_Host_Company_Id__c]" value="{{isset($datas['app']['Encrypted_Host_Company_Id__c'])?$datas['app']['Encrypted_Host_Company_Id__c']:''}}">
                         
-        </p>
+        </p> 
 
-    </div> 
+    </div>
 
 
     <div class="gaccca-form-element gaccca-form-element-margin">
