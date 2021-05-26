@@ -25,7 +25,8 @@
             <b>Name of Supervisor: </b>{{isset($datas['app']['Supervisor_contact__r']['Name'])?$datas['app']['Supervisor_contact__r']['Name']:''}}<br />
             <b>Supervisor Phone Number: </b>{{isset($datas['app']['Supervisor_contact__r']['Phone'])?$datas['app']['Supervisor_contact__r']['Phone']:''}} <br />
             <b>Supervisor Email: </b>{{isset($datas['app']['Supervisor_contact__r']['Email'])?$datas['app']['Supervisor_contact__r']['Email']:''}} <br />
-            <b>Host Company: </b>{{isset($datas['app']['Organization__r']['Name'])?$datas['app']['Organization__r']['Name']:''}}
+            <b>Host Company: </b>{{isset($datas['app']['Organization__r']['Name'])?$datas['app']['Organization__r']['Name']:''}}<br />
+            <b>Company Address: </b>{{isset($datas['companyAddress'])?$datas['companyAddress']:''}}
             <input type='hidden' name="onfrm[Id]" value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}">
                         <input type='hidden' name="app[Id]" value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}">
                         <input type='hidden' name="app[Contact__c]" value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}">
@@ -207,6 +208,17 @@
                 <div class="gaccca-form-element__control">
 
                     <textarea name="onfrm[Understand_the_purpose_of_the_visa_prog__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Understand_the_purpose_of_the_visa_prog__c'])?$datas['onfrm']['Understand_the_purpose_of_the_visa_prog__c']:''}}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
+            <div class="gaccca-form-element gaccca-form-element-margin">
+                <label class="gaccca-form-element__label" for="text-input-id-8">
+                    Additional Comments </label>
+                <div class="gaccca-form-element__control">
+
+                    <textarea name="onfrm[Additional_comments__c]"  class="gaccca-textarea">{{isset($datas['onfrm']['Additional_comments__c'])?$datas['onfrm']['Additional_comments__c']:''}}</textarea>
                 </div>
             </div>
         </div>
