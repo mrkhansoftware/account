@@ -26,7 +26,7 @@
             <b>Supervisor Phone Number: </b>{{isset($datas['app']['Supervisor_contact__r']['Phone'])?$datas['app']['Supervisor_contact__r']['Phone']:''}} <br />
             <b>Supervisor Email: </b>{{isset($datas['app']['Supervisor_contact__r']['Email'])?$datas['app']['Supervisor_contact__r']['Email']:''}} <br />
             <b>Host Company: </b>{{isset($datas['app']['Organization__r']['Name'])?$datas['app']['Organization__r']['Name']:''}}<br />
-            <b>Company Address: </b>{{isset($datas['companyAddress'])?$datas['companyAddress']:''}}
+            <b>Company's Address: </b>{{isset($datas['companyAddress'])?$datas['companyAddress']:''}}
             <input type='hidden' name="onfrm[Id]" value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}">
                         <input type='hidden' name="app[Id]" value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}">
                         <input type='hidden' name="app[Contact__c]" value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}">
