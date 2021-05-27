@@ -24,7 +24,7 @@ if(!daterequested.match(dateMMDDYYYRegex)){
 this.value='';
 }      
 });
-
+jQuery('.gaccca-input-date').addClass('notranslate');
 jQuery("#openNav").bind('click', function () {
 jQuery("#mySidepanel").css('display', 'block');
 });
