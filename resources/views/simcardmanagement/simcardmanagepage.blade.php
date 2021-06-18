@@ -699,19 +699,19 @@ function loadAjaxContent() {
         var recordId = $(this).attr("data-recordid");
         var action = $(this).attr("data-action");
         var row = $(this).attr("data-row");
-        if($('#value_simcardnumberEx_'+row).text()==''){
+        if($('#value_simcardnumberEx_'+row).text()=='' && action=='Simcard Shipped Notification'){
             showErrorGaccca('Sim card number is missing.');
         return;
         
         }
 
-        if($('#value_carrierEx_'+row).text()==''){
+        if($('#value_carrierEx_'+row).text()=='' && action=='Simcard Shipped Notification'){
             showErrorGaccca('Shipment carrier information is missing.');
         return;
         }
 
 
-        if($('#value_trackingNumEx_'+row).text()==''){
+        if($('#value_trackingNumEx_'+row).text()==''  && action=='Simcard Shipped Notification'){
             showErrorGaccca('Tracking number is missing.');
         return;
         }
