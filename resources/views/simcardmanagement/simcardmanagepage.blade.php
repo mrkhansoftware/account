@@ -830,7 +830,7 @@ orderByFieldGlobalVar['orderByFieldProblem'] = 'Sim_Card_Booked_Time__c';
 orderByFieldGlobalVar['orderByFieldChangePlan'] = 'Sim_Card_Booked_Time__c';
 orderByFieldGlobalVar['orderByFieldChangeCC'] = 'Sim_Card_Booked_Time__c';
 orderByFieldGlobalVar['orderByFieldAll'] = 'Status__c';
-orderByFieldGlobalVar['orderByFieldShipped'] = 'Sim_Card_Booked_Time__c';
+orderByFieldGlobalVar['orderByFieldShipped'] = 'Sim_Card_Shipment_Date__c';
 orderByFieldGlobalVar['orderByFieldCommission'] = 'Sim_Card_Booked_Time__c';
 orderByFieldGlobalVar['orderByFieldCommissionPaid'] = 'Sim_Card_Booked_Time__c';
 
