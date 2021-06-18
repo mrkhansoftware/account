@@ -1132,7 +1132,7 @@ function ajaxRequest(formData) {
                 if(data.applicantInfo=='Already Exist'){
                     showErrorGaccca('We already have an applicant with this email.');
                 }
-                if(darecordStatusTypeVar=='external request all' && formData.actionType=='Cancel Request'){
+                if(recordStatusTypeVar=='external request all' && formData.actionType=='Cancel Request'){
 
                     showSuccessGaccca("Cancel Request Email Sent.");
 
