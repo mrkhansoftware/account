@@ -213,6 +213,10 @@ cursor: pointer; /* Add a pointer on hover */
         margin-left: 100px;
     }
 
+    .externalSimTable th{
+        cursor: auto; 
+    }
+
 
     .editable-container.popover {
         width: auto;

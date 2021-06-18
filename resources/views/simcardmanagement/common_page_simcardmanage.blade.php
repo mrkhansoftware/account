@@ -543,7 +543,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
 </table>
 @else
 @if(count($datas['leadList'])>0)
-<table style='table-layout: auto;width:100%;min-width:1300px'>
+<table style='table-layout: auto;width:100%;min-width:1300px' class='externalSimTable'>
 <thead>
 <tr>
     
