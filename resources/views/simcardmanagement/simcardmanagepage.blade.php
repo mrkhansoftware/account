@@ -703,6 +703,7 @@ function loadAjaxContent() {
         var recordId = $(this).attr("data-recordid");
         var action = $(this).attr("data-action");
         var row = $(this).attr("data-row");
+        var messageWarning='';
         if($('#value_simcardnumberEx_'+row).text()=='' && action=='Simcard Shipped Notification'){
             showErrorGaccca('Sim card number is missing.');
         return;
@@ -720,10 +721,20 @@ function loadAjaxContent() {
         return;
         }
         
-        
+        if(action=='Assign to GACCCA'){
+
+            messageWarning='Assign to GACCCA?, Please confirm';
+
+        }else if(action=='Assign to Aerobil'){
+            messageWarning='Assign to Aerobil?, Please confirm';
+        }else if(action=='Cancel Request'){
+            messageWarning='Are you cancelling the request?';
+        }else{
+            messageWarning='Are you sure?';
+        }
 
 
-        if(confirm('Are you sure?')){
+        if(confirm(messageWarning)){
         loadExternalRequest(recordId,action);
         }
 
