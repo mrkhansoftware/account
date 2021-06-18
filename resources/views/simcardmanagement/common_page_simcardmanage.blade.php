@@ -82,7 +82,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         @endif
     </th>
     @if($requestDataPage['accesskey']=='Shipped')
-    <th >Sim Card Information
+    <th style='cursor: auto;'>Sim Card Information
         
     </th>
     @endif
