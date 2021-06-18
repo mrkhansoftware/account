@@ -1142,7 +1142,7 @@ function ajaxRequest(formData) {
                     showSuccessGaccca("Sim Card shipped email sent. You can find this entry under 'Main-->Shipped' tab");
 
                     if(recordStatusTypeVar=="external request gaccca"){
-                        window.open("https://gaccca.secure.force.com/LetterShipmentSimCard?"+data.applicantInfo);
+                        window.open("https://gaccca.secure.force.com/LetterShipmentSimCard?id="+data.applicantInfo);
                     }
 
                 }
