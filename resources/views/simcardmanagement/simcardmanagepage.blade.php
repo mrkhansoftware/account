@@ -1132,6 +1132,11 @@ function ajaxRequest(formData) {
                 if(data.applicantInfo=='Already Exist'){
                     showErrorGaccca('We already have an applicant with this email.');
                 }
+                if(darecordStatusTypeVar=='external request all' && formData.actionType=='Cancel Request'){
+
+                    showSuccessGaccca("Cancel Request Email Sent.");
+
+                }
                 if(data.applicantInfo!='Already Exist' && formData.actionType=='Simcard Shipped Notification'){
 
                     showSuccessGaccca("Sim Card shipped email sent. You can find this entry under 'Main-->Shipped' tab");
