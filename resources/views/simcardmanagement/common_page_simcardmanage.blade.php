@@ -83,13 +83,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
     </th>
     @if($requestDataPage['accesskey']=='Shipped')
     <th >Sim Card Information
-        @if($requestDataPage['orderByField']=='Name')
-        @if($requestDataPage['orderByOrder']=='desc')
-        <i class="fas fa-arrow-up"></i>
-        @else
-        <i class="fas fa-arrow-down"></i>
-        @endif
-        @endif
+        
     </th>
     @endif
     @if($requestDataPage['accesskey']!='Shipped')
