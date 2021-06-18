@@ -749,13 +749,13 @@ function loadAjaxContent() {
             fakeContainer.show();  
         }
         fakeContainer.scroll(function() {
-            console.log('fakeContainer');
-            console.log(fakeContainer.scrollLeft());
+            //console.log('fakeContainer');
+            ///console.log(fakeContainer.scrollLeft());
             tableContainer.scrollLeft(fakeContainer.scrollLeft());
         });
         tableContainer.scroll(function() {
-            console.log('tableContainer');
-            console.log(tableContainer.scrollLeft());
+            //console.log('tableContainer');
+           // console.log(tableContainer.scrollLeft());
             fakeContainer.scrollLeft(tableContainer.scrollLeft());
         });
 
@@ -946,7 +946,7 @@ function loadExternalRequest(leadId,actionType){
         "leadId":leadId,
         "actionType":actionType
     }
-    console.log(formData);
+   // console.log(formData);
         ajaxRequest(formData);
 
 }
@@ -1108,7 +1108,7 @@ function ajaxRequest(formData) {
 
         },
         success: function(data) {
-            console.log(data);
+            //console.log(data);
             if ((formData.methodType == 'saveApplicant' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod') && data == 'OK') {
                 $("#loaderRecordSave").css('display', 'none');
                 if (formData.methodType == 'sendTransactionFailEmailAction') {
@@ -1175,7 +1175,7 @@ function updateTabRecordCount(totalRecords) {
     // $(".simcardContent").css('height', tableHeight);
 }
 function updateTabRecordCountParent(totalRecords) {
-    console.log(totalRecords);
+  //  console.log(totalRecords);
     $('#tabRecordParentSimcardAll').html(totalRecords.simcardRequestNew);
     $('#tabRecordParentSimcardAerobil').html(totalRecords.simcardRequestAerobil);
     $('#tabRecordParentSimcardGaccca').html(totalRecords.simcardRequestGaccca);
