@@ -493,9 +493,9 @@ cursor: pointer; /* Add a pointer on hover */
 
 <div class="gaccca-simcard-tab">
     <button class="gaccca_simcard_tablinks-Parent" id='main_parent_tab_Id' data-accesskey="Main" data-status='Main' onclick="simCardManageParentTab(event, this,  'main_parent_tab')">Main</button>
-    <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_all" data-status='external request all' onclick="simCardManageParentTab(event, this,  'main_parent_request_tab')">SIM Card Request New (<span id='tabRecordParentSimcardAll'></span>)</button>
-    <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_aerobil" data-status='external request aerobil' onclick="simCardManageParentTab(event, this,  'main_parent_request_Aerobil_tab')">SIM Card Request For Aerobil (<span id='tabRecordParentSimcardAerobil'></span>)</button>
-    <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_gaccca" data-status='external request gaccca' onclick="simCardManageParentTab(event, this,  'main_parent_request_Gaccca_tab')">SIM Card Request For GACCCA (<span id='tabRecordParentSimcardGaccca'></span>)</button>
+    <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_all" data-status='external request all' onclick="simCardManageParentTab(event, this,  'main_parent_request_tab')">SIM Card Requests New (<span id='tabRecordParentSimcardAll'></span>)</button>
+    <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_aerobil" data-status='external request aerobil' onclick="simCardManageParentTab(event, this,  'main_parent_request_Aerobil_tab')">SIM Card Requests For Aerobil (<span id='tabRecordParentSimcardAerobil'></span>)</button>
+    <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_gaccca" data-status='external request gaccca' onclick="simCardManageParentTab(event, this,  'main_parent_request_Gaccca_tab')">SIM Card Requests For GACCCA (<span id='tabRecordParentSimcardGaccca'></span>)</button>
 </div>
 
 <div id="main_parent_tab" class="gaccca_simcard_tabcontent-Parent">
