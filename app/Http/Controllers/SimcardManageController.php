@@ -43,8 +43,13 @@ class SimcardManageController extends Controller
     $datas='App\Services\Helper'::postRequest($requestData,'ApiSimCardManageController');
     $datas = json_decode($datas, true);
     $datas = json_decode($datas, true);
-	$view = view("simcardmanagement/common_page_simcardmanage",compact('tab_name','datas','requestDataPage'))->render();
+    $view = view("simcardmanagement/common_page_simcardmanage",compact('tab_name','datas','requestDataPage'))->render();
+    if($requestDataPage['accesskey']!='external_request_aerobil' && $requestDataPage['accesskey']!='external_request_all' && $requestDataPage['accesskey']!='external_request_gaccca'){
     return response()->json(['html'=>$view,'totalRecords'=>$datas['totalRecords'],'totalApplicantRecords'=>count($datas['appList'])]);
+    }else{
+        return response()->json(['html'=>$view,'totalRecords'=>'','totalApplicantRecords'=>'','applicantInfo'=>$datas['applicantInfo'],'simcardRequestNew'=>$datas['simcardRequestNew'],'simcardRequestAerobil'=>$datas['simcardRequestAerobil'],'simcardRequestGaccca'=>$datas['simcardRequestGaccca']]);
+        
+    }
     }else{
         $datas='App\Services\Helper'::postRequest($requestData,'ApiSimCardManageController');
         return $datas; 
