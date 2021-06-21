@@ -550,7 +550,9 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
     <th onclick="" data-fieldApi=""> S. No.
         
     </th>
-    
+    <th onclick="" data-fieldApi=""> Created Date
+        
+    </th>
     <th onclick="" data-fieldApi=""> First Name
         
     </th>
@@ -599,7 +601,17 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
     <td onclick="" data-fieldApi=""> {{$index}}
         
     </td>
-    
+    <td onclick="" data-fieldApi=""> 
+
+    @php $createdDateSimCard = date_create(isset($lead['Created_Date__c'])?$lead['Created_Date__c']:'');
+    $createdDateSimCard=date_format($createdDateSimCard,"m/d/Y");
+
+    @endphp
+        {{$createdDateSimCard}}
+
+
+        
+        </td>
     <td onclick="" data-fieldApi="">
     {{isset($lead['FirstName'])?$lead['FirstName']:''}}
     </td>

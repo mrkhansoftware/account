@@ -704,19 +704,19 @@ function loadAjaxContent() {
         var action = $(this).attr("data-action");
         var row = $(this).attr("data-row");
         var messageWarning='';
-        if($('#value_simcardnumberEx_'+row).text()=='' && action=='Simcard Shipped Notification'){
+        if($('#value_simcardnumberEx_'+row).text().trim()=='' && action=='Simcard Shipped Notification'){
             showErrorGaccca('Sim card number is missing.');
         return;
         
         }
 
-        if($('#value_carrierEx_'+row).text()=='' && action=='Simcard Shipped Notification'){
+        if($('#value_carrierEx_'+row).text().trim()=='' && action=='Simcard Shipped Notification'){
             showErrorGaccca('Shipment carrier information is missing.');
         return;
         }
 
 
-        if($('#value_trackingNumEx_'+row).text()==''  && action=='Simcard Shipped Notification'){
+        if($('#value_trackingNumEx_'+row).text().trim()==''  && action=='Simcard Shipped Notification' && recordStatusTypeVar!="external request gaccca"){
             showErrorGaccca('Tracking number is missing.');
         return;
         }
