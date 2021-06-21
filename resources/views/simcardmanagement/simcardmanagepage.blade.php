@@ -729,7 +729,10 @@ function loadAjaxContent() {
             messageWarning='Assign to Aerobil?, Please confirm';
         }else if(action=='Cancel Request'){
             messageWarning='Are you cancelling the request?';
-        }else{
+        }else if(action=='Cancel Request without notify'){
+            messageWarning='Silent cancelling the request without notifying via email. Please confirm';
+        }
+        else{
             messageWarning='Are you sure?';
         }
 

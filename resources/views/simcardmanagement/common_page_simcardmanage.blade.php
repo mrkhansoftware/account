@@ -703,6 +703,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         @else
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Simcard Shipped Notification"  data-row="{{$tab_name.'_'.$index}}">Send Sim Card Shipped Notification</button><br/><br/>
         @endif          
+        <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Cancel Request without notify"  data-row="{{$tab_name.'_'.$index}}">Silent Cancel This Request</button><br/><br/>
         
 </td>
 </tr>
