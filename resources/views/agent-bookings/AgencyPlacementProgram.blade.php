@@ -607,9 +607,15 @@
               </div>
             </div>
           </div>
-
+          @if (isset($datas['accountId']) && $datas['accountId']!='')
         <button id="gaccca_saveBtn_pp" class="gaccca-button-save gaccca-button-save-margin">Submit</button>
-  
+        @else
+        <div class="gaccca-form-element gaccca-form-element-margin">
+            <div class="gaccca-form-element__control">
+        <b>The organization is missing, Please Contact Administrator.</b> 
+            </div>
+        </div>
+        @endif
   
       </div>
 
