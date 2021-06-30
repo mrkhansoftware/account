@@ -1,7 +1,24 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header',['datas'=>$datas,'title' =>'AgentParticipants','page'=>'AgentParticipants','parent_page'=>'Agent Bookings'])
 
+<style>
 
+.gaccca-main-containt{
+  max-width:90%;
+}
+.gaccca-sky-blue-box{
+  max-width:90%;
+}
+.gaccca-breadcrumb-link{
+  max-width:90%;
+}
+.gaccca-inside-data-table{
+  max-width:100%;
+}
+.gaccca-data-table-margin-48{
+  width:100%;
+}
+</style>
 <link href="{{ asset('css/dataTables.jqueryui.min.css') }}" rel='stylesheet'>
 <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel='stylesheet'>
 
