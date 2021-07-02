@@ -21,13 +21,6 @@ class HostCompanyInformationAccountController extends Controller
         $datas = 'App\Services\Helper'::getRequest('ApiHostCompanyInformationController/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-
-        session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
-        if (isset($datas['Appli']['Id'])) {
-            session()->put('applicantId', $datas['Appli']['Id']);
-        }
-        session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
-
         return view('j1-visa/host_company_information_account')->with(compact('datas'));
     }
 
@@ -50,8 +43,6 @@ class HostCompanyInformationAccountController extends Controller
     public function store(Request $request)
     {
         $finalReq = $request->all();
-        $finalReq['applicant']['id'] = session()->get('applicantId');
-        $finalReq['applicant']['Contact__c'] = session()->get('Contact__c');
         $finalReq['applicantData'] = json_encode($finalReq['applicant']);
         unset($finalReq['_token']);
         unset($finalReq['applicant']);

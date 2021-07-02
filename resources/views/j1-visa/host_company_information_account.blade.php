@@ -15,6 +15,8 @@
       </div>
       
       <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
+      <input type="hidden" name="applicant[applicant][id]"  value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}" />
+      <input type="hidden" name="applicant[applicant][Contact__c]"  value="{{isset($datas['contID'])?$datas['contID']:''}}" />
 
 
 
