@@ -515,7 +515,7 @@ cursor: pointer; /* Add a pointer on hover */
     <button class="gaccca_simcard_tablinks" data-accesskey="Problem" data-status='Problem' onclick="simCardManageTab(event, this,  'problem')">
         Problem(<span id='tabRecordproblem'></span>)</button>
     <button class="gaccca_simcard_tablinks" data-accesskey="ChangePlan" data-status='Plan change' onclick="simCardManageTab(event, this,  'plan_change')">Plan change(<span id='tabRecordplanchange'></span>)</button>
-    <button class="gaccca_simcard_tablinks" data-accesskey="ChangeCC" data-status='Credit card change' onclick="simCardManageTab(event, this,  'credit_card_change')">Credit Card
+    <button class="gaccca_simcard_tablinks" data-accesskey="ChangeCC" data-status='Credit card change' onclick="simCardManageTab(event, this,  'cre_dit_card_change')">Credit Card
         change(<span id='tabRecordccChange'></span>)</button>
     <button class="gaccca_simcard_tablinks" data-accesskey="All" data-status='All' onclick="simCardManageTab(event, this,  'all')">All(<span id='tabRecordall'></span>)</button>
     <button class="gaccca_simcard_tablinks" data-accesskey="Commission" data-status='Commission' onclick="simCardManageTab(event, this,  'commission_pending')">Commission
@@ -581,10 +581,10 @@ cursor: pointer; /* Add a pointer on hover */
     </div>
 </div>
 
-<div id="credit_card_change" class="gaccca_simcard_tabcontent">
+<div id="cre_dit_card_change" class="gaccca_simcard_tabcontent">
     @include('simcardmanagement.loader')
 
-    <div id="credit_card_change_ajax">
+    <div id="cre_dit_card_change_ajax">
     </div>
 </div>
 
