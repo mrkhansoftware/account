@@ -908,7 +908,7 @@ This page has an auto save function of every 1 minute, but you can also click th
                                                             <td class="field">
                                                                 <div class="text">
                                                                     <div class="eline row1" contenteditable="true" role="textbox" aria-label="Rich Text Editor, main">
-                                                                        <p>Workload:</p>
+                                                                        <p>Hours:</p>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -964,7 +964,7 @@ This page has an auto save function of every 1 minute, but you can also click th
                                             <h3 data-storagepart="headline" class="">
                                                 <div class="text field" data-scope="ausbildung" data-storage="field-ausbildung-headline">
                                                     <div class="eline row1" contenteditable="true" role="textbox" aria-label="Rich Text Editor, main">
-                                                        <p>Educational experience:</p>
+                                                        <p>Educational Experience:</p>
                                                     </div>
                                                 </div>
                                             </h3>
@@ -975,7 +975,7 @@ This page has an auto save function of every 1 minute, but you can also click th
                                                             <td class="field">
                                                                 <div class="text">
                                                                     <div class="eline row1" contenteditable="true" role="textbox" aria-label="Rich Text Editor, main">
-                                                                        <p>11/2017 - present</p>
+                                                                        <p>11/2017 - Present</p>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -1048,7 +1048,7 @@ This page has an auto save function of every 1 minute, but you can also click th
                                             <h3 data-storagepart="headline" class="">
                                                 <div class="text field" data-scope="jobs" data-storage="field-jobs-headline">
                                                     <div class="eline row1" contenteditable="true" role="textbox" aria-label="Rich Text Editor, main">
-                                                        <p>Practical experience:</p>
+                                                        <p>Practical Experience:</p>
                                                     </div>
                                                 </div>
                                             </h3>
@@ -1059,7 +1059,7 @@ This page has an auto save function of every 1 minute, but you can also click th
                                                             <td class="field">
                                                                 <div class="text">
                                                                     <div class="eline row1" contenteditable="true" role="textbox" aria-label="Rich Text Editor, main">
-                                                                        <p>MM/YYYY - present</p>
+                                                                        <p>MM/YYYY - Present</p>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -1182,7 +1182,7 @@ This page has an auto save function of every 1 minute, but you can also click th
                                         <td width='100%' style='vertical-align: text-top;'>
                                             <section>
                                                 <p class='skillFont skillHeader'>
-                                                    SKILL
+                                                    SKILLS
                                                 </p>
                                                 <div class="slideCv">
                                                     <table width='100%'>
@@ -1278,7 +1278,7 @@ This page has an auto save function of every 1 minute, but you can also click th
                                                 <div class='skillFont otherInfo1'>
 
                                                     @if($datas['otherInfo1']=='')
-                                                    LANGUAGE
+                                                    LANGUAGES
                                                     @else
                                                     {!!$datas['otherInfo1']!!}
 
@@ -1306,7 +1306,7 @@ This page has an auto save function of every 1 minute, but you can also click th
 
 
                                                     @if($datas['otherInfo2']=='')
-                                                    Hobby &amp; Interest
+                                                    HOBBIES &amp; INTERESTS
                                                     @else
                                                     {!!$datas['otherInfo2']!!}
 

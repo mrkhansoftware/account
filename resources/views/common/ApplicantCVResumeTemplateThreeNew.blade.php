@@ -489,7 +489,7 @@
                                     <div>
 
                                         For any questions about {{isset($datas['app']['Contact__r']['Name'])?$datas['app']['Contact__r']['Name']:''}} please contact our
-                                        Placement Coordinator or click the button to provide applicant feedback.
+                                        Placement Coordinator or click the button to provide feedback about this applicant.
 
 
                                     </div>
