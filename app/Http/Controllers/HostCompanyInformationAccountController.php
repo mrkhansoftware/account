@@ -49,6 +49,7 @@ class HostCompanyInformationAccountController extends Controller
 //        echo '<pre>';print_r($finalReq);die;
         $resp='App\Services\Helper'::postRequest($finalReq, 'ApiHostCompanyInformationController');
         if($resp=='"OK"'){
+        'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiHostCompanyInformationController--->successCase');
         return redirect()->action('ParticipantAgreementAccountController@index', ['isSave' => 1]);
         }else{
         
