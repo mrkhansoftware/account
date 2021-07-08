@@ -114,7 +114,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-people">
                 How many people need a J-2 visa?<span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input type="number" name='applicant[Number_of_j_2_visa__c]' value="{{isset($datas['Appli']['Number_of_j_2_visa__c'])?$datas['Appli']['Number_of_j_2_visa__c']:''}}" id="text-input-id-people" required="" class="gaccca-input" />
+              <input type="number" name='applicant[Number_of_j_2_visa__c]' value="{{isset($datas['Appli']['Number_of_j_2_visa__c'])?$datas['Appli']['Number_of_j_2_visa__c']:''}}" id="text-input-id-people"  class="gaccca-input" />
             </div>
           </div>
           <br/>
