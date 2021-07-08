@@ -49,7 +49,11 @@ class HostCompanyInformationAccountController extends Controller
 //        echo '<pre>';print_r($finalReq);die;
         $resp='App\Services\Helper'::postRequest($finalReq, 'ApiHostCompanyInformationController');
         if($resp=='"OK"'){
-        'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiHostCompanyInformationController--->successCase');
+            $finalReqLog['requestData']=json_encode($finalReq);
+            $finalReqLog['requestError']=$resp;
+            $finalReqLog['requestClass']='ApiHostCompanyInformationController--->successCase';
+            'App\Services\Helper'::postRequest($finalReqLog,'ApiErrorEmailClass'); 
+       
         return redirect()->action('ParticipantAgreementAccountController@index', ['isSave' => 1]);
         }else{
         

@@ -106,7 +106,13 @@ class HostCompanyAgrmentAccController extends Controller
 
         $resp='App\Services\Helper'::postRequest($finalReq, 'ApiHostCompanyAgreementController');
 if($resp=='"OK"'){
-    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiHostCompanyAgreementController---->success');
+    $finalReqLog['requestData']=json_encode($finalReq);
+            $finalReqLog['requestError']=$resp;
+            $finalReqLog['requestClass']='ApiHostCompanyAgreementController--->successCase';
+            'App\Services\Helper'::postRequest($finalReqLog,'ApiErrorEmailClass'); 
+       
+
+
         return redirect()->action('HostCompanyAgrmentAccController@index', ['isSave' => 1, 'orgid' => $EncId]);
 }else{
     'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiHostCompanyAgreementController');

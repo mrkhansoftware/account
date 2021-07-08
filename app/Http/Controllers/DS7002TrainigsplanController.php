@@ -76,7 +76,12 @@ class DS7002TrainigsplanController extends Controller
         $resp='App\Services\Helper'::postRequest($finalReq, 'ApiDS7002Controller');
         //die;
 if($resp=='"OK"'){
-    'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiDS7002Controller---->success');
+    $finalReqLog['requestData']=json_encode($finalReq);
+    $finalReqLog['requestError']=$resp;
+    $finalReqLog['requestClass']='ApiDS7002Controller--->successCase';
+    'App\Services\Helper'::postRequest($finalReqLog,'ApiErrorEmailClass'); 
+
+
         return redirect()->action('DS7002TrainigsplanController@index', ['isSave' => 1, 'orgid' => $EncId]);
 }else{
    
