@@ -163,9 +163,9 @@
     <label class="gaccca-form-element__label" for="text-input-id-5">
       SIM Card Number <span class="gaccca-text-required" title="required">*</span> </label>
     <div class="gaccca-form-element-date">
-      <input type="text" name="simCardNumber" value="{{isset($datas['simCardNumber'])?$datas['simCardNumber']:''}}"   class="gaccca-input gacca-required" />
+      <input type="text" name="simCardNumber" value="{{isset($datas['simCardNumber'])?$datas['simCardNumber']:''}}"   class="gaccca-input gacca-required" data-parsley-simcard=""/>
 
-      <span class="gaccca-input-help-text">On the back side of your SIM Card, you will find this 14-20 digit number under the big barcode below.</span>
+      <span class="gaccca-input-help-text">On the back side of your SIM Card, you will find this 19-20 digit number under the big barcode below.</span>
     </div>
   </div>
 
@@ -365,4 +365,25 @@
     }
 
   });
+</script>
+
+<script type="text/javascript">
+let validationSimCard='-';
+window.Parsley.addValidator('simcard', {
+  validateString: function(value) {
+    value=value.split(' ').join('');
+    var patt1 = /^[0-9]*$/;
+    var result = patt1.test(value);
+    
+    if(!value.startsWith('8901') || !result || !(value.length==19 || value.length==20)){ 
+      return false;
+    }else{
+      return true;
+    }
+
+  },
+  messages: {
+    en: "Sim Card Number always start with '8901' & it should be 19-20 digit number."
+  }
+});
 </script>

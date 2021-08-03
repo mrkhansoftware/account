@@ -410,6 +410,11 @@ cursor: pointer; /* Add a pointer on hover */
 .gaccca_closebtn:hover {
   color: black;
 }
+.simcardErrorValidationMessage{
+    font-size: 12px;
+    color: #e62d2d;
+    font-weight: bold;
+}
 </style>
 </head>
 
@@ -654,6 +659,7 @@ function loadAjaxContent() {
     $(".externalContentSimClass").show();
     $(".popup-text").hide();
     $('[id^="edit_"]').on("click", function() {
+        $('.simcardErrorValidationMessage').html("");
         $(".popup-text").hide();
         $(".edit-pencil").show();
         var current_id = $(this).attr("id");
@@ -667,6 +673,7 @@ function loadAjaxContent() {
     });
 
     $('[id^="close_button_"]').on("click", function() {
+        $('.simcardErrorValidationMessage').html("");
         $(".edit-pencil").show();
         var current_id = $(this).attr("id");
         var which_element = current_id.split("close_button_");
@@ -676,12 +683,10 @@ function loadAjaxContent() {
 
     });
 
-    $('[id^="save_button_"]').on("click", function() {
+    $('[id^="save_button_"]').on("click", function() { 
         $(".edit-pencil").show();
         var current_id = $(this).attr("id");
         var which_element = current_id.split("save_button_");
-        $("#editdiv_" + which_element[1]).hide();
-        $(".externalContentSimClass").show();
         var showingSpan = $(this).attr("data-showing");
         var fieldApi = $(this).attr("data-fieldapi");
         var recordId = $(this).attr("data-recordid");
@@ -695,6 +700,25 @@ function loadAjaxContent() {
             datatype = 'text';
             valueInput = $("#" + localFieldId).val();
         }
+
+        if(fieldApi=='Sim_Card_Number__c' && (recordStatusTypeVar=='external request aerobil' || recordStatusTypeVar=='external request gaccca')){
+          
+          var valSimTemp=valueInput.split(' ').join('');
+          var patt1 = /^[0-9]*$/;
+          var result = patt1.test(valSimTemp);
+    
+    if(!valSimTemp.startsWith('8901') || !result || !(valSimTemp.length==19 || valSimTemp.length==20)){ 
+      $('.simcardErrorValidationMessage').html("Sim Card Number always start with '8901' & it should be 19-20 digit number.");
+      return false;
+    }
+
+
+
+
+        }
+        $('.simcardErrorValidationMessage').html("");
+       $("#editdiv_" + which_element[1]).hide();
+        $(".externalContentSimClass").show();
         saveRecordUpdate(recordId, fieldApi, valueInput, datatype);
 
     });

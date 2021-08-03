@@ -650,6 +650,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         <div class="popup-text" id="editdiv_simcardnumberEx_{{$tab_name.'_'.$index}}">
             <div class="popup-title">Sim Card Number</div>
             <input type="text" id="input_value_simcardnumberEx_{{$tab_name.'_'.$index}}" class="gaccca-input" />
+           <span class='simcardErrorValidationMessage'></span>
             <div class="button-div">
                 <button class="gaccca-button-save" id="save_button_simcardnumberEx_{{$tab_name.'_'.$index}}
             " data-showing="value_simcardnumberEx_{{$tab_name.'_'.$index}}" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-fieldApi="Sim_Card_Number__c" data-loclFieldId="input_value_simcardnumberEx_{{$tab_name.'_'.$index}}"><i class="fas fa-check"></i></button>
@@ -691,7 +692,27 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         <b>Tracking Number</b><br/>
         <span id="value_trackingNumEx_{{$tab_name.'_'.$index}}">{{isset($lead['Sim_Card_Tracking_Number__c'])?$lead['Sim_Card_Tracking_Number__c']:''}}</span>
         <a href="javascript:void(0)" class="edit-pencil" id="edit_trackingNumEx_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
+        <br/><br/>  
+    </div>
+        
+        <div class="popup-text" id="editdiv_noteEx_{{$tab_name.'_'.$index}}">
+            <div class="popup-title">Note</div>
+            <textarea id="input_value_noteEx_{{$tab_name.'_'.$index}}" class="gaccca-input" maxlength="250" ></textarea>
+            
+            <div class="button-div">
+                <button class="gaccca-button-save" id="save_button_noteEx_{{$tab_name.'_'.$index}}
+            " data-showing="value_noteEx_{{$tab_name.'_'.$index}}" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-fieldApi="Additional_Informations__c" data-loclFieldId="input_value_noteEx_{{$tab_name.'_'.$index}}"><i class="fas fa-check"></i></button>
+                <button class="gaccca-button-save" id="close_button_noteEx_{{$tab_name.'_'.$index}}"><i class="fas fa-times"></i></button>
+            </div>
         </div>
+        <div class="externalContentSimClass">
+        <b>Note</b><br/>
+        <span id="value_noteEx_{{$tab_name.'_'.$index}}">{{isset($lead['Additional_Informations__c'])?$lead['Additional_Informations__c']:''}}</span>
+        <a href="javascript:void(0)" class="edit-pencil" id="edit_noteEx_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
+        <br/><br/>
+        </div>
+
+
         </td>
       
         @endif
