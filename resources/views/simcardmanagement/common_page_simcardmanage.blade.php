@@ -716,7 +716,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         </td>
       
         @endif
-        <td onclick="" data-fieldApi=""><br/> 
+        <td onclick="" data-fieldApi="" style="text-align: center;"><br/> 
         @if($requestDataPage['accesskey']!='external_request_aerobil' && $requestDataPage['accesskey']!='external_request_gaccca')
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Assign to GACCCA">Assign to GACCCA</button><br/><br/>
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Assign to Aerobil">Assign to Aerobil</button><br/><br/>
