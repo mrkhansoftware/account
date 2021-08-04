@@ -414,6 +414,7 @@ cursor: pointer; /* Add a pointer on hover */
     font-size: 12px;
     color: #e62d2d;
     font-weight: bold;
+    display: block;
 }
 </style>
 </head>
@@ -691,7 +692,7 @@ function loadAjaxContent() {
         var fieldApi = $(this).attr("data-fieldapi");
         var recordId = $(this).attr("data-recordid");
         var localFieldId = $(this).attr("data-loclFieldId");
-        $("#" + showingSpan).html($("#" + localFieldId).val());
+        
         var className = $("#" + localFieldId).attr("class");
         if (className != undefined && className.includes('gaccca-input-date')) {
             datatype = 'date';
@@ -700,22 +701,16 @@ function loadAjaxContent() {
             datatype = 'text';
             valueInput = $("#" + localFieldId).val();
         }
-
-        if(fieldApi=='Sim_Card_Number__c' && (recordStatusTypeVar=='external request aerobil' || recordStatusTypeVar=='external request gaccca')){
-          
+        if(fieldApi.toLowerCase()=='sim_card_number__c'){
           var valSimTemp=valueInput.split(' ').join('');
           var patt1 = /^[0-9]*$/;
           var result = patt1.test(valSimTemp);
-    
-    if(!valSimTemp.startsWith('8901') || !result || !(valSimTemp.length==19 || valSimTemp.length==20)){ 
-      $('.simcardErrorValidationMessage').html("Sim Card Number always start with '8901' & it should be 19-20 digit number.");
+    if(!result){ 
+      $('.simcardErrorValidationMessage').html("Please fill only numbers.");
       return false;
     }
-
-
-
-
         }
+        $("#" + showingSpan).html($("#" + localFieldId).val());
         $('.simcardErrorValidationMessage').html("");
        $("#editdiv_" + which_element[1]).hide();
         $(".externalContentSimClass").show();

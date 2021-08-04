@@ -273,7 +273,19 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
     <td>
 
 
-        <span>{{isset($applicant['SIM_Card_Number__c'])?$applicant['SIM_Card_Number__c']:''}}</span>
+       
+        <div class="popup-text" id="editdiv_SimCardNoo_{{$tab_name.'_'.$index}}">
+            <div class="popup-title">Sim Card Number</div>
+            <input type="text" id="input_value_SimCardNoo_{{$tab_name.'_'.$index}}" class="gaccca-input" />
+            <span class='simcardErrorValidationMessage'></span>
+            <div class="button-div">
+                <button class="gaccca-button-save" id="save_button_SimCardNoo_{{$tab_name.'_'.$index}}" data-showing="value_SimCardNoo_{{$tab_name.'_'.$index}}" data-recordId="{{$applicant['Id']}}" data-fieldApi="SIM_Card_Number__c" data-loclFieldId="input_value_SimCardNoo_{{$tab_name.'_'.$index}}"><i class="fas fa-check"></i></button>
+                <button class="gaccca-button-save" id="close_button_SimCardNoo_{{$tab_name.'_'.$index}}"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <span id="value_SimCardNoo_{{$tab_name.'_'.$index}}">{{isset($applicant['SIM_Card_Number__c'])?$applicant['SIM_Card_Number__c']:''}}</span>
+
+        <a href="javascript:void(0)" class="edit-pencil" id="edit_SimCardNoo_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
 
 
     </td>
