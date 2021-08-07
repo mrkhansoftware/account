@@ -785,7 +785,7 @@
               <label class="gaccca-form-element__label">
                 Phase Location <span class="gaccca-text-required" title="required"></span> </label>
               <div class="gaccca-form-element__control">
-                <input name="DSPhaseListwrap[{{$i}}][DSPhase][Name]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_location{{$i}}" class="gaccca-input " />
+                <input name="DSPhaseListwrap[{{$i}}][DSPhase][Name]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_location{{$i}}" class="gaccca-input gaccca-input-phaseL" />
               </div>
             </div>
           </div>
