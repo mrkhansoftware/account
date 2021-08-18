@@ -56,6 +56,8 @@ class simCardController extends Controller
             $simcardInfo .= 'Carrier: ' . $finalReq['provider'];
             $finalReqSend['radiobtn'] = $finalReq['radiobtn'];
             $finalReqSend['provider'] = $finalReq['provider'];
+            $finalReqSend['arivalDateUS'] = $finalReq['arivalDateUS'];
+            
         } else if ($finalReq['radiobtn'] == 'Id like to activate my SIM Card for the first 30 days') {
 
             $simcardInfo .= 'Date of activation / arrival in the U.S.: ';
