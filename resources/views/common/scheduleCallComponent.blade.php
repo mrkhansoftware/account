@@ -224,7 +224,7 @@
         let slotBooked = '';
         let calLinks = '';
 
-        slotBooked = '<button class="gaccca-button-reshedule" id="rescheduleCallBtn">Reschdule your call</button>';
+        slotBooked = '<button class="gaccca-button-reshedule" id="rescheduleCallBtn">Reschedule your call</button>';
         slotBooked += '<p><strong>Call scheduled:</strong> ' + requestResponse.finalTimeSlotInfo + '</p>';
         slotBooked += '<p>Hangout Meet Room ID: <a target="_blank" href="https://' + requestResponse.hangOutLink + '">' + requestResponse.hangOutLink + '</a></p>';
 
