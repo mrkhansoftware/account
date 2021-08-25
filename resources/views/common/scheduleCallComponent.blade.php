@@ -52,7 +52,7 @@
     </div>
     <div class="gaccca-col gaccca-large-size_6-of-12 gaccca-medium-size_1-of-1">
         <div class="gaccca-form-element gaccca-form-element-margin">
-            <label class="gaccca-form-element__label" for="select-01">Time Zone:</label>
+            <label class="gaccca-form-element__label" for="select-01">Your Time Zone:</label>
             <div class="gaccca-form-element__control">
                 <div class="gaccca-select_container">
                     {!! Form::select('tmzone', array_reverse($datas['timeZoneMapValues']), '', [ 'class' => 'gaccca-select','id' => 'time-zone-change']) !!}
