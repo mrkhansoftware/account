@@ -70,8 +70,13 @@
                 </ol>
 
     </div>
-    @include('common.signHTML');
+
+    @if (isset($datas['isPredepartureSigned']) && $datas['isPredepartureSigned'])
+      <b class="gaccca-button-save-margin ">Pre-Departure Orientation Confirmation Submitted.</b>
+    @else
+    @include('common.signHTML')
     <button class="gaccca-button-save gaccca-button-save-margin">Submit</button>
+    @endif
     </div>
 
     

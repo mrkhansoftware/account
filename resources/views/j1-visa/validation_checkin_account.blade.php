@@ -404,7 +404,21 @@
     </div>
  
     @if (isset($datas['isFormSent']) && $datas['isFormSent'])
+    @if (isset($datas['isPredepartureSigned']) && $datas['isPredepartureSigned'])
     <button id="gaccca_saveBtn_vca" class="gaccca-button-save gaccca-button-save-margin">Submit</button>
+    @else
+    <br/><button disabled class="gaccca-button-save gaccca-button-save-margin gaccca-btn-disabled">Submit</button><br/<br/<br/<br/<br/<br/<br/>
+    <div class='gPopUpWarn'>
+<div class="popup" id="popupGwarn">
+
+<p class='p1'><img style="float: left;margin-left: -35px;" src="{{ asset('images/close-circle.png') }}" />Important Note on an open Task.</p>
+<p class='p2'>Before you can proceed with the Validation and Check-In you must finish the Pre-Departure Orientation Confirmation first!</p>
+<a href="/preDepartureOrientationConfirmationPage" ><button class="gaccca-button-save" type='button'>Ok!</button></a>
+</div>
+</div>
+    
+    
+    @endif
 @else
 <script>
 
