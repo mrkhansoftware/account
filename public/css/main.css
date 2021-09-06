@@ -2895,6 +2895,8 @@ input[type="file"].gaccca-parsley-error+ul {
     width: 52px;
     height: 28px;
   }
+  
+  
   @media only screen and (max-width: 500px) {
     .gPopUpWarn .popup {
       padding: 35px 5px;
@@ -2902,4 +2904,16 @@ input[type="file"].gaccca-parsley-error+ul {
       height: 250px;
     }  
   
+  }
+  .gaccca-candidate-image-center{
+    width: 100%;
+    display: block;
+  }
+  .gaccca-candidate-div{
+    padding: 50px;
+      /* max-width: 350px; */
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 250px;
   }

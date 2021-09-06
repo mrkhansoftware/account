@@ -277,7 +277,9 @@ Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPa
  
 
 
+ Route::get('/new-candidates', 'NewCandidatesController@index');
 
+ Route::get('/new-candidates-ajax', 'NewCandidatesController@newCandidateAjax');
 Route::get('/user', 'UserController@index');
 Route::get('/downloadICS', 'UserController@getICS');
 Route::get('/bookingCancel', 'UserController@bookingCancel');
