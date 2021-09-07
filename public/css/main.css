@@ -2917,3 +2917,44 @@ input[type="file"].gaccca-parsley-error+ul {
       margin-right: auto;
       width: 250px;
   }
+
+  .gaccca-tag-red{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1px 8px;
+    
+    position: absolute;
+    background: #FFF1F0;
+opacity: 0.85;
+
+border: 1px solid #FFA39E;
+box-sizing: border-box;
+border-radius: 2px;
+color: #F5222D;
+font-style: normal;
+font-weight: normal;
+line-height: 20px;
+  }
+
+  .gaccca-tag-green{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1px 8px;
+    
+    position: absolute;
+    background: #F6FFED;
+opacity: 0.85;
+
+border: 1px solid #B7EB8F;
+box-sizing: border-box;
+border-radius: 2px;
+
+color: #52C41A;
+font-style: normal;
+font-weight: normal;
+line-height: 20px;
+  }
+
+

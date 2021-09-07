@@ -9,18 +9,30 @@
         <table>
 
             <tr>
-                <td>{{isset($d['applicant']['Contact__r']['Name'])?$d['applicant']['Contact__r']['Name']:''}} </td>
+                <td>{{isset($d['applicant']['Contact__r']['FirstName'])?$d['applicant']['Contact__r']['FirstName']:''}} </td>
             </tr>
             <tr>
                 <td>{{isset($d['applicant']['Occupational_Field__c'])?$d['applicant']['Occupational_Field__c']:''}}</td>
 
             </tr>
             <tr>
-                <td>Like to start </td>
+                <td>Like to start in: {{isset($d['likeToStart'])?$d['likeToStart']:''}} </td>
             </tr>
 
             <tr>
-                <td>Length: 4 Months </td>
+                <td>Length: {{isset($d['applicant']['Lengths__c'])?$d['applicant']['Lengths__c']:''}} </td>
+            </tr>
+            <tr>
+                <td>
+                @if(isset($d['applicant']['Internship_Type__c']) && $d['applicant']['Internship_Type__c']=='Remote')    
+                
+                <span class="gaccca-tag-red">Remote</span> 
+            @endif
+            @if(isset($d['applicant']['Internship_Type__c']) && $d['applicant']['Internship_Type__c']=='On-side')    
+                
+                 <span class="gaccca-tag-green">On-side</span>
+            @endif
+            </td>
             </tr>
         </table>
     </div>
