@@ -60,7 +60,7 @@ cursor: pointer; /* Add a pointer on hover */
 
 <body style="background-color: #FFF;" >
 
-
+ 
 <div class=" gaccca-newCandidates">
 <img src="{{ asset('images/logo/logo12.png') }}" />  
 <p >
