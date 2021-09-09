@@ -59,9 +59,11 @@ cursor: pointer; /* Add a pointer on hover */
 </head>
 
 <body style="background-color: #FFF;" >
+
+
 <div class=" gaccca-newCandidates">
-<img src="{{ asset('images/logo/logo12.png') }}" />
-<p style="padding: 3em;">
+<img src="{{ asset('images/logo/logo12.png') }}" />  
+<p >
 
 Thank you for your interest in our International Students. On this page, you find our most current Application who are looking for a great Company in the USA for an Internship or a Trainee. For many of our companies have a huge advantage to host international talents. <br/>
 Please see our new and current participants and click on the picture to see their resumes and video. If you have interest in any applicant please contact us and we will schedule an interview. 
@@ -128,7 +130,6 @@ Please see our new and current participants and click on the picture to see thei
 
 </div>
 </div>
-
 
 
 </body>
