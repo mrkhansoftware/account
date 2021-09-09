@@ -17,7 +17,7 @@ class NewCandidatesController extends Controller
         $datas='App\Services\Helper'::getRequest('ApiNewCandidatesClass/');
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-         
+          
 
         return view('new-candidates')->with(compact('datas'));
     }
