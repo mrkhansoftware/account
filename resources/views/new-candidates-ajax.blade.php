@@ -7,7 +7,7 @@
         <a href="{{isset($d['publicLink'])?$d['publicLink']:'#'}}" target="_blank">
         <img src="{{isset($d['applicant']['Profile_Image_URL__c'])?$d['applicant']['Profile_Image_URL__c']:''}}" alt="" class="gaccca-candidate-image-center">
         </a>
- 
+  
         <table>
 
             <tr>
