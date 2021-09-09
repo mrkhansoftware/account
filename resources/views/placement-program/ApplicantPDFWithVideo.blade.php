@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Applicant Resume</title>
+<title>{{isset($datas['app']['Contact__r']['Name'])?$datas['app']['Contact__r']['Name']:'Applicant'}} Resume</title>
 <meta name="title" content="ApplicantPDFWithVideo" />
     <meta name="description" content="Over the account you can access the programs and services" />
     <meta name="keywords" content="Account IIEEX, Account GACCCA" />
