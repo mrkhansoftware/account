@@ -13,7 +13,13 @@ class NewCandidatesController extends Controller
      */
     public function index()
     {
-        return view('new-candidates');
+
+        $datas='App\Services\Helper'::getRequest('ApiNewCandidatesClass/');
+        $datas = json_decode($datas, true);
+        $datas = json_decode($datas, true);
+     
+
+        return view('new-candidates')->with(compact('datas'));
     }
 
 
@@ -22,9 +28,11 @@ class NewCandidatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function newCandidateAjax()
+    public function newCandidateAjax( Request $request)
     {
-        $requestData=[];
+        $requestData=$request->all();
+
+        unset($requestData['accesskey']);
         $datas='App\Services\Helper'::postRequest($requestData,'ApiNewCandidatesClass');
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);

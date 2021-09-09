@@ -57,7 +57,7 @@ class ApplicantResumeController extends Controller
 
     public function resumeDetails()
     {
-        if (isset($_GET['isInternal']) && $_GET['isInternal'] == 'isInternal') {
+        if ((isset($_GET['isInternal']) && $_GET['isInternal'] == 'isInternal') || (isset($_GET['isPublic']) && $_GET['isPublic'] == 'isPublic')) {
             $idCon = '_isInternal_' . $_GET['id'];
         } else if (isset($_GET['status']) && isset($_GET['appId'])) {
             $idCon = $_GET['id'];
