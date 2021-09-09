@@ -5,9 +5,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 <title>New-Candidates</title>
-@if (isset($page) && $page!='ApplicantResume' && $page!='Video_Resume' && $page!='b1Video')
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-@endif
 <meta name="title" content="New-Candidates" />
 <meta name="description" content="Over the account you can access the programs and services" />
 <meta name="keywords" content="Account IIEEX, Account GACCCA" />
@@ -63,13 +61,13 @@ cursor: pointer; /* Add a pointer on hover */
 <body style="background-color: #FFF;" >
 <div class=" gaccca-newCandidates">
 <img src="{{ asset('images/logo/logo12.png') }}" />
-<p style="padding: 3rem 3rem;">
+<p style="padding: 3em;">
 
-Thank you for your interest in our International Students. On this page, you find our most current Applicatinat who are looking for a great Company in the USA for an Internship or a Trainee. For many of our companies have a huge advantage to host international talents. <br/>
-Please see our new and current participants and click on the picture to see their resumes and video. If you have interest in an applicant please contact us and we will schedule an interview. 
+Thank you for your interest in our International Students. On this page, you find our most current Application who are looking for a great Company in the USA for an Internship or a Trainee. For many of our companies have a huge advantage to host international talents. <br/>
+Please see our new and current participants and click on the picture to see their resumes and video. If you have interest in any applicant please contact us and we will schedule an interview. 
 
 </p>
-<div class="gaccca-grid gaccca-wrap">
+<div class="gaccca-grid gaccca-wrap newCandidate-m">
 
 <div class="gaccca-large-size_1-of-12 gaccca-medium-size_1-of-12 gaccca-small-size_1-of-1 internship-field-all">
 <span class="gaccca-tag-blue gaccca-select-tag gaccca-margin15-right">All</span>
@@ -82,11 +80,47 @@ Please see our new and current participants and click on the picture to see thei
 </div>
 </div>
 <div class="gaccca-grid gaccca-wrap">
-<div class="gaccca-large-size_12-of-12 gaccca-medium-size_12-of-12 gaccca-small-size_1-of-1 internship-type"><br/>
-<span class="gaccca-tag-red gaccca-select-tag " data-value='Remote'>Remote</span> <br/>
-<span class="gaccca-tag-green gaccca-select-tag " data-value='On-site'>On-site</span> 
+
+<div class="gaccca-large-size_1-of-12 gaccca-medium-size_1-of-12 gaccca-small-size_1-of-1 newCandidate-sm">
+    <label>Internship Field</label><br/>
+    <select class="gaccca-select internship-field-sm">
+        <option value="">All</option>
+@foreach (isset($datas['occupationFieldsList'])?$datas['occupationFieldsList']:[] as $d)
+<option value="{{$d}}">{{$d}}</option>
+@endforeach
+</select>
+</div>
+
+</div>
+
+<br/>
+<div class="gaccca-grid gaccca-wrap newCandidate-m">
+
+<div class="gaccca-large-size_1-of-12 gaccca-medium-size_1-of-12 gaccca-small-size_1-of-1 internship-type-all">
+<span class="gaccca-tag-blue gaccca-select-tag gaccca-margin15-right">All</span>
+
+</div>
+
+<div class="gaccca-large-size_10-of-12 gaccca-medium-size_10-of-12 gaccca-small-size_1-of-1 internship-type">
+<span class="gaccca-tag-red gaccca-select-tag gaccca-tag-disabled" data-value='Remote'>Remote</span> 
+<span class="gaccca-tag-green gaccca-select-tag gaccca-tag-disabled" data-value='On-site'>On-site</span> 
 </div>
 </div>
+
+<div class="gaccca-grid gaccca-wrap  newCandidate-sm">
+
+<div class="gaccca-large-size_1-of-12 gaccca-medium-size_1-of-12 gaccca-small-size_1-of-1">
+<label>Internship Type</label><br/>
+    <select class="gaccca-select internship-type-sm" >
+        <option value="">All</option>
+<option value="Remote">Remote</option>
+<option value="On-site">On-site</option>
+
+</select>
+</div>
+
+</div>
+
 <div class="loader gaccca_overlay_loader" id='loader'>
 <img src="{{ asset('images/loader.gif') }}"  class="loader center" width="50" height="50" />
 </div>
@@ -100,7 +134,7 @@ Please see our new and current participants and click on the picture to see thei
 </body>
 <script>
 let intership_field=[];
-let intership_type=['Remote','On-site'];
+let intership_type=[];
 $(document).ready(function() {
     
 
@@ -111,9 +145,29 @@ $(document).ready(function() {
         checkAjaxCall();
 });
 
+$(".internship-type-all .gaccca-select-tag").click(function(){
+        intership_type=[];
+        $(".internship-type .gaccca-select-tag").addClass("gaccca-tag-disabled");
+        $(".internship-type-all .gaccca-select-tag").removeClass("gaccca-tag-disabled");
+        checkAjaxCall();
+});
 
 
+$(".internship-field-sm").change(function(){
+    intership_field=[];
+   if(this.value!=''){
+    intership_field.push(this.value);
+   }
+   checkAjaxCall();
+})
 
+$(".internship-type-sm").change(function(){
+    intership_type=[];
+   if(this.value!=''){
+    intership_type.push(this.value);
+   }
+   checkAjaxCall();
+})
 
     $(".internship-field .gaccca-select-tag").click(function(){
         intership_field=checkValue(this,intership_field);
@@ -129,6 +183,11 @@ $(document).ready(function() {
 
 $(".internship-type .gaccca-select-tag").click(function(){
     intership_type=checkValue(this,intership_type);
+    if(intership_type.length>0){
+            $(".internship-type-all .gaccca-select-tag").addClass("gaccca-tag-disabled");
+        }else{
+            $(".internship-type-all .gaccca-select-tag").removeClass("gaccca-tag-disabled");
+        }
     checkAjaxCall();
 });
 

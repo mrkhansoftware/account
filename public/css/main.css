@@ -16,7 +16,6 @@ body {
 }
 
 
-
 /*
  
 Grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
@@ -2426,6 +2425,12 @@ input[type="file"].gaccca-parsley-error+ul {
 
 @media only screen and (max-width: 720px) {
 
+  .newCandidate-m{
+    display: none !important;
+  }
+  .newCandidate-sm{
+    display: block !important;
+  }
   .gaccca-gutters {
     margin-right: 6px;
     margin-left: 6px;;
@@ -3006,4 +3011,11 @@ line-height: 20px;
 }
 .gaccca-margin15-right{
   margin-right: 15px;
+}
+
+.newCandidate-sm{
+  display: none;
+}
+.newCandidate-m{
+  display: flex;
 }
