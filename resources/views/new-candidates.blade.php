@@ -104,8 +104,8 @@ Please see our new and current participants and click on the picture to see thei
 </div>
 
 <div class="gaccca-large-size_10-of-12 gaccca-medium-size_10-of-12 gaccca-small-size_1-of-1 internship-type">
-<span class="gaccca-tag-red gaccca-select-tag gaccca-tag-disabled" data-value='Remote'>Remote</span> 
-<span class="gaccca-tag-green gaccca-select-tag gaccca-tag-disabled" data-value='On-site'>On-site</span> 
+<span class="gaccca-tag-red gaccca-select-tag " data-value='Remote'>Remote</span> 
+<span class="gaccca-tag-green gaccca-select-tag " data-value='On-site'>On-site</span> 
 </div>
 </div>
 
@@ -122,7 +122,32 @@ Please see our new and current participants and click on the picture to see thei
 </div>
 
 </div>
+<br/>
+<div class="gaccca-grid gaccca-wrap newCandidate-m">
 
+<div class="gaccca-large-size_1-of-12 gaccca-medium-size_1-of-12 gaccca-small-size_1-of-1 internship-month-all">
+<span class="gaccca-tag-blue gaccca-select-tag gaccca-margin15-right">All</span>
+
+</div>
+<div class="gaccca-large-size_10-of-12 gaccca-medium-size_10-of-12 gaccca-small-size_1-of-1 internship-month">
+@foreach (isset($datas['internshipMonths'])?$datas['internshipMonths']:[] as $d)
+<span class="gaccca-tag-blue gaccca-select-tag gaccca-tag-disabled" data-value='{{$d}}'>{{$d}}</span>
+@endforeach
+</div>
+</div>
+<div class="gaccca-grid gaccca-wrap">
+
+<div class="gaccca-large-size_1-of-12 gaccca-medium-size_1-of-12 gaccca-small-size_1-of-1 newCandidate-sm">
+    <label>Internship Start Month</label><br/>
+    <select class="gaccca-select internship-month-sm">
+        <option value="">All</option>
+@foreach (isset($datas['internshipMonths'])?$datas['internshipMonths']:[] as $d)
+<option value="{{$d}}">{{$d}}</option>
+@endforeach
+</select>
+</div>
+
+</div>
 <div class="loader gaccca_overlay_loader" id='loader'>
 <img src="{{ asset('images/loader.gif') }}"  class="loader center" width="50" height="50" />
 </div>
@@ -136,6 +161,7 @@ Please see our new and current participants and click on the picture to see thei
 <script>
 let intership_field=[];
 let intership_type=[];
+let intership_month=[];
 $(document).ready(function() {
     
 
@@ -146,9 +172,16 @@ $(document).ready(function() {
         checkAjaxCall();
 });
 
+$(".internship-month-all .gaccca-select-tag").click(function(){
+        intership_month=[];
+        $(".internship-month .gaccca-select-tag").addClass("gaccca-tag-disabled");
+        $(".internship-month-all .gaccca-select-tag").removeClass("gaccca-tag-disabled");
+        checkAjaxCall();
+});
+
 $(".internship-type-all .gaccca-select-tag").click(function(){
         intership_type=[];
-        $(".internship-type .gaccca-select-tag").addClass("gaccca-tag-disabled");
+        $(".internship-type .gaccca-select-tag").removeClass("gaccca-tag-disabled");
         $(".internship-type-all .gaccca-select-tag").removeClass("gaccca-tag-disabled");
         checkAjaxCall();
 });
@@ -161,6 +194,15 @@ $(".internship-field-sm").change(function(){
    }
    checkAjaxCall();
 })
+
+$(".internship-month-sm").change(function(){
+    intership_month=[];
+   if(this.value!=''){
+    intership_month.push(this.value);
+   }
+   checkAjaxCall();
+})
+
 
 $(".internship-type-sm").change(function(){
     intership_type=[];
@@ -180,15 +222,30 @@ $(".internship-type-sm").change(function(){
         checkAjaxCall();
 });
 
+$(".internship-month .gaccca-select-tag").click(function(){
+        intership_month=checkValue(this,intership_month);
+        if(intership_month.length>0){
+            $(".internship-month-all .gaccca-select-tag").addClass("gaccca-tag-disabled");
+        }else{
+            $(".internship-month-all .gaccca-select-tag").removeClass("gaccca-tag-disabled");
+        }
+        checkAjaxCall();
+});
+
 
 
 $(".internship-type .gaccca-select-tag").click(function(){
-    intership_type=checkValue(this,intership_type);
-    if(intership_type.length>0){
-            $(".internship-type-all .gaccca-select-tag").addClass("gaccca-tag-disabled");
-        }else{
-            $(".internship-type-all .gaccca-select-tag").removeClass("gaccca-tag-disabled");
-        }
+     intership_type=[];
+     $(".internship-type-all .gaccca-select-tag").addClass("gaccca-tag-disabled")
+    $(".internship-type .gaccca-select-tag").addClass("gaccca-tag-disabled");
+    $(this).removeClass("gaccca-tag-disabled")
+    if($(this).attr("data-value")=='Remote'){
+        intership_type.push('Remote');  
+    }else{
+        intership_type.push('On-site');
+
+    }
+
     checkAjaxCall();
 });
 
@@ -214,6 +271,7 @@ function ajaxCall(){
    var formData = {
         'intership_type': intership_type,
         "intership_field": intership_field,
+        "intership_month": intership_month,
         "typeInfo": 'search'
     }
     console.log(formData);

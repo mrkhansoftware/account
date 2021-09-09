@@ -44,6 +44,7 @@
 @if(isset($datas['wrapContent'])   && count($datas['wrapContent'])==0)
 
 <div class="gaccca-col gaccca-large-size_12-of-12 gaccca-medium-size_12-of-12 gaccca-small-size_1-of-1" style="    text-align: center;FONT-WEIGHT: bold;width:100%">
-    No Record Found
+<br/><br/>   
+No Record Found
 </div>
 @endif
