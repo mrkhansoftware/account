@@ -37,7 +37,7 @@ class NewCandidatesController extends Controller
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
         $returnHTML = view('new-candidates-ajax',compact('datas'))->render();
-        return response()->json(array('success' => true, 'html'=>$returnHTML));
+        return response()->json(array('success' => true, 'html'=>$returnHTML,'pass'=>$datas['intership_password_info']));
         
     }
 
