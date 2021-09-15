@@ -62,12 +62,17 @@ class ApplicantResumeController extends Controller
         } else if (isset($_GET['status']) && isset($_GET['appId'])) {
             $idCon = $_GET['id'];
             $idCon .= '_hrPerson_' . $_GET['appId'];
-        } else {
+        } else if (isset($_GET['contactId']) && isset($_GET['ContactPersonId'])) {
+            $idCon = $_GET['ContactPersonId'];
+            $idCon .= '_hrPersonFromMassEmail_' . $_GET['contactId'];
+        }
+         else {
             $idCon = 'App\Services\Helper'::sessionConId();
             if ($idCon == '') {
                 return 'App\Services\Helper'::returnUrl();
             }
         }
+        
         $datas = 'App\Services\Helper'::getRequest('ApiApplicantCVResumeTemplateClass/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);

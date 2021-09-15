@@ -185,6 +185,7 @@ Please see our new and current participants and click on the picture to see thei
 let if_param="{{isset($_GET['if'])?$_GET['if']:''}}";
 let it_param="{{isset($_GET['it'])?$_GET['it']:''}}";
 let im_param="{{isset($_GET['im'])?$_GET['im']:''}}";
+let contactPersonId="{{isset($_GET['contactPersonId'])?$_GET['contactPersonId']:''}}";
 let intership_field=[];
 let intership_type=[];
 let intership_month=[];
@@ -405,9 +406,11 @@ return returnArrayInfo;
 
 function checkAjaxCall(){
     var urlInfo=window.location.protocol + "//" + window.location.host + window.location.pathname +'?';
+    urlInfo+='contactPersonId='+contactPersonId;
     urlInfo+='&if='+intership_field_att;
     urlInfo+='&it='+intership_type_att;
     urlInfo+='&im='+intership_month_att;
+    
                 window.history.pushState({path:urlInfo},'',urlInfo);
 ajaxCall();
 }
@@ -417,7 +420,8 @@ function ajaxCall(){
         'intership_type': intership_type,
         "intership_field": intership_field,
         "intership_month": intership_month,
-         intership_password:intership_password,
+         "intership_password":intership_password,
+         "contactPersonId":contactPersonId,
         "typeInfo": 'search'
     }
     console.log(formData);
