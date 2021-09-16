@@ -182,6 +182,22 @@ Please see our new and current participants and click on the picture to see thei
 
 </body>
 <script>
+    function setCookie(cname, cvalue) {
+  const d = new Date();
+  d.setTime(d.getTime() + (2*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cName) {
+  const name = cName + "=";
+  const cDecoded = decodeURIComponent(document.cookie); 
+  const cArr = cDecoded.split('; ');
+  let res;
+  cArr.forEach(val => {
+    if (val.indexOf(name) === 0) res = val.substring(name.length);
+  })
+  return res==undefined?'':res;
+}
 let if_param="{{isset($_GET['if'])?$_GET['if']:''}}";
 let it_param="{{isset($_GET['it'])?$_GET['it']:''}}";
 let im_param="{{isset($_GET['im'])?$_GET['im']:''}}";
@@ -192,7 +208,7 @@ let intership_month=[];
 let intership_field_att=[];
 let intership_type_att=[];
 let intership_month_att=[];
-let intership_password='';
+let intership_password=getCookie("iieex_pw");
 $(document).ready(function() {
 
     if_param=if_param.split(',');
@@ -279,6 +295,7 @@ function checkAccess(){
             $("#inputError").html('This field is required');
             return;
         }
+        setCookie('iieex_pw', intership_password)
         checkAjaxCall();
 }
 $(".internship-type-all .gaccca-select-tag").click(function(){

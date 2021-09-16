@@ -3071,3 +3071,9 @@ padding: .3em;
 .gaccca-popup-modal-overlay span{
   display: inline-block;
 }
+.hg-label{
+  float:right;
+}
+.hg-name{
+  padding-bottom: 3px;
+}
