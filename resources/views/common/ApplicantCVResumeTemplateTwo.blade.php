@@ -23,7 +23,7 @@
         font-family: sans-serif;
         font-weight: 600;
         font-size: 30px;
-        line-height: 20px;
+        line-height: 1;
         text-align: justify;
         color: #282828;
         }
