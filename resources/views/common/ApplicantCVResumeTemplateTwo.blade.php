@@ -19,7 +19,7 @@
         background: #F5F7FB;
         padding: 28px 28px ; 
         }
-        .title{
+        .title{ 
         font-family: sans-serif;
         font-weight: 600;
         font-size: 30px;

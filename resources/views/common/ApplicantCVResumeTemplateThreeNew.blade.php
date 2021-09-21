@@ -28,7 +28,7 @@
         border-radius: 5px 5px 0px 0px;
     }
 
-    .title {
+    .title { 
         font-family: sans-serif;
         font-weight: 600;
         font-size: 20px;
