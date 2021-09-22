@@ -21,6 +21,7 @@ $response = json_decode('App\Services\Helper'::auth(), true);
       $instance_url = $response['instance_url'];
       $url = $instance_url . "/services/apexrest/" . $postClass;
       $curl = curl_init($url);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($curl, CURLOPT_TIMEOUT, 300);
       curl_setopt(
          $curl,
