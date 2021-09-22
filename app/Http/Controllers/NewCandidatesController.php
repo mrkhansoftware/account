@@ -14,32 +14,6 @@ class NewCandidatesController extends Controller
     public function index()
     {
 
-$postClass='ApiNewCandidatesClass/';
-$response = json_decode('App\Services\Helper'::auth(), true);
-
-      $access_token = $response['access_token'];
-      $instance_url = $response['instance_url'];
-      $url = $instance_url . "/services/apexrest/" . $postClass;
-      $curl = curl_init($url);
-      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($curl, CURLOPT_TIMEOUT, 300);
-      curl_setopt(
-         $curl,
-         CURLOPT_HTTPHEADER,
-         array("Authorization: OAuth $access_token", "Content-type: application/json")
-      );
-      $json_response = curl_exec($curl);
-      $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-       print_r($json_response);
-
-
-
-
-       
-       
-
-die;
 
 
 
