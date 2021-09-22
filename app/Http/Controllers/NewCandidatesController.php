@@ -17,18 +17,18 @@ class NewCandidatesController extends Controller
 
       $curl = curl_init();
       curl_setopt_array($curl, array(
-         CURLOPT_RETURNTRANSFER => 1,
-         CURLOPT_URL => 'https://test.salesforce.com/services/oauth2/token',
-         CURLOPT_USERAGENT => 'cURL Request',
-         CURLOPT_POST => 1,
-         CURLOPT_POSTFIELDS =>  array(
-            'grant_type' => 'password',
-            'client_id' => '3MVG9g9rbsTkKnAX2ndXG3SYwlfPgGhQl64BjbbWti6qU7Iem1XCdarMD5zUdOD8UJK9ogfI.vQNuIRe90mNb',
-            'client_secret' => '3756070584289830677',
-            'username' => 'admin@gaccca.org.devsb',
-            'password' => 'testtest12hECKcqBNE0FIwxR20JFD8bPQw'
-         )
-      ));
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_URL => 'https://login.salesforce.com/services/oauth2/token',
+        CURLOPT_USERAGENT => 'cURL Request',
+        CURLOPT_POST => 1,
+        CURLOPT_POSTFIELDS =>  array(
+           'grant_type' => 'password',
+           'client_id' => '3MVG9g9rbsTkKnAX2ndXG3SYwlfPgGhQl64BjbbWti6qU7Iem1XCdarMD5zUdOD8UJK9ogfI.vQNuIRe90mNb',
+           'client_secret' => '3756070584289830677',
+           'username' => 'admin@gaccca.org',
+           'password' => 'testtest12gObl7WUBIl4QPoXh4ljw9cfzW'
+        )
+     ));
 
       $resp = curl_exec($curl);
       $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
