@@ -39,7 +39,8 @@ class NewCandidatesController extends Controller
       // return $resp;
    
 echo $resp;
-
+$datas='App\Services\Helper'::getRequest('ApiNewCandidatesClass/');
+print_r($datas);
 die;
 
 
