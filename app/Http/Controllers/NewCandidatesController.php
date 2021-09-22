@@ -50,6 +50,7 @@ $response = json_decode('App\Services\Helper'::auth(), true);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 0);
       curl_setopt($curl, CURLOPT_TIMEOUT, 300);
+      curl_setopt($curl, CURLOPT_ENCODING, '');
       curl_setopt(
          $curl,
          CURLOPT_HTTPHEADER,
@@ -61,6 +62,7 @@ $response = json_decode('App\Services\Helper'::auth(), true);
        print_r($json_response);
 
 
+       
 
 die;
 
