@@ -46,7 +46,7 @@
           <p>
           We do not accept any documents submitted via email.
           </p>
-<p> 
+<p>  
             The information you provide here will be used in your visa application. Make sure all information is correct
             and up-to-date. </p> </label>
 
