@@ -30,7 +30,7 @@
 
             </tr>
             <tr>
-                <td>Like to start in: {{isset($d['likeToStart'])?$d['likeToStart']:''}} </td>
+                <td>Start date: {{isset($d['likeToStart'])?$d['likeToStart']:''}} </td>
             </tr>
 
             <tr>
