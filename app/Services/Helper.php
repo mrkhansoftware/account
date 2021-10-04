@@ -66,7 +66,7 @@ class Helper
       curl_setopt($curl, CURLOPT_HTTPHEADER, array("Authorization: OAuth $access_token", "Content-type: application/json"));
       curl_setopt($curl, CURLOPT_POST, true);
       curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
-      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 0);
+      //curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 0);
       curl_setopt($curl, CURLOPT_TIMEOUT, 300);
       $json_response = curl_exec($curl);
       $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
