@@ -21,6 +21,10 @@
     
         <table>
 
+        <tr>
+                <td>{{isset($d['applicant']['Industry__c'])?$d['applicant']['Industry__c']:''}}</td>
+
+            </tr>
             <tr>
                 <td>{{isset($d['applicant']['Occupational_Field__c'])?$d['applicant']['Occupational_Field__c']:''}}</td>
 
