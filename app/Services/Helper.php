@@ -365,4 +365,4 @@ class Helper
       echo 'Internal server error. Please try later.';
    }
 
-}
+} 
