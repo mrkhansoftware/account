@@ -364,5 +364,5 @@ class Helper
       $resp='App\Services\Helper'::postRequest($finalReq,'ApiErrorEmailClass');
       echo 'Internal server error. Please try later.';
    }
-
+   
 } 
