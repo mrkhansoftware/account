@@ -441,7 +441,7 @@ function ajaxCall(){
          "contactPersonId":contactPersonId,
         "typeInfo": 'search'
     }
-    console.log(formData);
+    //console.log(formData);
     document.getElementById('loader').style.display = 'block';
 $.ajaxSetup({
     headers: {
@@ -456,7 +456,7 @@ $.ajaxSetup({
         success: function(data) {
             
             const ajaxData = JSON.parse(data);
-            console.log(ajaxData);
+            //console.log(ajaxData);
             $('#body').html(ajaxData.html);
             
             if(formData.intership_password=='' && ajaxData.pass=='0'){
