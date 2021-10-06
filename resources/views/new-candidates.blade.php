@@ -456,10 +456,10 @@ $.ajaxSetup({
         success: function(data) {
             
             const ajaxData = JSON.parse(data);
-            
+            console.log(ajaxData);
             $('#body').html(ajaxData.html);
             
-            if(formData.intership_password==''){
+            if(formData.intership_password=='' && ajaxData.pass=='0'){
                 
                 document.getElementById('passwordAccessModal').style.display = 'block';
             }else if(formData.intership_password!='' && ajaxData.pass=='0'){
@@ -468,6 +468,9 @@ $.ajaxSetup({
 
             }else if(formData.intership_password!='' && ajaxData.pass=='1'){
                 document.getElementById('passwordAccessModal').style.display = 'none';
+                $('#inputError').html('');
+}else if(formData.intership_password='' && ajaxData.pass=='1'){
+    document.getElementById('passwordAccessModal').style.display = 'none';
                 $('#inputError').html('');
 }
             document.getElementById('loader').style.display = 'none';
