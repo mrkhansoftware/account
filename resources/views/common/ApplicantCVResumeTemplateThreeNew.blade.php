@@ -499,9 +499,11 @@
                                 </td>
                                 <td>
                                     <div>
+                                    @if(!isset($_GET['isPublic']))
                                         <div class='feedbackButton clickHere modalClass'>
                                             Click Here
                                         </div>
+                                        @endif
                                     </div>
                                 </td>
                             </tr>

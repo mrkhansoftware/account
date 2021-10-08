@@ -411,9 +411,11 @@
                     <div>
 
                         <strong>Name: {{isset($datas['app']['Placement_Assigned_to__r']['Name'])?$datas['app']['Placement_Assigned_to__r']['Name']:''}} ( {{isset($datas['app']['placement_Assigned_User_secondary_Email__c'])?$datas['app']['placement_Assigned_User_secondary_Email__c']:''}} )</strong>
+                        @if(!isset($_GET['isPublic']))
                         <div class='feedbackButton clickHere modalClass'>
                             Click Here
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
