@@ -1,4 +1,4 @@
-@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])  
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])   
 
 @include('common.header',['datas'=>$datas,'title' =>'Add New Participant','page'=>'Add_New_Participant','parent_page'=>'Agent Bookings'])
 
