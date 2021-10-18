@@ -1,4 +1,4 @@
-@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])   
+@if (isset($datas['isAccessAble']) && $datas['isAccessAble'])    
 
 @include('common.header',['datas'=>$datas,'title' =>'Add New Participant','page'=>'Add_New_Participant','parent_page'=>'Agent Bookings'])
 
@@ -179,7 +179,7 @@
     @else
         <div class="gaccca-form-element gaccca-form-element-margin">
             <div class="gaccca-form-element__control">
-        <b>The organization is missing, Please Contact Administrator.</b> 
+        <b>The organization is missing, Please Contact Administrator.</b>
             </div>
         </div>
         @endif
