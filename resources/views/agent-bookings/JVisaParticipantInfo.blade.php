@@ -14,7 +14,7 @@
     </p>
     <input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
   <input type="hidden" name='applicantId' value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}" />
-  <input type="hidden" name='Contact__c' value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}" /> 
+  <input type="hidden" name='Contact__c' value="{{isset($datas['app']['Contact__c'])?$datas['app']['Contact__c']:''}}" />
   <input type="hidden" name='Google_Drive_Folder__c' value="{{isset($datas['app']['Google_Drive_Folder__c'])?$datas['app']['Google_Drive_Folder__c']:''}}" />
 
   </div>
@@ -100,7 +100,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-c">
           Citizenship <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Citizenship__c]" value="{{isset($datas['App']['Citizenship__c'])?$datas['App']['Citizenship__c']:''}}" type="text" id="text-input-id-c"  required="" class="gaccca-input" />
+          <input name="App[Citizenship__c]" value="{{isset($datas['app']['Citizenship__c'])?$datas['app']['Citizenship__c']:''}}" type="text" id="text-input-id-c"  required="" class="gaccca-input" />
           <span class="gaccca-input-help-text">Please also list your dual citizenship here.</span>
         </div>
       </div>
@@ -109,7 +109,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-colpr">
           Country of Legal Permanent Residency <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Country_of_Legal_Permanent_Residency__c]" value="{{isset($datas['App']['Country_of_Legal_Permanent_Residency__c'])?$datas['App']['Country_of_Legal_Permanent_Residency__c']:''}}" type="text" id="text-input-id-colpr"  required="" class="gaccca-input" />
+          <input name="App[Country_of_Legal_Permanent_Residency__c]" value="{{isset($datas['app']['Country_of_Legal_Permanent_Residency__c'])?$datas['app']['Country_of_Legal_Permanent_Residency__c']:''}}" type="text" id="text-input-id-colpr"  required="" class="gaccca-input" />
 
         </div>
       </div>
@@ -120,7 +120,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-us-visa">
           Have you ever applied for a US visa? <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input type="text" name="App[haveYouEverAppliedForUSVisa__c]" value="{{isset($datas['App']['haveYouEverAppliedForUSVisa__c'])?$datas['App']['haveYouEverAppliedForUSVisa__c']:''}}" id="text-input-id-us-visa"  required="" class="gaccca-input" />
+          <input type="text" name="App[haveYouEverAppliedForUSVisa__c]" value="{{isset($datas['app']['haveYouEverAppliedForUSVisa__c'])?$datas['app']['haveYouEverAppliedForUSVisa__c']:''}}" id="text-input-id-us-visa"  required="" class="gaccca-input" />
           <span class="gaccca-input-help-text">Please provide type of visa and expiration date as well as
             information about any previous visa denials</span>
         </div>
@@ -149,7 +149,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-cob">
           City of Birth <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input type="text" name="App[City_of_birth__c]" value="{{isset($datas['App']['City_of_birth__c'])?$datas['App']['City_of_birth__c']:''}}" id="text-input-id-cob"  required="" class="gaccca-input" />
+          <input type="text" name="App[City_of_birth__c]" value="{{isset($datas['app']['City_of_birth__c'])?$datas['app']['City_of_birth__c']:''}}" id="text-input-id-cob"  required="" class="gaccca-input" />
 
         </div>
 
@@ -181,7 +181,7 @@
           Emergency Contact Person outside the US <span class="gaccca-text-required" title="required">*</span>
         </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Emergency_Contact_Person_outside_the_US__c]" value="{{isset($datas['App']['Emergency_Contact_Person_outside_the_US__c'])?$datas['App']['Emergency_Contact_Person_outside_the_US__c']:''}}" type="text" id="text-input-id-ecp"  required="" class="gaccca-input" />
+          <input name="App[Emergency_Contact_Person_outside_the_US__c]" value="{{isset($datas['app']['Emergency_Contact_Person_outside_the_US__c'])?$datas['app']['Emergency_Contact_Person_outside_the_US__c']:''}}" type="text" id="text-input-id-ecp"  required="" class="gaccca-input" />
           <span class="gaccca-input-help-text">Please list a person to contact in case of emergency.</span>
         </div>
       </div>
@@ -192,7 +192,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-ecp">
           Relationship to Applicant <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Relationship_to_Applicant__c]" value="{{isset($datas['App']['Relationship_to_Applicant__c'])?$datas['App']['Relationship_to_Applicant__c']:''}}" type="text" id="text-input-id-ecp" required="" class="gaccca-input" />
+          <input name="App[Relationship_to_Applicant__c]" value="{{isset($datas['app']['Relationship_to_Applicant__c'])?$datas['app']['Relationship_to_Applicant__c']:''}}" type="text" id="text-input-id-ecp" required="" class="gaccca-input" />
           <span class="gaccca-input-help-text">Please define the relationship between you and your emergency contact
             person, e.g. mother, father, sister, boyfriend, etc.</span>
         </div>
@@ -205,7 +205,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-e-email">
           Emergency Contact Person Email Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Emergency_Contact_Person_Email_Address__c]" value="{{isset($datas['App']['Emergency_Contact_Person_Email_Address__c'])?$datas['App']['Emergency_Contact_Person_Email_Address__c']:''}}" type="email" id="text-input-id-e-email"  required="" class="gaccca-input" />
+          <input name="App[Emergency_Contact_Person_Email_Address__c]" value="{{isset($datas['app']['Emergency_Contact_Person_Email_Address__c'])?$datas['app']['Emergency_Contact_Person_Email_Address__c']:''}}" type="email" id="text-input-id-e-email"  required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -214,7 +214,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-e-phone">
           Emergency Contact Person Phone Number <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Emergency_Contact_Person_PhoneNumber__c]" value="{{isset($datas['App']['Emergency_Contact_Person_PhoneNumber__c'])?$datas['App']['Emergency_Contact_Person_PhoneNumber__c']:''}}" type="text" id="text-input-id-e-phone"  required="" class="gaccca-input" />
+          <input name="App[Emergency_Contact_Person_PhoneNumber__c]" value="{{isset($datas['app']['Emergency_Contact_Person_PhoneNumber__c'])?$datas['app']['Emergency_Contact_Person_PhoneNumber__c']:''}}" type="text" id="text-input-id-e-phone"  required="" class="gaccca-input" />
           <span class="gaccca-input-help-text">Please always provide the country code..</span>
         </div>
       </div>
@@ -225,7 +225,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-e-address">
           Emergency Contact Person Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <textarea name="App[Emergency_Contact_Person_Address__c]" value="{{isset($datas['App']['Emergency_Contact_Person_Address__c'])?$datas['App']['Emergency_Contact_Person_Address__c']:''}}"  required="" class="gaccca-textarea" maxlength='255'></textarea>
+          <textarea name="App[Emergency_Contact_Person_Address__c]" value="{{isset($datas['app']['Emergency_Contact_Person_Address__c'])?$datas['app']['Emergency_Contact_Person_Address__c']:''}}"  required="" class="gaccca-textarea" maxlength='255'></textarea>
           <span class="gaccca-input-help-text">Street, App #, Zip Code, City, Country</span>
         </div>
       </div>
@@ -242,7 +242,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-nou">
           Name of University <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Name_of_University__c]" value="{{isset($datas['App']['Name_of_University__c'])?$datas['App']['Name_of_University__c']:''}}" type="text" id="text-input-id-nou"  required="" class="gaccca-input" />
+          <input name="App[Name_of_University__c]" value="{{isset($datas['app']['Name_of_University__c'])?$datas['app']['Name_of_University__c']:''}}" type="text" id="text-input-id-nou"  required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -250,7 +250,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-fos">
           Field of Study <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Field_of_Study__c]" value="{{isset($datas['App']['Field_of_Study__c'])?$datas['App']['Field_of_Study__c']:''}}" type="text" id="text-input-id-fos"  required="" class="gaccca-input" />
+          <input name="App[Field_of_Study__c]" value="{{isset($datas['app']['Field_of_Study__c'])?$datas['app']['Field_of_Study__c']:''}}" type="text" id="text-input-id-fos"  required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -356,7 +356,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-foi">
           Field of Internship <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Field_of_Internship__c]" value="{{isset($datas['App']['Field_of_Internship__c'])?$datas['App']['Field_of_Internship__c']:''}}" type="text" id="text-input-id-foi" required="" class="gaccca-input" />
+          <input name="App[Field_of_Internship__c]" value="{{isset($datas['app']['Field_of_Internship__c'])?$datas['app']['Field_of_Internship__c']:''}}" type="text" id="text-input-id-foi" required="" class="gaccca-input" />
 
           <span class="gaccca-input-help-text">e.g. Marketing, Business Development, Mechanical Engineering, Architecture, Graphic Design</span>
 
@@ -386,7 +386,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-hcn">
           Host Company Name <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Host_Company__c]" value="{{isset($datas['App']['Host_Company__c'])?$datas['App']['Host_Company__c']:''}}" type="text" id="text-input-id-hcn" required="" class="gaccca-input" />
+          <input name="App[Host_Company__c]" value="{{isset($datas['app']['Host_Company__c'])?$datas['app']['Host_Company__c']:''}}" type="text" id="text-input-id-hcn" required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -395,7 +395,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-hcw">
           Host Company Website <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Host_Company_Website__c]" value="{{isset($datas['App']['Host_Company_Website__c'])?$datas['App']['Host_Company_Website__c']:''}}" type="text" id="text-input-id-hcw" required="" class="gaccca-input" />
+          <input name="App[Host_Company_Website__c]" value="{{isset($datas['app']['Host_Company_Website__c'])?$datas['app']['Host_Company_Website__c']:''}}" type="text" id="text-input-id-hcw" required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -404,7 +404,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-hca">
           Host Company Address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Address__c]" value="{{isset($datas['App']['Address__c'])?$datas['App']['Address__c']:''}}" type="text" id="text-input-id-hca" required="" class="gaccca-input" maxlength='255'/>
+          <input name="App[Address__c]" value="{{isset($datas['app']['Address__c'])?$datas['app']['Address__c']:''}}" type="text" id="text-input-id-hca" required="" class="gaccca-input" maxlength='255'/>
         </div>
       </div>
 
@@ -412,7 +412,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-city">
           City <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[City__c]" value="{{isset($datas['App']['City__c'])?$datas['App']['City__c']:''}}" type="text" id="text-input-id-city" required="" class="gaccca-input" />
+          <input name="App[City__c]" value="{{isset($datas['app']['City__c'])?$datas['app']['City__c']:''}}" type="text" id="text-input-id-city" required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -421,7 +421,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-zipcode">
           Zip Code <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[ZIP_Code__c]" value="{{isset($datas['App']['ZIP_Code__c'])?$datas['App']['ZIP_Code__c']:''}}" type="text" id="text-input-id-zipcode" required="" class="gaccca-input" />
+          <input name="App[ZIP_Code__c]" value="{{isset($datas['app']['ZIP_Code__c'])?$datas['app']['ZIP_Code__c']:''}}" type="text" id="text-input-id-zipcode" required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -442,7 +442,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-hccp">
           Host Company Contact Person <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Contact_Person__c]" value="{{isset($datas['App']['Contact_Person__c'])?$datas['App']['Contact_Person__c']:''}}" type="text" id="text-input-id-hccp" required="" class="gaccca-input" />
+          <input name="App[Contact_Person__c]" value="{{isset($datas['app']['Contact_Person__c'])?$datas['app']['Contact_Person__c']:''}}" type="text" id="text-input-id-hccp" required="" class="gaccca-input" />
 
           <span class="gaccca-input-help-text">Enter the name of the person who will be your <br /> supervisor/mentor during your internship/training.</span>
         </div>
@@ -453,7 +453,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-ccea">
           Company Contact email address <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Email_Address__c]" value="{{isset($datas['App']['Email_Address__c'])?$datas['App']['Email_Address__c']:''}}" type="email" id="text-input-id-ccea" required="" class="gaccca-input" />
+          <input name="App[Email_Address__c]" value="{{isset($datas['app']['Email_Address__c'])?$datas['app']['Email_Address__c']:''}}" type="email" id="text-input-id-ccea" required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -461,7 +461,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-ccp">
           Company Contact phone <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Phone_Number__c]" value="{{isset($datas['App']['Phone_Number__c'])?$datas['App']['Phone_Number__c']:''}}" type="text" id="text-input-id-ccp" required="" class="gaccca-input" />
+          <input name="App[Phone_Number__c]" value="{{isset($datas['app']['Phone_Number__c'])?$datas['app']['Phone_Number__c']:''}}" type="text" id="text-input-id-ccp" required="" class="gaccca-input" />
 
           <span class="gaccca-input-help-text">Use the following format +1-563-6325685</span>
         </div>
@@ -472,7 +472,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-hpw">
           Hours per week <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Hours_Per_Week__c]" value="{{isset($datas['App']['Hours_Per_Week__c'])?$datas['App']['Hours_Per_Week__c']:''}}" type="text" id="text-input-id-hpw" required="" class="gaccca-input" />
+          <input name="App[Hours_Per_Week__c]" value="{{isset($datas['app']['Hours_Per_Week__c'])?$datas['app']['Hours_Per_Week__c']:''}}" type="text" id="text-input-id-hpw" required="" class="gaccca-input" />
         </div>
       </div>
 
@@ -507,7 +507,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-howmuch">
           If yes, how much? <span class="gaccca-text-required" title="required"></span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[If_Yes_How_Much_Stipend__c]" value="{{isset($datas['App']['If_Yes_How_Much_Stipend__c'])?$datas['App']['If_Yes_How_Much_Stipend__c']:''}}" type="text" id="text-input-id-howmuch"  class="gaccca-input" />
+          <input name="App[If_Yes_How_Much_Stipend__c]" value="{{isset($datas['app']['If_Yes_How_Much_Stipend__c'])?$datas['app']['If_Yes_How_Much_Stipend__c']:''}}" type="text" id="text-input-id-howmuch"  class="gaccca-input" />
           <br />
           <span class="gaccca-input-help-text">Please enter the amount paid to you per hour, week or month, e.g 16 USD/hour, 1300 USD/month, 500 USD/week</span>
         </div>
@@ -523,7 +523,7 @@
           <br /> - Value of Housing in USD per month
           <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Value_Of_Housing_In_USD_Per_Month__c]" value="{{isset($datas['App']['Value_Of_Housing_In_USD_Per_Month__c'])?$datas['App']['Value_Of_Housing_In_USD_Per_Month__c']:''}}" type="text" id="text-input-id-vohiupm" required="" class="gaccca-input" />
+          <input name="App[Value_Of_Housing_In_USD_Per_Month__c]" value="{{isset($datas['app']['Value_Of_Housing_In_USD_Per_Month__c'])?$datas['app']['Value_Of_Housing_In_USD_Per_Month__c']:''}}" type="text" id="text-input-id-vohiupm" required="" class="gaccca-input" />
 
           <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
         </div>
@@ -535,7 +535,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-votiupm">
           - Value of Transportation in USD per month <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Value_Of_Transportation_In_USD_Per_Month__c]" value="{{isset($datas['App']['Value_Of_Transportation_In_USD_Per_Month__c'])?$datas['App']['Value_Of_Transportation_In_USD_Per_Month__c']:''}}" type="text" id="text-input-id-votiupm" required="" class="gaccca-input" />
+          <input name="App[Value_Of_Transportation_In_USD_Per_Month__c]" value="{{isset($datas['app']['Value_Of_Transportation_In_USD_Per_Month__c'])?$datas['app']['Value_Of_Transportation_In_USD_Per_Month__c']:''}}" type="text" id="text-input-id-votiupm" required="" class="gaccca-input" />
 
           <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
         </div>
@@ -547,7 +547,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-tfeiu">
           - Total Flight Expenses in USD <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Total_Flight_Expenses_In_USD__c]" value="{{isset($datas['App']['Total_Flight_Expenses_In_USD__c'])?$datas['App']['Total_Flight_Expenses_In_USD__c']:''}}" type="text" id="text-input-id-tfeiu" required="" class="gaccca-input" />
+          <input name="App[Total_Flight_Expenses_In_USD__c]" value="{{isset($datas['app']['Total_Flight_Expenses_In_USD__c'])?$datas['app']['Total_Flight_Expenses_In_USD__c']:''}}" type="text" id="text-input-id-tfeiu" required="" class="gaccca-input" />
 
           <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
         </div>
@@ -559,7 +559,7 @@
         <label class="gaccca-form-element__label" for="text-input-id-howmuch">
           - Other compensation <span class="gaccca-text-required" title="required">*</span> </label>
         <div class="gaccca-form-element__control">
-          <input name="App[Other_Compensation__c]" value="{{isset($datas['App']['Other_Compensation__c'])?$datas['App']['Other_Compensation__c']:''}}" type="text" id="text-input-id-howmuch" required="" class="gaccca-input" />
+          <input name="App[Other_Compensation__c]" value="{{isset($datas['app']['Other_Compensation__c'])?$datas['app']['Other_Compensation__c']:''}}" type="text" id="text-input-id-howmuch" required="" class="gaccca-input" />
 
           <span class="gaccca-input-help-text">If not applicable please fill in n/a. Please also name the expense, e.g visa fee.</span>
         </div>
