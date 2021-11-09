@@ -1241,18 +1241,19 @@ $(".gaccca_c_location_0, .gaccca_c_address_0").on('change', function() {
 });
   window.Parsley.on('field:error', function() {
     // This global callback will be called for any field that fails validation.
-    console.log('Validation failed for: ', this.$element[0].id);
+    //console.log('Validation failed for: ', this.$element[0].id);
 
     var is_check = errors.includes(this.$element[0].id);
     if (!is_check) {
       errors.push(this.$element[0].id);
     }
-    console.log(errors);
+    //console.log(errors);
 
     var both_ids = errors[0].split(",");
-
+   if(this.$element[0].id){
     $("#" + this.$element[0].id).css('display', 'block');
     gacccaScriptContentTab('', both_ids[0], both_ids[1]);
+  }
   });
 function copyPhaseAddress(){
 
