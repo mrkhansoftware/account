@@ -15,7 +15,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
 </span>
 @endif
 
-<div id="myScroll_{{$requestDataPage['accesskey']}}"> 
+<div id="myScroll_{{$requestDataPage['accesskey']}}">
 <div class="simcardContent-tobScroll" id="simcardContent-tobScroll_{{$requestDataPage['accesskey']}}">
 <div>&nbsp;</div>
 </div>
@@ -83,7 +83,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
     </th>
     @if($requestDataPage['accesskey']=='Shipped')
     <th style='cursor: auto;'>Sim Card Information
-        
+
     </th>
     @endif
     @if($requestDataPage['accesskey']!='Shipped')
@@ -244,7 +244,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
     $dateVar2 = date_create($requestDataPage['searchObj']['serviceEndDateTo']);
     $dateVar2=date_format($dateVar2,"m/d/Y");
     @endphp
-    <td> 
+    <td>
         <input placeholder="From" value="{{$requestDataPage['searchObj']['serviceEndDate']==''?'':$dateVar1}}" type="text" class="gaccca-input-date" id='serviceEndDateFrom_{{$tab_name}}' style="height:20px !important"/>
         <input placeholder="To" value="{{$requestDataPage['searchObj']['serviceEndDateTo']==''?'':$dateVar2}}" type="text" class="gaccca-input-date" id='serviceEndDateTo_{{$tab_name}}' style="height:20px !important"/>
 
@@ -273,7 +273,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
     <td>
 
 
-       
+
         <div class="popup-text" id="editdiv_SimCardNoo_{{$tab_name.'_'.$index}}">
             <div class="popup-title">Sim Card Number</div>
             <input type="text" id="input_value_SimCardNoo_{{$tab_name.'_'.$index}}" class="gaccca-input" />
@@ -344,7 +344,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
                 <button class="gaccca-button-save" id="close_button_status_{{$tab_name.'_'.$index}}"><i class="fas fa-times"></i></button>
             </div>
         </div>
-        <span id="value_status_{{$tab_name.'_'.$index}}">{{isset($applicant['Status__c'])?$applicant['Status__c']:''}}</span>
+        <span id="value_status_{{$tab_name.'_'.$index}}" data-mobile='value_phonenumber_{{$tab_name.'_'.$index}}'>{{isset($applicant['Status__c'])?$applicant['Status__c']:''}}</span>
         <a href="javascript:void(0)" class="edit-pencil" id="edit_status_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
         @endif
     </td>
@@ -473,7 +473,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
                 <button class="gaccca-button-save" id="close_button_paymentSubmited_{{$tab_name.'_'.$index}}"><i class="fas fa-times"></i></button>
             </div>
         </div>
-       
+
         <span id="value_paymentSubmited_{{$tab_name.'_'.$index}}">{{isset($applicant['PaymentSubmited__c'])?$applicant['PaymentSubmited__c']:''}}</span>
         <a href="javascript:void(0)" class="edit-pencil" id="edit_paymentSubmited_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
 
@@ -558,23 +558,23 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
 <table style='table-layout: auto;width:100%;min-width:1300px' class='externalSimTable'>
 <thead>
 <tr>
-    
+
     <th onclick="" data-fieldApi=""> S. No.
-        
+
     </th>
     <th onclick="" data-fieldApi=""> Created Date
-        
+
     </th>
     <th onclick="" data-fieldApi=""> First Name
-        
+
     </th>
-    
+
     <th onclick="" data-fieldApi=""> Last Name
-        
+
     </th>
-    
+
     <th onclick="" data-fieldApi=""> Contact Information
-        
+
     </th>
 
         <th>Carrier</th>
@@ -583,25 +583,25 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
 
         </th>
         <th onclick="" data-fieldApi=""> Street
-        
+
         </th>
         <th onclick="" data-fieldApi=""> City
-        
+
         </th>
         <th onclick="" data-fieldApi=""> ZIP Code
-        
+
         </th>
         <th onclick="" data-fieldApi=""> Country
-        
+
         </th>
         @if($requestDataPage['accesskey']=='external_request_aerobil' || $requestDataPage['accesskey']=='external_request_gaccca')
         <th onclick="" data-fieldApi="" width='300px'> Sim Card Information
-        
+
         </th>
-        
+
         @endif
         <th onclick="" data-fieldApi=""> Action
-        
+
         </th>
 </tr>
 </thead>
@@ -609,11 +609,11 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
 @php $index = 1; @endphp
 @foreach (isset($datas['leadList'])?$datas['leadList']:[] as $lead)
 <tr>
-    
+
     <td onclick="" data-fieldApi=""> {{$index}}
-        
+
     </td>
-    <td onclick="" data-fieldApi=""> 
+    <td onclick="" data-fieldApi="">
 
     @php $createdDateSimCard = date_create(isset($lead['Created_Date__c'])?$lead['Created_Date__c']:'');
     $createdDateSimCard=date_format($createdDateSimCard,"m/d/Y");
@@ -622,18 +622,18 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         {{$createdDateSimCard}}
 
 
-        
+
         </td>
     <td onclick="" data-fieldApi="">
     {{isset($lead['FirstName'])?$lead['FirstName']:''}}
     </td>
-    
+
     <td onclick="" data-fieldApi=""> {{isset($lead['LastName'])?$lead['LastName']:''}}
-        
+
     </td>
-    
+
     <td onclick="" data-fieldApi="" > {{isset($lead['Email'])?$lead['Email']:''}}<br/>{{isset($lead['Phone'])?$lead['Phone']:''}}
-        
+
     </td>
         <td>{{isset($lead['Choose_an_Carrier__c'])?$lead['Choose_an_Carrier__c']:''}}</td>
         <td>
@@ -645,17 +645,17 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
 
         </td>
         <td onclick="" data-fieldApi=""> {{isset($lead['Street__c'])?$lead['Street__c']:''}}
-        
+
         </td>
         <td onclick="" data-fieldApi=""> {{isset($lead['City__c'])?$lead['City__c']:''}}
-        
+
         </td>
         <td onclick="" data-fieldApi=""> {{isset($lead['Zip_Postal_Code__c'])?$lead['Zip_Postal_Code__c']:''}}
-        
+
         </td>
-        
+
         <td onclick="" data-fieldApi=""> {{isset($lead['Country__c'])?$lead['Country__c']:''}}
-        
+
         </td>
         @if($requestDataPage['accesskey']=='external_request_aerobil' || $requestDataPage['accesskey']=='external_request_gaccca')
         <td>
@@ -704,13 +704,13 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         <b>Tracking Number</b><br/>
         <span id="value_trackingNumEx_{{$tab_name.'_'.$index}}">{{isset($lead['Sim_Card_Tracking_Number__c'])?$lead['Sim_Card_Tracking_Number__c']:''}}</span>
         <a href="javascript:void(0)" class="edit-pencil" id="edit_trackingNumEx_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
-        <br/><br/>  
+        <br/><br/>
     </div>
-        
+
         <div class="popup-text" id="editdiv_noteEx_{{$tab_name.'_'.$index}}">
             <div class="popup-title">Note</div>
             <textarea id="input_value_noteEx_{{$tab_name.'_'.$index}}" class="gaccca-input" maxlength="250" ></textarea>
-            
+
             <div class="button-div">
                 <button class="gaccca-button-save" id="save_button_noteEx_{{$tab_name.'_'.$index}}
             " data-showing="value_noteEx_{{$tab_name.'_'.$index}}" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-fieldApi="Additional_Informations__c" data-loclFieldId="input_value_noteEx_{{$tab_name.'_'.$index}}"><i class="fas fa-check"></i></button>
@@ -726,18 +726,18 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
 
 
         </td>
-      
+
         @endif
-        <td onclick="" data-fieldApi="" style="text-align: center;"><br/> 
+        <td onclick="" data-fieldApi="" style="text-align: center;"><br/>
         @if($requestDataPage['accesskey']!='external_request_aerobil' && $requestDataPage['accesskey']!='external_request_gaccca')
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Assign to GACCCA">Assign to GACCCA</button><br/><br/>
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Assign to Aerobil">Assign to Aerobil</button><br/><br/>
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Cancel Request">Cancel Request</button><br/><br/>
         @else
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Simcard Shipped Notification"  data-row="{{$tab_name.'_'.$index}}">Send Sim Card Shipped Notification</button><br/><br/>
-        @endif          
+        @endif
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Cancel Request without notify"  data-row="{{$tab_name.'_'.$index}}">Silent Cancel This Request</button><br/><br/>
-        
+
 </td>
 </tr>
 @php $index++; @endphp

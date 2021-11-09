@@ -214,7 +214,7 @@ cursor: pointer; /* Add a pointer on hover */
     }
 
     .externalSimTable th{
-        cursor: auto; 
+        cursor: auto;
     }
 
 
@@ -377,7 +377,7 @@ cursor: pointer; /* Add a pointer on hover */
         position: fixed;
         top: 0;
         width: 100%;
-    } 
+    }
     .gaccca_alert {
     padding: 20px;
     background-color: #d01709;
@@ -428,12 +428,12 @@ cursor: pointer; /* Add a pointer on hover */
 
 <div class="loaderRecordSave" id='loaderRecordSave'></div>
 <div class="gaccca_alert">
-  <span class="gaccca_closebtn">&times;</span>  
+  <span class="gaccca_closebtn">&times;</span>
   <strong>Error!</strong> <span class='gaccca_alert_error_message'></span>
 </div>
 
 <div class="gaccca_alert gaccca_success">
-  <span class="gaccca_closebtn">&times;</span>  
+  <span class="gaccca_closebtn">&times;</span>
   <strong>Success!</strong> <span class='gaccca_alert_success_message'></span>
 </div>
 <div class="gaccca-header">
@@ -460,7 +460,7 @@ cursor: pointer; /* Add a pointer on hover */
                                 Password</a></li>
                         <li class="header-simcard-li"><a href="/logout_account">Logout</a></li>
                     </ul>
-                    
+
                 </div> -->
                 <ul class="gaccca-display-menu-profile gaccca-font-family gaccca-margin-right-0">
 
@@ -505,7 +505,7 @@ cursor: pointer; /* Add a pointer on hover */
 </div>
 
 <div id="main_parent_tab" class="gaccca_simcard_tabcontent-Parent">
-    
+
 <div class='main-panel'>
 <div class="gaccca-simcard-tab">
     <button class="gaccca_simcard_tablinks" id='tab_Booked_Simcard' data-accesskey="Booked" data-status='Booked Payment Pending' onclick="simCardManageTab(event, this,  'booked_and_payment')">Booked and
@@ -680,11 +680,11 @@ function loadAjaxContent() {
         var which_element = current_id.split("close_button_");
         $("#editdiv_" + which_element[1]).hide();
         $(".externalContentSimClass").show();
-        
+
 
     });
 
-    $('[id^="save_button_"]').on("click", function() { 
+    $('[id^="save_button_"]').on("click", function() {
         $(".edit-pencil").show();
         var current_id = $(this).attr("id");
         var which_element = current_id.split("save_button_");
@@ -692,7 +692,7 @@ function loadAjaxContent() {
         var fieldApi = $(this).attr("data-fieldapi");
         var recordId = $(this).attr("data-recordid");
         var localFieldId = $(this).attr("data-loclFieldId");
-        
+        console.log(localFieldId)
         var className = $("#" + localFieldId).attr("class");
         if (className != undefined && className.includes('gaccca-input-date')) {
             datatype = 'date';
@@ -705,7 +705,7 @@ function loadAjaxContent() {
           var valSimTemp=valueInput.split(' ').join('');
           var patt1 = /^[0-9]*$/;
           var result = patt1.test(valSimTemp);
-    if(!result){ 
+    if(!result){
       $('.simcardErrorValidationMessage').html("Please fill only numbers.");
       return false;
     }
@@ -726,7 +726,7 @@ function loadAjaxContent() {
         if($('#value_simcardnumberEx_'+row).text().trim()=='' && action=='Simcard Shipped Notification'){
             showErrorGaccca('Sim card number is missing.');
         return;
-        
+
         }
 
         if($('#value_carrierEx_'+row).text().trim()=='' && action=='Simcard Shipped Notification'){
@@ -739,7 +739,7 @@ function loadAjaxContent() {
             showErrorGaccca('Tracking number is missing.');
         return;
         }
-        
+
         if(action=='Assign to GACCCA'){
 
             messageWarning='Assign to GACCCA?, Please confirm';
@@ -781,9 +781,9 @@ function loadAjaxContent() {
         var tableWidth = table.width();
         fakeDiv.width(tableWidth);
         if(fakeDiv.width()<=fakeContainer.width()){
-            fakeContainer.hide();  
+            fakeContainer.hide();
         }else{
-            fakeContainer.show();  
+            fakeContainer.show();
         }
         fakeContainer.scroll(function() {
             //console.log('fakeContainer');
@@ -801,11 +801,11 @@ function loadAjaxContent() {
         };
 
         window.onresize = function() {
-            fakeContainer.show(); 
+            fakeContainer.show();
             if(fakeDiv.width()<=fakeContainer.width()){
-            fakeContainer.hide();  
+            fakeContainer.hide();
         }else{
-            fakeContainer.show();  
+            fakeContainer.show();
         }
         };
         var scrollDiv = document.getElementById("myScroll_" + accesskeyVar);
@@ -1122,7 +1122,7 @@ function loadValues() {
 }
 
 function ajaxRequest(formData) {
-    //console.log(formData);
+    console.log(formData);
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1185,7 +1185,7 @@ function ajaxRequest(formData) {
                 }
                 updateTabRecordCountParent(data);
                 loadAjaxContent();
-                
+
                 }
             }
         },
@@ -1197,7 +1197,7 @@ function ajaxRequest(formData) {
 
 
 function updateTabRecordCount(totalRecords) {
-    //tabRecordwaiting 
+    //tabRecordwaiting
     $('#tabRecordShipped').html(totalRecords.Shipped);
     $('#tabRecordactive').html(totalRecords.active);
     $('#tabRecordall').html(totalRecords.all);
@@ -1250,7 +1250,7 @@ for (i = 0; i < close.length; i++) {
 }
 function showErrorGaccca(message) {
     $(".gaccca_alert_error_message").html(message);
-    
+
     $(".gaccca_alert").show();
     $(".gaccca_success").hide();
 }

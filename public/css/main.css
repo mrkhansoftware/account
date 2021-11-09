@@ -17,16 +17,16 @@ body {
 
 
 /*
- 
+
 Grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
- 
+
  */
 
 .gaccca-grid {
   display: flex;
 }
 
-/* 
+/*
 
 The wrap property specifies whether the flexible items should wrap or not
 */
@@ -465,8 +465,8 @@ css start
 
 /* select tag css end */
 
-/* 
-below css is define website header 
+/*
+below css is define website header
 Header css start
 */
 
@@ -616,7 +616,7 @@ Header css start
   margin-left: 140px;
 }
 
-/* 
+/*
 
 css start for login page
 */
@@ -911,7 +911,7 @@ ul.gaccca-breadcrumb li a {
   text-decoration: underline;
 } */
 
-/* 
+/*
 From here start main page css : main page css
 
 */
@@ -2418,7 +2418,7 @@ input[type="file"].gaccca-parsley-error+ul {
 }
 
 
-  
+
 } */
 
 
@@ -2439,47 +2439,47 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-small-size_1-of-12 {
     width: 8.3333333333%;
   }
-  
+
   .gaccca-small-size_2-of-12 {
     width: 16.6666666667%;
   }
-  
+
   .gaccca-small-size_3-of-12 {
     width: 25%;
   }
-  
+
   .gaccca-small-size_4-of-12 {
     width: 33.3333333333%;
   }
-  
+
   .gaccca-small-size_5-of-12 {
     width: 41.6666666667%;
   }
-  
+
   .gaccca-small-size_6-of-12 {
     width: 50%;
   }
-  
+
   .gaccca-small-size_7-of-12 {
     width: 58.3333333333%;
   }
-  
+
   .gaccca-small-size_8-of-12 {
     width: 66.6666666667%;
   }
-  
+
   .gaccca-small-size_9-of-12 {
     width: 75%;
   }
-  
+
   .gaccca-small-size_10-of-12 {
     width: 83.3333333333%;
   }
-  
+
   .gaccca-small-size_11-of-12 {
     width: 91.6666666667%;
   }
-  
+
   .gaccca-small-size_1-of-1 {
     width: 100%;
   }
@@ -2523,7 +2523,7 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-half-login-image {
     display: none;
   }
-  
+
   /* .gaccca-accout-access-text{
    font-size: 4.64vw !important;
   } */
@@ -2583,7 +2583,7 @@ input[type="file"].gaccca-parsley-error+ul {
 .gaccca-download-participant-handbook-margin {
   margin: 0px 8% !important;
 }
- 
+
 }
 
 
@@ -2600,47 +2600,47 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-medium-size_1-of-12 {
     width: 8.3333333333%;
   }
-  
+
   .gaccca-medium-size_2-of-12 {
     width: 16.6666666667%;
   }
-  
+
   .gaccca-medium-size_3-of-12 {
     width: 25%;
   }
-  
+
   .gaccca-medium-size_4-of-12 {
     width: 33.3333333333%;
   }
-  
+
   .gaccca-medium-size_5-of-12 {
     width: 41.6666666667%;
   }
-  
+
   .gaccca-medium-size_6-of-12 {
     width: 50%;
   }
-  
+
   .gaccca-medium-size_7-of-12 {
     width: 58.3333333333%;
   }
-  
+
   .gaccca-medium-size_8-of-12 {
     width: 66.6666666667%;
   }
-  
+
   .gaccca-medium-size_9-of-12 {
     width: 75%;
   }
-  
+
   .gaccca-medium-size_10-of-12 {
     width: 83.3333333333%;
   }
-  
+
   .gaccca-medium-size_11-of-12 {
     width: 91.6666666667%;
   }
-  
+
   .gaccca-medium-size_1-of-1 {
     width: 100%;
   }
@@ -2735,7 +2735,7 @@ input[type="file"].gaccca-parsley-error+ul {
   .gaccca-half-login{
     height: 100vh !important;
   }
-  
+
   .gaccca-create-program-account {
     margin-top: 100px !important;
   }
@@ -2746,7 +2746,7 @@ input[type="file"].gaccca-parsley-error+ul {
 
 
 
-} 
+}
 
 @media only screen and (min-width: 1025px) {
 
@@ -2843,7 +2843,7 @@ input[type="file"].gaccca-parsley-error+ul {
   margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
   left: 0;
   right: 0;
-  
+
   padding: 35px 17px;
   width: 497px;
   height: 198px;
@@ -2855,12 +2855,12 @@ input[type="file"].gaccca-parsley-error+ul {
   box-sizing: border-box;
   border-radius: 2px;
   }
-  
+
   .gPopUpWarn  #popupGwarn {
   -webkit-box-shadow:  0px 0px 0px 9999px rgb(196 196 196 / 46%);
   box-shadow:  0px 0px 0px 9999px rgb(196 196 196 / 46%);
   }
-  
+
   .gPopUpWarn .p1{
   display: block;
   flex-direction: column;
@@ -2875,7 +2875,7 @@ input[type="file"].gaccca-parsley-error+ul {
   margin: 4px 0px;
   color: #262626;
   }
-  
+
   .gPopUpWarn .p2{
   display: flex;
   flex-direction: column;
@@ -2900,17 +2900,17 @@ input[type="file"].gaccca-parsley-error+ul {
     width: 52px;
     height: 28px;
   }
-  
-  
+
+
   @media only screen and (max-width: 500px) {
     .gPopUpWarn .popup {
       padding: 35px 5px;
       width: 290px;
       height: 250px;
-    }  
-  
+    }
+
   }
-  .gaccca-candidate-image-center{     
+  .gaccca-candidate-image-center{
     width: 100%;
     display: block;
   }
@@ -2924,7 +2924,7 @@ input[type="file"].gaccca-parsley-error+ul {
     flex-direction: row;
     align-items: flex-start;
     padding: 1px 8px;
-    
+
 
 background: #1890FF;
 /* Daybreak Blue / blue-6 */
@@ -2944,7 +2944,7 @@ line-height: 20px;
     flex-direction: row;
     align-items: flex-start;
     padding: 1px 8px;
-    
+
     background: #FFF1F0;
 opacity: 0.85;
 
@@ -2961,7 +2961,7 @@ line-height: 20px;
     flex-direction: row;
     align-items: flex-start;
     padding: 1px 8px;
-    
+
     background: #F6FFED;
 opacity: 0.85;
 
@@ -2979,7 +2979,7 @@ line-height: 20px;
     flex-direction: row;
     align-items: flex-start;
     padding: 1px 8px;
-    
+
     background: #F5F5F5;
 /* Gray / gray-5 */
 
@@ -3036,7 +3036,7 @@ line-height: 20px;
 
 .gaccca-popup-modal{
   position: fixed;
- 
+
   padding: 35px 17px;
   width: 497px;
   height: 198px;
@@ -3077,6 +3077,12 @@ padding: .3em;
 .hg-name{
   padding-bottom: 3px;
 }
-
-
- 
+.lastUploadMessage{
+  border: 1px solid #5bac38;
+box-sizing: border-box;
+border-radius: 6px;
+max-width: 840px;
+padding: 6px 16px;
+background: #4CAF50;
+color: white;
+}

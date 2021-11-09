@@ -131,9 +131,9 @@
       </label>
       <div class="gaccca-form-element__control">
         <div class="gaccca-select_container">
-          <!-- <select class="gaccca-select" id="select-tod">                      
+          <!-- <select class="gaccca-select" id="select-tod">
                 <option>select</option>
-                
+
               </select> -->
 
           {!! Form::select('onForm[Program_Category__c]', array_reverse($datas['programCategory']), isset($datas['onForm']['Program_Category__c'])?$datas['onForm']['Program_Category__c']:'', [ 'class' => 'gaccca-select',]) !!}
@@ -284,9 +284,9 @@
 
           {!! Form::select('onForm[State1__c]', array_reverse($datas['statePick']), isset($datas['onForm']['State1__c'])?$datas['onForm']['State1__c']:'', [ 'class' => 'gaccca-select gaccca-required']) !!}
 
-          <!-- <select class="gaccca-select" id="select-tod">                      
+          <!-- <select class="gaccca-select" id="select-tod">
                 <option>select</option>
-                
+
               </select> -->
         </div>
       </div>
@@ -519,7 +519,7 @@
 
       <div class="gaccca-form-element__control">
         <label class="gaccca-form-element__label">
-          Annual Revenue <span class="gaccca-text-required" title="required">*</span> </label> 
+          Annual Revenue <span class="gaccca-text-required" title="required">*</span> </label>
         <span class="gaccca-radio">
           <input type="radio" id="radio-policy-three-million" class='gaccca-required' value="$0 to $3 Million" name="Annual_Revenue" {{ (isset($datas['onForm']['Annual_Revenue__c']) && $datas['onForm']['Annual_Revenue__c']=="$0 to $3 Million")? "checked" : "" }} />
           <label class="gaccca-radio__label" for="radio-policy-three-million">
@@ -788,7 +788,7 @@
             <label class="gaccca-form-element__label">
               Phase Location <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Name]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_location{{$i}}" class="gaccca-input gaccca-required gaccca-input-phaseL" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Name]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Name'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Name']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_location{{$i}}" class="gaccca-input gaccca-required gaccca-input-phaseL gaccca_Phase_location gaccca_c_location_{{$i}}" />
             </div>
           </div>
         </div>
@@ -801,7 +801,7 @@
             <label class="gaccca-form-element__label">
               Phase Site Address </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase_Site_Address__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_adress{{$i}}" class="gaccca-input gaccca-required" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phase_Site_Address__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phase_Site_Address__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phase_adress{{$i}}" class="gaccca-input gaccca-required gaccca_Phase_address gaccca_c_address_{{$i}}" />
 
             </div>
           </div>
@@ -857,8 +857,16 @@
             <label class="gaccca-form-element__label">
               Primary Phase Supervisor <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Primary_Phase_Supervisor__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},supervisior{{$i}}" class="gaccca-input gaccca-required" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Primary_Phase_Supervisor__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Primary_Phase_Supervisor__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},supervisior{{$i}}" class="gaccca_sname gaccca-input gaccca-required gaccca_c_sname_{{$i}}" data-value='{{$i}}'/>
 
+             @if($i!=0)
+              <a href='javascript:void(0)' class="copyExistingSup copyExSup{{$i}}" data-value='{{$i}}'>Insert Existing Supervisor</a>
+
+
+               <select class="gaccca-select copyExistingSupSelect copyExSupSelect{{$i}}" data-value='{{$i}}'>
+                 <option>Select Existing Supervisor</option>
+                   </select>
+            @endif
             </div>
           </div>
         </div>
@@ -871,7 +879,7 @@
             <label class="gaccca-form-element__label">
               Supervisor Title <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Supervisor_Title__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},sup_title{{$i}}" class="gaccca-input gaccca-required" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Supervisor_Title__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Supervisor_Title__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},sup_title{{$i}}" class="gaccca-input gaccca-required gaccca_c_title_{{$i}}" />
 
             </div>
           </div>
@@ -885,7 +893,7 @@
             <label class="gaccca-form-element__label">
               E-mail <span class="gaccca-text-required" title="required">*</span> </label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][E_mail__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c']:''}}" type="email" id="phase_btn_{{$i+1}},phase__{{$i+1}},email{{$i}}" class="gaccca-input gaccca-email gaccca-required" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][E_mail__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['E_mail__c']:''}}" type="email" id="phase_btn_{{$i+1}},phase__{{$i+1}},email{{$i}}" class="gaccca-input gaccca-email gaccca-required gaccca_c_email_{{$i}}" />
 
             </div>
           </div>
@@ -899,7 +907,7 @@
             <label class="gaccca-form-element__label">
               Phone Number <span class="gaccca-text-required" title="required">*</span></label>
             <div class="gaccca-form-element__control">
-              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phone_Number__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phone{{$i}}" class="gaccca-input gaccca-required" />
+              <input name="DSPhaseListwrap[{{$i}}][DSPhase][Phone_Number__c]" value="{{isset($datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c'])?$datas['DSPhaseListwrap'][$i]['DSPhase']['Phone_Number__c']:''}}" type="text" id="phase_btn_{{$i+1}},phase__{{$i+1}},phone{{$i}}" class="gaccca-input gaccca-required gaccca_c_phone_{{$i}}" />
 
             </div>
           </div>
@@ -1196,7 +1204,41 @@ if(applicantIdRecord=='' || applicantIdContact=='' || applicantIdRecord=='null' 
 
   });
 
+$(".copyExistingSup").on('click', function() {
+var phaseNum=$(this).attr('data-value');
+  $(".copyExSup"+phaseNum).hide();
+  $(".copyExSupSelect"+phaseNum).show();
+});
+$(".gaccca_sname").on('change', function() {
+createSupervisorPicklist();
+});
 
+function createSupervisorPicklist(pickValFrom,pickValTo){
+  var options='<option value="">Select Supervisor</option>';
+  for(var a of $(".gaccca_sname")){
+    if(a.value.trim()!=''){
+    options+='<option value="'+a.getAttribute('data-value')+'">'+a.value+'</option>';
+  }
+  }
+  $(".copyExistingSupSelect").html(options);
+  if(pickValFrom && pickValTo){
+    $('.copyExSupSelect'+pickValTo).val(pickValFrom);
+  }
+}
+
+$(".copyExistingSupSelect").on('change', function() {
+   var dataFrom=$(this).val();
+   var dataTo=$(this).attr('data-value');
+   $('.gaccca_c_sname_'+dataTo).val($('.gaccca_c_sname_'+dataFrom).val());
+   $('.gaccca_c_title_'+dataTo).val($('.gaccca_c_title_'+dataFrom).val());
+   $('.gaccca_c_email_'+dataTo).val($('.gaccca_c_email_'+dataFrom).val());
+   $('.gaccca_c_phone_'+dataTo).val($('.gaccca_c_phone_'+dataFrom).val());
+   createSupervisorPicklist(dataFrom,dataTo);
+});
+
+$(".gaccca_c_location_0, .gaccca_c_address_0").on('change', function() {
+  copyPhaseAddress();
+});
   window.Parsley.on('field:error', function() {
     // This global callback will be called for any field that fails validation.
     console.log('Validation failed for: ', this.$element[0].id);
@@ -1212,10 +1254,14 @@ if(applicantIdRecord=='' || applicantIdContact=='' || applicantIdRecord=='null' 
     $("#" + this.$element[0].id).css('display', 'block');
     gacccaScriptContentTab('', both_ids[0], both_ids[1]);
   });
+function copyPhaseAddress(){
 
-
-
-
+  $('.gaccca_Phase_location').val($('.gaccca_c_location_0').val());
+  $('.gaccca_Phase_address').val($('.gaccca_c_address_0').val());
+}
+createSupervisorPicklist();
+copyPhaseAddress();
+$('.copyExistingSupSelect').hide();
 });
 </script>
 

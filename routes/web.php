@@ -19,7 +19,7 @@ use Illuminate\Routing\Matching\UriValidator;
 
 $validators = IlluminateRoute::getValidators();
 $validators[] = new CaseInsensitiveUriValidator;
-IlluminateRoute::$validators = array_filter($validators, function($validator) { 
+IlluminateRoute::$validators = array_filter($validators, function($validator) {
   return get_class($validator) != UriValidator::class;
 });
 
@@ -111,7 +111,8 @@ Route::get('/final_evaluation_account', 'FinalEvaluationAccountController@index'
 
 Route::resource('HostCompanyAgrmentAcc', 'HostCompanyAgrmentAccController');
 Route::get('/host_company_agreement_account', 'HostCompanyAgrmentAccController@index');
-
+Route::get('/Workers_Compensation_Certificate', 'HostCompanyAgrmentAccController@indexWorkCompensation');
+Route::post('/Workers_Compensation_Certificate_post', 'HostCompanyAgrmentAccController@work');
 Route::resource('DS7002Trainigsplan', 'DS7002TrainigsplanController');
 Route::get('/DS_7002_Trainigsplan', 'DS7002TrainigsplanController@index');
 
@@ -250,13 +251,13 @@ Route::get('/JVisaParticipantInfo', 'JVisaParticipantInfoController@index');
 Route::resource('AddNewParticipant', 'AddNewParticipantController');
 Route::get('/Add_New_Participant', 'AddNewParticipantController@index');
 
-Route::get('/existing_customer_list', 'AddNewParticipantController@existingCustomerList'); 
+Route::get('/existing_customer_list', 'AddNewParticipantController@existingCustomerList');
 
 Route::get('/customer_information', 'AddNewParticipantController@existingCustomerInfo');
 Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPassword');
 
 
-  
+
 
 
  Route::resource('AgentParticipants', 'AgentParticipantsController');
@@ -266,7 +267,7 @@ Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPa
  Route::post('/agentParticipantsList', 'AgentParticipantsController@store');
  Route::post('/InsuranceResponse', 'InsuranceController@store');
 
- 
+
 
  Route::resource('SimcardManage', 'SimcardManageController');
  Route::get('/simcardmanagepage', 'SimcardManageController@index');
@@ -274,7 +275,7 @@ Route::post('/ApplicantPDFWithVideo', 'ApplicantResumeController@resumeDetailsPa
  Route::post('/common_api_simcardmanage', 'SimcardManageController@commonMethodSimcardManage');
 
  Route::get('/cronjob', 'CronJobController@index');
- 
+
 
 
  Route::get('/new-candidates', 'NewCandidatesController@index');
@@ -286,16 +287,16 @@ Route::get('/bookingCancel', 'UserController@bookingCancel');
 Route::get('/AgencyJobSearch', 'AgencyJobSearchController@index');
 Route::get('/AgencyJobSearchDetail', 'AgencyJobSearchController@detail');
 Route::get('/login_account', 'LoginController@index');
-Route::post('/handleCsrf', 'UserController@csrfHandle'); 
+Route::post('/handleCsrf', 'UserController@csrfHandle');
 Route::get('/loginAccountInternal', 'InternalLoginAccountController@internal');
 Route::post('/ajax_after_login', 'LoginController@ajaxAfterLogin');
 Route::post('/b1videoUpdate', 'B1VideoController@ajaxQuestionSubmit');
-Route::post('/b1VideScriptReady', 'VideoResumeController@scriptreadySubmit');  
-Route::post('/writeScriptPlacement', 'WriteYourScriptController@writeScriptPlacementMethod'); 
-Route::post('/applicantResumePlacement', 'ApplicantResumeController@ajaxApplicantResume'); 
-Route::post('/applicantResumePlacementAttachment', 'ApplicantResumeController@ajaxApplicantResumeAttachment'); 
-Route::post('/scheduleCallBooking', 'ScheduleCallController@ajaxscheduleCall'); 
-Route::post('/applicantResumeAjax', 'ApplicantResumeController@applicantResumeAjaxCall'); 
+Route::post('/b1VideScriptReady', 'VideoResumeController@scriptreadySubmit');
+Route::post('/writeScriptPlacement', 'WriteYourScriptController@writeScriptPlacementMethod');
+Route::post('/applicantResumePlacement', 'ApplicantResumeController@ajaxApplicantResume');
+Route::post('/applicantResumePlacementAttachment', 'ApplicantResumeController@ajaxApplicantResumeAttachment');
+Route::post('/scheduleCallBooking', 'ScheduleCallController@ajaxscheduleCall');
+Route::post('/applicantResumeAjax', 'ApplicantResumeController@applicantResumeAjaxCall');
 Route::get('/resetPassword', 'LoginController@resetPassword');
 
 
@@ -312,6 +313,3 @@ Route::resource('closeAccount', 'CloseAccountController');
 
 Route::get('/logout_account', 'LogoutController@index');
 Route::resource('LogoutAccount', 'LogoutController');
-
-
-
