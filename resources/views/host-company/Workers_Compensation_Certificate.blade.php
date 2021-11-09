@@ -1,7 +1,7 @@
 @if (isset($datas['isAccessAble']) && $datas['isAccessAble'])
 @include('common.header_without_menu',['datas'=>$datas,'title' =>'Upload New Workers Compensation','page'=>'Workers_Compensation_Certificate'])
 
-{!! Form::open(['action' => 'HostCompanyAgrmentAccController@work','files'=>true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'HCA-plan']) !!}
+{!! Form::open(['action' => 'HostCompanyAgrmentAccController@work','files'=>true, 'method' => 'POST', 'id' => 'gacccaForm_additional']) !!}
 
 
 
@@ -64,7 +64,7 @@ Please upload a new and valid Workers Compensation Certificate.
          <div class="gaccca-form-element gaccca-form-element-margin">
 
       <input type='hidden' name='formSubmitType' id='formSubmitType'/>
-        <button id='send-to-gaccca-btn' class="gaccca-button-save-green" style="padding: 8px 10px;">Send to GACC California</button>
+        <button  id="gaccca_saveBtn_additional" class="gaccca-button-save-green" style="padding: 8px 10px;">Send to GACC California</button>
 
     </div>
   </div>
