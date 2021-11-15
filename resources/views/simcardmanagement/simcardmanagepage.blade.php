@@ -692,7 +692,8 @@ function loadAjaxContent() {
         var fieldApi = $(this).attr("data-fieldapi");
         var recordId = $(this).attr("data-recordid");
         var localFieldId = $(this).attr("data-loclFieldId");
-        console.log(localFieldId)
+        var dataMobile = $(this).attr("data-mobile");
+        console.log(dataMobile)
         var className = $("#" + localFieldId).attr("class");
         if (className != undefined && className.includes('gaccca-input-date')) {
             datatype = 'date';
@@ -710,6 +711,17 @@ function loadAjaxContent() {
       return false;
     }
         }
+
+        if(fieldApi.toLowerCase()=='status__c' && valueInput=='Active' ){
+        var mobileNum=$('#'+dataMobile).html().trim();
+        if(!mobileNum){
+          $('.simcardErrorValidationMessage').html("Activated phone number is missing.");
+          return false;
+        }
+
+        }
+
+
         $("#" + showingSpan).html($("#" + localFieldId).val());
         $('.simcardErrorValidationMessage').html("");
        $("#editdiv_" + which_element[1]).hide();

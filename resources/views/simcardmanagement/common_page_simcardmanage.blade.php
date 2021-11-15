@@ -338,13 +338,13 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
             <div class="popup-title">Status</div>
 
             {!! Form::select('Status', array_reverse($datas['status']), isset($applicant['Status__c'])?$applicant['Status__c']:'', [ 'class' => 'gaccca-select','id' => 'input_value_status_'.$tab_name.'_'.$index]) !!}
-
+            <span class='simcardErrorValidationMessage'></span>
             <div class="button-div">
-                <button class="gaccca-button-save" id="save_button_status_{{$tab_name.'_'.$index}}" data-showing="value_status_{{$tab_name.'_'.$index}}" data-recordId="{{$applicant['Id']}}" data-fieldApi="Status__c" data-loclFieldId="input_value_status_{{$tab_name.'_'.$index}}"><i class="fas fa-check"></i></button>
+                <button class="gaccca-button-save" id="save_button_status_{{$tab_name.'_'.$index}}" data-showing="value_status_{{$tab_name.'_'.$index}}" data-recordId="{{$applicant['Id']}}" data-fieldApi="Status__c" data-loclFieldId="input_value_status_{{$tab_name.'_'.$index}}" data-mobile='value_phonenumber_{{$tab_name.'_'.$index}}'><i class="fas fa-check"></i></button>
                 <button class="gaccca-button-save" id="close_button_status_{{$tab_name.'_'.$index}}"><i class="fas fa-times"></i></button>
             </div>
         </div>
-        <span id="value_status_{{$tab_name.'_'.$index}}" data-mobile='value_phonenumber_{{$tab_name.'_'.$index}}'>{{isset($applicant['Status__c'])?$applicant['Status__c']:''}}</span>
+        <span id="value_status_{{$tab_name.'_'.$index}}" >{{isset($applicant['Status__c'])?$applicant['Status__c']:''}}</span>
         <a href="javascript:void(0)" class="edit-pencil" id="edit_status_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
         @endif
     </td>
