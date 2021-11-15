@@ -25,7 +25,7 @@ class DS7002TrainigsplanController extends Controller
         $datas = 'App\Services\Helper'::getRequest('ApiDS7002Controller/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
-        // echo '<pre>'; print_r($datas); die; 
+        // echo '<pre>'; print_r($datas); die;
 
 
         return view('host-company/DS_7002_Trainigsplan')->with(compact('datas'));
@@ -68,23 +68,23 @@ class DS7002TrainigsplanController extends Controller
         unset($finalReq['lastNameFirstName']);
         unset($finalReq['Contact__c']);
         unset($finalReq['NewGdriveID__c']);
-        unset($finalReq['HostCompany_Gdrive_Folder_Id__c']);   
-        unset($finalReq['onfrmId']);   
+        unset($finalReq['HostCompany_Gdrive_Folder_Id__c']);
+        unset($finalReq['onfrmId']);
 
         //echo '<pre>'; print_r($finalReq);
 
         $resp='App\Services\Helper'::postRequest($finalReq, 'ApiDS7002Controller');
         //die;
 if($resp=='"OK"'){
-    $finalReqLog['requestData']=json_encode($finalReq);
+  /*  $finalReqLog['requestData']=json_encode($finalReq);
     $finalReqLog['requestError']=$resp;
     $finalReqLog['requestClass']='ApiDS7002Controller--->successCase';
-    'App\Services\Helper'::postRequest($finalReqLog,'ApiErrorEmailClass'); 
-
+    'App\Services\Helper'::postRequest($finalReqLog,'ApiErrorEmailClass');
+*/
 
         return redirect()->action('DS7002TrainigsplanController@index', ['isSave' => 1, 'orgid' => $EncId]);
 }else{
-   
+
     'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiDS7002Controller');
 }
     }
