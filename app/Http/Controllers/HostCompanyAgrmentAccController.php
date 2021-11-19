@@ -142,7 +142,10 @@ class HostCompanyAgrmentAccController extends Controller
     {
         $finalReq = $request->all();
         /*------------------file upload ------*/
-
+        if(empty($finalReq)) {
+          return redirect()->action('HostCompanyAgrmentAccController@indexWorkCompensation', [ 'orgid' => $EncId]);
+          
+        }
         $unique_Folder_Id;
         if ($finalReq['NewGdriveID__c'] == '' || 'App\Services\Helper'::isFolderExist($finalReq['NewGdriveID__c']) != '200') {
             $Google_Drive_Folder_Id = 'App\Services\Helper'::returnFolderId('applicant');
