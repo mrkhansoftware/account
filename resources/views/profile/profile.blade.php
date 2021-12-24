@@ -9,7 +9,7 @@
 <div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">My Profile</h1>
   <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
-    <p>Please provide all requested information. 
+    <p>Please provide all requested information.
     </p>
     <p> The provided information will be used for your visa application. Please make sure all information is up-to-date.</p>
   </div>
@@ -173,7 +173,7 @@
         <div class="gaccca-form-element__control">
           <!-- <input type="text" id="text-input-id-9"  required="" class="gaccca-input" /> -->
           {!! Form::text('con[MailingCity]',isset($datas['con']['MailingCity'])?$datas['con']['MailingCity']:'', [
-          'class' => 'gaccca-input',
+          'class' => 'gaccca-input gaccca-input-city',
           'required' => 'required',
           ]) !!}
           <span class="gaccca-input-help-text"></span>
