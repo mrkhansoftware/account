@@ -188,7 +188,7 @@
         <div class="gaccca-form-element__control">
           <!-- <input type="text" id="text-input-id-10"  required="" class="gaccca-input" /> -->
           {!! Form::text('con[MailingPostalCode]',isset($datas['con']['MailingPostalCode'])?$datas['con']['MailingPostalCode']:'', [
-          'class' => 'gaccca-input',
+          'class' => 'gaccca-input gaccca-input-postal',
           'required' => 'required',
           ]) !!}
           <span class="gaccca-input-help-text"></span>

@@ -420,6 +420,7 @@
             jQuery("input.gaccca-input:text").attr('maxlength', '255');
             jQuery("input.gaccca-input-phone:text").attr('maxlength', '40');
             jQuery("input.gaccca-input-city:text").attr('maxlength', '40');
+            jQuery("input.gaccca-input-postal:text").attr('maxlength', '18');
             jQuery("#signHiddenData").removeAttr('maxlength');
         });
     </script>
