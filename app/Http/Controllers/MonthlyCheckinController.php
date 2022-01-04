@@ -23,24 +23,6 @@ return 'App\Services\Helper'::returnUrl();
  $datas='App\Services\Helper'::getRequest('ApiMonthlyCheckInClass/'.$idCon);
 $datas = json_decode($datas, true);
 $datas = json_decode($datas, true);
-//echo '<pre>'; print_r($datas); die;
-session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
-if(isset($datas['ap']['Id'])){
-session()->put('applicantId', $datas['ap']['Id']);
-}
-if(isset($datas['ap']['NewGdriveID__c'])){
-session()->put('NewGdriveID__c', $datas['ap']['NewGdriveID__c']);
-}
-
-if(isset($datas['ap']['Google_Drive_Evaluation_Form__c'])){
-session()->put('Google_Drive_Evaluation_Form__c', $datas['ap']['Google_Drive_Evaluation_Form__c']);
-}
-
-
-if(isset($datas['onfrm']['Id'])){
-session()->put('onfrmId', $datas['onfrm']['Id']);
-}
-session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
 
 return view('j1-visa/monthly_Checkin')->with(compact('datas'));
 
@@ -70,40 +52,40 @@ $finalReq = $request->all();
 
 
  /*-----FILE UPLOAD-------------*/
-     
+
  $unique_Folder_Id;
- if(session()->get('NewGdriveID__c')=='' || 'App\Services\Helper'::isFolderExist(session()->get('NewGdriveID__c'))!='200'){
+ if($finalReq['NewGdriveID__c']=='' || 'App\Services\Helper'::isFolderExist($finalReq['NewGdriveID__c'])!='200'){
   $Google_Drive_Folder_Id='App\Services\Helper'::returnFolderId('applicant');
-  $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, session()->get('lastNameFirstName'));
+  $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, $finalReq['lastNameFirstName']);
   $finalReq['applicant']['NewGdriveID__c']=$unique_Folder_Id;
 }else{
-  $unique_Folder_Id= session()->get('NewGdriveID__c');
+  $unique_Folder_Id= $finalReq['NewGdriveID__c'];
 }
 
-if(session()->get('Google_Drive_Evaluation_Form__c')==''  || 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Evaluation_Form__c'))!='200'){
+if($finalReq['Google_Drive_Evaluation_Form__c']==''  || 'App\Services\Helper'::isFolderExist($finalReq['Google_Drive_Evaluation_Form__c'])!='200'){
  $Google_Drive_Folder_Id=$unique_Folder_Id;
  $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id,'Evaluation');
  $finalReq['applicant']['Google_Drive_Evaluation_Form__c']=$unique_Folder_Id;
 }else{
- $unique_Folder_Id= session()->get('Google_Drive_Evaluation_Form__c');
+ $unique_Folder_Id= $finalReq['Google_Drive_Evaluation_Form__c'];
 }
 
 
 if(isset($finalReq['fileIn1'])){
 $fileCont = base64_encode(file_get_contents($request->file('fileIn1')));
 $fileType=$request->file('fileIn1')->getMimeType();
-'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_monthlyCheckin_1', $fileType, $fileCont);
+'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_monthlyCheckin_1', $fileType, $fileCont);
 }
 if(isset($finalReq['fileIn2'])){
 $fileCont = base64_encode(file_get_contents($request->file('fileIn2')));
 $fileType=$request->file('fileIn2')->getMimeType();
-'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_monthlyCheckin_2', $fileType, $fileCont);
+'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_monthlyCheckin_2', $fileType, $fileCont);
 
 }
 if(isset($finalReq['fileIn3'])){
 $fileCont = base64_encode(file_get_contents($request->file('fileIn3')));
 $fileType=$request->file('fileIn3')->getMimeType();
-'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_monthlyCheckin_3', $fileType, $fileCont);
+'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_monthlyCheckin_3', $fileType, $fileCont);
 
 }
 
@@ -111,8 +93,8 @@ $fileType=$request->file('fileIn3')->getMimeType();
 /*-----FILE UPLOAD----END---------*/
 
 
-$finalReq['applicant']['id']=session()->get('applicantId');
-$finalReq['onfrm']['id']=session()->get('onfrmId');
+$finalReq['applicant']['id']=$finalReq['applicantId'];
+$finalReq['onfrm']['id']=$finalReq['onfrmId'];
 $finalReq['applicantData']=json_encode($finalReq['applicant']);
 $finalReq['onlineFormData']=json_encode($finalReq['onfrm']);
 unset($finalReq['fileIn1']);
@@ -120,8 +102,14 @@ unset($finalReq['fileIn2']);
 unset($finalReq['fileIn3']);
 unset($finalReq['_token']);
 unset($finalReq['applicant']);
-
 unset($finalReq['onfrm']);
+
+unset($finalReq['lastNameFirstName']);
+unset($finalReq['applicantId']);
+unset($finalReq['NewGdriveID__c']);
+unset($finalReq['Google_Drive_Evaluation_Form__c']);
+unset($finalReq['onfrmId']);
+unset($finalReq['Contact__c']);
 
 
 
@@ -134,7 +122,7 @@ unset($finalReq['onfrm']);
 if($resp=='"OK"'){
 return redirect()->action('MonthlyCheckinController@index', ['isSave' => 1]);
 }else{
- 
+
   'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiMonthlyCheckInClass');
 }
 }

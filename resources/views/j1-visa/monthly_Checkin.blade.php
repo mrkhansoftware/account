@@ -2,10 +2,15 @@
 @include('common.header',['datas'=>$datas,'title' =>'Monthly Check-In','page'=>'monthly_Checkin','parent_page'=>'J1 Program'])
 
 {!! Form::open(['action' => 'MonthlyCheckinController@store', 'files' => true,'method' => 'POST', 'id' => 'gacccaForm_mc']) !!}
-
+<input type="hidden" name="lastNameFirstName"  value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
+<input type="hidden" name="applicantId"  value="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}" />
+<input type="hidden" name="NewGdriveID__c"  value="{{isset($datas['ap']['NewGdriveID__c'])?$datas['ap']['NewGdriveID__c']:''}}" />
+<input type="hidden" name="Google_Drive_Evaluation_Form__c"  value="{{isset($datas['ap']['Google_Drive_Evaluation_Form__c'])?$datas['ap']['Google_Drive_Evaluation_Form__c']:''}}" />
+<input type="hidden" name="onfrmId"  value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}" />
+<input type="hidden" name="Contact__c"  value="{{isset($datas['contID'])?$datas['contID']:''}}" />
 
 <div class="gaccca-main-containt">
-    <h1 class="gaccca-h1-padding">Monthly Check-In</h1> 
+    <h1 class="gaccca-h1-padding">Monthly Check-In</h1>
     @if (isset($datas['isFormAvailable']) && $datas['isFormAvailable'])
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
       <p>Thank you for your mandatory monthly Check-in. The next monthly Check-in will be on 01/05/2020. We will send
@@ -14,7 +19,7 @@
         a mandatory component of the J-1 program.</p>
       <p>Missing mandatory monthly check-ins can lead to termination of your J-1 program.</p>
     </div>
-      
+
     <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
       <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
@@ -26,7 +31,7 @@
               Do you still live in the same US address? <span class="gaccca-text-required" title="required">*</span>
             </label>
             @include('common.radioGrp',['fieldName' =>'onfrm[Is_Current_Address_Changed__c]','obj'=>'onfrm','fieldApi'=>'Is_Current_Address_Changed__c','required'=>'required', 'textRad'=>'textRad','myFunction'=>'showInput(this.value,"No","sec1")'])
-                            
+
 
           </div>
 
@@ -37,7 +42,7 @@
 
 
       <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id='sec1'>
-  
+
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please provide the new address <span class="gaccca-text-required" title="required">*</span> </label>
@@ -59,7 +64,7 @@
               Do you still have the same US phone number? <span class="gaccca-text-required" title="required">*</span>
             </label>
             @include('common.radioGrp',['fieldName' =>'onfrm[Current_phone_number__c]','obj'=>'onfrm','fieldApi'=>'Current_phone_number__c','required'=>'required', 'textRad'=>'textRad','myFunction'=>'showInput(this.value,"No","sec2")'])
-                            
+
 
           </div>
 
@@ -74,7 +79,7 @@
       If no, please provide the new phone number <span class="gaccca-text-required" title="required">*</span> </label>
       <div class="gaccca-form-element__control">
         <input type="text" name="onfrm[Phone_Number__c]"  value="{{isset($datas['onfrm']['Phone_Number__c'])?$datas['onfrm']['Phone_Number__c']:''}}"  id='sec2Field' class="gaccca-input" />
-      
+
         <span class="gaccca-input-help-text"></span>
       </div>
   </div>
@@ -90,7 +95,7 @@
               Is your Training Plan being followed? <span class="gaccca-text-required" title="required">*</span>
             </label>
             @include('common.radioGrp',['fieldName' =>'onfrm[Is_your_Training_Plan_being_followed__c]','obj'=>'onfrm','fieldApi'=>'Is_your_Training_Plan_being_followed__c','required'=>'required', 'textRad'=>'textRad','myFunction'=>'showInput(this.value,"No","sec3")'])
-                            
+
           </div>
 
         </div>
@@ -98,10 +103,10 @@
       </div>
 
 
-      
+
 
       <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id='sec3'>
-  
+
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please specify <span class="gaccca-text-required" title="required">*</span> </label>
@@ -125,7 +130,7 @@
               Do you still have the same supervisor? <span class="gaccca-text-required" title="required">*</span>
             </label>
             @include('common.radioGrp',['fieldName' =>'onfrm[Has_your_supervisor_changed__c]','obj'=>'onfrm','fieldApi'=>'Has_your_supervisor_changed__c','required'=>'required', 'textRad'=>'textRad','myFunction'=>'showInput(this.value,"No","sec4")'])
-                            
+
 
           </div>
 
@@ -136,7 +141,7 @@
 
 
       <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id="sec4">
-  
+
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please provide Name, Email Address and phone number <span class="gaccca-text-required" title="required">*</span> </label>
@@ -157,7 +162,7 @@
               Are you participating between 32-40 hours/week at your host company location? <span
                 class="gaccca-text-required" title="required">*</span> </label>
                 @include('common.radioGrp',['fieldName' =>'onfrm[Are_you_working_between_32_40_hours_week__c]','obj'=>'onfrm','fieldApi'=>'Are_you_working_between_32_40_hours_week__c','required'=>'required', 'textRad'=>'textRad','myFunction'=>'showInput(this.value,"No","sec5")'])
-                            
+
           </div>
 
         </div>
@@ -167,7 +172,7 @@
 
 
       <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id="sec5">
-  
+
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If no, please specify <span class="gaccca-text-required" title="required">*</span> </label>
@@ -188,7 +193,7 @@
             <label class="gaccca-form-element__label" for="text-input-id-fn">
               Are you safe, well and healthy?: <span class="gaccca-text-required" title="required">*</span> </label>
               @include('common.radioGrp',['fieldName' =>'onfrm[Are_you_safe_well_and_healthy__c]','obj'=>'onfrm','fieldApi'=>'Are_you_safe_well_and_healthy__c','required'=>'required', 'textRad'=>'textRad'])
-                            
+
 
           </div>
           <span class="gaccca-input-help-text">
@@ -210,16 +215,16 @@
               Is there anything you would like to discuss or talk about at this point that GACC California/IIEEX can
               help you with? <span class="gaccca-text-required" title="required">*</span> </label>
               @include('common.radioGrp',['fieldName' =>'onfrm[anything_you_would_like_to_disc__c]','obj'=>'onfrm','fieldApi'=>'anything_you_would_like_to_disc__c','required'=>'required', 'textRad'=>'textRad','myFunction'=>'showInput(this.value,"Yes", "sec6")'])
-                            
+
           </div>
 
         </div>
 
-      </div> 
- 
+      </div>
+
 
       <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1 gaccca-hide" id="sec6">
-  
+
   <div class="gaccca-form-element gaccca-form-element-margin">
     <label class="gaccca-form-element__label" for="text-input-id-8">
     If yes, please specify: i.e. issues with your host company, issues with cultural adjustment <span class="gaccca-text-required" title="required">*</span> </label>
@@ -320,14 +325,14 @@
     </div>
     @else
     <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
-              
+
                         <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                           <div class="gaccca-form-element gaccca-form-element-margin">
     Thank you for your mandatory monthly Check-in. The next monthly Check-in will be on &nbsp;{{$datas['nextMonthlyCheckInDate']}}. We will send you a reminder.
     </div>
     </div>
     </div>
-                                                                                                         
+
     @endif
 
   </div>
