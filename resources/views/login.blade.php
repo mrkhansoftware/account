@@ -17,7 +17,7 @@
 
         gtag('config', 'UA-976534-20');
 
-        
+
     </script>
     <script>
     var url=window.location.href;
@@ -509,7 +509,7 @@
 
 
 
-    function createOrMergeAccount(isRedirect) { 
+    function createOrMergeAccount(isRedirect) {
         var userInfo = currentUserInfo();
         // console.log(userInfo);
         if (userInfo.uid == '' || userInfo.uid == undefined) return;
@@ -545,7 +545,7 @@
                     if(data.pageName=='profile_account'){
                     window.location.href = '/' + '{{isset($_GET["redirectUrl"])?$_GET["redirectUrl"]:"profile_account"}}';
                     }else{
-                        window.location.href = '/' +data.pageName;                     
+                        window.location.href = '/' +data.pageName;
                     }
                 }
 

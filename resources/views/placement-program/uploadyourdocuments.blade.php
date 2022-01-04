@@ -3,8 +3,11 @@
 @include('common.header',['datas'=>$datas,'title' =>'Upload Your Documents','page'=>'uploadyourdocuments','parent_page'=>'Placement Program'])
 
 {!! Form::open(['action' => 'UploadYourDocumentsController@store','files'=>true, 'method' => 'POST',  'id' => 'gacccaForm_uploaddoc']) !!}
-
-
+<input type="hidden" name="applicantId"  value="{{isset($datas['app']['Id'])?$datas['app']['Id']:''}}" />
+<input type="hidden" name="NewGdriveID__c"  value="{{isset($datas['app']['NewGdriveID__c'])?$datas['app']['NewGdriveID__c']:''}}" />
+<input type="hidden" name="Gdrive_Placement_Folder_Id__c"  value="{{isset($datas['app']['Gdrive_Placement_Folder_Id__c'])?$datas['app']['Gdrive_Placement_Folder_Id__c']:''}}" />
+<input type="hidden" name="lastNameFirstName"  value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}" />
+<input type="hidden" name="Contact__c"  value="{{isset($datas['contID'])?$datas['contID']:''}}" />
 <div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Upload your Documents</h1>
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">

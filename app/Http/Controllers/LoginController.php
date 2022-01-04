@@ -18,12 +18,12 @@ class LoginController extends Controller
       $response='App\Services\Helper'::postRequest($val,'ApiLoginAccountController');
       $response=json_decode($response,1);
       }
-       
+
         return view('login')->with(compact('response'));
     }
 
     public function resetPassword()
-    { 
+    {
        $oobCode=$_GET['oobCode'];
         return view('profile/resetPassword')->with(compact('oobCode'));;
     }
@@ -35,7 +35,7 @@ class LoginController extends Controller
       $finalReq['verifyAccountKey']='No';
       $response='App\Services\Helper'::postRequest($finalReq,'ApiLoginAccountController');
        $response=json_decode($response,1);
-     
+
        $response=json_decode($response,1);
        if( $response['canAccessAccount']=='Yes'){
        session()->put('conIdUser', $response['conId']);
@@ -48,7 +48,7 @@ class LoginController extends Controller
        unset($response['userEmail']);
        unset($response['simcardPortalUser']);
      return json_encode($response);
-       
+
   }
 
 }
