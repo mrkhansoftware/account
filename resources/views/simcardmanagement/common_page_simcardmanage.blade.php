@@ -269,6 +269,10 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         Check#: {{isset($applicant['Check__c'])?$applicant['Check__c']:''}}<br />
         Check Number: {{isset($applicant['Check_amount__c'])?$applicant['Check_amount__c']:''}}
         @endif
+@if($requestDataPage['accesskey']=='Problem')
+        <i class="fas fa-trash deleteFaIcon" data-delete="{{$applicant['Id']}}" onclick="deleteRecordInformation(this)"></i>
+  @endif
+
     </td>
     <td>
 
@@ -376,11 +380,49 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
     </td>
     @endif
     @if($requestDataPage['accesskey']!='Shipped')
-    <td> {{isset($applicant['PLAN__c'])?$applicant['PLAN__c']:''}}</td>
+    <td>
+
+      @if($requestDataPage['accesskey']=='CommissionPaid' || $requestDataPage['accesskey']=='Commission')
+      {{isset($applicant['PLAN__c'])?$applicant['PLAN__c']:''}}
+      @else
+      <div class="popup-text" id="editdiv_PLAN_{{$tab_name.'_'.$index}}">
+          <div class="popup-title">Plan</div>
+
+
+          {!! Form::select('PLAN__c', array_reverse($datas['simcardPlan']), isset($applicant['PLAN__c'])?$applicant['PLAN__c']:'', [ 'class' => 'gaccca-select','id' => 'input_value_PLAN_'.$tab_name.'_'.$index]) !!}
+
+          <div class="button-div">
+              <button class="gaccca-button-save" id="save_button_PLAN_{{$tab_name.'_'.$index}}" data-showing="value_PLAN_{{$tab_name.'_'.$index}}" data-recordId="{{$applicant['Id']}}" data-fieldApi="PLAN__c" data-loclFieldId="input_value_PLAN_{{$tab_name.'_'.$index}}"><i class="fas fa-check"></i></button>
+              <button class="gaccca-button-save" id="close_button_PLAN_{{$tab_name.'_'.$index}}"><i class="fas fa-times"></i></button>
+          </div>
+      </div>
+      <span id="value_PLAN_{{$tab_name.'_'.$index}}">{{isset($applicant['PLAN__c'])?$applicant['PLAN__c']:''}}</span>
+      <a href="javascript:void(0)" class="edit-pencil" id="edit_PLAN_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
+      @endif
+
+    </td>
     @php $actvDate = date_create(isset($applicant['Activation_Date__c'])?$applicant['Activation_Date__c']:'');
     $actvDate=date_format($actvDate,"m/d/Y");
     @endphp
-    <td>{{isset($applicant['Activation_Date__c'])?$actvDate:''}}</td>
+    <td>
+
+      @if($requestDataPage['accesskey']=='CommissionPaid' || $requestDataPage['accesskey']=='Commission')
+      {{isset($applicant['Activation_Date__c'])?$actvDate:''}}
+      @else
+      <div class="popup-text" id="editdiv_Activation_Date_{{$tab_name.'_'.$index}}">
+          <div class="popup-title">Activation Date US Time</div>
+          <input type="text" id="input_value_Activation_Date_{{$tab_name.'_'.$index}}" class="gaccca-input-date" />
+          <div class="button-div">
+              <button class="gaccca-button-save" id="save_button_Activation_Date_{{$tab_name.'_'.$index}}" data-showing="value_Activation_Date_{{$tab_name.'_'.$index}}" data-recordId="{{$applicant['Id']}}" data-fieldApi="Activation_Date__c" data-loclFieldId="input_value_Activation_Date_{{$tab_name.'_'.$index}}"><i class="fas fa-check"></i></button>
+              <button class="gaccca-button-save" id="close_button_Activation_Date_{{$tab_name.'_'.$index}}"><i class="fas fa-times"></i></button>
+          </div>
+      </div>
+      <span id="value_Activation_Date_{{$tab_name.'_'.$index}}">{{isset($applicant['Activation_Date__c'])?$actvDate:''}}</span>
+      <a href="javascript:void(0)" class="edit-pencil" id="edit_Activation_Date_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
+      @endif
+
+
+    </td>
     <td>
         @if($requestDataPage['accesskey']=='CommissionPaid' || $requestDataPage['accesskey']=='Commission')
         {{isset($applicant['Activation_confirmed__c'])?$applicant['Activation_confirmed__c']:''}}

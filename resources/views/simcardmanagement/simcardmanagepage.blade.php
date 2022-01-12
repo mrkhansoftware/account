@@ -67,7 +67,11 @@
         /* Safari */
         animation: spin 2s linear infinite;
     }
-
+ .deleteFaIcon{
+   font-size: 20px;
+    color: #3b8ced;
+    cursor: pointer;
+ }
     /* Safari */
     @-webkit-keyframes spin {
         0% {
@@ -684,6 +688,7 @@ function loadAjaxContent() {
 
     });
 
+
     $('[id^="save_button_"]').on("click", function() {
         $(".edit-pencil").show();
         var current_id = $(this).attr("id");
@@ -693,7 +698,7 @@ function loadAjaxContent() {
         var recordId = $(this).attr("data-recordid");
         var localFieldId = $(this).attr("data-loclFieldId");
         var dataMobile = $(this).attr("data-mobile");
-        console.log(dataMobile)
+      //  console.log(dataMobile)
         var className = $("#" + localFieldId).attr("class");
         if (className != undefined && className.includes('gaccca-input-date')) {
             datatype = 'date';
@@ -1060,6 +1065,20 @@ function sendTransactionFailEmailAction(val) {
     }
     ajaxRequest(formData);
 }
+
+function deleteRecordInformation(val) {
+    if (!confirm("Are you sure to delete the record? ")) {
+        return;
+    }
+    var formData = {
+        'appId': val.getAttribute("data-delete"),
+        "methodType": 'deleteRecordInformation'
+    }
+    ajaxRequest(formData);
+}
+
+
+
 function getLeadSimcards() {
     var formData = {
         "methodType": 'leadSimCards'
@@ -1134,7 +1153,7 @@ function loadValues() {
 }
 
 function ajaxRequest(formData) {
-    console.log(formData);
+  //  console.log(formData);
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1158,12 +1177,12 @@ function ajaxRequest(formData) {
         },
         success: function(data) {
             //console.log(data);
-            if ((formData.methodType == 'saveApplicant' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod') && data == 'OK') {
+            if ((formData.methodType == 'saveApplicant' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod' || formData.methodType == 'deleteRecordInformation') && data == 'OK') {
                 $("#loaderRecordSave").css('display', 'none');
                 if (formData.methodType == 'sendTransactionFailEmailAction') {
                     showSuccessGaccca('Transaction failure email has been sent.');
                 }
-                if (formData.methodType == 'commissionMethod') {
+                if (formData.methodType == 'commissionMethod' || formData.methodType == 'deleteRecordInformation') {
                     loadValues()
                 }
             } else {
@@ -1190,7 +1209,7 @@ function ajaxRequest(formData) {
 
                     showSuccessGaccca("Sim Card shipped email sent. You can find this entry under 'Main-->Shipped' tab");
 
-                    if(recordStatusTypeVar=="external request gaccca"){
+                    if(recordStatusTypeVar=="external request gaccca" || recordStatusTypeVar=="external request aerobil"){
                         window.open("https://gaccca.secure.force.com/LetterShipmentSimCard?id="+data.applicantInfo);
                     }
 
