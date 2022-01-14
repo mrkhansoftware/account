@@ -24,11 +24,12 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/favicon/favicon-iieex-76.png') }}" />
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/favicon/favicon-iieex-120.png') }}" />
     <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/favicon/favicon-iieex-152.png') }}" />
-    
+
     <link rel="stylesheet" href="https://assets.ziggeo.com/v2-stable/ziggeo.css" />
     <link href="{{ asset('css/slds.css') }}" rel='stylesheet'>
     <link href="{{ asset('css/font.css') }}" rel='stylesheet'>
     <script src="https://assets.ziggeo.com/v2-stable/ziggeo.js"></script>
+    @if (!(isset($datas['isLinkExpired']) && $datas['isLinkExpired']))
     <script>
     if ("{{$datas['viewerType']}}" == "hrPerson") {
         var urlInfo = window.location.protocol + "//" + window.location.host + window.location.pathname +
@@ -43,6 +44,7 @@
         token: "80f9af3ec1dfe032714fd61c53f94376"
     });
     </script>
+    @endif
     <style>
     .mainContainer {
         width: 100%;
@@ -130,10 +132,39 @@
     .instrction {
         text-align: left;
     }
+    .container404 {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 15%;
+}
+.container404 h1 {
+    font-size: 80px;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.container404 h2 {
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -30px;
+}
+.container404 p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
     </style>
 </head>
 
 <body class="slds-scope" cz-shortcut-listen="true">
+  @if (isset($datas['isLinkExpired']) && $datas['isLinkExpired'])
+  <div class="container404">
+<h1>404</h1>
+<h2>Page Not Found</h2>
+<p>The Page you are looking for doesn't exist.</p>
+</div>
+  @else
 
     @if (isset($datas['needPassword']) && $datas['needPassword'])
     <div class='mainContainer'>
@@ -147,9 +178,9 @@
             {!! Form::open(['action' => 'ApplicantResumeController@resumeDetailsPassword','method' => 'POST']) !!}
             <div>
                 <input Class="inputPass" name="password" type='password'  value="" required />
-                <input Class="inputPass" name="contID" type='hidden' 
+                <input Class="inputPass" name="contID" type='hidden'
                     value="{{$datas['contID']}}" />
-                <input Class="inputPass" name="applicationId" type='hidden' 
+                <input Class="inputPass" name="applicationId" type='hidden'
                     value="{{$datas['applicationId']}}" />
                 @if (isset($datas['isWrongPassword']) && $datas['isWrongPassword'])
                 <div class='instrctionError'>
@@ -567,6 +598,7 @@
         });
     }
     </script>
+    @endif
 </body>
 
 </html>

@@ -72,7 +72,7 @@ class ApplicantResumeController extends Controller
                 return 'App\Services\Helper'::returnUrl();
             }
         }
-        
+
         $datas = 'App\Services\Helper'::getRequest('ApiApplicantCVResumeTemplateClass/' . $idCon);
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
@@ -118,10 +118,10 @@ class ApplicantResumeController extends Controller
         $folderName=$finalReq['appName'].'_'.$finalReq['appTime'].$finalReq['applicantId'];
         $filename='File_Document_'.$getTime.$finalReq['applicantId'];
         if($resumeableLink==null || $resumeableLink==''){
-        
+
         $fileUrl=$folderName.'/'.$filename;
     }
-        $content=str_replace('data:application/octet-stream;base64,','',$filedata);    
+        $content=str_replace('data:application/octet-stream;base64,','',$filedata);
         $filedata=base64_decode($content);
         $bodysize=strlen($filedata);
         $previousEnd=$previousEnd==''?'0':$previousEnd;
