@@ -13,11 +13,8 @@
     <h1 class="gaccca-h1-padding">Monthly Check-In</h1>
     @if (isset($datas['isFormAvailable']) && $datas['isFormAvailable'])
     <div class="gaccca-sky-blue-box gaccca-sky-blue-box-margin">
-      <p>Thank you for your mandatory monthly Check-in. The next monthly Check-in will be on 01/05/2020. We will send
-        you a reminder.</p>
-      <p>Monthly check-ins with your sponsor, GACC California, are required by the U.S. Department of State, thus being
-        a mandatory component of the J-1 program.</p>
-      <p>Missing mandatory monthly check-ins can lead to termination of your J-1 program.</p>
+      <p>Monthly check-ins with your sponsor, GACC California, are required by the U.S. Department of State, thus being a mandatory component of the J-1 program.</p>
+      <p>Missing mandatory monthly check-ins can lead to the termination of your J-1 program.</p>
     </div>
 
     <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
@@ -328,7 +325,10 @@
 
                         <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
                           <div class="gaccca-form-element gaccca-form-element-margin">
+    
     Thank you for your mandatory monthly Check-in. The next monthly Check-in will be on &nbsp;{{$datas['nextMonthlyCheckInDate']}}. We will send you a reminder.
+
+
     </div>
     </div>
     </div>
