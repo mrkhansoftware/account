@@ -2,18 +2,20 @@
 @include('common.header',['datas'=>$datas,'title' =>'Participant Agreement','page'=>'participant_agreement_account','parent_page'=>'J1 Program'])
 
 {!! Form::open(['action' => 'ParticipantAgreementAccountController@store', 'method' => 'POST', 'id' => 'gacccaForm_paa']) !!}
+<input type="hidden" name="applicantId"  value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}" />
+<input type="hidden" name="Contact__c"  value="{{ isset($datas['contID'])?$datas['contID']:''}}" />
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Step 4/5 - Terms & Conditions and Trainee Intern Acceptance</h1>
-     
-      
+
+
       <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
 
         <h2 class="gaccca-h2-padding">I. Terms and Conditions for the J1-Visa Program of the German American Chamber of Commerce California, Inc.</h2>
 
         <div class="gaccca-form-element gaccca-form-element-margin">
             <p>
-                The following agreement is between the German American Chamber of Commerce California, Inc. ("GACC California") of 600 B Street, Suite 300, San Diego, CA 92101 and You (“participant”). You, as a participant, must sign this form to indicate your agreement and permission to participate. We advise you to keep a copy for your own documentation. 
+                The following agreement is between the German American Chamber of Commerce California, Inc. ("GACC California") of 600 B Street, Suite 300, San Diego, CA 92101 and You (“participant”). You, as a participant, must sign this form to indicate your agreement and permission to participate. We advise you to keep a copy for your own documentation.
 
             </p>
           </div>
@@ -48,8 +50,8 @@
                 <li>GACC California will attempt to adhere to all arrangements made. However, GACC California reserves the right to cancel or alter any parts of the program should unforeseen circumstances make this necessary.</li>
                 <li>Neither party shall be responsible for any delay or failure in performance resulting from any causes beyond their control. This includes without limitation: war, strikes or labor disputes, civil disturbances, fires, natural disasters, and Acts of God.</li>
                 <li>The Participant must inform GACC California if, for any reason, the stay will be extended.</li>
-                
-              </ol> 
+
+              </ol>
 
               <h4><strong>Entire Agreement and Severability</strong></h4>
               <p>This document constitutes the entire agreement between the parties, and represents the complete and entire understanding of the parties with respect to the subject matter of this agreement. This instrument supersedes any other agreement or understanding between the parties, whether written or oral. In the event that any term or provision of this instrument is held by a court of competent jurisdiction to be unenforceable, then the remaining provisions of this instrument and the agreement which it evidences shall remain in full force and effect.</p>
@@ -67,10 +69,10 @@
                     <li>I understand that U.S. Government agencies having jurisdiction over immigration matters exercise discretion in administering their responsibilities, and therefore GACC California can make no claim or representation with respect to the likelihood of success in any visa application or the time in which a particular application is processed.</li>
                     <li>I also agree and understand that the J-1 visa is an Exchange Visitor Visa and I will be interning/training, and not working at my Host Company, and should not be placed in positions that are filled or would be filled by full-time or part-time employees.</li>
                     <li>I understand and accept that GACC California cannot guarantee that the Host Company will stay in business for the duration of time indicated on the DS-2019 to provide the agreed-upon internship/training, and cannot therefore guarantee that the internship/ training at that Host Company (or any potential other subsequent Host Company) will end up lasting the entire duration of the dates indicated on the DS-2019.</li>
-                  </ol> 
+                  </ol>
 
                   <h4>2 Intern/Trainee Responsibilities</h4>
-        
+
                   <ol>
                     <li>Arrive and depart the U.S. in accordance with the dates listed on my DS-2019 form. I understand that I have 30 days beyond the date on my DS-2019 form in which I may remain in the U.S. to tie up loose ends and travel within the U.S; however I am not allowed to continue my internship/training during that time;</li>
                     <li>Complete the tasks and activities outlined in Training/Internship Placement Plan (DS-7002) to the utmost of my ability;</li>
@@ -87,7 +89,7 @@
                     <li>Cooperate and communicate with all GACC California personnel in all aspects of my internship/training and cooperate with requests it deems necessary regarding any aspect of my experiences at the Host Company;</li>
                     <li>Advise GACC CA of plans to travel outside the U.S. while on the J-1 program at least two weeks prior to the expected date of travel;</li>
                     <li>Not change my visa status during my program with GACC CA.</li>
-                  </ol> 
+                  </ol>
 
                   <h4>3 Hold Harmless</h4>
 
@@ -95,7 +97,7 @@
                     <li>I do hereby promise, undertake and guarantee to hold harmless and to indemnify the GACC California and all other persons connected with the program and application process from all liabilities, claims, actions, damages, expenses and losses of any nature whatsoever caused by or arising from any aspect of the internship/training, and to hold GACC California, its officers, and representatives harmless in the event of any personal illness, injury, or other problems or events that may cause me to miss all or part of my agreed upon program.</li>
                     <li>I agree to hold the GACC California harmless from any and all claims including but not limited to any representations or misrepresentations on the part of the Host Company, any agency with which I may have contracted in any way related to my internship/training in the USA, or any other entities or companies, related or not related to GACC California, regarding any part of the sponsorship or internship/training in the USA, information given (true, false or otherwise), changes in living, employment or other conditions prior to or after departure for the USA to begin training, laws or regulations affecting my internship/training, or the site of activity. Additionally, if for any reason I or anyone representing or related to me in any way despite my full agreement with all aspects of this contract brings suit or otherwise seeks damages from or against GACC California or any other persons connected therewith for any reason related to any aspect of GACC California sponsorship of me or my family member(s), I agree to and shall immediately pay on an ongoing basis for all legal and related costs and damages incurred by GACC California and any other persons connected therewith in response to such suit, upon receipt of invoice by GACC California. In the event that I am at any time unable to pay GACC California for all of its legal and related costs and damages as described, I agree to postpone such suit until a time when I can do so.</li>
                     <li>I hereby state and affirm that the internship /training procedures and expectations have been presented and explained to my full and complete understanding and satisfaction and that I am voluntarily entering into this agreement to participate in this program.</li>
-                  </ol> 
+                  </ol>
                  <h4>4 Confidentiality</h4>
                  <p>I agree to fully observe confidentiality regarding GACC California activities and communications and Host Company activities and communications regarding this program.</p>
                  <h4>5 Choice of Law</h4>
@@ -114,8 +116,8 @@
         <br/>
         <br/>
         <h4>
-            I have read and understood all the Terms and Conditions to participate in the GACC California's program.<span class="gaccca-text-required" title="required">*</span> </h4>        
-        
+            I have read and understood all the Terms and Conditions to participate in the GACC California's program.<span class="gaccca-text-required" title="required">*</span> </h4>
+
 
                     <span class="gaccca-radio">
                       <input required='' type="radio" id="radio-Yes" value="Yes" name="isAccepted" {{isset($datas['Appli']['Accept_Terms_Conditions__c']) && $datas['Appli']['Accept_Terms_Conditions__c']?'checked':''}}  />
@@ -126,11 +128,11 @@
                     </span>
                   <br/>
                   <br/>
-                  
-                  @if (isset($datas['Appli']['Accept_Terms_Conditions__c']) && $datas['Appli']['Accept_Terms_Conditions__c'])
-                  @else 
-                 
-        
+
+                  @if (isset($datas['Appli']['Confirm__c']) && $datas['Appli']['Confirm__c'])
+                  @else
+
+
                   <button id="gaccca_saveBtn_paa" class="gaccca-button-save ">Save & Continue</button>
                     @endif
         </div>
@@ -143,9 +145,9 @@
 
 
 
-   
+
       </div>
-  
+
     </div>
 
 {!! Form::close() !!}

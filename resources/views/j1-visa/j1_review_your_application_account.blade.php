@@ -4,7 +4,8 @@
 
 {!! Form::open(['action' => 'J1ReviewApplicationAccountController@store', 'data-parsley-validate', 'method' => 'POST',
 'id' => 'gacccaForm_j1review']) !!}
-
+<input type="hidden" name='applicantId' value="{{isset($datas['Appli']['Id'])?$datas['Appli']['Id']:''}}"/>
+<input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
 
 <div class="gaccca-main-containt">
     <h1 class="gaccca-h1-padding">Review your Application</h1>
@@ -211,7 +212,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-e-address">
                     Emergency Contact Person Address <span class="gaccca-text-required" title="required">*</span>
                 </label>
-                <div class="gaccca-form-element__control"> 
+                <div class="gaccca-form-element__control">
                     {!!
                     Form::textarea('applicant[Emergency_Contact_Person_Address__c]',isset($datas['Appli']['Emergency_Contact_Person_Address__c'])?$datas['Appli']['Emergency_Contact_Person_Address__c']:'',array('class'=>'gaccca-textarea','disabled' => 'disabled', 'maxlength'=>'255')); !!}
 
@@ -389,7 +390,7 @@
                 <label class="gaccca-form-element__label" for="text-input-id-e-address">
                     Host Company Address <span class="gaccca-text-required" title="required">*</span> </label>
                 <div class="gaccca-form-element__control">
-                    <textarea name="applicant['Address__c]"  
+                    <textarea name="applicant['Address__c]"
                         disabled="disabled"
                         class="gaccca-textarea" maxlength='255'>{{isset($datas['Appli']['Address__c'])?$datas['Appli']['Address__c']:''}}</textarea>
 
@@ -436,7 +437,7 @@
 
                         <input type="text" name="applicant[State__c]"
                             value="{{isset($datas['Appli']['State__c'])?$datas['Appli']['State__c']:''}}"
-                            id="text-input-id-hccp" 
+                            id="text-input-id-hccp"
                             disabled="disabled" class="gaccca-input" />
 
                     </div>
@@ -453,7 +454,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Contact_Person__c]"
                         value="{{isset($datas['Appli']['Contact_Person__c'])?$datas['Appli']['Contact_Person__c']:''}}"
-                        id="text-input-id-hccp" 
+                        id="text-input-id-hccp"
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">Enter the name of the person who will be your supervisor/mentor
                         during your internship/training.</span>
@@ -468,7 +469,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="email" name="applicant[Do_you_have_dual_citizenship__c]"
                         value="{{isset($datas['Appli']['Email_Address__c'])?$datas['Appli']['Email_Address__c']:''}}"
-                        id="text-input-id-ccea"  
+                        id="text-input-id-ccea"
                         disabled="disabled" class="gaccca-input" />
 
                 </div>
@@ -567,7 +568,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Value_Of_Housing_In_USD_Per_Month__c]"
                         value="{{isset($datas['Appli']['Value_Of_Housing_In_USD_Per_Month__c'])?$datas['Appli']['Value_Of_Housing_In_USD_Per_Month__c']:''}}"
-                        id="text-input-id-vohiupm" 
+                        id="text-input-id-vohiupm"
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -583,7 +584,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Value_Of_Transportation_In_USD_Per_Month__c]"
                         value="{{isset($datas['Appli']['Value_Of_Transportation_In_USD_Per_Month__c'])?$datas['Appli']['Value_Of_Transportation_In_USD_Per_Month__c']:''}}"
-                        id="text-input-id-votiupm"  
+                        id="text-input-id-votiupm"
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -598,7 +599,7 @@
                 <div class="gaccca-form-element__control">
                     <input type="text" name="applicant[Total_Flight_Expenses_In_USD__c]"
                         value="{{isset($datas['Appli']['Total_Flight_Expenses_In_USD__c'])?$datas['Appli']['Total_Flight_Expenses_In_USD__c']:''}}"
-                        id="text-input-id-tfeiu"  
+                        id="text-input-id-tfeiu"
                         disabled="disabled" class="gaccca-input" />
                     <span class="gaccca-input-help-text">If not applicable please fill in n/a</span>
                 </div>
@@ -789,7 +790,7 @@
                         <div class="gaccca-select_container">
                             <input type="text" name="applicant[How_did_you_hear_about_the_program__c]"
                                 value="{{isset($datas['Appli']['How_did_you_hear_about_the_program__c'])?$datas['Appli']['How_did_you_hear_about_the_program__c']:''}}"
-                                id="text-input-id-hpw"  
+                                id="text-input-id-hpw"
                                 disabled="disabled" class="gaccca-input" />
 
                         </div>
@@ -862,7 +863,7 @@
                 @else
                 <span class="gaccca-text-required" title="required">Please complete all given required forms
                     above.<br /> @endif
-                    
+
                     <button id="gaccca_saveBtn_j1review" class="gaccca-button-save "
                         {{((isset($datas['Appli']['finnalize__c']) && !$datas['Appli']['finnalize__c']) || (isset($datas['Appli']['hostCompany__c']) && !$datas['Appli']['hostCompany__c']) || (isset($datas['Appli']['Participant__c']) && !$datas['Appli']['Participant__c']))?'disabled':''}}>Send
                         Application to GACC California</button>

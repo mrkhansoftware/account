@@ -2,6 +2,8 @@
 @include('common.header',['datas'=>$datas,'title' =>'Embassy Entry','page'=>'b1_Embassy','parent_page'=>'B1 Program'])
 
 {!! Form::open(['action' => 'B1EmbassyController@store','files'=>true, 'method' => 'POST',   'id' => 'gacccaForm_b1emb']) !!}
+<input type="hidden" name='Contact__c' value="{{isset($datas['contID'])?$datas['contID']:''}}"/>
+
 
 
 <div class="gaccca-main-containt">
@@ -14,7 +16,7 @@
 
       <p> Please upload your documents per our request or if applicable to you. </p>
 
-      
+
     </div>
 
     <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">

@@ -3,6 +3,12 @@
 @include('common.signScript')
 
 {!! Form::open(['action' => 'MidpointEvaluationAccountController@store', 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_mea']) !!}
+<input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
+<input type="hidden" name='applicantId' value="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}"/>
+<input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+<input type="hidden" name='NewGdriveID__c' value="{{isset($datas['ap']['NewGdriveID__c'])?$datas['ap']['NewGdriveID__c']:''}}"/>
+<input type="hidden" name='Google_Drive_Evaluation_Form__c' value="{{isset($datas['ap']['Google_Drive_Evaluation_Form__c'])?$datas['ap']['Google_Drive_Evaluation_Form__c']:''}}"/>
+<input type="hidden" name='onfrmId' value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}"/>
 
 <div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">Mid-Point Evaluation</h1>
@@ -200,8 +206,8 @@
         @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_made_me_feel_welcome__c'])
 
         <!-- <div class="gaccca-form-element__control">
-                  
-                  
+
+
                 </div> -->
       </div>
     </div>
@@ -220,8 +226,8 @@
         @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_supervisor_helped_me_to__c'])
 
         <!-- <div class="gaccca-form-element__control">
-                    
-                    
+
+
                   </div> -->
       </div>
     </div>
@@ -273,8 +279,8 @@
         @include('common.starRating',['required'=>'required', 'fieldName' =>'My_supervisor_is_helpful__c'])
 
         <!-- <div class="gaccca-form-element__control">
-                    
-                    
+
+
                   </div> -->
       </div>
     </div>
@@ -290,8 +296,8 @@
         @include('common.starRating',['required'=>'required', 'fieldName' =>'My_supervisor_is_always_there_to_answer__c'])
 
         <!-- <div class="gaccca-form-element__control">
-                    
-                    
+
+
                   </div> -->
       </div>
     </div>
@@ -306,8 +312,8 @@
         @include('common.starRating',['required'=>'required', 'fieldName' =>'supervisor_shows_interest_in_my_progress__c'])
 
         <!-- <div class="gaccca-form-element__control">
-                    
-                    
+
+
                   </div> -->
       </div>
     </div>
@@ -322,8 +328,8 @@
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
         @include('common.starRating',['required'=>'required', 'fieldName' =>'I_feel_like_I_am_part_of_the_team__c'])
         <!-- <div class="gaccca-form-element__control">
-                    
-                    
+
+
                   </div> -->
       </div>
     </div>
@@ -347,8 +353,8 @@
         @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_has_been_following_the_r__c'])
 
         <!-- <div class="gaccca-form-element__control">
-                    
-                    
+
+
                   </div> -->
       </div>
     </div>
@@ -403,8 +409,8 @@
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
         @include('common.starRating',['required'=>'required', 'fieldName' =>'Overall_I_am_having_a_great_experience_w__c'])
         <!-- <div class="gaccca-form-element__control">
-                    
-                    
+
+
                   </div> -->
       </div>
     </div>
@@ -459,8 +465,8 @@
       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
       @include('common.starRating',['required'=>'required', 'fieldName' =>'My_internship_training_is_interesting__c'])
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -478,8 +484,8 @@
       @include('common.starRating',['required'=>'required', 'fieldName' =>'My_internship_training_is_personally_ful__c'])
 
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -497,8 +503,8 @@
       @include('common.starRating',['required'=>'required', 'fieldName' =>'My_internship_training_is_challenging__c'])
 
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -515,8 +521,8 @@
       @include('common.starRating',['required'=>'required', 'fieldName' =>'My_internship_training_is_structured__c'])
 
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -533,8 +539,8 @@
       @include('common.starRating',['required'=>'required', 'fieldName' =>'I_am_learning_a_lot__c'])
 
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -573,8 +579,8 @@
       @include('common.starRating',['required'=>'required', 'fieldName' =>'supervisor_gave_frequent_feedback__c'])
 
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -590,8 +596,8 @@
       @include('common.starRating',['required'=>'required', 'fieldName' =>'I_am_improving_my_understanding_of_U_S__c'])
 
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -607,8 +613,8 @@
       @include('common.starRating',['required'=>'required', 'fieldName' =>'I_am_learning_specific_job_skills__c'])
 
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -623,8 +629,8 @@
       @include('common.starRating',['required'=>'required', 'fieldName' =>'I_would_recommend_an_internship_training__c'])
 
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -653,8 +659,8 @@
       <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
       @include('common.starRating',['required'=>'required', 'fieldName' =>'I_am_satisfied_with_my_overall_internshi__c'])
       <!-- <div class="gaccca-form-element__control">
-                        
-                        
+
+
                       </div> -->
     </div>
   </div>
@@ -689,8 +695,8 @@
         <span class="gaccca-file-help-text-color">1= strongly disagree ... 5= strongly agree</span>
         @include('common.starRating',['required'=>'required', 'fieldName' =>'My_host_company_supervisor_provides_me_w__c'])
         <!-- <div class="gaccca-form-element__control">
-                            
-                            
+
+
                           </div> -->
       </div>
     </div>
@@ -722,8 +728,8 @@
 
 
         <!-- <div class="gaccca-form-element__control">
-                            
-                            
+
+
                           </div> -->
       </div>
     </div>
@@ -740,8 +746,8 @@
 
 
         <!-- <div class="gaccca-form-element__control">
-                            
-                            
+
+
                           </div> -->
       </div>
     </div>
@@ -758,8 +764,8 @@
 
 
         <!-- <div class="gaccca-form-element__control">
-                            
-                            
+
+
                           </div> -->
       </div>
     </div>

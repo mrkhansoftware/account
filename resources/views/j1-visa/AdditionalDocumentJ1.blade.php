@@ -2,6 +2,13 @@
 @include('common.header',['datas'=>$datas,'title' =>'Additional Documents','page'=>'AdditionalDocumentJ1','parent_page'=>'J1 Program'])
 
 {!! Form::open(['action' => 'AdditionalDocumentJ1Controller@store','files' => true, 'method' => 'POST',  'id' => 'gacccaForm_additional']) !!}
+<input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
+<input type="hidden" name='applicantId' value="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}"/>
+<input type="hidden" name='Contact__c' value="{{$datas['contID']}}"/>
+<input type="hidden" name='NewGdriveID__c' value="{{isset($datas['ap']['NewGdriveID__c'])?$datas['ap']['NewGdriveID__c']:''}}"/>
+<input type="hidden" name='Google_Drive_Folder_Additional_Doc__c' value="{{isset($datas['ap']['Google_Drive_Folder_Additional_Doc__c'])?$datas['ap']['Google_Drive_Folder_Additional_Doc__c']:''}}"/>
+<input type="hidden" name='J_Visa_Applicant_Folder_Id__c' value="{{isset($datas['ap']['J_Visa_Applicant_Folder_Id__c'])?$datas['ap']['J_Visa_Applicant_Folder_Id__c']:''}}"/>
+<input type="hidden" name='Contact__c' value="{{isset($datas['contID'])?$datas['contID']:''}}"/>
 
 
 

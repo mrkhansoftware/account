@@ -22,19 +22,7 @@ return 'App\Services\Helper'::returnUrl();
 $datas='App\Services\Helper'::getRequest('ApiAdditionalDocumentJ1Controller/'.$idCon);
 $datas = json_decode($datas, true);
 $datas = json_decode($datas, true);
-session()->put('lastNameFirstName', $datas['lastNameFirstName']);
-if(isset($datas['ap']['Id'])){
-session()->put('applicantId', $datas['ap']['Id']);
-} 
-if(isset($datas['ap']['NewGdriveID__c'])){
-session()->put('NewGdriveID__c', $datas['ap']['NewGdriveID__c']);
-}
-if(isset($datas['ap']['J_Visa_Applicant_Folder_Id__c'])){
-session()->put('J_Visa_Applicant_Folder_Id__c', $datas['ap']['J_Visa_Applicant_Folder_Id__c']);
-}
-if(isset($datas['ap']['Google_Drive_Folder_Additional_Doc__c'])){
-session()->put('Google_Drive_Folder_Additional_Doc__c', $datas['ap']['Google_Drive_Folder_Additional_Doc__c']);
-}
+
 
 
 return view('j1-visa/AdditionalDocumentJ1')->with(compact('datas'));
@@ -60,105 +48,105 @@ public function create()
 public function store(Request $request)
 {
     $finalReq = $request->all();
-     
-     
+
+
     /*-----FILE UPLOAD-------------*/
- 
+
     $unique_Folder_Id='';
-    if(session()->get('NewGdriveID__c')=='' || 'App\Services\Helper'::isFolderExist(session()->get('NewGdriveID__c'))!='200'){
+    if($finalReq['NewGdriveID__c']=='' || 'App\Services\Helper'::isFolderExist($finalReq['NewGdriveID__c'])!='200'){
      $Google_Drive_Folder_Id='App\Services\Helper'::returnFolderId('applicant');
-     $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, session()->get('lastNameFirstName'));
+     $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id, $finalReq['lastNameFirstName']);
      $finalReq['applicant']['NewGdriveID__c']=$unique_Folder_Id;
  }else{
-  
-     $unique_Folder_Id= session()->get('NewGdriveID__c');
+
+     $unique_Folder_Id= $finalReq['NewGdriveID__c'];
  }
 
- if(session()->get('J_Visa_Applicant_Folder_Id__c')!=''  && 'App\Services\Helper'::isFolderExist(session()->get('J_Visa_Applicant_Folder_Id__c'))=='200'){
-   
-    $unique_Folder_Id= session()->get('J_Visa_Applicant_Folder_Id__c');
+ if($finalReq['J_Visa_Applicant_Folder_Id__c']!=''  && 'App\Services\Helper'::isFolderExist($finalReq['J_Visa_Applicant_Folder_Id__c'])=='200'){
+
+    $unique_Folder_Id= $finalReq['J_Visa_Applicant_Folder_Id__c'];
 }
 
-if(session()->get('Google_Drive_Folder_Additional_Doc__c')==''  || 'App\Services\Helper'::isFolderExist(session()->get('Google_Drive_Folder_Additional_Doc__c'))!='200'){
+if($finalReq['Google_Drive_Folder_Additional_Doc__c']==''  || 'App\Services\Helper'::isFolderExist($finalReq['Google_Drive_Folder_Additional_Doc__c'])!='200'){
     $Google_Drive_Folder_Id=$unique_Folder_Id;
     $unique_Folder_Id='App\Services\Helper'::createSubFolder($Google_Drive_Folder_Id,'Additional Documents');
     $finalReq['applicant']['Google_Drive_Folder_Additional_Doc__c']=$unique_Folder_Id;
-  
+
 }else{
-    $unique_Folder_Id= session()->get('Google_Drive_Folder_Additional_Doc__c');
+    $unique_Folder_Id= $finalReq['Google_Drive_Folder_Additional_Doc__c'];
 }
 
 
   if(isset($finalReq['fileInsurance'])){
     $fileCont = base64_encode(file_get_contents($request->file('fileInsurance')));
     $fileType=$request->file('fileInsurance')->getMimeType();
-        'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_Insurance', $fileType, $fileCont);
+        'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_Insurance', $fileType, $fileCont);
   }
   if(isset($finalReq['fileFSS'])){
      $fileCont = base64_encode(file_get_contents($request->file('fileFSS')));
      $fileType=$request->file('fileFSS')->getMimeType();
-     'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_FSS', $fileType, $fileCont);
- 
+     'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_FSS', $fileType, $fileCont);
+
    }
    if(isset($finalReq['fileReferenceLetter'])){
      $fileCont = base64_encode(file_get_contents($request->file('fileReferenceLetter')));
      $fileType=$request->file('fileReferenceLetter')->getMimeType();
-     'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_ReferenceLetter', $fileType, $fileCont);
- 
+     'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_ReferenceLetter', $fileType, $fileCont);
+
    }
 
    if(isset($finalReq['fileMotivationLetter'])){
     $fileCont = base64_encode(file_get_contents($request->file('fileMotivationLetter')));
     $fileType=$request->file('fileMotivationLetter')->getMimeType();
-    'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_MotivationLetter', $fileType, $fileCont);
- 
+    'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_MotivationLetter', $fileType, $fileCont);
+
   }
 
   if(isset($finalReq['fileRecordTranscript'])){
     $fileCont = base64_encode(file_get_contents($request->file('fileRecordTranscript')));
     $fileType=$request->file('fileRecordTranscript')->getMimeType();
-    'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_RecordTranscript', $fileType, $fileCont);
- 
+    'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_RecordTranscript', $fileType, $fileCont);
+
   }
 
-  
+
   if(isset($finalReq['fileStatusVerification'])){
     $fileCont = base64_encode(file_get_contents($request->file('fileStatusVerification')));
     $fileType=$request->file('fileStatusVerification')->getMimeType();
-    'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_StatusVerification', $fileType, $fileCont);
- 
+    'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_StatusVerification', $fileType, $fileCont);
+
   }
 
-  
+
   if(isset($finalReq['fileGraduationVerification'])){
     $fileCont = base64_encode(file_get_contents($request->file('fileGraduationVerification')));
     $fileType=$request->file('fileGraduationVerification')->getMimeType();
-    'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_GraduationVerification', $fileType, $fileCont);
- 
+    'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_GraduationVerification', $fileType, $fileCont);
+
   }
-  
+
   if(isset($finalReq['filePassport'])){
     $fileCont = base64_encode(file_get_contents($request->file('filePassport')));
     $fileType=$request->file('filePassport')->getMimeType();
-    'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_Passport', $fileType, $fileCont);
- 
+    'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_Passport', $fileType, $fileCont);
+
   }
 
-  
+
   if(isset($finalReq['filePreviousVisa'])){
     $fileCont = base64_encode(file_get_contents($request->file('filePreviousVisa')));
     $fileType=$request->file('filePreviousVisa')->getMimeType();
-    'App\Services\Helper'::fileUpload($unique_Folder_Id ,session()->get('lastNameFirstName').'_PreviousVisa', $fileType, $fileCont);
- 
+    'App\Services\Helper'::fileUpload($unique_Folder_Id ,$finalReq['lastNameFirstName'].'_PreviousVisa', $fileType, $fileCont);
+
   }
-    
+
 
     /*-----FILE UPLOAD----END---------*/
 
 
-    $finalReq['applicant']['id']=session()->get('applicantId');
+    $finalReq['applicant']['id']=$finalReq['applicantId'];
     $finalReq['applicantData']=json_encode($finalReq['applicant']);
-   
+
     unset($finalReq['filePreviousVisa']);
     unset($finalReq['filePassport']);
     unset($finalReq['fileGraduationVerification']);
@@ -170,11 +158,20 @@ if(session()->get('Google_Drive_Folder_Additional_Doc__c')==''  || 'App\Services
     unset($finalReq['fileInsurance']);
     unset($finalReq['_token']);
     unset($finalReq['applicant']);
-   
-  
-  
-  
-  
+
+    unset($finalReq['lastNameFirstName']);
+    unset($finalReq['applicantId']);
+    unset($finalReq['Contact__c']);
+    unset($finalReq['NewGdriveID__c']);
+    unset($finalReq['Google_Drive_Folder_Additional_Doc__c']);
+    unset($finalReq['J_Visa_Applicant_Folder_Id__c']);
+    unset($finalReq['Contact__c']);
+
+
+
+
+
+
 
 //echo "<pre>"; print_r($finalReq);die;
 
@@ -184,7 +181,7 @@ return redirect()->action('AdditionalDocumentJ1Controller@index', ['isSave' => 1
  }else{
 
   'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiAdditionalDocumentJ1Controller');
-   
+
  }
 }
 

@@ -17,30 +17,14 @@ class FinalEvaluationAccountController extends Controller
         if($idCon==''){
            return 'App\Services\Helper'::returnUrl();
         }
-  
+
           $datas='App\Services\Helper'::getRequest('ApiFinalEvaluationController/'.$idCon);
           $datas = json_decode($datas, true);
           $datas = json_decode($datas, true);
           //echo '<pre>'; print_r($datas); die;
-          session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
-          if(isset($datas['ap']['Id'])){
-          session()->put('applicantId', $datas['ap']['Id']);
-          }
-          if(isset($datas['ap']['NewGdriveID__c'])){
-            session()->put('NewGdriveID__c', $datas['ap']['NewGdriveID__c']);
-            }
 
-            if(isset($datas['ap']['Google_Drive_Evaluation_Form__c'])){
-                session()->put('Google_Drive_Evaluation_Form__c', $datas['ap']['Google_Drive_Evaluation_Form__c']);
-                }
-            
-          
-          if(isset($datas['onfrm']['Id'])){
-            session()->put('onfrmId', $datas['onfrm']['Id']);
-            }
-          session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
          return view('j1-visa/final_evaluation_account')->with(compact('datas'));
-        
+
     }
 
     /**
@@ -62,29 +46,37 @@ class FinalEvaluationAccountController extends Controller
     public function store(Request $request)
     {
         $finalReq = $request->all();
-     
-        $finalReq['applicant']['id']=session()->get('applicantId');
-        $finalReq['onfrm']['id']=session()->get('onfrmId');
-        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+
+        $finalReq['applicant']['id']=$finalReq['applicantId'];
+        $finalReq['onfrm']['id']=$finalReq['onfrmId'];
+        $finalReq['applicant']['Contact__c']=$finalReq['Contact__c'];
         $finalReq['applicantData']=json_encode($finalReq['applicant']);
         $finalReq['onlineFormData']=json_encode($finalReq['onfrm']);
-      
+
         unset($finalReq['_token']);
         unset($finalReq['applicant']);
         unset($finalReq['onfrm']);
-      
-      
-      
-      
-    
+
+        unset($finalReq['lastNameFirstName']);
+        unset($finalReq['applicantId']);
+        unset($finalReq['Contact__c']);
+        unset($finalReq['NewGdriveID__c']);
+        unset($finalReq['Google_Drive_Evaluation_Form__c']);
+        unset($finalReq['onfrmId']);
+        unset($finalReq['Contact__c']);
+
+
+
+
+
     //echo "<pre>"; print_r($finalReq);die;
-    
+
        $resp='App\Services\Helper'::postRequest($finalReq,'ApiFinalEvaluationController');
        //die;
        if($resp=='"OK"'){
     return redirect()->action('FinalEvaluationAccountController@index', ['isSave' => 1]);
        }else{
-          
+
     'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiFinalEvaluationController');
        }
     }

@@ -23,14 +23,7 @@ class DoAndDontsController extends Controller
         $datas = json_decode($datas, true);
         $datas = json_decode($datas, true);
         //echo '<pre>'; print_r($datas); die;
-        if (isset($datas['ap']['Id'])) {
-            session()->put('applicantId', $datas['ap']['Id']);
-        }
 
-        if (isset($datas['contID'])) {
-
-            session()->put('Contact__c', $datas['contID']);
-        }
         return view('placement-program/dosAndDonts')->with(compact('datas'));
 
         // return view('placement-program/dosAndDonts');
@@ -58,16 +51,18 @@ class DoAndDontsController extends Controller
     {
         $finalReq = $request->all();
         $finalReq['typeStr'] = 'confirmDosDonts';
-        $finalReq['applicant']['id'] = session()->get('applicantId');
-        $finalReq['applicant']['Contact__c'] = session()->get('Contact__c');
+        $finalReq['applicant']['id'] = $finalReq['applicantId'];
+        $finalReq['applicant']['Contact__c'] = $finalReq['Contact__c'];
         $finalReq['applicantData'] = json_encode($finalReq['applicant']);
 
         unset($finalReq['_token']);
         unset($finalReq['confirm']);
         unset($finalReq['applicant']);
+        unset($finalReq['applicantId']);
+        unset($finalReq['Contact__c']);
 
         'App\Services\Helper'::postRequest($finalReq, 'ApiVideoTutorialsClass');
-       
+
         return redirect()->action('DoAndDontsController@index', ['isSave' => 1]);
     }
 

@@ -2,14 +2,14 @@
 @include('common.header',['datas'=>$datas,'title' =>'','page'=>'page','parent_page'=>'J1 Program'])
 @include('common.signScript');
 {!! Form::open(['action' => 'PreDepartureController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'close-account']) !!}
-
+<input type="hidden" name='applicantId' value="{{isset($datas['applicantId'])?$datas['applicantId']:''}}"/>
 
 <div class="gaccca-main-containt">
       <h1 class="gaccca-h1-padding">Pre-Departure Orientation Confirmation</h1>
-      
+
 
     <div class="gaccca-form-element gaccca-form-element-margin">
-    
+
         <p><strong>Program Purpose</strong></p>
         <ol><li>
             Cultural Exchange
@@ -33,7 +33,7 @@
         <li>Evaluations</li>
         <li>Monthly Check-in</li>
         </ol>
-    
+
         <p><strong>Consequences of Program Violations</strong></p>
         <ol>
             <li>Cancellation or Termination</li>
@@ -79,7 +79,7 @@
     @endif
     </div>
 
-    
+
 {!! Form::close() !!}
 @include('common.footer')
 

@@ -26,18 +26,13 @@ class WriteYourScriptController extends Controller
         $datas = json_decode($datas, true);
         //echo '<pre>'; print_r($datas); die;
 
-        if(isset($datas['ap']['Id'])){
-            session()->put('applicantId', $datas['ap']['Id']);
-            }
-            if(isset($datas['contID'])){
-            session()->put('Contact__c', $datas['contID']);
-            }
-        return view('placement-program/WriteYourScript')->with(compact('datas'));
-    
-       // return view('placement-program/WriteYourScript');
         
-    }  
-    
+        return view('placement-program/WriteYourScript')->with(compact('datas'));
+
+       // return view('placement-program/WriteYourScript');
+
+    }
+
     public function writeScriptPlacementMethod(Request $request)
     {
         $finalReq= $request->all();
@@ -54,7 +49,7 @@ class WriteYourScriptController extends Controller
             'App\Services\Helper'::apiErrorReq($finalReq,$response,'ApiWriteYourScriptController');
         }
         return  $response;
-      
+
     }
 
     /**

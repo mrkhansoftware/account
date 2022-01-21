@@ -17,16 +17,12 @@ class J1ReviewApplicationAccountController extends Controller
         if($idCon==''){
            return 'App\Services\Helper'::returnUrl();
         }
-  
+
           $datas='App\Services\Helper'::getRequest('ApiJ1ReviewYourApplicationController/'.$idCon);
           $datas = json_decode($datas, true);
           $datas = json_decode($datas, true);
         // print_r($datas); die;
-          session()->put('lastNameFirstName', isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:'');
-          if(isset($datas['Appli']['Id'])){
-          session()->put('applicantId', $datas['Appli']['Id']);
-          }
-          session()->put('Contact__c', isset($datas['contID'])?$datas['contID']:'');
+
          return view('j1-visa/j1_review_your_application_account')->with(compact('datas'));
     }
 
@@ -49,25 +45,27 @@ class J1ReviewApplicationAccountController extends Controller
     public function store(Request $request)
     {
         $finalReq = $request->all();
-       
+
         unset($finalReq['_token']);
-        $finalReq['applicant']['id']=session()->get('applicantId');
-        $finalReq['applicant']['Contact__c']=session()->get('Contact__c');
+        $finalReq['applicant']['id']=  $finalReq['applicantId'];
+        $finalReq['applicant']['Contact__c']=  $finalReq['Contact__c'];
         $finalReq['applicantDataStr']=json_encode($finalReq['applicant']);
         unset($finalReq['_token']);
         unset($finalReq['applicant']);
-      
+        unset($finalReq['applicantId']);
+        unset($finalReq['Contact__c']);
+
       //  echo "<pre>"; print_r($finalReq);die;
-    
+
 
       $resp='App\Services\Helper'::postRequest($finalReq,'ApiJ1ReviewYourApplicationController');
     if($resp=='"OK"'){
     return redirect()->action('J1ReviewApplicationAccountController@index', ['isSave' => 1]);
     }else{
-      
+
     'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiJ1ReviewYourApplicationController');
     }
-   
+
     }
 
     /**

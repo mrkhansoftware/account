@@ -2,6 +2,7 @@
 @include('common.header',['datas'=>$datas,'title' =>'B Visa','page'=>'B_Visa_Case_Information','parent_page'=>'B1 Program'])
 
 {!! Form::open(['action' => 'BVisaCaseInformationController@store','files' => true, 'method' => 'POST', 'data-parsley-validate', 'id' => 'gacccaForm_bvisa']) !!}
+<input type="hidden" name='Contact__c' value="{{isset($datas['contID'])?$datas['contID']:''}}"/>
 
 
 <div class="gaccca-main-containt">
@@ -175,7 +176,7 @@
 
         <h2 class="gaccca-h2-padding">Upload your Documents</h2>
 
-       
+
 
 
         <div class="gaccca-form-element gaccca-form-element-margin">

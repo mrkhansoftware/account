@@ -2,6 +2,12 @@
 @include('common.header',['datas'=>$datas,'title' =>'Validation Check-In','page'=>'validation_checkin_account','parent_page'=>'J1 Program'])
 
 {!! Form::open(['action' => 'ValidationCheckinAccountController@store','files' => true, 'method' => 'POST', 'id' => 'gacccaForm_vca']) !!}
+<input type="hidden" name='lastNameFirstName' value="{{isset($datas['lastNameFirstName'])?$datas['lastNameFirstName']:''}}"/>
+<input type="hidden" name='applicantId' value="{{isset($datas['ap']['Id'])?$datas['ap']['Id']:''}}"/>
+<input type="hidden" name='NewGdriveID__c' value="{{isset($datas['ap']['NewGdriveID__c'])?$datas['ap']['NewGdriveID__c']:''}}"/>
+<input type="hidden" name='Google_Drive_Evaluation_Form__c' value="{{isset($datas['ap']['Google_Drive_Evaluation_Form__c'])?$datas['ap']['Google_Drive_Evaluation_Form__c']:''}}"/>
+<input type="hidden" name='onfrmId' value="{{isset($datas['onfrm']['Id'])?$datas['onfrm']['Id']:''}}"/>
+<input type="hidden" name='Contact__c' value="{{isset($datas['contID'])?$datas['contID']:''}}"/>
 
 <div class="gaccca-main-containt">
   <h1 class="gaccca-h1-padding">Validation and Check-In </h1>
@@ -22,7 +28,7 @@
       should you have any questions regarding this form or other concerns, don’t hesitate to contact us.
     </p>
   </div>
-  
+
   <h2 class="gaccca-h2-padding">Personal Information</h2>
 
   <div class="gaccca-large-size_1-of-1 gaccca-medium-size_1-of-1 gaccca-small-size_1-of-1">
@@ -402,7 +408,7 @@
       </div>
 
     </div>
- 
+
     @if (isset($datas['isFormSent']) && $datas['isFormSent'])
     @if (isset($datas['isPredepartureSigned']) && $datas['isPredepartureSigned'])
     <button id="gaccca_saveBtn_vca" class="gaccca-button-save gaccca-button-save-margin">Submit</button>
@@ -416,8 +422,8 @@
 <a href="/preDepartureOrientationConfirmationPage" ><button class="gaccca-button-save" type='button'>Ok!</button></a>
 </div>
 </div>
-    
-    
+
+
     @endif
 @else
 <script>

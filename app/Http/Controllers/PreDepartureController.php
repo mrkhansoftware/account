@@ -22,12 +22,10 @@ return 'App\Services\Helper'::returnUrl();
 $datas='App\Services\Helper'::getRequest('ApiPreDepartureClass/'.$idCon);
 $datas = json_decode($datas, true);
 $datas = json_decode($datas, true);
-if(isset($datas['applicantId'])){
-    session()->put('applicantId', $datas['applicantId']);
-    }
+
 return view('j1-visa/preDeparture')->with(compact('datas'));
-    
-        
+
+
     }
 
     /**
@@ -49,21 +47,22 @@ return view('j1-visa/preDeparture')->with(compact('datas'));
     public function store(Request $request)
     {
         $finalReq = $request->all();
-     
-    $finalReq['applicant']['id']=session()->get('applicantId');
+
+    $finalReq['applicant']['id']=$finalReq['applicantId'];
     $finalReq['applicantData']=json_encode($finalReq['applicant']);
     unset($finalReq['_token']);
     unset($finalReq['applicant']);
-   
-  
-  
-  
-  
+    unset($finalReq['applicantId']);
+
+
+
+
+
 
 //echo "<pre>"; print_r($finalReq);die;
 
   $resp='App\Services\Helper'::postRequest($finalReq,'ApiPreDepartureClass');
-if($resp=='"OK"'){ 
+if($resp=='"OK"'){
 return redirect()->action('PreDepartureController@index', ['isSave' => 1]);
 }else{
     'App\Services\Helper'::apiErrorReq($finalReq,$resp,'ApiPreDepartureClass');
