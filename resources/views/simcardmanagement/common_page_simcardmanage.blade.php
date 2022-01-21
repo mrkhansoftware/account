@@ -517,7 +517,10 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         </div>
 
         <span id="value_paymentSubmited_{{$tab_name.'_'.$index}}">{{isset($applicant['PaymentSubmited__c'])?$applicant['PaymentSubmited__c']:''}}</span>
-        <a href="javascript:void(0)" class="edit-pencil" id="edit_paymentSubmited_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
+        <a href="javascript:void(0)" class="edit-pencil" id="edit_paymentSubmited_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a><br/>
+        <a href="javascript:void(0)" data-sendTmail="{{$applicant['Id']}}" onclick="sendEmailToNotify(this,'sendPaymentSubmittedEmail')">Click To Send
+            Payment Successfully Charged
+            Email </a>
 
         @endif
     </td>
@@ -541,7 +544,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         <a href="javascript:void(0)" class="edit-pencil" id="edit_serviceEndDate_{{$tab_name.'_'.$index}}"><i class="fas fa-pencil-alt"></i></a>
 
         <br>
-        <a href="javascript:void(0)" data-sendTmail="{{$applicant['Id']}}" onclick="sendTransactionFailEmailAction(this)">Click ToSend
+        <a href="javascript:void(0)" data-sendTmail="{{$applicant['Id']}}" onclick="sendEmailToNotify(this,'sendTransactionFailEmailAction')">Click To Send
             Transaction failure
             Email </a>
         @endif
@@ -773,7 +776,7 @@ Check Amount:&nbsp; <input value="" type="text" id='checkAmountId' class="gaccca
         <td onclick="" data-fieldApi="" style="text-align: center;"><br/>
         @if($requestDataPage['accesskey']!='external_request_aerobil' && $requestDataPage['accesskey']!='external_request_gaccca')
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Assign to GACCCA">Assign to GACCCA</button><br/><br/>
-        <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Assign to Aerobil">Assign to Aerobil</button><br/><br/>
+        <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Assign to Aerobil">Assign to Aerobile</button><br/><br/>
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Cancel Request">Cancel Request</button><br/><br/>
         @else
         <button class="gaccca-button-save externalUserActions" data-recordId="{{isset($lead['Id'])?$lead['Id']:''}}" data-action="Simcard Shipped Notification"  data-row="{{$tab_name.'_'.$index}}">Send Sim Card Shipped Notification</button><br/><br/>

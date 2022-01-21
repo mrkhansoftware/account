@@ -504,7 +504,7 @@ cursor: pointer; /* Add a pointer on hover */
 <div class="gaccca-simcard-tab">
     <button class="gaccca_simcard_tablinks-Parent" id='main_parent_tab_Id' data-accesskey="Main" data-status='Main' onclick="simCardManageParentTab(event, this,  'main_parent_tab')">Main</button>
     <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_all" data-status='external request all' onclick="simCardManageParentTab(event, this,  'main_parent_request_tab')">SIM Card Requests New (<span id='tabRecordParentSimcardAll'></span>)</button>
-    <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_aerobil" data-status='external request aerobil' onclick="simCardManageParentTab(event, this,  'main_parent_request_Aerobil_tab')">SIM Card Requests For Aerobil (<span id='tabRecordParentSimcardAerobil'></span>)</button>
+    <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_aerobil" data-status='external request aerobil' onclick="simCardManageParentTab(event, this,  'main_parent_request_Aerobil_tab')">SIM Card Requests For Aerobile (<span id='tabRecordParentSimcardAerobil'></span>)</button>
     <button class="gaccca_simcard_tablinks-Parent" data-accesskey="external_request_gaccca" data-status='external request gaccca' onclick="simCardManageParentTab(event, this,  'main_parent_request_Gaccca_tab')">SIM Card Requests For GACCCA (<span id='tabRecordParentSimcardGaccca'></span>)</button>
 </div>
 
@@ -1055,13 +1055,17 @@ function saveRecordUpdate(recordId, fieldApi, val, dataType) {
     ajaxRequest(formData);
 }
 
-function sendTransactionFailEmailAction(val) {
-    if (!confirm("Are you sure to send the transaction failure email? ")) {
+function sendEmailToNotify(val,methodActionName) {
+  var message="Are you sure to send the transaction failure email? ";
+  if(methodActionName=='sendPaymentSubmittedEmail'){
+    message="Are you sure to send the payment successfully charged email? ";
+  }
+    if (!confirm(message)) {
         return;
     }
     var formData = {
         'appId': val.getAttribute("data-sendTmail"),
-        "methodType": 'sendTransactionFailEmailAction'
+        "methodType": methodActionName
     }
     ajaxRequest(formData);
 }
@@ -1166,7 +1170,7 @@ function ajaxRequest(formData) {
         data: formData,
         dataType: 'json',
         beforeSend: function() {
-            if (formData.methodType == 'saveApplicant' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod') {
+            if (formData.methodType == 'saveApplicant'  || formData.methodType == 'sendPaymentSubmittedEmail' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod') {
                 $("#loaderRecordSave").css('display', 'block');
 
             } else {
@@ -1177,10 +1181,13 @@ function ajaxRequest(formData) {
         },
         success: function(data) {
             //console.log(data);
-            if ((formData.methodType == 'saveApplicant' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod' || formData.methodType == 'deleteRecordInformation') && data == 'OK') {
+            if ((formData.methodType == 'saveApplicant' || formData.methodType == 'sendPaymentSubmittedEmail' || formData.methodType == 'sendTransactionFailEmailAction' || formData.methodType == 'commissionMethod' || formData.methodType == 'deleteRecordInformation') && data == 'OK') {
                 $("#loaderRecordSave").css('display', 'none');
                 if (formData.methodType == 'sendTransactionFailEmailAction') {
                     showSuccessGaccca('Transaction failure email has been sent.');
+                }
+                if (formData.methodType == 'sendPaymentSubmittedEmail') {
+                    showSuccessGaccca('Payment successfully charged email has been sent.');
                 }
                 if (formData.methodType == 'commissionMethod' || formData.methodType == 'deleteRecordInformation') {
                     loadValues()
@@ -1209,8 +1216,11 @@ function ajaxRequest(formData) {
 
                     showSuccessGaccca("Sim Card shipped email sent. You can find this entry under 'Main-->Shipped' tab");
 
-                    if(recordStatusTypeVar=="external request gaccca" || recordStatusTypeVar=="external request aerobil"){
+                    if(recordStatusTypeVar=="external request gaccca"){
                         window.open("https://gaccca.secure.force.com/LetterShipmentSimCard?id="+data.applicantInfo);
+                    }
+                    else if( recordStatusTypeVar=="external request aerobil"){
+                        window.open("https://gaccca.secure.force.com/LetterShipmentSimCardByAerobile?template=Aerobile&id="+data.applicantInfo);
                     }
 
                 }
