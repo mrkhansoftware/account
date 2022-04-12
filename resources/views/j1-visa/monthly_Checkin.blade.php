@@ -342,5 +342,20 @@
 @include('common.footer')
 
 @else
-  Permission denied. Please contact administrator.
+   
+<p>
+Permission denied! An error occurred.
+</p>
+<p>
+Your login email is: {{isset($datas['con']['Email'])?$datas['con']['Email']:''}}
+</p>
+<p>
+Please make a screenshot of this page and send it to info@iieex.org with short notes.
+</p>
+<p>
+Try to login in again on this page <a href='https://account.iieex.org'>https://account.iieex.org</a> and click on the menu on the page you are looking for.
+</p>
+
+   
+
   @endif
